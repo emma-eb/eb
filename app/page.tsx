@@ -4,8 +4,8 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6">
-        <span className="font-heading text-2xl tracking-widest text-[#2e5a88]">eb.</span>
-        <div className="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]">
+        <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-8 w-auto" /></a>
+        <div className="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase text-[#fcf7f1]">
           <a href="/journeys" className="hover:opacity-60 transition-opacity">Private Journeys</a>
           <a href="/collection" className="hover:opacity-60 transition-opacity">Collection</a>
           <a href="/experiences" className="hover:opacity-60 transition-opacity">Experiences</a>
@@ -13,7 +13,7 @@ export default function Home() {
         </div>
         <a
           href="/contact"
-          className="text-xs tracking-[0.2em] uppercase border border-[#2e5a88] text-[#2e5a88] px-5 py-2.5 hover:bg-[#2e5a88] hover:text-[#fcf7f1] transition-colors"
+          className="text-xs tracking-[0.2em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-5 py-2.5 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors"
         >
           Inquire
         </a>
@@ -128,7 +128,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#2e5a88] py-10 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <span className="font-heading text-xl tracking-widest text-[#fcf7f1]">eb.</span>
+          <img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" />
           <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">
             © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
           </p>
