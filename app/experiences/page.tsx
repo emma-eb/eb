@@ -79,7 +79,7 @@ const conciergeCards = [
       "Athenian Riviera & island beach clubs",
       "Exclusive private dining experiences",
     ],
-    photo: "https://images.unsplash.com/photo-1758561087076-e647b2e2485a",
+    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c",
   },
   {
     tag: "Gastronomy",
@@ -91,7 +91,7 @@ const conciergeCards = [
       "Curated regional dining reservations",
       "Cooking experiences with local producers",
     ],
-    photo: "https://images.unsplash.com/photo-1750943081248-833d71a2ab8e",
+    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54",
   },
   {
     tag: "Wine",
