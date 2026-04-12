@@ -68,23 +68,13 @@ const realEstate = {
   href: "https://theheight.estate/el/",
 };
 
+import Nav from "../components/Nav";
+
 export default function Journal() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-[#fcf7f1]/95 backdrop-blur-sm">
-        <a href="/"><img src="/logo-bleu.svg" alt="eb." className="h-8 w-auto" /></a>
-        <div className="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]">
-          <a href="/journeys" className="hover:opacity-60 transition-opacity">Private Journeys</a>
-          <a href="/collection" className="hover:opacity-60 transition-opacity">Collection</a>
-          <a href="/experiences" className="hover:opacity-60 transition-opacity">Experiences</a>
-          <a href="/journal" className="border-b border-[#2e5a88] pb-px">Journal</a>
-        </div>
-        <a href="/contact" className="text-xs tracking-[0.2em] uppercase border border-[#2e5a88] text-[#2e5a88] px-5 py-2.5 hover:bg-[#2e5a88] hover:text-[#fcf7f1] transition-colors">
-          Inquire
-        </a>
-      </nav>
+      <Nav theme="light" activePage="/journal" />
 
       {/* Hero */}
       <section className="bg-[#fcf7f1] pt-40 pb-16 px-8 md:px-16 border-b border-[#2e5a88]/10">

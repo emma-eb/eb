@@ -1,23 +1,9 @@
+import Nav from "./components/Nav";
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6">
-        <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-8 w-auto" /></a>
-        <div className="hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase text-[#fcf7f1]">
-          <a href="/journeys" className="hover:opacity-60 transition-opacity">Private Journeys</a>
-          <a href="/collection" className="hover:opacity-60 transition-opacity">Collection</a>
-          <a href="/experiences" className="hover:opacity-60 transition-opacity">Experiences</a>
-          <a href="/journal" className="hover:opacity-60 transition-opacity">Journal</a>
-        </div>
-        <a
-          href="/contact"
-          className="text-xs tracking-[0.2em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-5 py-2.5 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors"
-        >
-          Inquire
-        </a>
-      </nav>
+      <Nav theme="dark" />
 
       {/* Hero */}
       <section className="relative h-screen flex items-end pb-20 px-8 md:px-16 bg-[#2e5a88] overflow-hidden">
