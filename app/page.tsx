@@ -25,9 +25,9 @@ export default function Home() {
           src="/hero-bateau.jpg"
           alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "right center" }}
+          style={{ objectPosition: "72% center" }}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
 
         {/* Titre — centré verticalement, ancré à gauche */}
         <div className="relative z-10 flex-1 flex items-center px-8 md:px-16 pt-16 md:pt-20">
