@@ -65,7 +65,7 @@ export default function Nav({ activePage }: NavProps) {
           <img
             src={dark ? "/logo-beige.svg" : "/logo-bleu.svg"}
             alt="eb."
-            className="h-8 w-auto transition-all duration-500"
+            className="h-8 w-auto transition-colors duration-150"
           />
         </a>
 
@@ -79,7 +79,7 @@ export default function Nav({ activePage }: NavProps) {
             <a
               key={l.href}
               href={l.href}
-              className={`transition-opacity duration-300 ${
+              className={`transition-opacity duration-100 ${
                 activePage === l.href ? "border-b pb-px" : "hover:opacity-50"
               }`}
             >
@@ -91,7 +91,7 @@ export default function Nav({ activePage }: NavProps) {
         {/* Desktop CTA */}
         <a
           href="/contact"
-          className={`hidden md:inline-block text-xs tracking-[0.2em] uppercase border px-5 py-2.5 transition-all duration-500 ${
+          className={`hidden md:inline-block text-xs tracking-[0.2em] uppercase border px-5 py-2.5 transition-colors duration-150 ${
             dark
               ? "border-[#fcf7f1] text-[#fcf7f1] hover:bg-[#fcf7f1] hover:text-[#2e5a88]"
               : "border-[#2e5a88] text-[#2e5a88] hover:bg-[#2e5a88] hover:text-[#fcf7f1]"
@@ -104,7 +104,7 @@ export default function Nav({ activePage }: NavProps) {
         <div className="flex md:hidden items-center gap-4 relative z-50">
           <a
             href="/contact"
-            className={`text-xs tracking-[0.2em] uppercase border px-4 py-2 transition-all duration-500 ${
+            className={`text-xs tracking-[0.2em] uppercase border px-4 py-2 transition-colors duration-150 ${
               dark
                 ? "border-[#fcf7f1] text-[#fcf7f1]"
                 : "border-[#2e5a88] text-[#2e5a88]"
@@ -126,7 +126,7 @@ export default function Nav({ activePage }: NavProps) {
 
       {/* Mobile overlay — plein écran navy */}
       <div
-        className={`fixed inset-0 z-40 bg-[#2e5a88] flex flex-col justify-between px-8 py-24 transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-[#2e5a88] flex flex-col justify-between px-8 py-24 transition-colors duration-150 md:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -157,7 +157,7 @@ export default function Nav({ activePage }: NavProps) {
         </nav>
 
         <div
-          className={`transition-all duration-500 ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          className={`transition-colors duration-150 ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           style={{ transitionDelay: open ? "420ms" : "0ms" }}
         >
           <div className="h-px bg-[#fcf7f1]/20 mb-6" />
