@@ -59,13 +59,13 @@ export default function Nav({ activePage }: NavProps) {
 
         <a href="/" className="relative z-50">
           <img
-            src={dark ? "/logo-beige.svg" : "/logo-bleu.svg"}
+            src={dark ? "/logo-beige.svg" : "/logo-dark.svg"}
             alt="eb."
             className="h-8 w-auto"
           />
         </a>
 
-        <div className={`hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase ${dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"}`}>
+        <div className={`hidden md:flex items-center gap-10 font-body text-xs tracking-[0.2em] uppercase ${dark ? "text-[#fcf7f1]" : "text-[#1a1a1a]"}`}>
           {links.map((l) => (
             <a
               key={l.href}
@@ -81,8 +81,8 @@ export default function Nav({ activePage }: NavProps) {
           href="/contact"
           className={`hidden md:inline-block text-xs tracking-[0.2em] uppercase border px-5 py-2.5 transition-colors ${
             dark
-              ? "border-[#fcf7f1] text-[#fcf7f1] hover:bg-[#fcf7f1] hover:text-[#2e5a88]"
-              : "border-[#2e5a88] text-[#2e5a88] hover:bg-[#2e5a88] hover:text-[#fcf7f1]"
+              ? "border-[#fcf7f1] text-[#fcf7f1] hover:bg-[#fcf7f1] hover:text-[#1a1a1a]"
+              : "border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#fcf7f1]"
           }`}
         >
           Inquire
@@ -92,7 +92,7 @@ export default function Nav({ activePage }: NavProps) {
           <a
             href="/contact"
             className={`text-xs tracking-[0.2em] uppercase border px-4 py-2 ${
-              dark ? "border-[#fcf7f1] text-[#fcf7f1]" : "border-[#2e5a88] text-[#2e5a88]"
+              dark ? "border-[#fcf7f1] text-[#fcf7f1]" : "border-[#1a1a1a] text-[#1a1a1a]"
             }`}
           >
             Inquire
@@ -102,16 +102,16 @@ export default function Nav({ activePage }: NavProps) {
             className="flex flex-col justify-center gap-[5px] w-6 h-6"
             aria-label={open ? "Fermer" : "Menu"}
           >
-            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
-            <span className={`block h-px w-full transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
-            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] -rotate-45 -translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
+            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#1a1a1a]"}`} />
+            <span className={`block h-px w-full transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#1a1a1a]"}`} />
+            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] -rotate-45 -translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#1a1a1a]"}`} />
           </button>
         </div>
       </nav>
 
       {/* Mobile overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#2e5a88] flex flex-col justify-between px-8 py-24 transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-[#1a1a1a] flex flex-col justify-between px-8 py-24 transition-opacity duration-500 md:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
