@@ -40,7 +40,7 @@ export default function InfluencerProduction() {
           </div>
           <div>
             <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              300 days of guaranteed sun. Whitewashed architecture that photographs in any direction. Turquoise water you can swim in from September to October. And the kind of access — private villas, archaeological sites, fishing villages — that no stock library can replicate.
+              300 days of guaranteed sun. Whitewashed architecture that photographs in any direction. Turquoise water you can swim in from September to October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
               Greece is the most photogenic backdrop in Europe. The problem is that most brands arrive without the right network. They end up in the same tourist spots, with the same light, in the same season. We solve that.
@@ -57,17 +57,17 @@ export default function InfluencerProduction() {
             {[
               {
                 title: "Brand Trips",
-                body: "Immersive multi-day trips for press, influencers, and brand ambassadors. We handle everything from flight coordination to the last dinner — so your team focuses on content, not logistics.",
+                body: "Immersive multi-day trips for press, influencers, and brand ambassadors. We handle everything from flight coordination to the last dinner, so your team focuses on content, not logistics.",
                 details: ["Full logistics & concierge", "Villa & hotel buyouts", "Private dining & experiences", "Media coordination"],
               },
               {
                 title: "Fam Trips",
-                body: "Familiarisation trips for travel agents, journalists, and agency partners. Structured to showcase your brand's positioning in Greece — not just the country.",
+                body: "Familiarisation trips for travel agents, journalists, and agency partners. Structured to showcase your brand's positioning in Greece, not just the country.",
                 details: ["Curated route design", "Hosted experiences", "Press & media support", "Itinerary documentation"],
               },
               {
                 title: "Content Creation",
-                body: "Photo and video production in Greece. Scouting, permits, local talent, stylists — a complete crew assembled around your visual brief. Delivered to spec.",
+                body: "Photo and video production in Greece. Scouting, permits, local talent, stylists: a complete crew assembled around your visual brief. Delivered to spec.",
                 details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction", "Post-production coordination"],
               },
             ].map(({ title, body, details }) => (
@@ -77,7 +77,7 @@ export default function InfluencerProduction() {
                 <ul className="flex flex-col gap-2 mt-2">
                   {details.map((d) => (
                     <li key={d} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                      <span className="text-[#ccc] shrink-0">—</span>
+                      <span className="text-[#ccc] shrink-0">·</span>
                       {d}
                     </li>
                   ))}
@@ -103,7 +103,7 @@ export default function InfluencerProduction() {
               {
                 name: "Extended",
                 duration: "4–5 days",
-                desc: "Athens + two islands. Space for storytelling — multiple environments, moods, and visual universes.",
+                desc: "Athens + two islands. Space for storytelling across multiple environments, moods, and visual universes.",
                 includes: ["4–6 locations", "Up to 20 people", "Full production crew", "Photo & video"],
               },
               {
@@ -122,7 +122,7 @@ export default function InfluencerProduction() {
                 <ul className="flex flex-col gap-2">
                   {includes.map((item) => (
                     <li key={item} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                      <span className="text-[#ccc] shrink-0">—</span>
+                      <span className="text-[#ccc] shrink-0">·</span>
                       {item}
                     </li>
                   ))}
@@ -201,7 +201,7 @@ export default function InfluencerProduction() {
                 <ul className="flex flex-col gap-3">
                   {items.map((item) => (
                     <li key={item} className="font-body text-sm text-white/50 leading-relaxed flex gap-3">
-                      <span className="text-white/25 shrink-0">—</span>
+                      <span className="text-white/25 shrink-0">·</span>
                       {item}
                     </li>
                   ))}
@@ -225,7 +225,7 @@ export default function InfluencerProduction() {
             Planning a trip<br />to Greece?
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">
-            Send us your brief — dates, brand, number of people, objectives. We come back within 48 hours with a first proposal.
+            Send us your brief: dates, brand, number of people, objectives. We come back within 48 hours with a first proposal.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Send a brief

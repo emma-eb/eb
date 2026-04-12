@@ -7,7 +7,7 @@ export default function Journeys() {
       title: "The Cyclades,\nyour way.",
       duration: "10–14 days",
       destinations: "Mykonos · Paros · Naxos · Santorini",
-      description: "Private ferry transfers, handpicked villas on each island, curated dining — from the fisherman's table to the chef's counter. No crowds, no compromises.",
+      description: "Private ferry transfers, handpicked villas on each island, curated dining: from the fisherman's table to the chef's counter. No crowds, no compromises.",
     },
     {
       tag: "Cultural Immersion",
@@ -28,7 +28,7 @@ export default function Journeys() {
       title: "The full\nexperience.",
       duration: "14–21 days",
       destinations: "Athens · Cyclades · Peloponnese · Ionian",
-      description: "A grand journey across Greece — art, sea, mountains, and history woven together. Everything private. Everything intentional. Nothing left to chance.",
+      description: "A grand journey across Greece: art, sea, mountains, and history woven together. Everything private. Everything intentional. Nothing left to chance.",
     },
   ];
 
@@ -45,7 +45,7 @@ export default function Journeys() {
             Greece,<br />written<br />for you.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Not a tour. Not a package. A journey conceived around who you are, what you love, and what you&apos;ve never dared to ask for — until now.
+            Not a tour. Not a package. A journey conceived around who you are, what you love, and what you&apos;ve never dared to ask for.
           </p>
         </div>
       </section>
@@ -56,10 +56,10 @@ export default function Journeys() {
           <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-16">How it works</p>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { n: "01", title: "A conversation", body: "Tell us your vision — or let us ask the right questions. There is no form that captures a dream." },
+              { n: "01", title: "A conversation", body: "Tell us your vision, or let us ask the right questions. There is no form that captures a dream." },
               { n: "02", title: "Your proposal", body: "Within 48 hours, a bespoke itinerary built specifically for you. Not adapted. Built." },
               { n: "03", title: "We handle everything", body: "Villas, transfers, reservations, surprises. Every detail confirmed before you board your flight." },
-              { n: "04", title: "You arrive", body: "To a Greece most people never find. We are available throughout — quietly, in the background." },
+              { n: "04", title: "You arrive", body: "To a Greece most people never find. We are available throughout, quietly, in the background." },
             ].map(({ n, title, body }) => (
               <div key={n}>
                 <p className="font-heading text-5xl text-[#e8e4de] mb-4">{n}</p>
@@ -108,7 +108,7 @@ export default function Journeys() {
               </div>
               <h2 className="font-heading text-4xl md:text-5xl text-[#1a1a1a] leading-none">Odyssey<br />Greece</h2>
               <p className="font-body text-sm text-[#888] leading-relaxed max-w-sm">
-                5 nights, 4 Hero Experiences, 3 destinations. From rooftop dinner under the Parthenon to kayaking along a lunar coastline — a journey shaped by light, sea and time.
+                5 nights, 4 Hero Experiences, 3 destinations. From rooftop dinner under the Parthenon to kayaking along a lunar coastline. A journey shaped by light, sea and time.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {["5 Nights", "4 Hero Experiences", "Private group of 5"].map((b) => (
@@ -155,7 +155,7 @@ export default function Journeys() {
             {[
               {
                 cat: "Stays",
-                items: ["Private villas with full staff", "Boutique hotels — entire floors", "Superyacht accommodation", "Island cave houses"],
+                items: ["Private villas with full staff", "Boutique hotels, entire floors", "Superyacht accommodation", "Island cave houses"],
               },
               {
                 cat: "Experiences",
@@ -172,7 +172,7 @@ export default function Journeys() {
                 <ul className="flex flex-col gap-3">
                   {items.map((item) => (
                     <li key={item} className="font-body text-sm text-white/50 leading-relaxed flex gap-3">
-                      <span className="text-white/25 shrink-0">—</span>
+                      <span className="text-white/25 shrink-0">·</span>
                       {item}
                     </li>
                   ))}
@@ -192,7 +192,7 @@ export default function Journeys() {
             Where do you<br />want to go?
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
-            There is no destination too remote, no request too specific. Tell us — we&apos;ll tell you if it&apos;s possible. (It usually is.)
+            There is no destination too remote, no request too specific. Tell us what you have in mind. (It&apos;s usually possible.)
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Plan my journey

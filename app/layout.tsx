@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "eb. — Private Greece",
+  title: "eb. | Private Greece",
   description: "Greece, like no one else can show it. Bespoke concierge experiences, private villas & yacht charter.",
   keywords: ["luxury concierge Greece", "private villa Greece", "Greece bespoke travel"],
 };

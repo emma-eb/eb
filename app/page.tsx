@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Nav from "./components/Nav";
+import JourneyQuiz from "./components/JourneyQuiz";
 
 const islands = [
   "Santorini", "Mykonos", "Paros", "Naxos", "Milos", "Folegandros",
@@ -10,6 +14,7 @@ const islands = [
 ];
 
 export default function Home() {
+  const [showQuiz, setShowQuiz] = useState(false);
   const ticker = [...islands, ...islands]; // double pour boucle seamless
 
   return (
@@ -36,18 +41,12 @@ export default function Home() {
               Greece,<br />privately.
             </h1>
             <div className="flex items-center gap-5 mt-8">
-              <a
-                href="/contact"
+              <button
+                onClick={() => setShowQuiz(true)}
                 className="font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-7 py-3 hover:bg-white/10 transition-colors"
               >
                 Begin your journey
-              </a>
-              <a
-                href="/journeys"
-                className="font-body text-xs tracking-[0.25em] uppercase text-white/70 border-b border-white/30 pb-px hover:text-white hover:border-white transition-colors"
-              >
-                Explore
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -100,10 +99,10 @@ export default function Home() {
           </div>
           <div>
             <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Twelve years producing private experiences for the world&apos;s most demanding luxury brands. In 2020, that same level of production — every detail confirmed, nothing left to interpretation — came to Greece.
+              Twelve years producing private experiences for the world&apos;s most demanding luxury brands. In 2020, that same level of production came to Greece. Every detail confirmed, nothing left to interpretation.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Not a travel agency. A destination expert and producer who knows every island, every villa owner, every chef willing to open a kitchen at midnight — and who delivers with the precision of a luxury house.
+              Not a travel agency. A destination expert and producer who knows every island, every villa owner, every chef willing to open a kitchen at midnight. And who delivers with the precision of a luxury house.
             </p>
           </div>
         </div>
@@ -122,21 +121,21 @@ export default function Home() {
               {
                 n: "01",
                 title: "Private\nJourneys",
-                description: "Itineraries built around who you are — not a template. Islands, villas, and moments that take years of relationships to arrange.",
+                description: "Itineraries built around who you are, not a template. Islands, villas, and moments that take years of relationships to arrange.",
                 href: "/journeys",
                 cta: "Explore",
               },
               {
                 n: "02",
                 title: "Villa &\nYacht",
-                description: "A curated collection of the most extraordinary private properties in Greece — and BESTIA, our superyacht, for those who want the sea to themselves.",
+                description: "A curated collection of the most extraordinary private properties in Greece. Including BESTIA, our superyacht, for those who want the sea to themselves.",
                 href: "/collection",
                 cta: "View collection",
               },
               {
                 n: "03",
                 title: "Influencer\nProduction",
-                description: "Brand trips, fam trips, content creation. Greece as your backdrop — 300 days of sun, iconic architecture, and no crowds when you know who to call.",
+                description: "Brand trips, fam trips, content creation. Greece as your backdrop: 300 days of sun, iconic architecture, and no crowds when you know who to call.",
                 href: "/influencer-production",
                 cta: "For brands",
               },
@@ -174,7 +173,7 @@ export default function Home() {
             Greece only.<br />Always.
           </h2>
           <p className="font-body text-base text-white/60 max-w-md leading-relaxed">
-            We don't do Paris. We don't do Maldives. Every villa owner, every chef, every fisherman on Meganisi — we know them personally.
+            We don't do Paris. We don't do Maldives. Every villa owner, every chef, every fisherman on Meganisi. We know them personally.
           </p>
         </div>
       </section>
@@ -221,6 +220,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {showQuiz && <JourneyQuiz onClose={() => setShowQuiz(false)} />}
 
       {/* ─── FOOTER ─── */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">

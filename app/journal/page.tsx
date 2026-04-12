@@ -13,7 +13,7 @@ const articles = [
     title: "Why Meganisi is the name everyone in the know is saying",
     date: "April 2026",
     description:
-      "The Ionian's most underrated island — no airport, no cruise ships, no shortcuts. Just the sea, the tavernas, and a silence that money still can't ruin.",
+      "The Ionian's most underrated island. No airport, no cruise ships, no shortcuts. Just the sea, the tavernas, and a silence that money still can't ruin.",
     href: null,
   },
   {
@@ -26,7 +26,7 @@ const articles = [
   },
   {
     tag: "Travel",
-    title: "Greece's finest tables in 2026 — the ones no algorithm finds",
+    title: "Greece's finest tables in 2026, the ones no algorithm finds",
     date: "March 2026",
     description:
       "Not a ranking. A personal list of the restaurants, tavernas, and private kitchens that made us feel lucky to know Greece as well as we do.",
@@ -45,7 +45,7 @@ const articles = [
     title: "The Cyclades in May: why shoulder season is the only season",
     date: "February 2026",
     description:
-      "Before the crowds. After the cold. May in the Cyclades is Greece at its most honest — and most beautiful.",
+      "Before the crowds. After the cold. May in the Cyclades is Greece at its most honest, and most beautiful.",
     href: "https://www.instagram.com/p/DWVP_z9k23o/",
   },
   {
@@ -60,10 +60,10 @@ const articles = [
 
 const realEstate = {
   tag: "Real Estate",
-  title: "The Height — a new landmark near Athens",
+  title: "The Height, a new landmark near Athens",
   location: "Attica · Greece",
   description:
-    "An extraordinary residential project taking shape on the Attic coast — designed by one of Europe's most celebrated architects. For clients exploring investment or primary residences in Greece, this is the conversation to have.",
+    "An extraordinary residential project taking shape on the Attic coast, designed by one of Europe's most celebrated architects. For clients exploring investment or primary residences in Greece, this is the conversation to have.",
   note: "eb. works with a select number of clients as a trusted introduction to this project.",
   href: "https://theheight.estate/el/",
 };
@@ -194,7 +194,7 @@ export default function Journal() {
             Stay close<br />to Greece.
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
-            Destinations, openings, and news — curated by someone who lives it. No noise, no algorithm.
+            Destinations, openings, and news. Curated by someone who lives it. No noise, no algorithm.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Get in touch

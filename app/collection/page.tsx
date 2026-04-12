@@ -73,7 +73,7 @@ export default function Collection() {
             The most<br />extraordinary<br />addresses<br />in Greece.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Every property in our collection is personally vetted by Emma. No exceptions. No compromises. A villa earns its place here — or it doesn&apos;t appear.
+            Every property in our collection is personally vetted by Emma. No exceptions. No compromises. A villa earns its place here, or it doesn&apos;t appear.
           </p>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function Collection() {
             <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-6">Our yacht</p>
             <h2 className="font-heading text-6xl md:text-7xl text-white leading-none mb-8">BESTIA.</h2>
             <p className="font-body text-lg text-white/60 leading-relaxed mb-10">
-              For those who want the sea entirely to themselves. BESTIA is our superyacht — available for charter through eb., with a crew that knows Greek waters like no one else.
+              For those who want the sea entirely to themselves. BESTIA is our superyacht, available for charter through eb., with a crew that knows Greek waters like no one else.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-10">
               {[
@@ -155,7 +155,7 @@ export default function Collection() {
           </div>
           <div className="flex flex-col gap-6">
             {[
-              { title: "Island itineraries", body: "From the Cyclades to the Ionian — we design the route around wind, season, and your wishes." },
+              { title: "Island itineraries", body: "From the Cyclades to the Ionian, we design the route around wind, season, and your wishes." },
               { title: "Full crew", body: "Captain, chef, hostess, and first mate. All selected by us. All fluent in discretion." },
               { title: "Private dining", body: "Each anchorage is an opportunity. Fresh catch, local wine, a table set on deck as the sun sets." },
               { title: "Combines with a villa", body: "Start at a villa in Mykonos. Sail to Paros, Naxos, Folegandros. Return by seaplane." },
@@ -181,7 +181,7 @@ export default function Collection() {
             Not finding<br />what you need?
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
-            Our most exceptional properties are never listed publicly. Tell us what you&apos;re looking for — we will find it.
+            Our most exceptional properties are never listed publicly. Tell us what you&apos;re looking for. We will find it.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Make a private inquiry

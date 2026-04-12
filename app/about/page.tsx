@@ -40,10 +40,10 @@ export default function About() {
           </div>
           <div>
             <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Twelve years producing private experiences for luxury houses — Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo. Events, brand trips, and productions across 95 countries. The kind of work that requires knowing who to call at midnight, in any city, to make something extraordinary happen on time.
+              Twelve years producing private experiences for luxury houses: Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo. Events, brand trips, and productions across 95 countries. The kind of work that requires knowing who to call at midnight, in any city, to make something extraordinary happen on time.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              In 2020, I moved to Athens. Not to slow down — to go deeper. One country, one focus, one standard.
+              In 2020, I moved to Athens. Not to slow down. To go deeper. One country, one focus, one standard.
             </p>
           </div>
         </div>
@@ -75,13 +75,13 @@ export default function About() {
           </div>
           <div>
             <p className="font-body text-lg md:text-xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Greece is not a backdrop. It is a culture with 3,000 years of hospitality, a geography of extreme contrasts, and a network of people — chefs, fishermen, archaeologists, villa owners — who don&apos;t advertise what they offer.
+              Greece is not a backdrop. It is a culture with 3,000 years of hospitality, a geography of extreme contrasts, and a network of people (chefs, fishermen, archaeologists, villa owners) who don&apos;t advertise what they offer.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Getting access to the Acropolis before dawn, anchoring in Kleftiko in August without a crowd, having dinner in a cave on Kimolos — none of this is bookable online. It requires years of presence, respect, and personal relationships. That is what eb. provides.
+              Getting access to the Acropolis before dawn, anchoring in Kleftiko in August without a crowd, having dinner in a cave on Kimolos. None of this is bookable online. It requires years of presence, respect, and personal relationships. That is what eb. provides.
             </p>
             <p className="font-body text-sm text-[#888] mt-4 leading-relaxed max-w-xl">
-              I bridge European production standards with the expectations of international luxury clients — from UHNW travelers to the most demanding luxury brands planning content in Greece.
+              I bridge European production standards with the expectations of international luxury clients: from UHNW travelers to the most demanding luxury brands planning content in Greece.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function About() {
             {[
               {
                 title: "Private Journeys",
-                body: "Bespoke itineraries for discerning travelers — UHNW individuals and families who want Greece without compromise. Every transfer, every villa, every dinner arranged before departure.",
+                body: "Bespoke itineraries for discerning travelers: UHNW individuals and families who want Greece without compromise. Every transfer, every villa, every dinner arranged before departure.",
               },
               {
                 title: "Influencer & Brand Production",
@@ -149,7 +149,7 @@ export default function About() {
             Let&apos;s talk about<br />what you have in mind.
           </h2>
           <p className="font-body text-sm text-[#888] mb-10 leading-relaxed">
-            Whether you are planning a private journey, a brand trip, or a celebration — the first conversation is always a real one.
+            Whether you are planning a private journey, a brand trip, or a celebration. The first conversation is always a real one.
           </p>
           <a
             href="/contact"

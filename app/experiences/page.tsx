@@ -8,8 +8,8 @@ const heroExperiences = [
     num: "#1",
     location: "Athens",
     title: "Private Dinner\nFacing the Acropolis",
-    desc: "A candlelit evening set against one of the most iconic views in Europe. Each dinner is designed around the guest's preferred level of privacy — from a Michelin-starred restaurant with panoramic views to a fully privatized setting: an exclusive terrace, a private venue, or a luxury hotel suite.",
-    note: "The Acropolis — 5th century BC. A timeless symbol of classical prestige and heritage.",
+    desc: "A candlelit evening set against one of the most iconic views in Europe. Each dinner is designed around the guest's preferred level of privacy: Michelin-starred restaurants with panoramic views, a privatized terrace, a private venue, or a luxury hotel suite.",
+    note: "The Acropolis, 5th century BC. A timeless symbol of classical prestige and heritage.",
     occasions: "Romantic celebrations · Proposals · Private VIP moments · Milestone occasions",
     bullets: [
       "Michelin-starred or fully private format",
@@ -23,7 +23,7 @@ const heroExperiences = [
     num: "#2",
     location: "Across Greece",
     title: "Wedding Proposal\nin Greece",
-    desc: "A once-in-a-lifetime moment set against Greece's most breathtaking landscapes. From the dramatic cliffs of Santorini to hidden terraces overlooking the Aegean — each proposal is privately curated according to the couple's story, preferred setting and desired level of privacy.",
+    desc: "A once-in-a-lifetime moment set against Greece's most breathtaking landscapes. From the dramatic cliffs of Santorini to hidden terraces overlooking the Aegean. Each proposal is privately curated according to the couple's story, preferred setting and desired level of privacy.",
     note: null,
     occasions: null,
     bullets: [
@@ -39,7 +39,7 @@ const heroExperiences = [
     num: "#3",
     location: "Greece",
     title: "Boutique Wedding",
-    desc: "A refined selection of distinctive venues and private properties across Greece — designed for couples seeking a more personal and meaningful celebration. From secluded island villas to elegant countryside estates. A slower rhythm, a carefully curated guest list, a refined attention to detail.",
+    desc: "A refined selection of distinctive venues and private properties across Greece, designed for couples seeking a more personal and meaningful celebration. From secluded island villas to elegant countryside estates. A slower rhythm, a carefully curated guest list, a refined attention to detail.",
     note: null,
     occasions: null,
     bullets: [
@@ -55,7 +55,7 @@ const heroExperiences = [
     num: "#4",
     location: "Athens",
     title: "Private Shopping\nwith a Stylist",
-    desc: "A curated fashion and lifestyle journey through Athens' most refined boutiques. Guided by a private fashion expert through Kolonaki — home to international luxury maisons and carefully selected Greek designers. Personalized to your wardrobe, your style, and your time.",
+    desc: "A curated fashion and lifestyle journey through Athens' most refined boutiques. Guided by a private fashion expert through Kolonaki, home to international luxury maisons and carefully selected Greek designers. Personalized to your wardrobe, your style, and your time.",
     note: null,
     occasions: null,
     bullets: [
@@ -72,7 +72,7 @@ const conciergeCards = [
   {
     tag: "Dining",
     title: "Private Dining &\nRestaurant Reservations",
-    desc: "Priority access to Greece's most sought-after tables — Michelin-starred rooftops in Athens, caldera dining in Santorini, sunset tables on the Athenian Riviera, beach clubs in Mykonos. Curated recommendations and reservations handled for you.",
+    desc: "Priority access to Greece's most sought-after tables: Michelin-starred rooftops in Athens, caldera dining in Santorini, sunset tables on the Athenian Riviera, beach clubs in Mykonos. Curated recommendations and reservations handled for you.",
     bullets: [
       "Michelin-starred restaurants across Greece",
       "Iconic rooftop & caldera view tables",
@@ -96,7 +96,7 @@ const conciergeCards = [
   {
     tag: "Wine",
     title: "Private Wine &\nVineyard Visits",
-    desc: "Greece's most distinctive wine regions through exclusive vineyard experiences — Santorini's volcanic vineyards overlooking the caldera, or the renowned estates of the Peloponnese. Intimate encounters with the winemakers themselves.",
+    desc: "Greece's most distinctive wine regions through exclusive vineyard experiences: Santorini's volcanic vineyards overlooking the caldera, or the renowned estates of the Peloponnese. Intimate encounters with the winemakers themselves.",
     bullets: [
       "Santorini volcanic vineyards",
       "Peloponnese wine estates",
@@ -135,7 +135,7 @@ export default function Experiences() {
             Moments<br />you can&apos;t<br />book online.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Across Athens, the Athenian Riviera and the Greek Islands. Private, bespoke, and designed around who you are — not a catalogue of options.
+            Across Athens, the Athenian Riviera and the Greek Islands. Private, bespoke, and designed around who you are. Not a catalogue of options.
           </p>
         </div>
       </section>
@@ -184,7 +184,7 @@ export default function Experiences() {
                 <ul className="flex flex-col gap-2">
                   {exp.bullets.map((b) => (
                     <li key={b} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                      <span className="text-[#ccc] shrink-0">—</span>{b}
+                      <span className="text-[#ccc] shrink-0">·</span>{b}
                     </li>
                   ))}
                 </ul>
@@ -214,7 +214,7 @@ export default function Experiences() {
         </div>
 
         <p className="font-body text-xs text-[#ccc] tracking-wider px-8 md:px-16 py-5 border-t border-[#e8e4de]">
-          Each experience is fully customized. These are starting points — not templates.
+          Each experience is fully customized. These are starting points, not templates.
         </p>
       </section>
 
@@ -256,7 +256,7 @@ export default function Experiences() {
                 <ul className="flex flex-col gap-2 mt-2">
                   {card.bullets.map((b) => (
                     <li key={b} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                      <span className="text-[#ccc] shrink-0">—</span>{b}
+                      <span className="text-[#ccc] shrink-0">·</span>{b}
                     </li>
                   ))}
                 </ul>
@@ -279,7 +279,7 @@ export default function Experiences() {
             What would you<br />like to experience?
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">
-            Each experience is designed with flexibility, discretion and exceptional attention to detail. Tell us your occasion — we take care of everything.
+            Each experience is designed with flexibility, discretion and exceptional attention to detail. Tell us your occasion. We take care of everything.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Start the conversation

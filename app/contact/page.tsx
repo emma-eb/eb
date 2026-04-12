@@ -14,7 +14,7 @@ export default function Contact() {
             Tell us<br />what you<br />dream of.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Every journey starts with a conversation. Share your vision — when, where, how many, what matters most — and we take care of everything else.
+            Every journey starts with a conversation. Share your vision: when, where, how many, what matters most. We take care of everything else.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function Contact() {
               <h2 className="font-heading text-2xl text-[#1a1a1a] mb-4">What happens next</h2>
               <ol className="flex flex-col gap-4">
                 {[
-                  "We read every inquiry personally — no bots, no templates.",
+                  "We read every inquiry personally. No bots, no templates.",
                   "Within 24 hours, Emma responds with initial thoughts and questions.",
                   "A short call to understand exactly what you're looking for.",
                   "Your bespoke proposal arrives within 48 hours."
@@ -139,7 +139,7 @@ export default function Contact() {
               <div className="h-px bg-[#e8e4de] mb-6 w-12" />
               <h2 className="font-heading text-2xl text-[#1a1a1a] mb-3">Our promise</h2>
               <p className="font-body text-sm text-[#888] leading-relaxed">
-                We only take on a limited number of clients each season. Not because of capacity — because of quality. Every journey receives our full attention.
+                We only take on a limited number of clients each season. Not because of capacity, because of quality. Every journey receives our full attention.
               </p>
             </div>
           </div>

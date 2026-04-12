@@ -12,7 +12,7 @@ export default function OdysseyGreece() {
       >
         <img
           src="https://images.unsplash.com/photo-1772692194533-c427934e9d36?auto=format&fit=crop&w=1920&q=80"
-          alt="Milos, Cyclades — Odyssey Greece"
+          alt="Milos, Cyclades · Odyssey Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
@@ -154,7 +154,7 @@ export default function OdysseyGreece() {
                 <p className="font-body text-xs tracking-[0.2em] uppercase text-[#aaa] mb-2">Night</p>
                 <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">Monastiraki Night Walk</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
-                  A relaxed stroll through the lively streets of Monastiraki — artisanal shops, local flavours, and traditional loukoumades by night.
+                  A relaxed stroll through the lively streets of Monastiraki: artisanal shops, local flavours, and traditional loukoumades by night.
                 </p>
               </div>
 
@@ -194,7 +194,7 @@ export default function OdysseyGreece() {
           </div>
           <div className="grid md:grid-cols-3 gap-4 max-w-3xl">
             {[
-              { time: "Morning", title: "Breakfast & departure", detail: "Private transfer to Piraeus port. Morning ferry to Milos — the Aegean opens up." },
+              { time: "Morning", title: "Breakfast & departure", detail: "Private transfer to Piraeus port. Morning ferry to Milos. The Aegean opens up." },
               { time: "Afternoon", title: "Arrival in Milos", detail: "Check-in at a boutique seafront hotel in Adamas. Time to explore the island's first hidden corners or simply rest by the sea." },
               { time: "Evening", title: "Sunset in Plaka", detail: "The Cyclades reveal themselves at golden hour from the hilltop of Plaka village. Dinner at leisure." },
             ].map((m) => (
@@ -281,7 +281,7 @@ export default function OdysseyGreece() {
               <div className="border-l-2 border-[#2e5a88] pl-6 mb-8">
                 <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">A discreet escape beyond Milos</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
-                  Reach Kimolos by a short local ferry crossing from Pollonia. A preserved Cycladic island that few visitors ever discover. A slow day at the island's own pace — quiet chora, secluded beaches, untouched landscapes. Return to Milos in the afternoon.
+                  Reach Kimolos by a short local ferry crossing from Pollonia. A preserved Cycladic island that few visitors ever discover. A slow day at the island's own pace: quiet chora, secluded beaches, untouched landscapes. Return to Milos in the afternoon.
                 </p>
               </div>
 
@@ -329,7 +329,7 @@ export default function OdysseyGreece() {
                 Moonwalk
               </h2>
               <p className="font-body text-base text-white/55 max-w-lg leading-relaxed">
-                A morning kayak experience along Sarakiniko's lunar coastline. Navigate through volcanic formations and sea caves accessible only from the water. A last afternoon in Milos — then the evening ferry back to Athens.
+                A morning kayak experience along Sarakiniko's lunar coastline. Navigate through volcanic formations and sea caves accessible only from the water. A last afternoon in Milos, then the evening ferry back to Athens.
               </p>
             </div>
             <div className="flex flex-col gap-3 text-right shrink-0">
@@ -388,7 +388,7 @@ export default function OdysseyGreece() {
                 n: "#3",
                 day: "Day 4 · Kimolos",
                 title: "Kimolos,\nthe Secret Island",
-                description: "A preserved Cycladic island that few ever discover. Quiet chora, secluded beaches, untouched landscapes — reached by a 15-minute local ferry from Milos.",
+                description: "A preserved Cycladic island that few ever discover. Quiet chora, secluded beaches, untouched landscapes. Reached by a 15-minute local ferry from Milos.",
               },
               {
                 n: "#4",
@@ -440,7 +440,7 @@ export default function OdysseyGreece() {
               },
               {
                 label: "Group",
-                detail: "Designed for a private group of 5 guests. All services private — nothing shared with other travellers.",
+                detail: "Designed for a private group of 5 guests. All services private. Nothing shared with other travellers.",
               },
             ].map((item) => (
               <div key={item.label} className="bg-white p-8 md:p-10">
@@ -467,7 +467,7 @@ export default function OdysseyGreece() {
             Your journey<br />starts here.
           </h2>
           <p className="font-body text-sm text-white/40 mb-12 leading-relaxed max-w-sm mx-auto">
-            This journey was curated for a private group of 5. Yours begins with a conversation — tell us who you are and what you dream of.
+            This journey was curated for a private group of 5. Yours begins with a conversation. Tell us who you are and what you dream of.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
