@@ -19,25 +19,25 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <section
         data-nav-dark
-        className="relative h-screen flex flex-col justify-between overflow-hidden"
+        className="relative h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80"
-          alt="Greece"
+          src="https://images.unsplash.com/photo-1601622881953-1e3e3a5a72e0?auto=format&fit=crop&w=1920&q=80"
+          alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-black/40" />
 
         {/* Titre — centré verticalement, ancré à gauche */}
-        <div className="relative z-10 flex-1 flex items-center px-8 md:px-16 pt-20">
+        <div className="relative z-10 flex-1 flex items-center px-8 md:px-16 pt-16 md:pt-20">
           <div>
-            <h1 className="font-heading text-[clamp(3.5rem,11vw,10rem)] leading-[0.9] text-white">
+            <h1 className="font-heading text-[clamp(2.8rem,11vw,10rem)] leading-[0.9] text-white">
               Greece,<br />privately.
             </h1>
             <div className="flex items-center gap-5 mt-8">
               <a
                 href="/contact"
-                className="font-body text-xs tracking-[0.25em] uppercase bg-white text-[#1a1a1a] px-7 py-3 hover:bg-white/80 transition-colors"
+                className="font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-7 py-3 hover:bg-white/10 transition-colors"
               >
                 Begin your journey
               </a>
