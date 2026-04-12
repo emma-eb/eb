@@ -22,9 +22,10 @@ export default function Home() {
         className="relative h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
         <img
-          src="https://plus.unsplash.com/premium_photo-1677535563233-6252918cf349?auto=format&fit=crop&w=1920&q=80"
+          src="/hero-bateau.jpg"
           alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "right center" }}
         />
         <div className="absolute inset-0 bg-black/40" />
 

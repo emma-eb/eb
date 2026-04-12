@@ -95,6 +95,58 @@ export default function Journeys() {
         </div>
       </section>
 
+      {/* Sample journey — Odyssey Greece */}
+      <section className="bg-[#fcf7f1] py-20 md:py-28 px-8 md:px-16 border-t border-[#e8e4de]">
+        <div className="max-w-6xl mx-auto">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-12">A journey we curated</p>
+          <div className="grid md:grid-cols-[1fr_1px_1fr] gap-0 bg-[#e8e4de]">
+            <div className="bg-[#fcf7f1] p-10 md:p-14 flex flex-col gap-5">
+              <div className="flex flex-wrap gap-3">
+                {["Athens", "Milos", "Kimolos"].map((d) => (
+                  <span key={d} className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9]">{d}</span>
+                ))}
+              </div>
+              <h2 className="font-heading text-4xl md:text-5xl text-[#1a1a1a] leading-none">Odyssey<br />Greece</h2>
+              <p className="font-body text-sm text-[#888] leading-relaxed max-w-sm">
+                5 nights, 4 Hero Experiences, 3 destinations. From rooftop dinner under the Parthenon to kayaking along a lunar coastline — a journey shaped by light, sea and time.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {["5 Nights", "4 Hero Experiences", "Private group of 5"].map((b) => (
+                  <span key={b} className="font-body text-xs tracking-[0.15em] uppercase border border-[#e8e4de] text-[#aaa] px-3 py-1.5">{b}</span>
+                ))}
+              </div>
+              <a
+                href="/journeys/odyssey-greece"
+                className="font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-px self-start hover:border-[#2e5a88] transition-colors mt-2"
+              >
+                Explore this journey →
+              </a>
+            </div>
+            <div className="bg-[#e8e4de]" />
+            <div className="bg-[#fcf7f1] p-10 md:p-14 flex flex-col gap-6">
+              <p className="font-body text-xs tracking-[0.2em] uppercase text-[#888] mb-2">4 Hero Experiences</p>
+              {[
+                { n: "#1", title: "Dinner Under the Parthenon", day: "Day 1 · Athens" },
+                { n: "#2", title: "The Aegean Odyssey", day: "Day 3 · Kleftiko caves" },
+                { n: "#3", title: "Kimolos, the Secret Island", day: "Day 4 · Kimolos" },
+                { n: "#4", title: "Moonwalk", day: "Day 5 · Sarakiniko kayak" },
+              ].map((exp) => (
+                <div key={exp.n} className="flex items-start gap-5 border-b border-[#e8e4de] pb-5 last:border-0 last:pb-0">
+                  <span className="font-heading text-2xl text-[#e8e4de] leading-none shrink-0">{exp.n}</span>
+                  <div>
+                    <p className="font-body text-sm font-medium text-[#1a1a1a] leading-snug">{exp.title}</p>
+                    <p className="font-body text-xs text-[#888] tracking-wider mt-0.5">{exp.day}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="font-body text-xs text-[#ccc] mt-5 tracking-wider">
+            This is a real journey we designed. Yours will be built entirely from scratch.
+          </p>
+        </div>
+      </section>
+
       {/* What we arrange — dark */}
       <section data-nav-dark className="bg-[#1a1a1a] py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
