@@ -97,20 +97,18 @@ import Nav from "../components/Nav";
 
 export default function Experiences() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-white">
 
       <Nav activePage="/experiences" />
 
       {/* Hero */}
-      <section data-nav-dark className="bg-[#2e5a88] pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16">
+      <section className="bg-white pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16 border-b border-[#e8e4de]">
         <div className="max-w-4xl">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-6">
-            Signature Experiences
-          </p>
-          <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#fcf7f1] mb-8">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">Signature Experiences</p>
+          <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#1a1a1a] mb-8">
             Moments<br />that don&apos;t<br />exist yet.
           </h1>
-          <p className="font-body text-lg text-[#fcf7f1]/70 max-w-xl leading-relaxed">
+          <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
             Not excursions. Not activities. Experiences that require the right relationships, the right timing, and an intimate knowledge of Greece that takes years to build.
           </p>
         </div>
@@ -118,23 +116,18 @@ export default function Experiences() {
 
       {/* Experiences by category */}
       {experiences.map((cat, ci) => (
-        <section
-          key={cat.category}
-          className={`py-20 px-8 md:px-16 ${ci % 2 === 0 ? "bg-[#fcf7f1]" : "bg-[#fcf7f1]"}`}
-        >
+        <section key={cat.category} className={`py-20 px-8 md:px-16 ${ci > 0 ? "border-t border-[#e8e4de]" : ""}`}>
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-6 mb-12">
-              <div className="h-px bg-[#2e5a88] w-12" />
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4]">
-                {cat.category}
-              </p>
+              <div className="h-px bg-[#e8e4de] w-12" />
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888]">{cat.category}</p>
             </div>
             <div className="grid md:grid-cols-3 gap-10">
               {cat.items.map((exp) => (
                 <div key={exp.title} className="flex flex-col gap-3">
-                  <h2 className="font-heading text-2xl text-[#2e5a88] leading-tight">{exp.title}</h2>
+                  <h2 className="font-heading text-2xl text-[#1a1a1a] leading-tight">{exp.title}</h2>
                   <p className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9]">{exp.location}</p>
-                  <p className="font-body text-sm text-[#2e5a88]/60 leading-relaxed">{exp.description}</p>
+                  <p className="font-body text-sm text-[#888] leading-relaxed">{exp.description}</p>
                 </div>
               ))}
             </div>
@@ -142,19 +135,12 @@ export default function Experiences() {
         </section>
       ))}
 
-      {/* Divider */}
-      <div className="bg-[#fcf7f1] pb-8 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto border-t border-[#2e5a88]/10" />
-      </div>
-
       {/* The eb. difference */}
-      <section className="bg-[#fcf7f1] pb-24 px-8 md:px-16">
+      <section className="bg-white py-24 px-8 md:px-16 border-t border-[#e8e4de]">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-16">
-            Why this is different
-          </p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-16">Why this is different</p>
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <h2 className="font-heading text-5xl md:text-6xl text-[#2e5a88] leading-tight">
+            <h2 className="font-heading text-5xl md:text-6xl text-[#1a1a1a] leading-tight">
               Access is not<br />something we<br />arrange.<br />It&apos;s who we are.
             </h2>
             <div className="flex flex-col gap-8 pt-2">
@@ -173,8 +159,9 @@ export default function Experiences() {
                 },
               ].map(({ title, body }) => (
                 <div key={title}>
-                  <h3 className="font-heading text-xl text-[#2e5a88] mb-2">{title}</h3>
-                  <p className="font-body text-sm text-[#2e5a88]/60 leading-relaxed">{body}</p>
+                  <div className="h-px bg-[#e8e4de] mb-4 w-8" />
+                  <h3 className="font-heading text-xl text-[#1a1a1a] mb-2">{title}</h3>
+                  <p className="font-body text-sm text-[#888] leading-relaxed">{body}</p>
                 </div>
               ))}
             </div>
@@ -185,31 +172,31 @@ export default function Experiences() {
       {/* CTA */}
       <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#1a3a5c]/80" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
-          <h2 className="font-heading text-5xl md:text-6xl text-[#fcf7f1] mb-6">
+          <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
             What would you<br />add to this list?
           </h2>
-          <p className="font-body text-base text-[#fcf7f1]/70 mb-10 max-w-xl mx-auto">
+          <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
             The best experiences are the ones that don&apos;t exist yet. Tell us what you&apos;re looking for.
           </p>
-          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-10 py-4 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors">
+          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Start the conversation
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer data-nav-dark className="bg-[#2e5a88] py-10 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
-          <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">
+      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
+          <p className="font-body text-xs text-white/30 tracking-wider">
             © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
           </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/60">
-            <a href="/partners" className="hover:text-[#fcf7f1] transition-colors">Partners</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors">Contact</a>
+          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
+            <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
+            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
+            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
           </div>
         </div>
       </footer>

@@ -72,44 +72,44 @@ import Nav from "../components/Nav";
 
 export default function Journal() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-white">
 
       <Nav activePage="/journal" />
 
       {/* Hero */}
-      <section className="bg-[#fcf7f1] pt-28 md:pt-40 pb-10 md:pb-16 px-8 md:px-16 border-b border-[#2e5a88]/10">
+      <section className="bg-white pt-28 md:pt-40 pb-10 md:pb-16 px-8 md:px-16 border-b border-[#e8e4de]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-4">Journal</p>
-            <h1 className="font-heading text-6xl md:text-8xl text-[#2e5a88] leading-none">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-4">Journal</p>
+            <h1 className="font-heading text-6xl md:text-8xl text-[#1a1a1a] leading-none">
               Greece,<br />closely.
             </h1>
           </div>
-          <p className="font-body text-sm text-[#2e5a88]/50 max-w-xs leading-relaxed pb-2">
+          <p className="font-body text-sm text-[#888] max-w-xs leading-relaxed pb-2">
             News, destinations, culture, and the conversations shaping how the world sees Greece right now.
           </p>
         </div>
       </section>
 
-      {/* Featured article */}
-      <section data-nav-dark className="bg-[#2e5a88] py-20 px-8 md:px-16">
+      {/* Featured article — dark */}
+      <section data-nav-dark className="bg-[#1a1a1a] py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-8">Featured</p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-8">Featured</p>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] mb-4 inline-block">{featured.tag}</span>
-              <h2 className="font-heading text-4xl md:text-5xl text-[#fcf7f1] leading-tight mb-4">
+              <h2 className="font-heading text-4xl md:text-5xl text-white leading-tight mb-4">
                 {featured.title}
               </h2>
-              <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider mb-6">{featured.subtitle}</p>
+              <p className="font-body text-xs text-white/30 tracking-wider mb-6">{featured.subtitle}</p>
             </div>
             <div className="flex flex-col gap-6">
-              <p className="font-body text-base text-[#fcf7f1]/70 leading-relaxed">{featured.description}</p>
+              <p className="font-body text-base text-white/60 leading-relaxed">{featured.description}</p>
               <a
                 href={featured.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] border-b border-[#a7d1c9]/40 pb-px hover:border-[#a7d1c9] transition-colors"
+                className="self-start font-body text-xs tracking-[0.2em] uppercase text-white/60 border-b border-white/20 pb-px hover:text-white hover:border-white transition-colors"
               >
                 Read on LinkedIn →
               </a>
@@ -119,18 +119,18 @@ export default function Journal() {
       </section>
 
       {/* Articles grid */}
-      <section className="bg-[#fcf7f1] py-20 px-8 md:px-16">
+      <section className="bg-white py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-12">Latest</p>
-          <div className="grid md:grid-cols-3 gap-px bg-[#2e5a88]/10">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-12">Latest</p>
+          <div className="grid md:grid-cols-3 gap-px bg-[#e8e4de]">
             {articles.map((a) => (
-              <div key={a.title} className="bg-[#fcf7f1] p-8 flex flex-col gap-3">
+              <div key={a.title} className="bg-white p-8 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
                   <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9]">{a.tag}</span>
-                  <span className="font-body text-xs text-[#2e5a88]/30 tracking-wider">{a.date}</span>
+                  <span className="font-body text-xs text-[#ccc] tracking-wider">{a.date}</span>
                 </div>
-                <h3 className="font-heading text-xl text-[#2e5a88] leading-tight">{a.title}</h3>
-                <p className="font-body text-sm text-[#2e5a88]/60 leading-relaxed flex-grow">{a.description}</p>
+                <h3 className="font-heading text-xl text-[#1a1a1a] leading-tight">{a.title}</h3>
+                <p className="font-body text-sm text-[#888] leading-relaxed flex-grow">{a.description}</p>
                 {a.href ? (
                   <a
                     href={a.href}
@@ -141,7 +141,7 @@ export default function Journal() {
                     Read →
                   </a>
                 ) : (
-                  <span className="mt-2 self-start font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]/30">
+                  <span className="mt-2 self-start font-body text-xs tracking-[0.2em] uppercase text-[#ccc]">
                     Coming soon
                   </span>
                 )}
@@ -152,18 +152,18 @@ export default function Journal() {
       </section>
 
       {/* Real Estate */}
-      <section className="bg-[#fcf7f1] pb-20 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto border-t border-[#2e5a88]/10 pt-16">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-12">Real Estate</p>
+      <section className="bg-white pb-20 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto border-t border-[#e8e4de] pt-16">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-12">Real Estate</p>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] mb-4 inline-block">{realEstate.tag}</span>
-              <h2 className="font-heading text-4xl text-[#2e5a88] leading-tight mb-3">{realEstate.title}</h2>
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]/40">{realEstate.location}</p>
+              <h2 className="font-heading text-4xl text-[#1a1a1a] leading-tight mb-3">{realEstate.title}</h2>
+              <p className="font-body text-xs tracking-[0.2em] uppercase text-[#aaa]">{realEstate.location}</p>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-body text-base text-[#2e5a88]/70 leading-relaxed">{realEstate.description}</p>
-              <p className="font-body text-sm text-[#2e5a88]/50 leading-relaxed italic">{realEstate.note}</p>
+              <p className="font-body text-base text-[#888] leading-relaxed">{realEstate.description}</p>
+              <p className="font-body text-sm text-[#aaa] leading-relaxed italic">{realEstate.note}</p>
               <div className="flex gap-4">
                 <a
                   href={realEstate.href}
@@ -188,31 +188,31 @@ export default function Journal() {
       {/* CTA */}
       <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#1a3a5c]/80" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
-          <h2 className="font-heading text-5xl md:text-6xl text-[#fcf7f1] mb-6">
+          <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
             Stay close<br />to Greece.
           </h2>
-          <p className="font-body text-base text-[#fcf7f1]/70 mb-10 max-w-xl mx-auto">
+          <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
             Destinations, openings, and news — curated by someone who lives it. No noise, no algorithm.
           </p>
-          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-10 py-4 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors">
+          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Get in touch
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer data-nav-dark className="bg-[#2e5a88] py-10 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
-          <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">
+      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
+          <p className="font-body text-xs text-white/30 tracking-wider">
             © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
           </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/60">
-            <a href="/partners" className="hover:text-[#fcf7f1] transition-colors">Partners</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors">Contact</a>
+          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
+            <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
+            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
+            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
           </div>
         </div>
       </footer>

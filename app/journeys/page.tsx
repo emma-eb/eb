@@ -33,31 +33,27 @@ export default function Journeys() {
   ];
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-white">
 
       <Nav activePage="/journeys" />
 
       {/* Hero */}
-      <section data-nav-dark className="bg-[#2e5a88] pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16">
+      <section className="bg-white pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16 border-b border-[#e8e4de]">
         <div className="max-w-4xl">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-6">
-            Private Journeys
-          </p>
-          <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#fcf7f1] mb-8">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">Private Journeys</p>
+          <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#1a1a1a] mb-8">
             Greece,<br />written<br />for you.
           </h1>
-          <p className="font-body text-lg text-[#fcf7f1]/70 max-w-xl leading-relaxed">
+          <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
             Not a tour. Not a package. A journey conceived around who you are, what you love, and what you&apos;ve never dared to ask for — until now.
           </p>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="bg-[#fcf7f1] py-24 px-8 md:px-16">
+      <section className="bg-white py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-16">
-            How it works
-          </p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-16">How it works</p>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { n: "01", title: "A conversation", body: "Tell us your vision — or let us ask the right questions. There is no form that captures a dream." },
@@ -66,46 +62,43 @@ export default function Journeys() {
               { n: "04", title: "You arrive", body: "To a Greece most people never find. We are available throughout — quietly, in the background." },
             ].map(({ n, title, body }) => (
               <div key={n}>
-                <p className="font-heading text-5xl text-[#a7d1c9] mb-4">{n}</p>
-                <h3 className="font-heading text-xl text-[#2e5a88] mb-3">{title}</h3>
-                <p className="font-body text-sm text-[#2e5a88]/60 leading-relaxed">{body}</p>
+                <p className="font-heading text-5xl text-[#e8e4de] mb-4">{n}</p>
+                <h3 className="font-heading text-xl text-[#1a1a1a] mb-3">{title}</h3>
+                <p className="font-body text-sm text-[#888] leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Journey types */}
-      <section className="bg-[#fcf7f1] pb-24 px-8 md:px-16">
+      {/* Journey archetypes */}
+      <section className="bg-white pb-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-16">
-            Journey archetypes
-          </p>
-          <div className="grid md:grid-cols-2 gap-px bg-[#2e5a88]/10">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-16">Journey archetypes</p>
+          <div className="grid md:grid-cols-2 gap-px bg-[#e8e4de]">
             {journeys.map((j) => (
-              <div key={j.tag} className="bg-[#fcf7f1] p-10 flex flex-col gap-4">
+              <div key={j.tag} className="bg-white p-10 flex flex-col gap-4">
                 <span className="font-body text-xs tracking-[0.25em] uppercase text-[#a7d1c9]">{j.tag}</span>
-                <h2 className="font-heading text-4xl text-[#2e5a88] leading-tight whitespace-pre-line">{j.title}</h2>
-                <div className="flex gap-6 font-body text-xs text-[#2e5a88]/50 tracking-wider">
+                <h2 className="font-heading text-4xl text-[#1a1a1a] leading-tight whitespace-pre-line">{j.title}</h2>
+                <div className="flex flex-wrap gap-4 font-body text-xs text-[#aaa] tracking-wider">
                   <span>{j.duration}</span>
+                  <span>·</span>
                   <span>{j.destinations}</span>
                 </div>
-                <p className="font-body text-sm text-[#2e5a88]/70 leading-relaxed">{j.description}</p>
+                <p className="font-body text-sm text-[#888] leading-relaxed">{j.description}</p>
               </div>
             ))}
           </div>
-          <p className="font-body text-xs text-[#2e5a88]/40 mt-6 tracking-wider">
+          <p className="font-body text-xs text-[#ccc] mt-6 tracking-wider">
             These are starting points, not templates. Every journey is built from scratch.
           </p>
         </div>
       </section>
 
-      {/* What's included */}
-      <section data-nav-dark className="bg-[#2e5a88] py-24 px-8 md:px-16">
+      {/* What we arrange — dark */}
+      <section data-nav-dark className="bg-[#1a1a1a] py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-16">
-            What we arrange
-          </p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-16">What we arrange</p>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
@@ -122,12 +115,12 @@ export default function Journeys() {
               },
             ].map(({ cat, items }) => (
               <div key={cat}>
-                <div className="h-px bg-[#a7d1c9] mb-6 w-12" />
-                <h3 className="font-heading text-2xl text-[#fcf7f1] mb-6">{cat}</h3>
+                <div className="h-px bg-white/15 mb-6 w-12" />
+                <h3 className="font-heading text-2xl text-white mb-6">{cat}</h3>
                 <ul className="flex flex-col gap-3">
                   {items.map((item) => (
-                    <li key={item} className="font-body text-sm text-[#fcf7f1]/60 leading-relaxed flex gap-3">
-                      <span className="text-[#a7d1c9] shrink-0">—</span>
+                    <li key={item} className="font-body text-sm text-white/50 leading-relaxed flex gap-3">
+                      <span className="text-white/25 shrink-0">—</span>
                       {item}
                     </li>
                   ))}
@@ -141,31 +134,31 @@ export default function Journeys() {
       {/* CTA */}
       <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#1a3a5c]/80" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
-          <h2 className="font-heading text-5xl md:text-6xl text-[#fcf7f1] mb-6">
+          <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
             Where do you<br />want to go?
           </h2>
-          <p className="font-body text-base text-[#fcf7f1]/70 mb-10 max-w-xl mx-auto">
+          <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
             There is no destination too remote, no request too specific. Tell us — we&apos;ll tell you if it&apos;s possible. (It usually is.)
           </p>
-          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-10 py-4 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors">
+          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Plan my journey
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer data-nav-dark className="bg-[#2e5a88] py-10 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
-          <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">
+      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
+          <p className="font-body text-xs text-white/30 tracking-wider">
             © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
           </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/60">
-            <a href="/partners" className="hover:text-[#fcf7f1] transition-colors">Partners</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors">Contact</a>
+          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
+            <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
+            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
+            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
           </div>
         </div>
       </footer>
