@@ -8,15 +8,17 @@ export default function OdysseyGreece() {
       {/* ─── HERO ─── */}
       <section
         data-nav-dark
-        className="relative h-[100dvh] flex flex-col justify-end overflow-hidden"
+        className="relative h-[100dvh] flex flex-col overflow-hidden"
       >
         <img
-          src="/hero-bateau.jpg"
-          alt="Odyssey Greece — Athens, Milos, Kimolos"
+          src="https://images.unsplash.com/photo-1772692194533-c427934e9d36?auto=format&fit=crop&w=1920&q=80"
+          alt="Milos, Cyclades — Odyssey Greece"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "right center" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
+        {/* Spacer — keeps content below nav on all screen sizes */}
+        <div className="relative z-10 flex-1 min-h-[5rem]" />
 
         <div className="relative z-10 px-8 md:px-16 pb-16 md:pb-24">
           <p className="font-body text-xs tracking-[0.35em] uppercase text-white/45 mb-5">
@@ -166,8 +168,8 @@ export default function OdysseyGreece() {
             <div className="relative">
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=800&q=80"
-                  alt="Athens and the Acropolis"
+                  src="https://images.unsplash.com/photo-1747571443369-e21d1e2ce292?auto=format&fit=crop&w=800&q=80"
+                  alt="Athens, the Acropolis at sunset"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -217,8 +219,8 @@ export default function OdysseyGreece() {
         className="relative min-h-[75vh] flex items-end overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd?auto=format&fit=crop&w=1920&q=80"
-          alt="Sailing to Kleftiko, Milos"
+          src="https://images.unsplash.com/photo-1662553339913-68229924eea4?auto=format&fit=crop&w=1920&q=80"
+          alt="The caves of Kleftiko, Milos"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
@@ -255,8 +257,8 @@ export default function OdysseyGreece() {
             <div className="relative">
               <div className="aspect-[5/4] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1590068560361-87d6b26e4017?auto=format&fit=crop&w=900&q=80"
-                  alt="Kimolos, the secret island"
+                  src="https://images.unsplash.com/photo-1771659013423-480ece092506?auto=format&fit=crop&w=900&q=80"
+                  alt="Kimolos, whitewashed village on the hillside"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -308,8 +310,8 @@ export default function OdysseyGreece() {
         className="relative min-h-[75vh] flex items-end overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-1684246151046-6cd0bc29f827?auto=format&fit=crop&w=1920&q=80"
-          alt="Sarakiniko, Milos"
+          src="https://images.unsplash.com/photo-1682339087337-d6561607e241?auto=format&fit=crop&w=1920&q=80"
+          alt="Sarakiniko, volcanic white rocks of Milos"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
