@@ -150,7 +150,7 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="mt-auto bg-[#2e5a88] py-10 px-8 md:px-16">
+      <footer data-nav-dark className="mt-auto bg-[#2e5a88] py-10 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
           <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">

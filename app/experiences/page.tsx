@@ -102,7 +102,7 @@ export default function Experiences() {
       <Nav activePage="/experiences" />
 
       {/* Hero */}
-      <section className="bg-[#2e5a88] pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16">
+      <section data-nav-dark className="bg-[#2e5a88] pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16">
         <div className="max-w-4xl">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-6">
             Signature Experiences
@@ -183,7 +183,7 @@ export default function Experiences() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
+      <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#1a3a5c]/80" />
         <div className="relative z-10">
@@ -200,7 +200,7 @@ export default function Experiences() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#2e5a88] py-10 px-8 md:px-16">
+      <footer data-nav-dark className="bg-[#2e5a88] py-10 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
           <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">

@@ -125,7 +125,7 @@ export default function Collection() {
       </section>
 
       {/* BESTIA — Superyacht */}
-      <section className="bg-[#2e5a88] py-24 px-8 md:px-16">
+      <section data-nav-dark className="bg-[#2e5a88] py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-6">
@@ -177,7 +177,7 @@ export default function Collection() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
+      <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#1a3a5c]/80" />
         <div className="relative z-10">
@@ -194,7 +194,7 @@ export default function Collection() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#2e5a88] py-10 px-8 md:px-16">
+      <footer data-nav-dark className="bg-[#2e5a88] py-10 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto" /></a>
           <p className="font-body text-xs text-[#fcf7f1]/40 tracking-wider">
