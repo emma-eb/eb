@@ -22,7 +22,7 @@ export default function Home() {
         className="relative h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-1755605132279-53b10c34749e?auto=format&fit=crop&w=1920&q=80"
+          src="https://plus.unsplash.com/premium_photo-1677535563233-6252918cf349?auto=format&fit=crop&w=1920&q=80"
           alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
