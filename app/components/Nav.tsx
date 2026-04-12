@@ -11,6 +11,7 @@ const links = [
   { href: "/collection", label: "Collection" },
   { href: "/experiences", label: "Experiences" },
   { href: "/journal", label: "Journal" },
+  { href: "/about", label: "About" },
 ];
 
 const NAV_H = 80; // hauteur de la zone nav en px

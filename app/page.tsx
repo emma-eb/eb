@@ -100,16 +100,16 @@ export default function Home() {
           </div>
           <div>
             <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              We don't sell destinations. We know people — the chef who opens his kitchen at midnight, the villa owner who never advertises, the archaeologist who has a key to the Acropolis before dawn.
+              Twelve years producing private experiences for the world&apos;s most demanding luxury brands. In 2020, that same level of production — every detail confirmed, nothing left to interpretation — came to Greece.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Twelve years of relationships in Greece, built one extraordinary experience at a time.
+              Not a travel agency. A destination expert and producer who knows every island, every villa owner, every chef willing to open a kitchen at midnight — and who delivers with the precision of a luxury house.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── THREE PILLARS ─── */}
+      {/* ─── FOUR PILLARS ─── */}
       <section className="bg-white py-24 md:py-32 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-6 mb-16">
@@ -117,33 +117,40 @@ export default function Home() {
             <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">What we do</p>
             <div className="h-px bg-[#e8e4de] flex-1" />
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-[#e8e4de]">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e8e4de]">
             {[
               {
                 n: "01",
                 title: "Private\nJourneys",
-                description: "Itineraries built around who you are — not a template. Islands, villas, art collections, and moments that take years of relationships to arrange.",
+                description: "Itineraries built around who you are — not a template. Islands, villas, and moments that take years of relationships to arrange.",
                 href: "/journeys",
                 cta: "Explore",
               },
               {
                 n: "02",
                 title: "Villa &\nYacht",
-                description: "A curated collection of the most extraordinary private properties in Greece — and BESTIA, our superyacht for those who want the sea to themselves.",
+                description: "A curated collection of the most extraordinary private properties in Greece — and BESTIA, our superyacht, for those who want the sea to themselves.",
                 href: "/collection",
                 cta: "View collection",
               },
               {
                 n: "03",
+                title: "Influencer\nProduction",
+                description: "Brand trips, fam trips, content creation. Greece as your backdrop — 300 days of sun, iconic architecture, and no crowds when you know who to call.",
+                href: "/contact",
+                cta: "For brands",
+              },
+              {
+                n: "04",
                 title: "Signature\nCelebrations",
                 description: "Private dinners at dusk. Proposals on clifftops. Weddings where perfection is the only option.",
                 href: "/experiences",
                 cta: "Discover",
               },
             ].map((p) => (
-              <div key={p.n} className="bg-white p-10 md:p-12 flex flex-col gap-5">
+              <div key={p.n} className="bg-white p-10 flex flex-col gap-5">
                 <span className="font-heading text-4xl text-[#e8e4de]">{p.n}</span>
-                <h2 className="font-heading text-3xl md:text-4xl text-[#1a1a1a] leading-tight whitespace-pre-line">{p.title}</h2>
+                <h2 className="font-heading text-3xl text-[#1a1a1a] leading-tight whitespace-pre-line">{p.title}</h2>
                 <p className="font-body text-sm text-[#888] leading-relaxed flex-grow">{p.description}</p>
                 <a href={p.href} className="font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-px self-start hover:border-[#2e5a88] transition-colors">
                   {p.cta} →
@@ -172,11 +179,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TRUSTED BY ─── */}
+      {/* ─── PAST COLLABORATIONS ─── */}
       <section className="bg-white py-20 md:py-28 px-8 md:px-16 border-t border-[#e8e4de] border-b">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888] mb-12 text-center">
-            Trusted by
+          <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888] mb-2 text-center">
+            Past collaborations
+          </p>
+          <p className="font-body text-xs text-[#ccc] tracking-wider mb-12 text-center">
+            luxury production · Paris &amp; Athens
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {["Balmain", "Van Cleef & Arpels", "Jimmy Choo", "Karl Lagerfeld", "Nina Ricci", "Coach", "Boucheron"].map((brand) => (
