@@ -183,19 +183,20 @@ export default function Experiences() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#a7d1c9] py-24 px-8 md:px-16 text-center">
-        <h2 className="font-heading text-5xl md:text-6xl text-[#2e5a88] mb-6">
-          What would you<br />add to this list?
-        </h2>
-        <p className="font-body text-base text-[#2e5a88]/80 mb-10 max-w-xl mx-auto">
-          The best experiences are the ones that don&apos;t exist yet. Tell us what you&apos;re looking for.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block font-body text-xs tracking-[0.25em] uppercase bg-[#2e5a88] text-[#fcf7f1] px-10 py-4 hover:bg-[#1a3a5c] transition-colors"
-        >
-          Start the conversation
-        </a>
+      <section className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1571406252241-db0280bd36cd?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#1a3a5c]/80" />
+        <div className="relative z-10">
+          <h2 className="font-heading text-5xl md:text-6xl text-[#fcf7f1] mb-6">
+            What would you<br />add to this list?
+          </h2>
+          <p className="font-body text-base text-[#fcf7f1]/70 mb-10 max-w-xl mx-auto">
+            The best experiences are the ones that don&apos;t exist yet. Tell us what you&apos;re looking for.
+          </p>
+          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-10 py-4 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors">
+            Start the conversation
+          </a>
+        </div>
       </section>
 
       {/* Footer */}

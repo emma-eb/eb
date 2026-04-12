@@ -186,19 +186,20 @@ export default function Journal() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#a7d1c9] py-24 px-8 md:px-16 text-center">
-        <h2 className="font-heading text-5xl md:text-6xl text-[#2e5a88] mb-6">
-          Stay close<br />to Greece.
-        </h2>
-        <p className="font-body text-base text-[#2e5a88]/80 mb-10 max-w-xl mx-auto">
-          Destinations, openings, and news — curated by someone who lives it. No noise, no algorithm.
-        </p>
-        <a
-          href="/contact"
-          className="inline-block font-body text-xs tracking-[0.25em] uppercase bg-[#2e5a88] text-[#fcf7f1] px-10 py-4 hover:bg-[#1a3a5c] transition-colors"
-        >
-          Get in touch
-        </a>
+      <section className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#1a3a5c]/80" />
+        <div className="relative z-10">
+          <h2 className="font-heading text-5xl md:text-6xl text-[#fcf7f1] mb-6">
+            Stay close<br />to Greece.
+          </h2>
+          <p className="font-body text-base text-[#fcf7f1]/70 mb-10 max-w-xl mx-auto">
+            Destinations, openings, and news — curated by someone who lives it. No noise, no algorithm.
+          </p>
+          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#fcf7f1] text-[#fcf7f1] px-10 py-4 hover:bg-[#fcf7f1] hover:text-[#2e5a88] transition-colors">
+            Get in touch
+          </a>
+        </div>
       </section>
 
       {/* Footer */}
