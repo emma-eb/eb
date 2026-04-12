@@ -22,7 +22,7 @@ export default function Home() {
         className="relative h-[100dvh] flex flex-col justify-between overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-tVh01OyUd3s?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1755605132279-53b10c34749e?auto=format&fit=crop&w=1920&q=80"
           alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="relative z-10 border-t border-white/15 py-3 overflow-hidden">
           <div
             className="flex gap-0 whitespace-nowrap"
-            style={{ animation: "marquee 40s linear infinite" }}
+            style={{ animation: "marquee 25s linear infinite" }}
           >
             {ticker.map((island, i) => (
               <span
