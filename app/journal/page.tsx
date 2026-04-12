@@ -74,10 +74,10 @@ export default function Journal() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      <Nav theme="light" activePage="/journal" />
+      <Nav activePage="/journal" />
 
       {/* Hero */}
-      <section className="bg-[#fcf7f1] pt-40 pb-16 px-8 md:px-16 border-b border-[#2e5a88]/10">
+      <section className="bg-[#fcf7f1] pt-28 md:pt-40 pb-10 md:pb-16 px-8 md:px-16 border-b border-[#2e5a88]/10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-4">Journal</p>

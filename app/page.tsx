@@ -3,7 +3,7 @@ import Nav from "./components/Nav";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      <Nav theme="dark" />
+      <Nav />
 
       {/* Hero */}
       <section className="relative h-screen flex items-end pb-20 px-8 md:px-16 bg-[#2e5a88] overflow-hidden">

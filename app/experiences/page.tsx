@@ -99,10 +99,10 @@ export default function Experiences() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      <Nav theme="light" activePage="/experiences" />
+      <Nav activePage="/experiences" />
 
       {/* Hero */}
-      <section className="bg-[#2e5a88] pt-40 pb-24 px-8 md:px-16">
+      <section className="bg-[#2e5a88] pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16">
         <div className="max-w-4xl">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-[#a7d1c9] mb-6">
             Signature Experiences

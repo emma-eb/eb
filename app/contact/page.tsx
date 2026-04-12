@@ -4,10 +4,10 @@ export default function Contact() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      <Nav theme="light" activePage="/contact" />
+      <Nav activePage="/contact" />
 
       {/* Header */}
-      <section className="bg-[#fcf7f1] pt-40 pb-20 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] pt-28 md:pt-40 pb-12 md:pb-20 px-8 md:px-16">
         <div className="max-w-4xl">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-[#7da7c4] mb-6">
             Begin here
