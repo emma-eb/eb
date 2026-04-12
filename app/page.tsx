@@ -137,7 +137,7 @@ export default function Home() {
                 n: "03",
                 title: "Influencer\nProduction",
                 description: "Brand trips, fam trips, content creation. Greece as your backdrop — 300 days of sun, iconic architecture, and no crowds when you know who to call.",
-                href: "/contact",
+                href: "/influencer-production",
                 cta: "For brands",
               },
               {
@@ -230,7 +230,8 @@ export default function Home() {
             © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
           </p>
           <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
-            <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
+            <a href="/about" className="hover:text-white/70 transition-colors">About</a>
+            <a href="/influencer-production" className="hover:text-white/70 transition-colors">For Brands</a>
             <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
             <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
           </div>
