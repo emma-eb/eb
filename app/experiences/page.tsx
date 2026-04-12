@@ -68,85 +68,69 @@ const heroExperiences = [
   },
 ];
 
-const conciergeServices = [
+const conciergeCards = [
   {
-    anchor: "dining",
+    tag: "Dining",
     title: "Private Dining &\nRestaurant Reservations",
-    subtitle: "Privileged access to Greece's most sought-after tables",
-    desc: "Through trusted relationships with leading restaurants and hospitality teams, guests benefit from priority access to some of the most requested dining venues across Greece — from Michelin-starred Athens rooftops to the caldera's most romantic cliffside tables.",
-    cities: [
-      { city: "Athens", items: ["Michelin-starred dining", "Iconic rooftop tables with Acropolis views", "Authentic Greek flavors"] },
-      { city: "Athenian Riviera", items: ["Four Seasons Astir Palace", "Chic seaside restaurants", "Sunset dining overlooking the Aegean"] },
-      { city: "Mykonos", items: ["Chef-driven gastronomy", "Iconic seaside dining", "Beach clubs & nightlife venues"] },
-      { city: "Santorini", items: ["Caldera view dining", "Local flavors & volcanic terroir", "Romantic cliffside tables"] },
+    desc: "Priority access to Greece's most sought-after tables — Michelin-starred rooftops in Athens, caldera dining in Santorini, sunset tables on the Athenian Riviera, beach clubs in Mykonos. Curated recommendations and reservations handled for you.",
+    bullets: [
+      "Michelin-starred restaurants across Greece",
+      "Iconic rooftop & caldera view tables",
+      "Athenian Riviera & island beach clubs",
+      "Exclusive private dining experiences",
     ],
-    bullets: null,
     photo: "https://images.unsplash.com/photo-1760888938853-f3f92bd210b8",
   },
   {
-    anchor: "gastro",
+    tag: "Gastronomy",
     title: "Gastronomic\nJourneys",
-    subtitle: "Discover Greece through curated food & culinary experiences",
-    desc: "Tailor-made journeys combining refined restaurants, authentic local tavernas and exceptional regional products. Private food tours with expert guides, market visits, wine tastings and carefully curated dining reservations across Greece.",
-    cities: null,
-    bullets: ["Private food tours with expert guides", "Market visits & produce tastings", "Curated regional dining reservations", "Cooking experiences with local producers"],
+    desc: "Tailor-made culinary journeys combining refined restaurants, authentic local tavernas and exceptional regional products. Private food tours with expert guides, market visits, wine tastings and curated dining reservations across Greece.",
+    bullets: [
+      "Private food tours with expert guides",
+      "Market visits & produce tastings",
+      "Curated regional dining reservations",
+      "Cooking experiences with local producers",
+    ],
     photo: "https://images.unsplash.com/photo-1634372307576-18e2a25e825b",
   },
   {
-    anchor: "wine",
+    tag: "Wine",
     title: "Private Wine &\nVineyard Visits",
-    subtitle: "Greece's most distinctive wine regions, privately",
-    desc: "Private vineyard visits, curated tastings and refined gastronomic pairings — in Santorini's volcanic vineyards overlooking the caldera, or in the renowned wine estates of the Peloponnese. Intimate encounters with the winemakers themselves.",
-    cities: null,
-    bullets: ["Santorini volcanic vineyards", "Peloponnese wine estates", "Private tastings with winemakers", "Food & wine pairing experiences"],
+    desc: "Greece's most distinctive wine regions through exclusive vineyard experiences — Santorini's volcanic vineyards overlooking the caldera, or the renowned estates of the Peloponnese. Intimate encounters with the winemakers themselves.",
+    bullets: [
+      "Santorini volcanic vineyards",
+      "Peloponnese wine estates",
+      "Private tastings with winemakers",
+      "Food & wine pairing experiences",
+    ],
     photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48",
   },
   {
-    anchor: "concierge",
+    tag: "Lifestyle",
     title: "Lifestyle &\nConcierge",
-    subtitle: "Every detail of your stay, arranged",
-    desc: "From securing the impossible table to arranging a private museum visit at dawn. Available throughout your journey — quietly, in the background — to handle every request with discretion and exceptional attention to detail.",
-    cities: null,
-    bullets: ["Priority reservations at any venue", "Private cultural & museum access", "Transfers, drivers, logistics", "24/7 on-ground support"],
+    desc: "Every detail of your stay arranged with discretion. From the impossible restaurant table to a private museum visit at dawn, private transfers, villa staff, and 24/7 on-ground support throughout your journey.",
+    bullets: [
+      "Priority reservations at any venue",
+      "Private cultural & museum access",
+      "Transfers, drivers, villa logistics",
+      "24/7 on-ground support",
+    ],
     photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d",
   },
 ];
 
 export default function Experiences() {
   const [activeHero, setActiveHero] = useState(0);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [cursorImg, setCursorImg] = useState<string | null>(null);
-  const [showCursor, setShowCursor] = useState(false);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
 
       <Nav activePage="/experiences" />
 
-      {/* Cursor follower — rendered at root, covers full page */}
-      <div
-        className={`fixed pointer-events-none z-50 overflow-hidden transition-opacity duration-300 ${showCursor ? "opacity-100" : "opacity-0"}`}
-        style={{
-          left: cursorPos.x + 28,
-          top: cursorPos.y,
-          transform: "translateY(-40%)",
-          width: "260px",
-          height: "340px",
-        }}
-      >
-        {cursorImg && (
-          <img
-            src={cursorImg + "?auto=format&fit=crop&w=520&q=85"}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        )}
-      </div>
-
-      {/* Hero */}
+      {/* Page hero */}
       <section className="bg-white pt-28 md:pt-40 pb-16 md:pb-24 px-8 md:px-16 border-b border-[#e8e4de]">
         <div className="max-w-4xl">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">Signature & Concierge</p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">Experiences</p>
           <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#1a1a1a] mb-8">
             Moments<br />you can&apos;t<br />book online.
           </h1>
@@ -156,157 +140,129 @@ export default function Experiences() {
         </div>
       </section>
 
-      {/* ─── HERO EXPERIENCES — side panel ─── */}
-      <section className="bg-white py-0">
-        <div className="max-w-none">
-          <div className="px-8 md:px-16 py-16">
-            <div className="flex items-center gap-6">
-              <div className="h-px bg-[#e8e4de] flex-1" />
-              <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">Hero Experiences</p>
-              <div className="h-px bg-[#e8e4de] flex-1" />
-            </div>
+      {/* ══════════════════════════════════════════
+          SECTION 01 — HERO EXPERIENCES
+      ══════════════════════════════════════════ */}
+      <section className="bg-white border-b border-[#e8e4de]">
+        <div className="px-8 md:px-16 pt-16 pb-10 flex items-end justify-between gap-8 border-b border-[#e8e4de]">
+          <div>
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-3">01</p>
+            <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-none text-[#1a1a1a]">
+              Hero Experiences
+            </h2>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] border-t border-[#e8e4de]">
-
-            {/* Left — stacked cards */}
-            <div className="divide-y divide-[#e8e4de] border-r border-[#e8e4de]">
-              {heroExperiences.map((exp, i) => (
-                <div
-                  key={exp.num}
-                  className={`px-8 md:px-14 py-12 cursor-default transition-colors duration-300 ${
-                    activeHero === i ? "bg-[#fafaf8]" : "bg-white hover:bg-[#fafaf8]/60"
-                  }`}
-                  onMouseEnter={() => setActiveHero(i)}
-                >
-                  <div className="flex items-start justify-between gap-4 mb-5">
-                    <span className="font-heading text-5xl text-[#e8e4de] leading-none">{exp.num}</span>
-                    <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] mt-1">{exp.location}</span>
-                  </div>
-                  <h2 className="font-heading text-4xl text-[#1a1a1a] leading-tight whitespace-pre-line mb-5">
-                    {exp.title}
-                  </h2>
-                  <p className="font-body text-sm text-[#888] leading-relaxed mb-5 max-w-lg">
-                    {exp.desc}
-                  </p>
-                  {exp.note && (
-                    <p className="font-body text-xs text-[#aaa] italic leading-relaxed mb-4">{exp.note}</p>
-                  )}
-                  <ul className="flex flex-col gap-2">
-                    {exp.bullets.map((b) => (
-                      <li key={b} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                        <span className="text-[#ccc] shrink-0">—</span>{b}
-                      </li>
-                    ))}
-                  </ul>
-                  {exp.occasions && (
-                    <p className="font-body text-xs tracking-[0.15em] uppercase text-[#ccc] mt-5">
-                      {exp.occasions}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Right — sticky photo panel */}
-            <div className="hidden lg:block">
-              <div className="sticky top-20 overflow-hidden" style={{ height: "calc(100vh - 5rem)" }}>
-                {heroExperiences.map((exp, i) => (
-                  <img
-                    key={exp.num}
-                    src={exp.photo + "?auto=format&fit=crop&w=840&q=85"}
-                    alt={exp.title}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                      activeHero === i ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          <p className="font-body text-xs text-[#ccc] tracking-wider px-8 md:px-16 py-5 border-t border-[#e8e4de]">
-            Each experience is fully customized. These are starting points — not templates.
+          <p className="hidden md:block font-body text-sm text-[#aaa] leading-relaxed max-w-xs text-right">
+            Signature moments designed to be unrepeatable. Each one produced from scratch.
           </p>
         </div>
-      </section>
 
-      {/* ─── CONCIERGE SERVICES — cursor follower ─── */}
-      <section
-        className="bg-[#fcf7f1] py-24 md:py-32 px-8 md:px-16 border-t border-[#e8e4de]"
-        onMouseMove={(e) => setCursorPos({ x: e.clientX, y: e.clientY })}
-      >
-        <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px]">
 
-          {/* Intro */}
-          <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start mb-20">
-            <div>
-              <div className="h-px bg-[#2e5a88] w-8 mb-5" />
-              <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">Insider Access</p>
-            </div>
-            <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Beyond the signature experiences — privileged access to exceptional dining, curated food journeys and lifestyle services across Athens, the Riviera and the islands.
-            </p>
-          </div>
-
-          {/* Restaurant reservations — full width, cursor photo */}
-          <div
-            className="mb-1 cursor-default"
-            onMouseEnter={() => onConciergeEnter(conciergeServices[0].photo, showCursor, setCursorImg, setShowCursor)}
-            onMouseLeave={() => setShowCursor(false)}
-          >
-            <div className="border-t border-[#e8e4de] py-10">
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] mb-4">
-                {conciergeServices[0].subtitle}
-              </p>
-              <h3 className="font-heading text-3xl md:text-4xl text-[#1a1a1a] mb-5 whitespace-pre-line leading-tight">
-                {conciergeServices[0].title}
-              </h3>
-              <p className="font-body text-sm text-[#888] leading-relaxed max-w-2xl mb-10">
-                {conciergeServices[0].desc}
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#e8e4de]">
-                {conciergeServices[0].cities!.map(({ city, items }) => (
-                  <div key={city} className="bg-[#fcf7f1] p-7">
-                    <p className="font-heading text-lg text-[#1a1a1a] mb-4">{city}</p>
-                    <ul className="flex flex-col gap-2">
-                      {items.map((item) => (
-                        <li key={item} className="font-body text-xs text-[#888] leading-relaxed flex gap-2">
-                          <span className="text-[#ccc] shrink-0">—</span>{item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* 3 service cards — cursor photo */}
-          <div className="grid md:grid-cols-3 gap-px bg-[#e8e4de] mt-px">
-            {conciergeServices.slice(1).map((svc) => (
+          {/* Left — stacked cards */}
+          <div className="divide-y divide-[#e8e4de] border-r border-[#e8e4de]">
+            {heroExperiences.map((exp, i) => (
               <div
-                key={svc.anchor}
-                className="bg-[#fcf7f1] p-10 flex flex-col gap-4 cursor-default"
-                onMouseEnter={() => onConciergeEnter(svc.photo, showCursor, setCursorImg, setShowCursor)}
-                onMouseLeave={() => setShowCursor(false)}
+                key={exp.num}
+                className={`px-8 md:px-14 py-12 cursor-default transition-colors duration-300 ${
+                  activeHero === i ? "bg-[#fafaf8]" : "bg-white hover:bg-[#fafaf8]/60"
+                }`}
+                onMouseEnter={() => setActiveHero(i)}
               >
-                <div className="h-px bg-[#a7d1c9] w-8" />
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9]">{svc.subtitle}</p>
-                <h3 className="font-heading text-2xl text-[#1a1a1a] leading-tight whitespace-pre-line">{svc.title}</h3>
-                <p className="font-body text-sm text-[#888] leading-relaxed flex-grow">{svc.desc}</p>
+                <div className="flex items-start justify-between gap-4 mb-5">
+                  <span className="font-heading text-5xl text-[#e8e4de] leading-none">{exp.num}</span>
+                  <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9] mt-1">{exp.location}</span>
+                </div>
+                <h3 className="font-heading text-4xl text-[#1a1a1a] leading-tight whitespace-pre-line mb-5">
+                  {exp.title}
+                </h3>
+                <p className="font-body text-sm text-[#888] leading-relaxed mb-5 max-w-lg">
+                  {exp.desc}
+                </p>
+                {exp.note && (
+                  <p className="font-body text-xs text-[#aaa] italic leading-relaxed mb-4">{exp.note}</p>
+                )}
                 <ul className="flex flex-col gap-2">
-                  {svc.bullets!.map((item) => (
-                    <li key={item} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
-                      <span className="text-[#ccc] shrink-0">—</span>{item}
+                  {exp.bullets.map((b) => (
+                    <li key={b} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
+                      <span className="text-[#ccc] shrink-0">—</span>{b}
                     </li>
                   ))}
                 </ul>
+                {exp.occasions && (
+                  <p className="font-body text-xs tracking-[0.15em] uppercase text-[#ccc] mt-5">{exp.occasions}</p>
+                )}
               </div>
             ))}
           </div>
 
+          {/* Right — sticky photo panel */}
+          <div className="hidden lg:block">
+            <div className="sticky top-20 overflow-hidden" style={{ height: "calc(100vh - 5rem)" }}>
+              {heroExperiences.map((exp, i) => (
+                <img
+                  key={exp.num}
+                  src={exp.photo + "?auto=format&fit=crop&w=840&q=85"}
+                  alt={exp.title}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                    activeHero === i ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        <p className="font-body text-xs text-[#ccc] tracking-wider px-8 md:px-16 py-5 border-t border-[#e8e4de]">
+          Each experience is fully customized. These are starting points — not templates.
+        </p>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          SECTION 02 — CONCIERGE
+      ══════════════════════════════════════════ */}
+
+      {/* Dark header — announces the section */}
+      <section data-nav-dark className="bg-[#1a1a1a] px-8 md:px-16 pt-16 pb-14">
+        <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-3">02</p>
+        <div className="flex items-end justify-between gap-8">
+          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-none text-white">
+            Concierge
+          </h2>
+          <p className="hidden md:block font-body text-sm text-white/40 leading-relaxed max-w-xs text-right">
+            Privileged access to exceptional dining, curated food experiences and lifestyle services across Greece.
+          </p>
+        </div>
+      </section>
+
+      {/* Moodboard — 2×2 photo cards */}
+      <section className="bg-white">
+        <div className="grid md:grid-cols-2 gap-px bg-[#e8e4de]">
+          {conciergeCards.map((card) => (
+            <div key={card.tag} className="bg-white flex flex-col">
+              {/* Photo */}
+              <div className="overflow-hidden aspect-[4/3]">
+                <img
+                  src={card.photo + "?auto=format&fit=crop&w=900&q=85"}
+                  alt={card.title}
+                  className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
+              </div>
+              {/* Text */}
+              <div className="p-10 flex flex-col gap-4 flex-grow">
+                <span className="font-body text-xs tracking-[0.2em] uppercase text-[#a7d1c9]">{card.tag}</span>
+                <h3 className="font-heading text-3xl text-[#1a1a1a] leading-tight whitespace-pre-line">{card.title}</h3>
+                <p className="font-body text-sm text-[#888] leading-relaxed flex-grow">{card.desc}</p>
+                <ul className="flex flex-col gap-2 mt-2">
+                  {card.bullets.map((b) => (
+                    <li key={b} className="font-body text-xs text-[#aaa] tracking-wider flex gap-3">
+                      <span className="text-[#ccc] shrink-0">—</span>{b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -348,14 +304,4 @@ export default function Experiences() {
 
     </main>
   );
-}
-
-function onConciergeEnter(
-  photo: string,
-  _showCursor: boolean,
-  setCursorImg: (v: string) => void,
-  setShowCursor: (v: boolean) => void
-) {
-  setCursorImg(photo);
-  setShowCursor(true);
 }
