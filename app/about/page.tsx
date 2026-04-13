@@ -16,7 +16,7 @@ export default function About() {
                 Emma<br />Bonnefous
               </h1>
               <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-sm">
-                Luxury destination consultant & producer.<br />Athens, Greece.
+                Founder of eb.<br />Athens, Greece.
               </p>
             </div>
             {/* Portrait — place emma-portrait.jpg in /public */}
@@ -81,7 +81,7 @@ export default function About() {
               Getting access to the Acropolis before dawn, anchoring in Kleftiko in August without a crowd, having dinner in a cave on Kimolos. None of this is bookable online. It requires years of presence, respect, and personal relationships. That is what eb. provides.
             </p>
             <p className="font-body text-sm text-[#888] mt-4 leading-relaxed max-w-xl">
-              I bridge European production standards with the expectations of international luxury clients: from UHNW travelers to the most demanding luxury brands planning content in Greece.
+              I bring European production standards to every journey we design. Whether for private travelers or luxury brands producing content in Greece.
             </p>
           </div>
         </div>
@@ -90,12 +90,12 @@ export default function About() {
       {/* What I produce — dark */}
       <section data-nav-dark className="bg-[#1a1a1a] py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-16">What I produce</p>
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-16">What eb. produces</p>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 title: "Private Journeys",
-                body: "Bespoke itineraries for discerning travelers: UHNW individuals and families who want Greece without compromise. Every transfer, every villa, every dinner arranged before departure.",
+                body: "Bespoke itineraries for private travelers: individuals and families who want Greece without compromise. Every transfer, every villa, every dinner arranged before departure.",
               },
               {
                 title: "Influencer & Brand Production",
@@ -149,7 +149,7 @@ export default function About() {
             Let&apos;s talk about<br />what you have in mind.
           </h2>
           <p className="font-body text-sm text-[#888] mb-10 leading-relaxed">
-            Whether you are planning a private journey, a brand trip, or a celebration. The first conversation is always a real one.
+            Whether you are planning a private journey, a brand trip, or a celebration, the first conversation is always a real one.
           </p>
           <a
             href="/contact"

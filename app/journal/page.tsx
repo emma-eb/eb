@@ -194,7 +194,7 @@ export default function Journal() {
             Stay close<br />to Greece.
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
-            Destinations, openings, and news. Curated by someone who lives it. No noise, no algorithm.
+            Destinations, openings, and news. Curated from Athens, by the people who live it.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Get in touch

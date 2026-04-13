@@ -26,7 +26,7 @@ export default function InfluencerProduction() {
             Greece,<br />produced.
           </h1>
           <p className="font-body text-base text-white/60 max-w-xl leading-relaxed">
-            Full-service production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
+            End-to-end production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
           </p>
         </div>
       </section>

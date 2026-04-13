@@ -99,10 +99,10 @@ export default function Home() {
           </div>
           <div>
             <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Twelve years producing private experiences for the world&apos;s most demanding luxury brands. In 2020, that same level of production came to Greece. Every detail confirmed, nothing left to interpretation.
+              eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. That same precision now shapes every journey across Greece.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Not a travel agency. A destination expert and producer who knows every island, every villa owner, every chef willing to open a kitchen at midnight. And who delivers with the precision of a luxury house.
+              Not a travel agency. A private travel studio that knows every island, every villa owner, every chef willing to open a kitchen at midnight. And delivers with the precision of a luxury house.
             </p>
           </div>
         </div>

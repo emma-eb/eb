@@ -101,7 +101,7 @@ export default function Nav({ activePage }: NavProps) {
           <button
             onClick={() => setOpen(!open)}
             className="flex flex-col justify-center gap-[5px] w-6 h-6"
-            aria-label={open ? "Fermer" : "Menu"}
+            aria-label={open ? "Close" : "Menu"}
           >
             <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#1a1a1a]"}`} />
             <span className={`block h-px w-full transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#1a1a1a]"}`} />

@@ -73,7 +73,7 @@ export default function Collection() {
             The most<br />extraordinary<br />addresses<br />in Greece.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Every property in our collection is personally vetted by Emma. No exceptions. No compromises. A villa earns its place here, or it doesn&apos;t appear.
+            Every property in our collection is personally vetted. No exceptions. No compromises. A villa earns its place here, or it doesn&apos;t appear.
           </p>
         </div>
       </section>

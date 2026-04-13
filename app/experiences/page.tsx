@@ -23,7 +23,7 @@ const heroExperiences = [
     num: "#2",
     location: "Across Greece",
     title: "Wedding Proposal\nin Greece",
-    desc: "A once-in-a-lifetime moment set against Greece's most breathtaking landscapes. From the dramatic cliffs of Santorini to hidden terraces overlooking the Aegean. Each proposal is privately curated according to the couple's story, preferred setting and desired level of privacy.",
+    desc: "A moment that changes everything, set against the most dramatic landscapes in Greece. From the cliffs of Santorini to private terraces above the Aegean. Each proposal is curated according to the couple's story, preferred setting and desired level of privacy.",
     note: null,
     occasions: null,
     bullets: [
@@ -279,7 +279,7 @@ export default function Experiences() {
             What would you<br />like to experience?
           </h2>
           <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed">
-            Each experience is designed with flexibility, discretion and exceptional attention to detail. Tell us your occasion. We take care of everything.
+            Each experience is shaped with flexibility, discretion, and a level of care that speaks for itself. Tell us your occasion. We take care of everything.
           </p>
           <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
             Start the conversation

@@ -56,10 +56,10 @@ export default function OdysseyGreece() {
             </div>
             <div>
               <p className="font-body text-2xl md:text-3xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-                The kind of journey your friends will talk about for years to come.
+                The kind of journey that stays with you.
               </p>
               <p className="font-body text-base text-[#888] mt-6 leading-relaxed max-w-xl">
-                A journey designed to immerse you in the essence of Greece. From Athens to the Cyclades, a seamless rhythm of sea, light and slow moments.
+                A journey through the Greece most people never reach. From Athens to the Cyclades, a seamless rhythm of sea, light and slow moments.
               </p>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function OdysseyGreece() {
                 The Aegean<br />Odyssey
               </h2>
               <p className="font-body text-base text-white/55 max-w-lg leading-relaxed">
-                A full day at sea. Sail along Milos' most spectacular coastline to the legendary caves of Kleftiko. Swim in crystal-clear waters, snorkel through hidden coves, and share a relaxed lunch on board as the boat rocks gently in the sun.
+                A full day at sea. Sail along Milos' most spectacular coastline to the legendary caves of Kleftiko. Swim in transparent blue water, snorkel through secluded coves, and share a relaxed lunch on board as the boat rocks gently in the sun.
               </p>
             </div>
             <div className="flex flex-col gap-3 text-right shrink-0">
@@ -356,7 +356,7 @@ export default function OdysseyGreece() {
               A final morning to wander through Athens at your own pace. A coffee in Plaka, a last stroll beneath the Acropolis, a few moments to hold on to before private transfer to the airport.
             </p>
             <p className="font-body text-sm text-[#2e5a88] italic leading-relaxed">
-              "The kind of journey your friends will talk about for years to come."
+              "A journey you won't stop thinking about."
             </p>
           </div>
         </div>
@@ -382,7 +382,7 @@ export default function OdysseyGreece() {
                 n: "#2",
                 day: "Day 3 · Milos",
                 title: "The Aegean\nOdyssey",
-                description: "Full-day sailing to the legendary caves of Kleftiko along Milos' most spectacular coastline. Crystal-clear waters, hidden coves, snorkeling and lunch on board.",
+                description: "Full-day sailing to the legendary caves of Kleftiko along Milos' most spectacular coastline. Transparent blue water, secluded coves, snorkeling and lunch on board.",
               },
               {
                 n: "#3",
