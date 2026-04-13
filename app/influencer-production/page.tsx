@@ -43,7 +43,7 @@ export default function InfluencerProduction() {
               300 days of guaranteed sun. Whitewashed architecture that photographs in any direction. Turquoise water you can swim in from September to October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Greece is the most photogenic backdrop in Europe. The problem is that most brands arrive without the right network. They end up in the same tourist spots, with the same light, in the same season. We solve that.
+              Greece is the most photogenic backdrop in Europe. Most brands arrive without the right network. We bring ours.
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function Journeys() {
       title: "The Cyclades,\nyour way.",
       duration: "10–14 days",
       destinations: "Mykonos · Paros · Naxos · Santorini",
-      description: "Private ferry transfers, handpicked villas on each island, curated dining: from the fisherman's table to the chef's counter. No crowds, no compromises.",
+      description: "Private ferry transfers, handpicked villas on each island, curated dining: from the fisherman's table to the chef's counter. Every detail, privately arranged.",
     },
     {
       tag: "Cultural Immersion",
@@ -45,7 +45,7 @@ export default function Journeys() {
             Greece,<br />written<br />for you.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Not a tour. Not a package. A journey conceived around who you are, what you love, and what you&apos;ve never dared to ask for.
+            More than a journey. An experience conceived around who you are, what you love, and what you&apos;ve never dared to ask for.
           </p>
         </div>
       </section>

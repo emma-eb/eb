@@ -135,7 +135,7 @@ export default function Experiences() {
             Moments<br />you can&apos;t<br />book online.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Across Athens, the Athenian Riviera and the Greek Islands. Private, bespoke, and designed around who you are. Not a catalogue of options.
+            Across Athens, the Athenian Riviera and the Greek Islands. Private, bespoke, and designed around who you are.
           </p>
         </div>
       </section>

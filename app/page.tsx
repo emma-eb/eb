@@ -102,7 +102,7 @@ export default function Home() {
               eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. That same precision now shapes every journey across Greece.
             </p>
             <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Not a travel agency. A private travel studio that knows every island, every villa owner, every chef willing to open a kitchen at midnight. And delivers with the precision of a luxury house.
+              A private travel studio that knows every island, every villa owner, every chef willing to open a kitchen at midnight. With the precision of a luxury house.
             </p>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
               {
                 n: "01",
                 title: "Private\nJourneys",
-                description: "Itineraries built around who you are, not a template. Islands, villas, and moments that take years of relationships to arrange.",
+                description: "Itineraries designed from scratch around who you are. Islands, villas, and moments that take years of relationships to arrange.",
                 href: "/journeys",
                 cta: "Explore",
               },
@@ -173,7 +173,7 @@ export default function Home() {
             Greece only.<br />Always.
           </h2>
           <p className="font-body text-base text-white/60 max-w-md leading-relaxed">
-            We don't do Paris. We don't do Maldives. Every villa owner, every chef, every fisherman on Meganisi. We know them personally.
+            One country. One obsession. Every villa owner, every chef, every fisherman on Meganisi. We know them personally.
           </p>
         </div>
       </section>
