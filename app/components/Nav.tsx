@@ -7,9 +7,9 @@ interface NavProps {
 }
 
 const links = [
+  { href: "/experiences", label: "Experiences" },
   { href: "/journeys", label: "Private Journeys" },
   { href: "/collection", label: "Collection" },
-  { href: "/experiences", label: "Experiences" },
   { href: "/journal", label: "Journal" },
   { href: "/about", label: "About" },
 ];
