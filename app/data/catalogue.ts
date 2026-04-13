@@ -90,7 +90,7 @@ export const catalogue: CatalogueItem[] = [
     route: "Koufonisia \u2192 Schinoussa \u2192 Iraklia",
     /* Village pecheurs Milos crique turquoise bateaux */
     image: "https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Get the route", href: "/experiences/sailing-small-cyclades" },
+    cta: { label: "Get the route", href: "/journeys/sailing-small-cyclades" },
     tags: ["5-day route"],
     hasPaywall: true,
   },
@@ -148,6 +148,22 @@ export const catalogue: CatalogueItem[] = [
     image: "https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=900&q=80",
     cta: { label: "Request availability", href: "/contact" },
     tags: ["yacht"],
+  },
+
+  {
+    id: "odyssey-greece",
+    type: "journey",
+    moods: ["azure"],
+    title: "Odyssey Greece",
+    subtitle: "Athens \u2192 Milos \u2192 Kimolos \u2192 Athens",
+    description: "Six days across the Aegean. From the Acropolis at dawn to the lunar shores of Sarakiniko. The definitive Greek odyssey.",
+    duration: "6 days",
+    route: "Athens \u2192 Milos \u2192 Kimolos \u2192 Athens",
+    /* Sarakiniko roches blanches lunaires */
+    image: "https://images.unsplash.com/photo-1693133144613-146eee2307dd?auto=format&fit=crop&w=900&q=80",
+    cta: { label: "Get the route", href: "/journeys/odyssey-greece" },
+    tags: ["6-day route"],
+    hasPaywall: true,
   },
 
   /* ─── STONE & SILENCE ─── */
