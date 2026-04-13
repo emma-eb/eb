@@ -134,17 +134,17 @@ export default function Home() {
               },
               {
                 n: "03",
-                title: "Influencer\nProduction",
-                description: "Brand trips, fam trips, content creation. Greece as your backdrop: 300 days of sun, iconic architecture, and no crowds when you know who to call.",
-                href: "/influencer-production",
-                cta: "For brands",
-              },
-              {
-                n: "04",
                 title: "Signature\nCelebrations",
                 description: "Private dinners at dusk. Proposals on clifftops. Weddings where perfection is the only option.",
                 href: "/experiences",
                 cta: "Discover",
+              },
+              {
+                n: "04",
+                title: "Influencer\nProduction",
+                description: "Brand trips, fam trips, content creation. Greece as your backdrop: 300 days of sun, iconic architecture, and no crowds when you know who to call.",
+                href: "/influencer-production",
+                cta: "For brands",
               },
             ].map((p) => (
               <div key={p.n} className="bg-white p-10 flex flex-col gap-5">
