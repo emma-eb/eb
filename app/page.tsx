@@ -334,7 +334,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-heading text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9] text-[#2e5a88] mb-6">
+          <h2 className="font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
             Ready to begin?
           </h2>
           <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
