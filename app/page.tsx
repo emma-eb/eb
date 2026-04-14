@@ -73,7 +73,7 @@ export default function Home() {
           </p>
 
           {/* Body */}
-          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light">
+          <p className="hidden md:block font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light">
             Today, eb. is a private travel studio dedicated to Greece. A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
           </p>
 
@@ -120,7 +120,7 @@ export default function Home() {
             <a
               key={door.title}
               href={door.href}
-              className="group relative h-[85vh] md:h-full md:flex-1 overflow-hidden"
+              className="group relative h-[55vh] md:h-full md:flex-1 overflow-hidden"
             >
               <img
                 src={door.image}
