@@ -58,12 +58,12 @@ export default function Home() {
           BLOC 02 — THE STUDIO
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] pt-16 pb-8 md:pt-20 md:pb-10 px-8 md:px-16">
-        <div className="max-w-[700px] ml-auto mr-auto md:ml-[15%] md:mr-auto">
+        <div className="max-w-[700px] mx-auto text-center">
           {/* Surtitre */}
           <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-6">
             The Studio
           </p>
-          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-8" />
+          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-8 mx-auto" />
 
           {/* Statement */}
           <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-8">
