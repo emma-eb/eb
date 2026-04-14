@@ -323,7 +323,7 @@ export default function Home() {
             One country. One obsession.
           </p>
           <p className="font-body text-[15px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
-            A skipper who knows where to anchor when the meltemi blows. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
+            A skipper who knows where to anchor when the wind picks up. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
           </p>
         </div>
       </section>
