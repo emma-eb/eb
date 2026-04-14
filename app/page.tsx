@@ -60,10 +60,10 @@ export default function Home() {
       <section className="bg-[#fcf7f1] pt-16 pb-8 md:pt-20 md:pb-10 px-8 md:px-16">
         <div className="max-w-[700px] mx-auto text-center">
           {/* Surtitre */}
-          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-3">
+          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             The Studio
           </p>
-          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-6 mx-auto" />
+          <div className="w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" />
 
           {/* Statement */}
           <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4">
@@ -93,7 +93,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 03 — THREE DOORS (ne pas toucher)
       ═══════════════════════════════════════════ */}
-      <section ref={doorsRef} id="discover" className="bg-white">
+      <section ref={doorsRef} id="discover" data-nav-dark className="bg-white">
         <div className="flex flex-col md:flex-row md:h-[85vh]">
           {[
             {
