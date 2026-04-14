@@ -87,18 +87,18 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:h-[85vh]">
           {[
             {
-              title: "Experiences",
-              subtitle: "Singular moments, celebrations, private access",
-              href: "/experiences",
-              cta: "Discover",
-              image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
-            },
-            {
               title: "Private Journeys",
               subtitle: "Multi-day itineraries designed from scratch",
               href: "/journeys",
               cta: "Explore journeys",
               image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
+            },
+            {
+              title: "Experiences",
+              subtitle: "Singular moments, celebrations, private access",
+              href: "/experiences",
+              cta: "Discover",
+              image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Collection",
