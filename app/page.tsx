@@ -88,7 +88,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 02 — WHAT EB. IS
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-36 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-14 md:py-20 px-8 md:px-16">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.9] font-light">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
