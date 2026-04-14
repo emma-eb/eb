@@ -344,12 +344,34 @@ export default function Home() {
           FOOTER (texte blanc/beige lisible)
       ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
-          <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider">
-            &copy; 2026 Emma Bonnefous &middot; hello@emmabonnefous.com &middot; Athens, Greece
-          </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+          {/* Col 1 — Logo + copyright + email */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center md:text-left">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+          </div>
+
+          {/* Col 2 — Legal + Social */}
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-1">Privacy Policy</a>
+              <span>&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-1">Terms</a>
+            </div>
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
+              <a href="#" className="hover:text-[#fcf7f1] transition-colors py-1">Instagram</a>
+              <span>&middot;</span>
+              <a href="#" className="hover:text-[#fcf7f1] transition-colors py-1">LinkedIn</a>
+            </div>
+          </div>
+
+          {/* Col 3 — Nav links */}
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
             <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
             <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
             <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
