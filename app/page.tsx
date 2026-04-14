@@ -57,7 +57,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-8 md:py-12 px-8 md:px-16">
         <div className="max-w-[700px] mx-auto text-center">
           <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.9] font-light">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
@@ -159,9 +159,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/50 mb-3">
+          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured journey
-          </p>
+          </span>
           <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
             5 days through<br />the Small Cyclades
           </h2>
@@ -182,7 +182,16 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 06 — FEATURED EXPERIENCE (ne pas toucher)
+          BLOC 06 — CITATION 1 (respiration)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
+        <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
+          Every journey begins with a single question.
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 07 — FEATURED EXPERIENCE
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <img
@@ -193,9 +202,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/50 mb-3">
+          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured experience
-          </p>
+          </span>
           <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
             Private Dinner<br />Facing the Acropolis
           </h2>
@@ -216,7 +225,16 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 07 — FEATURED COLLECTION (plein cadre immersif)
+          BLOC 08 — CITATION 2 (respiration)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
+        <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
+          We don&apos;t do tours. We design what fits.
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 09 — FEATURED COLLECTION (plein cadre immersif)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <img
@@ -227,9 +245,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/50 mb-3">
+          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
             The collection
-          </p>
+          </span>
           <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
             Private Villas<br />&amp; Yacht
           </h2>
@@ -273,7 +291,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 09 — CTA FINAL (fond clair, texte bleu marine)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-28 md:py-40 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-20 md:py-28 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-heading text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9] text-[#2e5a88] mb-6">
             Ready to begin?
@@ -283,7 +301,7 @@ export default function Home() {
           </p>
           <a
             href="/contact"
-            className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#2e5a88] text-[#2e5a88] px-10 py-4 hover:bg-[#2e5a88] hover:text-white transition-all duration-300 w-full md:w-auto"
+            className="inline-block font-body text-[13px] font-medium tracking-[0.15em] uppercase bg-[#2e5a88] text-white px-10 py-4 hover:opacity-90 transition-opacity duration-200 w-full md:w-auto"
           >
             Start the conversation
           </a>
