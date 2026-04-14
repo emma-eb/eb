@@ -380,20 +380,11 @@ export default function Home() {
           </div>
 
           {/* Col 3 — Nav links */}
-          <div className="flex flex-col items-center md:items-end gap-4">
-            <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
-              <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
-              <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
-              <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
-              <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
-            </div>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#fcf7f1]/60 border-b border-[#fcf7f1]/20 pb-1 hover:text-[#fcf7f1] hover:border-[#fcf7f1]/50 transition-colors duration-300"
-            >
-              Start the conversation
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
-            </a>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
           </div>
         </div>
       </footer>
