@@ -209,7 +209,7 @@ export default function Home() {
           BLOC 06 — CITATION 1 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
-        <p className="font-body text-lg md:text-[22px] italic text-[#1a1a1a]/50 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
+        <p className="font-body text-lg md:text-[22px] font-light text-[#1a1a1a]/40 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
           The difference between visiting Greece and truly knowing it.
         </p>
       </section>
@@ -253,7 +253,7 @@ export default function Home() {
           BLOC 08 — CITATION 2 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
-        <p className="font-body text-lg md:text-[22px] italic text-[#1a1a1a]/50 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
+        <p className="font-body text-lg md:text-[22px] font-light text-[#1a1a1a]/40 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
           One country. A thousand ways to make it yours.
         </p>
       </section>
@@ -293,15 +293,13 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 10 — BANDEAU CHIFFRES (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[18vh] px-8">
-        <p className="hidden md:block font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40 text-center">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+        <p className="hidden md:block font-body text-[22px] font-light text-[#1a1a1a]/40 text-center leading-relaxed whitespace-nowrap">
           12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
         </p>
-        <div className="flex md:hidden flex-col items-center gap-2">
-          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">12 years in luxury production</span>
-          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">35+ islands covered</span>
-          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">Athens-based, worldwide clients</span>
-        </div>
+        <p className="block md:hidden font-body text-lg font-light text-[#1a1a1a]/40 text-center leading-relaxed">
+          12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
+        </p>
       </section>
 
       {/* ═══════════════════════════════════════════
