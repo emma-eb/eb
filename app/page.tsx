@@ -57,24 +57,34 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
-        <div className="max-w-[700px] mx-auto text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#2e5a88] leading-[0.9] mb-10">
+      <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
+        <div className="max-w-[700px] ml-auto mr-auto md:ml-[15%] md:mr-auto">
+          {/* Surtitre */}
+          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-6">
             The Studio
+          </p>
+          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-8" />
+
+          {/* Statement */}
+          <h2 className="font-heading text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-normal mb-8">
+            eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
           </h2>
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.7] font-light">
-            eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
+
+          {/* Body */}
+          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/60 leading-[1.8] font-light">
+            Today, eb. is a private travel studio dedicated to Greece. A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
           </p>
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a]/60 leading-[1.7] font-light mt-6">
-            A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
+
+          {/* Closing */}
+          <p className="font-body text-[15px] md:text-base text-[#1a1a1a] leading-[1.8] font-light mt-6">
+            eb. finds the Greece that fits you, and shapes every detail.
           </p>
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.7] font-light mt-6">
-            eb. finds the Greece that fits you&nbsp;&mdash; and shapes every detail.
-          </p>
-          <p className="font-body text-sm font-medium text-[#2e5a88] mt-10">
+
+          {/* Signature */}
+          <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
             Founded by Emma Bonnefous &middot; Athens
           </p>
-          <p className="font-body text-[13px] text-[#1a1a1a]/50 mt-2">
+          <p className="font-body text-xs text-[#1a1a1a]/40 mt-1.5">
             Based in Athens &middot; Serving private clients across 15 countries
           </p>
         </div>
