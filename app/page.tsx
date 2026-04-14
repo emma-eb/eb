@@ -55,9 +55,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
+          BLOC 02 — THE STUDIO
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] pt-16 pb-8 md:pt-20 md:pb-10 px-8 md:px-16">
         <div className="max-w-[700px] ml-auto mr-auto md:ml-[15%] md:mr-auto">
           {/* Surtitre */}
           <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-6">
@@ -66,9 +66,9 @@ export default function Home() {
           <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-8" />
 
           {/* Statement */}
-          <h2 className="font-heading text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-normal mb-8">
+          <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-8">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
-          </h2>
+          </p>
 
           {/* Body */}
           <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/60 leading-[1.8] font-light">
