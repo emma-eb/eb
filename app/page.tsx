@@ -364,9 +364,9 @@ export default function Home() {
               <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-1">Terms</a>
             </div>
             <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
-              <a href="#" className="hover:text-[#fcf7f1] transition-colors py-1">Instagram</a>
+              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-1">Instagram</a>
               <span>&middot;</span>
-              <a href="#" className="hover:text-[#fcf7f1] transition-colors py-1">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-1">LinkedIn</a>
             </div>
           </div>
 
