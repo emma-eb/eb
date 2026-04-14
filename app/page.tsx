@@ -58,48 +58,53 @@ export default function Home() {
           BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-[10%]">
-          <div className="md:w-[35%] mb-8 md:mb-0">
-            <h2 className="font-heading text-4xl md:text-5xl text-[#2e5a88] leading-[0.9]">
-              The<br />Studio
-            </h2>
-          </div>
-          <div className="md:w-[55%]">
-            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.8] font-light">
-              eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
-            </p>
-            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a]/60 leading-[1.8] font-light mt-6">
-              A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
-            </p>
-            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.8] font-light mt-6">
-              eb. finds the Greece that fits you&nbsp;&mdash; and shapes every detail.
-            </p>
-          </div>
+        <div className="max-w-[700px] mx-auto text-center">
+          <h2 className="font-heading text-4xl md:text-5xl text-[#2e5a88] leading-[0.9] mb-10">
+            The Studio
+          </h2>
+          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.7] font-light">
+            eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
+          </p>
+          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a]/60 leading-[1.7] font-light mt-6">
+            A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
+          </p>
+          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.7] font-light mt-6">
+            eb. finds the Greece that fits you&nbsp;&mdash; and shapes every detail.
+          </p>
+          <p className="font-body text-sm font-medium text-[#2e5a88] mt-10">
+            Founded by Emma Bonnefous &middot; Athens
+          </p>
+          <p className="font-body text-[13px] text-[#1a1a1a]/50 mt-2">
+            Based in Athens &middot; Serving private clients across 15 countries
+          </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
           BLOC 03 — THREE DOORS (ne pas toucher)
       ═══════════════════════════════════════════ */}
-      <section ref={doorsRef} className="bg-white">
+      <section ref={doorsRef} id="discover" className="bg-white">
         <div className="flex flex-col md:flex-row md:h-[85vh]">
           {[
             {
               title: "Experiences",
               subtitle: "Singular moments, celebrations, private access",
               href: "/experiences",
+              cta: "Discover",
               image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Private Journeys",
               subtitle: "Multi-day itineraries designed from scratch",
               href: "/journeys",
+              cta: "Explore journeys",
               image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Collection",
               subtitle: "Villas, yacht, private properties",
               href: "/collection",
+              cta: "View the collection",
               image: "https://images.unsplash.com/photo-1678266587841-ca65ff1b5b1d?auto=format&fit=crop&w=900&q=80",
             },
           ].map((door) => (
@@ -112,6 +117,7 @@ export default function Home() {
                 src={door.image}
                 alt={door.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
@@ -123,7 +129,7 @@ export default function Home() {
                   {door.subtitle}
                 </p>
                 <div className="mt-5 inline-flex items-center gap-2 font-body text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300">
-                  Explore
+                  {door.cta}
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
                   </svg>
@@ -162,6 +168,7 @@ export default function Home() {
           src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
           alt="Small Cyclades sailing"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
@@ -191,8 +198,8 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 06 — CITATION 1 (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
-        <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+        <p className="font-body text-lg md:text-[22px] italic text-[#1a1a1a]/50 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
           The difference between visiting Greece and truly knowing it.
         </p>
       </section>
@@ -205,6 +212,7 @@ export default function Home() {
           src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
           alt="Athens evening"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
@@ -234,8 +242,8 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 08 — CITATION 2 (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
-        <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+        <p className="font-body text-lg md:text-[22px] italic text-[#1a1a1a]/50 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
           One country. A thousand ways to make it yours.
         </p>
       </section>
@@ -248,6 +256,7 @@ export default function Home() {
           src="/134_terrace_privatebeach.jpg"
           alt="Private villa terrace with sea view, Greece"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
@@ -279,6 +288,7 @@ export default function Home() {
           src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
           alt="Greece"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-black/50" />
 
@@ -290,7 +300,7 @@ export default function Home() {
             One country. One obsession.
           </p>
           <p className="font-body text-[15px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
-            A Michelin-starred kitchen that opens for six guests on a Monday. A skipper who knows where to anchor when the meltemi blows. A villa that never appears online. One country, one network, built over years.
+            A skipper who knows where to anchor when the meltemi blows. A villa that never appears online. A table that takes one phone call&nbsp;&mdash; to the right person. One country, one network, built over years.
           </p>
         </div>
       </section>
@@ -325,11 +335,11 @@ export default function Home() {
           <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider">
             &copy; 2026 Emma Bonnefous &middot; hello@emmabonnefous.com &middot; Athens, Greece
           </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
-            <a href="/about" className="hover:text-[#fcf7f1] transition-colors">About</a>
-            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors">For Brands</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors">Contact</a>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
           </div>
         </div>
       </footer>
