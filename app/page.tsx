@@ -1,7 +1,7 @@
 "use client";
 
 import Nav from "./components/Nav";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const islands = [
   "Santorini", "Mykonos", "Paros", "Naxos", "Milos", "Folegandros",
@@ -15,6 +15,13 @@ const islands = [
 export default function Home() {
   const doorsRef = useRef<HTMLElement>(null);
   const ticker = [...islands, ...islands];
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const scrollToDoors = () => {
     doorsRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -41,7 +48,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 px-8">
+        <div className="relative z-10 px-8 -mt-16 md:mt-0">
           <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase">
             Greece,<br />privately.
           </h1>
@@ -53,6 +60,15 @@ export default function Home() {
               Discover your Greece
             </button>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-50"}`}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-bounce-slow">
+            <path d="M4 7l6 6 6-6" stroke="white" strokeWidth="1.5" />
+          </svg>
         </div>
       </section>
 
@@ -207,7 +223,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 06 — CITATION 1 (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
         <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           The difference between visiting Greece and truly knowing it.
         </p>
@@ -251,7 +267,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 08 — CITATION 2 (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
         <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           One country. A thousand ways to make it yours.
         </p>
@@ -292,11 +308,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 10 — BANDEAU CHIFFRES (respiration)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
         <p className="hidden md:block font-body text-[22px] font-light text-[#1a1a1a]/40 text-center leading-relaxed whitespace-nowrap">
           12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
         </p>
-        <div className="flex md:hidden flex-col items-center gap-3">
+        <div className="flex md:hidden flex-col items-center gap-1.5">
           <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">12 years in luxury production</span>
           <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">35+ islands covered</span>
           <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">Athens-based, worldwide clients</span>

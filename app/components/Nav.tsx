@@ -128,7 +128,7 @@ export default function Nav({ activePage }: NavProps) {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`font-heading text-5xl text-[#fcf7f1] leading-snug transition-all duration-300 hover:text-[#a7d1c9] ${
+              className={`font-heading text-5xl text-[#fcf7f1] leading-snug transition-all duration-300 hover:text-[#fcf7f1]/60 ${
                 open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: open ? `${80 + i * 70}ms` : "0ms" }}
@@ -139,7 +139,7 @@ export default function Nav({ activePage }: NavProps) {
           <a
             href="/contact"
             onClick={() => setOpen(false)}
-            className={`font-heading text-5xl text-[#a7d1c9] leading-snug mt-4 transition-all duration-300 hover:text-[#fcf7f1] ${
+            className={`font-heading text-5xl text-[#fcf7f1] leading-snug mt-4 transition-all duration-300 hover:text-[#fcf7f1]/60 ${
               open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
             style={{ transitionDelay: open ? `${80 + links.length * 70}ms` : "0ms" }}
