@@ -281,7 +281,21 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 08 — GREECE ONLY. ALWAYS. (ne pas toucher)
+          BLOC 10 — BANDEAU CHIFFRES (respiration)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[18vh] px-8">
+        <p className="hidden md:block font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40 text-center">
+          12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
+        </p>
+        <div className="flex md:hidden flex-col items-center gap-2">
+          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">12 years in luxury production</span>
+          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">35+ islands covered</span>
+          <span className="font-body text-[13px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">Athens-based, worldwide clients</span>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 11 — GREECE ONLY. ALWAYS. (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-32 md:py-44 flex items-center justify-center overflow-hidden">
         <img

@@ -19,15 +19,15 @@ const NAV_H = 80; // hauteur de la zone nav en px
 export default function Nav({ activePage }: NavProps) {
   const [open, setOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const check = useCallback(() => {
     if (open) return;
-    // On cherche toutes les sections marquées data-nav-dark
+    setHasScrolled(window.scrollY > 100);
     const darkSections = document.querySelectorAll("[data-nav-dark]");
     let dark = false;
     darkSections.forEach((el) => {
       const r = el.getBoundingClientRect();
-      // La section est-elle sous la zone nav (0 → NAV_H px) ?
       if (r.top < NAV_H && r.bottom > 0) dark = true;
     });
     setIsDark(dark);
@@ -56,7 +56,13 @@ export default function Nav({ activePage }: NavProps) {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 transition-colors duration-300 ${dark ? "bg-transparent" : "bg-[#fcf7f1]/95 backdrop-blur-sm"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 transition-all duration-300 ${
+        !hasScrolled
+          ? "bg-transparent"
+          : dark
+            ? "bg-[#1a1a1a]/85 backdrop-blur-[10px]"
+            : "bg-[#fcf7f1]/95 backdrop-blur-[10px]"
+      }`}>
 
         <a href="/" className="relative z-50">
           <img
