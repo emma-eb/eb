@@ -25,7 +25,7 @@ const keypoints = [
 const includes = [
   "Private sailing vessel with skipper",
   "Hand-picked accommodation on each island",
-  "Curated dining \u2014 tavernas, beach restaurants, private dinners",
+  "Curated dining: tavernas, beach restaurants, private dinners",
   "Transfers between islands arranged",
   "Local insider contacts on each stop",
   "Detailed day-by-day route with timing & tips",
@@ -142,7 +142,7 @@ export default function SailingSmallCyclades() {
               href="#"
               className="inline-block font-body text-xs tracking-[0.25em] uppercase bg-[#1a1a1a] text-white px-10 py-4 hover:bg-[#333] transition-colors"
             >
-              Get the route &mdash; $100
+              Get the route · $100
             </a>
             <a
               href="/contact"

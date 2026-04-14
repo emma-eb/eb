@@ -193,7 +193,7 @@ export default function Home() {
             Koufonisia &middot; Schinoussa &middot; Iraklia
           </p>
           <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
-            Anchor in bays where you&apos;re the only boat. Dine at tavernas with no menu&nbsp;&mdash; just today&apos;s catch.
+            Anchor in bays where you&apos;re the only boat. Dine at tavernas with no menu, just today&apos;s catch.
           </p>
           <a
             href="/journeys"

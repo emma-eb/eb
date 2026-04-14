@@ -39,7 +39,7 @@ export default function ContactPage() {
             Tell us<br />what you<br />dream of.
           </h1>
           <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Every journey starts with a conversation. Share your vision &mdash; we take care of everything else.
+            Every journey starts with a conversation. Share your vision, we take care of everything else.
           </p>
         </div>
       </section>
