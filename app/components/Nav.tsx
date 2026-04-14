@@ -98,7 +98,7 @@ export default function Nav({ activePage }: NavProps) {
         <div className="flex md:hidden items-center gap-4 relative z-50">
           <a
             href="/contact"
-            className={`text-xs tracking-[0.2em] uppercase border px-4 py-2 transition-colors duration-300 ${
+            className={`text-[10px] tracking-[0.2em] uppercase border px-3 py-1.5 transition-colors duration-300 ${
               dark ? "border-[#fcf7f1] text-[#fcf7f1]" : "border-[#2e5a88] text-[#2e5a88]"
             }`}
           >

@@ -33,6 +33,16 @@
   to   { transform: translateX(-50%); }
 }
 
+.marquee-track {
+  animation: marquee 15s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .marquee-track {
+    animation: marquee 25s linear infinite;
+  }
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }

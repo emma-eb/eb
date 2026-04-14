@@ -55,7 +55,7 @@ export default function Home() {
           <div className="mt-10">
             <button
               onClick={scrollToDoors}
-              className="font-body text-xs tracking-[0.25em] uppercase border border-white/60 text-white px-8 py-3.5 hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 cursor-pointer"
+              className="font-body text-xs tracking-[0.25em] uppercase border border-white/30 text-white/80 px-8 py-3.5 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all duration-300 cursor-pointer"
             >
               Discover your Greece
             </button>
@@ -153,7 +153,7 @@ export default function Home() {
                 <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
                   {door.subtitle}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 font-body text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300">
+                <div className="mt-5 inline-flex items-center gap-2 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0">
                   {door.cta}
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
@@ -168,10 +168,9 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 04 — TICKER D'ILES (deplace ici, fond clair)
       ═══════════════════════════════════════════ */}
-      <div className="bg-[#fcf7f1] py-5 overflow-hidden">
+      <div className="bg-[#fcf7f1] py-4 md:py-5 overflow-hidden">
         <div
-          className="flex gap-0 whitespace-nowrap"
-          style={{ animation: "marquee 25s linear infinite" }}
+          className="flex gap-0 whitespace-nowrap marquee-track"
         >
           {ticker.map((island, i) => (
             <span
@@ -338,7 +337,7 @@ export default function Home() {
           <p className="font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10">
             One country. One obsession.
           </p>
-          <p className="font-body text-[15px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
+          <p className="font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
             A skipper who knows where to anchor when the wind picks up. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
           </p>
         </div>
@@ -396,7 +395,7 @@ export default function Home() {
           </div>
 
           {/* Col 3 — Nav links */}
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end">
             <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
             <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
             <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
