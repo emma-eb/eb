@@ -71,12 +71,12 @@ export default function Home() {
           </p>
 
           {/* Body */}
-          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/60 leading-[1.8] font-light">
+          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light">
             Today, eb. is a private travel studio dedicated to Greece. A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
           </p>
 
           {/* Closing */}
-          <p className="font-body text-[15px] md:text-base text-[#1a1a1a] leading-[1.8] font-light mt-6">
+          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6">
             eb. finds the Greece that fits you, and shapes every detail.
           </p>
 
