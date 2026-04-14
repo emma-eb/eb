@@ -29,14 +29,16 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
-        className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden"
+        className="relative h-[100svh] flex flex-col justify-center items-center text-center overflow-hidden"
       >
-        <img
-          src="/hero-bateau.jpg"
-          alt="Aegean Sea, Greece"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "72% 65%" }}
-        />
+        <div className="absolute inset-0">
+          <img
+            src="/hero-bateau.jpg"
+            alt="Aegean Sea, Greece"
+            className="w-full h-full object-cover will-change-transform"
+            style={{ objectPosition: "72% 65%", transform: "translateZ(0)" }}
+          />
+        </div>
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8">
