@@ -82,7 +82,7 @@ export default function Home() {
 
           {/* Signature */}
           <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
-            Founded by Emma Bonnefous &middot; Athens &middot; 12 years in luxury production &middot; Trusted local network across Greece
+            Founded by Emma Bonnefous &middot; Athens
           </p>
         </div>
       </section>
