@@ -69,6 +69,13 @@
   animation: bounce-slow 2s ease-in-out infinite;
 }
 
+/* Safari iOS backdrop-filter support */
+.backdrop-blur-\[10px\],
+.backdrop-blur-\[4px\],
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -79,11 +86,11 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: var(--font-anton), sans-serif;
   font-weight: 400; /* Anton is already bold by design */
-  text-transform: uppercase;
   letter-spacing: 0.02em;
 }

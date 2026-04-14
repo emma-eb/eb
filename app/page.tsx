@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8">
-          <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white">
+          <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase">
             Greece,<br />privately.
           </h1>
           <div className="mt-10">
@@ -129,7 +129,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-                <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight">
+                <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight uppercase">
                   {door.title}
                 </h2>
                 <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
@@ -183,7 +183,7 @@ export default function Home() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured journey
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
+          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
             5 days through<br />the Small Cyclades
           </h2>
           <p className="font-body text-xs tracking-wider uppercase text-white/40 mb-4">
@@ -206,7 +206,7 @@ export default function Home() {
           BLOC 06 — CITATION 1 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
-        <p className="font-body text-lg md:text-[22px] font-light text-[#1a1a1a]/40 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
+        <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           The difference between visiting Greece and truly knowing it.
         </p>
       </section>
@@ -227,7 +227,7 @@ export default function Home() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured experience
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
+          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
             Private Dinner<br />Facing the Acropolis
           </h2>
           <p className="font-body text-xs tracking-wider uppercase text-white/40 mb-4">
@@ -250,7 +250,7 @@ export default function Home() {
           BLOC 08 — CITATION 2 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[25vh] md:h-[28vh] px-8">
-        <p className="font-body text-lg md:text-[22px] font-light text-[#1a1a1a]/40 text-center whitespace-normal md:whitespace-nowrap leading-relaxed">
+        <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           One country. A thousand ways to make it yours.
         </p>
       </section>
@@ -271,7 +271,7 @@ export default function Home() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
             The collection
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
+          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
             Private Villas<br />&amp; Yacht
           </h2>
           <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
@@ -294,9 +294,11 @@ export default function Home() {
         <p className="hidden md:block font-body text-[22px] font-light text-[#1a1a1a]/40 text-center leading-relaxed whitespace-nowrap">
           12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
         </p>
-        <p className="block md:hidden font-body text-lg font-light text-[#1a1a1a]/40 text-center leading-relaxed">
-          12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
-        </p>
+        <div className="flex md:hidden flex-col items-center gap-3">
+          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">12 years in luxury production</span>
+          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">35+ islands covered</span>
+          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">Athens-based, worldwide clients</span>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -312,7 +314,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4">
+          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
             Greece only.<br />Always.
           </h2>
           <p className="font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10">
@@ -364,14 +366,14 @@ export default function Home() {
           {/* Col 2 — Legal + Social */}
           <div className="flex flex-col items-center gap-4">
             <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-1">Privacy Policy</a>
-              <span>&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-1">Terms</a>
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
             </div>
             <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
-              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-1">Instagram</a>
-              <span>&middot;</span>
-              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-1">LinkedIn</a>
+              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
+              <span className="py-2">&middot;</span>
+              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
             </div>
           </div>
 
