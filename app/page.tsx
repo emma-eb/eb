@@ -35,7 +35,7 @@ export default function Home() {
           src="/hero-bateau.jpg"
           alt="Aegean Sea, Greece"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "72% center" }}
+          style={{ objectPosition: "72% 65%" }}
         />
         <div className="absolute inset-0 bg-black/40" />
 
@@ -60,13 +60,13 @@ export default function Home() {
       <section className="bg-[#fcf7f1] pt-16 pb-8 md:pt-20 md:pb-10 px-8 md:px-16">
         <div className="max-w-[700px] mx-auto text-center">
           {/* Surtitre */}
-          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-6">
+          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-3">
             The Studio
           </p>
-          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-8 mx-auto" />
+          <div className="w-[60px] h-px bg-[#1a1a1a]/10 mb-6 mx-auto" />
 
           {/* Statement */}
-          <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-8">
+          <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
           </p>
 
@@ -76,7 +76,7 @@ export default function Home() {
           </p>
 
           {/* Closing */}
-          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6">
+          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-3">
             eb. finds the Greece that fits you, and shapes every detail.
           </p>
 
