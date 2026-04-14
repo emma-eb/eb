@@ -1,7 +1,6 @@
 "use client";
 
 import Nav from "./components/Nav";
-import { villas, yacht } from "./data/catalogue";
 import { useRef } from "react";
 
 const islands = [
@@ -11,36 +10,6 @@ const islands = [
   "Corfu", "Zakynthos", "Rhodes", "Patmos", "Symi", "Halki",
   "Skiathos", "Skopelos", "Alonissos", "Crete", "Chios", "Tinos",
   "Antiparos", "Sikinos", "Anafi", "Thirassia",
-];
-
-const collectionPreview = [
-  {
-    name: "Aegean Essence",
-    location: "Agios Nikolaos, Crete",
-    capacity: "6 bed \u00b7 11 guests",
-    image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "Mykonos Retreat",
-    location: "Mykonos (Aleomandra)",
-    capacity: "7 bed \u00b7 16 guests",
-    tag: "Off-market",
-    image: "https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "White Serenity",
-    location: "Porto Heli",
-    capacity: "5 bed \u00b7 10 guests",
-    tag: "Off-market",
-    image: "https://images.unsplash.com/premium_photo-1675419760216-87c82c6c2223?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    name: "BESTIA",
-    location: "Athens \u2014 All Greek waters",
-    capacity: "4 cabins \u00b7 8 guests",
-    tag: "Yacht charter",
-    image: "https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=800&q=80",
-  },
 ];
 
 export default function Home() {
@@ -56,7 +25,7 @@ export default function Home() {
       <Nav />
 
       {/* ═══════════════════════════════════════════
-          BLOC 01 — HERO
+          BLOC 01 — HERO (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
@@ -86,10 +55,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 02 — WHAT EB. IS
+          BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-14 md:py-20 px-8 md:px-16">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
+        <div className="max-w-[700px] mx-auto text-center">
           <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.9] font-light">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
           </p>
@@ -103,31 +72,27 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 03 — THREE DOORS
+          BLOC 03 — THREE DOORS (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section ref={doorsRef} className="bg-white">
-        {/* Desktop: 3 side by side / Mobile: stacked full screen */}
         <div className="flex flex-col md:flex-row md:h-[85vh]">
           {[
             {
               title: "Private Journeys",
               subtitle: "Multi-day itineraries designed from scratch",
               href: "/journeys",
-              /* Navagio Zakynthos aerien — mer turquoise */
               image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Experiences",
               subtitle: "Singular moments, celebrations, private access",
               href: "/experiences",
-              /* Ruelle blanche Mykonos table vue mer */
               image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Collection",
               subtitle: "Villas, yacht, private properties",
               href: "/collection",
-              /* Terrasse blanche Santorini vue caldera */
               image: "https://images.unsplash.com/photo-1678266587841-ca65ff1b5b1d?auto=format&fit=crop&w=900&q=80",
             },
           ].map((door) => (
@@ -163,11 +128,30 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 04 — FEATURED JOURNEY
+          BLOC 04 — TICKER D'ILES (deplace ici, fond clair)
+      ═══════════════════════════════════════════ */}
+      <div className="bg-[#fcf7f1] py-5 overflow-hidden">
+        <div
+          className="flex gap-0 whitespace-nowrap"
+          style={{ animation: "marquee 25s linear infinite" }}
+        >
+          {ticker.map((island, i) => (
+            <span
+              key={i}
+              className="font-body text-xs tracking-[0.2em] uppercase text-[#1a1a1a]/25 px-5"
+            >
+              {island}
+              <span className="ml-5 text-[#1a1a1a]/15">&middot;</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 05 — FEATURED JOURNEY (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <img
-          /* Village pecheurs Milos crique turquoise */
           src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
           alt="Small Cyclades sailing"
           className="absolute inset-0 w-full h-full object-cover"
@@ -198,11 +182,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 05 — FEATURED EXPERIENCE
+          BLOC 06 — FEATURED EXPERIENCE (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <img
-          /* Monastiraki Athenes vue aerienne soir */
           src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
           alt="Athens evening"
           className="absolute inset-0 w-full h-full object-cover"
@@ -233,67 +216,41 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 06 — COLLECTION PREVIEW
+          BLOC 07 — FEATURED COLLECTION (plein cadre immersif)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-28 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <div className="h-px bg-[#2e5a88] w-8 mb-5" />
-            <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">
-              The Collection
-            </p>
-          </div>
+      <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
+        <img
+          src="/134_terrace_privatebeach.jpg"
+          alt="Private villa terrace with sea view, Greece"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
-          {/* Desktop: grid / Mobile: horizontal scroll */}
-          <div className="flex gap-5 overflow-x-auto pb-4 -mx-8 px-8 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:overflow-visible snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
-            {collectionPreview.map((item) => (
-              <a
-                key={item.name}
-                href="/collection"
-                className="group flex-shrink-0 w-[75vw] md:w-auto snap-start"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#e8e4de]">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {item.tag && (
-                    <span className="absolute top-3 left-3 font-body text-[9px] tracking-[0.15em] uppercase bg-white/90 backdrop-blur-sm text-[#1a1a1a] px-3 py-1.5">
-                      {item.tag}
-                    </span>
-                  )}
-                </div>
-                <div className="mt-3">
-                  <h3 className="font-heading text-xl text-[#1a1a1a]">{item.name}</h3>
-                  <p className="font-body text-xs text-[#999] mt-1 tracking-wide">
-                    {item.location}
-                  </p>
-                  <p className="font-body text-xs text-[#bbb] mt-0.5">{item.capacity}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-
-          <div className="mt-10">
-            <a
-              href="/collection"
-              className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
-            >
-              Where will you stay?
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
-            </a>
-          </div>
+        <div className="relative z-10 p-8 md:p-16 max-w-2xl">
+          <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/50 mb-3">
+            The collection
+          </p>
+          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4">
+            Private Villas<br />&amp; Yacht
+          </h2>
+          <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
+            Handpicked properties across the Greek islands and coastline.
+          </p>
+          <a
+            href="/collection"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+          >
+            Where will you stay?
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+          </a>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 07 — GREECE ONLY. ALWAYS.
+          BLOC 08 — GREECE ONLY. ALWAYS. (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-32 md:py-44 flex items-center justify-center overflow-hidden">
         <img
-          /* Santorini blanc escaliers mer bleue profonde */
           src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
           alt="Greece"
           className="absolute inset-0 w-full h-full object-cover"
@@ -314,39 +271,19 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 08 — TICKER D'ILES
+          BLOC 09 — CTA FINAL (fond clair, texte bleu marine)
       ═══════════════════════════════════════════ */}
-      <div className="bg-[#1a1a1a] border-t border-white/10 py-4 overflow-hidden">
-        <div
-          className="flex gap-0 whitespace-nowrap"
-          style={{ animation: "marquee 25s linear infinite" }}
-        >
-          {ticker.map((island, i) => (
-            <span
-              key={i}
-              className="font-body text-xs tracking-[0.2em] uppercase text-white/30 px-5"
-            >
-              {island}
-              <span className="ml-5 text-white/15">&middot;</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 09 — CTA FINAL
-      ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="bg-[#1a1a1a] py-28 md:py-40 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-28 md:py-40 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-heading text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9] text-white mb-6">
+          <h2 className="font-heading text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9] text-[#2e5a88] mb-6">
             Ready to begin?
           </h2>
-          <p className="font-body text-sm text-white/40 leading-relaxed mb-10">
+          <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
             Tell us what you dream of. We take care of everything else.
           </p>
           <a
             href="/contact"
-            className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white/40 text-white px-10 py-4 hover:bg-white hover:text-[#1a1a1a] transition-all duration-300 w-full md:w-auto"
+            className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#2e5a88] text-[#2e5a88] px-10 py-4 hover:bg-[#2e5a88] hover:text-white transition-all duration-300 w-full md:w-auto"
           >
             Start the conversation
           </a>
@@ -354,19 +291,19 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          FOOTER
+          FOOTER (texte blanc/beige lisible)
       ═══════════════════════════════════════════ */}
-      <footer data-nav-dark className="bg-[#1a1a1a] border-t border-white/10 py-12 px-8 md:px-16">
+      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
-          <p className="font-body text-xs text-white/30 tracking-wider">
+          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+          <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider">
             &copy; 2026 Emma Bonnefous &middot; hello@emmabonnefous.com &middot; Athens, Greece
           </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
-            <a href="/about" className="hover:text-white/70 transition-colors">About</a>
-            <a href="/influencer-production" className="hover:text-white/70 transition-colors">For Brands</a>
-            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
+          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80">
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors">About</a>
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors">Journal</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors">Contact</a>
           </div>
         </div>
       </footer>
