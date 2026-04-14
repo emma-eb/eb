@@ -57,17 +57,24 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 02 — WHAT EB. IS (padding reduit, max-w reduit)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-8 md:py-12 px-8 md:px-16">
-        <div className="max-w-[700px] mx-auto text-center">
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.9] font-light">
-            eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
-          </p>
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a]/70 leading-[1.9] font-light mt-8">
-            A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
-          </p>
-          <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.9] font-light mt-8">
-            eb. finds the Greece that fits you&nbsp;&mdash; and shapes every detail.
-          </p>
+      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-[10%]">
+          <div className="md:w-[35%] mb-8 md:mb-0">
+            <h2 className="font-heading text-4xl md:text-5xl text-[#2e5a88] leading-[0.9]">
+              The<br />Studio
+            </h2>
+          </div>
+          <div className="md:w-[55%]">
+            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.8] font-light">
+              eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses. Today, eb. is a private travel studio dedicated to Greece.
+            </p>
+            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a]/60 leading-[1.8] font-light mt-6">
+              A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
+            </p>
+            <p className="font-body text-[15px] md:text-lg text-[#1a1a1a] leading-[1.8] font-light mt-6">
+              eb. finds the Greece that fits you&nbsp;&mdash; and shapes every detail.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -78,16 +85,16 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:h-[85vh]">
           {[
             {
-              title: "Private Journeys",
-              subtitle: "Multi-day itineraries designed from scratch",
-              href: "/journeys",
-              image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
-            },
-            {
               title: "Experiences",
               subtitle: "Singular moments, celebrations, private access",
               href: "/experiences",
               image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
+            },
+            {
+              title: "Private Journeys",
+              subtitle: "Multi-day itineraries designed from scratch",
+              href: "/journeys",
+              image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
             },
             {
               title: "Collection",
@@ -186,7 +193,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
         <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
-          Every journey begins with a single question.
+          The difference between visiting Greece and truly knowing it.
         </p>
       </section>
 
@@ -229,7 +236,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[30vh] md:h-[35vh] px-8">
         <p className="font-body text-lg md:text-2xl italic text-[#2e5a88] text-center max-w-2xl leading-relaxed">
-          We don&apos;t do tours. We design what fits.
+          One country. A thousand ways to make it yours.
         </p>
       </section>
 
@@ -291,7 +298,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BLOC 09 — CTA FINAL (fond clair, texte bleu marine)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-28 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-heading text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.9] text-[#2e5a88] mb-6">
             Ready to begin?
@@ -301,9 +308,10 @@ export default function Home() {
           </p>
           <a
             href="/contact"
-            className="inline-block font-body text-[13px] font-medium tracking-[0.15em] uppercase bg-[#2e5a88] text-white px-10 py-4 hover:opacity-90 transition-opacity duration-200 w-full md:w-auto"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
           >
             Start the conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
         </div>
       </section>
