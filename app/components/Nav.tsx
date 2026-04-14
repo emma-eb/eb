@@ -56,7 +56,7 @@ export default function Nav({ activePage }: NavProps) {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4">
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 transition-colors duration-300 ${dark ? "bg-transparent" : "bg-[#fcf7f1]/95 backdrop-blur-sm"}`}>
 
         <a href="/" className="relative z-50">
           <img
