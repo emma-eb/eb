@@ -16,17 +16,11 @@ export default function Home() {
   const doorsRef = useRef<HTMLElement>(null);
   const ticker = [...islands, ...islands];
   const [scrolled, setScrolled] = useState(false);
-  const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => setHeroLoaded(true), 100);
-    return () => clearTimeout(t);
   }, []);
 
   /* ─── Scroll reveal + featured image settle ─── */
@@ -102,39 +96,21 @@ export default function Home() {
         data-nav-dark
         className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden"
       >
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0">
           <img
             src="/hero-bateau.jpg"
             alt="Aegean Sea, Greece"
             className="w-full h-full object-cover"
-            style={{
-              objectPosition: "72% 65%",
-              transform: heroLoaded ? "scale(1.0)" : "scale(1.08)",
-              transition: "transform 2s ease-out",
-            }}
+            style={{ objectPosition: "72% 65%" }}
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8 -mt-16 md:mt-0">
-          <h1
-            className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase"
-            style={{
-              opacity: heroLoaded ? 1 : 0,
-              transform: heroLoaded ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 1.2s ease-out 0.3s, transform 1.2s ease-out 0.3s",
-            }}
-          >
+          <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase">
             Greece,<br />privately.
           </h1>
-          <div
-            className="mt-10"
-            style={{
-              opacity: heroLoaded ? 1 : 0,
-              transform: heroLoaded ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s",
-            }}
-          >
+          <div className="mt-10">
             <button
               onClick={scrollToDoors}
               className="font-body text-xs tracking-[0.25em] uppercase border border-white/30 text-white/80 px-8 py-3.5 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all duration-300 cursor-pointer"
