@@ -7,7 +7,7 @@ const experiences = [
   {
     pill: "ATHENS",
     title: "Private Dinner\nFacing the Acropolis",
-    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. A rooftop with a view or a private penthouse, the format is yours.",
+    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private penthouse, the format is yours.",
     cta: "Reserve your evening",
     photo: "/Screenshot 2026-03-09 at 11.30.58.png",
     pos: "center center",
@@ -42,7 +42,7 @@ const concierge = [
   {
     tag: "DINING",
     title: "Private Dining & Reservations",
-    desc: "Rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
+    desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
     photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=1200&q=85",
   },
   {
