@@ -77,8 +77,8 @@ export default function Journal() {
       <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80"
-            alt="Luxury hotel terrace, sea view, Greece"
+            src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1920&q=80"
+            alt="Santorini caldera, golden hour"
             className="img-settle w-full h-full object-cover"
           />
         </div>
@@ -113,22 +113,16 @@ export default function Journal() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 3 — GRILLE ASYMÉTRIQUE MAGAZINE (fond noir)
+          BLOC 3 — GRILLE 7 ARTICLES (fond noir, asymétrique)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a] py-8 md:py-12 px-3 md:px-6">
         <div className="max-w-6xl mx-auto">
 
-          {/* LIGNE 1 : 1 grand + 2 petits */}
+          {/* LIGNE 1 : 1 grand (Emily) + 2 petits (Tourism + Expats) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            {/* Article 1 — Emily in Paris (GRAND) */}
-            <a
-              href="https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:col-span-2 md:row-span-2 overflow-hidden group cursor-pointer"
-              data-delay="0"
-            >
-              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80" alt="Cycladic alley, white and blue, bougainvillea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+            {/* Art 1 — Emily in Paris (GRAND) */}
+            <a href="https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:col-span-2 md:row-span-2 overflow-hidden group cursor-pointer" data-delay="0">
+              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=80" alt="Greek alley, bougainvillea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Culture</span>
@@ -138,15 +132,48 @@ export default function Journal() {
               </div>
             </a>
 
-            {/* Article 2 — Four Seasons (PETIT) */}
-            <a
-              href="https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer"
-              data-delay="60"
-            >
-              <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=800&q=80" alt="Mykonos white architecture, windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+            {/* Art 2 — Tourism Revenue (PETIT) */}
+            <a href="https://greekcitytimes.com/2026/03/26/tourism-revenue-jumps-58-4-in-january-reaches-e473-3-million/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer" data-delay="50">
+              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=800&q=80" alt="Acropolis Athens illuminated" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
+              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; March 2026</p>
+                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Tourism revenue jumps 58.4% to &euro;473M</h3>
+              </div>
+            </a>
+
+            {/* Art 3 — Greece #1 Expats (PETIT) */}
+            <a href="https://www.newsweek.com/greece-worlds-top-retirement-destination-how-americans-can-move-there-11124134" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer" data-delay="100">
+              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Santorini sunset" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
+              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Newsweek &middot; 2026</p>
+                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Greece named world&apos;s #1 retirement destination</h3>
+              </div>
+            </a>
+          </div>
+
+          {/* LIGNE 2 : 3 articles */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
+            {/* Art 4 — Astypalea */}
+            <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer" data-delay="150">
+              <img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=800&q=80" alt="Aerial view Greek island" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Destination</span>
+              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">The Guardian &middot; 2026</p>
+                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Astypalea crowned world&apos;s top destination</h3>
+              </div>
+            </a>
+
+            {/* Art 5 — Four Seasons */}
+            <a href="https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer" data-delay="200">
+              <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=800&q=80" alt="Mykonos infinity pool" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Openings</span>
@@ -156,15 +183,9 @@ export default function Journal() {
               </div>
             </a>
 
-            {/* Article 3 — Conrad Athens (PETIT) */}
-            <a
-              href="https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer"
-              data-delay="120"
-            >
-              <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=800&q=80" alt="Conrad Athens" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+            {/* Art 6 — Conrad Athens */}
+            <a href="https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer" data-delay="250">
+              <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=800&q=80" alt="Athens skyline" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Openings</span>
@@ -175,59 +196,16 @@ export default function Journal() {
             </a>
           </div>
 
-          {/* LIGNE 2 : 3 égaux */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
-            {/* Article 4 — Eréma Milos */}
-            <a
-              href="https://tornosnews.gr/en/businesses/hotels/empiria-group-expands-in-the-cyclades-new-luxury-all-suite-hotel-in-milos-in-jun.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer"
-              data-delay="180"
-            >
-              <img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=800&q=80" alt="Milos Sarakiniko white rocks" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Openings</span>
-              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">TornosNews &middot; Feb 2026</p>
-                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Er&eacute;ma opens in Milos</h3>
-              </div>
-            </a>
-
-            {/* Article 5 — Hyatt Paros */}
-            <a
-              href="https://www.travelandtourworld.com/news/article/greeces-paros-to-welcome-the-stunning-parian-chronicle-hotel-in-summer-2026-offering-luxury-culture-and-wellness-in-a-stunning-aegean-setting/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer"
-              data-delay="240"
-            >
-              <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Hyatt Paros" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Openings</span>
-              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">TATW &middot; April 2026</p>
-                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Destination by Hyatt arrives in Paros</h3>
-              </div>
-            </a>
-
-            {/* Article 6 — Athens WTA */}
-            <a
-              href="https://www.travelandtourworld.com/news/article/india-maldives-jamaica-chile-greece-portugal-vietnam-triumph-at-world-travel-awards-2025-cementing-their-status-as-top-choices-for-adventure-safari-and-luxury-travel/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer"
-              data-delay="300"
-            >
-              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=800&q=80" alt="Athens World Travel Awards" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+          {/* LIGNE 3 : Art 7 — bande large pleine largeur */}
+          <div className="grid grid-cols-1 gap-1 mt-1">
+            <a href="https://greekcitytimes.com/2026/03/11/gulf-tourism-slump-redirects-travelers-greece/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[21/9] overflow-hidden group cursor-pointer" data-delay="300">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80" alt="Luxury resort, terrace, sea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
-              <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">World Travel Awards &middot; 2025</p>
-                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Athens named World&apos;s Leading City Break</h3>
+              <div className="absolute bottom-0 left-0 p-5 md:p-8" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; March 2026</p>
+                <h3 className="font-body text-[18px] md:text-[20px] font-semibold text-white leading-[1.3] mt-2">Tourists reroute to Greece as Gulf slumps</h3>
               </div>
             </a>
           </div>
@@ -305,7 +283,7 @@ export default function Journal() {
             className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 mt-8 min-h-[44px] items-center door-cta"
             data-delay="200"
           >
-            Have a project in mind
+            Have a project in mind?
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
         </div>
