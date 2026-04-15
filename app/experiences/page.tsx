@@ -213,26 +213,28 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          CONCIERGE — horizontal bands on beige
+          CONCIERGE — 2x2 immersive grid
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] pb-12 md:pb-16 px-6 md:px-16">
-        <div className="max-w-5xl mx-auto flex flex-col divide-y divide-[#1a1a1a]/[0.08]">
+      <section className="bg-[#fcf7f1]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {concierge.map((c) => (
-            <div key={c.tag} className="reveal flex flex-col md:flex-row md:items-center gap-0 md:gap-10 py-6">
-              <div className="w-full md:w-[40%] shrink-0 overflow-hidden rounded-sm group">
-                <img
-                  src={c.photo}
-                  alt={c.title}
-                  className="w-full h-[200px] md:h-[220px] object-cover transition-transform duration-600 ease-out md:group-hover:scale-[1.03]"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-5 md:mt-0">
-                <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{c.tag}</span>
-                <h3 className="font-body text-[18px] md:text-[20px] font-medium text-[#2e5a88] leading-[1.2] mt-2">
+            <div key={c.tag} className="reveal relative aspect-[16/9] md:aspect-square overflow-hidden group">
+              <img
+                src={c.photo}
+                alt={c.title}
+                className="img-settle absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-out [@media(hover:hover)]:group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <span className="inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white mb-3">
+                  {c.tag}
+                </span>
+                <h3 className="font-body text-[17px] md:text-[20px] font-semibold text-white leading-[1.2]">
                   {c.title}
                 </h3>
-                <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-3 max-w-md">
+                <p className="font-body text-[13px] text-white/75 font-light leading-[1.5] mt-2 max-w-xs">
                   {c.desc}
                 </p>
               </div>
