@@ -134,7 +134,7 @@ export default function Journal() {
 
             {/* Art 2 — Tourism Revenue (PETIT) */}
             <a href="https://greekcitytimes.com/2026/03/26/tourism-revenue-jumps-58-4-in-january-reaches-e473-3-million/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer" data-delay="50">
-              <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=800&q=80" alt="Acropolis Athens illuminated" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80" alt="Athens Plaka neighborhood, charming street" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
@@ -146,7 +146,7 @@ export default function Journal() {
 
             {/* Art 3 — Greece #1 Expats (PETIT) */}
             <a href="https://www.newsweek.com/greece-worlds-top-retirement-destination-how-americans-can-move-there-11124134" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-auto overflow-hidden group cursor-pointer" data-delay="100">
-              <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80" alt="Santorini sunset" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1609619385002-f40f1df9b5a4?auto=format&fit=crop&w=800&q=80" alt="Santorini white domes blue sky" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
@@ -161,7 +161,7 @@ export default function Journal() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1 mt-1">
             {/* Art 4 — Astypalea */}
             <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer" data-delay="150">
-              <img src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=800&q=80" alt="Aerial view Greek island" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1597211684565-dca64d72c855?auto=format&fit=crop&w=800&q=80" alt="Greek island whitewashed village, Aegean" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Destination</span>
@@ -173,7 +173,7 @@ export default function Journal() {
 
             {/* Art 5 — Four Seasons */}
             <a href="https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[3/4] md:aspect-[4/5] overflow-hidden group cursor-pointer" data-delay="200">
-              <img src="https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=800&q=80" alt="Mykonos infinity pool" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1630958722698-917f18e8d34b?auto=format&fit=crop&w=800&q=80" alt="Mykonos windmills, Little Venice" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Openings</span>
