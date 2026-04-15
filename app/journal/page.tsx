@@ -52,8 +52,8 @@ export default function Journal() {
       <section data-nav-dark className="relative h-[40vh] md:h-[45vh] flex flex-col justify-center items-center text-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1920&q=80"
-            alt="Aegean Sea, deep blue, aerial view"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+            alt="Aerial view Greek coast, turquoise water"
             className="w-full h-full object-cover"
           />
         </div>
