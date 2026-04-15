@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "eb. | Private Greece",
   description: "Private travel curation across Greece. Villas, experiences, and journeys designed by eb.",
-  keywords: ["luxury concierge Greece", "private villa Greece", "Greece bespoke travel"],
+  keywords: ["luxury concierge Greece", "private villa Greece", "Greece private travel"],
 };
 
 export default function RootLayout({

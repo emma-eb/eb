@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Nav from "../components/Nav";
 
-const collabsParis = [
+const collabs = [
   "Balmain \u00b7 Silencio, Paris",
   "Van Cleef & Arpels \u00b7 Peninsula, Paris",
   "Karl Lagerfeld \u00b7 Monnaie de Paris",
@@ -14,16 +14,10 @@ const collabsParis = [
   "Repetto \u00b7 Royal Monceau, Paris",
 ];
 
-const collabsGreece = [
-  "Jimmy Fairly \u00b7 Athens & Islands",
-  "Nina Ricci \u00b7 Content Production",
-  "Spoyl / Flipkart \u00b7 Brand Campaign",
-];
-
 const stats = [
-  { n: "12+", label: "years in luxury production" },
+  { n: "12+", label: "years in luxury PR & production" },
   { n: "80+", label: "high-level productions" },
-  { n: "95", label: "countries" },
+  { n: "40+", label: "countries explored" },
   { n: "1", label: "focus: Greece" },
 ];
 
@@ -71,15 +65,15 @@ export default function About() {
       <Nav activePage="/about" />
 
       {/* ═══════════════════════════════════════════
-          HERO — portrait + name, instant
+          BLOC 1 — HERO (split layout, instant)
       ═══════════════════════════════════════════ */}
       <section className="flex flex-col md:flex-row min-h-[500px]">
         {/* Portrait */}
-        <div className="w-full md:w-1/2 h-[55vh] md:h-auto overflow-hidden bg-[#d4cfc7]">
+        <div className="w-full md:w-1/2 h-auto max-h-[450px] md:max-h-none overflow-hidden bg-[#d4cfc7]" style={{ aspectRatio: "3/4" }}>
           <img
             src="/DSC_9459-Edit.jpg"
             alt="Emma Bonnefous"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top md:aspect-auto md:h-full"
           />
         </div>
         {/* Name */}
@@ -94,39 +88,39 @@ export default function About() {
             Founder, eb.
           </p>
           <p className="font-body text-[14px] text-[#1a1a1a]/40 font-light mt-1">
-            Athens, Greece
+            French, based in Athens
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          STORY — editorial narrative
+          BLOC 2 — STORY (editorial, left-aligned)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-16 md:py-24 px-6 md:px-16">
-        <div className="max-w-3xl mx-auto">
+      <section className="bg-[#fcf7f1] py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-[800px] mx-auto">
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
             The Background
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-10 mx-auto" data-delay="80" />
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light" data-delay="160">
-            Before Greece, there were twelve years inside the machine. Luxury production for houses that don&apos;t accept approximation: Balmain at Silencio, Van Cleef &amp; Arpels at the Peninsula, Karl Lagerfeld at the Monnaie de Paris, Jimmy Choo at Sea Containers London, Coach on the High Line in New York. Eighty productions across Europe and the US. Events where the guest count hit six hundred and the margin for error was zero.
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left" data-delay="160">
+            French, trained in the world of luxury production. Twelve years of PR, influence and event production for houses that don&apos;t accept approximation: Balmain at Silencio, Van Cleef &amp; Arpels at the Peninsula, Karl Lagerfeld at the Monnaie de Paris, Jimmy Choo at Sea Containers London, Coach on the High Line in New York. Eighty productions across Europe and the US. Events where the guest count hit six hundred and the margin for error was zero.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light mt-8" data-delay="240">
-            In 2020, I moved to Athens. Not to slow down. To go deeper. I had worked in ninety-five countries and kept coming back to one. Greece had something I hadn&apos;t found anywhere else: a network of people, fishermen, chefs, villa owners, archaeologists, who don&apos;t advertise what they offer. Access here is earned, not purchased.
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-8" data-delay="240">
+            Before eb., I spent years as a travel planner for high-net-worth clients in Southern Africa, designing private journeys through Tanzania and Botswana. That experience taught me what this kind of traveler actually expects, and how far the details need to go.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light mt-8" data-delay="320">
-            eb. is the result. One country, one focus, one standard. I bring the same precision I learned producing for the world&apos;s most demanding houses to every journey we design. Whether for private travelers or luxury brands producing content in Greece.
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-8" data-delay="320">
+            I have lived in Morocco, traveled through India, Japan, Brazil, South Africa, Australia, China, the US. Dozens of countries, always looking for the same thing: the people who know their place deeply enough to open doors that aren&apos;t visible from the outside. I found more of them in Greece than anywhere else. eb. is the result.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          NUMBERS — 4 figures
+          BLOC 3 — NUMBERS (compact)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-12 md:py-16 px-6 md:px-16">
+      <section className="bg-white py-10 md:py-12 px-6 md:px-16">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center">
           {stats.map((s, i) => (
             <div key={s.n} className="reveal" data-delay={i * 100}>
@@ -138,9 +132,9 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHY GREECE — full-bleed image
+          BLOC 4 — WHY GREECE (full-bleed, bottom-left)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[55vh] md:h-[70vh] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[55vh] md:h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1920&q=80"
@@ -151,17 +145,17 @@ export default function About() {
         <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 p-6 md:p-12 max-w-xl">
-          <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5">
+          <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Why Greece.
           </h2>
-          <div className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.8] max-w-xl" data-delay="200">
+          <div className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.8] max-w-xl" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             <p>
-              Greece is not a backdrop. It is a culture built on hospitality, a geography of extreme contrasts, and a network of people who don&apos;t put what they offer online.
+              Greece is not a backdrop. It is a geography of extreme contrasts, a tradition of hospitality that predates most nations, and a network of people who don&apos;t put what they offer online.
             </p>
-            <p className="mt-5">
+            <p className="mt-6">
               Getting access to the Acropolis before dawn. Anchoring in Kleftiko in August without another boat in sight. Having dinner in a cave on Kimolos that seats eight. None of this is bookable. It takes years of presence, trust, and the right phone numbers.
             </p>
-            <p className="mt-5">
+            <p className="mt-6">
               That is what eb. provides.
             </p>
           </div>
@@ -169,54 +163,36 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          COLLABORATIONS — text only, 2 columns
+          BLOC 5 — COLLABORATIONS (single centered column)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-14 md:py-20 px-6 md:px-16">
+      <section className="bg-[#fcf7f1] py-12 md:py-16 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
             Selected Collaborations
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-10 mx-auto" data-delay="100" />
 
-          <div className="reveal grid md:grid-cols-2 gap-10 md:gap-16" data-delay="200">
-            {/* Paris & International */}
-            <div>
-              <p className="font-body text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase text-[#2e5a88] mb-6">
-                Paris &amp; International
+          <div className="reveal text-center" data-delay="200">
+            {collabs.map((c) => (
+              <p key={c} className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-light leading-[2.2]">
+                {c}
               </p>
-              {collabsParis.map((c) => (
-                <p key={c} className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-light leading-[2.0]">
-                  {c}
-                </p>
-              ))}
-            </div>
-
-            {/* Greece */}
-            <div>
-              <p className="font-body text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase text-[#2e5a88] mb-6">
-                Greece
-              </p>
-              {collabsGreece.map((c) => (
-                <p key={c} className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-light leading-[2.0]">
-                  {c}
-                </p>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          CITATION
+          BLOC 6 — CITATION
       ═══════════════════════════════════════════ */}
-      <section className="bg-white flex items-center justify-center py-12 md:py-20 px-8">
+      <section className="bg-white flex items-center justify-center py-12 md:py-16 px-8">
         <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
-          I had worked in ninety-five countries and kept coming back to one.
+          I had traveled through forty countries and kept coming back to one.
         </p>
       </section>
 
       {/* ═══════════════════════════════════════════
-          CTA FINAL — instant, no animation
+          BLOC 7 — CTA FINAL (instant, no animation)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -228,10 +204,10 @@ export default function About() {
         </div>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase">
+          <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Let&apos;s start with<br />a conversation.
           </h2>
-          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-4 max-w-lg mx-auto leading-relaxed">
+          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-4 max-w-lg mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Whether you are planning a private journey, a celebration, or a brand production in Greece.
           </p>
           <a
@@ -245,7 +221,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          FOOTER
+          BLOC 8 — FOOTER
       ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
