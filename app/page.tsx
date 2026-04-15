@@ -117,10 +117,24 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8 -mt-16 md:mt-0">
-          <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase">
+          <h1
+            className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase"
+            style={{
+              opacity: heroLoaded ? 1 : 0,
+              transform: heroLoaded ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 1.2s ease-out 0.3s, transform 1.2s ease-out 0.3s",
+            }}
+          >
             Greece,<br />privately.
           </h1>
-          <div className="mt-10">
+          <div
+            className="mt-10"
+            style={{
+              opacity: heroLoaded ? 1 : 0,
+              transform: heroLoaded ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s",
+            }}
+          >
             <button
               onClick={scrollToDoors}
               className="font-body text-xs tracking-[0.25em] uppercase border border-white/30 text-white/80 px-8 py-3.5 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all duration-300 cursor-pointer"
