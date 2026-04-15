@@ -10,7 +10,8 @@ const heroExperiences = [
     title: "Private Dinner Facing the Acropolis",
     desc: "A table set for your evening only. The Acropolis lit against the sky, the city quiet below.\n\nWe know the kitchens that don\u2019t take reservations online, the terraces that close for one group, the chefs who will design a menu around a single conversation. The format is yours: a Michelin-starred terrace, a private rooftop, a chef at your villa.",
     cta: "Tell us your occasion",
-    photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85",
+    imgPosition: "center center",
   },
   {
     num: "#2",
@@ -19,6 +20,7 @@ const heroExperiences = [
     desc: "The setting says everything. A clifftop terrace at golden hour. A private beach at the end of an unmarked road. A garden lit with candles in the Peloponnese.\n\nWe scout the location, arrange every detail, and disappear. The photographer is already in position. The flowers were placed that morning. You just ask the question.",
     cta: "Tell us your story",
     photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=900&q=85",
+    imgPosition: "center 30%",
   },
   {
     num: "#3",
@@ -27,6 +29,7 @@ const heroExperiences = [
     desc: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.\n\nWe handle the venue, the kitchen, the ceremony, the logistics on the ground. Every detail considered, nothing templated.",
     cta: "Tell us your vision",
     photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=900&q=85",
+    imgPosition: "center 25%",
   },
   {
     num: "#4",
@@ -35,6 +38,7 @@ const heroExperiences = [
     desc: "Kolonaki through someone who knows every door. A stylist who understands what you are looking for before you say it.\n\nGreek designers you won\u2019t find elsewhere, international houses with pieces held aside, and a morning shaped entirely around your eye. No itinerary, no rush.",
     cta: "Book a session",
     photo: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
+    imgPosition: "center center",
   },
 ];
 
@@ -134,10 +138,10 @@ export default function Experiences() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
           <p className="reveal font-body text-[20px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light mb-5" data-delay="200">
-            Four experiences we come back to, season after season. Each one built from scratch, around who you are and what you are here to celebrate.
+            An occasion, a setting, a level of detail that speaks for itself.
           </p>
           <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light" data-delay="300">
-            No fixed format. No catalogue. A conversation first, then we design.
+            Each one is designed once, for you. Nothing is repeated.
           </p>
         </div>
       </section>
@@ -156,6 +160,7 @@ export default function Experiences() {
                   src={exp.photo}
                   alt={exp.title}
                   className="w-full h-full object-cover transition-transform duration-600 ease-out md:group-hover:scale-[1.02]"
+                  style={{ objectPosition: exp.imgPosition }}
                   loading="lazy"
                 />
               </div>
@@ -189,19 +194,19 @@ export default function Experiences() {
       })}
 
       {/* ═══════════════════════════════════════════
-          BLOC 4 — CITATION
+          BLOC 4 — CITATION (breathing pause)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center py-14 md:py-20 px-8">
+      <section className="bg-[#fcf7f1] flex items-center justify-center py-16 md:py-24 px-8">
         <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           You tell us the occasion. We take care of everything around it.
         </p>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CONCIERGE
+          BLOC 5 — CONCIERGE INTRO (white background = visual break)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] pb-16 md:pb-24 px-8 md:px-16">
-        <div className="max-w-[700px] mx-auto text-center mb-14 md:mb-20">
+      <section className="bg-white py-16 md:py-20 px-8 md:px-16">
+        <div className="max-w-[700px] mx-auto text-center">
           <p className="reveal font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             02 &middot; Concierge
           </p>
@@ -213,7 +218,12 @@ export default function Experiences() {
             The access, the tables, the details you don&apos;t have to think about.
           </p>
         </div>
+      </section>
 
+      {/* ═══════════════════════════════════════════
+          BLOC 5b — CONCIERGE CARDS
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-16 md:py-24 px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {conciergeCards.map((card, i) => (
             <div key={card.tag} className="reveal group bg-white overflow-hidden border-b border-[#1a1a1a]/[0.08]" data-delay={i * 150}>
@@ -261,7 +271,7 @@ export default function Experiences() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 door-cta"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
