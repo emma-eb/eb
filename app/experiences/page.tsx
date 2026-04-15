@@ -10,7 +10,7 @@ const experiences = [
     title: "Private Dinner Facing the Acropolis",
     p1: "A table set for your evening only. The Acropolis lit against the sky, the city quiet below.",
     p2: "We know the kitchens that don\u2019t take online reservations, the terraces that close for one party, the chefs who design a menu from a single conversation. Michelin-starred rooftop or private villa, the format is yours.",
-    cta: "Tell us your occasion",
+    cta: "Reserve your evening",
     photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
     pos: "center center",
   },
@@ -20,7 +20,7 @@ const experiences = [
     title: "Wedding Proposal in Greece",
     p1: "The setting says everything. A clifftop terrace at golden hour. A private beach at the end of an unmarked road. A garden in the Peloponnese, lit only by candles.",
     p2: "We find the place, arrange every detail, and disappear. The photographer is already in position. The flowers were placed that morning. You just ask the question.",
-    cta: "Tell us your story",
+    cta: "Plan the moment",
     photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=900&q=85",
     pos: "center 30%",
   },
@@ -30,7 +30,7 @@ const experiences = [
     title: "Boutique Wedding",
     p1: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.",
     p2: "Venue, kitchen, ceremony, on-the-ground production. Every detail is considered. Nothing is templated.",
-    cta: "Tell us your vision",
+    cta: "Start planning",
     photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=900&q=85",
     pos: "center 25%",
   },
@@ -40,7 +40,7 @@ const experiences = [
     title: "Private Shopping with a Stylist",
     p1: "Kolonaki through someone who knows every door. A stylist who understands what you are looking for before you say it.",
     p2: "Greek designers you won\u2019t find outside Athens, international houses with pieces set aside, and a morning shaped entirely around your eye.",
-    cta: "Book a session",
+    cta: "Book your morning",
     photo: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
     pos: "center center",
   },
@@ -156,10 +156,10 @@ export default function Experiences() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
           <p className="reveal font-body text-[21px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
-            An occasion, a setting, a level of detail that speaks for itself.
+            A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
           <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6" data-delay="300">
-            Each one is designed once, for you. Nothing is repeated.
+            Four experiences we build from scratch. No format, no repeat. Just a conversation, and then we begin.
           </p>
         </div>
       </section>
@@ -232,10 +232,7 @@ export default function Experiences() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
           <p className="reveal font-body text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
-            Beyond the experience
-          </p>
-          <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light max-w-lg mx-auto mt-4" data-delay="300">
-            The access, the tables, the details you don&apos;t have to think about.
+            The rest is handled.
           </p>
         </div>
       </section>
