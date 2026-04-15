@@ -36,28 +36,28 @@ const experiences = [
 
 const concierge = [
   {
-    pill: "DINING",
-    title: "Private Dining\n& Reservations",
-    desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini. We know which table to ask for.",
-    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80",
+    cat: "DINING",
+    title: "Private Dining & Reservations",
+    desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
+    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
   },
   {
-    pill: "GASTRONOMY",
-    title: "Gastronomic\nJourneys",
-    desc: "Market mornings with a local chef, wine on a hillside, a cooking class where the recipe has no written version.",
-    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=1920&q=80",
+    cat: "GASTRONOMY",
+    title: "Gastronomic Journeys",
+    desc: "Market mornings with a local chef, wine on a hillside, a cooking class in a village kitchen where the recipe has never been written down.",
+    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=900&q=85",
   },
   {
-    pill: "WINE",
-    title: "Private\nVineyard Visits",
-    desc: "Santorini\u2019s volcanic soil, the quiet estates of the Peloponnese. A glass poured by the winemaker.",
-    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=1920&q=80",
+    cat: "WINE",
+    title: "Private Vineyard Visits",
+    desc: "Santorini\u2019s volcanic soil, the quiet estates of Nemea and Naoussa. A glass poured by the winemaker, in the cellar where it aged.",
+    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=900&q=85",
   },
   {
-    pill: "LIFESTYLE",
-    title: "Lifestyle\n& Concierge",
-    desc: "A private museum at dawn, a boat for the afternoon, villa staff for the week. One call.",
-    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=1920&q=80",
+    cat: "LIFESTYLE",
+    title: "Lifestyle & Concierge",
+    desc: "A private museum visit at dawn, a last-minute boat for the afternoon, villa staff for the week. One call, handled quietly.",
+    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
@@ -212,34 +212,36 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          CONCIERGE — 2x2 full-bleed immersive grid
+          CONCIERGE — horizontal bands on beige
       ═══════════════════════════════════════════ */}
-      <div data-nav-dark className="grid grid-cols-1 md:grid-cols-2">
-        {concierge.map((c) => (
-          <div key={c.pill} className="group relative h-[45vh] md:h-[50vh] overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden">
-              <img
-                src={c.photo}
-                alt={c.title.replace("\n", " ")}
-                className="img-settle w-full h-full object-cover transition-transform duration-600 ease-out md:group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+      <section className="bg-[#fcf7f1] py-10 md:py-16 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto flex flex-col divide-y divide-[#1a1a1a]/[0.08]">
+          {concierge.map((c) => (
+            <div key={c.cat} className="reveal flex flex-col md:flex-row md:items-center gap-0 md:gap-10 py-8 md:py-10">
+              {/* Image */}
+              <div className="w-full md:w-[40%] shrink-0 overflow-hidden rounded-sm">
+                <img
+                  src={c.photo}
+                  alt={c.title}
+                  className="img-settle w-full h-[200px] md:h-[220px] object-cover transition-transform duration-600 ease-out md:hover:scale-[1.03]"
+                  style={{ aspectRatio: "16/9" }}
+                  loading="lazy"
+                />
+              </div>
+              {/* Text */}
+              <div className="mt-5 md:mt-0">
+                <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{c.cat}</span>
+                <h3 className="font-body text-[18px] md:text-[22px] font-medium text-[#2e5a88] leading-[1.2] mt-2">
+                  {c.title}
+                </h3>
+                <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-3 max-w-md">
+                  {c.desc}
+                </p>
+              </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
-              <span className="reveal inline-block px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white mb-3">
-                {c.pill}
-              </span>
-              <h3 className="reveal font-heading text-[22px] md:text-[28px] text-white leading-[0.9] uppercase whitespace-pre-line" data-delay="100">
-                {c.title}
-              </h3>
-              <p className="reveal font-body text-[13px] md:text-[14px] text-white/80 font-light leading-[1.7] max-w-sm mt-3" data-delay="200">
-                {c.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
 
       {/* ═══════════════════════════════════════════
           CTA FINAL — instant
