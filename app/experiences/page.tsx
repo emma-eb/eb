@@ -43,7 +43,7 @@ const concierge = [
     tag: "DINING",
     title: "Private Dining & Reservations",
     desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
-    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=900&q=85",
   },
   {
     tag: "GASTRONOMY",
@@ -193,29 +193,30 @@ export default function Experiences() {
       ))}
 
       {/* ═══════════════════════════════════════════
-          CITATION + CONCIERGE INTRO (merged, beige)
+          BREATHING — citation + concierge intro (beige)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-8 md:px-16">
-        <div className="max-w-2xl mx-auto text-center pt-12 md:pt-16 pb-8">
-          <p className="reveal font-body text-[17px] md:text-[20px] font-light text-[#1a1a1a]/40 leading-relaxed">
+      <section className="bg-[#fcf7f1] py-14 px-8 md:px-16">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="reveal font-body text-[20px] font-light text-[#1a1a1a]/40 leading-relaxed">
             You tell us the occasion. We take care of everything around it.
           </p>
-        </div>
-        <div className="max-w-2xl mx-auto text-center pb-12 md:pb-16">
-          <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
-            02 &middot; Concierge
-          </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
-            The rest is handled.
-          </p>
+
+          <div className="mt-8">
+            <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40" data-delay="100">
+              02 &middot; Concierge
+            </p>
+            <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 mx-auto" data-delay="150" />
+            <p className="reveal font-body text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+              The rest is handled.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
           CONCIERGE — 2x2 immersive grid
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1]">
+      <section className="bg-[#fcf7f1] pt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {concierge.map((c) => (
             <div key={c.tag} className="reveal relative aspect-video md:aspect-square overflow-hidden group">
