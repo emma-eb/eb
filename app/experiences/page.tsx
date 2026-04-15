@@ -43,25 +43,25 @@ const concierge = [
     tag: "DINING",
     title: "Private Dining & Reservations",
     desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
-    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=1200&q=85",
   },
   {
     tag: "GASTRONOMY",
     title: "Gastronomic Journeys",
     desc: "Market mornings with a local chef, wine on a hillside, a cooking class in a village kitchen where the recipe has never been written down.",
-    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=1800&q=85",
   },
   {
     tag: "WINE",
     title: "Private Vineyard Visits",
     desc: "Santorini\u2019s volcanic soil, the quiet estates of Nemea and Naoussa. A glass poured by the winemaker, in the cellar where it aged.",
-    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=1200&q=85",
   },
   {
     tag: "LIFESTYLE",
     title: "Lifestyle & Concierge",
     desc: "A private museum visit at dawn, a last-minute boat for the afternoon, villa staff for the week. One call, handled quietly.",
-    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=1200&q=85",
   },
 ];
 
@@ -70,13 +70,16 @@ export default function Experiences() {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (!e.isIntersecting) return;
           const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
+          const baseDelay = parseInt(el.dataset.delay || "0", 10);
+          const d = isMobile ? Math.round(baseDelay * 0.7) : baseDelay;
           setTimeout(() => {
             el.classList.add("visible");
             setTimeout(() => el.classList.add("done"), 800);
@@ -84,7 +87,7 @@ export default function Experiences() {
           revealObs.unobserve(el);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
     revealEls.forEach((el) => revealObs.observe(el));
 
@@ -124,7 +127,7 @@ export default function Experiences() {
         </div>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 px-8">
-          <span className="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/15 backdrop-blur-sm rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+          <span className="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Experiences
           </span>
           <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white uppercase mb-5">
@@ -139,7 +142,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           INTRO STATEMENT — beige
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16">
         <div className="max-w-[90%] md:max-w-2xl mx-auto text-center">
           <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences
@@ -155,7 +158,7 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          EXPERIENCES — full-bleed immersive (like homepage featured)
+          EXPERIENCES — full-bleed immersive
       ═══════════════════════════════════════════ */}
       {experiences.map((exp) => (
         <section key={exp.pill + exp.title} data-nav-dark className="relative h-[60vh] md:h-[75vh] flex items-end overflow-hidden">
@@ -168,10 +171,10 @@ export default function Experiences() {
               loading="lazy"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
 
           <div className="relative z-10 p-6 md:p-12 max-w-lg">
-            <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
+            <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
               {exp.pill}
             </span>
             <h2 className="reveal font-heading text-[28px] md:text-[44px] text-white leading-[0.9] uppercase whitespace-pre-line mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }} data-delay="100">
@@ -182,7 +185,7 @@ export default function Experiences() {
             </p>
             <a
               href="/contact"
-              className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-6 py-3 -my-3 door-cta"
+              className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-6 min-h-[44px] items-center door-cta"
               data-delay="300"
             >
               {exp.cta}
@@ -195,9 +198,9 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           BREATHING — citation + concierge intro (beige)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-14 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] py-12 md:py-14 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="reveal font-body text-[20px] font-light text-[#1a1a1a]/40 leading-relaxed">
+          <p className="reveal font-body text-[18px] md:text-[20px] font-light text-[#1a1a1a]/40 leading-relaxed">
             You tell us the occasion. We take care of everything around it.
           </p>
 
@@ -206,7 +209,7 @@ export default function Experiences() {
               02 &middot; Concierge
             </p>
             <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 mx-auto" data-delay="150" />
-            <p className="reveal font-body text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+            <p className="reveal font-body text-[22px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
               The rest is handled.
             </p>
           </div>
@@ -216,23 +219,23 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CONCIERGE — 2x2 immersive grid
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] pt-10">
+      <section className="bg-[#fcf7f1]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {concierge.map((c) => (
             <div key={c.tag} className="reveal relative aspect-video md:aspect-square overflow-hidden group">
               <img
                 src={c.photo}
                 alt={c.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-[1.03]"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+              <div className="absolute bottom-0 left-0 p-5 md:p-8 z-10">
                 <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
                   {c.tag}
                 </span>
-                <h3 className="font-body text-lg md:text-xl font-semibold text-white mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <h3 className="font-body text-[16px] md:text-[18px] font-semibold text-white mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {c.title}
                 </h3>
                 <p className="font-body text-[13px] text-white/75 font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -247,8 +250,8 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           BREATHING — before CTA
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-14 px-8">
-        <p className="reveal font-body text-[20px] font-light text-[#1a1a1a]/40 text-center leading-relaxed">
+      <section className="bg-[#fcf7f1] py-10 md:py-14 px-8">
+        <p className="reveal font-body text-[17px] md:text-[20px] font-light text-[#1a1a1a]/40 text-center leading-relaxed">
           One country. Every detail.
         </p>
       </section>
@@ -262,6 +265,7 @@ export default function Experiences() {
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
             alt="Athens evening skyline"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-black/45" />
@@ -274,7 +278,7 @@ export default function Experiences() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 py-3 -my-3"
+            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 min-h-[44px] items-center"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -315,7 +319,7 @@ export default function Experiences() {
             </div>
           </div>
           <div className="flex md:hidden flex-col items-center gap-3 order-4">
-            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">
               hello@emmabonnefous.com
             </a>
             <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
