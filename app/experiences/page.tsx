@@ -7,7 +7,7 @@ const experiences = [
   {
     pill: "ATHENS",
     title: "Private Dinner\nFacing the Acropolis",
-    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private villa, the format is yours.",
+    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private penthouse, the format is yours.",
     cta: "Reserve your evening",
     photo: "/Screenshot 2026-03-09 at 11.30.58.png",
     pos: "center center",
