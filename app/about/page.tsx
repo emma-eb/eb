@@ -1,180 +1,299 @@
+"use client";
+
+import { useEffect } from "react";
 import Nav from "../components/Nav";
 
+const collabsParis = [
+  "Balmain \u00b7 Silencio, Paris",
+  "Van Cleef & Arpels \u00b7 Peninsula, Paris",
+  "Karl Lagerfeld \u00b7 Monnaie de Paris",
+  "Jimmy Choo \u00b7 Sea Containers, London",
+  "Coach \u00b7 The High Line, New York",
+  "Lanvin \u00b7 Grand Palais, Paris",
+  "Boucheron \u00b7 Arc de Triomphe, Paris",
+  "Repetto \u00b7 Royal Monceau, Paris",
+];
+
+const collabsGreece = [
+  "Jimmy Fairly \u00b7 Athens & Islands",
+  "Nina Ricci \u00b7 Content Production",
+  "Spoyl / Flipkart \u00b7 Brand Campaign",
+];
+
+const stats = [
+  { n: "12+", label: "years in luxury production" },
+  { n: "80+", label: "high-level productions" },
+  { n: "95", label: "countries" },
+  { n: "1", label: "focus: Greece" },
+];
+
 export default function About() {
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
+    const revealObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const d = parseInt(el.dataset.delay || "0", 10);
+          setTimeout(() => {
+            el.classList.add("visible");
+            setTimeout(() => el.classList.add("done"), 800);
+          }, d);
+          revealObs.unobserve(el);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+    );
+    revealEls.forEach((el) => revealObs.observe(el));
+
+    const settleEls = document.querySelectorAll<HTMLElement>(".img-settle");
+    const settleObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          (e.target as HTMLElement).classList.add("settled");
+          settleObs.unobserve(e.target);
+        });
+      },
+      { threshold: 0.1 }
+    );
+    settleEls.forEach((el) => settleObs.observe(el));
+
+    return () => { revealObs.disconnect(); settleObs.disconnect(); };
+  }, []);
+
   return (
     <main className="flex flex-col min-h-screen bg-white">
-
       <Nav activePage="/about" />
 
-      {/* Hero */}
-      <section className="bg-white pt-32 md:pt-44 pb-0 border-b border-[#e8e4de]">
-        <div className="max-w-6xl mx-auto px-8 md:px-16">
-          <div className="grid md:grid-cols-[1fr_auto] gap-0 items-end">
-            <div className="pb-16 md:pb-24">
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">About</p>
-              <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-none text-[#1a1a1a]">
-                Emma<br />Bonnefous
-              </h1>
-              <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-sm">
-                Founder of eb.<br />Athens, Greece.
-              </p>
-            </div>
-            {/* Portrait — place emma-portrait.jpg in /public */}
-            <div className="hidden md:block w-72 lg:w-96 h-[420px] lg:h-[500px] overflow-hidden self-end">
-              <img
-                src="/emma-portrait.jpg"
-                alt="Emma Bonnefous"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-          </div>
+      {/* ═══════════════════════════════════════════
+          HERO — portrait + name, instant
+      ═══════════════════════════════════════════ */}
+      <section className="flex flex-col md:flex-row min-h-[500px]">
+        {/* Portrait */}
+        <div className="w-full md:w-1/2 h-[55vh] md:h-auto overflow-hidden bg-[#d4cfc7]">
+          <img
+            src="/DSC_9459-Edit.jpg"
+            alt="Emma Bonnefous"
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+        {/* Name */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#fcf7f1] px-6 py-8 md:px-16 md:py-20">
+          <p className="font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-5">
+            About
+          </p>
+          <h1 className="font-body text-[30px] md:text-[42px] text-[#2e5a88] leading-[1.1] font-light">
+            Emma Bonnefous
+          </h1>
+          <p className="font-body text-[16px] md:text-[18px] text-[#1a1a1a]/40 font-light mt-2">
+            Founder, eb.
+          </p>
+          <p className="font-body text-[14px] text-[#1a1a1a]/40 font-light mt-1">
+            Athens, Greece
+          </p>
         </div>
       </section>
 
-      {/* Intro — two columns */}
-      <section className="bg-white py-24 md:py-32 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start">
-          <div>
-            <div className="h-px bg-[#2e5a88] w-8 mb-5" />
-            <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">The background</p>
-          </div>
-          <div>
-            <p className="font-body text-xl md:text-2xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Twelve years producing private experiences for luxury houses: Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo. Events, brand trips, and productions across 95 countries. The kind of work that requires knowing who to call at midnight, in any city, to make something extraordinary happen on time.
-            </p>
-            <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              In 2020, I moved to Athens. Not to slow down. To go deeper. One country, one focus, one standard.
-            </p>
-          </div>
+      {/* ═══════════════════════════════════════════
+          STORY — editorial narrative
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-16 md:py-24 px-6 md:px-16">
+        <div className="max-w-3xl mx-auto">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
+            The Background
+          </p>
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-10 mx-auto" data-delay="80" />
+
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light" data-delay="160">
+            Before Greece, there were twelve years inside the machine. Luxury production for houses that don&apos;t accept approximation: Balmain at Silencio, Van Cleef &amp; Arpels at the Peninsula, Karl Lagerfeld at the Monnaie de Paris, Jimmy Choo at Sea Containers London, Coach on the High Line in New York. Eighty productions across Europe and the US. Events where the guest count hit six hundred and the margin for error was zero.
+          </p>
+
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light mt-8" data-delay="240">
+            In 2020, I moved to Athens. Not to slow down. To go deeper. I had worked in ninety-five countries and kept coming back to one. Greece had something I hadn&apos;t found anywhere else: a network of people, fishermen, chefs, villa owners, archaeologists, who don&apos;t advertise what they offer. Access here is earned, not purchased.
+          </p>
+
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light mt-8" data-delay="320">
+            eb. is the result. One country, one focus, one standard. I bring the same precision I learned producing for the world&apos;s most demanding houses to every journey we design. Whether for private travelers or luxury brands producing content in Greece.
+          </p>
         </div>
       </section>
 
-      {/* Stats band */}
-      <section className="border-t border-b border-[#e8e4de] py-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
-          {[
-            { n: "12+", label: "Years in luxury production" },
-            { n: "95+", label: "Countries worked in" },
-            { n: "300", label: "Days of sun per year" },
-            { n: "1", label: "Country we work in" },
-          ].map(({ n, label }) => (
-            <div key={n}>
-              <p className="font-heading text-5xl md:text-6xl text-[#1a1a1a] leading-none mb-3">{n}</p>
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-[#888]">{label}</p>
+      {/* ═══════════════════════════════════════════
+          NUMBERS — 4 figures
+      ═══════════════════════════════════════════ */}
+      <section className="bg-white py-12 md:py-16 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center">
+          {stats.map((s, i) => (
+            <div key={s.n} className="reveal" data-delay={i * 100}>
+              <p className="font-body text-[36px] md:text-[48px] font-semibold text-[#2e5a88] leading-none">{s.n}</p>
+              <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/40 font-light mt-2">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Why Greece */}
-      <section className="bg-white py-24 md:py-32 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start">
-          <div>
-            <div className="h-px bg-[#a7d1c9] w-8 mb-5" />
-            <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">Why Greece</p>
-          </div>
-          <div>
-            <p className="font-body text-lg md:text-xl text-[#1a1a1a] leading-relaxed font-light max-w-2xl">
-              Greece is not a backdrop. It is a culture with 3,000 years of hospitality, a geography of extreme contrasts, and a network of people (chefs, fishermen, archaeologists, villa owners) who don&apos;t advertise what they offer.
+      {/* ═══════════════════════════════════════════
+          WHY GREECE — full-bleed image
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative h-[55vh] md:h-[70vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1920&q=80"
+            alt="Santorini caldera, golden light"
+            className="img-settle w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/45" />
+
+        <div className="relative z-10 p-6 md:p-12 max-w-xl">
+          <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5">
+            Why Greece.
+          </h2>
+          <div className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.8] max-w-xl" data-delay="200">
+            <p>
+              Greece is not a backdrop. It is a culture built on hospitality, a geography of extreme contrasts, and a network of people who don&apos;t put what they offer online.
             </p>
-            <p className="font-body text-sm text-[#888] mt-6 leading-relaxed max-w-xl">
-              Getting access to the Acropolis before dawn, anchoring in Kleftiko in August without a crowd, having dinner in a cave on Kimolos. None of this is bookable online. It requires years of presence, respect, and personal relationships. That is what eb. provides.
+            <p className="mt-5">
+              Getting access to the Acropolis before dawn. Anchoring in Kleftiko in August without another boat in sight. Having dinner in a cave on Kimolos that seats eight. None of this is bookable. It takes years of presence, trust, and the right phone numbers.
             </p>
-            <p className="font-body text-sm text-[#888] mt-4 leading-relaxed max-w-xl">
-              I bring European production standards to every journey we design. Whether for private travelers or luxury brands producing content in Greece.
+            <p className="mt-5">
+              That is what eb. provides.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What I produce — dark */}
-      <section data-nav-dark className="bg-[#1a1a1a] py-24 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-16">What eb. produces</p>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Private Journeys",
-                body: "Bespoke itineraries for private travelers: individuals and families who want Greece without compromise. Every transfer, every villa, every dinner arranged before departure.",
-              },
-              {
-                title: "Influencer & Brand Production",
-                body: "Brand trips, fam trips, content creation for luxury houses. Full production in Greece: scouting, logistics, photographers, stylists, local talent. Jimmy Fairly, Nina Ricci, Spoyl.",
-              },
-              {
-                title: "Signature Celebrations",
-                body: "Proposals, weddings, private dinners. Events where the scenery is as carefully produced as the experience itself. Clifftops, caves, Byzantine courtyards.",
-              },
-            ].map(({ title, body }) => (
-              <div key={title}>
-                <div className="h-px bg-white/15 w-12 mb-6" />
-                <h3 className="font-heading text-2xl text-white mb-4">{title}</h3>
-                <p className="font-body text-sm text-white/50 leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ═══════════════════════════════════════════
+          COLLABORATIONS — text only, 2 columns
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
+            Selected Collaborations
+          </p>
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-10 mx-auto" data-delay="100" />
 
-      {/* Collaborations */}
-      <section className="bg-white py-24 px-8 md:px-16 border-b border-[#e8e4de]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start">
-          <div>
-            <div className="h-px bg-[#2e5a88] w-8 mb-5" />
-            <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888]">Past collaborations</p>
-            <p className="font-body text-xs text-[#ccc] tracking-wider mt-1">Paris production</p>
-          </div>
-          <div>
-            <div className="flex flex-wrap gap-x-12 gap-y-5">
-              {["Balmain", "Van Cleef & Arpels", "Karl Lagerfeld", "Jimmy Choo", "Coach", "Nina Ricci", "Boucheron"].map((brand) => (
-                <span key={brand} className="font-body text-sm tracking-[0.15em] uppercase text-[#bbb]">{brand}</span>
+          <div className="reveal grid md:grid-cols-2 gap-10 md:gap-16" data-delay="200">
+            {/* Paris & International */}
+            <div>
+              <p className="font-body text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase text-[#2e5a88] mb-6">
+                Paris &amp; International
+              </p>
+              {collabsParis.map((c) => (
+                <p key={c} className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-light leading-[2.0]">
+                  {c}
+                </p>
               ))}
             </div>
-            <div className="mt-10">
-              <p className="font-body text-xs tracking-[0.25em] uppercase text-[#888] mb-5">Greece</p>
-              <div className="flex flex-wrap gap-x-12 gap-y-5">
-                {["Jimmy Fairly", "Nina Ricci", "Spoyl / Flipkart"].map((brand) => (
-                  <span key={brand} className="font-body text-sm tracking-[0.15em] uppercase text-[#bbb]">{brand}</span>
-                ))}
-              </div>
+
+            {/* Greece */}
+            <div>
+              <p className="font-body text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase text-[#2e5a88] mb-6">
+                Greece
+              </p>
+              {collabsGreece.map((c) => (
+                <p key={c} className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-light leading-[2.0]">
+                  {c}
+                </p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-white py-28 md:py-36 px-8 md:px-16 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1a1a1a] mb-6 leading-tight">
-            Let&apos;s talk about<br />what you have in mind.
+      {/* ═══════════════════════════════════════════
+          CITATION
+      ═══════════════════════════════════════════ */}
+      <section className="bg-white flex items-center justify-center py-12 md:py-20 px-8">
+        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+          I had worked in ninety-five countries and kept coming back to one.
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CTA FINAL — instant, no animation
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?auto=format&fit=crop&w=1920&q=80"
+            alt="Greece golden hour coast"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase">
+            Let&apos;s start with<br />a conversation.
           </h2>
-          <p className="font-body text-sm text-[#888] mb-10 leading-relaxed">
-            Whether you are planning a private journey, a brand trip, or a celebration, the first conversation is always a real one.
+          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-4 max-w-lg mx-auto leading-relaxed">
+            Whether you are planning a private journey, a celebration, or a brand production in Greece.
           </p>
           <a
             href="/contact"
-            className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#1a1a1a] text-[#1a1a1a] px-10 py-4 hover:bg-[#1a1a1a] hover:text-white transition-colors"
+            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 py-3 -my-3"
           >
             Get in touch
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ═══════════════════════════════════════════
+          FOOTER
+      ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
-          <p className="font-body text-xs text-white/30 tracking-wider">
-            © 2026 Emma Bonnefous · hello@emmabonnefous.com · Athens, Greece
-          </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
-            <a href="/partners" className="hover:text-white/70 transition-colors">Partners</a>
-            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+          <div className="flex flex-col items-center md:items-start gap-4 order-1">
+            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
+              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
+              <span className="py-2">&middot;</span>
+              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
+            </div>
+            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+          </div>
+
+          <div className="flex md:hidden flex-col items-center gap-3 order-4">
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
           </div>
         </div>
       </footer>
-
     </main>
   );
 }
