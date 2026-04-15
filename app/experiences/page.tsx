@@ -18,7 +18,7 @@ const experiences = [
     desc: "A clifftop terrace at golden hour. A private beach at the end of an unmarked road. We find the place, arrange every detail, and disappear. You just ask the question.",
     cta: "Plan the moment",
     photo: "/good-days-digital-5dusgr_R35E-unsplash.jpg",
-    pos: "center 40%",
+    pos: "center 70%",
   },
   {
     pill: "GREECE",
