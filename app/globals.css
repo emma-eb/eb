@@ -79,6 +79,35 @@
   animation: bounce-slow 2s ease-in-out infinite;
 }
 
+/* Door chevron animations */
+@keyframes chevron-bounce-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes chevron-pulse-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes chevron-pulse-x-hover {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+.door-chevron {
+  animation: chevron-bounce-y 1.5s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .door-chevron {
+    animation: chevron-pulse-x 1.5s ease-in-out infinite;
+  }
+  .group:hover .door-chevron {
+    animation: chevron-pulse-x-hover 1.2s ease-in-out infinite;
+  }
+}
+
 /* Safari iOS backdrop-filter support */
 .backdrop-blur-\[10px\],
 .backdrop-blur-\[4px\],

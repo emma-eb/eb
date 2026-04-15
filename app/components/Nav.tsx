@@ -98,7 +98,7 @@ export default function Nav({ activePage }: NavProps) {
         <div className="flex md:hidden items-center gap-4 relative z-50">
           <a
             href="/contact"
-            className={`text-[10px] tracking-[0.2em] uppercase border px-3 py-1.5 transition-colors duration-300 ${
+            className={`text-[10px] tracking-[0.2em] uppercase border px-3 py-2.5 transition-colors duration-300 ${
               dark ? "border-[#fcf7f1] text-[#fcf7f1]" : "border-[#2e5a88] text-[#2e5a88]"
             }`}
           >
@@ -106,12 +106,12 @@ export default function Nav({ activePage }: NavProps) {
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="flex flex-col justify-center gap-[5px] w-6 h-6"
+            className="flex flex-col justify-center gap-[5px] w-11 h-11 items-center"
             aria-label={open ? "Close" : "Menu"}
           >
-            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
-            <span className={`block h-px w-full transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
-            <span className={`block h-px w-full transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] -rotate-45 -translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
+            <span className={`block h-px w-6 transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
+            <span className={`block h-px w-6 transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
+            <span className={`block h-px w-6 transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] -rotate-45 -translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
           </button>
         </div>
       </nav>

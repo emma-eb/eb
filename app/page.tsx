@@ -36,7 +36,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
-        className="relative h-[100svh] flex flex-col justify-center items-center text-center overflow-hidden"
+        className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden"
       >
         <div className="absolute inset-0">
           <img
@@ -64,9 +64,9 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-50"}`}
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-80 md:opacity-50"}`}
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-bounce-slow">
+          <svg viewBox="0 0 20 20" fill="none" className="animate-bounce-slow w-8 h-8 md:w-5 md:h-5">
             <path d="M4 7l6 6 6-6" stroke="white" strokeWidth="1.5" />
           </svg>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
 
           {/* Signature */}
           <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
-            Founded by Emma Bonnefous &middot; Athens
+            Founded by <a href="/about" className="text-[#2e5a88] no-underline hover:underline inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
           </p>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function Home() {
                 </p>
                 <div className="mt-5 inline-flex items-center gap-2 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0">
                   {door.cta}
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="door-chevron">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
                   </svg>
                 </div>
@@ -268,7 +268,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
         <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
-          One country. A thousand ways to make it yours.
+          One country.<br className="md:hidden" /> A thousand ways to make it yours.
         </p>
       </section>
 
