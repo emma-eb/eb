@@ -77,8 +77,8 @@ export default function Journal() {
       <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1920&q=80"
-            alt="Santorini caldera, golden hour"
+            src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80"
+            alt="Luxury resort terrace overlooking sea"
             className="img-settle w-full h-full object-cover"
           />
         </div>
