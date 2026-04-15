@@ -125,3 +125,101 @@ h1, h2, h3 {
   font-weight: 400; /* Anton is already bold by design */
   letter-spacing: 0.02em;
 }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.visible.done {
+  will-change: auto;
+}
+
+/* ═══════════════════════════════════════════
+   FEATURED IMAGE SETTLE
+═══════════════════════════════════════════ */
+.featured-img {
+  transform: scale(1.05);
+  transition: transform 1.2s ease-out;
+  will-change: transform;
+}
+.featured-img.visible {
+  transform: scale(1.0);
+}
+.featured-img.visible.done {
+  will-change: auto;
+}
+
+/* ═══════════════════════════════════════════
+   PARALLAX IMAGE
+═══════════════════════════════════════════ */
+.parallax-wrap {
+  overflow: hidden;
+}
+.parallax-wrap img {
+  height: 115%;
+  min-height: 115%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════
+   3 DOORS — HOVER (desktop) + TAP (mobile)
+═══════════════════════════════════════════ */
+@media (hover: hover) {
+  .door-card .door-overlay {
+    transition: opacity 0.4s ease;
+  }
+  .door-card:hover .door-overlay {
+    opacity: 1;
+  }
+  .door-card:hover .door-cta {
+    animation: cta-pulse-x-hover 1.2s ease-in-out infinite;
+  }
+}
+
+@media (hover: none) {
+  .door-card:active {
+    transform: scale(0.98);
+    transition: transform 0.15s ease;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PREFERS REDUCED MOTION — disable all
+═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+  .featured-img {
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+  .parallax-wrap img {
+    height: 100%;
+    min-height: 100%;
+    will-change: auto;
+  }
+  .door-cta {
+    animation: none !important;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+  .animate-bounce-slow {
+    animation: none !important;
+  }
+}

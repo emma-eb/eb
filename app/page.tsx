@@ -23,6 +23,64 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* ─── Scroll reveal + featured image settle ─── */
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const revealEls = document.querySelectorAll<HTMLElement>(".reveal, .featured-img");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          const delay = parseInt(el.dataset.delay || "0", 10);
+          setTimeout(() => {
+            el.classList.add("visible");
+            setTimeout(() => el.classList.add("done"), 800);
+          }, delay);
+          observer.unobserve(el);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  /* ─── Parallax on image blocs ─── */
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const isMobile = window.innerWidth < 768;
+    const factor = isMobile ? 0.06 : 0.12;
+    const wraps = document.querySelectorAll<HTMLElement>(".parallax-wrap");
+    if (!wraps.length) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const vh = window.innerHeight;
+        wraps.forEach((wrap) => {
+          const rect = wrap.getBoundingClientRect();
+          if (rect.bottom < -100 || rect.top > vh + 100) return;
+          const center = rect.top + rect.height / 2;
+          const offset = (center - vh / 2) * factor;
+          const img = wrap.querySelector("img");
+          if (img) img.style.transform = `translateY(${offset}px)`;
+        });
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const scrollToDoors = () => {
     doorsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -38,12 +96,12 @@ export default function Home() {
         data-nav-dark
         className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden"
       >
-        <div className="absolute inset-0">
+        <div className="parallax-wrap absolute inset-0">
           <img
             src="/hero-bateau.jpg"
             alt="Aegean Sea, Greece"
-            className="w-full h-full object-cover will-change-transform"
-            style={{ objectPosition: "72% 65%", transform: "translateZ(0)" }}
+            className="w-full object-cover"
+            style={{ objectPosition: "72% 65%" }}
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
@@ -78,23 +136,23 @@ export default function Home() {
       <section className="bg-[#fcf7f1] pt-16 pb-8 md:pt-20 md:pb-10 px-8 md:px-16">
         <div className="max-w-[700px] mx-auto text-center">
           {/* Surtitre */}
-          <p className="font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
+          <p className="reveal font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             The Studio
           </p>
-          <div className="w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" />
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
 
           {/* Statement */}
-          <p className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4">
+          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4" data-delay="200">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
           </p>
 
           {/* Closing */}
-          <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-3">
+          <p className="reveal font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-3" data-delay="300">
             eb. finds the Greece that fits you, and shapes every detail.
           </p>
 
           {/* Signature */}
-          <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
+          <p className="reveal font-body text-[13px] font-medium text-[#2e5a88] mt-10" data-delay="400">
             Founded by <a href="/about" className="text-[#2e5a88] underline decoration-[#2e5a88]/30 underline-offset-2 hover:decoration-[#2e5a88] transition-colors duration-300 inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
           </p>
         </div>
@@ -112,6 +170,7 @@ export default function Home() {
               href: "/journeys",
               cta: "Explore journeys",
               image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
+              desktopDelay: 0,
             },
             {
               title: "Experiences",
@@ -119,6 +178,7 @@ export default function Home() {
               href: "/experiences",
               cta: "Discover",
               image: "https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80",
+              desktopDelay: 150,
             },
             {
               title: "Collection",
@@ -126,22 +186,24 @@ export default function Home() {
               href: "/collection",
               cta: "View the collection",
               image: "https://images.unsplash.com/photo-1678266587841-ca65ff1b5b1d?auto=format&fit=crop&w=900&q=80",
+              desktopDelay: 300,
             },
           ].map((door) => (
             <a
               key={door.title}
               href={door.href}
-              className="group relative h-[55vh] md:h-full md:flex-1 overflow-hidden"
+              className="door-card group relative h-[55vh] md:h-full md:flex-1 overflow-hidden"
             >
               <img
                 src={door.image}
                 alt={door.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                 loading="lazy"
+                style={{ transition: "transform 0.6s ease-out" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+              <div className="reveal absolute bottom-0 left-0 right-0 p-8 md:p-10" data-delay={door.desktopDelay}>
                 <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight uppercase">
                   {door.title}
                 </h2>
@@ -183,30 +245,33 @@ export default function Home() {
           BLOC 05 — FEATURED JOURNEY (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
-          alt="Small Cyclades sailing"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
+        <div className="parallax-wrap absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
+            alt="Small Cyclades sailing"
+            className="featured-img absolute inset-0 w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
+          <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured journey
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
+          <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             5 days through<br />the Small Cyclades
           </h2>
-          <p className="font-body text-xs tracking-wider uppercase text-white/40 mb-4">
+          <p className="reveal font-body text-xs tracking-wider uppercase text-white/40 mb-4" data-delay="200">
             Koufonisia &middot; Schinoussa &middot; Iraklia
           </p>
-          <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
+          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="300">
             Anchor in bays where you&apos;re the only boat. Dine at tavernas with no menu, just today&apos;s catch.
           </p>
           <a
             href="/journeys"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            data-delay="400"
           >
             Where will you go?
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -218,7 +283,7 @@ export default function Home() {
           BLOC 06 — CITATION 1 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
-        <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+        <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           The difference between visiting Greece and truly knowing it.
         </p>
       </section>
@@ -227,30 +292,33 @@ export default function Home() {
           BLOC 07 — FEATURED EXPERIENCE
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
-          alt="Athens evening"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
+        <div className="parallax-wrap absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
+            alt="Athens evening"
+            className="featured-img absolute inset-0 w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
+          <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             Featured experience
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
+          <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             Private Dinner<br />Facing the Acropolis
           </h2>
-          <p className="font-body text-xs tracking-wider uppercase text-white/40 mb-4">
+          <p className="reveal font-body text-xs tracking-wider uppercase text-white/40 mb-4" data-delay="200">
             Athens
           </p>
-          <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
+          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="300">
             A candlelit evening against the most iconic skyline in Europe.
           </p>
           <a
             href="/experiences"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            data-delay="400"
           >
             What will you celebrate?
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -262,7 +330,7 @@ export default function Home() {
           BLOC 08 — CITATION 2 (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
-        <p className="font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+        <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           One country.<br className="md:hidden" /> A thousand ways to make it yours.
         </p>
       </section>
@@ -271,27 +339,30 @@ export default function Home() {
           BLOC 09 — FEATURED COLLECTION (plein cadre immersif)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <img
-          src="/134_terrace_privatebeach.jpg"
-          alt="Private villa terrace with sea view, Greece"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
+        <div className="parallax-wrap absolute inset-0">
+          <img
+            src="/134_terrace_privatebeach.jpg"
+            alt="Private villa terrace with sea view, Greece"
+            className="featured-img absolute inset-0 w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
+          <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
             The collection
           </span>
-          <h2 className="font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase">
+          <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             Private Villas<br />&amp; Yacht
           </h2>
-          <p className="font-body text-sm text-white/60 leading-relaxed max-w-md mb-8">
+          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="200">
             Handpicked properties across the Greek islands and coastline.
           </p>
           <a
             href="/collection"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            data-delay="300"
           >
             Where will you stay?
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
@@ -303,13 +374,13 @@ export default function Home() {
           BLOC 10 — BANDEAU CHIFFRES (respiration)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
-        <p className="hidden md:block font-body text-[22px] font-light text-[#1a1a1a]/40 text-center leading-relaxed whitespace-nowrap">
+        <p className="reveal hidden md:block font-body text-[22px] font-light text-[#1a1a1a]/40 text-center leading-relaxed whitespace-nowrap">
           12 years in luxury production &middot; 35+ islands covered &middot; Athens-based, worldwide clients
         </p>
         <div className="flex md:hidden flex-col items-center gap-1.5">
-          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">12 years in luxury production</span>
-          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">35+ islands covered</span>
-          <span className="font-body text-[15px] font-light text-[#1a1a1a]/40">Athens-based, worldwide clients</span>
+          <span className="reveal font-body text-[15px] font-light text-[#1a1a1a]/40">12 years in luxury production</span>
+          <span className="reveal font-body text-[15px] font-light text-[#1a1a1a]/40" data-delay="100">35+ islands covered</span>
+          <span className="reveal font-body text-[15px] font-light text-[#1a1a1a]/40" data-delay="200">Athens-based, worldwide clients</span>
         </div>
       </section>
 
@@ -317,22 +388,24 @@ export default function Home() {
           BLOC 11 — GREECE ONLY. ALWAYS. (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-32 md:py-44 flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
-          alt="Greece"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
+        <div className="parallax-wrap absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
+            alt="Greece"
+            className="absolute inset-0 w-full object-cover"
+            loading="lazy"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
+          <h2 className="reveal font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
             Greece only.<br />Always.
           </h2>
-          <p className="font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10">
+          <p className="reveal font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10" data-delay="150">
             One country. One obsession.
           </p>
-          <p className="font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
+          <p className="reveal font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto" data-delay="300">
             A skipper who knows where to anchor when the wind picks up. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
           </p>
         </div>
@@ -343,15 +416,16 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
+          <h2 className="reveal font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
             Ready to begin?
           </h2>
-          <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
+          <p className="reveal font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10" data-delay="150">
             Tell us what you dream of. We take care of everything else.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
+            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
+            data-delay="300"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
