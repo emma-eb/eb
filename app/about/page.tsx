@@ -18,7 +18,7 @@ const stats = [
   { n: 12, suffix: "+", label: "years producing for luxury houses" },
   { n: 80, suffix: "+", label: "productions across Europe" },
   { n: 95, suffix: "+", label: "countries before choosing one" },
-  { n: 35, suffix: "+", label: "Greek islands, covered firsthand" },
+  { n: 35, suffix: "+", label: "Greek islands, known firsthand" },
 ];
 
 function CounterNumber({ target, suffix, trigger }: { target: number; suffix: string; trigger: boolean }) {
@@ -122,13 +122,13 @@ export default function About() {
             Emma Bonnefous
           </h1>
           <p className="font-body text-[16px] md:text-[18px] text-[#1a1a1a]/40 font-light mt-2">
-            Founder, eb. Private Travel Studio
+            eb. Private Travel Studio
           </p>
           <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/40 font-light mt-1">
             From Paris, based in Athens
           </p>
           <p className="font-body text-[14px] md:text-[15px] text-[#2e5a88] font-normal mt-4">
-            Greece, privately. From Athens to the islands.
+            Greece, privately.
           </p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function About() {
           </p>
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="320">
-            Ninety-five countries. Greece is where everything came together. eb. is a private travel studio built on that conviction, for clients anywhere in the world.
+            Ninety-five countries. Greece is where everything came together. eb. is a private travel studio dedicated to one country, for clients anywhere in the world.
           </p>
         </div>
 
@@ -247,7 +247,7 @@ export default function About() {
             Let&apos;s start with<br />a conversation.
           </h2>
           <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-3 md:mt-4 max-w-lg mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Whether you are planning a private journey, a celebration, or a brand production in Greece.
+            Whether you are planning a private journey or a celebration in Greece.
           </p>
           <a
             href="/contact"
