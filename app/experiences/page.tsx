@@ -151,9 +151,6 @@ export default function Experiences() {
           <p className="reveal font-body text-[20px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
-          <p className="reveal font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6" data-delay="300">
-            Four experiences we build from scratch. No format, no repeat. Just a conversation, and then we begin.
-          </p>
         </div>
       </section>
 
