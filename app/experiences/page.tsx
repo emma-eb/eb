@@ -134,13 +134,13 @@ export default function Experiences() {
         </div>
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 px-8">
-          <span className="inline-block px-5 py-2 bg-white/15 backdrop-blur-sm rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+          <span className="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/15 backdrop-blur-sm rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Experiences
           </span>
           <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white uppercase mb-5">
             Moments you can&apos;t<br />book online.
           </h1>
-          <p className="font-body text-[16px] md:text-[18px] text-white/80 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="font-body text-[15px] md:text-[18px] text-white/80 font-light max-w-[90%] md:max-w-xl mx-auto leading-relaxed">
             Designed around your occasion, across Athens and the Greek islands.
           </p>
         </div>
@@ -149,16 +149,16 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           INTRO STATEMENT — beige
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-16 md:py-24 px-8 md:px-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
+      <section className="bg-[#fcf7f1] py-14 md:py-24 px-8 md:px-16">
+        <div className="max-w-[90%] md:max-w-2xl mx-auto text-center">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[21px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+          <p className="reveal font-body text-[20px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
-          <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6" data-delay="300">
+          <p className="reveal font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-6" data-delay="300">
             Four experiences we build from scratch. No format, no repeat. Just a conversation, and then we begin.
           </p>
         </div>
@@ -173,7 +173,7 @@ export default function Experiences() {
           <section key={exp.num}>
             <div className={`flex flex-col ${isEven ? "md:flex-row-reverse" : "md:flex-row"} md:h-[520px]`}>
               {/* Image */}
-              <div className="w-full md:w-1/2 h-[280px] md:h-full overflow-hidden">
+              <div className="w-full md:w-1/2 h-[260px] md:h-full overflow-hidden">
                 <img
                   src={exp.photo}
                   alt={exp.title}
@@ -186,21 +186,21 @@ export default function Experiences() {
               <div className="w-full md:w-1/2 flex flex-col justify-center bg-white px-6 py-8 md:px-16 md:py-12">
                 <div className="max-w-lg">
                   <div className="reveal flex items-center gap-3 mb-5">
-                    <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{exp.num}</span>
-                    <span className="font-body text-[12px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{exp.location}</span>
+                    <span className="font-body text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{exp.num}</span>
+                    <span className="font-body text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{exp.location}</span>
                   </div>
-                  <h3 className="reveal font-body text-[24px] md:text-[30px] font-semibold text-[#2e5a88] leading-[1.2] mb-5" data-delay="80">
+                  <h3 className="reveal font-body text-[22px] md:text-[30px] font-semibold text-[#2e5a88] leading-[1.2] mb-5" data-delay="80">
                     {exp.title}
                   </h3>
-                  <p className="reveal font-body text-[16px] text-[#1a1a1a]/40 leading-[1.7] font-light" data-delay="160">
+                  <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.7] font-light" data-delay="160">
                     {exp.p1}
                   </p>
-                  <p className="reveal font-body text-[16px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-6" data-delay="240">
+                  <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-6" data-delay="240">
                     {exp.p2}
                   </p>
                   <a
                     href="/contact"
-                    className="reveal inline-flex items-center gap-3 font-body text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] pb-1 border-b border-[#2e5a88]/30 hover:border-[#2e5a88] transition-colors duration-300 mt-8 door-cta"
+                    className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] pb-1 border-b border-[#2e5a88]/30 hover:border-[#2e5a88] transition-colors duration-300 mt-8 py-3 -my-3 door-cta"
                     data-delay="320"
                   >
                     {exp.cta}
@@ -217,7 +217,7 @@ export default function Experiences() {
           CITATION — beige, breathing pause
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center py-12 md:py-16 px-8">
-        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+        <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-[85%] md:max-w-2xl mx-auto leading-relaxed">
           You tell us the occasion. We take care of everything around it.
         </p>
       </section>
@@ -227,11 +227,11 @@ export default function Experiences() {
       ═══════════════════════════════════════════ */}
       <section className="bg-white pt-12 pb-10 md:pt-16 md:pb-12 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             02 &middot; Concierge
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+          <p className="reveal font-body text-[22px] md:text-[28px] text-[#2e5a88] leading-[1.3] font-light mb-0" data-delay="200">
             The rest is handled.
           </p>
         </div>
@@ -283,15 +283,15 @@ export default function Experiences() {
         </div>
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] leading-[0.9] text-white mb-4 uppercase">
+          <h2 className="font-heading text-[clamp(1.75rem,5vw,3.5rem)] leading-[0.9] text-white mb-4 uppercase">
             What will you<br />celebrate?
           </h2>
-          <p className="font-body text-[16px] md:text-[18px] text-white/80 font-light mt-4 max-w-xl mx-auto leading-relaxed">
+          <p className="font-body text-[15px] md:text-[18px] text-white/80 font-light mt-4 max-w-xl mx-auto leading-relaxed">
             Tell us the occasion. We shape everything around it.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8"
+            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 py-3 -my-3"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
