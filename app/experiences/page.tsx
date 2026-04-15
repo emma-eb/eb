@@ -218,23 +218,23 @@ export default function Experiences() {
       <section className="bg-[#fcf7f1]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {concierge.map((c) => (
-            <div key={c.tag} className="reveal relative aspect-[16/9] md:aspect-square overflow-hidden group">
+            <div key={c.tag} className="reveal relative aspect-video md:aspect-square overflow-hidden group">
               <img
                 src={c.photo}
                 alt={c.title}
-                className="img-settle absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-out [@media(hover:hover)]:group-hover:scale-[1.03]"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                <span className="inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white mb-3">
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+                <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
                   {c.tag}
                 </span>
-                <h3 className="font-body text-[17px] md:text-[20px] font-semibold text-white leading-[1.2]">
+                <h3 className="font-body text-lg md:text-xl font-semibold text-white mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {c.title}
                 </h3>
-                <p className="font-body text-[13px] text-white/75 font-light leading-[1.5] mt-2 max-w-xs">
+                <p className="font-body text-[13px] text-white/75 font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {c.desc}
                 </p>
               </div>
