@@ -245,6 +245,15 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          BREATHING — before CTA
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-14 px-8">
+        <p className="reveal font-body text-[20px] font-light text-[#1a1a1a]/40 text-center leading-relaxed">
+          One country. Every detail.
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           CTA FINAL — instant
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
