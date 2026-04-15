@@ -9,21 +9,21 @@ const experiences = [
     title: "Private Dinner\nFacing the Acropolis",
     desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private villa, the format is yours.",
     cta: "Reserve your evening",
-    photo: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80",
+    photo: "/Screenshot 2026-03-09 at 11.30.58.png",
   },
   {
     pill: "ACROSS GREECE",
     title: "Wedding Proposal\nin Greece",
     desc: "A clifftop terrace at golden hour. A private beach at the end of an unmarked road. We find the place, arrange every detail, and disappear. You just ask the question.",
     cta: "Plan the moment",
-    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=1920&q=80",
+    photo: "/good-days-digital-5dusgr_R35E-unsplash.jpg",
   },
   {
     pill: "GREECE",
     title: "Boutique\nWedding",
     desc: "For couples who want fewer guests and more meaning. A villa on a quiet island, a chapel by the sea with only the people who matter. We handle everything on the ground. Nothing is repeated.",
     cta: "Start planning",
-    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=1920&q=80",
+    photo: "/Screenshot 2026-03-09 at 13.42.39.png",
   },
   {
     pill: "ATHENS",
@@ -36,25 +36,25 @@ const experiences = [
 
 const concierge = [
   {
-    cat: "DINING",
+    tag: "DINING",
     title: "Private Dining & Reservations",
     desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
     photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
   },
   {
-    cat: "GASTRONOMY",
+    tag: "GASTRONOMY",
     title: "Gastronomic Journeys",
     desc: "Market mornings with a local chef, wine on a hillside, a cooking class in a village kitchen where the recipe has never been written down.",
     photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=900&q=85",
   },
   {
-    cat: "WINE",
+    tag: "WINE",
     title: "Private Vineyard Visits",
     desc: "Santorini\u2019s volcanic soil, the quiet estates of Nemea and Naoussa. A glass poured by the winemaker, in the cellar where it aged.",
     photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=900&q=85",
   },
   {
-    cat: "LIFESTYLE",
+    tag: "LIFESTYLE",
     title: "Lifestyle & Concierge",
     desc: "A private museum visit at dawn, a last-minute boat for the afternoon, villa staff for the week. One call, handled quietly.",
     photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=900&q=85",
@@ -212,30 +212,31 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          CONCIERGE — horizontal bands on beige
+          CONCIERGE CARDS — beige, 2x2
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-10 md:py-16 px-6 md:px-16">
-        <div className="max-w-5xl mx-auto flex flex-col divide-y divide-[#1a1a1a]/[0.08]">
-          {concierge.map((c) => (
-            <div key={c.cat} className="reveal flex flex-col md:flex-row md:items-center gap-0 md:gap-10 py-8 md:py-10">
-              {/* Image */}
-              <div className="w-full md:w-[40%] shrink-0 overflow-hidden rounded-sm">
+      <section className="bg-[#fcf7f1] pt-8 pb-12 md:pt-8 md:pb-16 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
+          {concierge.map((card, i) => (
+            <div
+              key={card.tag}
+              className="reveal group bg-white overflow-hidden rounded-sm"
+              data-delay={i * 150}
+            >
+              <div className="overflow-hidden aspect-[3/2]">
                 <img
-                  src={c.photo}
-                  alt={c.title}
-                  className="img-settle w-full h-[200px] md:h-[220px] object-cover transition-transform duration-600 ease-out md:hover:scale-[1.03]"
-                  style={{ aspectRatio: "16/9" }}
+                  src={card.photo}
+                  alt={card.title}
+                  className="w-full h-full object-cover transition-transform duration-600 ease-out group-hover:scale-[1.03]"
                   loading="lazy"
                 />
               </div>
-              {/* Text */}
-              <div className="mt-5 md:mt-0">
-                <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{c.cat}</span>
-                <h3 className="font-body text-[18px] md:text-[22px] font-medium text-[#2e5a88] leading-[1.2] mt-2">
-                  {c.title}
+              <div className="px-8 pt-5 pb-8 md:px-10 md:pb-8 border-b border-[#1a1a1a]/10">
+                <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{card.tag}</span>
+                <h3 className="font-body text-[20px] font-semibold text-[#2e5a88] leading-[1.2] mt-2">
+                  {card.title}
                 </h3>
-                <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-3 max-w-md">
-                  {c.desc}
+                <p className="font-body text-[15px] text-[#1a1a1a]/40 leading-[1.7] font-light mt-3">
+                  {card.desc}
                 </p>
               </div>
             </div>
