@@ -411,24 +411,22 @@ export default function Home() {
           BLOC 11 — GREECE ONLY. ALWAYS. (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-32 md:py-44 flex items-center justify-center overflow-hidden">
-        <div className="parallax-wrap absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
-            alt="Greece"
-            className="absolute inset-0 w-full object-cover"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
+          alt="Greece"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="reveal font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
+          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
             Greece only.<br />Always.
           </h2>
-          <p className="reveal font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10" data-delay="150">
+          <p className="font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10">
             One country. One obsession.
           </p>
-          <p className="reveal font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto" data-delay="300">
+          <p className="font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
             A skipper who knows where to anchor when the wind picks up. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
           </p>
         </div>
