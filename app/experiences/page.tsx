@@ -29,7 +29,7 @@ const experiences = [
     location: "GREECE",
     title: "Boutique Wedding",
     p1: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.",
-    p2: "Venue, kitchen, ceremony, on-the-ground production. Every detail is considered. Nothing is templated.",
+    p2: "We handle everything on the ground, from the venue to the kitchen to the ceremony. Every detail is considered. Nothing is repeated.",
     cta: "Start planning",
     photo: "/Screenshot 2026-03-09 at 13.42.39.png",
     pos: "center 65%",
@@ -39,7 +39,7 @@ const experiences = [
     location: "ATHENS",
     title: "Private Shopping with a Stylist",
     p1: "Kolonaki through someone who knows every door. A stylist who understands what you are looking for before you say it.",
-    p2: "Greek designers you won\u2019t find outside Athens, international houses with pieces set aside, and a morning shaped entirely around your eye.",
+    p2: "Greek designers you won\u2019t find outside Athens, international houses with pieces set aside. A morning with no agenda but yours.",
     cta: "Book your morning",
     photo: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=85",
     pos: "center center",
@@ -216,7 +216,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CITATION — beige, breathing pause
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] flex items-center justify-center py-16 md:py-24 px-8">
+      <section className="bg-[#fcf7f1] flex items-center justify-center py-12 md:py-16 px-8">
         <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           You tell us the occasion. We take care of everything around it.
         </p>
@@ -225,7 +225,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CONCIERGE INTRO — white (visual reset)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-20 px-8 md:px-16">
+      <section className="bg-white pt-12 pb-10 md:pt-16 md:pb-12 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             02 &middot; Concierge
@@ -240,7 +240,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CONCIERGE CARDS — beige, 2x2
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-12 md:py-16 px-8 md:px-16">
+      <section className="bg-[#fcf7f1] pt-8 pb-12 md:pt-8 md:pb-16 px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8">
           {concierge.map((card, i) => (
             <div
