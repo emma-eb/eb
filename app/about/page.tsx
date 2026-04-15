@@ -128,7 +128,7 @@ export default function About() {
             From Paris, based in Athens
           </p>
           <p className="font-body text-[15px] text-[#2e5a88] font-normal mt-6">
-            Greece, privately. For clients who know the difference.
+            Greece, privately. From Athens to the islands.
           </p>
         </div>
       </section>
@@ -144,15 +144,15 @@ export default function About() {
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="80" />
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left" data-delay="160">
-            Twelve years producing private launches, press events and influencer campaigns for luxury fragrance and fashion houses, including Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Over eighty productions across Paris, London, Amsterdam and Copenhagen, from intimate dinners for five to large-scale events for a thousand.
+            Twelve years producing launches, press events and influencer campaigns for luxury houses including Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Over eighty productions across Paris, London, Amsterdam and Copenhagen.
           </p>
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="240">
-            Before eb., I spent years designing private journeys for high-net-worth travelers across Africa, through Tanzania, Botswana, and Morocco, where I lived for several years. That experience taught me what this kind of client actually expects, and how far the details need to go.
+            Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, and Morocco, where I lived for several years.
           </p>
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="320">
-            Ninety-five countries visited, lived in, or worked across. Greece is where everything came together. eb. is a private travel studio built on that conviction, for clients anywhere in the world.
+            Ninety-five countries. Greece is where everything came together. eb. is a private travel studio built on that conviction, for clients anywhere in the world.
           </p>
         </div>
 
@@ -241,7 +241,7 @@ export default function About() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Let&apos;s start with<br />a conversation.
