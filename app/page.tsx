@@ -102,7 +102,7 @@ export default function Home() {
         data-nav-dark
         className="relative h-[100dvh] flex flex-col justify-center items-center text-center overflow-hidden"
       >
-        <div className="parallax-wrap absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src="/hero-bateau.jpg"
             alt="Aegean Sea, Greece"
@@ -111,7 +111,6 @@ export default function Home() {
               objectPosition: "72% 65%",
               transform: heroLoaded ? "scale(1.0)" : "scale(1.08)",
               transition: "transform 2s ease-out",
-              minHeight: "100%",
             }}
           />
         </div>
