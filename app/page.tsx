@@ -88,11 +88,6 @@ export default function Home() {
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
           </p>
 
-          {/* Body */}
-          <p className="hidden md:block font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light">
-            Today, eb. is a private travel studio dedicated to Greece. A sunrise sail through the Cyclades with no one else on the water. A clifftop villa where the infinity pool meets the Aegean. A private island dinner prepared by one of Athens&apos; most celebrated chefs.
-          </p>
-
           {/* Closing */}
           <p className="font-body text-[15px] md:text-base text-[#1a1a1a]/40 leading-[1.8] font-light mt-3">
             eb. finds the Greece that fits you, and shapes every detail.
