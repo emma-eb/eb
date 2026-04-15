@@ -17,7 +17,7 @@ const collabsData = [
 const stats = [
   { n: 12, suffix: "+", label: "years producing for luxury houses" },
   { n: 80, suffix: "+", label: "productions across Europe" },
-  { n: 95, suffix: "+", label: "countries visited before choosing one" },
+  { n: 95, suffix: "+", label: "countries before choosing one" },
   { n: 35, suffix: "+", label: "Greek islands, covered firsthand" },
 ];
 
@@ -64,7 +64,7 @@ export default function About() {
           revealObs.unobserve(el);
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+      { threshold: typeof window !== "undefined" && window.innerWidth < 768 ? 0.15 : 0.2, rootMargin: "0px 0px -50px 0px" }
     );
     revealEls.forEach((el) => revealObs.observe(el));
 
@@ -124,10 +124,10 @@ export default function About() {
           <p className="font-body text-[16px] md:text-[18px] text-[#1a1a1a]/40 font-light mt-2">
             Founder, eb. Private Travel Studio
           </p>
-          <p className="font-body text-[14px] text-[#1a1a1a]/40 font-light mt-1">
+          <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/40 font-light mt-1">
             From Paris, based in Athens
           </p>
-          <p className="font-body text-[15px] text-[#2e5a88] font-normal mt-6">
+          <p className="font-body text-[14px] md:text-[15px] text-[#2e5a88] font-normal mt-4">
             Greece, privately. From Athens to the islands.
           </p>
         </div>
@@ -141,29 +141,29 @@ export default function About() {
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
             The Story
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="80" />
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 md:mb-8 mx-auto" data-delay="80" />
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left" data-delay="160">
             Twelve years producing launches, press events and influencer campaigns for luxury houses including Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Over eighty productions across Paris, London, Amsterdam and Copenhagen.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="240">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="240">
             Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, and Morocco, where I lived for several years.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="320">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="320">
             Ninety-five countries. Greece is where everything came together. eb. is a private travel studio built on that conviction, for clients anywhere in the world.
           </p>
         </div>
 
         {/* Numbers — integrated into beige block */}
-        <div ref={numbersRef} className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center mt-12">
+        <div ref={numbersRef} className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center mt-10 md:mt-12">
           {stats.map((s, i) => (
             <div key={s.label} className="reveal" data-delay={i * 100}>
               <p className="font-body text-[36px] md:text-[48px] font-semibold text-[#2e5a88] leading-none">
                 <CounterNumber target={s.n} suffix={s.suffix} trigger={numbersVisible} />
               </p>
-              <p className="font-body text-[13px] text-[#1a1a1a]/40 font-light mt-2 leading-[1.4]">{s.label}</p>
+              <p className="font-body text-[12px] md:text-[13px] text-[#1a1a1a]/40 font-light mt-2 leading-[1.4]">{s.label}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           BLOC 4 — WHY GREECE (full-bleed, bottom-left)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[55vh] md:h-[75vh] min-h-[500px] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[55vh] md:h-[75vh] min-h-[450px] md:min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1920&q=80"
@@ -186,13 +186,13 @@ export default function About() {
           <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Why Greece.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.8] max-w-xl" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] md:leading-[1.8] max-w-none md:max-w-xl" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece is not a backdrop. It is a geography of extreme contrasts, a tradition of hospitality that predates most nations, and a network of people who don&apos;t put what they offer online.
           </p>
-          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.8] max-w-xl mt-6" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] md:leading-[1.8] max-w-none md:max-w-xl mt-5 md:mt-6" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             A private visit before the crowds arrive. A dinner where the chef closes for your table only. A villa that never appears online. None of this is bookable. It takes the right network, and knowing exactly who to call.
           </p>
-          <p className="reveal font-body text-[20px] md:text-[24px] text-white font-light leading-[1.4] max-w-xl mt-10" data-delay="300" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[20px] md:text-[24px] text-white font-light leading-[1.4] max-w-none md:max-w-xl mt-8 md:mt-10" data-delay="300" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             That is what eb. provides.
           </p>
         </div>
@@ -223,17 +223,17 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           BLOC 6 — CITATION + ligne bleue
       ═══════════════════════════════════════════ */}
-      <section className="bg-white flex flex-col items-center justify-center py-10 md:py-12 px-8">
-        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+      <section className="bg-white flex flex-col items-center justify-center py-10 md:py-12 px-6 md:px-8">
+        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
           I had traveled through ninety-five countries and kept coming back to one.
         </p>
-        <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-8 mx-auto" data-delay="100" />
+        <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
       </section>
 
       {/* ═══════════════════════════════════════════
           BLOC 7 — CTA FINAL (instant)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+      <section data-nav-dark className="relative h-[40vh] md:h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80"
@@ -246,12 +246,12 @@ export default function About() {
           <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Let&apos;s start with<br />a conversation.
           </h2>
-          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-4 max-w-lg mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-3 md:mt-4 max-w-lg mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Whether you are planning a private journey, a celebration, or a brand production in Greece.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 min-h-[44px] items-center door-cta"
+            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-6 md:mt-8 min-h-[44px] items-center door-cta"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
