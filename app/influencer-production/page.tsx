@@ -47,14 +47,14 @@ export default function InfluencerProduction() {
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 flex-1 min-h-[5rem]" />
-
-        <div className="relative z-10 px-8 md:px-16 pb-16 md:pb-24">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mb-6">For Brands &amp; Agencies</p>
-          <h1 className="font-heading text-[36px] md:text-[56px] leading-[0.9] text-white mb-8 uppercase">
+        <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-8">
+          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+            For Brands &amp; Agencies
+          </span>
+          <h1 className="font-heading text-[36px] md:text-[56px] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece,<br />produced.
           </h1>
-          <p className="font-body text-base text-white/60 max-w-xl leading-relaxed">
+          <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
           </p>
         </div>
@@ -63,20 +63,18 @@ export default function InfluencerProduction() {
       {/* ═══════════════════════════════════════════
           WHY GREECE
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-24 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24 items-start">
-          <div className="pt-1">
-            <div className="reveal h-px bg-[#2e5a88] w-8 mb-5" />
-            <p className="reveal font-body text-xs tracking-[0.25em] uppercase text-[#1a1a1a]/40" data-delay="80">Why Greece</p>
-          </div>
-          <div>
-            <p className="reveal font-body text-xl md:text-2xl text-[#1a1a1a]/80 leading-relaxed font-light max-w-2xl" data-delay="160">
-              300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
-            </p>
-            <p className="reveal font-body text-lg md:text-xl text-[#2e5a88] mt-8 font-light" data-delay="240">
-              Greece has the locations. We have the network.
-            </p>
-          </div>
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-[800px] mx-auto text-center">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
+            Why Greece
+          </p>
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="80" />
+          <p className="reveal font-body text-[18px] md:text-[22px] text-[#1a1a1a]/60 leading-relaxed font-light" data-delay="160">
+            300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
+          </p>
+          <p className="reveal font-body text-[18px] md:text-[22px] text-[#2e5a88] mt-8 font-light" data-delay="240">
+            Greece has the locations. We have the network.
+          </p>
         </div>
       </section>
 
@@ -169,17 +167,6 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          CASE STUDIES LINE (replaces past productions)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] pb-12 md:pb-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 font-light">
-            Selected case studies available on request.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
           WHAT WE BRING — dark
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a] py-16 md:py-24 px-6 md:px-16">
@@ -196,12 +183,12 @@ export default function InfluencerProduction() {
                 items: ["Photographers & videographers", "Stylists & art directors", "Hair & make-up", "Post-production coordination"],
               },
               {
-                cat: "Talent & PR",
-                items: ["Influencer & talent briefing", "Press coordination", "Brand ambassador management", "Media documentation"],
+                cat: "Talent & Coordination",
+                items: ["Influencer coordination on-site", "Agency & talent liaison", "Brand ambassador management", "Post-trip content recap & reporting"],
               },
               {
                 cat: "On the ground",
-                items: ["Private chef & catering", "Private transfers & yacht", "24/7 availability", "Emergency support if required"],
+                items: ["Private transfers & yacht", "24/7 availability", "Emergency support if required"],
               },
             ].map(({ cat, items }, i) => (
               <div key={cat} className="reveal" data-delay={i * 100}>
