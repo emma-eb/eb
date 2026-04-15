@@ -181,6 +181,12 @@ h1, h2, h3 {
   .door-card:hover .door-overlay {
     opacity: 1;
   }
+  .door-card .featured-img.visible.done {
+    transition: transform 0.6s ease-out;
+  }
+  .door-card:hover .featured-img.visible.done {
+    transform: scale(1.03);
+  }
   .door-card:hover .door-cta {
     animation: cta-pulse-x-hover 1.2s ease-in-out infinite;
   }

@@ -16,11 +16,17 @@ export default function Home() {
   const doorsRef = useRef<HTMLElement>(null);
   const ticker = [...islands, ...islands];
   const [scrolled, setScrolled] = useState(false);
+  const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(() => setHeroLoaded(true), 100);
+    return () => clearTimeout(t);
   }, []);
 
   /* ─── Scroll reveal + featured image settle ─── */
@@ -101,7 +107,11 @@ export default function Home() {
             src="/hero-bateau.jpg"
             alt="Aegean Sea, Greece"
             className="w-full object-cover"
-            style={{ objectPosition: "72% 65%" }}
+            style={{
+              objectPosition: "72% 65%",
+              transform: heroLoaded ? "scale(1.0)" : "scale(1.08)",
+              transition: "transform 2s ease-out",
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
@@ -197,9 +207,8 @@ export default function Home() {
               <img
                 src={door.image}
                 alt={door.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+                className="featured-img absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
-                style={{ transition: "transform 0.6s ease-out" }}
               />
               <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
