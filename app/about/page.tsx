@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
 
 const collabsData = [
@@ -15,13 +15,37 @@ const collabsData = [
 ];
 
 const stats = [
-  { n: "12+", label: "years in the world of luxury" },
-  { n: "80+", label: "productions, no two alike" },
-  { n: "95+", label: "countries before choosing Greece" },
-  { n: "35+", label: "islands, worldwide clients" },
+  { n: 12, suffix: "+", label: "years producing for luxury houses" },
+  { n: 80, suffix: "+", label: "productions across Europe" },
+  { n: 95, suffix: "+", label: "countries visited before choosing one" },
+  { n: 35, suffix: "+", label: "Greek islands, covered firsthand" },
 ];
 
+function CounterNumber({ target, suffix, trigger }: { target: number; suffix: string; trigger: boolean }) {
+  const [value, setValue] = useState(0);
+  const hasRun = useRef(false);
+
+  useEffect(() => {
+    if (!trigger || hasRun.current) return;
+    hasRun.current = true;
+    const duration = 1500;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [trigger, target]);
+
+  return <>{value}{trigger && value === target ? suffix : ""}</>;
+}
+
 export default function About() {
+  const numbersRef = useRef<HTMLDivElement>(null);
+  const [numbersVisible, setNumbersVisible] = useState(false);
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -57,6 +81,20 @@ export default function About() {
     );
     settleEls.forEach((el) => settleObs.observe(el));
 
+    // Counter trigger
+    if (numbersRef.current) {
+      const counterObs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setNumbersVisible(true);
+            counterObs.disconnect();
+          }
+        },
+        { threshold: 0.3 }
+      );
+      counterObs.observe(numbersRef.current);
+    }
+
     return () => { revealObs.disconnect(); settleObs.disconnect(); };
   }, []);
 
@@ -89,16 +127,16 @@ export default function About() {
           <p className="font-body text-[14px] text-[#1a1a1a]/40 font-light mt-1">
             From Paris, based in Athens
           </p>
-          <p className="font-body text-[15px] text-[#1a1a1a]/40 font-light mt-4">
-            Designing private journeys and experiences across Greece.
+          <p className="font-body text-[15px] text-[#2e5a88] font-normal mt-6">
+            Greece, privately. For clients who know the difference.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 2 — STORY + NUMBERS (beige continu)
+          BLOC 2 + 3 — STORY + NUMBERS (beige continu)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-10 md:py-14 px-6 md:px-16">
+      <section className="bg-[#fcf7f1] pt-10 md:pt-14 pb-10 md:pb-14 px-6 md:px-16">
         <div className="max-w-[720px] mx-auto">
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
             The Story
@@ -106,7 +144,7 @@ export default function About() {
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="80" />
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left" data-delay="160">
-            Twelve years producing private launches, press events and influencer productions for houses like Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Eighty productions across Paris, London, Amsterdam and Copenhagen. Events up to a thousand guests, and a margin for error that was always zero.
+            Twelve years producing private launches, press events and influencer campaigns for luxury fragrance and fashion houses, including Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Over eighty productions across Paris, London, Amsterdam and Copenhagen, from intimate dinners for five to large-scale events for a thousand.
           </p>
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="240">
@@ -114,15 +152,17 @@ export default function About() {
           </p>
 
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-6" data-delay="320">
-            Ninety-five countries. A career built across luxury, travel and production. Greece is where I chose to stay. The network, the access, the depth of what this country offers when you know who to call. eb. exists to give you that, wherever you are in the world.
+            Ninety-five countries visited, lived in, or worked across. Greece is where everything came together. eb. is a private travel studio built on that conviction, for clients anywhere in the world.
           </p>
         </div>
 
         {/* Numbers — integrated into beige block */}
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center mt-12">
+        <div ref={numbersRef} className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center mt-12">
           {stats.map((s, i) => (
-            <div key={s.n} className="reveal" data-delay={i * 100}>
-              <p className="font-body text-[36px] md:text-[48px] font-semibold text-[#2e5a88] leading-none">{s.n}</p>
+            <div key={s.label} className="reveal" data-delay={i * 100}>
+              <p className="font-body text-[36px] md:text-[48px] font-semibold text-[#2e5a88] leading-none">
+                <CounterNumber target={s.n} suffix={s.suffix} trigger={numbersVisible} />
+              </p>
               <p className="font-body text-[13px] text-[#1a1a1a]/40 font-light mt-2 leading-[1.4]">{s.label}</p>
             </div>
           ))}
@@ -159,7 +199,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — COLLABORATIONS (hierarchie visuelle)
+          BLOC 5 — COLLABORATIONS
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-10 md:py-12 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
