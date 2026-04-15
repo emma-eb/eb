@@ -7,7 +7,7 @@ const experiences = [
   {
     pill: "ATHENS",
     title: "Private Dinner\nFacing the Acropolis",
-    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. A rooftop with a view or a private penthouse, the format is yours.",
+    desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private penthouse, the format is yours.",
     cta: "Reserve your evening",
     photo: "/Screenshot 2026-03-09 at 11.30.58.png",
     pos: "center center",
@@ -42,7 +42,7 @@ const concierge = [
   {
     tag: "DINING",
     title: "Private Dining & Reservations",
-    desc: "Rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
+    desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
     photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=1200&q=85",
   },
   {
@@ -229,13 +229,13 @@ export default function Experiences() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)" }} />
 
               <div className="absolute bottom-0 left-0 p-5 md:p-8 z-10">
                 <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
                   {c.tag}
                 </span>
-                <h3 className="font-body text-[16px] md:text-[18px] font-semibold text-white mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <h3 className="text-[16px] md:text-[18px] font-semibold text-white mt-3" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {c.title}
                 </h3>
                 <p className="font-body text-[13px] text-white/75 font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
