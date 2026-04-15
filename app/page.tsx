@@ -106,11 +106,12 @@ export default function Home() {
           <img
             src="/hero-bateau.jpg"
             alt="Aegean Sea, Greece"
-            className="w-full object-cover"
+            className="w-full h-full object-cover"
             style={{
               objectPosition: "72% 65%",
               transform: heroLoaded ? "scale(1.0)" : "scale(1.08)",
               transition: "transform 2s ease-out",
+              minHeight: "100%",
             }}
           />
         </div>
