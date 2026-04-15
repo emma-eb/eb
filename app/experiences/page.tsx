@@ -21,8 +21,8 @@ const experiences = [
     p1: "The setting says everything. A clifftop terrace at golden hour. A private beach at the end of an unmarked road. A garden in the Peloponnese, lit only by candles.",
     p2: "We find the place, arrange every detail, and disappear. The photographer is already in position. The flowers were placed that morning. You just ask the question.",
     cta: "Plan the moment",
-    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=900&q=85",
-    pos: "center 30%",
+    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=1200&h=800&q=85",
+    pos: "center 40%",
   },
   {
     num: "#3",
@@ -31,8 +31,8 @@ const experiences = [
     p1: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.",
     p2: "Venue, kitchen, ceremony, on-the-ground production. Every detail is considered. Nothing is templated.",
     cta: "Start planning",
-    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=900&q=85",
-    pos: "center 25%",
+    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=1200&h=800&q=85",
+    pos: "center 20%",
   },
   {
     num: "#4",
@@ -178,7 +178,7 @@ export default function Experiences() {
                   src={exp.photo}
                   alt={exp.title}
                   className="img-settle w-full h-full object-cover"
-                  style={{ objectPosition: exp.pos, transform: "scale(1.04)", transition: "transform 1.2s ease-out" }}
+                  style={{ objectPosition: exp.pos }}
                   loading="lazy"
                 />
               </div>
