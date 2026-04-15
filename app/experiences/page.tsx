@@ -66,12 +66,12 @@ const conciergeCards = [
 ];
 
 export default function Experiences() {
-  /* Scroll reveal + featured image settle */
+  /* Scroll reveal */
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
-    const els = document.querySelectorAll<HTMLElement>(".reveal, .featured-img");
+    const els = document.querySelectorAll<HTMLElement>(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -96,7 +96,7 @@ export default function Experiences() {
       <Nav activePage="/experiences" />
 
       {/* ═══════════════════════════════════════════
-          BLOC 1 — HERO
+          BLOC 1 — HERO (no animation, instant)
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
@@ -112,7 +112,7 @@ export default function Experiences() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] -webkit-backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Experiences
           </span>
           <h1 className="font-heading text-[clamp(2.2rem,8vw,5.5rem)] leading-[0.9] text-white uppercase mb-5">
@@ -143,33 +143,33 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 3 — HERO EXPERIENCES (alternating)
+          BLOC 3 — HERO EXPERIENCES (alternating, flush)
       ═══════════════════════════════════════════ */}
       {heroExperiences.map((exp, i) => {
         const isEven = i % 2 === 1;
         return (
-          <section key={exp.num} className="bg-white">
-            <div className={`flex flex-col ${isEven ? "md:flex-row-reverse" : "md:flex-row"}`}>
-              {/* Image */}
-              <div className="w-full md:w-1/2 overflow-hidden">
+          <section key={exp.num}>
+            <div className={`flex flex-col ${isEven ? "md:flex-row-reverse" : "md:flex-row"} md:h-[520px]`}>
+              {/* Image — no animation */}
+              <div className="w-full md:w-1/2 h-[280px] md:h-full overflow-hidden">
                 <img
                   src={exp.photo + "?auto=format&fit=crop&w=960&q=85"}
                   alt={exp.title}
-                  className="featured-img w-full h-[50vh] md:h-full object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Text */}
-              <div className="w-full md:w-1/2 flex items-center bg-[#fcf7f1]">
-                <div className="px-8 md:px-14 lg:px-20 py-14 md:py-20 max-w-lg">
-                  <div className="reveal flex items-center gap-4 mb-6">
+              {/* Text — vertically centered */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#fcf7f1] px-8 py-10 md:px-14 lg:px-20 md:py-0">
+                <div className="max-w-lg">
+                  <div className="reveal flex items-center gap-4 mb-5">
                     <span className="font-body text-xs tracking-[0.2em] uppercase text-[#1a1a1a]/30">{exp.num}</span>
                     <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#1a1a1a]/40">{exp.location}</span>
                   </div>
-                  <h3 className="reveal font-body text-[24px] md:text-[28px] font-medium text-[#2e5a88] leading-[1.2] mb-6" data-delay="100">
+                  <h3 className="reveal font-body text-[22px] md:text-[28px] font-semibold text-[#2e5a88] leading-[1.2] mb-5" data-delay="100">
                     {exp.title}
                   </h3>
-                  <div className="reveal font-body text-[15px] text-[#1a1a1a]/40 leading-[1.8] font-light whitespace-pre-line mb-8" data-delay="200">
+                  <div className="reveal font-body text-[15px] text-[#1a1a1a]/40 leading-[1.8] font-light whitespace-pre-line mb-7" data-delay="200">
                     {exp.desc}
                   </div>
                   <a
@@ -213,17 +213,17 @@ export default function Experiences() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {conciergeCards.map((card, i) => (
-            <div key={card.tag} className="reveal group bg-white overflow-hidden" data-delay={i * 100}>
+            <div key={card.tag} className="reveal group bg-white overflow-hidden border-b border-[#1a1a1a]/[0.08]" data-delay={i * 150}>
               <div className="overflow-hidden aspect-[3/2]">
                 <img
                   src={card.photo + "?auto=format&fit=crop&w=900&q=85"}
                   alt={card.title}
-                  className="featured-img w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover transition-transform duration-600 ease-out group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="p-8 md:p-10">
+              <div className="p-8 md:p-10 pb-10">
                 <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-3 block">{card.tag}</span>
                 <h3 className="font-body text-[20px] md:text-[22px] font-medium text-[#2e5a88] leading-[1.2] mb-4">
                   {card.title}
@@ -238,29 +238,28 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 6 — CTA FINAL
+          BLOC 6 — CTA FINAL (no animation, instant)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="parallax-wrap absolute inset-0">
+        <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
             alt="Greece evening"
-            className="featured-img absolute inset-0 w-full object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="reveal font-heading text-[clamp(1.8rem,5vw,3.5rem)] leading-[0.9] text-white mb-5 uppercase">
+          <h2 className="font-heading text-[clamp(1.8rem,5vw,3.5rem)] leading-[0.9] text-white mb-5 uppercase">
             What would you like<br />to experience?
           </h2>
-          <p className="reveal font-body text-sm md:text-base text-white/80 font-light mb-8 max-w-xl mx-auto leading-relaxed" data-delay="150">
+          <p className="font-body text-sm md:text-base text-white/80 font-light mb-8 max-w-xl mx-auto leading-relaxed">
             Tell us your occasion. We shape everything around it.
           </p>
           <a
             href="/contact"
-            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
-            data-delay="300"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
