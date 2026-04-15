@@ -41,7 +41,7 @@ const experiences = [
     p1: "Kolonaki through someone who knows every door. A stylist who understands what you are looking for before you say it.",
     p2: "Greek designers you won\u2019t find outside Athens, international houses with pieces set aside, and a morning shaped entirely around your eye.",
     cta: "Book your morning",
-    photo: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=900&q=85",
     pos: "center center",
   },
 ];
