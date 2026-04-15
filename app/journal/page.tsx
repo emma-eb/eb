@@ -11,7 +11,7 @@ const articles = [
     desc: "Filming starts May 2026 across the Greek islands. Santorini, Mykonos and Paros are frontrunners. The show drew 27 million views in 11 days.",
     href: "https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/",
     ctaLabel: "Read on Variety",
-    photo: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=800&q=80",
+    photo: "https://images.unsplash.com/photo-1515091943-9d5c0ad475af?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "OPENINGS",
@@ -20,7 +20,7 @@ const articles = [
     desc: "94 rooms, suites and villas on Kalo Livadi Bay. Cycladic architecture by Nicos Valsamakis. The biggest luxury hotel arrival in Greece this decade.",
     href: "https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html",
     ctaLabel: "Read on TornosNews",
-    photo: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=800&q=80",
+    photo: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "OPENINGS",
@@ -29,7 +29,7 @@ const articles = [
     desc: "A complete transformation of the landmark on Vasilissis Sofias. The largest rooms in Athens, Acropolis views, 700m running track, and a new Waldorf Astoria Residences wing.",
     href: "https://tornosnews.gr/en/tourism-businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html",
     ctaLabel: "Read on TornosNews",
-    photo: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=800&q=80",
+    photo: "https://images.unsplash.com/photo-1564594736624-def7a10ab047?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "OPENINGS",
@@ -38,7 +38,7 @@ const articles = [
     desc: "41 suites with private pools on Provatas Beach. Volcanic landscape, LEED Gold certified, rates from \u20ac700 to \u20ac1,300 per night. Milos enters the luxury map.",
     href: "https://tornosnews.gr/en/businesses/hotels/empiria-group-expands-in-the-cyclades-new-luxury-all-suite-hotel-in-milos-in-jun.html",
     ctaLabel: "Read on TornosNews",
-    photo: "https://images.unsplash.com/photo-1586861203927-800a5acdcc4d?auto=format&fit=crop&w=800&q=80",
+    photo: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "OPENINGS",
@@ -47,7 +47,7 @@ const articles = [
     desc: "50 rooms with private pools in Kampos. Cycladic design by Makridis & Associates. Paros confirms its rise as the thinking traveler\u2019s alternative to Mykonos.",
     href: "https://www.travelandtourworld.com/news/article/greeces-paros-to-welcome-the-stunning-parian-chronicle-hotel-in-summer-2026-offering-luxury-culture-and-wellness-in-a-stunning-aegean-setting/",
     ctaLabel: "Read on TATW",
-    photo: "https://images.unsplash.com/photo-1597211684565-dca64d72c855?auto=format&fit=crop&w=800&q=80",
+    photo: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "IN THE PRESS",
@@ -106,11 +106,11 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 1 — HERO (instant)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex flex-col justify-center items-center text-center overflow-hidden">
+      <section data-nav-dark className="relative h-[50vh] flex flex-col justify-center items-center text-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1504512485720-7d83a16ee930?auto=format&fit=crop&w=1920&q=80"
-            alt="Aerial view of Greek islands"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
+            alt="Aerial view Greek coast, turquoise water"
             className="w-full h-full object-cover"
           />
         </div>
@@ -131,11 +131,11 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — FEATURED ARTICLE
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[55vh] md:h-[70vh] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80"
-            alt="Santorini caldera dramatic view"
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80"
+            alt="Luxury resort, infinity pool, sea view"
             className="img-settle w-full h-full object-cover"
           />
         </div>
@@ -179,7 +179,7 @@ export default function Journal() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-12 mx-auto" data-delay="80" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((a, i) => (
               <a
                 key={a.title}
@@ -223,11 +223,11 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 4 — THE HEIGHT (Real Estate)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[50vh] md:h-[65vh] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1920&q=80"
-            alt="Contemporary architecture, coastal view"
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80"
+            alt="Contemporary luxury villa, sea view"
             className="img-settle w-full h-full object-cover"
           />
         </div>
@@ -280,7 +280,7 @@ export default function Journal() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-12 md:py-16 px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal font-body text-[24px] md:text-[32px] font-light text-[#2e5a88] leading-[1.2]">
+          <h2 className="reveal text-[24px] md:text-[32px] text-[#2e5a88] leading-[1.2]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
             Stay close to Greece.
           </h2>
           <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 font-light mt-4 leading-relaxed" data-delay="100">
