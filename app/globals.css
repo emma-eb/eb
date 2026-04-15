@@ -158,6 +158,24 @@ h1, h2, h3 {
   will-change: auto;
 }
 
+/* Experience image settle (JS adds .settled) */
+.img-settle {
+  transform: scale(1.04);
+  transition: transform 1.2s ease-out;
+  will-change: transform;
+}
+.img-settle.settled {
+  transform: scale(1.0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-settle {
+    transform: none !important;
+    transition: none;
+    will-change: auto;
+  }
+}
+
 /* ═══════════════════════════════════════════
    PARALLAX IMAGE
 ═══════════════════════════════════════════ */
