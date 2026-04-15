@@ -100,7 +100,7 @@ export default function Home() {
 
           {/* Signature */}
           <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
-            Founded by <a href="/about" className="text-[#2e5a88] underline decoration-[#2e5a88]/30 underline-offset-2 hover:decoration-[#2e5a88] transition-colors duration-300 inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
+            Founded by <a href="/about" className="text-[#2e5a88] no-underline hover:underline underline-offset-2 transition-colors duration-300 inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
           </p>
         </div>
       </section>
@@ -153,9 +153,9 @@ export default function Home() {
                 <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
                   {door.subtitle}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0">
+                <div className="mt-5 inline-flex items-center gap-2 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0 door-cta">
                   {door.cta}
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" className="door-chevron">
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
                     <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
                   </svg>
                 </div>
@@ -368,38 +368,55 @@ export default function Home() {
           FOOTER (texte blanc/beige lisible)
       ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
-          {/* Col 1 — Logo + copyright + email */}
-          <div className="flex flex-col items-center md:items-start gap-4">
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+          {/* Logo */}
+          <div className="flex flex-col items-center md:items-start gap-4 order-1">
             <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
-            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center md:text-left">
+            {/* Copyright + email: visible on desktop in this column */}
+            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
               &copy; 2026 Emma Bonnefous &middot; Athens, Greece
             </p>
-            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
               hello@emmabonnefous.com
             </a>
           </div>
 
-          {/* Col 2 — Legal + Social */}
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
-              <span className="py-2">&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
-            </div>
+          {/* Nav links — first on mobile, last on desktop */}
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
+          </div>
+
+          {/* Social — middle on mobile */}
+          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
             <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
               <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
               <span className="py-2">&middot;</span>
               <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
             </div>
+            {/* Legal + admin: on desktop in middle col */}
+            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
           </div>
 
-          {/* Col 3 — Nav links */}
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end">
-            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
-            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
+          {/* Mobile-only bottom: email, legal, copyright */}
+          <div className="flex md:hidden flex-col items-center gap-3 order-4">
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
           </div>
         </div>
       </footer>
