@@ -221,7 +221,7 @@ export default function Home() {
               <img
                 src={door.image}
                 alt={door.title}
-                className="featured-img absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -272,7 +272,7 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
             alt="Small Cyclades sailing"
-            className="featured-img absolute inset-0 w-full object-cover"
+            className="absolute inset-0 w-full object-cover"
             loading="lazy"
           />
         </div>
@@ -319,7 +319,7 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
             alt="Athens evening"
-            className="featured-img absolute inset-0 w-full object-cover"
+            className="absolute inset-0 w-full object-cover"
             loading="lazy"
           />
         </div>
@@ -366,7 +366,7 @@ export default function Home() {
           <img
             src="/134_terrace_privatebeach.jpg"
             alt="Private villa terrace with sea view, Greece"
-            className="featured-img absolute inset-0 w-full object-cover"
+            className="absolute inset-0 w-full object-cover"
             loading="lazy"
           />
         </div>
@@ -439,16 +439,15 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
+          <h2 className="font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
             Ready to begin?
           </h2>
-          <p className="reveal font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10" data-delay="150">
+          <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
             Tell us what you dream of. We take care of everything else.
           </p>
           <a
             href="/contact"
-            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
-            data-delay="300"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
           >
             Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
