@@ -100,7 +100,7 @@ export default function Home() {
 
           {/* Signature */}
           <p className="font-body text-[13px] font-medium text-[#2e5a88] mt-10">
-            Founded by <a href="/about" className="text-[#2e5a88] no-underline hover:underline underline-offset-2 transition-colors duration-300 inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
+            Founded by <a href="/about" className="text-[#2e5a88] underline decoration-[#2e5a88]/30 underline-offset-2 hover:decoration-[#2e5a88] transition-colors duration-300 inline-block py-2 -my-2">Emma Bonnefous</a> &middot; Athens
           </p>
         </div>
       </section>
