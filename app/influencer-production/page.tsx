@@ -41,17 +41,17 @@ export default function InfluencerProduction() {
         className="relative h-[50vh] md:h-[100dvh] flex flex-col overflow-hidden"
       >
         <img
-          src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1920&q=80"
-          alt="Greece production"
+          src="https://images.unsplash.com/photo-1476011840234-433843d703fe?auto=format&fit=crop&w=1920&q=80"
+          alt="Dinner by the sea, sunset, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 flex-1 min-h-[5rem]" />
 
         <div className="relative z-10 px-8 md:px-16 pb-16 md:pb-24">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mb-6">For Brands &amp; Agencies</p>
-          <h1 className="font-heading text-[clamp(3rem,10vw,9rem)] leading-[0.9] text-white mb-8 uppercase">
+          <h1 className="font-heading text-[36px] md:text-[56px] leading-[0.9] text-white mb-8 uppercase">
             Greece,<br />produced.
           </h1>
           <p className="font-body text-base text-white/60 max-w-xl leading-relaxed">
@@ -105,7 +105,7 @@ export default function InfluencerProduction() {
               },
             ].map(({ title, body, details }, i) => (
               <div key={title} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
-                <h2 className="font-body text-2xl md:text-3xl text-[#2e5a88] leading-tight font-light">{title}</h2>
+                <h2 className="text-[20px] md:text-[24px] text-[#2e5a88] leading-tight font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{title}</h2>
                 <p className="font-body text-sm text-[#1a1a1a]/40 leading-relaxed flex-grow">{body}</p>
                 <ul className="flex flex-col gap-2 mt-2">
                   {details.map((d) => (
@@ -150,7 +150,7 @@ export default function InfluencerProduction() {
             ].map(({ name, duration, desc, includes }, i) => (
               <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
                 <div className="flex items-baseline gap-4">
-                  <h3 className="font-body text-3xl md:text-4xl text-[#2e5a88] font-light">{name}</h3>
+                  <h3 className="text-[20px] md:text-[24px] text-[#2e5a88] font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
                   <span className="font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]/50">{duration}</span>
                 </div>
                 <p className="font-body text-sm text-[#1a1a1a]/40 leading-relaxed flex-grow">{desc}</p>
@@ -206,7 +206,7 @@ export default function InfluencerProduction() {
             ].map(({ cat, items }, i) => (
               <div key={cat} className="reveal" data-delay={i * 100}>
                 <div className="h-px bg-white/15 w-12 mb-6" />
-                <h3 className="font-body text-xl md:text-2xl text-white mb-5 font-light">{cat}</h3>
+                <h3 className="text-[20px] md:text-[24px] text-white mb-5 font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{cat}</h3>
                 <ul className="flex flex-col gap-3">
                   {items.map((item) => (
                     <li key={item} className="font-body text-sm text-white/50 leading-relaxed flex gap-3">
@@ -226,17 +226,17 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-28 md:py-36 px-8 md:px-16 text-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1476011840234-433843d703fe?auto=format&fit=crop&w=1920&q=80"
-          alt="Greece coast"
+          src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1920&q=80"
+          alt="Greek alley bougainvillea"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10">
-          <h2 className="font-heading text-4xl md:text-6xl text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="font-heading text-[28px] md:text-[48px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Planning a production<br />in Greece?
           </h2>
           <p className="font-body text-[15px] md:text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Send us your brief. Dates, brand, team size, objectives. First proposal within 48 hours.
+            Send us your brief. Dates, brand, team size, objectives.
           </p>
           <a href="/contact" className="inline-flex items-center gap-3 font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors min-h-[44px] door-cta">
             Send a brief
