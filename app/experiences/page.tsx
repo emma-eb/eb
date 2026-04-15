@@ -11,7 +11,7 @@ const experiences = [
     p1: "A table set for your evening only. The Acropolis lit against the sky, the city quiet below.",
     p2: "We know the kitchens that don\u2019t take online reservations, the terraces that close for one party, the chefs who design a menu from a single conversation. Michelin-starred rooftop or private villa, the format is yours.",
     cta: "Reserve your evening",
-    photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+    photo: "/Screenshot 2026-03-09 at 11.30.58.png",
     pos: "center center",
   },
   {
@@ -51,7 +51,7 @@ const concierge = [
     tag: "DINING",
     title: "Private Dining & Reservations",
     desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
-    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
+    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c?auto=format&fit=crop&w=900&q=85",
   },
   {
     tag: "GASTRONOMY",
