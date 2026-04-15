@@ -11,7 +11,7 @@ const experiences = [
     p1: "A table set for your evening only. The Acropolis lit against the sky, the city quiet below.",
     p2: "We know the kitchens that don\u2019t take online reservations, the terraces that close for one party, the chefs who design a menu from a single conversation. Michelin-starred rooftop or private villa, the format is yours.",
     cta: "Reserve your evening",
-    photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
+    photo: "/Screenshot 2026-03-09 at 11.30.58.png",
     pos: "center center",
   },
   {
@@ -21,8 +21,8 @@ const experiences = [
     p1: "The setting says everything. A clifftop terrace at golden hour. A private beach at the end of an unmarked road. A garden in the Peloponnese, lit only by candles.",
     p2: "We find the place, arrange every detail, and disappear. The photographer is already in position. The flowers were placed that morning. You just ask the question.",
     cta: "Plan the moment",
-    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=1200&h=800&q=85",
-    pos: "center 40%",
+    photo: "/good-days-digital-5dusgr_R35E-unsplash.jpg",
+    pos: "center 35%",
   },
   {
     num: "#3",
@@ -31,8 +31,8 @@ const experiences = [
     p1: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.",
     p2: "Venue, kitchen, ceremony, on-the-ground production. Every detail is considered. Nothing is templated.",
     cta: "Start planning",
-    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=1200&h=800&q=85",
-    pos: "center 20%",
+    photo: "/Screenshot 2026-03-09 at 13.42.39.png",
+    pos: "center 30%",
   },
   {
     num: "#4",
@@ -51,7 +51,7 @@ const concierge = [
     tag: "DINING",
     title: "Private Dining & Reservations",
     desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset seats on the Riviera. We know which number to call, and which table to ask for.",
-    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
+    photo: "/Screenshot 2026-03-09 at 12.58.26.png",
   },
   {
     tag: "GASTRONOMY",
