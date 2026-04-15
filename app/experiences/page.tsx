@@ -10,6 +10,7 @@ const experiences = [
     desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private villa, the format is yours.",
     cta: "Reserve your evening",
     photo: "/Screenshot 2026-03-09 at 11.30.58.png",
+    pos: "center center",
   },
   {
     pill: "ACROSS GREECE",
@@ -17,6 +18,7 @@ const experiences = [
     desc: "A clifftop terrace at golden hour. A private beach at the end of an unmarked road. We find the place, arrange every detail, and disappear. You just ask the question.",
     cta: "Plan the moment",
     photo: "/good-days-digital-5dusgr_R35E-unsplash.jpg",
+    pos: "center 40%",
   },
   {
     pill: "GREECE",
@@ -24,6 +26,7 @@ const experiences = [
     desc: "For couples who want fewer guests and more meaning. A villa on a quiet island, a chapel by the sea with only the people who matter. We handle everything on the ground. Nothing is repeated.",
     cta: "Start planning",
     photo: "/Screenshot 2026-03-09 at 13.42.39.png",
+    pos: "center 75%",
   },
   {
     pill: "ATHENS",
@@ -31,6 +34,7 @@ const experiences = [
     desc: "Kolonaki through someone who knows every door. Greek designers you won\u2019t find elsewhere, international houses with pieces set aside. A morning with no agenda but yours.",
     cta: "Book your morning",
     photo: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1920&q=80",
+    pos: "center center",
   },
 ];
 
@@ -160,6 +164,7 @@ export default function Experiences() {
               src={exp.photo}
               alt={exp.title.replace("\n", " ")}
               className="img-settle w-full h-full object-cover"
+              style={{ objectPosition: exp.pos }}
               loading="lazy"
             />
           </div>
