@@ -246,11 +246,11 @@ export default function Home() {
           BLOC 05 — FEATURED JOURNEY (ne pas toucher)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <div className="parallax-wrap absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
             alt="Small Cyclades sailing"
-            className="absolute inset-0 w-full object-cover"
+            className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
         </div>
@@ -293,11 +293,11 @@ export default function Home() {
           BLOC 07 — FEATURED EXPERIENCE
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <div className="parallax-wrap absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
             alt="Athens evening"
-            className="absolute inset-0 w-full object-cover"
+            className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
         </div>
@@ -340,11 +340,11 @@ export default function Home() {
           BLOC 09 — FEATURED COLLECTION (plein cadre immersif)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
-        <div className="parallax-wrap absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <img
             src="/134_terrace_privatebeach.jpg"
             alt="Private villa terrace with sea view, Greece"
-            className="absolute inset-0 w-full object-cover"
+            className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
         </div>
