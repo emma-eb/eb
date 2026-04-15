@@ -131,19 +131,19 @@ export default function InfluencerProduction() {
                 name: "Short",
                 duration: "3 days",
                 desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-                includes: ["2\u20133 locations", "Up to 10 people", "Full logistics", "1 photographer"],
+                includes: ["Up to 10 people", "Full logistics", "1 photographer"],
               },
               {
                 name: "Extended",
                 duration: "4\u20135 days",
                 desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-                includes: ["4\u20136 locations", "Up to 20 people", "Full production crew", "Photo & video"],
+                includes: ["Up to 20 people", "Full production crew", "Photo & video"],
               },
               {
                 name: "Bespoke",
                 duration: "From 6 days",
                 desc: "Fully custom. Your brief, your talent, your season. No template.",
-                includes: ["Any destination in Greece", "Any group size", "Full press & PR support", "Dedicated producer"],
+                includes: ["Any group size", "Full press & PR support", "Dedicated producer"],
               },
             ].map(({ name, duration, desc, includes }, i) => (
               <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
