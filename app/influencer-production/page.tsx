@@ -89,11 +89,11 @@ export default function InfluencerProduction() {
               {
                 title: "Brand Trips",
                 body: "Multi-day trips for press, influencers, and brand ambassadors. Every detail handled on the ground, so your team focuses on content.",
-                details: ["Full logistics & concierge", "Villa & hotel buyouts", "Private dining & experiences", "Media coordination"],
+                details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences", "Media coordination"],
               },
               {
                 title: "Fam Trips",
-                body: "Familiarisation trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece, not just the destination.",
+                body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece, not just the destination.",
                 details: ["Route design", "Hosted experiences", "Press & media support", "Itinerary documentation"],
               },
               {
@@ -176,7 +176,7 @@ export default function InfluencerProduction() {
             {[
               {
                 cat: "Production",
-                items: ["Dedicated producer on location", "Location scouting & permit management", "Full logistics (flights, transfers, accommodation)", "Budget management & reporting"],
+                items: ["Dedicated producer on location", "Location scouting & permit management", "Full logistics (transfers, accommodation)", "Budget management & reporting"],
               },
               {
                 cat: "Creative",
@@ -209,6 +209,15 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          CASE STUDIES LINE
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-12 px-6 md:px-16">
+        <p className="reveal font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-normal text-center">
+          Selected case studies available on request.
+        </p>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           CTA FINAL
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-28 md:py-36 px-8 md:px-16 text-center overflow-hidden">
@@ -225,7 +234,7 @@ export default function InfluencerProduction() {
           <p className="font-body text-[15px] md:text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Send us your brief. Dates, brand, team size, objectives.
           </p>
-          <a href="/contact" className="inline-flex items-center gap-3 font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors min-h-[44px] door-cta">
+          <a href="/contact" className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center door-cta">
             Send a brief
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
