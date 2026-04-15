@@ -8,33 +8,33 @@ const heroExperiences = [
     num: "#1",
     location: "ATHENS",
     title: "Private Dinner Facing the Acropolis",
-    desc: "A table set for your evening only. The Acropolis lit against the night sky, the city below, and nothing to arrange but showing up.\n\nWe work with a handful of Athens\u2019 finest kitchens and private venues. The format depends on you: a Michelin-starred terrace, a closed restaurant, a rooftop with a private chef. Every detail, from the wine list to the lighting, is shaped around your occasion.",
+    desc: "A table set for your evening only. The Acropolis lit against the sky, the city quiet below.\n\nWe know the kitchens that don\u2019t take reservations online, the terraces that close for one group, the chefs who will design a menu around a single conversation. The format is yours: a Michelin-starred terrace, a private rooftop, a chef at your villa.",
     cta: "Tell us your occasion",
-    photo: "https://images.unsplash.com/photo-1750225152148-0d988222f14d",
+    photo: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
   },
   {
     num: "#2",
     location: "ACROSS GREECE",
     title: "Wedding Proposal in Greece",
-    desc: "The setting says everything. A terrace above the caldera at golden hour. A private beach on a lesser-known island. A candlelit garden in the Peloponnese.\n\nWe scout, we plan, we disappear. The photographer is already in place. The flowers were arranged that morning. All you have to do is ask the question.",
+    desc: "The setting says everything. A clifftop terrace at golden hour. A private beach at the end of an unmarked road. A garden lit with candles in the Peloponnese.\n\nWe scout the location, arrange every detail, and disappear. The photographer is already in position. The flowers were placed that morning. You just ask the question.",
     cta: "Tell us your story",
-    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d",
+    photo: "https://images.unsplash.com/photo-1571406761713-5133645a6e8d?auto=format&fit=crop&w=900&q=85",
   },
   {
     num: "#3",
     location: "GREECE",
     title: "Boutique Wedding",
-    desc: "For couples who want less noise and more meaning. A villa on a quiet island, an estate in the countryside, a private chapel by the sea.\n\nWe handle venue privatization, culinary direction, ceremony coordination and on-the-ground production. Small guest lists, considered details, a celebration that feels like yours.",
+    desc: "For couples who want fewer guests and more meaning. A villa on a quiet island. An estate in the hills. A chapel by the sea with only the people who matter.\n\nWe handle the venue, the kitchen, the ceremony, the logistics on the ground. Every detail considered, nothing templated.",
     cta: "Tell us your vision",
-    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da",
+    photo: "https://images.unsplash.com/photo-1763604608266-6ee862e562da?auto=format&fit=crop&w=900&q=85",
   },
   {
     num: "#4",
     location: "ATHENS",
     title: "Private Shopping with a Stylist",
-    desc: "Kolonaki through the eyes of someone who knows every door. A private stylist leads you through Athens\u2019 most refined boutiques, Greek designers, and international houses.\n\nNo crowds, no rushing. A morning shaped around your taste, your wardrobe, and whatever catches your eye.",
+    desc: "Kolonaki through someone who knows every door. A stylist who understands what you are looking for before you say it.\n\nGreek designers you won\u2019t find elsewhere, international houses with pieces held aside, and a morning shaped entirely around your eye. No itinerary, no rush.",
     cta: "Book a session",
-    photo: "https://images.unsplash.com/photo-1647412967394-ae696068b400",
+    photo: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
@@ -42,26 +42,26 @@ const conciergeCards = [
   {
     tag: "DINING",
     title: "Private Dining & Restaurant Reservations",
-    desc: "The table you didn\u2019t know existed. Michelin-starred rooftops in Athens, caldera dining in Santorini, sunset tables on the Riviera. We know which tables to ask for, and who to call.",
-    photo: "https://images.unsplash.com/photo-1761047726498-67eeb8b35d7c",
+    desc: "Michelin-starred rooftops in Athens, caldera tables in Santorini, sunset reservations on the Riviera. We know which number to call, and which table to ask for.",
+    photo: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85",
   },
   {
     tag: "GASTRONOMY",
     title: "Gastronomic Journeys",
-    desc: "Beyond the restaurant. Market mornings with a local chef, wine tastings on a hillside, a cooking class in a village kitchen. Culinary journeys that go where guidebooks don\u2019t.",
-    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54",
+    desc: "Beyond the restaurant. A morning at the central market with a local chef. Wine on a hillside. A cooking class in a village kitchen where the recipe has no written version.",
+    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=900&q=85",
   },
   {
     tag: "WINE",
     title: "Private Wine & Vineyard Visits",
-    desc: "Santorini\u2019s volcanic vineyards. The quiet estates of the Peloponnese. A glass poured by the winemaker, in the cellar where it was made. Private visits, no groups, no rush.",
-    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48",
+    desc: "Santorini\u2019s volcanic soil, the quiet estates of Nemea and Naoussa. A glass poured by the winemaker, in the cellar where it aged. Private visits, no groups.",
+    photo: "https://images.unsplash.com/photo-1658754491350-e620df293b48?auto=format&fit=crop&w=900&q=85",
   },
   {
     tag: "LIFESTYLE",
     title: "Lifestyle & Concierge",
-    desc: "Everything else. A private museum opening at dawn, a last-minute transfer, villa staff, a boat for the afternoon. One number, any request, handled quietly.",
-    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d",
+    desc: "Everything else. A private museum visit at dawn, a last-minute transfer, villa staff for the week, a boat for the afternoon. One call, handled quietly.",
+    photo: "https://images.unsplash.com/photo-1742218410508-500a3142663d?auto=format&fit=crop&w=900&q=85",
   },
 ];
 
@@ -96,7 +96,7 @@ export default function Experiences() {
       <Nav activePage="/experiences" />
 
       {/* ═══════════════════════════════════════════
-          BLOC 1 — HERO (no animation, instant)
+          BLOC 1 — HERO (instant, no animation)
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
@@ -105,7 +105,7 @@ export default function Experiences() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80"
-            alt="Greece golden hour"
+            alt="Greek coastal town, aerial view"
             className="w-full h-full object-cover"
           />
         </div>
@@ -118,8 +118,8 @@ export default function Experiences() {
           <h1 className="font-heading text-[clamp(2.2rem,8vw,5.5rem)] leading-[0.9] text-white uppercase mb-5">
             Moments you can&apos;t<br />book online.
           </h1>
-          <p className="font-body text-sm md:text-base text-white/80 font-light max-w-[600px] mx-auto leading-relaxed">
-            Private experiences across Athens, the Riviera and the Greek islands.
+          <p className="font-body text-sm md:text-base text-white/80 font-light max-w-[550px] mx-auto leading-relaxed">
+            Designed around your occasion, across Athens and the Greek islands.
           </p>
         </div>
       </section>
@@ -134,33 +134,34 @@ export default function Experiences() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
           <p className="reveal font-body text-[20px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light mb-5" data-delay="200">
-            Four experiences we return to, season after season. Each one shaped from scratch, around who you are and what you are celebrating.
+            Four experiences we come back to, season after season. Each one built from scratch, around who you are and what you are here to celebrate.
           </p>
           <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light" data-delay="300">
-            These are not packages. There is no menu, no fixed format. A starting point, a conversation, and then we build.
+            No fixed format. No catalogue. A conversation first, then we design.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 3 — HERO EXPERIENCES (alternating, flush)
+          BLOC 3 — SIGNATURE EXPERIENCES (alternating, flush)
       ═══════════════════════════════════════════ */}
       {heroExperiences.map((exp, i) => {
         const isEven = i % 2 === 1;
         return (
           <section key={exp.num}>
             <div className={`flex flex-col ${isEven ? "md:flex-row-reverse" : "md:flex-row"} md:h-[520px]`}>
-              {/* Image — no animation */}
-              <div className="w-full md:w-1/2 h-[280px] md:h-full overflow-hidden">
+              {/* Image */}
+              <div className="w-full md:w-1/2 h-[280px] md:h-full overflow-hidden group">
                 <img
-                  src={exp.photo + "?auto=format&fit=crop&w=960&q=85"}
+                  src={exp.photo}
                   alt={exp.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-600 ease-out md:group-hover:scale-[1.02]"
+                  loading="lazy"
                 />
               </div>
 
-              {/* Text — vertically centered */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#fcf7f1] px-8 py-10 md:px-14 lg:px-20 md:py-0">
+              {/* Text */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#fcf7f1] px-6 py-10 md:px-14 lg:px-20 md:py-0">
                 <div className="max-w-lg">
                   <div className="reveal flex items-center gap-4 mb-5">
                     <span className="font-body text-xs tracking-[0.2em] uppercase text-[#1a1a1a]/30">{exp.num}</span>
@@ -174,7 +175,7 @@ export default function Experiences() {
                   </div>
                   <a
                     href="/contact"
-                    className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
+                    className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 door-cta"
                     data-delay="300"
                   >
                     {exp.cta}
@@ -208,8 +209,8 @@ export default function Experiences() {
           <p className="reveal font-body text-[24px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4" data-delay="200">
             Beyond the experience
           </p>
-          <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light max-w-[600px] mx-auto" data-delay="300">
-            Privileged access to exceptional dining, curated journeys and lifestyle services across Greece.
+          <p className="reveal font-body text-base text-[#1a1a1a]/40 leading-[1.8] font-light max-w-[550px] mx-auto" data-delay="300">
+            The access, the tables, the details you don&apos;t have to think about.
           </p>
         </div>
 
@@ -218,14 +219,15 @@ export default function Experiences() {
             <div key={card.tag} className="reveal group bg-white overflow-hidden border-b border-[#1a1a1a]/[0.08]" data-delay={i * 150}>
               <div className="overflow-hidden aspect-[3/2]">
                 <img
-                  src={card.photo + "?auto=format&fit=crop&w=900&q=85"}
+                  src={card.photo}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-600 ease-out group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-600 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
                 />
               </div>
               <div className="p-8 md:p-10 pb-10">
                 <span className="font-body text-[11px] tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-3 block">{card.tag}</span>
-                <h3 className="font-body text-[20px] md:text-[22px] font-medium text-[#2e5a88] leading-[1.2] mb-4">
+                <h3 className="font-body text-[20px] md:text-[22px] font-semibold text-[#2e5a88] leading-[1.2] mb-4">
                   {card.title}
                 </h3>
                 <p className="font-body text-[15px] text-[#1a1a1a]/40 leading-[1.8] font-light">
@@ -238,24 +240,24 @@ export default function Experiences() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 6 — CTA FINAL (no animation, instant)
+          BLOC 6 — CTA FINAL (instant, no animation)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
-            alt="Greece evening"
+            alt="Athens evening view"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/45" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <h2 className="font-heading text-[clamp(1.8rem,5vw,3.5rem)] leading-[0.9] text-white mb-5 uppercase">
-            What would you like<br />to experience?
+            What will you<br />celebrate?
           </h2>
           <p className="font-body text-sm md:text-base text-white/80 font-light mb-8 max-w-xl mx-auto leading-relaxed">
-            Tell us your occasion. We shape everything around it.
+            Tell us the occasion. We shape everything around it.
           </p>
           <a
             href="/contact"
