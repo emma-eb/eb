@@ -111,7 +111,7 @@ export default function About() {
             src="/DSC_9459-Edit.jpg"
             alt="Emma Bonnefous"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "center 20%" }}
+            style={{ objectPosition: "center 35%" }}
           />
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center bg-[#fcf7f1] px-6 py-6 md:px-16 md:py-0">
