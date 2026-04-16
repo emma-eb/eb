@@ -171,15 +171,15 @@ export default function Journal() {
               </div>
             </a>
 
-            {/* Art 5 — Real Estate (remplace Four Seasons) */}
-            <a href="https://greekcitytimes.com/2026/04/14/greece-a-safe-haven-for-luxury-real-estate-investment/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="200">
-              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Luxury villa architecture, sea view" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+            {/* Art 5 — Hotel Openings 2026 */}
+            <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="200">
+              <img src="/raphael-lopes-zqGvYYqDvs4-unsplash (1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Capital &amp; Lifestyle</span>
+              <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Hospitality Pipeline</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; April 2026</p>
-                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">Greece becomes a safe haven for luxury real estate</h3>
+                <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Tornos News &middot; 2026</p>
+                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">The high-profile hotel openings expected in 2026</h3>
               </div>
             </a>
 

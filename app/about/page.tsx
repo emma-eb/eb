@@ -236,8 +236,8 @@ export default function About() {
       <section data-nav-dark className="relative h-[40vh] md:h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1598977123118-4e30ba3c4f5b?auto=format&fit=crop&w=1920&q=80"
-            alt="Santorini sunset, white villages on cliff"
+            src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80"
+            alt="Cyclades view, white architecture, blue sea, bougainvillea"
             className="w-full h-full object-cover"
           />
         </div>
