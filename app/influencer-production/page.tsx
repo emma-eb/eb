@@ -62,29 +62,31 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHY GREECE (split layout 50/50)
+          WHY GREECE (full-bleed image + text overlay)
       ═══════════════════════════════════════════ */}
-      <section className="flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 h-[40vh] md:h-auto overflow-hidden">
+      <section data-nav-dark className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=1200&q=80"
-            alt="Santorini blue domes, aerial view"
-            className="w-full h-full object-cover object-center"
+            src="/MILOS_03.jpg"
+            alt="Milos, Sarakiniko, white rocks and turquoise sea"
+            className="img-settle w-full h-full object-cover"
             loading="lazy"
           />
         </div>
-        <div className="w-full md:w-1/2 bg-[#fcf7f1] flex flex-col justify-center p-10 md:p-16 lg:p-20">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40">
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 p-6 md:p-12 max-w-2xl">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-white/70">
             Why Greece
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-3" data-delay="80" />
-          <h2 className="reveal text-[32px] md:text-[44px] text-[#2e5a88] font-medium leading-[1.2] mt-6" data-delay="120" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+          <div className="reveal w-[40px] h-[2px] bg-white/50 mt-3" data-delay="80" />
+          <h2 className="reveal text-[32px] md:text-[44px] text-white font-medium leading-[1.2] mt-6" data-delay="120" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece as a set.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[17px] text-[#1a1a1a]/70 leading-[1.7] mt-6" data-delay="160">
+          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal text-[20px] md:text-[24px] text-[#2e5a88] mt-8 font-medium leading-[1.3]" data-delay="240" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+          <p className="reveal text-[20px] md:text-[24px] text-white mt-8 font-medium leading-[1.3]" data-delay="240" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>

@@ -14,7 +14,7 @@ export default function NewsletterBanner() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-16 md:pt-20 pb-10 md:pb-12">
+    <div className="max-w-6xl mx-auto px-6 pt-14 md:pt-16 pb-8 md:pb-10">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
         <div className="text-center md:text-left">
           <p className="font-body text-[11px] font-medium text-white uppercase tracking-[0.15em]">
@@ -32,7 +32,7 @@ export default function NewsletterBanner() {
         ) : (
           <form
             onSubmit={handleSubscribe}
-            className="flex items-center gap-4 md:gap-6 w-full md:w-auto"
+            className="flex items-center gap-6 md:gap-8 w-full md:w-auto"
           >
             <input
               type="email"
@@ -44,7 +44,7 @@ export default function NewsletterBanner() {
             />
             <button
               type="submit"
-              className="font-body text-[13px] font-medium text-white uppercase tracking-wider border-b border-white pb-0.5 hover:opacity-70 transition-opacity whitespace-nowrap py-2 cursor-pointer"
+              className="font-body text-[13px] font-medium text-white uppercase tracking-wider border-b border-white pb-0.5 hover:opacity-70 transition-opacity whitespace-nowrap py-2 px-2 cursor-pointer"
             >
               Join &rarr;
             </button>
