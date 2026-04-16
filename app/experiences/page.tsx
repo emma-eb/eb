@@ -115,26 +115,28 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           HERO — instant
       ═══════════════════════════════════════════ */}
-      <section
-        data-nav-dark
-        className="relative h-[60vh] md:h-[70vh] flex flex-col justify-center items-center text-center overflow-hidden"
-      >
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80"
-            alt="Greek coastal town, aerial view"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
+      <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80"
+          alt="Greek coastal town, aerial view"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 px-8">
-          <span className="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Experiences
           </span>
-          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white uppercase mb-5">
-            Moments you can&apos;t<br />book online.
+          <h1
+            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Moments you can&apos;t book online.
           </h1>
-          <p className="font-body text-[15px] md:text-[18px] text-white/80 font-light max-w-xl mx-auto leading-relaxed">
+          <p
+            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             Designed around your occasion, across Athens and the Greek islands.
           </p>
         </div>
@@ -292,7 +294,7 @@ export default function Experiences() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="border-t border-white/30" />
         </div>
-        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
           <div className="flex flex-col items-center md:items-start gap-4 order-1">
             <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
             <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">

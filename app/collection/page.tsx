@@ -1,210 +1,414 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import Nav from "../components/Nav";
-import { villas, yacht } from "../data/catalogue";
+import NewsletterBanner from "../components/NewsletterBanner";
 
-const regions = ["All", ...Array.from(new Set(villas.map((v) => v.region)))];
+/* ═══════════════════════════════════════════════════════
+   VILLA DATA — 5 public residences
+   ═══════════════════════════════════════════════════════ */
+
+const villas = [
+  {
+    slug: "aegean-residence",
+    image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+    location: "Porto Heli",
+    name: "Aegean Residence",
+    description: "Seven suites above the bay. A tennis court under the pines.",
+    specs: "7 Bed \u00b7 14 Guests \u00b7 Seafront",
+  },
+  {
+    slug: "aegean-essence",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80",
+    location: "Agios Nikolaos, Crete",
+    name: "Aegean Essence",
+    description: "A minimal coastal home, the sea fifty metres from the door.",
+    specs: "6 Bed \u00b7 11 Guests \u00b7 Seafront",
+  },
+  {
+    slug: "seafront-sanctuary",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+    location: "Porto Heli",
+    name: "Seafront Sanctuary",
+    description: "Three levels of stone opening onto a quiet Mediterranean bay.",
+    specs: "7 Bed \u00b7 14 Guests \u00b7 Seafront",
+  },
+  {
+    slug: "edge-of-sea",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=80",
+    location: "Agios Nikolaos, Crete",
+    name: "Edge of Sea",
+    description: "A private peninsula, its own pier, the Mirabello on every side.",
+    specs: "6 Bed \u00b7 12 Guests \u00b7 Seafront",
+  },
+  {
+    slug: "silent-coast",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80",
+    location: "Porto Heli, Ververonda",
+    name: "Silent Coast",
+    description: "A master suite with a terrace. A sea that goes quiet by ten.",
+    specs: "6 Bed \u00b7 12 Guests \u00b7 Sea View",
+  },
+];
+
+/* ═══════════════════════════════════════════════════════ */
 
 export default function CollectionPage() {
-  const [region, setRegion] = useState("All");
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
 
-  const filtered = region === "All" ? villas : villas.filter((v) => v.region === region);
+    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
+    const revealObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const d = parseInt(el.dataset.delay || "0", 10);
+          setTimeout(() => {
+            el.classList.add("visible");
+            setTimeout(() => el.classList.add("done"), 800);
+          }, d);
+          revealObs.unobserve(el);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealEls.forEach((el) => revealObs.observe(el));
+
+    return () => revealObs.disconnect();
+  }, []);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
       <Nav activePage="/collection" />
 
-      {/* ─── HERO ─── */}
-      <section className="bg-white pt-28 md:pt-40 pb-12 md:pb-20 px-8 md:px-16 border-b border-[#e8e4de]">
-        <div className="max-w-4xl">
-          <p className="font-body text-xs tracking-[0.3em] uppercase text-[#888] mb-6">
-            Villa &amp; Yacht Collection
-          </p>
-          <h1 className="font-heading text-6xl md:text-8xl lg:text-[8rem] leading-none text-[#1a1a1a] mb-8">
-            The most<br />private addresses<br />in Greece.
+      {/* ═══════════════════════════════════════════
+          BLOC 1 — HERO (gardé tel quel)
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80"
+          alt="Luxury villa infinity pool overlooking the Aegean"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
+            Collection
+          </span>
+          <h1
+            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Your address in Greece.
           </h1>
-          <p className="font-body text-lg text-[#888] max-w-xl leading-relaxed">
-            Every property in our collection is personally vetted. Some are published here. The most sought-after are shared only upon inquiry.
+          <p
+            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Villas that rarely appear online. A yacht that moves when you do.
+          </p>
+        </div>
+
+        <div className="md:hidden absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 animate-bounce">
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 2 — MANIFESTO (refait)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6">
+        <div className="max-w-[620px] mx-auto text-center">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
+            Collection
+          </p>
+          <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
+          <h2
+            className="reveal mt-12 text-[24px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light italic"
+            data-delay="100"
+            style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
+          >
+            Where we send our closest clients.
+          </h2>
+          <p className="reveal mt-10 text-[15px] md:text-[16px] leading-[1.8] text-black/65 font-light font-body" data-delay="150">
+            Not a portfolio. A private network. We know the owners, the coastlines, the houses that deliver and the ones that photograph better than they live. When we place you, we already know it{'\u2019'}s the right one.
+          </p>
+          <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-black/55 font-light italic font-body" data-delay="200">
+            Tell us how you want to live for the week. We know where that is.
           </p>
         </div>
       </section>
 
-      {/* ─── REGION FILTER ─── */}
-      <section className="bg-white pb-8 pt-6 px-8 md:px-16 border-b border-[#e8e4de]">
-        <div className="max-w-6xl mx-auto flex flex-wrap gap-3">
-          {regions.map((r) => (
-            <button
-              key={r}
-              onClick={() => setRegion(r)}
-              className={`font-body text-xs tracking-[0.2em] uppercase px-5 py-2 border transition-colors ${
-                region === r
-                  ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-                  : "border-[#e8e4de] text-[#888] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
-              }`}
-            >
-              {r}
-            </button>
-          ))}
+      {/* ═══════════════════════════════════════════
+          BLOC 3 — THE HOMES (grille unique, 5 villas)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-12 md:pb-16">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-10">
+            {villas.map((villa, i) => (
+              <a
+                key={villa.slug}
+                href={`/contact?villa=${villa.slug}`}
+                className={`reveal group block relative overflow-hidden ${
+                  i === 4 ? "md:col-span-2 aspect-[3/2] md:aspect-[21/9]" : "aspect-[3/2]"
+                }`}
+                data-delay={String(i * 80)}
+              >
+                <img
+                  src={villa.image}
+                  alt={villa.name}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/60 font-medium font-body">
+                    {villa.location}
+                  </p>
+                  <h3
+                    className="mt-1.5 text-[20px] md:text-[24px] text-white leading-tight font-medium"
+                    style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", letterSpacing: "-0.01em" }}
+                  >
+                    {villa.name}
+                  </h3>
+                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/80 font-light max-w-[400px] font-body">
+                    {villa.description}
+                  </p>
+                  <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/55 font-medium font-body">
+                    {villa.specs}
+                  </p>
+                  <span className="mt-4 inline-block text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white border-b border-white/70 pb-1 group-hover:border-white transition-colors w-fit font-body">
+                    Request details &rarr;
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ─── VILLA GRID ─── */}
-      <section className="bg-white py-16 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((v) => {
-            const isOffMarket = v.visibility === "off-market";
-
-            return (
-              <div key={v.id} className="group">
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#e8e4de]">
-                  <img
-                    src={v.image}
-                    alt={isOffMarket ? "Private property" : v.name}
-                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${
-                      isOffMarket ? "blur-[2px] scale-105" : ""
-                    }`}
-                    loading="lazy"
-                  />
-
-                  {/* Off-market overlay */}
-                  {isOffMarket && (
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <span className="font-body text-[10px] tracking-[0.2em] uppercase bg-white/90 text-[#1a1a1a] px-4 py-2">
-                        Off-market &middot; Private access only
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Region tag */}
-                  {!isOffMarket && (
-                    <span className="absolute top-3 left-3 font-body text-[10px] tracking-[0.15em] uppercase bg-white/90 text-[#1a1a1a] px-3 py-1">
-                      {v.location}
-                    </span>
-                  )}
-                </div>
-
-                {/* Info */}
-                <div className="mt-4">
-                  <h2 className="font-heading text-2xl text-[#1a1a1a]">{v.name}</h2>
-                  <div className="flex gap-4 font-body text-xs text-[#aaa] tracking-wider mt-1">
-                    <span>{v.guests} guests</span>
-                    <span>&middot;</span>
-                    <span>{v.beds} bedrooms</span>
-                  </div>
-                  <p className="font-body text-xs tracking-wider text-[#2e5a88] uppercase mt-2">{v.highlight}</p>
-                  <p className="font-body text-sm text-[#888] leading-relaxed mt-2 line-clamp-2">{v.description}</p>
-
-                  {/* CTA */}
-                  <a
-                    href="/contact"
-                    className="inline-block mt-3 font-body text-xs tracking-[0.15em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-px hover:border-[#2e5a88] transition-colors"
-                  >
-                    {isOffMarket ? "Request access" : "Inquire"} &rarr;
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="font-body text-xs text-[#ccc] mt-10 tracking-wider max-w-6xl mx-auto text-center">
-          Our full collection is not published online. The most sought-after properties are shared exclusively upon inquiry.
+      {/* ═══════════════════════════════════════════
+          BLOC 3.5 — CITATION DE RESPIRATION
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] px-6 py-16 md:py-24">
+        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/55 font-light font-body">
+          The right house changes the week.
         </p>
       </section>
 
-      {/* ─── BESTIA YACHT ─── */}
-      <section data-nav-dark className="bg-[#1a1a1a] py-24 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-6">Our yacht</p>
-            <h2 className="font-heading text-6xl md:text-7xl text-white leading-none mb-4">BESTIA.</h2>
-            <p className="font-body text-sm text-white/40 mb-8">{yacht.model} &middot; {yacht.length} &middot; {yacht.year}</p>
-            <p className="font-body text-lg text-white/60 leading-relaxed mb-10">
-              {yacht.description}
-            </p>
-            <div className="grid grid-cols-2 gap-6 mb-10">
-              {[
-                { label: "Cabins", value: `${yacht.cabins} cabins` },
-                { label: "Guests", value: `${yacht.guests} guests` },
-                { label: "Crew", value: `${yacht.crew} crew` },
-                { label: "Base", value: yacht.base },
-              ].map(({ label, value }) => (
-                <div key={label}>
-                  <p className="font-body text-xs tracking-[0.2em] uppercase text-white/30 mb-1">{label}</p>
-                  <p className="font-heading text-lg text-white">{value}</p>
-                </div>
-              ))}
-            </div>
-            <a
-              href="/contact"
-              className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-8 py-4 hover:bg-white/10 transition-colors"
+      {/* ═══════════════════════════════════════════
+          BLOC 4 — THE PRIVATE CIRCLE
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative min-h-[55vh] md:min-h-[65vh] flex items-center">
+        <img
+          src="/photo%20bandeau_page%20Collection.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+
+        <div className="relative z-10 w-full px-6 md:px-12 py-16 md:py-20">
+          <div className="max-w-[600px] mx-auto text-center">
+            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
+              By Introduction Only
+            </span>
+            <h2
+              className="reveal mt-8 font-heading text-white text-[36px] md:text-[56px] leading-[0.95] uppercase"
+              data-delay="100"
+              style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
-              Request availability
+              Private residences. By introduction.
+            </h2>
+            <p
+              className="reveal mt-6 text-white/85 text-[15px] md:text-[16px] leading-[1.7] font-light font-body"
+              data-delay="150"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              Some of our most private residences never appear online. We share them after a first conversation, one address at a time.
+            </p>
+            <p
+              className="reveal mt-6 text-[12px] uppercase tracking-[0.2em] text-white/50 font-light font-body"
+              data-delay="200"
+            >
+              Athens Riviera &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Porto Heli &nbsp;&middot;&nbsp; The Ionian
+            </p>
+            <a
+              href="/contact?ref=private-circle"
+              className="reveal mt-10 inline-block text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+              data-delay="250"
+            >
+              Request introduction &rarr;
             </a>
           </div>
+        </div>
+      </section>
 
-          {/* Yacht image */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-            <img
-              src={yacht.image}
-              alt="BESTIA yacht"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+      {/* ═══════════════════════════════════════════
+          BLOC 5 — THE YACHT (plein écran image + overlay)
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative min-h-[85vh] md:min-h-[90vh] flex items-end">
+        <img
+          src="/yatch_page collection.jpg"
+          alt="Private yacht charter in Greek waters"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+        <div className="relative z-10 w-full px-6 md:px-12 pb-16 md:pb-20 pt-20">
+          <div className="max-w-[1400px] mx-auto">
+            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body mb-6">
+              Private Yacht Charter
+            </span>
+            <h2
+              className="reveal font-heading text-white text-[44px] md:text-[72px] leading-[0.95] uppercase max-w-[700px]"
+              data-delay="100"
+              style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              The Cyclades, at 35 knots.
+            </h2>
+            <p
+              className="reveal mt-6 text-white/85 text-[15px] md:text-[17px] leading-[1.65] font-light max-w-[520px] font-body"
+              data-delay="150"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              A 33-metre Italian yacht, fresh from 2024 delivery, based in Athens. Four cabins, eight guests, a crew of five. The only one of her kind available for charter in Greece.
+            </p>
+            <p className="reveal mt-6 text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-white/55 font-medium font-body" data-delay="200">
+              33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5 &middot; Athens Based
+            </p>
+            <p className="reveal mt-4 text-[14px] text-white/50 italic font-light font-body" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+              She moves. From Athens through the Cyclades, or wherever the week takes you.
+            </p>
+            <a
+              href="/contact?ref=yacht"
+              className="reveal mt-8 inline-block text-[13px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+              data-delay="300"
+            >
+              Inquire about the yacht &rarr;
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ─── REAL ESTATE ENCART ─── */}
-      <section className="bg-white py-20 md:py-28 px-8 md:px-16 border-t border-[#e8e4de]">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="h-px bg-[#2e5a88] w-8 mx-auto mb-6" />
-          <h2 className="font-heading text-4xl md:text-5xl text-[#1a1a1a] mb-6">
-            Thinking of owning<br />your own corner<br />of Greece?
+      {/* ═══════════════════════════════════════════
+          BLOC 6 — ACQUISITION (texte centré, sans image)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] px-6 py-20 md:py-28">
+        <div className="max-w-[620px] mx-auto text-center">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
+            Acquisition
+          </p>
+          <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
+          <h2
+            className="reveal mt-10 text-[24px] md:text-[32px] text-[#2e5a88] leading-[1.25] font-light"
+            data-delay="100"
+            style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
+          >
+            Some clients don{'\u2019'}t want the week. They want the key.
           </h2>
-          <p className="font-body text-sm text-[#888] leading-relaxed max-w-lg mx-auto mb-8">
-            eb. works with a trusted partner specializing in exceptional Greek properties. From coastal estates to island retreats, we connect you with opportunities that never reach the open market.
+          <p className="reveal mt-6 text-[15px] md:text-[16px] leading-[1.7] text-black/65 font-light font-body" data-delay="150">
+            For a small number of clients, we advise on the private acquisition of exceptional properties in Greece, on and off the market. Athens Riviera, the Cyclades, the Peloponnese, the Ionian.
           </p>
           <a
-            href="/contact"
-            className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#1a1a1a] text-[#1a1a1a] px-8 py-4 hover:bg-[#1a1a1a] hover:text-white transition-colors"
+            href="/contact?ref=acquisition"
+            className="reveal mt-8 inline-block text-[13px] uppercase tracking-[0.1em] font-medium text-[#2e5a88] border-b border-[#2e5a88] pb-1 hover:border-[#2e5a88]/40 transition-colors font-body min-h-[44px]"
+            data-delay="200"
           >
-            Enquire
+            Speak to us privately &rarr;
           </a>
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section data-nav-dark className="relative py-32 px-8 md:px-16 text-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80" alt="" className="absolute inset-0 w-full h-full object-cover" />
+      {/* ═══════════════════════════════════════════
+          BLOC 7 — CTA FINAL (gardé tel quel)
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative py-32 px-6 text-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
+          alt="Greek coast golden hour"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
-          <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
+          <h2
+            className="reveal font-heading text-[40px] md:text-[56px] lg:text-[64px] text-white uppercase leading-[0.95]"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             Not finding<br />what you need?
           </h2>
-          <p className="font-body text-base text-white/60 mb-10 max-w-xl mx-auto">
+          <p className="reveal font-body text-[16px] text-white/60 max-w-xl mx-auto mt-6" data-delay="100">
             Our most sought-after properties are never listed publicly. Tell us what you are looking for.
           </p>
-          <a href="/contact" className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white/10 transition-colors">
-            Make a private inquiry
+          <a
+            href="/contact?ref=collection-final"
+            className="reveal inline-block text-[13px] md:text-[14px] uppercase tracking-[0.1em] font-medium text-white border-b border-white pb-1 hover:border-white/50 transition-colors font-body min-h-[44px] mt-10"
+            data-delay="200"
+          >
+            Request access &rarr;
           </a>
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
+      {/* ═══════════════════════════════════════════
+          FOOTER (gardé tel quel)
+      ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-          <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
-          <p className="font-body text-xs text-white/30 tracking-wider">
-            &copy; 2026 Emma Bonnefous &middot; hello@emmabonnefous.com &middot; Athens, Greece
-          </p>
-          <div className="flex gap-6 font-body text-xs tracking-[0.15em] uppercase text-white/40">
-            <a href="/about" className="hover:text-white/70 transition-colors">About</a>
-            <a href="/influencer-production" className="hover:text-white/70 transition-colors">For Brands</a>
-            <a href="/journal" className="hover:text-white/70 transition-colors">Journal</a>
-            <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
+        <NewsletterBanner />
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="border-t border-white/30" />
+        </div>
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
+          <div className="flex flex-col items-center md:items-start gap-4 order-1">
+            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+          </div>
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
+            <a href="/journeys" className="hover:text-[#fcf7f1] transition-colors py-2">Journeys</a>
+            <a href="/experiences" className="hover:text-[#fcf7f1] transition-colors py-2">Experiences</a>
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
+          </div>
+          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
+              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
+              <span className="py-2">&middot;</span>
+              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
+            </div>
+            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+          </div>
+          <div className="flex md:hidden flex-col items-center gap-3 order-4">
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">
+              hello@emmabonnefous.com
+            </a>
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
           </div>
         </div>
       </footer>

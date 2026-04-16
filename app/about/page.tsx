@@ -269,7 +269,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="border-t border-white/30" />
         </div>
-        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
           <div className="flex flex-col items-center md:items-start gap-4 order-1">
             <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
             <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">

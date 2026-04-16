@@ -67,26 +67,25 @@ export default function InfluencerProduction() {
       <section data-nav-dark className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/MILOS_03.jpg"
+            src="/MILOS_02.jpg"
             alt="Milos, Sarakiniko, white rocks and turquoise sea"
-            className="img-settle w-full h-full object-cover"
+            className="img-settle w-full h-full object-cover object-[center_60%]"
             loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 p-6 md:p-12 max-w-2xl">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-white/70">
+          <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white">
             Why Greece
-          </p>
-          <div className="reveal w-[40px] h-[2px] bg-white/50 mt-3" data-delay="80" />
-          <h2 className="reveal text-[32px] md:text-[44px] text-white font-medium leading-[1.2] mt-6" data-delay="120" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          </span>
+          <h2 className="reveal font-heading text-[44px] md:text-[72px] text-white leading-[0.95] uppercase mt-6" data-delay="120" style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece as a set.
           </h2>
           <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal text-[20px] md:text-[24px] text-white mt-8 font-medium leading-[1.3]" data-delay="240" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[18px] md:text-[20px] text-white mt-8 font-medium leading-[1.4]" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
@@ -259,7 +258,7 @@ export default function InfluencerProduction() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="border-t border-white/30" />
         </div>
-        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
           <div className="flex flex-col items-center md:items-start gap-4 order-1">
             <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
             <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">

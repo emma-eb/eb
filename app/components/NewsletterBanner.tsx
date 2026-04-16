@@ -14,7 +14,7 @@ export default function NewsletterBanner() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-14 md:pt-16 pb-8 md:pb-10">
+    <div className="max-w-6xl mx-auto px-6 pt-4 md:pt-16 pb-8 md:pb-10">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
         <div className="text-center md:text-left">
           <p className="font-body text-[11px] font-medium text-white uppercase tracking-[0.15em]">
