@@ -266,22 +266,22 @@ export default function Journal() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CTA FINAL (editorial)
+          BLOC 5 — CTA FINAL
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-20 md:py-40 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="reveal text-[26px] md:text-[32px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
-            Reading is one thing.
-          </p>
-          <p className="reveal text-[26px] md:text-[32px] text-[#2e5a88] leading-tight mt-3 md:mt-4" data-delay="100" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
-            Being there, another.
+          <h2 className="reveal text-[28px] md:text-[36px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+            Stay close to Greece.
+          </h2>
+          <p className="reveal font-body text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-normal mt-6 leading-[1.6] max-w-md mx-auto" data-delay="100">
+            Every great journey starts with a conversation.
           </p>
           <a
             href="/contact"
-            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-12 md:mt-16 min-h-[44px] py-3 px-2"
+            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-12 md:mt-16 py-3 px-2"
             data-delay="200"
           >
-            Start the conversation &rarr;
+            Have a project in mind &rarr;
           </a>
         </div>
       </section>
