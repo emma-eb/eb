@@ -184,7 +184,7 @@ export default function About() {
         <div className="absolute inset-0 bg-black/20 md:bg-transparent" />
 
         <div className="relative z-10 p-6 pt-16 md:p-12 md:pt-12 max-w-xl">
-          <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[36px] md:text-[60px] leading-[0.9] text-white uppercase mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Why Greece.
           </h2>
           <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] md:leading-[1.8] max-w-none md:max-w-xl" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -244,7 +244,7 @@ export default function About() {
         </div>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(1.75rem,5vw,3rem)] leading-[0.9] text-white mb-4 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="font-heading text-[36px] md:text-[56px] leading-[0.9] text-white mb-4 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Let&apos;s start with<br />a conversation.
           </h2>
           <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light mt-3 md:mt-4 max-w-lg mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>

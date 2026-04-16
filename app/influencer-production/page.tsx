@@ -51,8 +51,8 @@ export default function InfluencerProduction() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             For Brands &amp; Agencies
           </span>
-          <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Greece,<br />produced.
+          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            Greece.<br />Produced.
           </h1>
           <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
@@ -61,27 +61,21 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHY GREECE (sur fond image)
+          WHY GREECE (fond beige)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1920&q=80"
-            alt="Greek architecture, white, luminous"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 py-20 text-center">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-white/80 mb-4">
+      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             Why Greece
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-white/60 mt-4 mb-8 mx-auto" data-delay="80" />
-          <p className="reveal font-body text-[18px] md:text-[22px] text-white/90 leading-relaxed font-light" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mx-auto" data-delay="80" />
+          <h2 className="reveal font-body text-[32px] md:text-[44px] text-[#2e5a88] font-medium leading-[1.1] mt-8" data-delay="120" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+            Greece as a set.
+          </h2>
+          <p className="reveal font-body text-[16px] md:text-[17px] text-[#1a1a1a]/70 leading-[1.7] mt-8 max-w-3xl" data-delay="160">
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal font-body text-[22px] md:text-[24px] text-white mt-8 font-normal" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[22px] md:text-[26px] text-[#2e5a88] mt-10 font-medium" data-delay="240" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
@@ -112,12 +106,12 @@ export default function InfluencerProduction() {
               },
             ].map(({ title, body, details }, i) => (
               <div key={title} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
-                <h2 className="text-[20px] md:text-[24px] text-[#2e5a88] leading-tight font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{title}</h2>
-                <p className="font-body text-sm text-[#1a1a1a]/40 leading-relaxed flex-grow">{body}</p>
+                <h2 className="text-[22px] md:text-[28px] text-[#2e5a88] leading-tight font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{title}</h2>
+                <p className="font-body text-[15px] md:text-[16px] text-[#1a1a1a]/70 leading-[1.6] flex-grow">{body}</p>
                 <ul className="flex flex-col gap-2 mt-2">
                   {details.map((d) => (
-                    <li key={d} className="font-body text-xs text-[#1a1a1a]/30 tracking-wider flex gap-3">
-                      <span className="text-[#1a1a1a]/20 shrink-0">&middot;</span>
+                    <li key={d} className="font-body text-[15px] text-[#1a1a1a]/70 leading-[1.7] flex gap-3">
+                      <span className="text-[#1a1a1a]/40 shrink-0">&middot;</span>
                       {d}
                     </li>
                   ))}
@@ -131,13 +125,16 @@ export default function InfluencerProduction() {
       {/* ═══════════════════════════════════════════
           BANDEAU IMAGE (respiration visuelle)
       ═══════════════════════════════════════════ */}
-      <section className="w-full">
+      <section className="relative w-full">
         <img
           src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
           alt="Greece production scene"
           className="w-full h-[50vh] md:h-[60vh] object-cover object-center"
           loading="lazy"
         />
+        <span className="absolute bottom-6 right-6 font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white/70" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          Cyclades, Greece
+        </span>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -166,7 +163,7 @@ export default function InfluencerProduction() {
             ].map(({ name, duration, desc }, i) => (
               <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col" data-delay={i * 100}>
                 <div className="flex items-baseline gap-4">
-                  <h3 className="text-[24px] md:text-[28px] text-[#2e5a88] font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
+                  <h3 className="text-[22px] md:text-[28px] text-[#2e5a88] font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
                   <span className="font-body text-[13px] tracking-[0.2em] uppercase text-[#1a1a1a]/40">{duration}</span>
                 </div>
                 <p className="font-body text-[15px] md:text-[16px] text-[#1a1a1a]/50 leading-[1.6] mt-6">{desc}</p>
@@ -181,7 +178,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <p className="reveal font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-12 md:mb-16">What we bring to every production</p>
+          <p className="reveal font-body text-[11px] tracking-[0.2em] uppercase text-white/70 mb-12 md:mb-16">What we bring to every production</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
               {
@@ -198,12 +195,12 @@ export default function InfluencerProduction() {
               },
             ].map(({ cat, items }, i) => (
               <div key={cat} className="reveal" data-delay={i * 100}>
-                <div className="h-px bg-white/15 w-12 mb-6" />
-                <h3 className="text-[20px] md:text-[24px] text-white mb-5 font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{cat}</h3>
+                <div className="h-px bg-white/30 w-10 mb-6" />
+                <h3 className="text-[22px] md:text-[28px] text-white mb-5 font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{cat}</h3>
                 <ul className="flex flex-col gap-3">
                   {items.map((item) => (
-                    <li key={item} className="font-body text-sm text-white/50 leading-relaxed flex gap-3">
-                      <span className="text-white/25 shrink-0">&middot;</span>
+                    <li key={item} className="font-body text-[15px] text-white/85 leading-[1.7] flex gap-3">
+                      <span className="text-white/60 shrink-0">&middot;</span>
                       {item}
                     </li>
                   ))}
@@ -211,16 +208,13 @@ export default function InfluencerProduction() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ═══════════════════════════════════════════
-          CASE STUDIES LINE
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-12 px-6 md:px-16">
-        <p className="reveal font-body text-[14px] md:text-[15px] text-[#1a1a1a]/40 font-normal text-center">
-          Selected case studies available on request.
-        </p>
+          {/* Case studies line inside dark section */}
+          <div className="reveal w-[40px] h-px bg-white/20 mx-auto mt-16" data-delay="150" />
+          <p className="reveal font-body text-[14px] italic text-white/60 text-center mt-6" data-delay="200">
+            Selected case studies available on request.
+          </p>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -234,7 +228,7 @@ export default function InfluencerProduction() {
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%)" }} />
         <div className="relative z-10">
-          <h2 className="font-heading text-[28px] md:text-[48px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
+          <h2 className="font-heading text-[36px] md:text-[56px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Planning a production<br />in Greece?
           </h2>
           <p className="font-body text-[15px] md:text-base text-white mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>

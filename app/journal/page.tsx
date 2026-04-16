@@ -78,7 +78,7 @@ export default function Journal() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Journal
           </span>
-          <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece, closely.
           </h1>
           <p className="font-body text-[14px] md:text-[16px] text-white/80 font-light max-w-xl mx-auto leading-relaxed mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -109,7 +109,7 @@ export default function Journal() {
               BusinessToday &middot; April 2026
             </span>
           </div>
-          <h2 className="reveal font-heading text-[26px] md:text-[40px] text-white leading-[0.9] uppercase mb-4" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[36px] md:text-[56px] text-white leading-[0.9] uppercase mb-4" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece is the new Dubai for India&apos;s ultra-wealthy.
           </h2>
           <p className="reveal hidden md:block font-body text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -248,7 +248,7 @@ export default function Journal() {
               Attica &middot; Greece
             </span>
           </div>
-          <h2 className="reveal font-heading text-[28px] md:text-[40px] text-white leading-[0.9] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[36px] md:text-[56px] text-white leading-[0.9] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             The Height.
           </h2>
           <p className="reveal font-body text-[18px] md:text-[20px] text-white font-normal mt-2" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>

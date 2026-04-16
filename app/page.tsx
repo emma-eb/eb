@@ -107,7 +107,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 px-8 -mt-16 md:mt-0">
-          <h1 className="font-heading text-[clamp(3rem,12vw,11rem)] leading-[0.85] text-white uppercase">
+          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.85] text-white uppercase">
             Greece,<br />privately.
           </h1>
           <div className="mt-10">

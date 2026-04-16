@@ -130,7 +130,7 @@ export default function Experiences() {
           <span className="inline-block px-4 py-1.5 md:px-5 md:py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Experiences
           </span>
-          <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white uppercase mb-5">
+          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white uppercase mb-5">
             Moments you can&apos;t<br />book online.
           </h1>
           <p className="font-body text-[15px] md:text-[18px] text-white/80 font-light max-w-xl mx-auto leading-relaxed">
@@ -174,7 +174,7 @@ export default function Experiences() {
             <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
               {exp.pill}
             </span>
-            <h2 className="reveal font-heading text-[28px] md:text-[44px] text-white leading-[0.9] uppercase whitespace-pre-line mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }} data-delay="100">
+            <h2 className="reveal font-heading text-[32px] md:text-[56px] text-white leading-[0.9] uppercase whitespace-pre-line mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }} data-delay="100">
               {exp.title}
             </h2>
             <p className="reveal font-body text-[14px] md:text-[16px] text-white/85 font-light leading-[1.7] max-w-lg mt-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }} data-delay="200">
