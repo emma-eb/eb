@@ -61,18 +61,27 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHY GREECE
+          WHY GREECE (sur fond image)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
-        <div className="max-w-[800px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
+      <section data-nav-dark className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1920&q=80"
+            alt="Greek architecture, white, luminous"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-20 text-center">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-white/80 mb-4">
             Why Greece
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="80" />
-          <p className="reveal font-body text-[18px] md:text-[22px] text-[#1a1a1a]/60 leading-relaxed font-light" data-delay="160">
+          <div className="reveal w-[40px] h-[2px] bg-white/60 mt-4 mb-8 mx-auto" data-delay="80" />
+          <p className="reveal font-body text-[18px] md:text-[22px] text-white/90 leading-relaxed font-light" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal font-body text-[18px] md:text-[22px] text-[#2e5a88] mt-8 font-light" data-delay="240">
+          <p className="reveal font-body text-[22px] md:text-[24px] text-white mt-8 font-normal" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
@@ -117,6 +126,18 @@ export default function InfluencerProduction() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BANDEAU IMAGE (respiration visuelle)
+      ═══════════════════════════════════════════ */}
+      <section className="w-full">
+        <img
+          src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
+          alt="Greece production scene"
+          className="w-full h-[50vh] md:h-[60vh] object-cover object-center"
+          loading="lazy"
+        />
       </section>
 
       {/* ═══════════════════════════════════════════
