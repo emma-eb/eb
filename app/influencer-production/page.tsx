@@ -152,35 +152,24 @@ export default function InfluencerProduction() {
                 name: "Short",
                 duration: "3 days",
                 desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-                includes: ["Full logistics", "1 photographer"],
               },
               {
                 name: "Extended",
                 duration: "4\u20135 days",
                 desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-                includes: ["Full production crew", "Photo & video"],
               },
               {
                 name: "Bespoke",
                 duration: "From 6 days",
                 desc: "Fully custom. Your brief, your talent, your season. No template.",
-                includes: ["Full press & PR support", "Dedicated producer"],
               },
-            ].map(({ name, duration, desc, includes }, i) => (
-              <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
+            ].map(({ name, duration, desc }, i) => (
+              <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col" data-delay={i * 100}>
                 <div className="flex items-baseline gap-4">
-                  <h3 className="text-[20px] md:text-[24px] text-[#2e5a88] font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
-                  <span className="font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]/50">{duration}</span>
+                  <h3 className="text-[24px] md:text-[28px] text-[#2e5a88] font-semibold" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
+                  <span className="font-body text-[13px] tracking-[0.2em] uppercase text-[#1a1a1a]/40">{duration}</span>
                 </div>
-                <p className="font-body text-sm text-[#1a1a1a]/40 leading-relaxed flex-grow">{desc}</p>
-                <ul className="flex flex-col gap-2">
-                  {includes.map((item) => (
-                    <li key={item} className="font-body text-xs text-[#1a1a1a]/30 tracking-wider flex gap-3">
-                      <span className="text-[#1a1a1a]/20 shrink-0">&middot;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p className="font-body text-[15px] md:text-[16px] text-[#1a1a1a]/50 leading-[1.6] mt-6">{desc}</p>
               </div>
             ))}
           </div>

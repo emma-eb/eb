@@ -49,7 +49,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 1 — HERO (instant, compact)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[40vh] md:h-[45vh] flex flex-col justify-center items-center text-center overflow-hidden">
+      <section data-nav-dark className="relative h-[70vh] md:h-[45vh] flex flex-col justify-center items-center text-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
@@ -57,7 +57,7 @@ export default function Journal() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 px-8">
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Journal
@@ -74,7 +74,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — FEATURED ARTICLE
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=1920&q=80"
@@ -96,7 +96,7 @@ export default function Journal() {
           <h2 className="reveal font-heading text-[26px] md:text-[40px] text-white leading-[0.9] uppercase mb-4" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece is the new Dubai for India&apos;s ultra-wealthy.
           </h2>
-          <p className="reveal font-body text-[14px] md:text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal hidden md:block font-body text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             India&apos;s high-net-worth travelers are choosing Greece over the Gulf. Authentic luxury, historic depth, and a beauty that no amount of engineering can replicate.
           </p>
           <a
@@ -213,7 +213,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 4 — THE HEIGHT (Real Estate)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[45vh] md:h-[60vh] flex items-end overflow-hidden">
+      <section data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80"
@@ -270,7 +270,7 @@ export default function Journal() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-10 md:py-14 px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.2]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+          <h2 className="reveal text-[28px] md:text-[30px] text-[#2e5a88] leading-[1.2]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
             Stay close to Greece.
           </h2>
           <p className="reveal font-body text-[15px] text-[#1a1a1a]/40 font-light mt-3 leading-relaxed" data-delay="100">
