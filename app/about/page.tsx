@@ -15,9 +15,9 @@ const collabsData = [
 ];
 
 const stats = [
-  { n: 12, suffix: "+", label: "years producing for luxury houses" },
-  { n: 80, suffix: "+", label: "productions across Europe" },
-  { n: 95, suffix: "+", label: "countries before choosing one" },
+  { n: 12, suffix: "+", label: "years in the world of luxury" },
+  { n: 80, suffix: "+", label: "productions, no two alike" },
+  { n: 95, suffix: "+", label: "countries visited before choosing one" },
   { n: 35, suffix: "+", label: "Greek islands, known firsthand" },
 ];
 
@@ -106,7 +106,7 @@ export default function About() {
           BLOC 1 — HERO (compact split, instant)
       ═══════════════════════════════════════════ */}
       <section className="flex flex-col md:flex-row md:max-h-[500px]">
-        <div className="w-full md:w-1/2 max-h-[400px] md:max-h-[500px] overflow-hidden bg-[#d4cfc7]" style={{ aspectRatio: "3/4" }}>
+        <div className="w-full md:w-1/2 max-h-[400px] md:max-h-[500px] overflow-hidden bg-[#fcf7f1]">
           <img
             src="/DSC_9459-Edit.jpg"
             alt="Emma Bonnefous"
@@ -143,15 +143,15 @@ export default function About() {
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 md:mb-8 mx-auto" data-delay="80" />
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left" data-delay="160">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/65 leading-[1.8] font-light text-left" data-delay="160">
             Twelve years producing launches, press events and influencer campaigns for luxury houses including Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo and Coach. Over eighty productions across Paris, London, Amsterdam and Copenhagen.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="240">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/65 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="240">
             Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, and Morocco, where I lived for several years.
           </p>
 
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/40 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="320">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/65 leading-[1.8] font-light text-left mt-5 md:mt-6" data-delay="320">
             Ninety-five countries. Greece is where everything came together. eb. is a private travel studio dedicated to one country, for clients anywhere in the world.
           </p>
         </div>
@@ -180,9 +180,10 @@ export default function About() {
             className="img-settle w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.15) 70%, transparent 100%)" }} />
+        <div className="absolute inset-0 bg-black/20 md:bg-transparent" />
 
-        <div className="relative z-10 p-6 md:p-12 max-w-xl">
+        <div className="relative z-10 p-6 pt-16 md:p-12 md:pt-12 max-w-xl">
           <h2 className="reveal font-heading text-[32px] md:text-[48px] leading-[0.9] text-white uppercase mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Why Greece.
           </h2>
@@ -192,7 +193,7 @@ export default function About() {
           <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] md:leading-[1.8] max-w-none md:max-w-xl mt-5 md:mt-6" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             A private visit before the crowds arrive. A dinner where the chef closes for your table only. A villa that never appears online. None of this is bookable. It takes the right network, and knowing exactly who to call.
           </p>
-          <p className="reveal font-body text-[20px] md:text-[24px] text-white font-light leading-[1.4] max-w-none md:max-w-xl mt-8 md:mt-10" data-delay="300" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[20px] md:text-[24px] text-white font-normal leading-[1.4] max-w-none md:max-w-xl mt-8 md:mt-10" data-delay="300" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             That is what eb. provides.
           </p>
         </div>
