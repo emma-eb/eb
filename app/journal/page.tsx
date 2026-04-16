@@ -1,9 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 
 export default function Journal() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email");
+      return;
+    }
+    // TODO: connect to Beehiiv/Mailchimp/Resend when service is chosen
+    console.log("Newsletter subscription:", email);
+    setSubmitted(true);
+  };
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -266,22 +282,69 @@ export default function Journal() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CTA FINAL (beige)
+          BLOC 5 — CTA FINAL (newsletter + conversation)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-10 md:py-14 px-8">
+      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal text-[28px] md:text-[30px] text-[#2e5a88] leading-[1.2]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+          {/* Title */}
+          <h2 className="reveal text-[28px] md:text-[42px] text-[#2e5a88] leading-[1.2]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
             Stay close to Greece.
           </h2>
-          <p className="reveal font-body text-[15px] text-[#1a1a1a]/40 font-light mt-3 leading-relaxed" data-delay="100">
-            Destinations, openings, and the conversations that matter.
+
+          {/* Subtitle */}
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/70 font-normal mt-4 leading-[1.6] max-w-md mx-auto" data-delay="100">
+            Quarterly dispatches on what&apos;s moving in Athens, the islands, and the circles that matter. No spam.
+          </p>
+
+          {/* Newsletter form */}
+          <div className="reveal mt-10" data-delay="200">
+            {submitted ? (
+              <p className="font-body text-[15px] text-[#2e5a88] font-normal">
+                &check; You&apos;re in. First dispatch coming soon.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col md:flex-row items-center gap-3 md:gap-0 max-w-lg mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setError(""); }}
+                  placeholder="email@example.com"
+                  className="w-full md:flex-1 bg-transparent border-b border-[#2e5a88]/30 focus:border-[#2e5a88] outline-none py-3 px-0 font-body text-[16px] text-[#2e5a88] placeholder:text-[#1a1a1a]/30 transition-colors duration-300"
+                />
+                <button
+                  type="submit"
+                  className="font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 hover:border-[#2e5a88] transition-colors duration-300 py-3 px-6 min-h-[44px] cursor-pointer whitespace-nowrap"
+                >
+                  Subscribe &rarr;
+                </button>
+              </form>
+            )}
+            {error && (
+              <p className="font-body text-[12px] text-[#c0392b]/80 mt-2">{error}</p>
+            )}
+            {!submitted && (
+              <p className="font-body text-[12px] text-[#1a1a1a]/30 mt-4">
+                Your email stays private. Unsubscribe anytime.
+              </p>
+            )}
+          </div>
+
+          {/* Separator "or" */}
+          <div className="flex items-center justify-center gap-4 mt-16 md:mt-20">
+            <div className="h-px w-16 bg-[#1a1a1a]/15" />
+            <span className="font-body text-[12px] text-[#1a1a1a]/30">or</span>
+            <div className="h-px w-16 bg-[#1a1a1a]/15" />
+          </div>
+
+          {/* Secondary CTA */}
+          <p className="font-body text-[16px] md:text-[17px] text-[#1a1a1a]/50 font-normal mt-6">
+            Ready to start a project?
           </p>
           <a
             href="/contact"
-            className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 mt-8 min-h-[44px] items-center door-cta"
-            data-delay="200"
+            className="inline-flex items-center gap-3 font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 mt-3 min-h-[44px] items-center"
           >
-            Have a project in mind?
+            Start the conversation
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
         </div>
