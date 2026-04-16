@@ -38,7 +38,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
-        className="relative h-[50vh] md:h-[100dvh] flex flex-col overflow-hidden"
+        className="relative h-[100dvh] flex flex-col overflow-hidden"
       >
         <img
           src="https://images.unsplash.com/photo-1476011840234-433843d703fe?auto=format&fit=crop&w=1920&q=80"
@@ -129,7 +129,7 @@ export default function InfluencerProduction() {
         <img
           src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
           alt="Greece production scene"
-          className="w-full h-[50vh] md:h-[60vh] object-cover object-center"
+          className="w-full h-[40vh] md:h-[60vh] object-cover object-center"
           loading="lazy"
         />
         <span className="absolute bottom-4 right-4 md:bottom-6 md:right-6 font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white/70 z-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
