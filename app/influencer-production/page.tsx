@@ -131,19 +131,19 @@ export default function InfluencerProduction() {
                 name: "Short",
                 duration: "3 days",
                 desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-                includes: ["Up to 10 people", "Full logistics", "1 photographer"],
+                includes: ["Full logistics", "1 photographer"],
               },
               {
                 name: "Extended",
                 duration: "4\u20135 days",
                 desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-                includes: ["Up to 20 people", "Full production crew", "Photo & video"],
+                includes: ["Full production crew", "Photo & video"],
               },
               {
                 name: "Bespoke",
                 duration: "From 6 days",
                 desc: "Fully custom. Your brief, your talent, your season. No template.",
-                includes: ["Any group size", "Full press & PR support", "Dedicated producer"],
+                includes: ["Full press & PR support", "Dedicated producer"],
               },
             ].map(({ name, duration, desc, includes }, i) => (
               <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
@@ -172,23 +172,19 @@ export default function InfluencerProduction() {
       <section data-nav-dark className="bg-[#1a1a1a] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <p className="reveal font-body text-xs tracking-[0.3em] uppercase text-white/30 mb-12 md:mb-16">What we bring to every production</p>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
               {
                 cat: "Production",
-                items: ["Dedicated producer on location", "Location scouting & permit management", "Full logistics (transfers, accommodation)", "Budget management & reporting"],
+                items: ["Dedicated producer on location", "Location scouting & permit management", "Full logistics (transfers, accommodation)"],
               },
               {
                 cat: "Creative",
-                items: ["Photographers & videographers", "Stylists & art directors", "Hair & make-up", "Post-production coordination"],
+                items: ["Photographers & videographers", "Stylists & art directors", "Hair & make-up"],
               },
               {
                 cat: "Talent & Coordination",
-                items: ["Influencer coordination on-site", "Agency & talent liaison", "Brand ambassador management", "Post-trip content recap & reporting"],
-              },
-              {
-                cat: "On the ground",
-                items: ["Private transfers & yacht", "24/7 availability", "Emergency support if required"],
+                items: ["Influencer coordination on-site", "Agency & talent liaison", "Brand ambassador management"],
               },
             ].map(({ cat, items }, i) => (
               <div key={cat} className="reveal" data-delay={i * 100}>
@@ -226,12 +222,12 @@ export default function InfluencerProduction() {
           alt="Greek alley bougainvillea"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%)" }} />
         <div className="relative z-10">
-          <h2 className="font-heading text-[28px] md:text-[48px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="font-heading text-[28px] md:text-[48px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Planning a production<br />in Greece?
           </h2>
-          <p className="font-body text-[15px] md:text-base text-white/60 mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="font-body text-[15px] md:text-base text-white mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Send us your brief. Dates, brand, team size, objectives.
           </p>
           <a href="/contact" className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center door-cta">
