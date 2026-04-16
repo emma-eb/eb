@@ -129,10 +129,10 @@ export default function InfluencerProduction() {
         <img
           src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
           alt="Greece production scene"
-          className="w-full h-[40vh] md:h-[60vh] object-cover object-center"
+          className="w-full h-[35vh] md:h-[60vh] object-cover object-center"
           loading="lazy"
         />
-        <span className="absolute bottom-4 right-4 md:bottom-6 md:right-6 font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white/70 z-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+        <span className="absolute bottom-3 right-3 md:bottom-6 md:right-6 font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white z-10 bg-black/35 backdrop-blur-[4px] [-webkit-backdrop-filter:blur(4px)] px-2.5 py-1 rounded-sm">
           Cyclades, Greece
         </span>
       </section>
@@ -228,15 +228,14 @@ export default function InfluencerProduction() {
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%)" }} />
         <div className="relative z-10">
-          <h2 className="font-heading text-[36px] md:text-[56px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
+          <h2 className="font-heading text-[32px] md:text-[56px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Planning a production<br />in Greece?
           </h2>
           <p className="font-body text-[16px] md:text-[17px] text-white/90 max-w-xl mx-auto leading-relaxed mt-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Send us your brief. Dates, brand, team size, objectives.
           </p>
-          <a href="/contact" className="inline-flex items-center gap-3 font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-white border-b border-white pb-[2px] hover:opacity-70 transition-opacity duration-300 mt-6 min-h-[44px] items-center door-cta">
-            Send a brief
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+          <a href="/contact" className="inline-block font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-white border-b border-white pb-1 hover:opacity-70 transition-opacity duration-300 mt-8 py-3 door-cta">
+            Send a brief &rarr;
           </a>
         </div>
       </section>
