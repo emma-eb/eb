@@ -267,7 +267,7 @@ export default function About() {
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
         <div className="max-w-6xl mx-auto px-6">
-          <div className="border-t border-white/20" />
+          <div className="border-t border-white/30" />
         </div>
         <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
           <div className="flex flex-col items-center md:items-start gap-4 order-1">

@@ -94,7 +94,7 @@ export default function Journal() {
               BusinessToday &middot; April 2026
             </span>
           </div>
-          <h2 className="reveal font-heading text-[36px] md:text-[56px] text-white leading-[0.9] uppercase mb-4" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[32px] md:text-[48px] text-white leading-[1.05] uppercase mb-4" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece is the new Dubai for India&apos;s ultra-wealthy.
           </h2>
           <p className="reveal hidden md:block font-body text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -129,7 +129,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">Culture</span>
               <div className="absolute bottom-0 left-0 p-5 md:p-8" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Variety &middot; April 2026</p>
-                <h3 className="font-body text-[22px] md:text-[28px] font-medium text-white leading-[1.2] mt-2 max-w-lg line-clamp-3">Emily in Paris heads to Greece for Season 6</h3>
+                <h3 className="font-body text-[20px] md:text-[24px] font-medium text-white leading-[1.2] mt-2 max-w-lg line-clamp-3">Emily in Paris heads to Greece for Season 6</h3>
               </div>
             </a>
 
@@ -141,7 +141,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Greek City Times &middot; March 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Tourism revenue jumps 58.4% to &euro;473M</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Tourism revenue jumps 58.4% to &euro;473M</h3>
               </div>
             </a>
 
@@ -153,7 +153,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Newsweek &middot; 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Greece named world&apos;s #1 retirement destination</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Greece named world&apos;s #1 retirement destination</h3>
               </div>
             </a>
           </div>
@@ -168,7 +168,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">Destination</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">The Guardian &middot; 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Astypalea crowned world&apos;s top destination</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Astypalea crowned world&apos;s top destination</h3>
               </div>
             </a>
 
@@ -180,7 +180,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">Hospitality Pipeline</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Tornos News &middot; 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">The high-profile hotel openings expected in 2026</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">The high-profile hotel openings expected in 2026</h3>
               </div>
             </a>
 
@@ -192,7 +192,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">Capital &amp; Lifestyle</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Greek City Times &middot; April 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Greece becomes a safe haven for luxury real estate</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Greece becomes a safe haven for luxury real estate</h3>
               </div>
             </a>
 
@@ -204,7 +204,7 @@ export default function Journal() {
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/70">Greek City Times &middot; March 2026</p>
-                <h3 className="font-body text-[17px] md:text-[22px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Tourists reroute to Greece as Gulf slumps</h3>
+                <h3 className="font-body text-[16px] md:text-[20px] font-medium text-white leading-[1.3] mt-2 line-clamp-3">Tourists reroute to Greece as Gulf slumps</h3>
               </div>
             </a>
           </div>
@@ -233,7 +233,7 @@ export default function Journal() {
               Attica &middot; Greece
             </span>
           </div>
-          <h2 className="reveal font-heading text-[36px] md:text-[56px] text-white leading-[0.9] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[32px] md:text-[48px] text-white leading-[1.05] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             The Height.
           </h2>
           <p className="reveal font-body text-[18px] md:text-[20px] text-white font-normal mt-2" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
@@ -293,7 +293,7 @@ export default function Journal() {
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
         <div className="max-w-6xl mx-auto px-6">
-          <div className="border-t border-white/20" />
+          <div className="border-t border-white/30" />
         </div>
         <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
           <div className="flex flex-col items-center md:items-start gap-4 order-1">
