@@ -268,21 +268,20 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 5 — CTA FINAL (editorial)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-32 px-6">
+      <section className="bg-[#fcf7f1] py-20 md:py-40 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="reveal text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3]" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
-            What you&apos;ve read is a fraction of what we do.
+          <p className="reveal text-[26px] md:text-[32px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+            Reading is one thing.
           </p>
-          <p className="reveal font-body text-[15px] md:text-[17px] text-[#1a1a1a]/70 font-normal mt-6 leading-[1.6] max-w-xl mx-auto" data-delay="100">
-            The real Greece is in the conversations we have,<br className="hidden md:inline" /> not the stories we publish.
+          <p className="reveal text-[26px] md:text-[32px] text-[#2e5a88] leading-tight mt-3 md:mt-4" data-delay="100" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+            Being there, another.
           </p>
           <a
             href="/contact"
-            className="reveal inline-flex items-center gap-3 font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-[#2e5a88] border-b border-[#2e5a88] pb-[2px] hover:opacity-70 transition-opacity duration-300 mt-12 md:mt-16 min-h-[44px] items-center"
+            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-12 md:mt-16 min-h-[44px] py-3 px-2"
             data-delay="200"
           >
-            Start the conversation
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            Start the conversation &rarr;
           </a>
         </div>
       </section>
