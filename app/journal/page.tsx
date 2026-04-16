@@ -62,7 +62,7 @@ export default function Journal() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Journal
           </span>
-          <h1 className="font-heading text-[34px] md:text-[52px] leading-[0.9] text-white uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece, closely.
           </h1>
           <p className="font-body text-[14px] md:text-[16px] text-white/80 font-light max-w-xl mx-auto leading-relaxed mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>

@@ -51,7 +51,7 @@ export default function InfluencerProduction() {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             For Brands &amp; Agencies
           </span>
-          <h1 className="font-heading text-[36px] md:text-[56px] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h1 className="font-heading text-[clamp(2.2rem,8vw,4rem)] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece,<br />produced.
           </h1>
           <p className="font-body text-[15px] md:text-[17px] text-white/80 font-light max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>

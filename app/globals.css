@@ -28,6 +28,14 @@
   box-sizing: border-box;
 }
 
+/* Shared hero title size for all secondary pages (not homepage) */
+.hero-title {
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  line-height: 0.9;
+  color: white;
+  text-transform: uppercase;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
