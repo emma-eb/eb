@@ -125,14 +125,14 @@ export default function InfluencerProduction() {
       {/* ═══════════════════════════════════════════
           BANDEAU IMAGE (respiration visuelle)
       ═══════════════════════════════════════════ */}
-      <section className="relative w-full">
+      <section className="relative w-full overflow-hidden">
         <img
           src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
           alt="Greece production scene"
           className="w-full h-[50vh] md:h-[60vh] object-cover object-center"
           loading="lazy"
         />
-        <span className="absolute bottom-6 right-6 font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white/70" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+        <span className="absolute bottom-4 right-4 md:bottom-6 md:right-6 font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white/70 z-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
           Cyclades, Greece
         </span>
       </section>
@@ -176,7 +176,7 @@ export default function InfluencerProduction() {
       {/* ═══════════════════════════════════════════
           WHAT WE BRING — dark
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="bg-[#1a1a1a] py-16 md:py-24 px-6 md:px-16">
+      <section data-nav-dark className="bg-[#1a1a1a] pt-12 md:pt-16 pb-16 md:pb-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <p className="reveal font-body text-[11px] tracking-[0.2em] uppercase text-white/70 mb-12 md:mb-16">What we bring to every production</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -231,10 +231,10 @@ export default function InfluencerProduction() {
           <h2 className="font-heading text-[36px] md:text-[56px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Planning a production<br />in Greece?
           </h2>
-          <p className="font-body text-[15px] md:text-base text-white mb-10 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
+          <p className="font-body text-[16px] md:text-[17px] text-white/90 max-w-xl mx-auto leading-relaxed mt-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
             Send us your brief. Dates, brand, team size, objectives.
           </p>
-          <a href="/contact" className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center door-cta">
+          <a href="/contact" className="inline-flex items-center gap-3 font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-white border-b border-white pb-[2px] hover:opacity-70 transition-opacity duration-300 mt-6 min-h-[44px] items-center door-cta">
             Send a brief
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
           </a>
