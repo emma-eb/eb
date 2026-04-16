@@ -122,38 +122,38 @@ export default function Journal() {
           {/* LIGNE 1 : 1 featured (2/3) + 2 petits (1/3 empiles) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {/* Art 1 — Emily in Paris (FEATURED) */}
-            <a href="https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] md:col-span-2 md:row-span-2 md:aspect-auto overflow-hidden group cursor-pointer" data-delay="0">
+            <a href="https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] md:col-span-2 md:row-span-2 md:aspect-auto overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="0">
               <img src="/emily-paris.jpg" alt="Greek terrace, blue shutters, bougainvillea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Culture</span>
               <div className="absolute bottom-0 left-0 p-5 md:p-8" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Variety &middot; April 2026</p>
-                <h3 className="font-body text-[18px] md:text-[24px] font-semibold text-white leading-[1.3] mt-2 max-w-lg">Emily in Paris heads to Greece for Season 6</h3>
+                <h3 className="font-body text-[28px] md:text-[36px] font-semibold text-white leading-[1.15] mt-2 max-w-lg line-clamp-3">Emily in Paris heads to Greece for Season 6</h3>
               </div>
             </a>
 
             {/* Art 2 — Tourism Revenue (PETIT) */}
-            <a href="https://greekcitytimes.com/2026/03/26/tourism-revenue-jumps-58-4-in-january-reaches-e473-3-million/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="50">
+            <a href="https://greekcitytimes.com/2026/03/26/tourism-revenue-jumps-58-4-in-january-reaches-e473-3-million/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="50">
               <img src="/tourism-revenue.jpg" alt="Girl photographing the Parthenon" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; March 2026</p>
-                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Tourism revenue jumps 58.4% to &euro;473M</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">Tourism revenue jumps 58.4% to &euro;473M</h3>
               </div>
             </a>
 
             {/* Art 3 — Greece #1 Expats (PETIT) */}
-            <a href="https://www.newsweek.com/greece-worlds-top-retirement-destination-how-americans-can-move-there-11124134" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="100">
+            <a href="https://www.newsweek.com/greece-worlds-top-retirement-destination-how-americans-can-move-there-11124134" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="100">
               <img src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=800&q=80" alt="Greece sunset village" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Newsweek &middot; 2026</p>
-                <h3 className="font-body text-[15px] md:text-[16px] font-semibold text-white leading-[1.3] mt-2">Greece named world&apos;s #1 retirement destination</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">Greece named world&apos;s #1 retirement destination</h3>
               </div>
             </a>
           </div>
@@ -161,50 +161,50 @@ export default function Journal() {
           {/* LIGNE 2 : 4 articles */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-6">
             {/* Art 4 — Astypalea */}
-            <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="150">
+            <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="150">
               <img src="/astypalea..jpg" alt="Astypalea windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Destination</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">The Guardian &middot; 2026</p>
-                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">Astypalea crowned world&apos;s top destination</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">Astypalea crowned world&apos;s top destination</h3>
               </div>
             </a>
 
             {/* Art 5 — Hotel Openings 2026 */}
-            <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="200">
+            <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="200">
               <img src="/raphael-lopes-zqGvYYqDvs4-unsplash (1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Hospitality Pipeline</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Tornos News &middot; 2026</p>
-                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">The high-profile hotel openings expected in 2026</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">The high-profile hotel openings expected in 2026</h3>
               </div>
             </a>
 
             {/* Art 6 — Real Estate UHNW */}
-            <a href="https://greekcitytimes.com/2026/04/14/greece-a-safe-haven-for-luxury-real-estate-investment/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="250">
+            <a href="https://greekcitytimes.com/2026/04/14/greece-a-safe-haven-for-luxury-real-estate-investment/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="250">
               <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Luxury villa modern architecture" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">Capital &amp; Lifestyle</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; April 2026</p>
-                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">Greece becomes a safe haven for luxury real estate</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">Greece becomes a safe haven for luxury real estate</h3>
               </div>
             </a>
 
             {/* Art 7 — Gulf shift */}
-            <a href="https://greekcitytimes.com/2026/03/11/gulf-tourism-slump-redirects-travelers-greece/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer" data-delay="300">
+            <a href="https://greekcitytimes.com/2026/03/11/gulf-tourism-slump-redirects-travelers-greece/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="300">
               <img src="/gulf-shift.jpg" alt="Aerial view boats turquoise water Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-4 left-4 inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] font-medium tracking-[0.15em] uppercase text-white">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                 <p className="font-body text-[9px] tracking-[0.1em] uppercase text-white/50">Greek City Times &middot; March 2026</p>
-                <h3 className="font-body text-[14px] md:text-[15px] font-semibold text-white leading-[1.3] mt-2">Tourists reroute to Greece as Gulf slumps</h3>
+                <h3 className="font-body text-[22px] md:text-[22px] font-medium text-white leading-[1.2] mt-2 line-clamp-3">Tourists reroute to Greece as Gulf slumps</h3>
               </div>
             </a>
           </div>
@@ -269,17 +269,17 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 5 — CTA FINAL
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-40 px-6">
+      <section className="bg-[#fcf7f1] py-20 md:py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal text-[28px] md:text-[36px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+          <h2 className="reveal text-[28px] md:text-[32px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
             Stay close to Greece.
           </h2>
-          <p className="reveal font-body text-[16px] md:text-[18px] text-[#1a1a1a]/70 font-normal mt-6 leading-[1.6] max-w-md mx-auto" data-delay="100">
+          <p className="reveal font-body text-[16px] md:text-[17px] text-[#1a1a1a]/70 font-normal mt-4 md:mt-6 leading-[1.6] max-w-md mx-auto" data-delay="100">
             Every great journey starts with a conversation.
           </p>
           <a
             href="/contact"
-            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-12 md:mt-16 py-3 px-2"
+            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-8 md:mt-10 py-3 px-2"
             data-delay="200"
           >
             Have a project in mind &rarr;
