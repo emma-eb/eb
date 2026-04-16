@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Nav from "../components/Nav";
+import NewsletterBanner from "../components/NewsletterBanner";
 
 const experiences = [
   {
@@ -282,6 +283,8 @@ export default function Experiences() {
           </a>
         </div>
       </section>
+
+      <NewsletterBanner />
 
       {/* ═══════════════════════════════════════════
           FOOTER

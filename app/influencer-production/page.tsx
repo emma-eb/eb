@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Nav from "../components/Nav";
+import NewsletterBanner from "../components/NewsletterBanner";
 
 export default function InfluencerProduction() {
   useEffect(() => {
@@ -239,6 +240,8 @@ export default function InfluencerProduction() {
           </a>
         </div>
       </section>
+
+      <NewsletterBanner />
 
       {/* ═══════════════════════════════════════════
           FOOTER

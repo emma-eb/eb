@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
+import NewsletterBanner from "../components/NewsletterBanner";
 
 const collabsData = [
   { house: "Balmain", venue: "Silencio, Paris" },
@@ -259,6 +260,8 @@ export default function About() {
           </a>
         </div>
       </section>
+
+      <NewsletterBanner />
 
       {/* ═══════════════════════════════════════════
           BLOC 8 — FOOTER

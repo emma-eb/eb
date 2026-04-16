@@ -2,6 +2,7 @@
 
 import Nav from "./components/Nav";
 import { useRef, useState, useEffect } from "react";
+import NewsletterBanner from "./components/NewsletterBanner";
 
 const islands = [
   "Santorini", "Mykonos", "Paros", "Naxos", "Milos", "Folegandros",
@@ -430,6 +431,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <NewsletterBanner />
 
       {/* ═══════════════════════════════════════════
           FOOTER (texte blanc/beige lisible)

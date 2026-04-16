@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Nav from "../components/Nav";
+import NewsletterBanner from "../components/NewsletterBanner";
 
 export default function Journal() {
   useEffect(() => {
@@ -285,6 +286,8 @@ export default function Journal() {
           </a>
         </div>
       </section>
+
+      <NewsletterBanner />
 
       {/* ═══════════════════════════════════════════
           BLOC 6 — FOOTER
