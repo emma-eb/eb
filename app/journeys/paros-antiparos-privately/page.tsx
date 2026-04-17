@@ -249,9 +249,12 @@ export default function ParosJourney() {
                 </div>
 
                 <div className={`reveal relative z-10 ${c.left ? "md:order-2 md:pl-6" : "md:order-1 md:pr-6"}`} data-delay="100">
-                  <p className="font-body text-[11px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium mb-4">
+                  <h3
+                    className="font-heading text-[#2e5a88] uppercase leading-[1] tracking-wide mb-6"
+                    style={{ fontSize: "clamp(28px, 3vw, 44px)", letterSpacing: "-0.01em" }}
+                  >
                     {c.tag}
-                  </p>
+                  </h3>
                   <p className="font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
                     {c.body}
                   </p>

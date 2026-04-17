@@ -247,7 +247,10 @@ export default function Experiences() {
                 <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
                   {c.tag}
                 </span>
-                <h3 className="text-[16px] md:text-[18px] font-medium text-white mt-3" style={{ fontFamily: "var(--font-inter), sans-serif", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <h3
+                  className="font-heading text-white uppercase leading-[1] tracking-wide mt-3"
+                  style={{ fontSize: "clamp(22px, 2.4vw, 32px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+                >
                   {c.title}
                 </h3>
                 <p className="font-body text-[13px] text-white/75 font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>

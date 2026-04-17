@@ -98,37 +98,39 @@ export default function AstypaleaJourney() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center px-6 text-center pointer-events-none">
-          <span className="inline-block px-5 py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[11px] uppercase tracking-[0.15em] font-medium font-body">
-            Private Journey &middot; 01
-          </span>
-          <p
-            className="font-body text-[11px] uppercase tracking-[0.2em] text-white/70 mt-4"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
-            7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
-          </p>
-          <h1
-            className="font-heading text-white leading-[0.95] mt-8 max-w-5xl"
-            style={{
-              fontSize: "clamp(48px, 9vw, 140px)",
-              letterSpacing: "-0.01em",
-              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-            }}
-          >
-            Astypalea, Before<br />Everyone Else.
-          </h1>
-          <p
-            className="max-w-[620px] text-white/85 text-[16px] md:text-[18px] leading-[1.6] font-light font-body mt-6"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
-            Athens, then the Greek island the Guardian named the world{'\u2019'}s #1 destination of 2026. While there{'\u2019'}s still no one there.
-          </p>
-          <span className="inline-block mt-8 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            Guardian #1 Destination 2026
-          </span>
+        <div className="absolute inset-0 flex items-end">
+          <div className="p-8 md:p-16 max-w-[720px]">
+            <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body mb-4">
+              Private Journey &middot; 01
+            </span>
+            <p
+              className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 mb-4"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
+            </p>
+            <h1
+              className="font-heading text-white uppercase leading-[0.95] mb-5 tracking-wide"
+              style={{
+                fontSize: "clamp(48px, 7vw, 110px)",
+                letterSpacing: "-0.01em",
+                textShadow: "0 1px 3px rgba(0,0,0,0.3)",
+              }}
+            >
+              Astypalea, Before<br />Everyone Else.
+            </h1>
+            <p
+              className="max-w-[550px] text-white/85 text-[15px] md:text-[16px] leading-[1.6] font-light font-body mb-5"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              Athens, then the Greek island the Guardian named the world{'\u2019'}s #1 destination of 2026. While there{'\u2019'}s still no one there.
+            </p>
+            <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white/90 text-[10px] uppercase tracking-[0.15em] font-medium font-body">
+              Featured #1 by The Guardian, 2026
+            </span>
+          </div>
         </div>
 
         <button
@@ -248,9 +250,12 @@ export default function AstypaleaJourney() {
 
                 {/* Text */}
                 <div className={`reveal relative z-10 ${c.left ? "md:order-2 md:pl-6" : "md:order-1 md:pr-6"}`} data-delay="100">
-                  <p className="font-body text-[11px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium mb-4">
+                  <h3
+                    className="font-heading text-[#2e5a88] uppercase leading-[1] tracking-wide mb-6"
+                    style={{ fontSize: "clamp(28px, 3vw, 44px)", letterSpacing: "-0.01em" }}
+                  >
                     {c.tag}
-                  </p>
+                  </h3>
                   <p className="font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
                     {c.body}
                   </p>
