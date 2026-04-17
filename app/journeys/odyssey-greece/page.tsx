@@ -355,7 +355,7 @@ export default function OdysseyGreece() {
             <p className="font-body text-base text-[#888] leading-relaxed mb-8">
               A final morning to wander through Athens at your own pace. A coffee in Plaka, a last stroll beneath the Acropolis, a few moments to hold on to before private transfer to the airport.
             </p>
-            <p className="font-body text-sm text-[#2e5a88] italic leading-relaxed">
+            <p className="font-body text-sm text-[#2e5a88] leading-relaxed">
               "A journey you won't stop thinking about."
             </p>
           </div>

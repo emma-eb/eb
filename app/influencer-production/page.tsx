@@ -221,7 +221,7 @@ export default function InfluencerProduction() {
 
           {/* Case studies line inside dark section */}
           <div className="reveal w-[40px] h-px bg-white/20 mx-auto mt-16" data-delay="150" />
-          <p className="reveal font-body text-[14px] italic text-white/60 text-center mt-6" data-delay="200">
+          <p className="reveal font-body text-[14px] text-white/60 text-center mt-6" data-delay="200">
             Selected case studies available on request.
           </p>
         </div>

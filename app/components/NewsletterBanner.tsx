@@ -26,7 +26,7 @@ export default function NewsletterBanner() {
         </div>
 
         {submitted ? (
-          <p className="font-body text-[14px] text-white italic text-center md:text-right">
+          <p className="font-body text-[14px] text-white text-center md:text-right">
             Thank you. First letter coming soon.
           </p>
         ) : (

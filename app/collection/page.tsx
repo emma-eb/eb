@@ -109,7 +109,7 @@ export default function CollectionPage() {
             className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Villas that rarely appear online. A yacht that moves when you do.
+            Villas that rarely appear online. One yacht, based in Athens.
           </p>
         </div>
 
@@ -130,16 +130,16 @@ export default function CollectionPage() {
           </p>
           <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
           <h2
-            className="reveal mt-12 text-[24px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light italic"
+            className="reveal mt-12 text-[24px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light"
             data-delay="100"
             style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
           >
-            Where we send our closest clients.
+            A private collection. The rest is a conversation.
           </h2>
           <p className="reveal mt-10 text-[15px] md:text-[16px] leading-[1.8] text-black/65 font-light font-body" data-delay="150">
-            Not a portfolio. A private network. We know the owners, the coastlines, the houses that deliver and the ones that photograph better than they live. When we place you, we already know it{'\u2019'}s the right one.
+            Not a portfolio. A private network. We know the owners, the coastlines, the houses that deliver and the ones that photograph better than they live. When you reach out, we already know which one is yours.
           </p>
-          <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-black/55 font-light italic font-body" data-delay="200">
+          <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-black/55 font-light font-body" data-delay="200">
             Tell us how you want to live for the week. We know where that is.
           </p>
         </div>
@@ -148,7 +148,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3 — THE HOMES (grille unique, 5 villas)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-12 md:pb-16">
+      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-10">
             {villas.map((villa, i) => (
@@ -156,9 +156,9 @@ export default function CollectionPage() {
                 key={villa.slug}
                 href={`/contact?villa=${villa.slug}`}
                 className={`reveal group block relative overflow-hidden ${
-                  i === 4 ? "md:col-span-2 aspect-[3/2] md:aspect-[21/9]" : "aspect-[3/2]"
+                  i === 4 ? "md:col-span-2 aspect-[3/2] md:aspect-[5/2]" : "aspect-[3/2]"
                 }`}
-                data-delay={String(i * 80)}
+                data-delay={String((i % 2) * 100)}
               >
                 <img
                   src={villa.image}
@@ -196,8 +196,8 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3.5 — CITATION DE RESPIRATION
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 py-16 md:py-24">
-        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/55 font-light font-body">
+      <section className="bg-[#fcf7f1] px-6 py-14 md:py-20">
+        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/50 font-light font-body">
           The right house changes the week.
         </p>
       </section>
@@ -300,36 +300,7 @@ export default function CollectionPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 6 — ACQUISITION (texte centré, sans image)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 py-20 md:py-28">
-        <div className="max-w-[620px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
-            Acquisition
-          </p>
-          <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
-          <h2
-            className="reveal mt-10 text-[24px] md:text-[32px] text-[#2e5a88] leading-[1.25] font-light"
-            data-delay="100"
-            style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
-          >
-            Some clients don{'\u2019'}t want the week. They want the key.
-          </h2>
-          <p className="reveal mt-6 text-[15px] md:text-[16px] leading-[1.7] text-black/65 font-light font-body" data-delay="150">
-            For a small number of clients, we advise on the private acquisition of exceptional properties in Greece, on and off the market. Athens Riviera, the Cyclades, the Peloponnese, the Ionian.
-          </p>
-          <a
-            href="/contact?ref=acquisition"
-            className="reveal mt-8 inline-block text-[13px] uppercase tracking-[0.1em] font-medium text-[#2e5a88] border-b border-[#2e5a88] pb-1 hover:border-[#2e5a88]/40 transition-colors font-body min-h-[44px]"
-            data-delay="200"
-          >
-            Speak to us privately &rarr;
-          </a>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 7 — CTA FINAL (gardé tel quel)
+          BLOC 6 — CTA FINAL (titre + CTA uniquement)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative py-32 px-6 text-center overflow-hidden">
         <img
@@ -341,20 +312,17 @@ export default function CollectionPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
           <h2
-            className="reveal font-heading text-[40px] md:text-[56px] lg:text-[64px] text-white uppercase leading-[0.95]"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="reveal font-heading text-[36px] md:text-[64px] text-white uppercase leading-[0.95] max-w-[700px] mx-auto"
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Not finding<br />what you need?
+            A stay begins with a conversation.
           </h2>
-          <p className="reveal font-body text-[16px] text-white/60 max-w-xl mx-auto mt-6" data-delay="100">
-            Our most sought-after properties are never listed publicly. Tell us what you are looking for.
-          </p>
           <a
             href="/contact?ref=collection-final"
-            className="reveal inline-block text-[13px] md:text-[14px] uppercase tracking-[0.1em] font-medium text-white border-b border-white pb-1 hover:border-white/50 transition-colors font-body min-h-[44px] mt-10"
-            data-delay="200"
+            className="reveal mt-10 inline-block text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+            data-delay="150"
           >
-            Request access &rarr;
+            Start the conversation &rarr;
           </a>
         </div>
       </section>
