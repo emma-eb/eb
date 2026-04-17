@@ -114,8 +114,8 @@ export default function CollectionPage() {
         </div>
 
         <a
-          href="#villas"
-          aria-label="Scroll to villas"
+          href="#explore"
+          aria-label="Scroll to content"
           className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,7 +127,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — MANIFESTO (refait)
       ═══════════════════════════════════════════ */}
-      <section id="manifesto" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
+      <section id="explore" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[620px] mx-auto text-center">
           <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
             Collection
@@ -152,7 +152,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3 — THE HOMES (grille unique, 5 villas)
       ═══════════════════════════════════════════ */}
-      <section id="villas" className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6 scroll-mt-20">
+      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {villas.map((villa, i) => (

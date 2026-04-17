@@ -76,8 +76,8 @@ export default function Journal() {
           </p>
         </div>
         <a
-          href="#featured"
-          aria-label="Scroll to articles"
+          href="#explore"
+          aria-label="Scroll to content"
           className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,7 +89,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — FEATURED ARTICLE
       ═══════════════════════════════════════════ */}
-      <section id="featured" data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden scroll-mt-20">
+      <section id="explore" data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=1920&q=80"

@@ -141,7 +141,7 @@ export default function Experiences() {
           </p>
         </div>
         <a
-          href="#intro"
+          href="#explore"
           aria-label="Scroll to content"
           className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
         >
@@ -154,7 +154,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           INTRO STATEMENT — beige
       ═══════════════════════════════════════════ */}
-      <section id="intro" className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16 scroll-mt-20">
+      <section id="explore" className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16 scroll-mt-20">
         <div className="max-w-[90%] md:max-w-2xl mx-auto text-center">
           <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences
