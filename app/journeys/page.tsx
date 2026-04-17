@@ -47,7 +47,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-slow-honeymoon-in-the-cyclades",
-    image: "https://images.unsplash.com/photo-1602867741746-6df80f40b3f6?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1400&q=85",
     number: "03",
     overline: "Private Journey \u00b7 03",
     title: "A Slow Honeymoon\nin the Cyclades.",
@@ -228,37 +228,30 @@ export default function JourneysPage() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
+        {/* Gradient top pour lisibilite menu sticky */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
-        <div className="absolute inset-0 flex items-end">
-          <div className="p-8 md:p-16 max-w-[680px]">
-            <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
-              Private Journeys
-            </span>
-            <h1
-              className="font-heading text-white uppercase leading-[0.95] mb-5"
-              style={{
-                fontSize: "clamp(40px, 6vw, 88px)",
-                letterSpacing: "-0.01em",
-                textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-              }}
-            >
-              Greece, designed firsthand.
-            </h1>
-            <p
-              className="font-body text-white/85 text-[15px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-6"
-              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              Seven private journeys through Greece. Each one shaped by the eb. studio. Each one yours to reshape.
-            </p>
-            <button
-              type="button"
-              onClick={() => listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
-              className="inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors cursor-pointer"
-            >
-              Explore the journeys &rarr;
-            </button>
-          </div>
+        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+          <span className="inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">
+            Private Journeys
+          </span>
+          <h1
+            className="font-heading text-white uppercase leading-[0.9] mb-6 max-w-6xl"
+            style={{
+              fontSize: "clamp(56px, 10vw, 160px)",
+              letterSpacing: "-0.01em",
+              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
+            }}
+          >
+            Greece, designed<br />firsthand.
+          </h1>
+          <p
+            className="font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[650px] mb-8"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Seven private journeys through Greece. Each one shaped by the eb. studio. Each one yours to reshape.
+          </p>
         </div>
 
         <button
@@ -289,72 +282,90 @@ export default function JourneysPage() {
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {secondary.map((j, i) => (
-              <SecondaryCard key={j.slug} j={j} />
+              <div key={j.slug} className={i === secondary.length - 1 && secondary.length % 2 !== 0 ? "md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto md:w-full" : ""}>
+                <SecondaryCard j={j} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 4 — BY INTRODUCTION ONLY
+          BLOC 4 — THE PATMOS NETWORK (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6 border-t border-black/[0.08]">
-        <div className="max-w-[720px] mx-auto text-center">
-          <span className="reveal inline-block mb-10 md:mb-12 px-4 py-1.5 bg-[#2e5a88]/10 rounded-full text-[#2e5a88] text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body">
+      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1602865256095-8e9e0e40cd8c?auto=format&fit=crop&w=1920&q=85"
+          alt="Patmos, Greece"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 pointer-events-none" />
+
+        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
+          <span className="reveal inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body">
             By Introduction Only
           </span>
           <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05] mb-10"
+            className="reveal font-heading text-white uppercase leading-[0.95] mb-8"
             data-delay="80"
             style={{
-              fontSize: "clamp(32px, 4.5vw, 64px)",
+              fontSize: "clamp(48px, 8vw, 120px)",
               letterSpacing: "-0.01em",
+              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            Some islands aren{'\u2019'}t on the map.
-            <br />
-            <span className="text-[#2e5a88]/45">At least, not on ours.</span>
+            The Patmos<br />Network.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-6" data-delay="150">
-            Patmos. Amorgos. Symi. The islands the eb. studio designs around for clients who already know what they want, who arrive with a date, a number of guests, and a single sentence describing the kind of week they have in mind.
+          <p className="reveal font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[650px] mb-8" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            Patmos is where the eb. studio is rooted. It is also where some of our most private residences and experiences live, accessible only by introduction.
           </p>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-10" data-delay="200">
-            These journeys do not appear in our published collection. They are slower to assemble, smaller in scale, and reserved for clients introduced through past work or trusted networks. If one of these names matters to you, the conversation starts the same way as the others.
+          <p className="reveal font-body text-white/60 text-[11px] md:text-[12px] uppercase tracking-[0.2em] mb-8" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            Patmos &middot; Amorgos &middot; Symi &middot; The Ionian
           </p>
           <a
-            href="/contact?ref=by-introduction"
-            className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity"
+            href="/contact?type=introduction"
+            className="reveal inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1.5 border-b border-white/80 hover:border-white transition-colors"
             data-delay="260"
           >
-            Inquire privately &rarr;
+            Request introduction &rarr;
           </a>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CTA FINAL compact
+          BLOC 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-24 px-6 border-t border-black/[0.08]">
-        <div className="max-w-[600px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-6">
-            Inquire
-          </p>
+      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=85"
+          alt="Greece, designed for you"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 pointer-events-none" />
+
+        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
+          <span className="reveal inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body">
+            Yours, from scratch
+          </span>
           <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05] mb-6"
+            className="reveal font-heading text-white uppercase leading-[0.95] mb-8 max-w-6xl"
             data-delay="80"
             style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
+              fontSize: "clamp(48px, 10vw, 140px)",
               letterSpacing: "-0.01em",
+              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            Yours, from scratch.
+            Every journey<br />starts from scratch.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
+          <p className="reveal font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[600px] mb-10" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             The seven above are starting points. Tell us what you have in mind. We design the rest.
           </p>
           <a
             href="/contact"
-            className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity door-cta"
+            className="reveal inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1.5 border-b border-white/80 hover:border-white transition-colors door-cta"
             data-delay="220"
           >
             Start the conversation &rarr;
