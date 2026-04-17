@@ -47,15 +47,19 @@ export default function About() {
           </p>
         </div>
 
-        <a
-          href="#story-origins"
+        <button
+          type="button"
+          onClick={() => {
+            const target = document.getElementById("story-origins");
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
           aria-label="Scroll to content"
           className="absolute bottom-8 right-[5%] z-10 animate-bounce cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </a>
+        </button>
       </section>
 
       {/* ═══════════════════════════════════════════

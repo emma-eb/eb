@@ -140,15 +140,19 @@ export default function Experiences() {
             Designed around your occasion, across Athens and the Greek islands.
           </p>
         </div>
-        <a
-          href="#explore"
+        <button
+          type="button"
+          onClick={() => {
+            const target = document.getElementById("explore");
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </a>
+        </button>
       </section>
 
       {/* ═══════════════════════════════════════════
