@@ -75,12 +75,21 @@ export default function Journal() {
             News, openings, and the conversations shaping how the world sees Greece right now.
           </p>
         </div>
+        <a
+          href="#featured"
+          aria-label="Scroll to articles"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
+        >
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
       </section>
 
       {/* ═══════════════════════════════════════════
           BLOC 2 — FEATURED ARTICLE
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden">
+      <section id="featured" data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=1920&q=80"
@@ -276,7 +285,7 @@ export default function Journal() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-20 md:py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal text-[28px] md:text-[32px] text-[#2e5a88] leading-tight" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", fontWeight: 300 }}>
+          <h2 className="reveal text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
             Stay close to Greece.
           </h2>
           <p className="reveal font-body text-[16px] md:text-[17px] text-[#1a1a1a]/70 font-normal mt-4 md:mt-6 leading-[1.6] max-w-md mx-auto" data-delay="100">

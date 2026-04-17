@@ -140,18 +140,27 @@ export default function Experiences() {
             Designed around your occasion, across Athens and the Greek islands.
           </p>
         </div>
+        <a
+          href="#intro"
+          aria-label="Scroll to content"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
+        >
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
       </section>
 
       {/* ═══════════════════════════════════════════
           INTRO STATEMENT — beige
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16">
+      <section id="intro" className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16 scroll-mt-20">
         <div className="max-w-[90%] md:max-w-2xl mx-auto text-center">
           <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[20px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light" data-delay="200">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
         </div>
