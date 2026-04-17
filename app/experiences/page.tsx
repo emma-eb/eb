@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 
@@ -67,6 +67,8 @@ const concierge = [
 ];
 
 export default function Experiences() {
+  const exploreRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -142,12 +144,9 @@ export default function Experiences() {
         </div>
         <button
           type="button"
-          onClick={() => {
-            const target = document.getElementById("explore");
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => exploreRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -158,7 +157,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           INTRO STATEMENT — beige
       ═══════════════════════════════════════════ */}
-      <section id="explore" className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16 scroll-mt-20">
+      <section ref={exploreRef} id="explore" className="bg-[#fcf7f1] py-14 md:py-16 px-8 md:px-16 scroll-mt-20">
         <div className="max-w-[90%] md:max-w-2xl mx-auto text-center">
           <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences

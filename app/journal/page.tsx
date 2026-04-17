@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 
 export default function Journal() {
+  const exploreRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -77,12 +79,9 @@ export default function Journal() {
         </div>
         <button
           type="button"
-          onClick={() => {
-            const target = document.getElementById("explore");
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => exploreRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -93,7 +92,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — FEATURED ARTICLE
       ═══════════════════════════════════════════ */}
-      <section id="explore" data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden scroll-mt-20">
+      <section ref={exploreRef} id="explore" data-nav-dark className="relative h-[60vh] md:h-[60vh] flex items-end overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=1920&q=80"

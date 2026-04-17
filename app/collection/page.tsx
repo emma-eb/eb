@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 
@@ -54,6 +54,8 @@ const villas = [
 /* ═══════════════════════════════════════════════════════ */
 
 export default function CollectionPage() {
+  const exploreRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
@@ -93,9 +95,9 @@ export default function CollectionPage() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
           <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Collection
           </span>
@@ -115,12 +117,9 @@ export default function CollectionPage() {
 
         <button
           type="button"
-          onClick={() => {
-            const target = document.getElementById("explore");
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => exploreRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -131,7 +130,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — MANIFESTO (refait)
       ═══════════════════════════════════════════ */}
-      <section id="explore" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
+      <section ref={exploreRef} id="explore" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[620px] mx-auto text-center">
           <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
             Collection

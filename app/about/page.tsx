@@ -45,6 +45,7 @@ function CounterNumber({ target, suffix, trigger }: { target: number; suffix: st
 
 export default function About() {
   const numbersRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLElement>(null);
   const [numbersVisible, setNumbersVisible] = useState(false);
 
   useEffect(() => {
@@ -132,12 +133,9 @@ export default function About() {
         </div>
         <button
           type="button"
-          onClick={() => {
-            const target = document.getElementById("story");
-            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => storyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
           aria-label="Scroll to story"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -148,7 +146,7 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           BLOC 2 — THE STORY (diptyque editorial)
       ═══════════════════════════════════════════ */}
-      <section id="story" className="bg-[#fcf7f1] py-24 md:py-32 px-6 scroll-mt-20">
+      <section ref={storyRef} id="story" className="bg-[#fcf7f1] py-24 md:py-32 px-6 scroll-mt-20">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col items-center mb-16 md:mb-20">
             <p className="reveal font-body text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium text-black/45 mb-4">
@@ -291,12 +289,13 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CITATION
+          BLOC 5 — CITATION + ligne bleue
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 py-20 md:py-28">
-        <p className="reveal max-w-[700px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/50 font-light font-body">
+      <section className="bg-white flex flex-col items-center justify-center py-10 md:py-12 px-6 md:px-8">
+        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
           I had traveled through ninety-five countries and kept coming back to one.
         </p>
+        <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
       </section>
 
       {/* ═══════════════════════════════════════════
