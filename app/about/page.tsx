@@ -161,7 +161,7 @@ export default function About() {
         <div ref={numbersRef} className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 text-center mt-10 md:mt-12">
           {stats.map((s, i) => (
             <div key={s.label} className="reveal" data-delay={i * 100}>
-              <p className="font-body text-[36px] md:text-[48px] font-semibold text-[#2e5a88] leading-none">
+              <p className="font-body text-[36px] md:text-[48px] font-medium text-[#2e5a88] leading-none">
                 <CounterNumber target={s.n} suffix={s.suffix} trigger={numbersVisible} />
               </p>
               <p className="font-body text-[12px] md:text-[13px] text-[#1a1a1a]/40 font-light mt-2 leading-[1.4]">{s.label}</p>

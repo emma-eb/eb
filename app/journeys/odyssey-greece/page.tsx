@@ -134,7 +134,7 @@ export default function OdysseyGreece() {
 
               <div className="border-l-2 border-[#e8e4de] pl-6 mb-7">
                 <p className="font-body text-xs tracking-[0.2em] uppercase text-[#aaa] mb-2">Afternoon</p>
-                <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">Arrival in Athens</h3>
+                <h3 className="font-body text-sm font-medium text-[#2e5a88] mb-2">Arrival in Athens</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
                   Settle into Athens at your own pace. A first introduction through the elegant streets of Plaka beneath the Acropolis. An optional visit may be arranged subject to timing.
                 </p>
@@ -144,7 +144,7 @@ export default function OdysseyGreece() {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="font-body text-xs tracking-[0.15em] uppercase bg-[#2e5a88]/10 text-[#2e5a88] px-3 py-1">Hero Experience #1</span>
                 </div>
-                <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">Dinner Under the Parthenon</h3>
+                <h3 className="font-body text-sm font-medium text-[#2e5a88] mb-2">Dinner Under the Parthenon</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
                   An unforgettable welcome dinner at a refined rooftop facing the illuminated Acropolis. Mediterranean flavours, fine Greek wines, and the magic of Athens by night.
                 </p>
@@ -152,7 +152,7 @@ export default function OdysseyGreece() {
 
               <div className="border-l-2 border-[#e8e4de] pl-6 mb-10">
                 <p className="font-body text-xs tracking-[0.2em] uppercase text-[#aaa] mb-2">Night</p>
-                <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">Monastiraki Night Walk</h3>
+                <h3 className="font-body text-sm font-medium text-[#2e5a88] mb-2">Monastiraki Night Walk</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
                   A relaxed stroll through the lively streets of Monastiraki: artisanal shops, local flavours, and traditional loukoumades by night.
                 </p>
@@ -200,7 +200,7 @@ export default function OdysseyGreece() {
             ].map((m) => (
               <div key={m.time} className="bg-white p-7 border border-[#e8e4de]">
                 <p className="font-body text-xs tracking-[0.2em] uppercase text-[#888] mb-3">{m.time}</p>
-                <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">{m.title}</h3>
+                <h3 className="font-body text-sm font-medium text-[#2e5a88] mb-2">{m.title}</h3>
                 <p className="font-body text-xs text-[#888] leading-relaxed">{m.detail}</p>
               </div>
             ))}
@@ -279,7 +279,7 @@ export default function OdysseyGreece() {
               </div>
 
               <div className="border-l-2 border-[#2e5a88] pl-6 mb-8">
-                <h3 className="font-body text-sm font-semibold text-[#1a1a1a] mb-2">A discreet escape beyond Milos</h3>
+                <h3 className="font-body text-sm font-medium text-[#2e5a88] mb-2">A discreet escape beyond Milos</h3>
                 <p className="font-body text-sm text-[#888] leading-relaxed">
                   Reach Kimolos by a short local ferry crossing from Pollonia. A preserved Cycladic island that few visitors ever discover. A slow day at the island's own pace: quiet chora, secluded beaches, untouched landscapes. Return to Milos in the afternoon.
                 </p>
