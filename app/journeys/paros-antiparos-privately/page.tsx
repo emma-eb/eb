@@ -7,56 +7,58 @@ import NewsletterBanner from "../../components/NewsletterBanner";
 const chapters = [
   {
     num: "01",
-    tag: "ATHENS, AS A WAY IN",
-    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1400&q=85",
-    body: "Three nights in Athens before the island, in a small hotel with the Acropolis from the rooftop. The eb. studio designs the city around what you actually want, no group tours, no ticketed lines. A late dinner at a place that does not take walk-ins. A morning at a private collection that opens for ten people at a time. Then a midday flight east, forty minutes over the Aegean, and the second half of the week begins.",
+    tag: "A VILLA ON THE SOUTH COAST",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85",
+    body: "A short flight from Athens, and you arrive at a hand-selected villa on the southern coast of Paros, the quiet side of the island where the bays are calmer, the wind is softer, and the architecture is older. Private pool, terrace, sea views, a setting that works equally for couples looking to do nothing, friends who want to host long lunches, and families travelling with very young children. Your driver is on call. The chef arrives when you ask. The first afternoon begins from your own pool.",
     left: true,
   },
   {
     num: "02",
-    tag: "ARRIVAL ON ASTYPALEA",
+    tag: "NAOUSSA, AT THE TABLE",
     image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=85",
-    body: "The plane lands at the western tip of the island. A driver takes you to your hotel in Chora, the white village that climbs to the Venetian castle on the highest point of the island. You arrive in time for the kind of slow afternoon Astypalea was made for. Walk up to the castle. Watch the sun set over the harbour from the rooftop of the only bar that opens for it. The week begins from there.",
+    body: "Two evenings in Naoussa, the small fishing port that became the most elegant address in the Cyclades without ever quite admitting it. One night, a fish taverna on the quay where the boats unload at sunset and the waiter tells you what came in that morning. Another, dinner at Mario, the Italian kitchen that quietly defines the evenings of the Athenian crowd who summer here. After dinner, the Chora behind the port holds a few more bars and one or two galleries worth opening, depending on the night.",
     left: false,
   },
   {
     num: "03",
-    tag: "A DAY BY BOAT",
+    tag: "THE YACHT TO ANTIPAROS AND DESPOTIKO",
     image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=85",
-    body: "A private boat for the day, just for you. The captain takes you east, to the small islets the locals visit on weekends and the rest of Greece does not know exist. Anchor at Koutsomitis, where the beach is sand on both sides of the boat. Lunch on the water. A stop at the cave of Negrou on the way back, swimming in light that comes from below. Return to Chora before sunset.",
+    body: "A private yacht for the day, leaving the bay of Paros mid-morning. Twenty minutes across the channel you reach Antiparos, the smaller, quieter island where the Italian set has been building quietly for two decades. Continue further west to Despotiko, the uninhabited islet where ancient ruins sit directly in the sand and the water is the colour of a photograph that\u2019s been retouched. Lunch on board in a cove only the crew knows. An afternoon at Stou Beach in Antiparos for the later meal. Back to Paros by sunset.",
     left: true,
   },
   {
     num: "04",
-    tag: "THE INSIDE OF THE ISLAND",
-    image: "https://images.unsplash.com/photo-1518558997970-ba7e3ad1b13b?auto=format&fit=crop&w=1400&q=85",
-    body: "The eb. studio arranges a private electric vehicle and driver for the day, the same fleet the island has rolled out as part of its smart-island programme with Volkswagen. The driver knows where the small monasteries are, where the goats outnumber the people, and where the single taverna at the back of the island serves lunch when you ask the morning before. The afternoon ends back at a quiet bay no road reaches.",
+    tag: "THE INLAND OF PAROS",
+    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85",
+    body: "One day belongs to the inland of Paros. A driver takes you to Lefkes, the old Byzantine capital tucked into the hills, the village that stayed untouched when the coast opened up. White chapels, narrow alleys cut from marble, a single kafeneio where the older men have been playing the same game for decades. Lunch at a taverna no one writes about. Afternoon at Antiparos Chora, on the other side of the channel, where the village streets are chalked with bougainvillea and the only traffic is bicycles. Back to the villa for a long evening swim.",
     left: false,
   },
   {
     num: "05",
-    tag: "THE LAST EVENING",
+    tag: "THE DAYS THAT DON\u2019T NEED A PLAN",
     image: "https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1400&q=85",
-    body: "The last night, dinner is on the rooftop facing the castle, at the table the family who runs the place keeps for the eb. studio\u2019s clients. Slow-cooked goat, the local cheese, a wine no one outside the island knows. Below, the lights of Chora come on, one by one. You leave the next morning, before the heat. Most clients are already planning when to come back.",
+    body: "Three of the seven days are reserved for nothing in particular. The pool. The chef on demand. A driver to a different bay each morning, because the southern coast of Paros has six or seven small beaches that work depending on the wind, and Drios and Aliki are the calmest for young children. A spa team on call at the villa for the parents. Sailing lessons with a skipper for older children, when there are any. Dinner sometimes at the villa, sometimes back in Naoussa, sometimes at the taverna by the bay where the family has been cooking the same fish for forty years.",
     left: true,
   },
 ];
 
 const included = [
-  "Three nights in a hand-selected boutique hotel in Athens, with Acropolis views",
-  "Four nights in a hand-selected boutique hotel in Chora, Astypalea",
-  "Private chauffeured transfers in Athens, return airport",
-  "One-way flight Athens to Astypalea (return scheduled)",
-  "Private chauffeured transfers on Astypalea, including arrival and departure",
-  "Private electric vehicle and driver for one full inland day",
-  "Private boat charter for one full day, lunch on board",
-  "Hand-selected restaurant and taverna reservations on both legs",
-  "One private dinner on the rooftop facing the castle, the last evening",
+  "Seven nights in a hand-selected private villa on the southern coast of Paros, with sea views and pool",
+  "Private chauffeured transfers from Paros airport, return",
+  "Private driver and car on call throughout the stay",
+  "One full-day private yacht charter to Antiparos and Despotiko, lunch on board",
+  "Hand-selected restaurant reservations in Naoussa for the evenings that matter, including a table at Mario",
+  "One private afternoon at Stou Beach, Antiparos",
+  "Private inland day with driver and guide, including Lefkes and Antiparos Chora",
+  "Private chef at the villa for selected dinners, market sourcing arranged",
+  "In-villa spa team for treatments on demand",
+  "Sailing lessons with a local skipper, available for older children if travelling with family",
+  "Hand-selected restaurant and taverna reservations across Paros and Antiparos",
   "24/7 reachable concierge throughout the journey",
   "A pre-trip briefing call with the eb. studio to shape the week around you",
 ];
 
-export default function AstypaleaJourney() {
+export default function ParosJourney() {
   const journeyRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -89,12 +91,12 @@ export default function AstypaleaJourney() {
       <Nav activePage="/journeys" />
 
       {/* ═══════════════════════════════════════════
-          BLOC 1 — HERO 100dvh
+          BLOC 1 — HERO
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="/astypalea.jpg"
-          alt="Astypalea, the Greek island before everyone else"
+          src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=85"
+          alt="Paros and Antiparos, privately, by eb."
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
@@ -102,13 +104,13 @@ export default function AstypaleaJourney() {
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center px-6 text-center pointer-events-none">
           <span className="inline-block px-5 py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[11px] uppercase tracking-[0.15em] font-medium font-body">
-            Private Journey &middot; 01
+            Private Journey &middot; 07
           </span>
           <p
             className="font-body text-[11px] uppercase tracking-[0.2em] text-white/70 mt-4"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
+            7 Nights &middot; Private Villa + Yacht &middot; May&ndash;October
           </p>
           <h1
             className="font-heading text-white leading-[0.95] mt-8 max-w-5xl"
@@ -118,17 +120,14 @@ export default function AstypaleaJourney() {
               textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            Astypalea, Before<br />Everyone Else.
+            Paros + Antiparos, Privately.
           </h1>
           <p
-            className="max-w-[620px] text-white/85 text-[16px] md:text-[18px] leading-[1.6] font-light font-body mt-6"
+            className="max-w-[680px] text-white/85 text-[16px] md:text-[18px] leading-[1.6] font-light font-body mt-6"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Athens, then the Greek island the Guardian named the world{'\u2019'}s #1 destination of 2026. While there{'\u2019'}s still no one there.
+            The chicest of the central Cyclades, without ever crossing a crowd. A villa on the quiet south coast, a yacht for the day, a week to settle in.
           </p>
-          <span className="inline-block mt-8 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            Guardian #1 Destination 2026
-          </span>
         </div>
 
         <button
@@ -161,14 +160,19 @@ export default function AstypaleaJourney() {
               letterSpacing: "-0.01em",
             }}
           >
-            Three nights in Athens.
+            Some islands stayed quiet on purpose.
             <br />
-            <span className="text-[#2e5a88]/45">Four on an island most travellers cannot place on a map.</span>
+            <span className="text-[#2e5a88]/45">These are two of them.</span>
           </h2>
 
-          <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[700px] mx-auto mt-12" data-delay="200">
-            Astypalea sits at the eastern edge of the Cyclades, far enough from the standard ferry routes that it has stayed quiet through twenty years of Greek tourism. In 2026, the Guardian named it the world{'\u2019'}s most desirable destination. The eb. studio has been designing weeks here for clients who already knew. This is the journey for those who want to arrive before the rest.
-          </p>
+          <div className="max-w-[700px] mx-auto mt-12 space-y-6">
+            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="200">
+              Seven nights in a hand-selected villa on the southern coast of Paros, where the bays are calm, the light stays golden, and the scale is human. A private yacht for the day takes you across the channel to Antiparos and to Despotiko, the uninhabited islet where ancient ruins sit in the sand. Naoussa for dinner. The southern beaches for the afternoons. A villa for the rest of the week.
+            </p>
+            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="260">
+              Designed for couples, small groups of friends, and young families who want the Cyclades without the volume. The Italian set has been spending its summers here for twenty years for a reason.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -187,9 +191,9 @@ export default function AstypaleaJourney() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x md:divide-black/10">
             {[
               { label: "Duration", value: "From 7 nights" },
-              { label: "Route", value: "Athens \u2192 Astypalea" },
-              { label: "Season", value: "May to September" },
-              { label: "Tailored for", value: "Couples" },
+              { label: "Base", value: "Villa, south coast Paros" },
+              { label: "Best Season", value: "May to October" },
+              { label: "Tailored for", value: "Couples, friends, families" },
             ].map((f, i) => (
               <div key={f.label} className="reveal text-center px-4" data-delay={i * 80}>
                 <p className="font-body text-[10px] uppercase tracking-[0.2em] text-black/45 font-medium mb-4">
@@ -208,13 +212,13 @@ export default function AstypaleaJourney() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 4 — THE ROUTE (5 chapitres)
+          BLOC 4 — THE WEEK (5 chapitres)
       ═══════════════════════════════════════════ */}
       <section className="bg-white py-24 md:py-32 px-6 md:px-12 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-20">
             <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
-              The Route
+              The Week
             </p>
             <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
           </div>
@@ -222,7 +226,6 @@ export default function AstypaleaJourney() {
           <div className="space-y-24 md:space-y-32">
             {chapters.map((c) => (
               <div key={c.num} className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-                {/* Numero watermark */}
                 <span
                   className="hidden md:block absolute top-0 font-heading text-[#2e5a88]/[0.08] pointer-events-none select-none"
                   style={{
@@ -234,7 +237,6 @@ export default function AstypaleaJourney() {
                   {c.num}
                 </span>
 
-                {/* Photo */}
                 <div className={`reveal relative ${c.left ? "md:order-1 md:-ml-[5%]" : "md:order-2 md:-mr-[5%]"}`}>
                   <div className="aspect-[4/5] overflow-hidden">
                     <img
@@ -246,7 +248,6 @@ export default function AstypaleaJourney() {
                   </div>
                 </div>
 
-                {/* Text */}
                 <div className={`reveal relative z-10 ${c.left ? "md:order-2 md:pl-6" : "md:order-1 md:pr-6"}`} data-delay="100">
                   <p className="font-body text-[11px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium mb-4">
                     {c.tag}
@@ -273,9 +274,9 @@ export default function AstypaleaJourney() {
               letterSpacing: "-0.01em",
             }}
           >
-            Some islands you visit.
+            The loudest islands sell themselves.
             <br />
-            <span className="text-[#2e5a88]/45">This one, you have to choose.</span>
+            <span className="text-[#2e5a88]/45">The quietest ones are kept by the people who know.</span>
           </h2>
         </div>
       </section>
@@ -297,7 +298,7 @@ export default function AstypaleaJourney() {
               <li
                 key={i}
                 className="reveal font-body text-black/70 text-[15px] leading-loose py-3 border-b border-black/[0.06] pl-2"
-                data-delay={Math.min(i * 40, 200)}
+                data-delay={Math.min(i * 30, 200)}
               >
                 {item}
               </li>
@@ -320,17 +321,22 @@ export default function AstypaleaJourney() {
           </p>
           <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-12" data-delay="80" />
 
-          <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
-            The eb. studio has been to Astypalea more than once. The first visits were research, looking for what had been written, the smart island, the electric vehicles, the Guardian list. What stayed with us was none of that. It was the quiet. The way the same family runs the rooftop bar where you watch the castle, and the boat that takes you to islands without names. That kind of intimacy doesn{'\u2019'}t scale. Which is exactly why we want a small number of clients to experience it now, before it changes.
-          </p>
-          <p className="reveal font-body italic text-[#2e5a88] text-[14px] mt-8" data-delay="180">
+          <div className="space-y-6">
+            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
+              Paros sits between Mykonos and Santorini geographically, and almost nowhere near them in spirit. The eb. studio sends clients here when they have already done the loud islands and want what comes after. Naoussa at sunset, with the boats unloading and the Athenian crowd that knows the difference. Antiparos a yacht ride away, where the Italian set has been buying quietly for twenty years. Despotiko an hour further west, with ruins that sit untouched in the sand.
+            </p>
+            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="180">
+              The south coast of Paros is the quiet side of a quiet island, which is why it works equally for couples without children, friends in their thirties, and families travelling with very young ones. If Mykonos is a calendar, Paros is a season. The two of them are designed for entirely different versions of the same client.
+            </p>
+          </div>
+          <p className="reveal font-body italic text-[#2e5a88] text-[14px] mt-8" data-delay="220">
             eb. Athens.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 8 — CTA FINAL compact
+          BLOC 8 — CTA FINAL
       ═══════════════════════════════════════════ */}
       <section className="bg-white py-20 md:py-24 px-6">
         <div className="max-w-[600px] mx-auto text-center">
@@ -348,10 +354,10 @@ export default function AstypaleaJourney() {
             Designed around you.
           </h2>
           <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
-            Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the rest.
+            Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the week.
           </p>
           <a
-            href="/contact?ref=astypalea"
+            href="/contact?ref=paros-antiparos"
             className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity door-cta"
             data-delay="220"
           >

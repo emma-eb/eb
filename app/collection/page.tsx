@@ -179,8 +179,12 @@ export default function CollectionPage() {
                     {villa.location}
                   </p>
                   <h3
-                    className="mt-1.5 text-[18px] md:text-[24px] text-white leading-tight font-medium"
-                    style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
+                    className="mt-2 font-heading text-white uppercase leading-[1] tracking-wide"
+                    style={{
+                      fontSize: "clamp(26px, 2.8vw, 40px)",
+                      letterSpacing: "-0.01em",
+                      textShadow: "0 1px 3px rgba(0,0,0,0.4)",
+                    }}
                   >
                     {villa.name}
                   </h3>

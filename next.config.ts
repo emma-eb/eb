@@ -13,6 +13,25 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/journeys/sailing-small-cyclades",
+        destination: "/journeys/a-week-in-the-cyclades-by-sea",
+        permanent: true,
+      },
+      {
+        source: "/journeys/sailing-the-small-cyclades",
+        destination: "/journeys/a-week-in-the-cyclades-by-sea",
+        permanent: true,
+      },
+      {
+        source: "/journeys/athens-beyond-the-acropolis",
+        destination: "/journeys/athens-slowly",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
