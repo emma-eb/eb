@@ -123,12 +123,13 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <button
+          type="button"
           onClick={scrollToDoors}
-          aria-label="Scroll to discover"
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-11 h-11 cursor-pointer transition-opacity duration-500 ${scrolled ? "opacity-0 pointer-events-none" : "opacity-80 md:opacity-50"}`}
+          aria-label="Scroll to content"
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce transition-opacity cursor-pointer ${scrolled ? "opacity-0 pointer-events-none" : "opacity-60 hover:opacity-100"}`}
         >
-          <svg viewBox="0 0 20 20" fill="none" className="animate-bounce-slow w-8 h-8 md:w-5 md:h-5">
-            <path d="M4 7l6 6 6-6" stroke="white" strokeWidth="1.5" />
+          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </button>
       </section>
