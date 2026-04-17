@@ -176,16 +176,16 @@ export default function About() {
                 Twelve years producing for the world{'\u2019'}s most demanding luxury houses. Then Greece.
               </p>
               <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="160">
-                Launches, press events and influencer campaigns for Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo, Coach. Over eighty productions across Paris, London, Amsterdam, Copenhagen.
+                I produced launches, press events and influencer campaigns for Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo, Coach. Over eighty productions across Paris, London, Amsterdam, Copenhagen.
               </p>
               <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="220">
-                Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, Morocco. Ninety-five countries. One that kept calling me back.
+                Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, Morocco. I had visited ninety-five countries. Greece is the one I came back to.
               </p>
               <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="280">
-                eb. is a private travel studio dedicated to one country, for clients anywhere in the world. The same standards I held for the houses, applied to the way you experience Greece.
+                eb. is a private travel studio dedicated to one country, for clients anywhere in the world. The same standards I held for the houses, applied to the way you{'\u2019'}ll experience Greece.
               </p>
               <p className="reveal pt-4 text-[13px] md:text-[14px] text-[#2e5a88] font-medium font-body" data-delay="340">
-                Emma Bonnefous, Athens
+                Emma Bonnefous. Athens.
               </p>
             </div>
 
