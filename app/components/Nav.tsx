@@ -56,13 +56,16 @@ export default function Nav({ activePage }: NavProps) {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 transition-all duration-300 ${
-        !hasScrolled
-          ? "bg-transparent"
-          : dark
-            ? "bg-[#1a1a1a]/85 backdrop-blur-[10px]"
-            : "bg-[#fcf7f1]/95 backdrop-blur-[10px]"
-      }`}>
+      <nav
+        style={{ WebkitTransform: "translateZ(0)", transform: "translateZ(0)", willChange: "transform" }}
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 md:px-8 md:py-4 transition-all duration-300 ${
+          !hasScrolled
+            ? "bg-transparent"
+            : dark
+              ? "bg-[#1a1a1a]/95 md:bg-[#1a1a1a]/85 md:backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)]"
+              : "bg-[#fcf7f1]/98 md:bg-[#fcf7f1]/95 md:backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)]"
+        }`}
+      >
 
         <a href="/" className="relative z-50">
           <img

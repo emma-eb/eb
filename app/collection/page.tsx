@@ -113,17 +113,21 @@ export default function CollectionPage() {
           </p>
         </div>
 
-        <div className="md:hidden absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 animate-bounce">
+        <a
+          href="#villas"
+          aria-label="Scroll to villas"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-60 hover:opacity-100 animate-bounce transition-opacity"
+        >
           <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </div>
+        </a>
       </section>
 
       {/* ═══════════════════════════════════════════
           BLOC 2 — MANIFESTO (refait)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6">
+      <section id="manifesto" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[620px] mx-auto text-center">
           <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
             Collection
@@ -148,7 +152,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3 — THE HOMES (grille unique, 5 villas)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6">
+      <section id="villas" className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {villas.map((villa, i) => (
@@ -166,21 +170,21 @@ export default function CollectionPage() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/60 font-medium font-body">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-40% to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium font-body">
                     {villa.location}
                   </p>
                   <h3
                     className="mt-1.5 text-[18px] md:text-[24px] text-white leading-tight font-medium"
-                    style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", letterSpacing: "-0.01em" }}
+                    style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
                   >
                     {villa.name}
                   </h3>
-                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/80 font-light max-w-[400px] font-body">
+                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
                     {villa.description}
                   </p>
-                  <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/55 font-medium font-body">
+                  <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/60 font-medium font-body">
                     {villa.specs}
                   </p>
                   <span className="mt-4 inline-block text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white border-b border-white/70 pb-1 group-hover:border-white transition-colors w-fit font-body">
