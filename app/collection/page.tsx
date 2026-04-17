@@ -130,7 +130,7 @@ export default function CollectionPage() {
           </p>
           <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
           <h2
-            className="reveal mt-12 text-[24px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light"
+            className="reveal mt-12 text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light"
             data-delay="100"
             style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
           >
@@ -150,7 +150,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6">
         <div className="max-w-[1280px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 md:gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {villas.map((villa, i) => (
               <a
                 key={villa.slug}
@@ -172,7 +172,7 @@ export default function CollectionPage() {
                     {villa.location}
                   </p>
                   <h3
-                    className="mt-1.5 text-[20px] md:text-[24px] text-white leading-tight font-medium"
+                    className="mt-1.5 text-[18px] md:text-[24px] text-white leading-tight font-medium"
                     style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif", letterSpacing: "-0.01em" }}
                   >
                     {villa.name}
@@ -196,7 +196,7 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3.5 — CITATION DE RESPIRATION
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 py-14 md:py-20">
+      <section className="bg-[#fcf7f1] px-6 py-10 md:py-20">
         <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/50 font-light font-body">
           The right house changes the week.
         </p>
@@ -221,7 +221,7 @@ export default function CollectionPage() {
               By Introduction Only
             </span>
             <h2
-              className="reveal mt-8 font-heading text-white text-[36px] md:text-[56px] leading-[0.95] uppercase"
+              className="reveal mt-8 font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase"
               data-delay="100"
               style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
@@ -269,7 +269,7 @@ export default function CollectionPage() {
               Private Yacht Charter
             </span>
             <h2
-              className="reveal font-heading text-white text-[44px] md:text-[72px] leading-[0.95] uppercase max-w-[700px]"
+              className="reveal font-heading text-white text-[36px] md:text-[72px] leading-[0.95] uppercase max-w-[700px]"
               data-delay="100"
               style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
@@ -312,7 +312,7 @@ export default function CollectionPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10">
           <h2
-            className="reveal font-heading text-[36px] md:text-[64px] text-white uppercase leading-[0.95] max-w-[700px] mx-auto"
+            className="reveal font-heading text-[32px] md:text-[64px] text-white uppercase leading-[0.95] max-w-[700px] mx-auto"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             A stay begins with a conversation.
