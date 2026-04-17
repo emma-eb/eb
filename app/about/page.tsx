@@ -269,23 +269,22 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 4 — SELECTED COLLABORATIONS (grille 2 colonnes + border)
+          BLOC 4 — SELECTED COLLABORATIONS (liste centree)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6">
-        <div className="max-w-[900px] mx-auto">
-          <div className="flex flex-col items-center mb-12 md:mb-16">
-            <p className="reveal font-body text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium text-black/45 mb-4">
-              Selected Collaborations
-            </p>
-            <div className="reveal w-10 h-[2px] bg-[#2e5a88]" data-delay="80" />
-          </div>
+      <section className="bg-[#fcf7f1] py-10 md:py-12 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
+            Selected Collaborations
+          </p>
+          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
 
-          <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1" data-delay="150">
+          <div className="reveal text-center" data-delay="200">
             {collabsData.map((c) => (
-              <div key={c.house} className="flex justify-between items-baseline border-b border-black/10 py-3">
-                <span className="font-body text-[#2e5a88] font-medium text-[14px] md:text-[15px]">{c.house}</span>
-                <span className="font-body text-black/55 text-[13px] md:text-[14px] font-light">{c.venue}</span>
-              </div>
+              <p key={c.house} className="font-body text-[14px] md:text-[15px] leading-[2.2]">
+                <span className="font-medium text-[#2e5a88]">{c.house}</span>
+                <span className="text-[#1a1a1a]/30"> &middot; </span>
+                <span className="font-light text-[#1a1a1a]/40">{c.venue}</span>
+              </p>
             ))}
           </div>
         </div>
