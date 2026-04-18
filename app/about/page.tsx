@@ -301,39 +301,41 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           BLOC 6 — CTA FINAL
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[55vh] md:h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
+        {/* TODO: replace with final photo */}
         <img
-          src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80"
-          alt="Cyclades view, white architecture, blue sea"
+          src="https://images.unsplash.com/photo-1583912267550-d974311a9e4e?w=2400&q=80"
+          alt="Athens rooftop evening"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 text-center px-6 max-w-[700px]">
-          <span className="reveal inline-block mb-6 px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            Inquire
-          </span>
+        <div className="relative z-[3] text-center px-6 max-w-[640px]">
+          <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+            Work with eb.
+          </div>
           <h2
-            className="reveal font-heading text-[32px] md:text-[56px] leading-[0.95] text-white uppercase max-w-[600px] mx-auto"
+            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
             data-delay="80"
-            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Let{'\u2019'}s start with a conversation.
+            Tell us your story.
           </h2>
           <p
-            className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light mt-6 max-w-[520px] mx-auto leading-[1.6]"
+            className="reveal font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Whether you are planning a private journey or a celebration in Greece.
+            Whether it{'\u2019'}s a first trip or a tenth, we start from you.
           </p>
           <a
             href="/contact"
-            className="reveal mt-8 inline-block text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px] door-cta"
+            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
             data-delay="220"
           >
-            Start the conversation &rarr;
+            Start the conversation
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>

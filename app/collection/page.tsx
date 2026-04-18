@@ -315,25 +315,36 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 6 — CTA FINAL (titre + CTA uniquement)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative py-32 px-6 text-center overflow-hidden">
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         <img
           src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
           alt="Greek coast golden hour"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-[3] text-center px-8 max-w-[640px]">
+          <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+            Private Stays
+          </div>
           <h2
-            className="reveal font-heading text-[32px] md:text-[64px] text-white uppercase leading-[0.95] max-w-[700px] mx-auto"
-            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            data-delay="80"
+            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             A stay begins with a conversation.
           </h2>
+          <p
+            className="reveal font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Villas that never appear online. A yacht timed by the eb. studio.
+          </p>
           <a
             href="/contact?ref=collection-final"
-            className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
-            data-delay="150"
+            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+            data-delay="220"
           >
             Start the conversation <span className="eb-cta-arrow">&rarr;</span>
           </a>

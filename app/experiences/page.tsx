@@ -274,7 +274,7 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CTA FINAL — instant
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1920&q=80"
@@ -283,17 +283,20 @@ export default function Experiences() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(1.75rem,5vw,3.5rem)] leading-[0.9] text-white mb-4 uppercase">
-            What will you<br />celebrate?
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-[3] text-center px-8 max-w-[640px]">
+          <div className="inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+            One Call
+          </div>
+          <h2 className="font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            Every detail, handled quietly.
           </h2>
-          <p className="font-body text-[15px] md:text-[18px] text-white/80 font-light mt-4 max-w-xl mx-auto leading-relaxed">
-            Tell us the occasion. We shape everything around it.
+          <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            Tell us the occasion. One call, handled quietly.
           </p>
           <a
             href="/contact"
-            className="eb-cta-link mt-8 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
+            className="eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
           >
             Start the conversation
             <span className="eb-cta-arrow">&rarr;</span>

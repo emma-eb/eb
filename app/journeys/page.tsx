@@ -367,7 +367,7 @@ export default function JourneysPage() {
       {/* ═══════════════════════════════════════════
           BLOC 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden eb-image-vignette">
         <img
           src="/CTA%20FINAL%20PRIVATE%20JOURNEY.jpg"
           alt="A private Greek island at dusk"

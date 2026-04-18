@@ -411,23 +411,37 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 09 — CTA FINAL (fond clair, texte bleu marine)
+          BLOC 09 — CTA FINAL (fond image sombre, harmonisé)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
-            Ready to begin?
-          </h2>
-          <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
-            Tell us what you dream of. We take care of everything else.
-          </p>
-          <a
-            href="/contact"
-            className="eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]"
-          >
-            Start the conversation
-            <span className="eb-cta-arrow">&rarr;</span>
-          </a>
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden eb-image-vignette">
+        {/* TODO: replace with final photo */}
+        <img
+          src="https://images.unsplash.com/photo-1505081598304-4d02e9d5a5e6?w=2400&q=80"
+          alt="Greek island at dusk"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-[3] min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-8 md:px-16 py-20">
+          <div className="text-center max-w-[640px]">
+            <div className="inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+              The Studio
+            </div>
+            <h2 className="font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+              Greece begins with a conversation.
+            </h2>
+            <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10 md:mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+              Tell us what you dream of. We shape the rest.
+            </p>
+            <a
+              href="/contact"
+              className="eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+            >
+              Start the conversation
+              <span className="eb-cta-arrow">&rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
 
