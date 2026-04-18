@@ -30,7 +30,7 @@ const featured: Journey[] = [
     number: "06",
     overline: "Featured Journey \u00b7 06",
     title: "Mykonos,\nTimed Right.",
-    description: "Mykonos is not a destination, it\u2019s a calendar. Five nights in a private villa, timed by the eb. studio.",
+    description: "The beach club table, the after-party invitation, the right night to be on the island. Five nights in a private villa, timed by the eb. studio.",
     meta: "5 Nights \u00b7 Mykonos \u00b7 June\u2013September",
   },
 ];
@@ -70,7 +70,7 @@ const secondary: Journey[] = [
     overline: "Private Journey \u00b7 05",
     title: "A Family Summer,\nGreek-Style.",
     description: "A villa, a yacht for the day, and a coastline that works for eight-year-olds and grandparents alike.",
-    meta: "10 Nights \u00b7 Porto Heli + Saronic \u00b7 June\u2013August",
+    meta: "10 Nights \u00b7 Porto Heli + Saronic \u00b7 April\u2013October",
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",

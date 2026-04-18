@@ -206,28 +206,25 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
-      {/* ============ ZONE 7 — CTA FINAL (Anton sombre) ============ */}
-      <section className="relative px-8 md:px-10 py-14 bg-gradient-to-br from-[#1a3552] to-[#2e5a88] text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/50" />
-
-        <div className="relative reveal">
-          <h2 className="font-anton font-normal uppercase text-[34px] md:text-[44px] leading-[0.95] tracking-[0.02em] text-white mb-3">
-            Ready when<br />you are.
+      {/* ============ ZONE 7 — CTA FINAL (beige, aligne home) ============ */}
+      <section className="bg-[#fcf7f1] py-16 md:py-20 px-8 md:px-16">
+        <div className="max-w-2xl mx-auto text-center reveal">
+          <h2 className="font-body text-[28px] md:text-[40px] font-light leading-[1.1] text-[#2e5a88] mb-6">
+            Ready when you are.
           </h2>
-          <p className="text-[13px] text-white/85 max-w-[380px] mx-auto mb-6 leading-[1.6] font-light">
+          <p className="font-body text-sm text-[#1a1a1a]/50 leading-relaxed mb-10">
             Tell us when, with whom, and how you want to feel. We shape the rest.
           </p>
-          <div className="flex justify-center mb-6">
-            <Link
-              href="/contact?journey=paros-antiparos"
-              className="inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors"
-            >
-              Start the conversation &rarr;
-            </Link>
-          </div>
-          <p className="text-[10px] text-white/60 font-light">
+          <Link
+            href="/contact?journey=paros-antiparos"
+            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300"
+          >
+            Start the conversation
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+          </Link>
+          <p className="font-body text-[11px] text-[#1a1a1a]/40 mt-8 font-light">
             Or reach us directly:{' '}
-            <a href="mailto:hello@emmabonnefous.com" className="hover:text-white transition-colors">
+            <a href="mailto:hello@emmabonnefous.com" className="hover:text-[#2e5a88] transition-colors">
               hello@emmabonnefous.com
             </a>{' '}
             ·{' '}
@@ -235,7 +232,7 @@ export default function ParosAntiparosPage() {
               href="https://wa.me/33673550155"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="hover:text-[#2e5a88] transition-colors"
             >
               WhatsApp +33 6 73 55 01 55
             </a>
