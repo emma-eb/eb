@@ -1,262 +1,303 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Nav from "../../components/Nav";
 import NewsletterBanner from "../../components/NewsletterBanner";
 
-const chapters = [
+/* ═══════════════════════════════════════════════════════
+   ICONS (inline SVG, no external dep)
+═══════════════════════════════════════════════════════ */
+
+function IconCalendar({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+    </svg>
+  );
+}
+function IconMapPin({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+function IconSun({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+}
+function IconUsers({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+}
+function IconArrowRight({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12h14M13 5l7 7-7 7" />
+    </svg>
+  );
+}
+function IconDownload({ className = "w-[14px] h-[14px]" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+    </svg>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   CONTENT
+═══════════════════════════════════════════════════════ */
+
+const JOURNEY_SLUG = "paros-antiparos-privately";
+
+const highlights = [
   {
-    num: "01",
-    tag: "A VILLA ON THE SOUTH COAST",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85",
-    body: "A short flight from Athens, and you arrive at a hand-selected villa on the southern coast of Paros, the quiet side of the island where the bays are calmer, the wind is softer, and the architecture is older. Private pool, terrace, sea views, a setting that works equally for couples looking to do nothing, friends who want to host long lunches, and families travelling with very young children. Your driver is on call. The chef arrives when you ask. The first afternoon begins from your own pool.",
-    left: true,
+    image: "/paros_01.jpg",
+    title: "The Villa",
+    description: "Pool, pines, the quiet south coast.",
   },
   {
-    num: "02",
-    tag: "NAOUSSA, AT THE TABLE",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=85",
-    body: "Two evenings in Naoussa, the small fishing port that became the most elegant address in the Cyclades without ever quite admitting it. One night, a fish taverna on the quay where the boats unload at sunset and the waiter tells you what came in that morning. Another, dinner at Mario, the Italian kitchen that quietly defines the evenings of the Athenian crowd who summer here. After dinner, the Chora behind the port holds a few more bars and one or two galleries worth opening, depending on the night.",
-    left: false,
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
+    title: "Naoussa at Sunset",
+    description: "Boats unload. Mario opens.",
   },
   {
-    num: "03",
-    tag: "THE YACHT TO ANTIPAROS AND DESPOTIKO",
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=85",
-    body: "A private yacht for the day, leaving the bay of Paros mid-morning. Twenty minutes across the channel you reach Antiparos, the smaller, quieter island where the Italian set has been building quietly for two decades. Continue further west to Despotiko, the uninhabited islet where ancient ruins sit directly in the sand and the water is the colour of a photograph that\u2019s been retouched. Lunch on board in a cove only the crew knows. An afternoon at Stou Beach in Antiparos for the later meal. Back to Paros by sunset.",
-    left: true,
+    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=85",
+    title: "The Yacht",
+    description: "Antiparos, Despotiko, lunch in a cove.",
   },
   {
-    num: "04",
-    tag: "THE INLAND OF PAROS",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=85",
-    body: "One day belongs to the inland of Paros. A driver takes you to Lefkes, the old Byzantine capital tucked into the hills, the village that stayed untouched when the coast opened up. White chapels, narrow alleys cut from marble, a single kafeneio where the older men have been playing the same game for decades. Lunch at a taverna no one writes about. Afternoon at Antiparos Chora, on the other side of the channel, where the village streets are chalked with bougainvillea and the only traffic is bicycles. Back to the villa for a long evening swim.",
-    left: false,
+    image: "/paros_03.jpg",
+    title: "Lefkes",
+    description: "The Byzantine hills. Untouched.",
   },
   {
-    num: "05",
-    tag: "THE DAYS THAT DON\u2019T NEED A PLAN",
-    image: "https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1400&q=85",
-    body: "Three of the seven days are reserved for nothing in particular. The pool. The chef on demand. A driver to a different bay each morning, because the southern coast of Paros has six or seven small beaches that work depending on the wind, and Drios and Aliki are the calmest for young children. A spa team on call at the villa for the parents. Sailing lessons with a skipper for older children, when there are any. Dinner sometimes at the villa, sometimes back in Naoussa, sometimes at the taverna by the bay where the family has been cooking the same fish for forty years.",
-    left: true,
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+    title: "Stou Beach",
+    description: "The Italian set's afternoon spot.",
+  },
+  {
+    image: "/paros_02.jpg",
+    title: "The Chef",
+    description: "Market-sourced. Villa-served.",
   },
 ];
 
-const included = [
-  "Seven nights in a hand-selected private villa on the southern coast of Paros, with sea views and pool",
-  "Private chauffeured transfers from Paros airport, return",
-  "Private driver and car on call throughout the stay",
-  "One full-day private yacht charter to Antiparos and Despotiko, lunch on board",
-  "Hand-selected restaurant reservations in Naoussa for the evenings that matter, including a table at Mario",
-  "One private afternoon at Stou Beach, Antiparos",
-  "Private inland day with driver and guide, including Lefkes and Antiparos Chora",
-  "Private chef at the villa for selected dinners, market sourcing arranged",
-  "In-villa spa team for treatments on demand",
-  "Sailing lessons with a local skipper, available for older children if travelling with family",
-  "Hand-selected restaurant and taverna reservations across Paros and Antiparos",
-  "24/7 reachable concierge throughout the journey",
-  "A pre-trip briefing call with the eb. studio to shape the week around you",
+const route = [
+  { label: "Paros", sub: "The Villa", detail: "7 nights base, south coast" },
+  { label: "Naoussa", sub: "Dinners", detail: "Evenings at Mario" },
+  { label: "Lefkes", sub: "Byzantine inland", detail: "Cultural day" },
+  { label: "Antiparos", sub: "The Yacht", detail: "Stou Beach + cove lunch" },
+  { label: "Despotiko", sub: "Ancient ruins", detail: "Uninhabited islet" },
 ];
+
+/* ═══════════════════════════════════════════════════════ */
 
 export default function ParosJourney() {
-  const journeyRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const highlightsRef = useRef<HTMLElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [stickyVisible, setStickyVisible] = useState(false);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      setScrollProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    const heroObs = new IntersectionObserver(
+      ([entry]) => setStickyVisible(!entry.isIntersecting),
+      { threshold: 0.1 }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    if (heroRef.current) heroObs.observe(heroRef.current);
 
-    return () => revealObs.disconnect();
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let revealObs: IntersectionObserver | null = null;
+    if (!prefersReduced) {
+      const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
+      revealObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const el = e.target as HTMLElement;
+            const d = parseInt(el.dataset.delay || "0", 10);
+            setTimeout(() => {
+              el.classList.add("visible");
+              setTimeout(() => el.classList.add("done"), 800);
+            }, d);
+            revealObs!.unobserve(el);
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealEls.forEach((el) => revealObs!.observe(el));
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      heroObs.disconnect();
+      revealObs?.disconnect();
+    };
   }, []);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
+      {/* Progress bar */}
+      <div className="fixed top-0 left-0 right-0 h-[2px] z-[60] pointer-events-none">
+        <div
+          className="h-full bg-[#2e5a88] transition-[width] duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       <Nav activePage="/journeys" />
 
       {/* ═══════════════════════════════════════════
-          BLOC 1 — HERO
+          ECRAN 1 — HERO FICHE
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
+      <section ref={heroRef} data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=85"
+          src="/paros_01.jpg"
           alt="Paros and Antiparos, privately, by eb."
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/85 pointer-events-none" />
 
-        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center px-6 text-center pointer-events-none">
-          <span className="inline-block px-5 py-2 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[11px] uppercase tracking-[0.15em] font-medium font-body">
-            Private Journey &middot; 07
+        {/* Breadcrumb pill (top-left) */}
+        <div className="absolute top-[clamp(100px,15vh,140px)] left-[clamp(24px,6vw,80px)] z-10">
+          <span className="inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] tracking-[0.15em] uppercase text-white font-medium">
+            Featured Journey &middot; 07 &middot; Paros + Antiparos
           </span>
-          <p
-            className="font-body text-[11px] uppercase tracking-[0.2em] text-white/70 mt-4"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
-            7 Nights &middot; Private Villa + Yacht &middot; May&ndash;October
-          </p>
+        </div>
+
+        {/* Content bottom-left */}
+        <div className="absolute left-[clamp(24px,6vw,80px)] right-[clamp(24px,6vw,80px)] md:right-auto bottom-[clamp(40px,8vh,80px)] max-w-[800px] z-10">
           <h1
-            className="font-heading text-white leading-[0.95] mt-8 max-w-5xl"
+            className="font-heading text-white uppercase leading-[0.95] tracking-wide"
             style={{
-              fontSize: "clamp(48px, 9vw, 140px)",
+              fontSize: "clamp(52px, 9vw, 108px)",
               letterSpacing: "-0.01em",
               textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            Paros + Antiparos, Privately.
+            Paros + Antiparos,<br />privately.
           </h1>
+
           <p
-            className="max-w-[680px] text-white/85 text-[16px] md:text-[18px] leading-[1.6] font-light font-body mt-6"
+            className="mt-5 font-body text-white/90 text-[17px] md:text-[20px] font-light leading-relaxed max-w-[640px]"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            The chicest of the central Cyclades, without ever crossing a crowd. A villa on the quiet south coast, a yacht for the day, a week to settle in.
+            The chicest of the central Cyclades, without ever crossing a crowd.
           </p>
+
+          <div className="w-16 h-px bg-white/30 my-7" />
+
+          {/* Mood pills */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Slow", "Chic", "Discovery"].map((tag) => (
+              <span
+                key={tag}
+                className="inline-block bg-white/10 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] border border-white/20 rounded-full px-3.5 py-1.5 font-body text-[10px] tracking-[0.15em] uppercase text-white font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Key facts */}
+          <div className="flex flex-wrap gap-x-7 gap-y-3 font-body text-[11px] tracking-[0.12em] uppercase text-white/85 font-medium mb-7">
+            <span className="inline-flex items-center gap-2"><IconCalendar /> 7 Nights</span>
+            <span className="inline-flex items-center gap-2"><IconMapPin /> Paros + Antiparos</span>
+            <span className="inline-flex items-center gap-2"><IconSun /> May&ndash;October</span>
+            <span className="inline-flex items-center gap-2"><IconUsers /> Couples &middot; Friends &middot; Families</span>
+          </div>
+
+          {/* Double CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start sm:items-center">
+            <a
+              href={`/contact?journey=${JOURNEY_SLUG}`}
+              className="inline-flex items-center gap-2 bg-white text-[#2e5a88] px-6 py-3 rounded-full font-body text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-white/90 transition-colors"
+            >
+              Inquire
+              <IconArrowRight />
+            </a>
+            <a
+              href={`/contact?request=pdf&journey=${JOURNEY_SLUG}`}
+              className="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.15em] uppercase text-white/90 hover:text-white font-medium pb-1 border-b border-white/40 hover:border-white/90 transition-colors"
+            >
+              Download the PDF
+              <IconDownload />
+            </a>
+          </div>
         </div>
 
+        {/* Scroll indicator */}
         <button
           type="button"
-          onClick={() => journeyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
-          aria-label="Scroll to journey"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          onClick={() => highlightsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
+          aria-label="Scroll to highlights"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
         >
-          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 14l-7 7-7-7M12 21V3" />
           </svg>
         </button>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 2 — INTRODUCTION
+          ECRAN 2 — 6 HIGHLIGHTS
       ═══════════════════════════════════════════ */}
-      <section ref={journeyRef} id="the-journey" className="bg-white py-24 md:py-32 px-6 md:px-12 scroll-mt-20">
-        <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-6">
-            The Journey
-          </p>
-          <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-16" data-delay="80" />
-
-          <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05]"
-            data-delay="120"
-            style={{
-              fontSize: "clamp(36px, 5vw, 80px)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Some islands stayed quiet on purpose.
-            <br />
-            <span className="text-[#2e5a88]/45">These are two of them.</span>
-          </h2>
-
-          <div className="max-w-[700px] mx-auto mt-12 space-y-6">
-            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="200">
-              Seven nights in a hand-selected villa on the southern coast of Paros, where the bays are calm, the light stays golden, and the scale is human. A private yacht for the day takes you across the channel to Antiparos and to Despotiko, the uninhabited islet where ancient ruins sit in the sand. Naoussa for dinner. The southern beaches for the afternoons. A villa for the rest of the week.
-            </p>
-            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="260">
-              Designed for couples, small groups of friends, and young families who want the Cyclades without the volume. The Italian set has been spending its summers here for twenty years for a reason.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 3 — KEY FACTS
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
-              The Facts
-            </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x md:divide-black/10">
-            {[
-              { label: "Duration", value: "From 7 nights" },
-              { label: "Base", value: "Villa, south coast Paros" },
-              { label: "Best Season", value: "May to October" },
-              { label: "Tailored for", value: "Couples, friends, families" },
-            ].map((f, i) => (
-              <div key={f.label} className="reveal text-center px-4" data-delay={i * 80}>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-black/45 font-medium mb-4">
-                  {f.label}
-                </p>
-                <p
-                  className="font-heading text-[#2e5a88] leading-tight"
-                  style={{ fontSize: "clamp(18px, 2vw, 28px)", letterSpacing: "-0.01em" }}
-                >
-                  {f.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 4 — THE WEEK (5 chapitres)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+      <section ref={highlightsRef} id="highlights" className="bg-white py-20 md:py-28 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-20">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
-              The Week
+          <div className="text-center mb-14">
+            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
+              Six Moments from the Week
             </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
+            <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4" data-delay="80" />
           </div>
 
-          <div className="space-y-24 md:space-y-32">
-            {chapters.map((c) => (
-              <div key={c.num} className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-                <span
-                  className="hidden md:block absolute top-0 font-heading text-[#2e5a88]/[0.08] pointer-events-none select-none"
-                  style={{
-                    fontSize: "clamp(120px, 15vw, 200px)",
-                    lineHeight: 0.8,
-                    [c.left ? "right" : "left"]: "0",
-                  }}
-                >
-                  {c.num}
-                </span>
-
-                <div className={`reveal relative ${c.left ? "md:order-1 md:-ml-[5%]" : "md:order-2 md:-mr-[5%]"}`}>
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img
-                      src={c.image}
-                      alt={c.tag}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-
-                <div className={`reveal relative z-10 ${c.left ? "md:order-2 md:pl-6" : "md:order-1 md:pr-6"}`} data-delay="100">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {highlights.map((h, i) => (
+              <div key={h.title} className="reveal relative group overflow-hidden aspect-[4/5]" data-delay={i * 80}>
+                <img
+                  src={h.image}
+                  alt={h.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 text-white">
                   <h3
-                    className="font-heading text-[#2e5a88] uppercase leading-[1] tracking-wide mb-6"
-                    style={{ fontSize: "clamp(28px, 3vw, 44px)", letterSpacing: "-0.01em" }}
+                    className="font-heading uppercase leading-[1] tracking-wide mb-2"
+                    style={{
+                      fontSize: "clamp(24px, 2.2vw, 32px)",
+                      letterSpacing: "-0.01em",
+                      textShadow: "0 1px 3px rgba(0,0,0,0.3)",
+                    }}
                   >
-                    {c.tag}
+                    {h.title}
                   </h3>
-                  <p className="font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
-                    {c.body}
+                  <p
+                    className="font-body text-[13px] md:text-[14px] text-white/85 font-light leading-relaxed max-w-[260px]"
+                    style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+                  >
+                    {h.description}
                   </p>
                 </div>
               </div>
@@ -266,108 +307,143 @@ export default function ParosJourney() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 5 — CITATION
+          ECRAN 3 — THE ROUTE (timeline editoriale)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
-        <div className="max-w-[800px] mx-auto text-center">
-          <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.1]"
-            style={{
-              fontSize: "clamp(28px, 4vw, 52px)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            The loudest islands sell themselves.
-            <br />
-            <span className="text-[#2e5a88]/45">The quietest ones are kept by the people who know.</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 6 — WHAT'S INCLUDED
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32 px-6 md:px-12">
-        <div className="max-w-[800px] mx-auto">
+      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6 md:px-12">
+        <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
-              What{'\u2019'}s Included
+            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
+              The Route
             </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
+            <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4" data-delay="80" />
           </div>
 
-          <ul className="space-y-0">
-            {included.map((item, i) => (
-              <li
-                key={i}
-                className="reveal font-body text-black/70 text-[15px] leading-loose py-3 border-b border-black/[0.06] pl-2"
-                data-delay={Math.min(i * 30, 200)}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          {/* Desktop: horizontal timeline */}
+          <div className="hidden md:block relative">
+            <div className="absolute top-[11px] left-[5%] right-[5%] h-px bg-[#2e5a88]/25" />
+            <div className="grid grid-cols-5 gap-4 relative">
+              {route.map((r, i) => (
+                <div key={r.label} className="reveal flex flex-col items-center text-center" data-delay={i * 100}>
+                  <div className="relative">
+                    <div className="w-[10px] h-[10px] rounded-full bg-[#2e5a88] ring-4 ring-[#fcf7f1]" />
+                  </div>
+                  <p className="mt-6 font-heading uppercase text-[#2e5a88] text-[18px] tracking-wide leading-[1]" style={{ letterSpacing: "-0.01em" }}>
+                    {r.label}
+                  </p>
+                  <p className="mt-2 font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">
+                    {r.sub}
+                  </p>
+                  <p className="mt-3 font-body text-[13px] text-black/60 font-light leading-relaxed max-w-[180px]">
+                    {r.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <p className="reveal font-body italic text-black/45 text-[13px] text-center mt-12" data-delay="200">
-            Each journey is shaped around you. The above is a starting point, not a script.
-          </p>
+          {/* Mobile: vertical timeline */}
+          <div className="md:hidden relative pl-6">
+            <div className="absolute left-[4px] top-1 bottom-1 w-px bg-[#2e5a88]/25" />
+            <ul className="space-y-8">
+              {route.map((r) => (
+                <li key={r.label} className="reveal relative">
+                  <div className="absolute -left-6 top-1.5 w-[9px] h-[9px] rounded-full bg-[#2e5a88] ring-4 ring-[#fcf7f1]" />
+                  <p className="font-heading uppercase text-[#2e5a88] text-[22px] leading-[1]" style={{ letterSpacing: "-0.01em" }}>
+                    {r.label}
+                  </p>
+                  <p className="mt-1.5 font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">
+                    {r.sub}
+                  </p>
+                  <p className="mt-2 font-body text-[14px] text-black/60 font-light leading-relaxed">
+                    {r.detail}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 7 — A NOTE FROM eb.
+          ECRAN 4 — A NOTE FROM eb.
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
-        <div className="max-w-[700px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
+      <section className="bg-white py-20 md:py-24 px-6">
+        <div className="max-w-[720px] mx-auto text-center">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
             A Note
           </p>
-          <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-12" data-delay="80" />
+          <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4 mb-10" data-delay="80" />
 
-          <div className="space-y-6">
-            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
-              Paros sits between Mykonos and Santorini geographically, and almost nowhere near them in spirit. The eb. studio sends clients here when they have already done the loud islands and want what comes after. Naoussa at sunset, with the boats unloading and the Athenian crowd that knows the difference. Antiparos a yacht ride away, where the Italian set has been buying quietly for twenty years. Despotiko an hour further west, with ruins that sit untouched in the sand.
-            </p>
-            <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="180">
-              The south coast of Paros is the quiet side of a quiet island, which is why it works equally for couples without children, friends in their thirties, and families travelling with very young ones. If Mykonos is a calendar, Paros is a season. The two of them are designed for entirely different versions of the same client.
-            </p>
-          </div>
-          <p className="reveal font-body italic text-[#2e5a88] text-[14px] mt-8" data-delay="220">
+          <p className="reveal font-body text-[18px] md:text-[20px] text-black/70 font-light leading-relaxed" data-delay="120">
+            Paros and Antiparos, the Cyclades the Italian set has been keeping to itself for twenty years. We know the villa. We know the yacht captain, the chef, the table at Mario. You fly in. We have done the rest.
+          </p>
+
+          <p className="reveal mt-8 font-body italic text-[#2e5a88] text-[14px] font-medium" data-delay="200">
             eb. Athens.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 8 — CTA FINAL
+          ECRAN 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-24 px-6">
-        <div className="max-w-[600px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-6">
+      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+        <img
+          src="/paros_02.jpg"
+          alt="Ready when you are"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 pointer-events-none" />
+
+        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
+          <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Inquire
-          </p>
+          </span>
           <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05] mb-6"
+            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             data-delay="80"
-            style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
-              letterSpacing: "-0.01em",
-            }}
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Designed around you.
+            Ready when you are.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
-            Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the week.
+          <p
+            className="reveal mt-6 max-w-[560px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Tell us when, with whom, and how you want to feel. We shape the rest.
           </p>
           <a
-            href="/contact?ref=paros-antiparos"
-            className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity door-cta"
+            href={`/contact?journey=${JOURNEY_SLUG}`}
+            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors door-cta"
             data-delay="220"
           >
             Start the conversation &rarr;
           </a>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════
+          STICKY MOBILE BAR
+      ═══════════════════════════════════════════ */}
+      <div
+        className={`md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] border-t border-black/10 px-4 py-3 flex items-center justify-between z-40 shadow-lg transition-transform duration-300 ${
+          stickyVisible ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="flex flex-col pr-3">
+          <span className="font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">7 nights &middot; Paros + Antiparos</span>
+          <span className="font-body text-[13px] text-[#2e5a88] font-medium">Designed around you</span>
+        </div>
+        <a
+          href={`/contact?journey=${JOURNEY_SLUG}`}
+          className="shrink-0 inline-flex items-center gap-2 bg-[#2e5a88] text-white px-5 py-2.5 rounded-full font-body text-[11px] tracking-[0.15em] uppercase font-medium"
+        >
+          Inquire
+          <IconArrowRight />
+        </a>
+      </div>
 
       {/* ═══════════════════════════════════════════
           FOOTER

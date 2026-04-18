@@ -26,7 +26,7 @@ const featured: Journey[] = [
   },
   {
     slug: "mykonos-timed-right",
-    image: "https://images.unsplash.com/photo-1570213489059-0aac6626cade?auto=format&fit=crop&w=1920&q=85",
+    image: "/mykonos%20villa.jpg",
     number: "06",
     overline: "Featured Journey \u00b7 06",
     title: "Mykonos,\nTimed Right.",
@@ -233,21 +233,17 @@ export default function JourneysPage() {
         <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-          <span className="inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white">
+          <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Private Journeys
           </span>
           <h1
-            className="font-heading text-white uppercase leading-[0.9] mb-6 max-w-6xl"
-            style={{
-              fontSize: "clamp(56px, 10vw, 160px)",
-              letterSpacing: "-0.01em",
-              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-            }}
+            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Greece, designed<br />firsthand.
+            Greece, designed firsthand.
           </h1>
           <p
-            className="font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[650px] mb-8"
+            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Seven private journeys through Greece. Each one shaped by the eb. studio. Each one yours to reshape.
@@ -295,37 +291,37 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1602865256095-8e9e0e40cd8c?auto=format&fit=crop&w=1920&q=85"
+          src="/despina-galani-qGtpTQrN7VU-unsplash.jpg"
           alt="Patmos, Greece"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 pointer-events-none" />
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
-          <span className="reveal inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body">
+          <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             By Introduction Only
           </span>
           <h2
-            className="reveal font-heading text-white uppercase leading-[0.95] mb-8"
+            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             data-delay="80"
-            style={{
-              fontSize: "clamp(48px, 8vw, 120px)",
-              letterSpacing: "-0.01em",
-              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-            }}
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            The Patmos<br />Network.
+            The Patmos Network.
           </h2>
-          <p className="reveal font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[650px] mb-8" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             Patmos is where the eb. studio is rooted. It is also where some of our most private residences and experiences live, accessible only by introduction.
           </p>
-          <p className="reveal font-body text-white/60 text-[11px] md:text-[12px] uppercase tracking-[0.2em] mb-8" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal mt-6 font-body text-white/60 text-[11px] uppercase tracking-[0.2em]" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Patmos &middot; Amorgos &middot; Symi &middot; The Ionian
           </p>
           <a
             href="/contact?type=introduction"
-            className="reveal inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1.5 border-b border-white/80 hover:border-white transition-colors"
+            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors"
             data-delay="260"
           >
             Request introduction &rarr;
@@ -346,26 +342,26 @@ export default function JourneysPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 pointer-events-none" />
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
-          <span className="reveal inline-block mb-6 px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body">
+          <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Yours, from scratch
           </span>
           <h2
-            className="reveal font-heading text-white uppercase leading-[0.95] mb-8 max-w-6xl"
+            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             data-delay="80"
-            style={{
-              fontSize: "clamp(48px, 10vw, 140px)",
-              letterSpacing: "-0.01em",
-              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-            }}
+            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Every journey<br />starts from scratch.
+            Every journey starts from scratch.
           </h2>
-          <p className="reveal font-body text-white/85 text-[16px] md:text-[18px] font-light leading-relaxed max-w-[600px] mb-10" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             The seven above are starting points. Tell us what you have in mind. We design the rest.
           </p>
           <a
             href="/contact"
-            className="reveal inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1.5 border-b border-white/80 hover:border-white transition-colors door-cta"
+            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors door-cta"
             data-delay="220"
           >
             Start the conversation &rarr;
