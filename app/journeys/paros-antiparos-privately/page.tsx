@@ -253,21 +253,21 @@ export default function ParosAntiparosPage() {
                 img: '/images/journeys/athens-card.jpg',
                 category: 'Cultural · Slow',
                 title: 'Athens, Slowly',
-                meta: '5 nights · From €3,200pp',
+                meta: '5 nights · Athens',
               },
               {
                 href: '/journeys/mykonos-timed-right',
                 img: '/images/journeys/mykonos-card.jpg',
                 category: 'Festive · Social',
                 title: 'Mykonos, Timed Right',
-                meta: '5 nights · From €5,500pp',
+                meta: '5 nights · Mykonos',
               },
               {
                 href: '/journeys/a-family-summer-greek-style',
                 img: '/images/journeys/family-card.jpg',
                 category: 'Family · Multi-gen',
                 title: 'A Family Summer',
-                meta: '10 nights · From €4,800pp',
+                meta: '10 nights · Porto Heli',
               },
             ].map((card, i) => (
               <Link
