@@ -8,22 +8,28 @@ export default function ParosAntiparosPage() {
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
+    const revealObs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('eb-visible');
-          }
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const d = parseInt(el.dataset.delay || '0', 10);
+          setTimeout(() => {
+            el.classList.add('visible');
+            setTimeout(() => el.classList.add('done'), 800);
+          }, d);
+          revealObs.unobserve(el);
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
     );
+    revealEls.forEach((el) => revealObs.observe(el));
 
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    return () => revealObs.disconnect();
   }, []);
 
   return (
@@ -40,19 +46,19 @@ export default function ParosAntiparosPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/60" />
 
         <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 right-6 md:right-12 text-white">
-          <div className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase opacity-70 mb-3 eb-fade-up">
+          <div className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase opacity-70 mb-3 reveal">
             Private Journey · 07
           </div>
 
-          <h1 className="font-anton font-normal uppercase text-[42px] md:text-[64px] leading-[0.9] tracking-[0.02em] mb-4 max-w-[85%] md:max-w-[75%] eb-fade-up eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[42px] md:text-[64px] leading-[0.9] tracking-[0.02em] mb-4 max-w-[85%] md:max-w-[75%] reveal" data-delay="100">
             Paros + Antiparos,<br />Privately.
           </h1>
 
-          <p className="text-[13px] md:text-[14px] opacity-90 max-w-[480px] leading-[1.5] mb-4 italic font-light eb-fade-up eb-delay-200">
+          <p className="text-[13px] md:text-[14px] opacity-90 max-w-[480px] leading-[1.5] mb-4 italic font-light reveal" data-delay="200">
             Held by the quiet. Found by no one.
           </p>
 
-          <div className="flex gap-1.5 mb-4 eb-fade-up eb-delay-300">
+          <div className="flex gap-1.5 mb-4 reveal" data-delay="300">
             {['Slow', 'Chic', 'Discovery'].map((mood) => (
               <span
                 key={mood}
@@ -63,7 +69,7 @@ export default function ParosAntiparosPage() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2 pt-3 border-t border-white/25 max-w-[820px] eb-fade-up eb-delay-400">
+          <div className="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2 pt-3 border-t border-white/25 max-w-[820px] reveal" data-delay="400">
             <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">7 nights</span>
             <span className="opacity-40">·</span>
             <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">May–October</span>
@@ -90,7 +96,7 @@ export default function ParosAntiparosPage() {
             </span>
           </div>
 
-          <div className="text-[9px] opacity-60 mt-2 italic eb-fade-up eb-delay-500">
+          <div className="text-[9px] opacity-60 mt-2 italic reveal" data-delay="500">
             Curated firsthand by the eb. studio, Athens.
           </div>
         </div>
@@ -124,7 +130,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 3 — THE PROMISE ============ */}
-      <section className="px-8 md:px-10 py-9 bg-white text-center border-b border-black/5 eb-fade-up">
+      <section className="px-8 md:px-10 py-9 bg-white text-center border-b border-black/5 reveal">
         <div className="max-w-[640px] mx-auto">
           <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-2.5 font-light">
             The Promise
@@ -152,7 +158,7 @@ export default function ParosAntiparosPage() {
               body: 'One day for Lefkes, the old Byzantine capital tucked into the hills. Marble alleys, white chapels, lunch at a taverna no one writes about. Afternoon at Antiparos Chora, on the other side of the channel.',
             },
           ].map((chapter, i) => (
-            <div key={i} className="eb-fade-up" style={{ transitionDelay: `${i * 150}ms` }}>
+            <div key={i} className="reveal" data-delay={i * 150}>
               <h2 className="text-[20px] md:text-[22px] leading-[1.2] text-[#2e5a88] font-light mb-2.5">
                 {chapter.title}
               </h2>
@@ -165,7 +171,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 5 — WHAT YOU'LL REMEMBER (beige) ============ */}
-      <section className="px-8 md:px-10 py-9 bg-[#fcf7f1] eb-fade-up">
+      <section className="px-8 md:px-10 py-9 bg-[#fcf7f1] reveal">
         <div className="max-w-[600px] mx-auto text-center">
           <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-3.5 font-light">
             What you&apos;ll remember
@@ -186,7 +192,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 6 — A NOTE BEFORE YOU ASK ============ */}
-      <section className="px-8 md:px-10 py-8 bg-white text-center border-t border-black/5 eb-fade-up">
+      <section className="px-8 md:px-10 py-8 bg-white text-center border-t border-black/5 reveal">
         <div className="max-w-[580px] mx-auto">
           <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-2.5 font-light">
             A note before you ask
@@ -204,19 +210,19 @@ export default function ParosAntiparosPage() {
       <section className="relative px-8 md:px-10 py-14 bg-gradient-to-br from-[#1a3552] to-[#2e5a88] text-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/50" />
 
-        <div className="relative eb-fade-in">
+        <div className="relative reveal">
           <h2 className="font-anton font-normal uppercase text-[34px] md:text-[44px] leading-[0.95] tracking-[0.02em] text-white mb-3">
             Ready when<br />you are.
           </h2>
           <p className="text-[13px] text-white/85 max-w-[380px] mx-auto mb-6 leading-[1.6] font-light">
             Tell us when, with whom, and how you want to feel. We shape the rest.
           </p>
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-6">
             <Link
               href="/contact?journey=paros-antiparos"
-              className="bg-white text-[#2e5a88] px-6 py-2.5 rounded-full text-[10px] font-medium tracking-[0.2em] uppercase transition-all hover:scale-[1.03] hover:shadow-lg"
+              className="inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors"
             >
-              Inquire →
+              Start the conversation &rarr;
             </Link>
           </div>
           <p className="text-[10px] text-white/60 font-light">
@@ -238,7 +244,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 8 — CROSS-SELL ITINÉRAIRES (3 cards) ============ */}
-      <section className="px-6 md:px-10 py-10 bg-white eb-fade-up">
+      <section className="px-6 md:px-10 py-10 bg-white reveal">
         <div className="max-w-[1000px] mx-auto">
           <div className="text-center mb-6">
             <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 font-light">
@@ -307,9 +313,9 @@ export default function ParosAntiparosPage() {
           </span>
           <Link
             href="/collection"
-            className="text-[#2e5a88] text-[11px] tracking-[0.15em] uppercase underline decoration-[#2e5a88]/40 hover:decoration-[#2e5a88] transition-all"
+            className="inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity"
           >
-            Discover the Collection →
+            Discover the Collection &rarr;
           </Link>
         </div>
       </section>

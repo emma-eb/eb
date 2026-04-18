@@ -290,8 +290,9 @@ export default function JourneysPage() {
           BLOC 4 — THE PATMOS NETWORK (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+        {/* TODO: remplacer par une vraie photo Patmos fournie par Emma */}
         <img
-          src="/despina-galani-qGtpTQrN7VU-unsplash.jpg"
+          src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=1920&q=85"
           alt="Patmos, Greece"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
@@ -303,7 +304,7 @@ export default function JourneysPage() {
             The Patmos Network
           </span>
           <h2
-            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
@@ -330,8 +331,9 @@ export default function JourneysPage() {
           BLOC 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
+        {/* TODO: restaurer l'image originale Santorini blanc / mer calme - demander à Emma */}
         <img
-          src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=85"
           alt="Greece, designed for you"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
@@ -343,7 +345,7 @@ export default function JourneysPage() {
             Yours, from scratch
           </span>
           <h2
-            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
