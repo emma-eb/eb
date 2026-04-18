@@ -305,7 +305,7 @@ export default function JourneysPage() {
       {/* ============ BLOC RESPIRATION — CITATION ============ */}
       <section className="bg-[#fcf7f1] flex items-center justify-center pt-14 md:pt-28 pb-8 md:pb-16 px-8">
         <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
-          Designed on the ground. Not from a desk.
+          Designed on the ground.<br className="md:hidden" /> Not from a desk.
         </p>
       </section>
 
