@@ -88,50 +88,73 @@ function FeaturedBlock({ j }: { j: Journey }) {
     <a
       href={`/journeys/${j.slug}`}
       data-nav-dark
-      className="reveal group relative block min-h-[90vh] md:min-h-0 md:h-[85vh] w-full overflow-hidden"
+      className="group relative block min-h-[90vh] md:min-h-0 md:h-[85vh] w-full overflow-hidden"
     >
       <img
         src={j.image}
         alt={j.title.replace("\n", " ")}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        className={`featured-img absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] ${
+          j.slug === "mykonos-timed-right" ? "object-bottom md:object-center" : ""
+        }`}
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
       <div className="absolute inset-0 flex items-end">
         <div className="px-6 pb-10 pt-8 md:p-16 max-w-2xl">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
+          <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             {j.overline}
           </span>
           <h2
-            className="font-heading text-white uppercase leading-[0.95] mb-4"
+            className="reveal font-heading text-white uppercase leading-[0.95] mb-4"
+            data-delay="100"
             style={{
               fontSize: "clamp(44px, 6vw, 80px)",
               letterSpacing: "-0.01em",
               textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
           >
-            {j.title.split("\n").map((line, i) => (
+            {j.slug === "astypalea-before-everyone-else" ? (
+              <>
+                <span className="md:hidden">
+                  Astypalea,
+                  <br />
+                  Before Everyone Else.
+                </span>
+                <span className="hidden md:inline">
+                  Astypalea, Before
+                  <br />
+                  Everyone Else.
+                </span>
+              </>
+            ) : (
+              j.title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i === 0 && j.title.includes("\n") && <br />}
+                </span>
+              ))
+            )}
+          </h2>
+          <p className="reveal font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/70 font-medium mb-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            {j.meta.split(" \u00b7 ").map((part, i, arr) => (
               <span key={i}>
-                {line}
-                {i === 0 && j.title.includes("\n") && <br />}
+                <span className="whitespace-nowrap">{part}</span>
+                {i < arr.length - 1 && " \u00b7 "}
               </span>
             ))}
-          </h2>
-          <p className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            {j.meta}
           </p>
-          <p className="font-body text-white/85 text-[13px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-white/85 text-[13px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-5" data-delay="300" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             {j.description}
           </p>
           {j.slug === "astypalea-before-everyone-else" && (
-            <div className="mb-5">
+            <div className="reveal mb-5" data-delay="350">
               <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] md:text-[10px] uppercase tracking-[0.15em] text-white/90 font-medium">
                 Featured #1 by The Guardian, 2026
               </span>
             </div>
           )}
-          <span className="eb-cta-link font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium">
+          <span className="reveal eb-cta-link font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium" data-delay="400">
             Discover the journey <span className="eb-cta-arrow">&rarr;</span>
           </span>
         </div>
@@ -173,8 +196,13 @@ function SecondaryCard({ j }: { j: Journey }) {
             </span>
           ))}
         </h3>
-        <p className="mt-2 text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/60 font-medium font-body">
-          {j.meta}
+        <p className="mt-2 text-[10px] md:text-[11px] uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/60 font-medium font-body">
+          {j.meta.split(" \u00b7 ").map((part, i, arr) => (
+            <span key={i}>
+              <span className="whitespace-nowrap">{part}</span>
+              {i < arr.length - 1 && " \u00b7 "}
+            </span>
+          ))}
         </p>
         <p className="mt-3 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
           {j.description}
@@ -208,7 +236,7 @@ export default function JourneysPage() {
           revealObs.unobserve(el);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
     revealEls.forEach((el) => revealObs.observe(el));
 
@@ -274,10 +302,17 @@ export default function JourneysPage() {
         ))}
       </section>
 
+      {/* ============ BLOC RESPIRATION — CITATION ============ */}
+      <section className="bg-[#fcf7f1] flex items-center justify-center pt-14 md:pt-28 pb-8 md:pb-16 px-8">
+        <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
+          Designed on the ground. Not from a desk.
+        </p>
+      </section>
+
       {/* ═══════════════════════════════════════════
           BLOC 3 — GRILLE 5 SECONDAIRES (pattern /collection)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 md:px-12 py-20 md:py-28">
+      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-3 md:pt-6 pb-14 md:pb-28">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {secondary.map((j, i) => (
@@ -306,7 +341,7 @@ export default function JourneysPage() {
             Patmos · An island apart
           </span>
           <h2
-            className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[32px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
