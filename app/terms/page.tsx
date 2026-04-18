@@ -14,7 +14,7 @@ export default function TermsPage() {
       <section className="pt-[140px] md:pt-[180px] pb-20 md:pb-28 px-6 md:px-12 flex-1">
         <div className="max-w-[760px] mx-auto">
 
-          <div className="mb-12 md:mb-16 eb-fade-up">
+          <div className="mb-12 md:mb-16">
             <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 mb-5 font-light">
               Legal
             </div>
@@ -28,7 +28,7 @@ export default function TermsPage() {
 
           <div className="space-y-10 md:space-y-12 text-[14px] md:text-[15px] leading-[1.75] text-black/70 font-light">
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 1. About eb.
               </h2>
@@ -40,7 +40,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 2. Our Role
               </h2>
@@ -49,7 +49,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 3. Bookings and Payments
               </h2>
@@ -61,7 +61,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 4. Pricing
               </h2>
@@ -70,7 +70,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 5. Liability
               </h2>
@@ -82,7 +82,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 6. Intellectual Property
               </h2>
@@ -91,7 +91,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 7. Data
               </h2>
@@ -100,7 +100,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 8. Governing Law
               </h2>
@@ -109,7 +109,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            <div className="eb-fade-up">
+            <div>
               <h2 className="text-[18px] md:text-[22px] text-[#2e5a88] font-light mb-4">
                 9. Contact
               </h2>
