@@ -74,7 +74,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",
-    image: "/yatch_page%20collection_2.png",
+    image: "/hero-bateau.jpg",
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "A Week in the\nCyclades, By Sea.",
