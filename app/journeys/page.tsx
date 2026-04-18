@@ -88,7 +88,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
     <a
       href={`/journeys/${j.slug}`}
       data-nav-dark
-      className="reveal group relative block h-[80vh] md:h-[85vh] w-full overflow-hidden"
+      className="reveal group relative block min-h-[90vh] md:min-h-0 md:h-[85vh] w-full overflow-hidden"
     >
       <img
         src={j.image}
@@ -99,7 +99,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
       <div className="absolute inset-0 flex items-end">
-        <div className="p-8 md:p-16 max-w-2xl">
+        <div className="px-6 pb-10 pt-8 md:p-16 max-w-2xl">
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             {j.overline}
           </span>
@@ -121,7 +121,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
           <p className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             {j.meta}
           </p>
-          <p className="font-body text-white/85 text-[14px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="font-body text-white/85 text-[13px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             {j.description}
           </p>
           {j.slug === "astypalea-before-everyone-else" && (
@@ -144,7 +144,7 @@ function SecondaryCard({ j }: { j: Journey }) {
   return (
     <a
       href={`/journeys/${j.slug}`}
-      className="reveal group block relative overflow-hidden aspect-[3/2]"
+      className="reveal group block relative overflow-hidden h-[70vh] min-h-[500px] md:h-auto md:min-h-0 md:aspect-[3/2]"
     >
       <img
         src={j.image}
@@ -234,17 +234,19 @@ export default function JourneysPage() {
         <div className="absolute inset-0 bg-black/35 pointer-events-none" />
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-          <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
+          <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Private Journeys
           </span>
           <h1
-            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[48px] sm:text-[56px] md:text-[88px] leading-[0.95] text-white uppercase"
+            data-delay="100"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Greece. Designed firsthand.
+            Greece.<br className="md:hidden" /> Designed firsthand.
           </h1>
           <p
-            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="200"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Private journeys through Greece. Each one shaped by the eb. studio, and yours to reshape.
@@ -311,7 +313,7 @@ export default function JourneysPage() {
             Some places we don&rsquo;t list.
           </h2>
           <p
-            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[13px] md:text-[17px] leading-[1.6] font-light font-body px-2"
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
@@ -331,9 +333,8 @@ export default function JourneysPage() {
           BLOC 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
-        {/* TODO: remplacer par photo bateau qui part au large - demander a Emma */}
         <img
-          src="https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1920&q=85"
+          src="/hero-bateau.jpg"
           alt="A boat at the horizon"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
@@ -345,14 +346,14 @@ export default function JourneysPage() {
             Yours to shape
           </span>
           <h2
-            className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[36px] sm:text-[40px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Every journey starts from scratch.
           </h2>
           <p
-            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[13px] md:text-[17px] leading-[1.6] font-light font-body px-2"
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
