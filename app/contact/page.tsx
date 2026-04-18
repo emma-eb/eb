@@ -347,6 +347,11 @@ export default function ContactPage() {
             <a href="/contact" className="hover:text-white/70 transition-colors">Contact</a>
           </div>
         </div>
+        <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10">
+          <p className="text-[10px] md:text-[11px] text-white/35 font-light leading-[1.5] max-w-[540px] mx-auto md:mx-0 text-center md:text-left">
+            eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.
+          </p>
+        </div>
       </footer>
     </main>
   );
