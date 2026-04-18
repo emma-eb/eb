@@ -291,9 +291,8 @@ export default function JourneysPage() {
           BLOC 4 — THE PATMOS NETWORK (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
-        {/* TODO: remplacer par une vraie photo Patmos fournie par Emma */}
         <img
-          src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=1920&q=85"
+          src="/patmos_01.avif"
           alt="Patmos, Greece"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
