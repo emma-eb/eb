@@ -197,11 +197,11 @@ export default function Experiences() {
             </p>
             <a
               href="/contact"
-              className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-6 min-h-[44px] items-center door-cta"
+              className="reveal eb-cta-link mt-6 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
               data-delay="300"
             >
               {exp.cta}
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+              <span className="eb-cta-arrow">&rarr;</span>
             </a>
           </div>
         </section>
@@ -293,10 +293,10 @@ export default function Experiences() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-8 min-h-[44px] items-center"
+            className="eb-cta-link mt-8 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
           >
             Start the conversation
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>

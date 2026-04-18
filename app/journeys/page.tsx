@@ -151,7 +151,7 @@ function SecondaryCard({ j }: { j: Journey }) {
         alt={j.title.replace("\n", " ")}
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-        style={j.slug === "a-week-in-the-cyclades-by-sea" ? { objectPosition: "center 35%" } : undefined}
+        style={j.slug === "a-week-in-the-cyclades-by-sea" ? { objectPosition: "center 70%" } : undefined}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-40% to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">

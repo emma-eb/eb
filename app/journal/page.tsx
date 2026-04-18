@@ -121,11 +121,11 @@ export default function Journal() {
             href="https://www.businesstoday.in/nri/invest/story/is-greece-the-new-dubai-why-hni-indians-are-shifting-their-investments-525576-2026-04-14"
             target="_blank"
             rel="noopener noreferrer"
-            className="reveal inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 mt-6 min-h-[44px] items-center door-cta"
+            className="reveal eb-cta-link mt-6 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
             data-delay="300"
           >
             Read the article
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
@@ -158,7 +158,7 @@ export default function Journal() {
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
                 <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; March 2026</p>
-                <h3 className="font-body text-[13px] md:text-[15px] font-medium text-white leading-[1.3] mt-1 line-clamp-3">Tourism revenue jumps 58.4% to &euro;473M</h3>
+                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Tourism revenue jumps 58.4% to &euro;473M</h3>
               </div>
             </a>
 
@@ -170,7 +170,7 @@ export default function Journal() {
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
                 <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Newsweek &middot; 2026</p>
-                <h3 className="font-body text-[13px] md:text-[15px] font-medium text-white leading-[1.3] mt-1 line-clamp-3">Greece named world&apos;s #1 retirement destination</h3>
+                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Greece named world&apos;s #1 retirement destination</h3>
               </div>
             </a>
           </div>
@@ -270,14 +270,14 @@ export default function Journal() {
               className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center door-cta"
             >
               View project
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+              <span className="eb-cta-arrow">&rarr;</span>
             </a>
             <a
               href="/contact"
               className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center"
             >
               Request an introduction
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+              <span className="eb-cta-arrow">&rarr;</span>
             </a>
           </div>
         </div>

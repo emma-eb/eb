@@ -213,11 +213,9 @@ export default function Home() {
                 <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
                   {door.subtitle}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0 door-cta">
+                <div className="eb-cta-link mt-5 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0">
                   {door.cta}
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                    <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" />
-                  </svg>
+                  <span className="eb-cta-arrow">&rarr;</span>
                 </div>
               </div>
             </a>
@@ -273,11 +271,11 @@ export default function Home() {
           </p>
           <a
             href="/journeys"
-            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="400"
           >
             Where will you go?
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
@@ -320,11 +318,11 @@ export default function Home() {
           </p>
           <a
             href="/experiences"
-            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="400"
           >
             What will you celebrate?
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
@@ -364,11 +362,11 @@ export default function Home() {
           </p>
           <a
             href="/collection"
-            className="reveal inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300"
+            className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="300"
           >
             Where will you stay?
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
@@ -425,10 +423,10 @@ export default function Home() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 door-cta"
+            className="eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-[#2e5a88]"
           >
             Start the conversation
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" /></svg>
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
