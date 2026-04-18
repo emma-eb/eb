@@ -369,8 +369,8 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
         <img
-          src="/hero-bateau.jpg"
-          alt="A boat at the horizon"
+          src="/CTA%20FINAL%20PRIVATE%20JOURNEY.jpg"
+          alt="A private Greek island at dusk"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
