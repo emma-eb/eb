@@ -38,7 +38,7 @@ const featured: Journey[] = [
 const secondary: Journey[] = [
   {
     slug: "a-slow-honeymoon-in-the-cyclades",
-    image: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1400&q=85",
+    image: "/MILOS_03.jpg",
     number: "02",
     overline: "Private Journey \u00b7 02",
     title: "A Slow Honeymoon\nin the Cyclades.",
@@ -47,7 +47,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "paros-antiparos-privately",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=85",
+    image: "/paros_01.jpg",
     number: "03",
     overline: "Private Journey \u00b7 03",
     title: "Paros + Antiparos,\nPrivately.",
@@ -56,7 +56,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "athens-slowly",
-    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1400&q=85",
+    image: "/tourism-revenue.jpg",
     number: "04",
     overline: "Private Journey \u00b7 04",
     title: "Athens, Slowly.",
@@ -65,7 +65,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-family-summer-greek-style",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85",
+    image: "/familly%20journey.jpg",
     number: "05",
     overline: "Private Journey \u00b7 05",
     title: "A Family Summer,\nGreek-Style.",
@@ -74,7 +74,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",
-    image: "https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1400&q=85",
+    image: "/yatch_page%20collection_2.png",
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "A Week in the\nCyclades, By Sea.",
@@ -223,7 +223,7 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=1920&q=85"
+          src="/detail%20archi%20greece_02.jpg"
           alt="Private journeys across Greece, by eb."
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
@@ -333,7 +333,7 @@ export default function JourneysPage() {
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
         {/* TODO: restaurer l'image originale Santorini blanc / mer calme - demander à Emma */}
         <img
-          src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1515861461225-1488dfdaf0a8?auto=format&fit=crop&w=1920&q=85"
           alt="Greece, designed for you"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

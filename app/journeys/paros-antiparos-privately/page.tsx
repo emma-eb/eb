@@ -47,7 +47,7 @@ export default function ParosAntiparosPage() {
 
         <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase opacity-70 mb-3 reveal">
-            Private Journey · 07
+            Private Journey · 03
           </div>
 
           <h1 className="font-anton font-normal uppercase text-[42px] md:text-[64px] leading-[0.9] tracking-[0.02em] mb-4 max-w-[85%] md:max-w-[75%] reveal" data-delay="100">
@@ -77,7 +77,7 @@ export default function ParosAntiparosPage() {
             <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">Couples · Friends · Families</span>
             <span className="opacity-40">·</span>
             <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-95 italic relative">
-              From €4,500pp
+              From €6,500pp
               <button
                 onMouseEnter={() => setTooltipOpen(true)}
                 onMouseLeave={() => setTooltipOpen(false)}
@@ -147,7 +147,7 @@ export default function ParosAntiparosPage() {
           {[
             {
               title: 'A week on the south coast.',
-              body: "Seven nights in a hand-selected villa where the bays stay calm and the chef arrives when you ask. Two evenings in Naoussa, one of them at Mario, the kitchen that defines the Athenian set's summer.",
+              body: "Seven nights in a hand-selected villa where the bays stay calm and the chef arrives when you ask. Two evenings in Naoussa, one at the table the Athenian set keeps for itself.",
             },
             {
               title: 'A yacht for the day.',
@@ -176,10 +176,10 @@ export default function ParosAntiparosPage() {
           <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-3.5 font-light">
             What you&apos;ll remember
           </div>
-          <div className="w-8 h-[0.5px] bg-[#2e5a88] mx-auto mb-5.5" style={{ height: '1px' }} />
+          <div className="w-8 h-px bg-[#2e5a88] mx-auto mb-6" />
           <div className="flex flex-col gap-2.5">
             {[
-              "The dinner at Mario, the night the Athenian set showed up unannounced.",
+              "The dinner in Naoussa, the night the Athenian set showed up unannounced.",
               "Despotiko at noon, when the ruins turned gold.",
               "The villa's pool at midnight, no one else awake.",
             ].map((memory, i) => (
@@ -198,10 +198,10 @@ export default function ParosAntiparosPage() {
             A note before you ask
           </div>
           <p className="text-[13px] leading-[1.7] text-black/65 font-light">
-            For those who&apos;ve done Mykonos. And want what comes next.
+            Thirty-five minutes from Athens.
           </p>
           <p className="text-[11px] text-black/40 mt-2 font-light">
-            35-min flight from Athens. Every journey shaped around you. Best months: June and September.
+            Best in June and September, when the island breathes.
           </p>
         </div>
       </section>
