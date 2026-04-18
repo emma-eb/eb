@@ -21,7 +21,7 @@ const featured: Journey[] = [
     number: "01",
     overline: "Featured Journey \u00b7 01",
     title: "Astypalea, Before\nEveryone Else.",
-    description: "Athens, then the Greek island the Guardian named the world\u2019s #1 destination of 2026. While there\u2019s still no one there.",
+    description: "Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists. Before everyone else catches on.",
     meta: "7 Nights \u00b7 Athens + Astypalea \u00b7 May\u2013September",
   },
   {
@@ -30,7 +30,7 @@ const featured: Journey[] = [
     number: "06",
     overline: "Featured Journey \u00b7 06",
     title: "Mykonos,\nTimed Right.",
-    description: "The jet-set is not a place. It\u2019s a calendar. We have it. Five nights in a private villa, timed in real time by the eb. studio.",
+    description: "Mykonos is not a destination, it\u2019s a calendar. Five nights in a private villa, timed by the eb. studio.",
     meta: "5 Nights \u00b7 Mykonos \u00b7 June\u2013September",
   },
 ];
@@ -51,7 +51,7 @@ const secondary: Journey[] = [
     number: "03",
     overline: "Private Journey \u00b7 03",
     title: "A Slow Honeymoon\nin the Cyclades.",
-    description: "No rose petals. Just stone, wind, sea, and the kind of week that resets a marriage.",
+    description: "No rose petals. Just stone, wind, sea, and the kind of week that starts a marriage right.",
     meta: "7 Nights \u00b7 Milos + Folegandros \u00b7 May\u2013September",
   },
   {
@@ -69,7 +69,7 @@ const secondary: Journey[] = [
     number: "05",
     overline: "Private Journey \u00b7 05",
     title: "A Week in the\nCyclades, By Sea.",
-    description: "A 33-metre Italian yacht, six islands, a crew of five. The Cyclades the way they were meant to be reached.",
+    description: "A 33-metre Italian yacht, six islands, a crew of five. The only way to see the Cyclades from the inside out.",
     meta: "7 Nights \u00b7 6 Islands \u00b7 Private Yacht \u00b7 May\u2013September",
   },
   {
@@ -78,7 +78,7 @@ const secondary: Journey[] = [
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "Paros + Antiparos,\nPrivately.",
-    description: "The Cyclades the Italian set has been keeping to itself for twenty years.",
+    description: "The Greek island that works for everyone. Without ever feeling like everyone.",
     meta: "7 Nights \u00b7 Paros + Antiparos \u00b7 May\u2013October",
   },
 ];
@@ -240,13 +240,13 @@ export default function JourneysPage() {
             className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Greece, designed firsthand.
+            Greece. Designed firsthand.
           </h1>
           <p
             className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Seven private journeys through Greece. Each one shaped by the eb. studio. Each one yours to reshape.
+            Private journeys through Greece. Each one shaped by the eb. studio, and yours to reshape.
           </p>
         </div>
 
@@ -300,31 +300,28 @@ export default function JourneysPage() {
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
           <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            By Introduction Only
+            The Patmos Network
           </span>
           <h2
             className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            The Patmos Network.
+            Some places we don&rsquo;t list.
           </h2>
           <p
             className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Patmos is where the eb. studio is rooted. It is also where some of our most private residences and experiences live, accessible only by introduction.
-          </p>
-          <p className="reveal mt-6 font-body text-white/60 text-[11px] uppercase tracking-[0.2em]" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Patmos &middot; Amorgos &middot; Symi &middot; The Ionian
+            A handful of residences and experiences on the island that the Athenian families return to every August. Reachable by helicopter from Athens. By introduction, only.
           </p>
           <a
             href="/contact?type=introduction"
             className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors"
             data-delay="260"
           >
-            Request introduction &rarr;
+            Reach out privately &rarr;
           </a>
         </div>
       </section>
@@ -357,7 +354,7 @@ export default function JourneysPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            The seven above are starting points. Tell us what you have in mind. We design the rest.
+            The journeys above are starting points. Tell us what you have in mind. We shape the rest.
           </p>
           <a
             href="/contact"

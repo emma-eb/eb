@@ -1,501 +1,319 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import Nav from "../../components/Nav";
-import NewsletterBanner from "../../components/NewsletterBanner";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-/* ═══════════════════════════════════════════════════════
-   ICONS (inline SVG, no external dep)
-═══════════════════════════════════════════════════════ */
-
-function IconCalendar({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="4" width="18" height="18" rx="2" />
-      <path d="M16 2v4M8 2v4M3 10h18" />
-    </svg>
-  );
-}
-function IconMapPin({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-function IconSun({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-    </svg>
-  );
-}
-function IconUsers({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
-  );
-}
-function IconArrowRight({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12h14M13 5l7 7-7 7" />
-    </svg>
-  );
-}
-function IconDownload({ className = "w-[14px] h-[14px]" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-    </svg>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════
-   CONTENT
-═══════════════════════════════════════════════════════ */
-
-const JOURNEY_SLUG = "paros-antiparos-privately";
-
-const highlights = [
-  {
-    image: "/paros_01.jpg",
-    title: "The Villa",
-    description: "Pool, pines, the quiet south coast.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
-    title: "Naoussa at Sunset",
-    description: "Boats unload. Mario opens.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=85",
-    title: "The Yacht",
-    description: "Antiparos, Despotiko, lunch in a cove.",
-  },
-  {
-    image: "/paros_03.jpg",
-    title: "Lefkes",
-    description: "The Byzantine hills. Untouched.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
-    title: "Stou Beach",
-    description: "The Italian set's afternoon spot.",
-  },
-  {
-    image: "/paros_02.jpg",
-    title: "The Chef",
-    description: "Market-sourced. Villa-served.",
-  },
-];
-
-const route = [
-  { label: "Paros", sub: "The Villa", detail: "7 nights base, south coast" },
-  { label: "Naoussa", sub: "Dinners", detail: "Evenings at Mario" },
-  { label: "Lefkes", sub: "Byzantine inland", detail: "Cultural day" },
-  { label: "Antiparos", sub: "The Yacht", detail: "Stou Beach + cove lunch" },
-  { label: "Despotiko", sub: "Ancient ruins", detail: "Uninhabited islet" },
-];
-
-/* ═══════════════════════════════════════════════════════ */
-
-export default function ParosJourney() {
-  const heroRef = useRef<HTMLElement>(null);
-  const highlightsRef = useRef<HTMLElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [stickyVisible, setStickyVisible] = useState(false);
+export default function ParosAntiparosPage() {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const doc = document.documentElement;
-      const max = doc.scrollHeight - window.innerHeight;
-      setScrollProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    const heroObs = new IntersectionObserver(
-      ([entry]) => setStickyVisible(!entry.isIntersecting),
-      { threshold: 0.1 }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('eb-visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
     );
-    if (heroRef.current) heroObs.observe(heroRef.current);
 
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let revealObs: IntersectionObserver | null = null;
-    if (!prefersReduced) {
-      const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-      revealObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (!e.isIntersecting) return;
-            const el = e.target as HTMLElement;
-            const d = parseInt(el.dataset.delay || "0", 10);
-            setTimeout(() => {
-              el.classList.add("visible");
-              setTimeout(() => el.classList.add("done"), 800);
-            }, d);
-            revealObs!.unobserve(el);
-          });
-        },
-        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-      );
-      revealEls.forEach((el) => revealObs!.observe(el));
-    }
+    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => {
+      observer.observe(el);
+    });
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      heroObs.disconnect();
-      revealObs?.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <main className="flex flex-col min-h-screen bg-white">
-      {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-[2px] z-[60] pointer-events-none">
-        <div
-          className="h-full bg-[#2e5a88] transition-[width] duration-150"
-          style={{ width: `${scrollProgress}%` }}
+    <main className="bg-white">
+      {/* ============ ZONE 1 — HERO IMMERSIF ============ */}
+      <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+        <Image
+          src="/images/journeys/paros-hero.jpg"
+          alt="Paros + Antiparos"
+          fill
+          priority
+          className="object-cover"
         />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/60" />
 
-      <Nav activePage="/journeys" />
+        <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 right-6 md:right-12 text-white">
+          <div className="text-[10px] md:text-[11px] tracking-[0.2em] uppercase opacity-70 mb-3 eb-fade-up">
+            Private Journey · 07
+          </div>
 
-      {/* ═══════════════════════════════════════════
-          ECRAN 1 — HERO FICHE
-      ═══════════════════════════════════════════ */}
-      <section ref={heroRef} data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
-        <img
-          src="/paros_01.jpg"
-          alt="Paros and Antiparos, privately, by eb."
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/85 pointer-events-none" />
-
-        {/* Breadcrumb pill (top-left) */}
-        <div className="absolute top-[clamp(100px,15vh,140px)] left-[clamp(24px,6vw,80px)] z-10">
-          <span className="inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] tracking-[0.15em] uppercase text-white font-medium">
-            Featured Journey &middot; 07 &middot; Paros + Antiparos
-          </span>
-        </div>
-
-        {/* Content bottom-left */}
-        <div className="absolute left-[clamp(24px,6vw,80px)] right-[clamp(24px,6vw,80px)] md:right-auto bottom-[clamp(40px,8vh,80px)] max-w-[800px] z-10">
-          <h1
-            className="font-heading text-white uppercase leading-[0.95] tracking-wide"
-            style={{
-              fontSize: "clamp(52px, 9vw, 108px)",
-              letterSpacing: "-0.01em",
-              textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-            }}
-          >
-            Paros + Antiparos,<br />privately.
+          <h1 className="font-anton font-normal uppercase text-[42px] md:text-[64px] leading-[0.9] tracking-[0.02em] mb-4 max-w-[85%] md:max-w-[75%] eb-fade-up eb-delay-100">
+            Paros + Antiparos,<br />Privately.
           </h1>
 
-          <p
-            className="mt-5 font-body text-white/90 text-[17px] md:text-[20px] font-light leading-relaxed max-w-[640px]"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
-            The chicest of the central Cyclades, without ever crossing a crowd.
+          <p className="text-[13px] md:text-[14px] opacity-90 max-w-[480px] leading-[1.5] mb-4 italic font-light eb-fade-up eb-delay-200">
+            Held by the quiet. Found by no one.
           </p>
 
-          <div className="w-16 h-px bg-white/30 my-7" />
-
-          {/* Mood pills */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {["Slow", "Chic", "Discovery"].map((tag) => (
+          <div className="flex gap-1.5 mb-4 eb-fade-up eb-delay-300">
+            {['Slow', 'Chic', 'Discovery'].map((mood) => (
               <span
-                key={tag}
-                className="inline-block bg-white/10 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] border border-white/20 rounded-full px-3.5 py-1.5 font-body text-[10px] tracking-[0.15em] uppercase text-white font-medium"
+                key={mood}
+                className="bg-white/12 border border-white/30 rounded-full px-2.5 py-1 text-[8px] md:text-[9px] tracking-[0.2em] uppercase"
               >
-                {tag}
+                {mood}
               </span>
             ))}
           </div>
 
-          {/* Key facts */}
-          <div className="flex flex-wrap gap-x-7 gap-y-3 font-body text-[11px] tracking-[0.12em] uppercase text-white/85 font-medium mb-7">
-            <span className="inline-flex items-center gap-2"><IconCalendar /> 7 Nights</span>
-            <span className="inline-flex items-center gap-2"><IconMapPin /> Paros + Antiparos</span>
-            <span className="inline-flex items-center gap-2"><IconSun /> May&ndash;October</span>
-            <span className="inline-flex items-center gap-2"><IconUsers /> Couples &middot; Friends &middot; Families</span>
+          <div className="flex flex-wrap items-center gap-x-4 md:gap-x-6 gap-y-2 pt-3 border-t border-white/25 max-w-[820px] eb-fade-up eb-delay-400">
+            <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">7 nights</span>
+            <span className="opacity-40">·</span>
+            <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">May–October</span>
+            <span className="opacity-40">·</span>
+            <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-85">Couples · Friends · Families</span>
+            <span className="opacity-40">·</span>
+            <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase opacity-95 italic relative">
+              From €4,500pp
+              <button
+                onMouseEnter={() => setTooltipOpen(true)}
+                onMouseLeave={() => setTooltipOpen(false)}
+                onClick={() => setTooltipOpen(!tooltipOpen)}
+                className="inline-flex items-center justify-center w-3 h-3 rounded-full border border-white/50 ml-1 text-[7px] not-italic hover:bg-white/10 transition-all"
+                aria-label="Price details"
+              >
+                i
+              </button>
+              {tooltipOpen && (
+                <span className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[280px] bg-white text-black/75 text-[10px] tracking-normal normal-case p-3 rounded shadow-lg z-50 not-italic font-light leading-relaxed">
+                  Includes hand-selected villa, transfers, daily concierge by the eb. studio. Yacht for the day, private chef and bespoke experiences on request. International flights excluded.
+                </span>
+              )}
+              <span className="ml-1">excl. flights</span>
+            </span>
           </div>
 
-          {/* Double CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start sm:items-center">
-            <a
-              href={`/contact?journey=${JOURNEY_SLUG}`}
-              className="inline-flex items-center gap-2 bg-white text-[#2e5a88] px-6 py-3 rounded-full font-body text-[11px] tracking-[0.15em] uppercase font-medium hover:bg-white/90 transition-colors"
-            >
-              Inquire
-              <IconArrowRight />
-            </a>
-            <a
-              href={`/contact?request=pdf&journey=${JOURNEY_SLUG}`}
-              className="inline-flex items-center gap-2 font-body text-[11px] tracking-[0.15em] uppercase text-white/90 hover:text-white font-medium pb-1 border-b border-white/40 hover:border-white/90 transition-colors"
-            >
-              Download the PDF
-              <IconDownload />
-            </a>
+          <div className="text-[9px] opacity-60 mt-2 italic eb-fade-up eb-delay-500">
+            Curated firsthand by the eb. studio, Athens.
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <button
-          type="button"
-          onClick={() => highlightsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
-          aria-label="Scroll to highlights"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
-        >
-          <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 14l-7 7-7-7M12 21V3" />
-          </svg>
-        </button>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          ECRAN 2 — 6 HIGHLIGHTS
-      ═══════════════════════════════════════════ */}
-      <section ref={highlightsRef} id="highlights" className="bg-white py-20 md:py-28 px-6 md:px-12 scroll-mt-20">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-14">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
-              Six Moments from the Week
-            </p>
-            <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4" data-delay="80" />
+      {/* ============ ZONE 2 — MOSAÏQUE BANDE BASSE (5 thumbnails) ============ */}
+      <section className="grid grid-cols-5 gap-[2px] h-[110px] md:h-[140px] bg-white">
+        {[
+          { src: '/images/journeys/paros-villa.jpg', label: 'The villa' },
+          { src: '/images/journeys/paros-naoussa.jpg', label: 'Naoussa' },
+          { src: '/images/journeys/paros-despotiko.jpg', label: 'Despotiko' },
+          { src: '/images/journeys/paros-lefkes.jpg', label: 'Lefkes' },
+          { src: '/images/journeys/paros-stou.jpg', label: 'Stou Beach' },
+        ].map((img, i) => (
+          <div
+            key={i}
+            className="relative cursor-pointer overflow-hidden group"
+          >
+            <Image
+              src={img.src}
+              alt={img.label}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-300" />
+            <div className="absolute bottom-2 left-2 text-white text-[7px] md:text-[9px] tracking-[0.15em] uppercase opacity-90">
+              {img.label}
+            </div>
           </div>
+        ))}
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {highlights.map((h, i) => (
-              <div key={h.title} className="reveal relative group overflow-hidden aspect-[4/5]" data-delay={i * 80}>
-                <img
-                  src={h.image}
-                  alt={h.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7 text-white">
-                  <h3
-                    className="font-heading uppercase leading-[1] tracking-wide mb-2"
-                    style={{
-                      fontSize: "clamp(24px, 2.2vw, 32px)",
-                      letterSpacing: "-0.01em",
-                      textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-                    }}
-                  >
-                    {h.title}
-                  </h3>
-                  <p
-                    className="font-body text-[13px] md:text-[14px] text-white/85 font-light leading-relaxed max-w-[260px]"
-                    style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-                  >
-                    {h.description}
-                  </p>
-                </div>
-              </div>
+      {/* ============ ZONE 3 — THE PROMISE ============ */}
+      <section className="px-8 md:px-10 py-9 bg-white text-center border-b border-black/5 eb-fade-up">
+        <div className="max-w-[640px] mx-auto">
+          <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-2.5 font-light">
+            The Promise
+          </div>
+          <p className="text-[16px] md:text-[18px] leading-[1.4] text-[#2e5a88] font-light">
+            The Greek island that works for everyone. Without ever feeling like everyone.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ ZONE 4 — 3 CHAPITRES (Inter light, sentence case) ============ */}
+      <section className="px-6 md:px-10 pt-11 pb-9 bg-white">
+        <div className="max-w-[720px] mx-auto space-y-8">
+          {[
+            {
+              title: 'A week on the south coast.',
+              body: "Seven nights in a hand-selected villa where the bays stay calm and the chef arrives when you ask. Two evenings in Naoussa, one of them at Mario, the kitchen that defines the Athenian set's summer.",
+            },
+            {
+              title: 'A yacht for the day.',
+              body: 'Twenty minutes across the channel to Antiparos. Then west to Despotiko, the uninhabited islet where ancient ruins sit directly in the sand. Lunch on board in a cove only the crew knows.',
+            },
+            {
+              title: 'The inland, untouched.',
+              body: 'One day for Lefkes, the old Byzantine capital tucked into the hills. Marble alleys, white chapels, lunch at a taverna no one writes about. Afternoon at Antiparos Chora, on the other side of the channel.',
+            },
+          ].map((chapter, i) => (
+            <div key={i} className="eb-fade-up" style={{ transitionDelay: `${i * 150}ms` }}>
+              <h2 className="text-[20px] md:text-[22px] leading-[1.2] text-[#2e5a88] font-light mb-2.5">
+                {chapter.title}
+              </h2>
+              <p className="text-[13px] leading-[1.7] text-black/65 font-light">
+                {chapter.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ============ ZONE 5 — WHAT YOU'LL REMEMBER (beige) ============ */}
+      <section className="px-8 md:px-10 py-9 bg-[#fcf7f1] eb-fade-up">
+        <div className="max-w-[600px] mx-auto text-center">
+          <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-3.5 font-light">
+            What you&apos;ll remember
+          </div>
+          <div className="w-8 h-[0.5px] bg-[#2e5a88] mx-auto mb-5.5" style={{ height: '1px' }} />
+          <div className="flex flex-col gap-2.5">
+            {[
+              "The dinner at Mario, the night the Athenian set showed up unannounced.",
+              "Despotiko at noon, when the ruins turned gold.",
+              "The villa's pool at midnight, no one else awake.",
+            ].map((memory, i) => (
+              <p key={i} className="text-[13px] md:text-[14px] leading-[1.5] text-black/65 italic font-light">
+                {memory}
+              </p>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          ECRAN 3 — THE ROUTE (timeline editoriale)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6 md:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
-              The Route
-            </p>
-            <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4" data-delay="80" />
+      {/* ============ ZONE 6 — A NOTE BEFORE YOU ASK ============ */}
+      <section className="px-8 md:px-10 py-8 bg-white text-center border-t border-black/5 eb-fade-up">
+        <div className="max-w-[580px] mx-auto">
+          <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 mb-2.5 font-light">
+            A note before you ask
           </div>
-
-          {/* Desktop: horizontal timeline */}
-          <div className="hidden md:block relative">
-            <div className="absolute top-[11px] left-[5%] right-[5%] h-px bg-[#2e5a88]/25" />
-            <div className="grid grid-cols-5 gap-4 relative">
-              {route.map((r, i) => (
-                <div key={r.label} className="reveal flex flex-col items-center text-center" data-delay={i * 100}>
-                  <div className="relative">
-                    <div className="w-[10px] h-[10px] rounded-full bg-[#2e5a88] ring-4 ring-[#fcf7f1]" />
-                  </div>
-                  <p className="mt-6 font-heading uppercase text-[#2e5a88] text-[18px] tracking-wide leading-[1]" style={{ letterSpacing: "-0.01em" }}>
-                    {r.label}
-                  </p>
-                  <p className="mt-2 font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">
-                    {r.sub}
-                  </p>
-                  <p className="mt-3 font-body text-[13px] text-black/60 font-light leading-relaxed max-w-[180px]">
-                    {r.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile: vertical timeline */}
-          <div className="md:hidden relative pl-6">
-            <div className="absolute left-[4px] top-1 bottom-1 w-px bg-[#2e5a88]/25" />
-            <ul className="space-y-8">
-              {route.map((r) => (
-                <li key={r.label} className="reveal relative">
-                  <div className="absolute -left-6 top-1.5 w-[9px] h-[9px] rounded-full bg-[#2e5a88] ring-4 ring-[#fcf7f1]" />
-                  <p className="font-heading uppercase text-[#2e5a88] text-[22px] leading-[1]" style={{ letterSpacing: "-0.01em" }}>
-                    {r.label}
-                  </p>
-                  <p className="mt-1.5 font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">
-                    {r.sub}
-                  </p>
-                  <p className="mt-2 font-body text-[14px] text-black/60 font-light leading-relaxed">
-                    {r.detail}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          ECRAN 4 — A NOTE FROM eb.
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-24 px-6">
-        <div className="max-w-[720px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium">
-            A Note
+          <p className="text-[13px] leading-[1.7] text-black/65 font-light">
+            For those who&apos;ve done Mykonos. And want what comes next.
           </p>
-          <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-4 mb-10" data-delay="80" />
-
-          <p className="reveal font-body text-[18px] md:text-[20px] text-black/70 font-light leading-relaxed" data-delay="120">
-            Paros and Antiparos, the Cyclades the Italian set has been keeping to itself for twenty years. We know the villa. We know the yacht captain, the chef, the table at Mario. You fly in. We have done the rest.
-          </p>
-
-          <p className="reveal mt-8 font-body italic text-[#2e5a88] text-[14px] font-medium" data-delay="200">
-            eb. Athens.
+          <p className="text-[11px] text-black/40 mt-2 font-light">
+            35-min flight from Athens. Every journey shaped around you. Best months: June and September.
           </p>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          ECRAN 5 — CTA FINAL (pleine largeur sombre)
-      ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
-        <img
-          src="/paros_02.jpg"
-          alt="Ready when you are"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90 pointer-events-none" />
+      {/* ============ ZONE 7 — CTA FINAL (Anton sombre) ============ */}
+      <section className="relative px-8 md:px-10 py-14 bg-gradient-to-br from-[#1a3552] to-[#2e5a88] text-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/50" />
 
-        <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
-          <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            Inquire
-          </span>
-          <h2
-            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
-            data-delay="80"
-            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
-            Ready when you are.
+        <div className="relative eb-fade-in">
+          <h2 className="font-anton font-normal uppercase text-[34px] md:text-[44px] leading-[0.95] tracking-[0.02em] text-white mb-3">
+            Ready when<br />you are.
           </h2>
-          <p
-            className="reveal mt-6 max-w-[560px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
-            data-delay="150"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-          >
+          <p className="text-[13px] text-white/85 max-w-[380px] mx-auto mb-6 leading-[1.6] font-light">
             Tell us when, with whom, and how you want to feel. We shape the rest.
           </p>
-          <a
-            href={`/contact?journey=${JOURNEY_SLUG}`}
-            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors door-cta"
-            data-delay="220"
-          >
-            Start the conversation &rarr;
-          </a>
+          <div className="flex justify-center mb-4">
+            <Link
+              href="/contact?journey=paros-antiparos"
+              className="bg-white text-[#2e5a88] px-6 py-2.5 rounded-full text-[10px] font-medium tracking-[0.2em] uppercase transition-all hover:scale-[1.03] hover:shadow-lg"
+            >
+              Inquire →
+            </Link>
+          </div>
+          <p className="text-[10px] text-white/60 font-light">
+            Or reach us directly:{' '}
+            <a href="mailto:hello@emmabonnefous.com" className="hover:text-white transition-colors">
+              hello@emmabonnefous.com
+            </a>{' '}
+            ·{' '}
+            <a
+              href="https://wa.me/33673550155"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              WhatsApp +33 6 73 55 01 55
+            </a>
+          </p>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          STICKY MOBILE BAR
-      ═══════════════════════════════════════════ */}
-      <div
-        className={`md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] border-t border-black/10 px-4 py-3 flex items-center justify-between z-40 shadow-lg transition-transform duration-300 ${
-          stickyVisible ? "translate-y-0" : "translate-y-full"
-        }`}
-      >
-        <div className="flex flex-col pr-3">
-          <span className="font-body text-[10px] tracking-[0.15em] uppercase text-black/50 font-medium">7 nights &middot; Paros + Antiparos</span>
-          <span className="font-body text-[13px] text-[#2e5a88] font-medium">Designed around you</span>
-        </div>
-        <a
-          href={`/contact?journey=${JOURNEY_SLUG}`}
-          className="shrink-0 inline-flex items-center gap-2 bg-[#2e5a88] text-white px-5 py-2.5 rounded-full font-body text-[11px] tracking-[0.15em] uppercase font-medium"
-        >
-          Inquire
-          <IconArrowRight />
-        </a>
-      </div>
+      {/* ============ ZONE 8 — CROSS-SELL ITINÉRAIRES (3 cards) ============ */}
+      <section className="px-6 md:px-10 py-10 bg-white eb-fade-up">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="text-center mb-6">
+            <div className="text-[9px] tracking-[0.25em] uppercase text-black/40 font-light">
+              You might also like
+            </div>
+          </div>
 
-      {/* ═══════════════════════════════════════════
-          FOOTER
-      ═══════════════════════════════════════════ */}
-      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
-        <NewsletterBanner />
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="border-t border-white/30" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {[
+              {
+                href: '/journeys/athens-slowly',
+                img: '/images/journeys/athens-card.jpg',
+                category: 'Cultural · Slow',
+                title: 'Athens, Slowly',
+                meta: '5 nights · From €3,200pp',
+              },
+              {
+                href: '/journeys/mykonos-timed-right',
+                img: '/images/journeys/mykonos-card.jpg',
+                category: 'Festive · Social',
+                title: 'Mykonos, Timed Right',
+                meta: '5 nights · From €5,500pp',
+              },
+              {
+                href: '/journeys/a-family-summer-greek-style',
+                img: '/images/journeys/family-card.jpg',
+                category: 'Family · Multi-gen',
+                title: 'A Family Summer',
+                meta: '10 nights · From €4,800pp',
+              },
+            ].map((card, i) => (
+              <Link
+                key={i}
+                href={card.href}
+                className="relative aspect-[4/3] overflow-hidden cursor-pointer group block"
+              >
+                <Image
+                  src={card.img}
+                  alt={card.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                  <div className="text-[8px] tracking-[0.2em] uppercase opacity-70 mb-1">
+                    {card.category}
+                  </div>
+                  <div className="font-anton font-normal uppercase text-[16px] leading-[1] mb-1 transition-transform duration-500 group-hover:-translate-y-1">
+                    {card.title}
+                  </div>
+                  <div className="text-[9px] opacity-85 tracking-[0.05em] font-light">
+                    {card.meta} →
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
-          <div className="flex flex-col items-center md:items-start gap-4 order-1">
-            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
-            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
-              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
-            </p>
-            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
-              hello@emmabonnefous.com
-            </a>
-          </div>
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
-            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
-            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
-          </div>
-          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
-            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
-              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
-              <span className="py-2">&middot;</span>
-              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
-            </div>
-            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
-              <span className="py-2">&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
-            </div>
-          </div>
-          <div className="flex md:hidden flex-col items-center gap-3 order-4">
-            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">
-              hello@emmabonnefous.com
-            </a>
-            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
-              <span className="py-2">&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
-            </div>
-            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
-              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
-            </p>
-          </div>
+      </section>
+
+      {/* ============ ZONE 9 — CTA COLLECTION (mini-bande beige) ============ */}
+      <section className="px-8 md:px-10 py-7 bg-[#fcf7f1] text-center">
+        <div className="max-w-[600px] mx-auto flex flex-wrap justify-center items-center gap-3.5">
+          <span className="text-[12px] text-black/65 italic font-light">
+            Or simply rent a villa, charter a yacht?
+          </span>
+          <Link
+            href="/collection"
+            className="text-[#2e5a88] text-[11px] tracking-[0.15em] uppercase underline decoration-[#2e5a88]/40 hover:decoration-[#2e5a88] transition-all"
+          >
+            Discover the Collection →
+          </Link>
         </div>
-      </footer>
+      </section>
+
     </main>
   );
 }

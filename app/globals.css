@@ -18,6 +18,8 @@
   /* Typography */
   --font-heading: var(--font-anton);
   --font-body:    var(--font-inter);
+  --font-anton:   var(--font-anton);
+  --font-inter:   var(--font-inter);
 
   /* Spacing & layout */
   --radius-sm: 2px;
@@ -255,3 +257,39 @@ h1, h2 {
     animation: none !important;
   }
 }
+
+/* ============ EB Animations ============ */
+
+.eb-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eb-fade-up.eb-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eb-fade-in {
+  opacity: 0;
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eb-fade-in.eb-visible {
+  opacity: 1;
+}
+
+.eb-delay-100 { transition-delay: 100ms; }
+.eb-delay-200 { transition-delay: 200ms; }
+.eb-delay-300 { transition-delay: 300ms; }
+.eb-delay-400 { transition-delay: 400ms; }
+.eb-delay-500 { transition-delay: 500ms; }
+
+/* Hero text initial state (animate on load) */
+@keyframes ebHeroIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
