@@ -293,3 +293,17 @@ h1, h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ============ Scroll Chevron Animation ============ */
+@keyframes ebChevronBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+.eb-scroll-chevron {
+  animation: ebChevronBounce 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eb-scroll-chevron { animation: none !important; }
+}
+

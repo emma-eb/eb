@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Nav from '../../components/Nav';
+import NewsletterBanner from '../../components/NewsletterBanner';
 
 export default function ParosAntiparosPage() {
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -27,10 +29,11 @@ export default function ParosAntiparosPage() {
   }, []);
 
   return (
-    <main className="bg-white">
+    <main className="flex flex-col min-h-screen bg-white">
+      <Nav activePage="/journeys" />
 
-      {/* ============ ZONE 1 — HERO IMMERSIF ============ */}
-      <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+      {/* ============ ZONE 1 — HERO IMMERSIF + BREADCRUMB + CHEVRON ============ */}
+      <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden">
         <Image
           src="/images/journeys/paros-hero.jpg"
           alt="Paros + Antiparos"
@@ -38,9 +41,24 @@ export default function ParosAntiparosPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
-        <div className="absolute bottom-10 md:bottom-14 left-6 md:left-12 right-6 md:right-12 text-white">
+        {/* ZONE 0 — BREADCRUMB (ancré sous la nav, sur le hero) */}
+        <div className="absolute top-[80px] md:top-[90px] left-6 md:left-12 z-40">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-white/75 font-light">
+            <Link
+              href="/journeys"
+              className="hover:text-white transition-colors flex items-center gap-1"
+            >
+              <span className="text-[12px] leading-none">&larr;</span>
+              <span>Private Journeys</span>
+            </Link>
+            <span className="opacity-40">/</span>
+            <span className="opacity-70">Paros + Antiparos</span>
+          </nav>
+        </div>
+
+        <div className="absolute bottom-12 md:bottom-16 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="text-[10px] md:text-[11px] tracking-[0.25em] uppercase opacity-75 mb-4 eb-fade-up">
             Private Journey · 03
           </div>
@@ -67,14 +85,14 @@ export default function ParosAntiparosPage() {
           <div className="flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 pt-4 border-t border-white/25 max-w-[920px] eb-fade-up eb-delay-400">
             <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">7 nights</span>
             <span className="opacity-40">·</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">May–October</span>
+            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">May&ndash;October</span>
             <span className="opacity-40">·</span>
             <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">35 min from Athens</span>
             <span className="opacity-40">·</span>
             <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">Couples · Friends · Families</span>
             <span className="opacity-40">·</span>
             <span className="text-[10px] tracking-[0.2em] uppercase opacity-95 italic relative">
-              From €6,500pp
+              From &euro;6,500pp
               <button
                 onMouseEnter={() => setTooltipOpen(true)}
                 onMouseLeave={() => setTooltipOpen(false)}
@@ -97,9 +115,29 @@ export default function ParosAntiparosPage() {
             Curated firsthand by the eb. studio, Athens. Best in June and September, when the island breathes.
           </div>
         </div>
+
+        {/* CHEVRON SCROLL ANIMÉ */}
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className="text-white/60"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 8L10 13L15 8"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       </section>
 
-      {/* ============ ZONE 2 — THE PROMISE (intro courte) ============ */}
+      {/* ============ ZONE 2 — THE PROMISE ============ */}
       <section className="px-8 md:px-10 py-14 md:py-20 bg-white text-center eb-fade-up">
         <div className="max-w-[680px] mx-auto">
           <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-5 font-light">
@@ -114,7 +152,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 3 — KEY VISUAL #1 (la villa) ============ */}
-      <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
+      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
         <Image
           src="/images/journeys/paros-villa.jpg"
           alt="The villa"
@@ -139,7 +177,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 5 — KEY VISUAL #2 (yacht/Despotiko) ============ */}
-      <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
+      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
         <Image
           src="/images/journeys/paros-despotiko.jpg"
           alt="Despotiko by sea"
@@ -164,7 +202,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 7 — KEY VISUAL #3 (Lefkes/Antiparos) ============ */}
-      <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
+      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
         <Image
           src="/images/journeys/paros-lefkes.jpg"
           alt="Lefkes inland"
@@ -192,7 +230,6 @@ export default function ParosAntiparosPage() {
           {/* Séparateur fin */}
           <div className="w-10 h-px bg-[#2e5a88]/30 mx-auto my-12 md:my-16" />
 
-          {/* What you'll remember intégré */}
           <div className="text-center eb-fade-up">
             <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-5 font-light">
               What you&apos;ll remember
@@ -214,8 +251,8 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 9 — CTA FINAL (image plein cadre sombre) ============ */}
-      <section className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
-        {/* TODO: remplacer par vraie photo Emma (paros-cta.jpg crépuscule atmosphérique) */}
+      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
+        {/* TODO: remplacer par vraie photo paros-cta.jpg (crépuscule atmosphérique) */}
         <Image
           src="/images/journeys/paros-naoussa.jpg"
           alt="Ready when you are"
@@ -240,7 +277,7 @@ export default function ParosAntiparosPage() {
                 href="/contact?journey=paros-antiparos"
                 className="bg-white text-[#2e5a88] px-7 py-3 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-lg"
               >
-                Inquire →
+                Inquire &rarr;
               </Link>
             </div>
             <p className="text-[10px] text-white/60 font-light">
@@ -315,7 +352,7 @@ export default function ParosAntiparosPage() {
                     {card.title}
                   </div>
                   <div className="text-[10px] opacity-85 tracking-[0.05em] font-light">
-                    {card.meta} →
+                    {card.meta} &rarr;
                   </div>
                 </div>
               </Link>
@@ -333,11 +370,61 @@ export default function ParosAntiparosPage() {
               href="/collection"
               className="text-[#2e5a88] text-[11px] tracking-[0.2em] uppercase underline decoration-[#2e5a88]/40 hover:decoration-[#2e5a88] transition-all font-light"
             >
-              Discover the Collection →
+              Discover the Collection &rarr;
             </Link>
           </div>
         </div>
       </section>
+
+      {/* ============ FOOTER (copie du pattern /journeys) ============ */}
+      <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
+        <NewsletterBanner />
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="border-t border-white/30" />
+        </div>
+        <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
+          <div className="flex flex-col items-center md:items-start gap-4 order-1">
+            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
+              hello@emmabonnefous.com
+            </a>
+          </div>
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
+            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
+            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
+            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
+            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
+          </div>
+          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
+              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
+              <span className="py-2">&middot;</span>
+              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
+            </div>
+            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+          </div>
+          <div className="flex md:hidden flex-col items-center gap-3 order-4">
+            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">
+              hello@emmabonnefous.com
+            </a>
+            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
+              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
+              <span className="py-2">&middot;</span>
+              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
+            </div>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+          </div>
+        </div>
+      </footer>
 
     </main>
   );
