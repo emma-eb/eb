@@ -150,7 +150,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section className="relative w-full overflow-hidden">
         <img
-          src="/despina-galani-x_DmjHZGB7M-unsplash.jpg"
+          src="/134_terrace_privatebeach.jpg"
           alt="Greece production scene"
           className="w-full h-[35vh] md:h-[60vh] object-cover object-center"
           loading="lazy"

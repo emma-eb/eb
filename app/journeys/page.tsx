@@ -27,11 +27,11 @@ const featured: Journey[] = [
   {
     slug: "mykonos-timed-right",
     image: "/mykonos%20villa.jpg",
-    number: "06",
-    overline: "Featured Journey \u00b7 06",
+    number: "02",
+    overline: "Featured Journey \u00b7 02",
     title: "Mykonos,\nTimed Right.",
     description: "The beach club table, the after-party invitation, the right night to be on the island. Five nights in a private villa, timed by the eb. studio.",
-    meta: "5 Nights \u00b7 Mykonos \u00b7 June\u2013September",
+    meta: "5 Nights \u00b7 Mykonos \u00b7 May\u2013September",
   },
 ];
 
@@ -39,17 +39,17 @@ const secondary: Journey[] = [
   {
     slug: "a-slow-honeymoon-in-the-cyclades",
     image: "/MILOS_03.jpg",
-    number: "02",
-    overline: "Private Journey \u00b7 02",
-    title: "A Slow Honeymoon\nin the Cyclades.",
+    number: "03",
+    overline: "Private Journey \u00b7 03",
+    title: "A Honeymoon\nin the Cyclades.",
     description: "No rose petals. Just stone, wind, sea, and the kind of week that starts a marriage right.",
     meta: "7 Nights \u00b7 Milos + Folegandros \u00b7 May\u2013September",
   },
   {
     slug: "paros-antiparos-privately",
     image: "/paros_01.jpg",
-    number: "03",
-    overline: "Private Journey \u00b7 03",
+    number: "04",
+    overline: "Private Journey \u00b7 04",
     title: "Paros + Antiparos,\nPrivately.",
     description: "The Greek island that works for everyone. Without ever feeling like everyone.",
     meta: "7 Nights \u00b7 Paros + Antiparos \u00b7 May\u2013October",
@@ -57,8 +57,8 @@ const secondary: Journey[] = [
   {
     slug: "athens-slowly",
     image: "/tourism-revenue.jpg",
-    number: "04",
-    overline: "Private Journey \u00b7 04",
+    number: "05",
+    overline: "Private Journey \u00b7 05",
     title: "Athens, Slowly.",
     description: "The city seen at the pace it was actually built for. Five nights, one base, no ferries.",
     meta: "5 Nights \u00b7 Athens + Day Trips \u00b7 Year-round",
@@ -66,15 +66,16 @@ const secondary: Journey[] = [
   {
     slug: "a-family-summer-greek-style",
     image: "/familly%20journey.jpg",
-    number: "05",
-    overline: "Private Journey \u00b7 05",
+    number: "06",
+    overline: "Private Journey \u00b7 06",
     title: "A Family Summer,\nGreek-Style.",
     description: "A villa, a yacht for the day, and a coastline that works for eight-year-olds and grandparents alike.",
     meta: "10 Nights \u00b7 Porto Heli + Saronic \u00b7 April\u2013October",
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",
-    image: "/yatch_page%20collection_2.png",
+    // TODO: remplacer par photo drone BESTIA MY ou terrasse yacht - demander a Emma
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=85",
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "A Week in the\nCyclades, By Sea.",
@@ -103,11 +104,8 @@ function FeaturedBlock({ j }: { j: Journey }) {
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
             {j.overline}
           </span>
-          <p className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            {j.meta}
-          </p>
           <h2
-            className="font-heading text-white uppercase leading-[0.95] mb-5"
+            className="font-heading text-white uppercase leading-[0.95] mb-4"
             style={{
               fontSize: "clamp(40px, 6vw, 80px)",
               letterSpacing: "-0.01em",
@@ -121,6 +119,9 @@ function FeaturedBlock({ j }: { j: Journey }) {
               </span>
             ))}
           </h2>
+          <p className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 font-medium mb-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            {j.meta}
+          </p>
           <p className="font-body text-white/85 text-[14px] md:text-[16px] font-light leading-relaxed max-w-[520px] mb-5" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             {j.description}
           </p>
@@ -131,8 +132,8 @@ function FeaturedBlock({ j }: { j: Journey }) {
               </span>
             </div>
           )}
-          <span className="inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 group-hover:border-white transition-colors">
-            Discover the journey &rarr;
+          <span className="eb-cta-link font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium">
+            Discover the journey <span className="eb-cta-arrow">&rarr;</span>
           </span>
         </div>
       </div>
@@ -172,14 +173,14 @@ function SecondaryCard({ j }: { j: Journey }) {
             </span>
           ))}
         </h3>
-        <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
-          {j.description}
-        </p>
-        <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/60 font-medium font-body">
+        <p className="mt-2 text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/60 font-medium font-body">
           {j.meta}
         </p>
-        <span className="mt-4 inline-block text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white border-b border-white/70 pb-1 group-hover:border-white transition-colors w-fit font-body">
-          Discover the journey &rarr;
+        <p className="mt-3 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
+          {j.description}
+        </p>
+        <span className="eb-cta-link mt-4 text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white w-fit font-body">
+          Discover the journey <span className="eb-cta-arrow">&rarr;</span>
         </span>
       </div>
     </a>
@@ -301,7 +302,7 @@ export default function JourneysPage() {
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
           <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            The Patmos Network
+            Patmos · An island apart
           </span>
           <h2
             className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
@@ -315,14 +316,14 @@ export default function JourneysPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            A handful of residences and experiences on the island that the Athenian families return to every August. Reachable by helicopter from Athens. By introduction, only.
+            A handful of residences on the island where the eb. studio spends its summers, and the Athenian families have returned to for generations. Reachable by helicopter from Athens. By introduction, only.
           </p>
           <a
             href="/contact?type=introduction"
-            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors"
+            className="reveal eb-cta-link mt-8 font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium"
             data-delay="260"
           >
-            Reach out privately &rarr;
+            Reach out privately <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
@@ -331,10 +332,10 @@ export default function JourneysPage() {
           BLOC 5 — CTA FINAL (pleine largeur sombre)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden">
-        {/* TODO: restaurer l'image originale Santorini blanc / mer calme - demander à Emma */}
+        {/* TODO: remplacer par photo bateau qui part au large - demander a Emma */}
         <img
-          src="https://images.unsplash.com/photo-1515861461225-1488dfdaf0a8?auto=format&fit=crop&w=1920&q=85"
-          alt="Greece, designed for you"
+          src="https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1920&q=85"
+          alt="A boat at the horizon"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
@@ -342,7 +343,7 @@ export default function JourneysPage() {
 
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-6">
           <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-            Yours, from scratch
+            Yours to shape
           </span>
           <h2
             className="reveal font-heading text-[36px] md:text-[56px] lg:text-[64px] leading-[0.95] text-white uppercase"
@@ -360,10 +361,10 @@ export default function JourneysPage() {
           </p>
           <a
             href="/contact"
-            className="reveal mt-8 inline-block font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-white/80 hover:border-white transition-colors door-cta"
+            className="reveal eb-cta-link mt-8 font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium"
             data-delay="220"
           >
-            Start the conversation &rarr;
+            Start the conversation <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
