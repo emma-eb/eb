@@ -10,22 +10,28 @@ export default function ParosAntiparosPage() {
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
+    const revealObs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('eb-visible');
-          }
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          const d = parseInt(el.dataset.delay || '0', 10);
+          setTimeout(() => {
+            el.classList.add('visible');
+            setTimeout(() => el.classList.add('done'), 800);
+          }, d);
+          revealObs.unobserve(el);
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
     );
+    revealEls.forEach((el) => revealObs.observe(el));
 
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    return () => revealObs.disconnect();
   }, []);
 
   return (
@@ -43,9 +49,9 @@ export default function ParosAntiparosPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
-        {/* ZONE 0 — BREADCRUMB (ancré sous la nav, sur le hero) */}
+        {/* ZONE 0 — BREADCRUMB */}
         <div className="absolute top-[80px] md:top-[90px] left-6 md:left-12 z-40">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-white/75 font-light">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-white/75 font-light">
             <Link
               href="/journeys"
               className="hover:text-white transition-colors flex items-center gap-1"
@@ -59,19 +65,19 @@ export default function ParosAntiparosPage() {
         </div>
 
         <div className="absolute bottom-12 md:bottom-16 left-6 md:left-12 right-6 md:right-12 text-white">
-          <div className="text-[10px] md:text-[11px] tracking-[0.25em] uppercase opacity-75 mb-4 eb-fade-up">
-            Private Journey · 03
+          <div className="text-[10px] md:text-[11px] tracking-[0.25em] uppercase opacity-75 mb-4 reveal">
+            Private Journey · 04
           </div>
 
-          <h1 className="font-anton font-normal uppercase text-[44px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-5 max-w-[88%] md:max-w-[75%] eb-fade-up eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[44px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-5 max-w-[88%] md:max-w-[75%] reveal" data-delay="100">
             Paros + Antiparos,<br />Privately.
           </h1>
 
-          <p className="text-[14px] md:text-[15px] opacity-90 max-w-[480px] leading-[1.5] mb-5 italic font-light eb-fade-up eb-delay-200">
+          <p className="text-[14px] md:text-[15px] opacity-90 max-w-[480px] leading-[1.5] mb-5 font-light reveal" data-delay="200">
             Held by the quiet. Found by no one.
           </p>
 
-          <div className="flex gap-1.5 mb-5 eb-fade-up eb-delay-300">
+          <div className="flex gap-1.5 mb-5 reveal" data-delay="300">
             {['Slow', 'Chic', 'Discovery'].map((mood) => (
               <span
                 key={mood}
@@ -82,28 +88,26 @@ export default function ParosAntiparosPage() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 pt-4 border-t border-white/25 max-w-[920px] eb-fade-up eb-delay-400">
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">7 nights</span>
+          <div className="flex flex-wrap items-center gap-x-4 md:gap-x-5 gap-y-2 pt-4 border-t border-white/25 max-w-[920px] reveal" data-delay="400">
+            <span className="text-[11px] md:text-[12px] tracking-[0.2em] uppercase opacity-85">7 nights</span>
             <span className="opacity-40">·</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">May&ndash;October</span>
+            <span className="text-[11px] md:text-[12px] tracking-[0.2em] uppercase opacity-85">May&ndash;October</span>
             <span className="opacity-40">·</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">35 min from Athens</span>
+            <span className="text-[11px] md:text-[12px] tracking-[0.2em] uppercase opacity-85">Couples · Friends · Families</span>
             <span className="opacity-40">·</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-85">Couples · Friends · Families</span>
-            <span className="opacity-40">·</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase opacity-95 italic relative">
+            <span className="text-[11px] md:text-[12px] tracking-[0.2em] uppercase opacity-95 relative">
               From &euro;6,500pp
               <button
                 onMouseEnter={() => setTooltipOpen(true)}
                 onMouseLeave={() => setTooltipOpen(false)}
                 onClick={() => setTooltipOpen(!tooltipOpen)}
-                className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-white/50 ml-1.5 text-[7px] not-italic hover:bg-white/15 transition-all"
+                className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full border border-white/50 ml-1.5 text-[7px] hover:bg-white/15 transition-all"
                 aria-label="Price details"
               >
                 i
               </button>
               {tooltipOpen && (
-                <span className="absolute bottom-7 left-1/2 -translate-x-1/2 w-[280px] bg-white text-black/75 text-[10px] tracking-normal normal-case p-3 rounded shadow-xl z-50 not-italic font-light leading-relaxed">
+                <span className="absolute bottom-7 left-1/2 -translate-x-1/2 w-[280px] bg-white text-black/75 text-[10px] tracking-normal normal-case p-3 rounded shadow-xl z-50 font-light leading-relaxed">
                   Includes hand-selected villa, transfers, daily concierge by the eb. studio. Yacht for the day, private chef and bespoke experiences on request. International flights excluded.
                 </span>
               )}
@@ -111,7 +115,7 @@ export default function ParosAntiparosPage() {
             </span>
           </div>
 
-          <div className="text-[10px] opacity-65 mt-3 italic font-light eb-fade-up eb-delay-500">
+          <div className="text-[11px] opacity-65 mt-3 font-light reveal" data-delay="500">
             Curated firsthand by the eb. studio, Athens. Best in June and September, when the island breathes.
           </div>
         </div>
@@ -138,123 +142,104 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 2 — THE PROMISE ============ */}
-      <section className="px-8 md:px-10 py-14 md:py-20 bg-white text-center eb-fade-up">
+      <section className="px-8 md:px-10 py-14 md:py-20 bg-white text-center">
         <div className="max-w-[680px] mx-auto">
-          <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-5 font-light">
+          <div className="reveal text-[10px] tracking-[0.3em] uppercase text-black/40 mb-5 font-light">
             The Promise
           </div>
-          <div className="w-10 h-px bg-[#2e5a88] mx-auto mb-7" />
-          <p className="text-[20px] md:text-[26px] leading-[1.35] text-[#2e5a88] font-light">
+          <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mb-7" data-delay="100" />
+          <p className="reveal text-[20px] md:text-[26px] leading-[1.35] text-[#2e5a88] font-light" data-delay="200">
             The Greek island that works for everyone.<br className="hidden md:block" />
             Without ever feeling like everyone.
           </p>
         </div>
       </section>
 
-      {/* ============ ZONE 3 — KEY VISUAL #1 (la villa) ============ */}
+      {/* ============ ZONE 3 — KEY VISUAL (1 seule grande image) ============ */}
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
         <Image
           src="/images/journeys/paros-villa.jpg"
-          alt="The villa"
+          alt="Paros + Antiparos"
           fill
           className="object-cover"
         />
       </section>
 
-      {/* ============ ZONE 4 — CHAPITRE 1 ============ */}
-      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
-        <div className="max-w-[680px] mx-auto eb-fade-up">
-          <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-3 font-light">
-            Chapter one
-          </div>
-          <h2 className="text-[24px] md:text-[30px] leading-[1.2] text-[#2e5a88] font-light mb-5">
-            A week on the south coast.
-          </h2>
-          <p className="text-[14px] md:text-[15px] leading-[1.75] text-black/65 font-light">
-            Seven nights in a hand-selected villa where the bays stay calm and the chef arrives when you ask. Two evenings in Naoussa, one at the table the Athenian set keeps for itself.
-          </p>
-        </div>
-      </section>
+      {/* ============ ZONE 4 — THE JOURNEY (3 vignettes cote a cote) ============ */}
+      <section className="bg-white py-14 md:py-20">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
 
-      {/* ============ ZONE 5 — KEY VISUAL #2 (yacht/Despotiko) ============ */}
-      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
-        <Image
-          src="/images/journeys/paros-despotiko.jpg"
-          alt="Despotiko by sea"
-          fill
-          className="object-cover"
-        />
-      </section>
-
-      {/* ============ ZONE 6 — CHAPITRE 2 ============ */}
-      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
-        <div className="max-w-[680px] mx-auto eb-fade-up">
-          <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-3 font-light">
-            Chapter two
-          </div>
-          <h2 className="text-[24px] md:text-[30px] leading-[1.2] text-[#2e5a88] font-light mb-5">
-            A yacht for the day.
-          </h2>
-          <p className="text-[14px] md:text-[15px] leading-[1.75] text-black/65 font-light">
-            Twenty minutes across the channel to Antiparos. Then west to Despotiko, the uninhabited islet where ancient ruins sit directly in the sand. Lunch on board in a cove only the crew knows.
-          </p>
-        </div>
-      </section>
-
-      {/* ============ ZONE 7 — KEY VISUAL #3 (Lefkes/Antiparos) ============ */}
-      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
-        <Image
-          src="/images/journeys/paros-lefkes.jpg"
-          alt="Lefkes inland"
-          fill
-          className="object-cover"
-        />
-      </section>
-
-      {/* ============ ZONE 8 — CHAPITRE 3 + WHAT YOU'LL REMEMBER ============ */}
-      <section className="px-6 md:px-10 py-16 md:py-24 bg-white">
-        <div className="max-w-[680px] mx-auto">
-
-          <div className="eb-fade-up">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-3 font-light">
-              Chapter three
+          <div className="text-center mb-10 md:mb-14">
+            <div className="reveal text-[10px] tracking-[0.3em] uppercase text-black/40 mb-4 font-light">
+              The Journey
             </div>
-            <h2 className="text-[24px] md:text-[30px] leading-[1.2] text-[#2e5a88] font-light mb-5">
-              The inland, untouched.
-            </h2>
-            <p className="text-[14px] md:text-[15px] leading-[1.75] text-black/65 font-light">
-              One day for Lefkes, the old Byzantine capital tucked into the hills. Marble alleys, white chapels, lunch at a taverna no one writes about. Afternoon at Antiparos Chora, on the other side of the channel.
-            </p>
+            <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto" data-delay="100" />
           </div>
 
-          {/* Séparateur fin */}
-          <div className="w-10 h-px bg-[#2e5a88]/30 mx-auto my-12 md:my-16" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                tag: 'THE COAST',
+                img: '/images/journeys/paros-naoussa.jpg',
+                title: 'A week on the south coast.',
+                body: 'Seven nights in a hand-selected villa where the bays stay calm. Evenings in Naoussa, at the table the Athenian set keeps for itself.',
+                memory: 'The night the Athenian set showed up unannounced.',
+              },
+              {
+                tag: 'THE SEA',
+                img: '/images/journeys/paros-despotiko.jpg',
+                title: 'A yacht for the day.',
+                body: 'Twenty minutes across the channel to Antiparos, then west to Despotiko, the uninhabited islet where ancient ruins sit in the sand.',
+                memory: 'Despotiko at noon, when the ruins turned gold.',
+              },
+              {
+                tag: 'THE INLAND',
+                img: '/images/journeys/paros-lefkes.jpg',
+                title: 'Lefkes, untouched.',
+                body: 'One day for the old Byzantine capital tucked into the hills. Marble alleys, white chapels, lunch at a taverna no one writes about.',
+                memory: "The villa's pool at midnight, no one else awake.",
+              },
+            ].map((moment, i) => (
+              <div
+                key={i}
+                className="flex flex-col reveal"
+                data-delay={i * 120}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden mb-5 group">
+                  <Image
+                    src={moment.img}
+                    alt={moment.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
 
-          <div className="text-center eb-fade-up">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-5 font-light">
-              What you&apos;ll remember
-            </div>
-            <div className="flex flex-col gap-3">
-              {[
-                'The dinner in Naoussa, the night the Athenian set showed up unannounced.',
-                'Despotiko at noon, when the ruins turned gold.',
-                "The villa's pool at midnight, no one else awake.",
-              ].map((memory, i) => (
-                <p key={i} className="text-[14px] md:text-[15px] leading-[1.6] text-black/60 italic font-light">
-                  {memory}
+                <div className="text-[10px] tracking-[0.3em] uppercase text-[#2e5a88] mb-3 font-medium">
+                  {moment.tag}
+                </div>
+
+                <h3 className="text-[20px] md:text-[22px] leading-[1.2] text-[#2e5a88] font-light mb-3">
+                  {moment.title}
+                </h3>
+
+                <p className="text-[13px] md:text-[14px] leading-[1.65] text-black/65 font-light mb-4">
+                  {moment.body}
                 </p>
-              ))}
-            </div>
-          </div>
 
+                <p className="text-[12px] leading-[1.5] text-black/40 font-light pl-3 border-l border-[#2e5a88]/30">
+                  {moment.memory}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ============ ZONE 9 — CTA FINAL (image plein cadre sombre) ============ */}
+      {/* ============ ZONE 5 — CTA FINAL (image plein cadre sombre) ============ */}
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden">
-        {/* TODO: remplacer par vraie photo paros-cta.jpg (crépuscule atmosphérique) */}
+        {/* TODO: remplacer par vraie photo paros-cta.jpg (crepuscule atmospherique) */}
         <Image
-          src="/images/journeys/paros-naoussa.jpg"
+          src="/images/journeys/paros-stou.jpg"
           alt="Ready when you are"
           fill
           className="object-cover"
@@ -262,9 +247,9 @@ export default function ParosAntiparosPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
 
         <div className="relative z-10 h-full flex items-center justify-center px-8 md:px-10">
-          <div className="text-center max-w-[640px] eb-fade-in">
+          <div className="text-center max-w-[640px] reveal">
             <div className="text-[10px] tracking-[0.3em] uppercase text-white/70 mb-5 font-light">
-              Yours, from scratch
+              Yours to shape
             </div>
             <h2 className="font-anton font-normal uppercase text-[44px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">
               Ready when<br />you are.
@@ -272,43 +257,28 @@ export default function ParosAntiparosPage() {
             <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">
               Tell us when, with whom, and how you want to feel. We shape the rest.
             </p>
-            <div className="flex justify-center mb-5">
+            <div className="flex justify-center">
               <Link
                 href="/contact?journey=paros-antiparos"
-                className="bg-white text-[#2e5a88] px-7 py-3 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-lg"
+                className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
               >
                 Inquire &rarr;
               </Link>
             </div>
-            <p className="text-[10px] text-white/60 font-light">
-              Or reach us directly:{' '}
-              <a href="mailto:hello@emmabonnefous.com" className="hover:text-white transition-colors">
-                hello@emmabonnefous.com
-              </a>{' '}
-              ·{' '}
-              <a
-                href="https://wa.me/33673550155"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                WhatsApp +33 6 73 55 01 55
-              </a>
-            </p>
           </div>
         </div>
       </section>
 
-      {/* ============ ZONE 10 — CROSS-SELL + MINI-BANDE COLLECTION ============ */}
-      <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="text-center mb-9">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 font-light">
+      {/* ============ ZONE 6 — CROSS-SELL (vignettes agrandies) ============ */}
+      <section className="px-6 md:px-10 py-14 md:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-10">
+            <div className="reveal text-[10px] tracking-[0.3em] uppercase text-black/40 font-light">
               You might also like
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
               {
                 href: '/journeys/athens-slowly',
@@ -335,24 +305,29 @@ export default function ParosAntiparosPage() {
               <Link
                 key={i}
                 href={card.href}
-                className="relative aspect-[4/3] overflow-hidden cursor-pointer group block"
+                className="reveal relative aspect-[3/4] overflow-hidden cursor-pointer group block"
+                data-delay={i * 100}
               >
                 <Image
                   src={card.img}
                   alt={card.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-                <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <div className="text-[8px] tracking-[0.25em] uppercase opacity-75 mb-1.5 font-light">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                <div className="absolute top-5 left-5">
+                  <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[9px] tracking-[0.2em] uppercase text-white font-light">
                     {card.category}
-                  </div>
-                  <div className="font-anton font-normal uppercase text-[18px] leading-[1] mb-1.5 transition-transform duration-500 group-hover:-translate-y-1">
+                  </span>
+                </div>
+
+                <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2">
+                  <h3 className="font-anton font-normal uppercase text-[28px] md:text-[32px] leading-[0.95] mb-2">
                     {card.title}
-                  </div>
-                  <div className="text-[10px] opacity-85 tracking-[0.05em] font-light">
-                    {card.meta} &rarr;
+                  </h3>
+                  <div className="text-[11px] opacity-85 tracking-[0.1em] font-light">
+                    {card.meta}
                   </div>
                 </div>
               </Link>
@@ -360,17 +335,16 @@ export default function ParosAntiparosPage() {
           </div>
         </div>
 
-        {/* Mini-bande Collection */}
-        <div className="max-w-[700px] mx-auto mt-10 pt-8 border-t border-black/10 text-center">
+        <div className="max-w-[700px] mx-auto mt-12 pt-8 border-t border-black/10 text-center">
           <div className="flex flex-wrap justify-center items-center gap-4">
-            <span className="text-[13px] text-black/65 italic font-light">
+            <span className="text-[13px] text-black/65 font-light">
               Or simply rent a villa, charter a yacht?
             </span>
             <Link
               href="/collection"
-              className="text-[#2e5a88] text-[11px] tracking-[0.2em] uppercase underline decoration-[#2e5a88]/40 hover:decoration-[#2e5a88] transition-all font-light"
+              className="eb-cta-link text-[#2e5a88] text-[11px] tracking-[0.2em] uppercase font-light"
             >
-              Discover the Collection &rarr;
+              Discover the Collection <span className="eb-cta-arrow">&rarr;</span>
             </Link>
           </div>
         </div>

@@ -74,8 +74,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",
-    // TODO: remplacer par photo drone BESTIA MY ou terrasse yacht - demander a Emma
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=85",
+    image: "/yatch_page%20collection_2.png",
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "A Week in the\nCyclades, By Sea.",
@@ -152,6 +151,7 @@ function SecondaryCard({ j }: { j: Journey }) {
         alt={j.title.replace("\n", " ")}
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        style={j.slug === "a-week-in-the-cyclades-by-sea" ? { objectPosition: "center 35%" } : undefined}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-40% to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">

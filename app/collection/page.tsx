@@ -102,13 +102,15 @@ export default function CollectionPage() {
             Collection
           </span>
           <h1
-            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            data-delay="100"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Your address in Greece.
           </h1>
           <p
-            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            className="reveal mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="200"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Villas that rarely appear online. One yacht, based in Athens.
@@ -194,8 +196,8 @@ export default function CollectionPage() {
                   <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/60 font-medium font-body">
                     {villa.specs}
                   </p>
-                  <span className="mt-4 inline-block text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white border-b border-white/70 pb-1 group-hover:border-white transition-colors w-fit font-body">
-                    Request details &rarr;
+                  <span className="eb-cta-link mt-4 text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white w-fit font-body">
+                    Request details <span className="eb-cta-arrow">&rarr;</span>
                   </span>
                 </div>
               </a>
@@ -253,10 +255,10 @@ export default function CollectionPage() {
             </p>
             <a
               href="/contact?ref=private-circle"
-              className="reveal mt-10 inline-block text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+              className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
               data-delay="250"
             >
-              Request introduction &rarr;
+              Request introduction <span className="eb-cta-arrow">&rarr;</span>
             </a>
           </div>
         </div>
@@ -301,10 +303,10 @@ export default function CollectionPage() {
             </p>
             <a
               href="/contact?ref=yacht"
-              className="reveal mt-8 inline-block text-[13px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+              className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
               data-delay="300"
             >
-              Inquire about the yacht &rarr;
+              Inquire about the yacht <span className="eb-cta-arrow">&rarr;</span>
             </a>
           </div>
         </div>
@@ -330,10 +332,10 @@ export default function CollectionPage() {
           </h2>
           <a
             href="/contact?ref=collection-final"
-            className="reveal mt-10 inline-block text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white border-b border-white pb-1.5 hover:border-white/50 transition-colors font-body min-h-[44px]"
+            className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
             data-delay="150"
           >
-            Start the conversation &rarr;
+            Start the conversation <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
