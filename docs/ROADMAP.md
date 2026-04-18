@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-18 (Private Journeys + 9 pages detail livrees)
+**Derniere mise a jour :** 2026-04-19 (CTAs harmonises toutes pages, Terms + Privacy RGPD livrees, Paros v12 DA push luxury, mobile fixes journeys)
 
 ---
 
@@ -82,7 +82,12 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] Page Collection : refonte complete v3 (8 blocs, villas overlay, Silent Coast pleine largeur, citation respiration, yacht plein ecran, off-market editorial, acquisition texte centre, photos locales, metadata SEO)
 - [x] Heroes harmonises sur Experiences + Collection + Journal (structure identique)
 - [x] 9 pages detail journeys creees : Astypalea, Mykonos Timed Right, Athens Slowly, A Slow Honeymoon in the Cyclades, A Family Summer Greek-Style, A Week in the Cyclades by Sea, Paros + Antiparos Privately, Athens Beyond the Acropolis, Odyssey Greece, Sailing the Small Cyclades
+- [x] **Paros v12 DA push luxury** : 7 moves DA (gradient beige + texture papier, typo 4:1, numerotation papier peint, drop caps, cadre magazine, details, vignettage) + reorganisation sections + images Highlights corrigees (fini cruise ships, yacht + Lefkes Unsplash)
+- [x] **Mobile polish `/journeys`** : break titre Astypalea après virgule, metadonnees whitespace-nowrap, fade-up animations iOS (translate3d + backface-visibility), quote "Designed on the ground" break after period
+- [x] **Harmonisation des CTA finaux** toutes pages : fond image sombre unifie, structure pill/titre/description/CTA identique (Home, About, Experiences, Collection, Journeys)
 - [ ] Pages detail experiences/villas (catalogue complet ~35 items)
+- [ ] Replication template Paros v12 sur les 4 fiches journey restantes (Astypalea, Mykonos, Honeymoon, Yacht) une fois template valide
+- [ ] Remplacer les 2 photos Unsplash TODO sur les CTA Home et About par des photos finales
 - [ ] Integration CMS : toutes les pages editables sans code
 
 ### Sprint 3 — Pages Secondaires & Formulaires (2 semaines)
@@ -90,7 +95,7 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [ ] Page Journal : refonte avec nouveau design
 - [ ] Page Influencer/Brands : refonte avec nouveau design
 - [ ] Page Contact : affiner les 4 formulaires
-- [ ] Pages Privacy Policy + Terms
+- [x] Pages Privacy Policy + Terms — **DONE** (avril 2026). Privacy RGPD 12 sections (CNIL, art.6, droits utilisateur), Terms 9 sections (SIRET + adresse Paris). Mention legale globale ajoutee en bas des 14 pages ("eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.")
 - [ ] Connexion formulaires -> email notifications
 
 ### Sprint 4 — Finition & Lancement (2 semaines)

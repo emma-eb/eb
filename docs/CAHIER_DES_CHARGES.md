@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 0.7
-**Date :** 2026-04-18
+**Version :** 0.8
+**Date :** 2026-04-19
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 0 quasi terminee — toutes pages principales livrees, Private Journeys refonte + 9 pages detail journeys publiees
+**Statut :** Phase 0 terminee — toutes pages principales livrees, CTAs harmonises, pages legales (Terms + Privacy RGPD) publiees, Paros DA push luxury livre
 
 ---
 
@@ -100,24 +100,25 @@ Grille filtree par mood + type de contenu. Resultats personnalises "pour vous".
 
 ---
 
-## 5. Pages du site — Statut au 18 avril 2026
+## 5. Pages du site — Statut au 19 avril 2026
 
 | Page | Route | Statut | Notes |
 |---|---|---|---|
-| Homepage | `/` | **DONE** | 13 blocs valides, design final, mobile optimise |
-| Experiences | `/experiences` | **DONE** | Hero + 4 experiences full-bleed + concierge grid 2x2 immersif + CTA |
-| About | `/about` | **DONE** | Hero split + The Story + Numbers counter + Why Greece + Collabs + Citation + CTA |
-| Journal | `/journal` | **DONE** | Hero + Featured article + 7 articles grille asymetrique magazine + The Height + CTA. Sources avec fond pill pour lisibilite. Tailles texte reduites sur cartes. |
-| For Brands | `/influencer-production` | **DONE** | Hero centre + Why Greece (pill tag + Anton uppercase, photo MILOS_02) + 3 services + 3 formats + What we bring + CTA |
-| Collection | `/collection` | **DONE** | 8 blocs : hero + manifesto + 5 villas overlay (Silent Coast pleine largeur) + citation respiration + private residences + yacht plein ecran + acquisition texte centre + CTA. Yacht anonymise. Photos locales yacht + `photo bandeau_page Collection.jpg`. Metadata SEO via layout.tsx. |
-| Contact | `/contact` | OK | 4 formulaires specialises |
-| Private Journeys | `/journeys` | **DONE** | Refonte complete : hero + 2 featured journeys (Astypalea + Mykonos) + 6 journeys secondaires + CTA. Design coherent avec le reste du site |
-| Journey detail pages | `/journeys/[slug]` | **DONE** (9 pages) | Astypalea, Mykonos Timed Right, Athens Slowly, A Slow Honeymoon in the Cyclades, A Family Summer Greek-Style, A Week in the Cyclades by Sea, Paros + Antiparos Privately, Athens Beyond the Acropolis, Odyssey Greece, Sailing the Small Cyclades |
+| Homepage | `/` | **DONE** | 13 blocs valides, CTA final harmonise sur fond image sombre (pill The Studio + titre Anton + description) |
+| Experiences | `/experiences` | **DONE** | Hero + 4 experiences full-bleed + concierge grid 2x2 + CTA harmonise (pill One Call + Every detail, handled quietly.) |
+| About | `/about` | **DONE** | Hero split + Story + counter + Why Greece + Collabs + Citation + CTA harmonise (pill Work with eb. + Tell us your story.) |
+| Journal | `/journal` | **DONE** | Hero + Featured + 7 articles grille magazine + The Height + CTA. Mention footer legale ajoutee. |
+| For Brands | `/influencer-production` | **DONE** | Hero centre + Why Greece + 3 services + 3 formats + What we bring + CTA |
+| Collection | `/collection` | **DONE** | 8 blocs + CTA harmonise (pill Private Stays + description ajoutee). Yacht anonymise. |
+| Contact | `/contact` | OK | 4 formulaires specialises (page formulaire, pas de CTA final a harmoniser) |
+| Private Journeys | `/journeys` | **DONE** | Hero + 2 featured + 6 secondaires + CTA. Fix mobile (titre Astypalea break après virgule, metadonnees whitespace-nowrap, animations translate3d iOS, quote "Designed on the ground" break). Photo CTA dediee `/CTA FINAL PRIVATE JOURNEY.jpg` |
+| Journey detail pages | `/journeys/[slug]` | **DONE** (9 pages) | Astypalea, Mykonos, Athens Slowly, Slow Honeymoon, Family Summer, Week by Sea, **Paros + Antiparos (v12 DA luxury push : 7 moves DA + reorganisation + images Highlights corrigees)**, Athens Beyond, Odyssey Greece, Sailing Small Cyclades |
+| **Terms** | `/terms` | **DONE** | 9 sections. SIRET + adresse Paris, sans telephone / domiciliation privee / regime fiscal. Lien Privacy. |
+| **Privacy Policy** | `/privacy-policy` | **DONE** | 12 sections RGPD conformes : data controller, collection, purposes, legal basis art.6, partenaires, transferts intra-UE, retention, droits utilisateur, cookies, CNIL complaints. |
 
 ### Pages a creer
-- `/privacy-policy` — Politique de confidentialite
-- `/terms` — Conditions generales
 - Pages detail experiences/villas (catalogue complet ~35 items)
+- Pages detail journeys manquantes apres validation template Paros (template DA v12 a repliquer)
 
 ---
 
@@ -298,11 +299,54 @@ hidden gems, bucket list, unforgettable, bespoke, curated, tailor-made, world-cl
 
 ---
 
-*Derniere mise a jour : 2026-04-18 — v0.7*
+*Derniere mise a jour : 2026-04-19 — v0.8*
 
 ---
 
-## 15. Convention heroes (Experiences, Collection, Journal)
+## 15. Convention CTA final (toutes pages commerciales)
+
+Depuis v0.8 (avril 2026), tous les CTA finaux avant le footer respectent la meme structure :
+
+- Fond IMAGE sombre + overlay `bg-black/40`
+- `min-h: 60vh mobile / 70vh desktop`
+- Classe `eb-image-vignette` (ombre interne sur les 4 cotes)
+- Pill tag : `bg-white/15 backdrop-blur border border-white/30 rounded-full`, `text-[10px] tracking-[0.35em] uppercase font-light`
+- Titre : `font-anton uppercase text-white text-[36px] md:text-[56px] leading-tight`
+- Description : `font-body text-base md:text-lg text-white/80 font-light`, max-width 480px
+- CTA : classe `eb-cta-link` + wording unifie `Start the conversation →`
+- Pas d'em dash, pas d'italique, pas de font-weight 700
+
+Les pages en utilisant exactement cette structure : Home, About, Experiences, Collection, Journeys.
+La page `/contact` est exceptee (c'est un formulaire, le formulaire EST le CTA).
+
+---
+
+## 16. Classes CSS DA luxury (depuis Paros v12)
+
+Classes globales dans `globals.css` utilisables sur toutes les fiches journeys :
+
+| Classe | Usage |
+|---|---|
+| `eb-bg-beige-gradient` | Fond gradient beige + texture papier discrete (mix-blend-mode multiply) |
+| `eb-image-vignette` | Ombre interne 120px sur les 4 cotes d'une image plein cadre |
+| `eb-dropcap` | Lettrine Anton bleu marine 3.5em sur fond clair (desactivee mobile) |
+| `eb-dropcap-light` | Lettrine Anton blanc 85% sur fond sombre (desactivee mobile) |
+| `eb-day-number` | Chiffre Anton 88px / 64px mobile, bleu marine 8% — "papier peint" Day by Day |
+| `eb-inner-frame` + `eb-inner-content` | Cadre magazine : fond blanc exterieur + insert beige gradient (ex : What's Included Paros) |
+
+---
+
+## 17. Conformite legale (depuis v0.8)
+
+- Mention footer globale : "eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece." (presente sur les 14 pages avant `</footer>`, opacity 35%)
+- Positionnement legal : eb. = studio de conception, introducteur vers DMC licencies en Grece. Contrats et paiements entre client et DMC. eb. n'est pas agence de voyage.
+- SIRET public : 853 793 479 00017 (77 rue Bayen, 75017 Paris)
+- CNIL competente pour reclamations RGPD
+- Infos volontairement exclues des pages publiques : telephone personnel, domiciliation privee, regime fiscal, code APE, numero de securite sociale
+
+---
+
+## 18. Convention heroes (Experiences, Collection, Journal)
 
 Les 3 pages secondaires utilisent une structure hero STRICTEMENT IDENTIQUE pour coherence visuelle :
 
