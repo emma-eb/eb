@@ -106,7 +106,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
           <h2
             className="font-heading text-white uppercase leading-[0.95] mb-4"
             style={{
-              fontSize: "clamp(40px, 6vw, 80px)",
+              fontSize: "clamp(44px, 6vw, 80px)",
               letterSpacing: "-0.01em",
               textShadow: "0 1px 3px rgba(0,0,0,0.3)",
             }}
@@ -161,7 +161,7 @@ function SecondaryCard({ j }: { j: Journey }) {
         <h3
           className="mt-2 font-heading text-white uppercase leading-[1] tracking-wide"
           style={{
-            fontSize: "clamp(26px, 2.8vw, 40px)",
+            fontSize: "clamp(32px, 3vw, 44px)",
             letterSpacing: "-0.01em",
             textShadow: "0 1px 3px rgba(0,0,0,0.4)",
           }}
