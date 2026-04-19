@@ -67,7 +67,11 @@ export default function Nav({ activePage }: NavProps) {
         }`}
       >
 
-        <a href="/" className="relative z-50">
+        <a
+          href="/"
+          aria-label="eb. — back to home"
+          className="relative z-50 inline-block hover:opacity-70 transition-opacity duration-200"
+        >
           <img
             src={dark ? "/logo-beige.svg" : "/logo-dark.svg"}
             alt="eb."
