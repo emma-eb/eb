@@ -88,7 +88,7 @@ export default function FormShell({
               {stepKicker}
             </p>
           )}
-          <h1 className="font-body text-[32px] md:text-[48px] text-[#1a1a1a] leading-[1.05] font-normal">
+          <h1 className="font-body text-[28px] md:text-[42px] text-[#2e5a88] leading-[1.1] font-normal">
             {stepTitle}
           </h1>
         </div>
@@ -118,7 +118,7 @@ export default function FormShell({
               disabled={!canProceed}
               className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-7 md:px-9 py-3.5 md:py-4 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
             >
-              Continue
+              Next step
               <span>&rarr;</span>
             </button>
           ) : (

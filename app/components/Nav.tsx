@@ -159,6 +159,14 @@ export default function Nav({ activePage }: NavProps) {
           style={{ transitionDelay: open ? "420ms" : "0ms" }}
         >
           <div className="h-px bg-[#fcf7f1]/20 mb-6" />
+          <a
+            href="/influencer-production"
+            onClick={() => setOpen(false)}
+            className="group inline-flex items-center gap-1.5 font-body text-[11px] text-[#fcf7f1]/60 tracking-[0.2em] uppercase hover:text-[#fcf7f1] transition-colors mb-5"
+          >
+            For brands &amp; agencies
+            <span className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1">&rarr;</span>
+          </a>
           <p className="font-body text-xs text-[#fcf7f1]/40 tracking-widest uppercase mb-2">Athens, Greece</p>
           <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1] transition-colors">
             hello@emmabonnefous.com

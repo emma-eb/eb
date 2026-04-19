@@ -175,7 +175,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section className="bg-white flex flex-col items-center justify-center py-10 md:py-16 px-6 md:px-8">
         <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
-          The set is already built. We just walk into it.
+          The set is already built.<br className="md:hidden" /> We just walk into it.
         </p>
         <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
       </section>
@@ -266,7 +266,7 @@ export default function InfluencerProduction() {
             { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
             { label: "Styling", img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80", alt: "Wardrobe and styling" },
             { label: "Photography", img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80", alt: "Photo production setup" },
-            { label: "Post", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=80", alt: "Editorial post-production" },
+            { label: "Post", img: "/astypalea_02.jpg", alt: "Astypalea Chora aerial, editorial" },
           ].map(({ label, img, alt }, i) => (
             <div
               key={label}

@@ -39,7 +39,7 @@ export default function IntentCards() {
             <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
               Three ways in
             </p>
-            <h2 className="font-body text-[28px] md:text-[42px] text-[#1a1a1a] leading-[1.1] font-normal max-w-[620px] mx-auto">
+            <h2 className="font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-normal max-w-[620px] mx-auto">
               Tell us what you&apos;re looking for, and we start from there.
             </h2>
           </div>

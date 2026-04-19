@@ -98,7 +98,7 @@ export default function BrandBriefPage() {
             <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-5">
               How we work
             </p>
-            <h2 className="font-anton font-normal uppercase text-[#1a1a1a] text-[30px] md:text-[44px] leading-[1] mb-6" style={{ letterSpacing: "0.01em" }}>
+            <h2 className="font-body text-[#2e5a88] text-[28px] md:text-[40px] leading-[1.1] font-normal mb-6">
               From brief<br />to final frame.
             </h2>
             <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.8] font-light mb-6">
@@ -127,7 +127,7 @@ export default function BrandBriefPage() {
             {submitted ? (
               <div className="reveal bg-[#fcf7f1] border border-[#e8e4de] p-8 md:p-10">
                 <p className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] mb-4">Received</p>
-                <h3 className="font-anton font-normal uppercase text-[#1a1a1a] text-[28px] md:text-[36px] leading-[1.05] mb-4" style={{ letterSpacing: "0.01em" }}>
+                <h3 className="font-body text-[#2e5a88] text-[26px] md:text-[34px] leading-[1.1] font-normal mb-4">
                   Thank you.
                 </h3>
                 <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.7] font-light">

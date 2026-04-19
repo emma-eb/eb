@@ -10,7 +10,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
         <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-5">
           Received with thanks
         </p>
-        <h1 className="font-body text-[32px] md:text-[48px] text-[#1a1a1a] leading-[1.1] font-normal mb-8" data-delay="80">
+        <h1 className="font-body text-[28px] md:text-[42px] text-[#2e5a88] leading-[1.1] font-normal mb-8" data-delay="80">
           Your brief is with Emma.
         </h1>
         <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light max-w-[480px] mx-auto mb-8" data-delay="160">

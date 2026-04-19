@@ -22,9 +22,9 @@ function ContactRouter() {
       {/* HERO */}
       <section data-nav-dark className="relative h-[70vh] md:h-[80vh] flex items-end overflow-hidden">
         <img
-          src="/Screenshot 2026-03-09 at 13.00.10.png"
-          alt="Private dinner, Aegean sunset"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/paros_03.jpg"
+          alt="Whitewashed Cycladic houses by the sea, Paros"
+          className="absolute inset-0 w-full h-full object-cover object-[center_60%]"
           fetchPriority="high"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.1) 100%)" }} />
