@@ -118,26 +118,23 @@ export default function InfluencerProduction() {
             {
               title: "Brand Trips",
               body: "Multi-day trips for press, influencers, and brand ambassadors. Every detail handled on the ground, so your team focuses on content.",
-              details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences", "Media coordination"],
-              /* TODO: replace with final photo */
-              img: "https://images.unsplash.com/photo-1567958451986-2de427a4a0be?w=1600&q=80",
-              alt: "Brand trip, Greek villa terrace",
+              details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences"],
+              img: "/julian-Z8T3xS4_vT0-unsplash.jpg",
+              alt: "Mykonos windmills above the whitewashed town",
             },
             {
               title: "Fam Trips",
               body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece.",
-              details: ["Route design", "Hosted experiences", "Press & media support", "Itinerary documentation"],
-              /* TODO: replace with final photo */
-              img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
-              alt: "Fam trip, Aegean coast",
+              details: ["Route design", "Hosted experiences", "Press & media support"],
+              img: "/vue aerienne bateau.jpg",
+              alt: "Aerial view, turquoise cove and boats, Greece",
             },
             {
               title: "Content Creation",
               body: "Photo and video production across Greece. Scouting, permits, crew, styling. Built around your brief, delivered to spec.",
-              details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction", "Post-production coordination"],
-              /* TODO: replace with final photo */
-              img: "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1600&q=80",
-              alt: "Content creation, Greek setting",
+              details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction"],
+              img: "/laura-adai-RHG2wFlRxdw-unsplash.jpg",
+              alt: "Whitewashed Cycladic hamlet above rocky coast",
             },
           ].map(({ title, body, details, img, alt }, i) => (
             <div
