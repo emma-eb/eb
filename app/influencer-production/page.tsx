@@ -196,8 +196,8 @@ export default function InfluencerProduction() {
               name: "Short",
               duration: "3 days",
               desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-              img: "/Screenshot 2026-03-09 at 13.00.10.png",
-              alt: "Private dinner table at sunset, Aegean coast",
+              img: "/angelina-and-antonis-s0HBi_tVs6s-unsplash.jpg",
+              alt: "Editorial moment, bougainvillea terrace, Aegean",
             },
             {
               num: "02",
@@ -212,8 +212,8 @@ export default function InfluencerProduction() {
               name: "Bespoke",
               duration: "From 6 days",
               desc: "Fully custom. Your brief, your talent, your season. No template.",
-              img: "/yatch_page collection_2.png",
-              alt: "Yacht bow, Aegean coast",
+              img: "/Bespokevilla.jpg",
+              alt: "Private villa, pool and olive grove",
             },
           ].map(({ num, name, duration, desc, img, alt }, i) => (
             <div
@@ -260,7 +260,7 @@ export default function InfluencerProduction() {
           {[
             /* TODO: Emma validate 8 photos below — mosaic press-kit feel */
             { label: "Scouting", img: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80", alt: "Aerial Greek coast scouting" },
-            { label: "Permits", img: "https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=900&q=80", alt: "Parthenon Acropolis at golden hour, Athens" },
+            { label: "Permits", img: "/acropole_01.jpg", alt: "Parthenon columns, Acropolis, Athens" },
             { label: "Transfers", img: "/helicptere.jpg", alt: "Private helicopter transfer" },
             { label: "Villas", img: "/134_terrace_privatebeach.jpg", alt: "Villa terrace, private beach" },
             { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
