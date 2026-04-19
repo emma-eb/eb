@@ -98,7 +98,7 @@ export default function InfluencerProduction() {
           <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal font-body text-[18px] md:text-[20px] text-white mt-8 font-normal leading-[1.4]" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal mt-8 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
@@ -196,9 +196,8 @@ export default function InfluencerProduction() {
               name: "Short",
               duration: "3 days",
               desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-              /* TODO: Emma validate photo — remplacer par table gastronomique grecque (meze, feta, poulpe) */
-              img: "https://images.unsplash.com/photo-1551028150-64b9f398f678?auto=format&fit=crop&w=1200&q=80",
-              alt: "Greek meze table, shared plates",
+              img: "/despina-galani-qGtpTQrN7VU-unsplash.jpg",
+              alt: "Plaka alley, Athens, Greek flag and neoclassical facades",
             },
             {
               num: "02",
@@ -261,7 +260,7 @@ export default function InfluencerProduction() {
           {[
             /* TODO: Emma validate 8 photos below — mosaic press-kit feel */
             { label: "Scouting", img: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80", alt: "Aerial Greek coast scouting" },
-            { label: "Permits", img: "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=80", alt: "Acropolis Athens heritage site" },
+            { label: "Permits", img: "https://images.unsplash.com/photo-1503152394-c571994fd383?auto=format&fit=crop&w=900&q=80", alt: "Parthenon Acropolis at golden hour, Athens" },
             { label: "Transfers", img: "/helicptere.jpg", alt: "Private helicopter transfer" },
             { label: "Villas", img: "/134_terrace_privatebeach.jpg", alt: "Villa terrace, private beach" },
             { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
