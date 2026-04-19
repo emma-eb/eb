@@ -51,7 +51,8 @@ const concierge = [
     tag: "GASTRONOMY",
     title: "Gastronomic Journeys",
     desc: "Market mornings with a local chef, wine on a hillside, a cooking class in a village kitchen where the recipe has never been written down.",
-    photo: "https://images.unsplash.com/photo-1550293750-dde2bed30d54?auto=format&fit=crop&w=1800&q=85",
+    /* TODO: Emma validate photo — table grecque dressee avec meze/poulpe/feta (pas une table vide) */
+    photo: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1800&q=85",
   },
   {
     tag: "WINE",

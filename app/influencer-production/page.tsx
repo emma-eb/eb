@@ -171,88 +171,83 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BANDEAU IMAGE (respiration visuelle)
+          PULL QUOTE — respiration editoriale (remplace bandeau)
       ═══════════════════════════════════════════ */}
-      <section className="relative w-full overflow-hidden">
-        <img
-          src="/134_terrace_privatebeach.jpg"
-          alt="Greece production scene"
-          className="w-full h-[35vh] md:h-[60vh] object-cover object-center"
-          loading="lazy"
-        />
-        <span className="absolute bottom-3 right-3 md:bottom-6 md:right-6 font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white z-10 bg-black/35 backdrop-blur-[4px] [-webkit-backdrop-filter:blur(4px)] px-2.5 py-1 rounded-sm">
-          Cyclades, Greece
-        </span>
+      <section className="eb-bg-beige-gradient py-20 md:py-28 px-6">
+        <div className="max-w-[820px] mx-auto text-center">
+          <p className="reveal font-body text-[22px] md:text-[32px] text-[#2e5a88] leading-[1.25] font-normal">
+            The set is already built. We just walk into it.
+          </p>
+          <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-8 md:mt-10" data-delay="120" />
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          PRODUCTION FORMATS — 3 full-cadre editorial blocks stacked
+          PRODUCTION FORMATS — 3 thumbnails cote a cote
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="bg-[#1a1a1a]">
-        <div className="text-center pt-14 md:pt-20 pb-2 md:pb-4 px-6">
+      <section data-nav-dark className="bg-[#1a1a1a] py-14 md:py-20 px-5 md:px-10">
+        <div className="text-center mb-10 md:mb-14">
           <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
             Production formats
           </p>
         </div>
-        {[
-          {
-            num: "01",
-            name: "Short",
-            duration: "3 days",
-            desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-            /* TODO: Emma validate photo */
-            img: "https://images.unsplash.com/photo-1533777324565-a040eb52facd?auto=format&fit=crop&w=1920&q=80",
-            alt: "Athens rooftop at dusk",
-          },
-          {
-            num: "02",
-            name: "Extended",
-            duration: "4 to 5 days",
-            desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-            /* TODO: Emma validate photo */
-            img: "/helicptere.jpg",
-            alt: "Aerial helicopter view, Greek coast",
-          },
-          {
-            num: "03",
-            name: "Bespoke",
-            duration: "From 6 days",
-            desc: "Fully custom. Your brief, your talent, your season. No template.",
-            /* TODO: Emma validate photo */
-            img: "/yatch_page collection.jpg",
-            alt: "Private yacht, Aegean sea",
-          },
-        ].map(({ num, name, duration, desc, img, alt }, i) => (
-          <div
-            key={name}
-            className="reveal relative w-full min-h-[80vh] md:min-h-[90vh] overflow-hidden eb-image-vignette"
-            data-delay={i * 80}
-          >
-            <img
-              src={img}
-              alt={alt}
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.15) 100%)" }} />
-            <span className="absolute top-6 md:top-10 right-6 md:right-10 font-anton text-white/15 text-[140px] md:text-[240px] leading-none select-none pointer-events-none" style={{ letterSpacing: "-0.02em" }}>
-              {num}
-            </span>
-            <div className="absolute inset-0 flex items-center z-[3]">
-              <div className="px-6 md:px-16 max-w-[640px]">
-                <span className="inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white mb-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-[1200px] mx-auto">
+          {[
+            {
+              num: "01",
+              name: "Short",
+              duration: "3 days",
+              desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
+              /* TODO: Emma validate photo — remplacer par table gastronomique grecque (meze, feta, poulpe) */
+              img: "https://images.unsplash.com/photo-1551028150-64b9f398f678?auto=format&fit=crop&w=1200&q=80",
+              alt: "Greek meze table, shared plates",
+            },
+            {
+              num: "02",
+              name: "Extended",
+              duration: "4 to 5 days",
+              desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
+              img: "/ben-koorengevel-G0G0qkE-r24-unsplash.jpg",
+              alt: "Yacht from above, open Aegean sea",
+            },
+            {
+              num: "03",
+              name: "Bespoke",
+              duration: "From 6 days",
+              desc: "Fully custom. Your brief, your talent, your season. No template.",
+              img: "/yatch_page collection_2.png",
+              alt: "Yacht bow, Aegean coast",
+            },
+          ].map(({ num, name, duration, desc, img, alt }, i) => (
+            <div
+              key={name}
+              className="reveal relative aspect-[3/4] overflow-hidden group eb-image-vignette"
+              data-delay={i * 80}
+            >
+              <img
+                src={img}
+                alt={alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
+              <span className="absolute top-3 right-4 md:top-4 md:right-5 font-anton text-white/25 text-[72px] md:text-[110px] leading-none select-none pointer-events-none" style={{ letterSpacing: "-0.02em" }}>
+                {num}
+              </span>
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-7 z-[3]">
+                <span className="inline-block self-start px-2.5 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[9px] md:text-[10px] uppercase tracking-[0.15em] font-medium text-white mb-3">
                   {duration}
                 </span>
-                <h3 className="font-anton font-normal uppercase text-white text-[44px] md:text-[84px] leading-[0.95] mb-5" style={{ letterSpacing: "0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <h3 className="font-anton font-normal uppercase text-white text-[30px] md:text-[42px] leading-[0.95] mb-3" style={{ letterSpacing: "0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {name}
                 </h3>
-                <p className="font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] font-light max-w-[520px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[13px] md:text-[14px] text-white/80 leading-[1.6] font-light" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                   {desc}
                 </p>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -295,56 +290,6 @@ export default function InfluencerProduction() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          CASE STUDIES TEASER — editorial band
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6 md:px-16">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-10 md:mb-14">
-            <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
-              Selected productions
-            </p>
-            <h2 className="reveal font-anton font-normal uppercase text-[#1a1a1a] text-[36px] md:text-[56px] leading-[0.95]" data-delay="80" style={{ letterSpacing: "0.01em" }}>
-              Discreet by design.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-            {[
-              /* TODO: Emma validate anonymised case-study visuals */
-              { img: "/paros_02.jpg", alt: "Production case study, Paros" },
-              { img: "/mykonos_Vue.jpg", alt: "Production case study, Mykonos" },
-              { img: "/astypalea_02.jpg", alt: "Production case study, Astypalea" },
-            ].map(({ img, alt }, i) => (
-              <div
-                key={i}
-                className="reveal relative aspect-[3/4] overflow-hidden"
-                data-delay={i * 100}
-              >
-                <img
-                  src={img}
-                  alt={alt}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/15" />
-              </div>
-            ))}
-          </div>
-          <div className="reveal text-center mt-10 md:mt-14" data-delay="200">
-            <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/60 font-light leading-[1.7] max-w-[540px] mx-auto mb-6">
-              Client names and campaign details shared privately, on request. Full portfolio available to qualified brands and agencies.
-            </p>
-            <a
-              href="/for-brands/brief"
-              className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 door-cta"
-            >
-              Request portfolio
-              <span className="eb-cta-arrow">&rarr;</span>
-            </a>
-          </div>
         </div>
       </section>
 
