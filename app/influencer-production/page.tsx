@@ -55,7 +55,7 @@ export default function InfluencerProduction() {
           <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece.<br />Produced.
           </h1>
-          <p className="font-body text-[16px] md:text-[17px] text-white/90 max-w-xl mx-auto leading-relaxed" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body mx-auto" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function InfluencerProduction() {
           <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal font-body text-[18px] md:text-[20px] text-white mt-8 font-medium leading-[1.4]" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[18px] md:text-[20px] text-white mt-8 font-normal leading-[1.4]" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
