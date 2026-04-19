@@ -15,18 +15,18 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-[760px] mx-auto">
 
           <div className="mb-12 md:mb-16">
-            <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 mb-5 font-light">
+            <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 mb-5 font-light">
               Legal
             </div>
             <h1 className="text-[32px] md:text-[48px] leading-[1.05] text-[#2e5a88] font-light tracking-tight">
               Privacy Policy
             </h1>
-            <div className="text-[11px] text-black/40 font-light mt-4">
+            <div className="text-[11px] text-[#1a1a1a]/40 font-light mt-4">
               Last updated: April 2026
             </div>
           </div>
 
-          <div className="space-y-10 md:space-y-12 text-[14px] md:text-[15px] leading-[1.75] text-black/70 font-light">
+          <div className="space-y-10 md:space-y-12 text-[14px] md:text-[15px] leading-[1.75] text-[#1a1a1a]/70 font-light">
 
             <div>
               <p>

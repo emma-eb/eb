@@ -150,7 +150,7 @@ export default function AstypaleaJourney() {
       ═══════════════════════════════════════════ */}
       <section ref={journeyRef} id="the-journey" className="bg-white py-24 md:py-32 px-6 md:px-12 scroll-mt-20">
         <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-6">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-6">
             The Journey
           </p>
           <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-16" data-delay="80" />
@@ -168,7 +168,7 @@ export default function AstypaleaJourney() {
             <span className="text-[#2e5a88]/45">Four on an island most travellers cannot place on a map.</span>
           </h2>
 
-          <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[700px] mx-auto mt-12" data-delay="200">
+          <p className="reveal font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[700px] mx-auto mt-12" data-delay="200">
             Astypalea sits at the eastern edge of the Cyclades, far enough from the standard ferry routes that it has stayed quiet through twenty years of Greek tourism. In 2026, the Guardian named it the world{'\u2019'}s most desirable destination. The eb. studio has been designing weeks here for clients who already knew. This is the journey for those who want to arrive before the rest.
           </p>
         </div>
@@ -180,7 +180,7 @@ export default function AstypaleaJourney() {
       <section className="bg-[#fcf7f1] py-24 px-6">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
+            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
               The Facts
             </p>
             <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
@@ -194,7 +194,7 @@ export default function AstypaleaJourney() {
               { label: "Tailored for", value: "Couples" },
             ].map((f, i) => (
               <div key={f.label} className="reveal text-center px-4" data-delay={i * 80}>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-black/45 font-medium mb-4">
+                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/45 font-medium mb-4">
                   {f.label}
                 </p>
                 <p
@@ -215,7 +215,7 @@ export default function AstypaleaJourney() {
       <section className="bg-white py-24 md:py-32 px-6 md:px-12 overflow-hidden">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-20">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
+            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
               The Route
             </p>
             <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
@@ -256,7 +256,7 @@ export default function AstypaleaJourney() {
                   >
                     {c.tag}
                   </h3>
-                  <p className="font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
+                  <p className="font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
                     {c.body}
                   </p>
                 </div>
@@ -291,7 +291,7 @@ export default function AstypaleaJourney() {
       <section className="bg-white py-24 md:py-32 px-6 md:px-12">
         <div className="max-w-[800px] mx-auto">
           <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
+            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
               What{'\u2019'}s Included
             </p>
             <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
@@ -301,7 +301,7 @@ export default function AstypaleaJourney() {
             {included.map((item, i) => (
               <li
                 key={i}
-                className="reveal font-body text-black/70 text-[15px] leading-loose py-3 border-b border-black/[0.06] pl-2"
+                className="reveal font-body text-[#1a1a1a]/70 text-[15px] leading-loose py-3 border-b border-black/[0.06] pl-2"
                 data-delay={Math.min(i * 40, 200)}
               >
                 {item}
@@ -309,7 +309,7 @@ export default function AstypaleaJourney() {
             ))}
           </ul>
 
-          <p className="reveal font-body italic text-black/45 text-[13px] text-center mt-12" data-delay="200">
+          <p className="reveal font-body italic text-[#1a1a1a]/45 text-[13px] text-center mt-12" data-delay="200">
             Each journey is shaped around you. The above is a starting point, not a script.
           </p>
         </div>
@@ -320,12 +320,12 @@ export default function AstypaleaJourney() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
         <div className="max-w-[700px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-4">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
             A Note
           </p>
           <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-12" data-delay="80" />
 
-          <p className="reveal font-body text-black/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
+          <p className="reveal font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
             The eb. studio has been to Astypalea more than once. The first visits were research, looking for what had been written, the smart island, the electric vehicles, the Guardian list. What stayed with us was none of that. It was the quiet. The way the same family runs the rooftop bar where you watch the castle, and the boat that takes you to islands without names. That kind of intimacy doesn{'\u2019'}t scale. Which is exactly why we want a small number of clients to experience it now, before it changes.
           </p>
           <p className="reveal font-body italic text-[#2e5a88] text-[14px] mt-8" data-delay="180">
@@ -339,7 +339,7 @@ export default function AstypaleaJourney() {
       ═══════════════════════════════════════════ */}
       <section className="bg-white py-20 md:py-24 px-6">
         <div className="max-w-[600px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-black/55 font-medium mb-6">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-6">
             Inquire
           </p>
           <h2
@@ -352,7 +352,7 @@ export default function AstypaleaJourney() {
           >
             Designed around you.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-black/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
+          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
             Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the rest.
           </p>
           <a

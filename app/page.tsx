@@ -146,7 +146,7 @@ export default function Home() {
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
 
           {/* Statement */}
-          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-light mb-4" data-delay="200">
+          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-normal mb-4" data-delay="200">
             eb. was born from twelve years of producing private experiences for the world&apos;s most demanding luxury houses.
           </p>
 
@@ -248,8 +248,8 @@ export default function Home() {
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1920&q=80"
-            alt="Small Cyclades sailing"
+            src="/astypalea.jpg"
+            alt="Astypalea, before everyone else"
             className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
@@ -258,23 +258,23 @@ export default function Home() {
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
-            Featured journey
+            Featured Journey &middot; 01
           </span>
           <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
-            5 days through<br />the Small Cyclades
+            Astypalea,<br />before everyone else.
           </h2>
           <p className="reveal font-body text-xs tracking-wider uppercase text-white/40 mb-4" data-delay="200">
-            Koufonisia &middot; Schinoussa &middot; Iraklia
+            7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
           </p>
           <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="300">
-            Anchor in bays where you&apos;re the only boat. Dine at tavernas with no menu, just today&apos;s catch.
+            Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists. Before everyone else catches on.
           </p>
           <a
-            href="/journeys"
+            href="/journeys/astypalea-before-everyone-else"
             className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="400"
           >
-            Where will you go?
+            Discover the journey
             <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
@@ -416,8 +416,8 @@ export default function Home() {
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden eb-image-vignette">
         {/* TODO: replace with final photo */}
         <img
-          src="https://images.unsplash.com/photo-1505081598304-4d02e9d5a5e6?w=2400&q=80"
-          alt="Greek island at dusk"
+          src="/DSC_9599-Edit.jpg"
+          alt="Greek shore at dusk"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

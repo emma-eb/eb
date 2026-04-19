@@ -150,7 +150,7 @@ export default function About() {
       <section ref={storyRef} id="story" className="bg-[#fcf7f1] py-24 md:py-32 px-6 scroll-mt-20">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col items-center mb-16 md:mb-20">
-            <p className="reveal font-body text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium text-black/45 mb-4">
+            <p className="reveal font-body text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium text-[#1a1a1a]/45 mb-4">
               The Story
             </p>
             <div className="reveal w-10 h-[2px] bg-[#2e5a88]" data-delay="80" />
@@ -170,19 +170,18 @@ export default function About() {
 
             <div className="md:col-span-6 md:col-start-7 space-y-6">
               <p
-                className="reveal text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light"
+                className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal"
                 data-delay="100"
-                style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
               >
                 Twelve years producing for the world{'\u2019'}s most demanding luxury houses. Then Greece.
               </p>
-              <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="160">
+              <p className="reveal font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light" data-delay="160">
                 I produced launches, press events and influencer campaigns for Balmain, Van Cleef &amp; Arpels, Karl Lagerfeld, Jimmy Choo, Coach. Over eighty productions across Paris, London, Amsterdam, Copenhagen.
               </p>
-              <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="220">
+              <p className="reveal font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light" data-delay="220">
                 Before eb., I designed private journeys for high-net-worth travelers across Tanzania, Botswana, Morocco. I had visited ninety-five countries. Greece is the one I came back to.
               </p>
-              <p className="reveal font-body text-[15px] md:text-[17px] text-black/65 leading-[1.7] font-light" data-delay="280">
+              <p className="reveal font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light" data-delay="280">
                 eb. is a private travel studio dedicated to one country, for clients anywhere in the world. The same standards I held for the houses, applied to the way you{'\u2019'}ll experience Greece.
               </p>
               <p className="reveal pt-4 text-[13px] md:text-[14px] text-[#2e5a88] font-medium font-body" data-delay="340">
@@ -208,7 +207,7 @@ export default function About() {
                 <p className="font-body text-[36px] md:text-[48px] font-medium text-[#2e5a88] leading-none">
                   <CounterNumber target={s.n} suffix={s.suffix} trigger={numbersVisible} />
                 </p>
-                <p className="font-body text-[12px] md:text-[13px] text-black/55 font-light mt-2 leading-[1.4]">{s.label}</p>
+                <p className="font-body text-[12px] md:text-[13px] text-[#1a1a1a]/55 font-light mt-2 leading-[1.4]">{s.label}</p>
               </div>
             ))}
           </div>
@@ -305,8 +304,8 @@ export default function About() {
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         {/* TODO: replace with final photo */}
         <img
-          src="https://images.unsplash.com/photo-1583912267550-d974311a9e4e?w=2400&q=80"
-          alt="Athens rooftop evening"
+          src="/DSC_9713-Edit.jpg"
+          alt="Greek Mediterranean atmosphere"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

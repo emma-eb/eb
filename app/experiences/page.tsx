@@ -164,7 +164,7 @@ export default function Experiences() {
             01 &middot; Signature Experiences
           </p>
           <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light" data-delay="200">
+          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal" data-delay="200">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
         </div>
@@ -222,7 +222,7 @@ export default function Experiences() {
               02 &middot; Concierge
             </p>
             <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 mx-auto" data-delay="150" />
-            <p className="reveal font-body text-[22px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-light" data-delay="200">
+            <p className="reveal font-body text-[22px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-normal" data-delay="200">
               The rest is handled.
             </p>
           </div>

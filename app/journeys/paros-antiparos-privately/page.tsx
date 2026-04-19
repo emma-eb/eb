@@ -152,7 +152,7 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 2 — THE INVITATION (Moves 2 + 4) ============ */}
       <section className="px-8 md:px-12 py-20 md:py-32 bg-white text-center eb-fade-up">
         <div className="max-w-[760px] mx-auto">
-          <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 mb-8 font-light">
+          <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 mb-8 font-light">
             The Invitation
           </div>
 
@@ -160,7 +160,7 @@ export default function ParosAntiparosPage() {
             The Greek island that works for everyone.
           </h2>
 
-          <p className="eb-dropcap text-[15px] md:text-[17px] leading-[1.8] text-black/70 font-light text-left max-w-[560px] mx-auto">
+          <p className="eb-dropcap text-[15px] md:text-[17px] leading-[1.8] text-[#1a1a1a]/70 font-light text-left max-w-[560px] mx-auto">
             Without ever feeling like everyone. A villa on the south coast, a yacht for a day, and the tables the Athenian set keeps for itself.
           </p>
         </div>
@@ -178,14 +178,14 @@ export default function ParosAntiparosPage() {
               { label: 'From', value: '\u20AC6,500pp', sub: 'excl. flights' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col">
-                <div className="text-[9px] tracking-[0.3em] uppercase text-black/35 font-light mb-2">
+                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">
                   {item.label}
                 </div>
                 <div className="text-[15px] md:text-[17px] text-[#2e5a88] font-light leading-[1.2]">
                   {item.value}
                 </div>
                 {item.sub && (
-                  <div className="text-[10px] text-black/35 font-light mt-1">
+                  <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1">
                     {item.sub}
                   </div>
                 )}
@@ -199,7 +199,7 @@ export default function ParosAntiparosPage() {
       <section className="px-6 md:px-12 py-14 md:py-20 bg-white eb-fade-up">
         <div className="max-w-[1000px] mx-auto">
           <div className="text-center mb-10 md:mb-14">
-            <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+            <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               The Route
             </div>
           </div>
@@ -213,19 +213,19 @@ export default function ParosAntiparosPage() {
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10">
                   <div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" />
                   <div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div>
-                  <div className="text-[10px] text-black/50 font-light">Arrival</div>
+                  <div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div>
                 </div>
 
                 <div className="flex flex-col items-center text-center w-[40%] relative z-10">
                   <div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" />
                   <div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
-                  <div className="text-[12px] text-black/50 font-light">6 nights &middot; Villa on south coast</div>
+                  <div className="text-[12px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
                 </div>
 
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10">
                   <div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" />
                   <div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div>
-                  <div className="text-[10px] text-black/50 font-light">Departure</div>
+                  <div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div>
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function ParosAntiparosPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" />
                 <div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div>
-                <div className="text-[10px] text-black/50 font-light">Arrival</div>
+                <div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div>
               </div>
 
               <div className="w-px h-8 bg-[#2e5a88]/30" />
@@ -243,7 +243,7 @@ export default function ParosAntiparosPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" />
                 <div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
-                <div className="text-[11px] text-black/50 font-light">6 nights &middot; Villa on south coast</div>
+                <div className="text-[11px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
               </div>
 
               <div className="w-px h-8 bg-[#2e5a88]/30" />
@@ -251,7 +251,7 @@ export default function ParosAntiparosPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" />
                 <div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div>
-                <div className="text-[10px] text-black/50 font-light">Departure</div>
+                <div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div>
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ export default function ParosAntiparosPage() {
       <section className="bg-white py-14 md:py-20">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 eb-fade-up">
-            <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+            <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               Highlights
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function ParosAntiparosPage() {
       <section className="eb-bg-beige-gradient py-20 md:py-28">
         <div className="max-w-[900px] mx-auto px-6 md:px-12">
           <div className="text-center mb-12 md:mb-16 eb-fade-up">
-            <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+            <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               Day by Day
             </div>
           </div>
@@ -376,7 +376,7 @@ export default function ParosAntiparosPage() {
                     }`}
                   >
                     <div className="pb-8 md:pb-10 pl-[100px] md:pl-[140px] pr-4">
-                      <p className="text-[14px] md:text-[15px] leading-[1.8] text-black/65 font-light max-w-[640px]">
+                      <p className="text-[14px] md:text-[15px] leading-[1.8] text-[#1a1a1a]/65 font-light max-w-[640px]">
                         {day.body}
                       </p>
                     </div>
@@ -416,7 +416,7 @@ export default function ParosAntiparosPage() {
         <div className="eb-inner-content">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-center mb-12 md:mb-16">
-              <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+              <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
                 What&apos;s Included
               </div>
             </div>
@@ -428,7 +428,7 @@ export default function ParosAntiparosPage() {
                 </div>
                 <ul className="space-y-4">
                   {includedItems.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-[14px] md:text-[15px] text-black/75 font-light leading-[1.65]">
+                    <li key={i} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65]">
                       <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -437,12 +437,12 @@ export default function ParosAntiparosPage() {
               </div>
 
               <div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-black/40 font-light mb-6">
+                <div className="text-[10px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 font-light mb-6">
                   Not Included
                 </div>
                 <ul className="space-y-4">
                   {notIncludedItems.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-[13px] md:text-[14px] text-black/45 font-light leading-[1.6]">
+                    <li key={i} className="flex items-start gap-4 text-[13px] md:text-[14px] text-[#1a1a1a]/45 font-light leading-[1.6]">
                       <span className="inline-block w-[5px] h-[5px] bg-black/20 mt-[8px] shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -451,7 +451,7 @@ export default function ParosAntiparosPage() {
               </div>
             </div>
 
-            <div className="text-center mt-12 text-[11px] text-black/40 font-light">
+            <div className="text-center mt-12 text-[11px] text-[#1a1a1a]/40 font-light">
               All pricing in EUR. Based on double occupancy. Flights and insurance not included.
             </div>
           </div>
@@ -495,7 +495,7 @@ export default function ParosAntiparosPage() {
       <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-10">
-            <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+            <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               You might also like
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function NextChapter({
     <section className="bg-[#fcf7f1] py-16 md:py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 md:mb-14">
-          <div className="text-[10px] tracking-[0.35em] uppercase text-black/40 font-light">
+          <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
             Next Chapter
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function NextChapter({
                 </span>
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-0 bg-[#2e5a88] transition-all duration-500 ease-out group-hover:w-full" />
               </div>
-              <p className="text-[13px] md:text-[14px] text-black/55 font-light leading-relaxed max-w-[280px] mx-auto">
+              <p className="text-[13px] md:text-[14px] text-[#1a1a1a]/55 font-light leading-relaxed max-w-[280px] mx-auto">
                 {item.desc}
               </p>
             </Link>

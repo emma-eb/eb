@@ -135,21 +135,20 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section ref={exploreRef} id="explore" className="bg-[#fcf7f1] px-6 pt-24 md:pt-28 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[620px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-black/45 font-medium">
+          <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium">
             Collection
           </p>
           <div className="reveal mt-4 w-10 h-[2px] bg-[#2e5a88] mx-auto" data-delay="50" />
           <h2
-            className="reveal mt-12 text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light"
+            className="reveal font-body mt-12 text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal"
             data-delay="100"
-            style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}
           >
             A private collection. The rest is a conversation.
           </h2>
-          <p className="reveal mt-10 text-[15px] md:text-[16px] leading-[1.8] text-black/65 font-light font-body" data-delay="150">
+          <p className="reveal mt-10 text-[15px] md:text-[16px] leading-[1.8] text-[#1a1a1a]/65 font-light font-body" data-delay="150">
             Not a portfolio. A private network. We know the owners, the coastlines, the houses that deliver and the ones that photograph better than they live. When you reach out, we already know which one is yours.
           </p>
-          <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-black/55 font-light font-body" data-delay="200">
+          <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-[#1a1a1a]/55 font-light font-body" data-delay="200">
             Tell us how you want to live for the week. We know where that is.
           </p>
         </div>
@@ -211,7 +210,7 @@ export default function CollectionPage() {
           BLOC 3.5 — CITATION DE RESPIRATION
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] px-6 py-10 md:py-20">
-        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-black/50 font-light font-body">
+        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-[#1a1a1a]/50 font-light font-body">
           The right house changes the week.
         </p>
       </section>
