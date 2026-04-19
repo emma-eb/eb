@@ -134,7 +134,7 @@ export default function FormShell({
               disabled={!canProceed || isSubmitting}
               className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-7 md:px-9 py-3.5 md:py-4 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
             >
-              {isSubmitting ? "Sending..." : "Send the brief"}
+              {isSubmitting ? "Sending..." : "Share your vision"}
               {!isSubmitting && <span>&rarr;</span>}
             </button>
           )}

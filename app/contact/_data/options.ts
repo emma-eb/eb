@@ -36,6 +36,15 @@ export const mustHaves = [
   "Helicopter transfers",
 ];
 
+export const occasionBudgets = [
+  "\u20AC3,000 to 10,000",
+  "\u20AC10,000 to 30,000",
+  "\u20AC30,000 to 80,000",
+  "\u20AC80,000 to 200,000",
+  "\u20AC200,000+",
+  "Confidential / discuss privately",
+];
+
 export const occasionTypes = [
   "Wedding",
   "Proposal",
