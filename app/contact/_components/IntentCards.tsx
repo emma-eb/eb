@@ -16,8 +16,8 @@ const portes = [
     title: "Mark a moment.",
     desc: "A proposal, a honeymoon, a milestone. Designed quietly.",
     href: "/contact?type=occasion",
-    img: "/Screenshot 2026-03-09 at 13.00.10.png",
-    alt: "Private dinner at sunset, Aegean coast",
+    img: "/yatch_page collection_2.png",
+    alt: "Couple on yacht bow, Aegean coast",
   },
   {
     id: "stay",
