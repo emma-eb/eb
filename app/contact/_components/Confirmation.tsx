@@ -14,7 +14,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
           Your brief is with Emma.
         </h1>
         <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light max-w-[480px] mx-auto mb-8" data-delay="160">
-          You will hear back from us within 48 hours. We read every brief ourselves.
+          You will hear back from us within 48 hours. Every inquiry is read, personally.
         </p>
         {summary && (
           <div className="bg-white border border-[#e8e4de] p-6 md:p-8 text-left mt-6 max-w-[560px] mx-auto" data-delay="220">
