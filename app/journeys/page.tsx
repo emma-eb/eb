@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
+import NextChapter from "../components/NextChapter";
 
 interface Journey {
   slug: string;
@@ -403,6 +404,17 @@ export default function JourneysPage() {
           </a>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════
+          NEXT CHAPTER (cross-silo navigation)
+      ═══════════════════════════════════════════ */}
+      <NextChapter
+        items={[
+          { href: "/collection", label: "The Collection", desc: "Villas and yachts, hand-selected." },
+          { href: "/experiences", label: "Experiences", desc: "Moments, celebrations, \u00e0 la carte." },
+          { href: "/about", label: "About eb.", desc: "The studio, first-hand." },
+        ]}
+      />
 
       {/* ═══════════════════════════════════════════
           FOOTER
