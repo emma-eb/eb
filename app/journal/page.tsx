@@ -287,20 +287,40 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 5 — CTA FINAL
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-20 md:py-24 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="reveal text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-light" style={{ fontFamily: "var(--font-inter), 'Inter', sans-serif" }}>
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
+        {/* TODO: replace with final photo */}
+        <img
+          src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=2400&q=80"
+          alt="Greek editorial scene"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-[3] text-center px-8 max-w-[640px]">
+          <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+            The Journal
+          </div>
+          <h2
+            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            data-delay="80"
+            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             Stay close to Greece.
           </h2>
-          <p className="reveal font-body text-[16px] md:text-[17px] text-[#1a1a1a]/70 font-normal mt-4 md:mt-6 leading-[1.6] max-w-md mx-auto" data-delay="100">
+          <p
+            className="reveal font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
             Every great journey starts with a conversation.
           </p>
           <a
             href="/contact"
-            className="reveal inline-block font-body text-[13px] md:text-[14px] font-medium text-[#2e5a88] uppercase tracking-wider border-b border-[#2e5a88] pb-1 hover:opacity-70 transition-opacity duration-300 mt-8 md:mt-10 py-3 px-2"
-            data-delay="200"
+            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+            data-delay="220"
           >
-            Have a project in mind &rarr;
+            Start the conversation
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>
