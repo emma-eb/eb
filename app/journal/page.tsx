@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
+import BackToExploring from "../components/BackToExploring";
 
 export default function Journal() {
   const exploreRef = useRef<HTMLElement>(null);
@@ -55,9 +56,9 @@ export default function Journal() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
-          alt="Aerial view Greek coast, turquoise water"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          src="/panos-katsigiannis-Ll4s8gKQ1xQ-unsplash.jpg"
+          alt="Stone chapel framed by Cycladic arch, Greece"
+          className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-black/40" />
@@ -323,6 +324,8 @@ export default function Journal() {
           </a>
         </div>
       </section>
+
+      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           BLOC 6 — FOOTER

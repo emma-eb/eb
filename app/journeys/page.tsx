@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
+import BackToExploring from "../components/BackToExploring";
 
 interface Journey {
   slug: string;
@@ -404,6 +405,8 @@ export default function JourneysPage() {
           </a>
         </div>
       </section>
+
+      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           NEXT CHAPTER (cross-silo navigation)

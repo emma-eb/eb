@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
+import BackToExploring from "../components/BackToExploring";
 
 /* ═══════════════════════════════════════════════════════
    VILLA DATA — 5 public residences
@@ -350,6 +351,8 @@ export default function CollectionPage() {
           </a>
         </div>
       </section>
+
+      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           FOOTER (gardé tel quel)

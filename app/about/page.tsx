@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
+import BackToExploring from "../components/BackToExploring";
 
 const collabsData = [
   { house: "Balmain", venue: "Silencio, Paris" },
@@ -292,7 +293,7 @@ export default function About() {
           BLOC 5 — CITATION + ligne bleue
       ═══════════════════════════════════════════ */}
       <section className="bg-white flex flex-col items-center justify-center py-10 md:py-12 px-6 md:px-8">
-        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
+        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-3xl md:max-w-4xl leading-[1.6] text-balance">
           I had traveled through ninety-five countries and kept coming back to one.
         </p>
         <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
@@ -338,6 +339,8 @@ export default function About() {
           </a>
         </div>
       </section>
+
+      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           FOOTER
