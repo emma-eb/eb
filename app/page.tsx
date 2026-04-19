@@ -143,7 +143,7 @@ export default function Home() {
           <p className="reveal font-body text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             The Studio
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
+          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mb-6 mx-auto" data-delay="100" />
 
           {/* Statement */}
           <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.3] font-normal mb-4" data-delay="200">

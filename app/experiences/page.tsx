@@ -163,7 +163,7 @@ export default function Experiences() {
           <p className="reveal font-body text-[10px] md:text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-4">
             01 &middot; Signature Experiences
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
+          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
           <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal" data-delay="200">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
@@ -221,7 +221,7 @@ export default function Experiences() {
             <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40" data-delay="100">
               02 &middot; Concierge
             </p>
-            <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-6 mx-auto" data-delay="150" />
+            <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-6 mx-auto" data-delay="150" />
             <p className="reveal font-body text-[22px] md:text-[26px] text-[#2e5a88] leading-[1.3] font-normal" data-delay="200">
               The rest is handled.
             </p>

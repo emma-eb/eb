@@ -274,7 +274,7 @@ export default function About() {
           <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
             Selected Collaborations
           </p>
-          <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
+          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
 
           <div className="reveal text-center" data-delay="200">
             {collabsData.map((c) => (
@@ -295,7 +295,7 @@ export default function About() {
         <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
           I had traveled through ninety-five countries and kept coming back to one.
         </p>
-        <div className="reveal w-[40px] h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
+        <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
       </section>
 
       {/* ═══════════════════════════════════════════
