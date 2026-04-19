@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
-import BackToExploring from "../components/BackToExploring";
 
 const collabsData = [
   { house: "Balmain", venue: "Silencio, Paris" },
@@ -339,8 +338,6 @@ export default function About() {
           </a>
         </div>
       </section>
-
-      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           FOOTER

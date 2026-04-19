@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Nav from '../components/Nav';
 import NewsletterBanner from '../components/NewsletterBanner';
-import BackToExploring from "../components/BackToExploring";
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | eb. Private Travel Studio',
@@ -187,8 +186,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </section>
-
-      <BackToExploring />
 
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />

@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
-import BackToExploring from "../components/BackToExploring";
 
 export default function Journal() {
   const exploreRef = useRef<HTMLElement>(null);
@@ -324,8 +323,6 @@ export default function Journal() {
           </a>
         </div>
       </section>
-
-      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           BLOC 6 — FOOTER

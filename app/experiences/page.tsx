@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
-import BackToExploring from "../components/BackToExploring";
 
 const experiences = [
   {
@@ -305,8 +304,6 @@ export default function Experiences() {
           </a>
         </div>
       </section>
-
-      <BackToExploring />
 
       {/* ═══════════════════════════════════════════
           FOOTER

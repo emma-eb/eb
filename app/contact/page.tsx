@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Nav from "../components/Nav";
-import BackToExploring from "../components/BackToExploring";
 
 type FormMode = "general" | "concierge" | "off-market" | "event";
 
@@ -336,8 +335,6 @@ export default function ContactPage() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <BackToExploring />
-
       <footer data-nav-dark className="mt-auto bg-[#1a1a1a] py-12 px-8 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-60" /></a>
