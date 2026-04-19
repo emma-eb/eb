@@ -171,15 +171,13 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          PULL QUOTE — respiration editoriale (remplace bandeau)
+          PULL QUOTE — respiration discrete (remplace bandeau)
       ═══════════════════════════════════════════ */}
-      <section className="eb-bg-beige-gradient py-20 md:py-28 px-6">
-        <div className="max-w-[820px] mx-auto text-center">
-          <p className="reveal font-body text-[22px] md:text-[32px] text-[#2e5a88] leading-[1.25] font-normal">
-            The set is already built. We just walk into it.
-          </p>
-          <div className="reveal w-10 h-px bg-[#2e5a88] mx-auto mt-8 md:mt-10" data-delay="120" />
-        </div>
+      <section className="bg-white flex flex-col items-center justify-center py-10 md:py-16 px-6 md:px-8">
+        <p className="reveal font-body text-[18px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-[1.6]">
+          The set is already built. We just walk into it.
+        </p>
+        <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-6 md:mt-8 mx-auto" data-delay="100" />
       </section>
 
       {/* ═══════════════════════════════════════════
