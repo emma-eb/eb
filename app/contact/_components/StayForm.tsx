@@ -131,9 +131,13 @@ export default function StayForm() {
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
-    const subject = encodeURIComponent(`New Stay inquiry — ${data.name}`);
-    const body = encodeURIComponent(summary);
-    window.open(`mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`, "_blank");
+    try {
+      const subject = encodeURIComponent(`New Stay inquiry \u2014 ${data.name}`);
+      const body = encodeURIComponent(summary);
+      const link = document.createElement("a");
+      link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
+      link.click();
+    } catch {}
     setSubmitted(true);
   };
 

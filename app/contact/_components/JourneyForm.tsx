@@ -139,9 +139,13 @@ export default function JourneyForm() {
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
-    const subject = encodeURIComponent(`New Journey inquiry — ${data.name}`);
-    const body = encodeURIComponent(summary);
-    window.open(`mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`, "_blank");
+    try {
+      const subject = encodeURIComponent(`New Journey inquiry \u2014 ${data.name}`);
+      const body = encodeURIComponent(summary);
+      const link = document.createElement("a");
+      link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
+      link.click();
+    } catch {}
     setSubmitted(true);
   };
 
@@ -255,7 +259,7 @@ export default function JourneyForm() {
           <Field label="Your vision" required hint={`In a few sentences, tell us who you are and what you dream of. (min ${VISION_MIN} characters)`}>
             <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="What matters to you, who this journey is for, anything else we should know..." rows={7} minLength={VISION_MIN} />
           </Field>
-          <Field label="Budget band" required hint="Indicative. Helps us propose the right scale.">
+          <Field label="Budget per person" required hint="For the full journey, per traveller. Indicative — helps us propose the right scale.">
             <PillChoice options={journeyBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
           </Field>
           <Field label="How did you find us">

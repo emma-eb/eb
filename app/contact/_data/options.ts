@@ -7,23 +7,21 @@ export const villaBudgets = [
 ];
 
 export const journeyBudgets = [
-  "\u20AC15 to 30K",
-  "\u20AC30 to 60K",
-  "\u20AC60 to 120K",
-  "\u20AC120K+",
-  "Discuss privately",
+  "\u20AC5,000 to 8,000 per person",
+  "\u20AC8,000 to 15,000 per person",
+  "\u20AC15,000 to 30,000 per person",
+  "\u20AC30,000 to 50,000 per person",
+  "\u20AC50,000+ per person",
+  "Confidential / discuss privately",
 ];
 
-export const moods = [
-  { id: "odyssey", label: "Odyssey & Salt", desc: "Sea, boats, hidden coves" },
-  { id: "stone", label: "Stone & Silence", desc: "Mani, Zagori, Meteora" },
-  { id: "vine", label: "Vine & Table", desc: "Tables, vineyards, terraces" },
-  { id: "pulse", label: "Pulse & Gold", desc: "Nights, beach clubs, glow" },
-  { id: "soft", label: "Soft Pulse", desc: "Harbors, rooftops, easy" },
-  { id: "wild", label: "Wild & Free", desc: "Cliffs, wild sea, gorges" },
-  { id: "culture", label: "Culture & Heritage", desc: "Acropolis, ateliers" },
-  { id: "wellness", label: "Wellness & Slow", desc: "Pools, serenity" },
-];
+import { moods as canonicalMoods } from "../../data/catalogue";
+
+export const moods = canonicalMoods.map((m) => ({
+  id: m.id,
+  label: m.name,
+  desc: m.subtitle,
+}));
 
 export const mustHaves = [
   "Private chef",
