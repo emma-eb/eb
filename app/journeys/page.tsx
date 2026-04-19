@@ -386,7 +386,7 @@ export default function JourneysPage() {
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Every journey starts from scratch.
+            Every journey is shaped for one.
           </h2>
           <p
             className="reveal mt-6 max-w-[580px] text-white/85 text-[13px] md:text-[17px] leading-[1.6] font-light font-body px-2"

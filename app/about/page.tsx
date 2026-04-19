@@ -305,7 +305,7 @@ export default function About() {
         <img
           src="/Portrait%20Emma_2.jpg"
           alt="Emma Bonnefous portrait"
-          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_65%] md:object-[center_55%]"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-black/40" />
