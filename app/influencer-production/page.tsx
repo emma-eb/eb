@@ -317,7 +317,7 @@ export default function InfluencerProduction() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Brand, dates, team size, objectives. We reply within 48 hours.
+            Brand, dates, team size, objectives. We will be in touch shortly.
           </p>
           <a
             href="/for-brands/brief"

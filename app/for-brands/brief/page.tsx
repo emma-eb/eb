@@ -102,7 +102,7 @@ export default function BrandBriefPage() {
               From brief<br />to final frame.
             </h2>
             <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.8] font-light mb-6">
-              We reply within 48 hours with a first read of the brief, a suggested route, and indicative production scope.
+              We will be in touch shortly with a first read of the brief, a suggested route, and indicative production scope.
             </p>
             <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.8] font-light">
               All exchanges remain strictly confidential. For active NDAs or existing agency frameworks, mention it in the message field.
@@ -131,7 +131,7 @@ export default function BrandBriefPage() {
                   Thank you.
                 </h3>
                 <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.7] font-light">
-                  Your brief is with the production team. Expect a first response within 48 hours.
+                  Your brief is with the production team. We will be in touch shortly.
                 </p>
               </div>
             ) : (
