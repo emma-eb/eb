@@ -18,7 +18,7 @@ interface Journey {
 const featured: Journey[] = [
   {
     slug: "astypalea-before-everyone-else",
-    image: "/astypalea.jpg",
+    image: "/astypalea_01.jpg",
     number: "01",
     overline: "Featured Journey \u00b7 01",
     title: "Astypalea, Before\nEveryone Else.",
