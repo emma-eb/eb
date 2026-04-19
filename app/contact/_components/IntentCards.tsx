@@ -23,7 +23,7 @@ const portes = [
     id: "stay",
     overline: "Villa or Yacht",
     title: "A place to land.",
-    desc: "Villas that rarely appear online. One yacht, timed privately.",
+    desc: "Villas that rarely appear online. A yacht chartered quietly through eb.",
     href: "/contact?type=stay",
     img: "/mykonos_maison.jpg",
     alt: "Private villa, Mykonos",
