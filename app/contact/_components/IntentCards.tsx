@@ -36,20 +36,19 @@ export default function IntentCards() {
       <section className="bg-[#fcf7f1] py-16 md:py-24 px-5 md:px-10">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
+            <p className="font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
               Three ways in
             </p>
-            <h2 className="reveal font-body text-[28px] md:text-[42px] text-[#1a1a1a] leading-[1.1] font-normal max-w-[620px] mx-auto" data-delay="80">
+            <h2 className="font-body text-[28px] md:text-[42px] text-[#1a1a1a] leading-[1.1] font-normal max-w-[620px] mx-auto">
               Tell us what you&apos;re looking for, and we start from there.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {portes.map((p, i) => (
+            {portes.map((p) => (
               <Link
                 key={p.id}
                 href={p.href}
-                className="reveal group relative block aspect-[3/4] overflow-hidden eb-image-vignette"
-                data-delay={i * 100}
+                className="group relative block aspect-[3/4] overflow-hidden eb-image-vignette"
               >
                 <img
                   src={p.img}
