@@ -196,8 +196,8 @@ export default function InfluencerProduction() {
               name: "Short",
               duration: "3 days",
               desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-              img: "/despina-galani-qGtpTQrN7VU-unsplash.jpg",
-              alt: "Plaka alley, Athens, Greek flag and neoclassical facades",
+              img: "/Screenshot 2026-03-09 at 13.00.10.png",
+              alt: "Private dinner table at sunset, Aegean coast",
             },
             {
               num: "02",
