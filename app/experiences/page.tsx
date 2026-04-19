@@ -293,7 +293,7 @@ export default function Experiences() {
             Every detail, already thought of.
           </h2>
           <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Tell us the occasion. One call, handled quietly.
+            Tell us the occasion. The rest is shaped around it.
           </p>
           <a
             href="/contact"
