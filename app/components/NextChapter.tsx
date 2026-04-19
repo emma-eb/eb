@@ -9,7 +9,7 @@ interface NavPage {
 const NAV_ORDER: NavPage[] = [
   { href: '/journeys', label: 'Private Journeys', desc: 'Multi-day itineraries, privately.' },
   { href: '/experiences', label: 'Experiences', desc: 'Moments, celebrations, \u00e0 la carte.' },
-  { href: '/collection', label: 'The Collection', desc: 'Villas and yachts, hand-selected.' },
+  { href: '/collection', label: 'Collection', desc: 'Villas and yachts, hand-selected.' },
   { href: '/journal', label: 'Journal', desc: 'Notes from the ground.' },
   { href: '/about', label: 'About eb.', desc: 'The studio, first-hand.' },
 ];
