@@ -408,13 +408,7 @@ export default function JourneysPage() {
       {/* ═══════════════════════════════════════════
           NEXT CHAPTER (cross-silo navigation)
       ═══════════════════════════════════════════ */}
-      <NextChapter
-        items={[
-          { href: "/collection", label: "The Collection", desc: "Villas and yachts, hand-selected." },
-          { href: "/experiences", label: "Experiences", desc: "Moments, celebrations, \u00e0 la carte." },
-          { href: "/about", label: "About eb.", desc: "The studio, first-hand." },
-        ]}
-      />
+      <NextChapter currentHref="/journeys" />
 
       {/* ═══════════════════════════════════════════
           FOOTER
