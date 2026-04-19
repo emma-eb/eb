@@ -299,7 +299,7 @@ export default function CollectionPage() {
               33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5 &middot; Athens Based
             </p>
             <p className="reveal mt-4 text-[14px] text-white/50 italic font-light font-body" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-              She moves. From Athens through the Cyclades, or wherever the week takes you.
+              From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
               href="/contact?ref=yacht"
@@ -339,7 +339,7 @@ export default function CollectionPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Villas that never appear online. A yacht timed by the eb. studio.
+            Villas that never appear online. A yacht chartered quietly through eb.
           </p>
           <a
             href="/contact?ref=collection-final"

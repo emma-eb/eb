@@ -312,7 +312,7 @@ export default function About() {
 
         <div className="relative z-[3] text-center px-6 max-w-[640px]">
           <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
-            Work with eb.
+            Begin with eb.
           </div>
           <h2
             className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"

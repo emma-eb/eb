@@ -290,7 +290,7 @@ export default function Experiences() {
             One Call
           </div>
           <h2 className="font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Every detail, handled quietly.
+            Every detail, already thought of.
           </h2>
           <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             Tell us the occasion. One call, handled quietly.
