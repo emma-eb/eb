@@ -471,7 +471,7 @@ export default function OdysseyGreece() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="/contact?type=journey&journey=odyssey-greece"
               className="font-body text-xs tracking-[0.25em] uppercase border border-white text-white px-10 py-4 hover:bg-white hover:text-[#1a1a1a] transition-colors"
             >
               Begin your journey

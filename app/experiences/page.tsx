@@ -198,7 +198,7 @@ export default function Experiences() {
               {exp.desc}
             </p>
             <a
-              href="/contact"
+              href="/contact?type=occasion"
               className="reveal eb-cta-link mt-6 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
               data-delay="300"
             >
@@ -297,7 +297,7 @@ export default function Experiences() {
             Tell us the occasion. The rest is shaped around it.
           </p>
           <a
-            href="/contact"
+            href="/contact?type=occasion"
             className="eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
           >
             Start the conversation

@@ -145,7 +145,7 @@ export default function SailingSmallCyclades() {
               Get the route · $100
             </a>
             <a
-              href="/contact"
+              href="/contact?type=journey&journey=sailing-small-cyclades"
               className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#1a1a1a] text-[#1a1a1a] px-10 py-4 hover:bg-[#1a1a1a] hover:text-white transition-colors"
             >
               eb. handles everything

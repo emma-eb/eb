@@ -254,7 +254,7 @@ export default function CollectionPage() {
               Athens Riviera &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Porto Heli &nbsp;&middot;&nbsp; The Ionian
             </p>
             <a
-              href="/contact?ref=private-circle"
+              href="/contact?type=stay&ref=private-circle"
               className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
               data-delay="250"
             >
@@ -302,7 +302,7 @@ export default function CollectionPage() {
               From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
-              href="/contact?ref=yacht"
+              href="/contact?type=stay&villa=bestia-yacht"
               className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
               data-delay="300"
             >
@@ -342,7 +342,7 @@ export default function CollectionPage() {
             Villas that never appear online. A yacht chartered quietly through eb.
           </p>
           <a
-            href="/contact?ref=collection-final"
+            href="/contact?type=stay"
             className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
             data-delay="220"
           >

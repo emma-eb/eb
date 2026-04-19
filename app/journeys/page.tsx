@@ -356,7 +356,7 @@ export default function JourneysPage() {
             A handful of residences on the island where the eb. studio spends its summers, and the Athenian families have returned to for generations. Reachable by helicopter from Athens. By introduction, only.
           </p>
           <a
-            href="/contact?type=introduction"
+            href="/contact?type=stay&ref=antiparos-introduction"
             className="reveal eb-cta-link mt-8 font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium"
             data-delay="260"
           >
@@ -396,7 +396,7 @@ export default function JourneysPage() {
             The journeys above are starting points. Tell us what you have in mind. We shape the rest.
           </p>
           <a
-            href="/contact"
+            href="/contact?type=journey"
             className="reveal eb-cta-link mt-8 font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium"
             data-delay="220"
           >

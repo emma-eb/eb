@@ -356,7 +356,7 @@ export default function AstypaleaJourney() {
             Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the rest.
           </p>
           <a
-            href="/contact?ref=astypalea"
+            href="/contact?type=journey&journey=astypalea-before-everyone-else"
             className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity door-cta"
             data-delay="220"
           >

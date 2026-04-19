@@ -481,7 +481,7 @@ export default function ParosAntiparosPage() {
             </p>
             <div className="flex justify-center">
               <Link
-                href="/contact?journey=paros-antiparos"
+                href="/contact?type=journey&journey=paros-antiparos-privately"
                 className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
               >
                 Inquire &rarr;

@@ -218,7 +218,7 @@ export default function DiscoveryFlow({ initialMood }: DiscoveryFlowProps) {
             Every journey can be designed from scratch.
           </p>
           <a
-            href="/contact"
+            href="/contact?type=journey"
             className="inline-block font-body text-xs tracking-[0.25em] uppercase border border-[#1a1a1a] text-[#1a1a1a] px-10 py-4 hover:bg-[#1a1a1a] hover:text-white transition-colors duration-300 cursor-pointer"
           >
             Inquire
