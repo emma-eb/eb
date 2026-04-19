@@ -37,6 +37,7 @@ export const mustHaves = [
 ];
 
 export const occasionTypes = [
+  "Wedding",
   "Proposal",
   "Honeymoon",
   "Anniversary",

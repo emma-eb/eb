@@ -96,8 +96,14 @@ export default function FormShell({
         {/* Fields */}
         <div className="flex flex-col gap-8">{children}</div>
 
+        {!canProceed && (
+          <p className="mt-6 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 text-right italic font-light">
+            Fill the required fields to continue.
+          </p>
+        )}
+
         {/* Bottom nav */}
-        <div className="mt-12 md:mt-16 flex items-center justify-between gap-4">
+        <div className="mt-6 md:mt-10 flex items-center justify-between gap-4">
           {step > 1 ? (
             <button
               type="button"
