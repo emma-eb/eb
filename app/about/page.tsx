@@ -302,11 +302,10 @@ export default function About() {
           BLOC 6 — CTA FINAL
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
-        {/* TODO: replace with final photo */}
         <img
-          src="/DSC_9385-Edit.jpg"
-          alt="Greek atmosphere"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/Portrait%20Emma_2.jpg"
+          alt="Emma Bonnefous portrait"
+          className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-black/40" />

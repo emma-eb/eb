@@ -105,43 +105,71 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHAT WE PRODUCE
+          WHAT WE PRODUCE — dark image cards (DA push)
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-16 md:py-24 px-6 md:px-16 border-t border-[#e8e4de]">
-        <div className="max-w-6xl mx-auto">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-12 md:mb-16">What we produce</p>
-          <div className="grid md:grid-cols-3 gap-px bg-[#e8e4de]">
-            {[
-              {
-                title: "Brand Trips",
-                body: "Multi-day trips for press, influencers, and brand ambassadors. Every detail handled on the ground, so your team focuses on content.",
-                details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences", "Media coordination"],
-              },
-              {
-                title: "Fam Trips",
-                body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece, not just the destination.",
-                details: ["Route design", "Hosted experiences", "Press & media support", "Itinerary documentation"],
-              },
-              {
-                title: "Content Creation",
-                body: "Photo and video production across Greece. Scouting, permits, crew, styling. Built around your brief, delivered to spec.",
-                details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction", "Post-production coordination"],
-              },
-            ].map(({ title, body, details }, i) => (
-              <div key={title} className="reveal bg-white p-8 md:p-10 flex flex-col gap-5" data-delay={i * 100}>
-                <h2 className="text-[22px] md:text-[28px] text-[#2e5a88] leading-tight font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{title}</h2>
-                <p className="font-body text-[15px] md:text-[16px] text-[#1a1a1a]/70 leading-[1.6] flex-grow">{body}</p>
-                <ul className="flex flex-col gap-2 mt-2">
+      <section data-nav-dark className="bg-[#1a1a1a]">
+        <div className="text-center pt-14 md:pt-20 pb-8 md:pb-12 px-6">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+            What we produce
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {[
+            {
+              title: "Brand Trips",
+              body: "Multi-day trips for press, influencers, and brand ambassadors. Every detail handled on the ground, so your team focuses on content.",
+              details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences", "Media coordination"],
+              /* TODO: replace with final photo */
+              img: "https://images.unsplash.com/photo-1567958451986-2de427a4a0be?w=1600&q=80",
+              alt: "Brand trip, Greek villa terrace",
+            },
+            {
+              title: "Fam Trips",
+              body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece.",
+              details: ["Route design", "Hosted experiences", "Press & media support", "Itinerary documentation"],
+              /* TODO: replace with final photo */
+              img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
+              alt: "Fam trip, Aegean coast",
+            },
+            {
+              title: "Content Creation",
+              body: "Photo and video production across Greece. Scouting, permits, crew, styling. Built around your brief, delivered to spec.",
+              details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction", "Post-production coordination"],
+              /* TODO: replace with final photo */
+              img: "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1600&q=80",
+              alt: "Content creation, Greek setting",
+            },
+          ].map(({ title, body, details, img, alt }, i) => (
+            <div
+              key={title}
+              className="reveal group relative min-h-[70vh] md:min-h-[80vh] overflow-hidden eb-image-vignette"
+              data-delay={i * 100}
+            >
+              <img
+                src={img}
+                alt={alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-[3]">
+                <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                  {title}
+                </h3>
+                <p className="text-[13px] md:text-[14px] text-white/80 font-light leading-[1.6] mb-5 max-w-[340px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                  {body}
+                </p>
+                <ul className="flex flex-col gap-1.5">
                   {details.map((d) => (
-                    <li key={d} className="font-body text-[15px] text-[#1a1a1a]/70 leading-[1.7] flex gap-3">
-                      <span className="text-[#1a1a1a]/40 shrink-0">&middot;</span>
+                    <li key={d} className="text-[12px] md:text-[13px] text-white/70 font-light leading-[1.5] flex gap-2">
+                      <span className="text-white/45 shrink-0">&middot;</span>
                       {d}
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -161,104 +189,204 @@ export default function InfluencerProduction() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          PRODUCTION FORMATS
+          PRODUCTION FORMATS — 3 full-cadre editorial blocks stacked
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-16 md:py-24 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 mb-12 md:mb-16">Production formats</p>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                name: "Short",
-                duration: "3 days",
-                desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-              },
-              {
-                name: "Extended",
-                duration: "4\u20135 days",
-                desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-              },
-              {
-                name: "Bespoke",
-                duration: "From 6 days",
-                desc: "Fully custom. Your brief, your talent, your season. No template.",
-              },
-            ].map(({ name, duration, desc }, i) => (
-              <div key={name} className="reveal bg-white p-8 md:p-10 flex flex-col" data-delay={i * 100}>
-                <div className="flex items-baseline gap-4">
-                  <h3 className="text-[22px] md:text-[28px] text-[#2e5a88] font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{name}</h3>
-                  <span className="font-body text-[13px] tracking-[0.2em] uppercase text-[#1a1a1a]/40">{duration}</span>
-                </div>
-                <p className="font-body text-[15px] md:text-[16px] text-[#1a1a1a]/70 leading-[1.6] mt-6">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          WHAT WE BRING — dark
-      ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="bg-[#1a1a1a] pt-12 md:pt-16 pb-16 md:pb-24 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <p className="reveal font-body text-[11px] tracking-[0.2em] uppercase text-white/70 mb-12 md:mb-16">What we bring to every production</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {[
-              {
-                cat: "Production",
-                items: ["Dedicated producer on location", "Location scouting & permit management", "Full logistics (transfers, accommodation)"],
-              },
-              {
-                cat: "Creative",
-                items: ["Photographers & videographers", "Stylists & art directors", "Hair & make-up"],
-              },
-              {
-                cat: "Talent & Coordination",
-                items: ["Influencer coordination on-site", "Agency & talent liaison", "Brand ambassador management"],
-              },
-            ].map(({ cat, items }, i) => (
-              <div key={cat} className="reveal" data-delay={i * 100}>
-                <div className="h-px bg-white/30 w-10 mb-6" />
-                <h3 className="text-[22px] md:text-[28px] text-white mb-5 font-medium" style={{ fontFamily: "var(--font-inter), sans-serif" }}>{cat}</h3>
-                <ul className="flex flex-col gap-3">
-                  {items.map((item) => (
-                    <li key={item} className="font-body text-[15px] text-white/85 leading-[1.7] flex gap-3">
-                      <span className="text-white/60 shrink-0">&middot;</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Case studies line inside dark section */}
-          <div className="reveal w-[40px] h-px bg-white/20 mx-auto mt-16" data-delay="150" />
-          <p className="reveal font-body text-[14px] text-white/60 text-center mt-6" data-delay="200">
-            Selected case studies available on request.
+      <section data-nav-dark className="bg-[#1a1a1a]">
+        <div className="text-center pt-14 md:pt-20 pb-2 md:pb-4 px-6">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+            Production formats
           </p>
         </div>
+        {[
+          {
+            num: "01",
+            name: "Short",
+            duration: "3 days",
+            desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
+            /* TODO: Emma validate photo */
+            img: "https://images.unsplash.com/photo-1533777324565-a040eb52facd?auto=format&fit=crop&w=1920&q=80",
+            alt: "Athens rooftop at dusk",
+          },
+          {
+            num: "02",
+            name: "Extended",
+            duration: "4 to 5 days",
+            desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
+            /* TODO: Emma validate photo */
+            img: "/helicptere.jpg",
+            alt: "Aerial helicopter view, Greek coast",
+          },
+          {
+            num: "03",
+            name: "Bespoke",
+            duration: "From 6 days",
+            desc: "Fully custom. Your brief, your talent, your season. No template.",
+            /* TODO: Emma validate photo */
+            img: "/yatch_page collection.jpg",
+            alt: "Private yacht, Aegean sea",
+          },
+        ].map(({ num, name, duration, desc, img, alt }, i) => (
+          <div
+            key={name}
+            className="reveal relative w-full min-h-[80vh] md:min-h-[90vh] overflow-hidden eb-image-vignette"
+            data-delay={i * 80}
+          >
+            <img
+              src={img}
+              alt={alt}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.15) 100%)" }} />
+            <span className="absolute top-6 md:top-10 right-6 md:right-10 font-anton text-white/15 text-[140px] md:text-[240px] leading-none select-none pointer-events-none" style={{ letterSpacing: "-0.02em" }}>
+              {num}
+            </span>
+            <div className="absolute inset-0 flex items-center z-[3]">
+              <div className="px-6 md:px-16 max-w-[640px]">
+                <span className="inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white mb-5">
+                  {duration}
+                </span>
+                <h3 className="font-anton font-normal uppercase text-white text-[44px] md:text-[84px] leading-[0.95] mb-5" style={{ letterSpacing: "0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                  {name}
+                </h3>
+                <p className="font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] font-light max-w-[520px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                  {desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* ═══════════════════════════════════════════
-          CTA FINAL
+          WHAT WE BRING — mosaic grid of image tiles (press-kit feel)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative py-28 md:py-36 px-8 md:px-16 text-center overflow-hidden">
+      <section data-nav-dark className="bg-[#1a1a1a] pt-14 md:pt-20 pb-16 md:pb-24">
+        <div className="text-center px-6 mb-10 md:mb-14">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+            What we bring to every production
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {[
+            /* TODO: Emma validate 8 photos below — mosaic press-kit feel */
+            { label: "Scouting", img: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80", alt: "Aerial Greek coast scouting" },
+            { label: "Permits", img: "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=80", alt: "Acropolis Athens heritage site" },
+            { label: "Transfers", img: "/helicptere.jpg", alt: "Private helicopter transfer" },
+            { label: "Villas", img: "/134_terrace_privatebeach.jpg", alt: "Villa terrace, private beach" },
+            { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
+            { label: "Styling", img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80", alt: "Wardrobe and styling" },
+            { label: "Photography", img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80", alt: "Photo production setup" },
+            { label: "Post", img: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=80", alt: "Editorial post-production" },
+          ].map(({ label, img, alt }, i) => (
+            <div
+              key={label}
+              className="reveal relative aspect-[4/5] overflow-hidden group"
+              data-delay={i * 60}
+            >
+              <img
+                src={img}
+                alt={alt}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                <span className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-white font-medium" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
+                  {label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CASE STUDIES TEASER — editorial band
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-20 md:py-28 px-6 md:px-16">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
+              Selected productions
+            </p>
+            <h2 className="reveal font-anton font-normal uppercase text-[#1a1a1a] text-[36px] md:text-[56px] leading-[0.95]" data-delay="80" style={{ letterSpacing: "0.01em" }}>
+              Discreet by design.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+            {[
+              /* TODO: Emma validate anonymised case-study visuals */
+              { img: "/paros_02.jpg", alt: "Production case study, Paros" },
+              { img: "/mykonos_Vue.jpg", alt: "Production case study, Mykonos" },
+              { img: "/astypalea_02.jpg", alt: "Production case study, Astypalea" },
+            ].map(({ img, alt }, i) => (
+              <div
+                key={i}
+                className="reveal relative aspect-[3/4] overflow-hidden"
+                data-delay={i * 100}
+              >
+                <img
+                  src={img}
+                  alt={alt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/15" />
+              </div>
+            ))}
+          </div>
+          <div className="reveal text-center mt-10 md:mt-14" data-delay="200">
+            <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/60 font-light leading-[1.7] max-w-[540px] mx-auto mb-6">
+              Client names and campaign details shared privately, on request. Full portfolio available to qualified brands and agencies.
+            </p>
+            <a
+              href="/for-brands/brief"
+              className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors duration-300 door-cta"
+            >
+              Request portfolio
+              <span className="eb-cta-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CTA FINAL — B2B brief (separate route from /contact)
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         <img
           src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1920&q=80"
           alt="Greek alley bougainvillea"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%)" }} />
-        <div className="relative z-10">
-          <h2 className="font-heading text-[40px] md:text-[60px] text-white mb-6 leading-tight uppercase" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
-            Planning a production<br />in Greece?
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-[3] text-center px-6 max-w-[640px]">
+          <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
+            For Brands &amp; Agencies
+          </div>
+          <h2
+            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            data-delay="80"
+            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Send us your brief.
           </h2>
-          <p className="font-body text-[16px] md:text-[17px] text-white/90 max-w-xl mx-auto leading-relaxed mt-6" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}>
-            Send us your brief. Dates, brand, team size, objectives.
+          <p
+            className="reveal font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            data-delay="150"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+          >
+            Brand, dates, team size, objectives. We reply within 48 hours.
           </p>
-          <a href="/contact" className="inline-block font-body text-[13px] md:text-[14px] font-medium tracking-[0.1em] uppercase text-white border-b border-white pb-1 hover:opacity-70 transition-opacity duration-300 mt-8 py-3 door-cta">
-            Send a brief &rarr;
+          <a
+            href="/for-brands/brief"
+            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+            data-delay="220"
+          >
+            Start a brief
+            <span className="eb-cta-arrow">&rarr;</span>
           </a>
         </div>
       </section>

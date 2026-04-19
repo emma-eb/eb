@@ -414,10 +414,9 @@ export default function Home() {
           BLOC 09 — CTA FINAL (fond image sombre, harmonisé)
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden eb-image-vignette">
-        {/* TODO: replace with final photo */}
         <img
-          src="/DSC_9599-Edit.jpg"
-          alt="Greek shore at dusk"
+          src="/MILOS_01.jpg"
+          alt="Sarakiniko white rocks at dusk, Milos"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

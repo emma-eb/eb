@@ -288,11 +288,10 @@ export default function Journal() {
           BLOC 5 — CTA FINAL
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
-        {/* TODO: replace with final photo */}
         <img
-          src="/DSC_9459-Edit.jpg"
-          alt="Editorial Greek atmosphere"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/alexandra-kirr-pV7Cyd4bxkY-unsplash.jpg"
+          alt="Alley opening onto the Aegean, Greek islands"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_35%]"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-black/40" />
