@@ -290,8 +290,8 @@ export default function Journal() {
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         {/* TODO: replace with final photo */}
         <img
-          src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=2400&q=80"
-          alt="Greek editorial scene"
+          src="/DSC_9459-Edit.jpg"
+          alt="Editorial Greek atmosphere"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
