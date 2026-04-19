@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
+import NextChapter from "../components/NextChapter";
 
 const experiences = [
   {
@@ -307,6 +308,8 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           FOOTER
       ═══════════════════════════════════════════ */}
+      <NextChapter currentHref="/experiences" />
+
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
         <div className="max-w-6xl mx-auto px-6">

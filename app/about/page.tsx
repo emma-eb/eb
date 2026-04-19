@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
+import NextChapter from "../components/NextChapter";
 
 const collabsData = [
   { house: "Balmain", venue: "Silencio, Paris" },
@@ -343,6 +344,8 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           FOOTER
       ═══════════════════════════════════════════ */}
+      <NextChapter currentHref="/about" />
+
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
         <div className="max-w-6xl mx-auto px-6">
