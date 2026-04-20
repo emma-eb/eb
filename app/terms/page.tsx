@@ -45,7 +45,7 @@ export default function TermsPage() {
                 2. Our Role
               </h2>
               <p>
-                eb. designs private journeys and introduces clients to our trusted network of licensed Destination Management Companies (DMCs) in Greece. Our DMC partners handle all operational aspects of your journey, including bookings, contracts, and payments.
+                eb. designs bespoke journeys and introduces clients to our trusted network of licensed Destination Management Companies (DMCs) in Greece. Our DMC partners handle all operational aspects of your journey, including bookings, contracts, and payments.
               </p>
             </div>
 

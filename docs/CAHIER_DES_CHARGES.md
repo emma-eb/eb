@@ -213,9 +213,9 @@ Mobile (nav EN PREMIER) : logo > nav 2x2 > social > email > legal > copyright
 - Ton : confiant, insider, elegant mais chaleureux, precis
 
 ### Mots interdits
-hidden gems, bucket list, unforgettable, bespoke, tailor-made, world-class, seamless, elevated, passionate, end-to-end
+hidden gems, bucket list, unforgettable, tailor-made, world-class, seamless, elevated, passionate, end-to-end
 
-(Note : "curated" retire de la liste le 20/04 — autorise)
+(Note : "curated" et "bespoke" sont AUTORISES — retires de la liste le 20/04/2026)
 
 ### Ponctuation interdite
 - Em dashes (tirets longs) : trahissent une ecriture IA. Utiliser virgules, deux-points ou points medians
