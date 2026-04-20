@@ -250,7 +250,7 @@ export default function ParosAntiparosPage() {
 
             <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
               <h3 className="font-anton font-normal uppercase text-[26px] md:text-[40px] leading-[1] mb-3">
-                Seven nights by the sea.
+                Six nights by the sea.
               </h3>
               <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">
                 Hand-selected villa, quiet bays, evenings in Naoussa.
