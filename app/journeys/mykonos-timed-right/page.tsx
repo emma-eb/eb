@@ -228,8 +228,8 @@ export default function MykonosTimedRightPage() {
 
           <div className="relative h-[100dvh] min-h-[600px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] md:mx-auto -mx-6 md:mx-auto">
             <Image
-              src="https://images.unsplash.com/photo-1606144330720-7ee2cec6c86b?auto=format&fit=crop&w=1600&q=80"
-              alt="Mykonos whitewashed stairs against a clear Aegean sky"
+              src="/scorpio.jpg"
+              alt="Scorpios Mykonos at sunset"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -243,10 +243,10 @@ export default function MykonosTimedRightPage() {
 
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
               <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4">
-                Five nights, when it breathes.
+                Five nights, at full voltage.
               </h3>
               <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light">
-                The island without the crowds. Delos at dawn. Nights in Chora.
+                Beach clubs. Long tables. Dinners that turn into mornings.
               </p>
             </div>
           </div>
@@ -335,8 +335,11 @@ export default function MykonosTimedRightPage() {
       </section>
 
       {/* ============ ZONE 6B — VILLA GLIMPSES ============ */}
-      <section className="bg-white py-10 md:py-14 eb-fade-up">
+      <section className="bg-white py-12 md:py-16 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-8 md:mb-10">
+            <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Mykonos at a glimpse</div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
@@ -363,9 +366,6 @@ export default function MykonosTimedRightPage() {
               />
             </div>
           </div>
-          <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">
-            Glimpses. Exact residence confirmed on request.
-          </p>
         </div>
       </section>
 

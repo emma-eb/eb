@@ -171,12 +171,14 @@ export default function SlowHoneymoonPage() {
 
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-8 md:mb-10">
+            <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Milos + Folegandros at a glimpse</div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Klima Milos, colored houses by the water" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1601293016735-b0cc5d37f8e5?auto=format&fit=crop&w=900&q=80" alt="Folegandros white village on the cliff" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="Deep blue sea seen from a Cycladic cliff" fill className="object-cover" /></div>
           </div>
-          <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact residences confirmed on request.</p>
         </div>
       </section>
 

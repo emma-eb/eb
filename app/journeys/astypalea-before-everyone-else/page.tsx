@@ -154,14 +154,16 @@ export default function AstypaleaPage() {
         </div>
       </section>
 
-      <section className="bg-white py-10 md:py-14 eb-fade-up">
+      <section className="bg-white py-12 md:py-16 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-8 md:mb-10">
+            <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Astypalea at a glimpse</div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_06.JPG" alt="Astypalea coast, quiet cove" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/atypalea_05.jpg" alt="Astypalea beach" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover" /></div>
           </div>
-          <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact properties confirmed on request.</p>
         </div>
       </section>
 
