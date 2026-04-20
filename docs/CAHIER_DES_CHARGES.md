@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 0.9
-**Date :** 2026-04-19
+**Version :** 1.0
+**Date :** 2026-04-20
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refaite avec 3 portes B2C + 4 flows multi-step + budget filtering strategique. For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables.
+**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refondue V3 (one-page sectionne, plus de multi-step, budget tiers strategiques par type). For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables vers les bons flows via query params (`?type=journey|stay|occasion` + slug eventuel).
 
 ---
 
@@ -110,7 +110,7 @@ Grille filtree par mood + type de contenu. Resultats personnalises "pour vous".
 | Journal | `/journal` | **DONE** | Hero + Featured + 7 articles grille magazine + The Height + CTA. Mention footer legale ajoutee. |
 | For Brands | `/influencer-production` | **DONE** | Hero centre + Why Greece + 3 services + 3 formats + What we bring + CTA |
 | Collection | `/collection` | **DONE** | 8 blocs + CTA harmonise (pill Private Stays + description ajoutee). Yacht anonymise. |
-| Contact / Inquire | `/contact` | **DONE v2** (19/04) | Landing 3 portes B2C + sortie B2B discrete + 4 flows multi-step (Journey scratch/fiche, Stay, Occasion, Brand via /for-brands/brief) — voir section 19 |
+| Contact / Inquire | `/contact` | **DONE v3** (20/04) | Landing 3 portes B2C (Journey/Occasion/Stay) 100% B2C, plus de sortie B2B (brief deplace uniquement sur /influencer-production). Forms one-page sectionnes (plus de multi-step). Budget tiers strategiques par type. Query params `?type=...&journey\|villa={slug}` — voir section 19 |
 | For Brands Brief | `/for-brands/brief` | **DONE** | Formulaire B2B dedie (brand/agency). Separe du /contact B2C. Typography harmonisee bleu #2e5a88. |
 | Private Journeys | `/journeys` | **DONE** | Hero + 2 featured + 6 secondaires + CTA. Fix mobile (titre Astypalea break après virgule, metadonnees whitespace-nowrap, animations translate3d iOS, quote "Designed on the ground" break). Photo CTA dediee `/CTA FINAL PRIVATE JOURNEY.jpg` |
 | Journey detail pages | `/journeys/[slug]` | **DONE** (9 pages) | Astypalea, Mykonos, Athens Slowly, Slow Honeymoon, Family Summer, Week by Sea, **Paros + Antiparos (v12 DA luxury push : 7 moves DA + reorganisation + images Highlights corrigees)**, Athens Beyond, Odyssey Greece, Sailing Small Cyclades |
@@ -300,7 +300,7 @@ hidden gems, bucket list, unforgettable, bespoke, curated, tailor-made, world-cl
 
 ---
 
-*Derniere mise a jour : 2026-04-19 — v0.8*
+*Derniere mise a jour : 2026-04-20 — v1.0*
 
 ---
 
@@ -364,4 +364,86 @@ Les 3 pages secondaires utilisent une structure hero STRICTEMENT IDENTIQUE pour 
 ```
 
 Pill tag + titre + sous-titre a la meme hauteur verticale sur les 3 pages.
+
+---
+
+## 19. Contact / Inquire — Architecture V3 (20/04/2026)
+
+Page `/contact` refondue le 19-20 avril 2026 apres benchmark des tops du luxe (Aman, Rosewood, Belmond, Black Tomato, Scott Dunn, Jacada). Objectif : atteindre un niveau "parfait" cote conversion et sensation maison.
+
+### 19.1 Architecture globale
+
+- **Landing** : 3 portes B2C (Journey / Occasion / Stay). **Page 100% B2C** — la sortie B2B a ete retiree le 20/04 pour assainir la separation (`/for-brands/brief` reste accessible uniquement depuis `/influencer-production`).
+- **Pas de multi-step** avec progress dots : juge trop "SaaS" apres benchmark. Tous les tops luxury utilisent one-page sectionne.
+- **Form one-page vertical sectionne** : wrapper `FormOnePage` + subcomponents `Section` (num 01/02/03 + h2 titre bleu marine).
+- **Pas de mood grid** (supprimee, `catalogue.ts` obsolete sur ce pan).
+- **Submit unifie** : "Share your vision" sur les 3 forms.
+
+### 19.2 Wording des 3 portes
+
+| Porte | Titre | Kicker descriptif |
+|---|---|---|
+| Journey | A journey | (itineraire multi-jours sur-mesure) |
+| Occasion | A moment | (celebration, mariage, diner, demande) |
+| Stay | A place | (villa privee, yacht) |
+
+Harmonie : 3 noms + description action.
+
+### 19.3 Budget tiers strategiques par type
+
+Les tranches sont differenciees selon le produit, pensees comme un filtre naturel anti-demandes hors-cible :
+
+- **Journey** (per person) : €5-8K / 8-15K / 15-30K / 30-50K / 50K+ / Confidential
+- **Villa** (per night) : €1.5-3K / 3-5K / 5-10K / 10K+ / Discuss privately
+- **Occasion** (total) : €3-10K / 10-30K / 30-80K / 80-200K / 200K+ / Confidential
+- **Yacht** : **pas de champ budget** — remplace par bloc "Yacht charters are quoted individually, share dates/party, we come back"
+
+### 19.4 Champs et micro-interactions
+
+- **Date picker natif** (`<input type="date">`) en DateRange (start+end) pour Journey/Stay, single pour Occasion
+- **Flexibility** = PillChoice (None / A few days / One week either side / Fully flexible / Not sure yet)
+- **Vision** = free text min 60 chars (filtre naturel anti-50€-budget)
+- **Confirmation** : summary box masquee derriere toggle "View my brief" (pour eviter l'aspect "ticket receipt" bancaire)
+- **Pas de "within 48 hours"** nulle part (Emma n'aime pas l'engagement). Remplace par "shortly".
+
+### 19.5 Routage cross-site (CTAs re-cables)
+
+Chaque CTA du site envoie vers le bon flow via query params :
+
+| Contexte source | Lien |
+|---|---|
+| CTA generique scratch | `/contact?type=journey` |
+| Depuis fiche journey | `/contact?type=journey&journey={slug}` |
+| CTA stay generique | `/contact?type=stay` |
+| Depuis fiche villa | `/contact?type=stay&villa={slug}` |
+| CTA occasion | `/contact?type=occasion` |
+| CTA B2B marques | `/for-brands/brief` (hors /contact) |
+
+### 19.6 Submit mechanism
+
+- Genere un summary DMC-ready formate
+- Ouvre un mailto prerempli vers hello@emmabonnefous.com via un `<a>` programmatique (`window.open` etait bloque par browsers)
+- Confirmation s'affiche toujours, meme si le mailto echoue
+
+### 19.7 Auto-save et RGPD
+
+- **Auto-save** : localStorage par flow (`eb-contact-journey` / `-stay` / `-occasion`), efface apres submit
+- **RGPD** : consent checkbox obligatoire avant submit sur chaque flow
+
+### 19.8 Arborescence fichiers
+
+```
+app/contact/
+├── page.tsx                       (router, lit ?type= et dispatch)
+├── _components/
+│   ├── IntentCards.tsx            (landing 3 portes + sortie B2B)
+│   ├── FormOnePage.tsx            (wrapper + Section)
+│   ├── JourneyForm.tsx
+│   ├── StayForm.tsx
+│   ├── OccasionForm.tsx
+│   ├── Confirmation.tsx
+│   └── fields.tsx                 (Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox, DateRange)
+└── _data/
+    └── options.ts                 (tranches budgets, howHeard, occasionTypes avec Wedding en premier, etc.)
+```
 

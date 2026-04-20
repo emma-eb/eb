@@ -77,20 +77,6 @@ export default function IntentCards() {
           </div>
         </div>
       </section>
-
-      {/* B2B exit — discreet line */}
-      <section className="bg-[#fcf7f1] pb-20 md:pb-28 px-6">
-        <div className="max-w-[620px] mx-auto text-center">
-          <div className="w-8 h-px bg-[#1a1a1a]/15 mx-auto mb-6" />
-          <Link
-            href="/for-brands/brief"
-            className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
-          >
-            For a brand or agency brief
-            <span className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1">&rarr;</span>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

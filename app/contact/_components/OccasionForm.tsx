@@ -139,6 +139,7 @@ export default function OccasionForm() {
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
+      currentType="occasion"
     >
       <Section num="01" title="Who is celebrating.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

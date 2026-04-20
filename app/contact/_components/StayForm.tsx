@@ -161,6 +161,7 @@ export default function StayForm() {
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
+      currentType="stay"
     >
       <Section num="01" title="Who is staying.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

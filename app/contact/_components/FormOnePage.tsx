@@ -1,6 +1,15 @@
 "use client";
 
 import { ReactNode } from "react";
+import Link from "next/link";
+
+type PorteType = "journey" | "stay" | "occasion";
+
+const PORTES: Record<PorteType, { label: string; href: string }> = {
+  journey: { label: "A journey", href: "/contact?type=journey" },
+  stay: { label: "A place", href: "/contact?type=stay" },
+  occasion: { label: "A moment", href: "/contact?type=occasion" },
+};
 
 interface FormOnePageProps {
   typeLabel: string;
@@ -10,6 +19,7 @@ interface FormOnePageProps {
   canSubmit: boolean;
   missing?: string[];
   isSubmitting?: boolean;
+  currentType: PorteType;
   children: ReactNode;
 }
 
@@ -21,8 +31,12 @@ export default function FormOnePage({
   canSubmit,
   missing = [],
   isSubmitting,
+  currentType,
   children,
 }: FormOnePageProps) {
+  const otherPortes = (Object.keys(PORTES) as PorteType[]).filter(
+    (k) => k !== currentType
+  );
   return (
     <section className="bg-[#fcf7f1] min-h-[calc(100dvh-80px)] pb-24 md:pb-32">
       {/* Header */}
@@ -82,6 +96,27 @@ export default function FormOnePage({
               Fill the required fields to send.
             </p>
           )}
+        </div>
+      </div>
+
+      {/* Switch porte — discreet */}
+      <div className="px-5 md:px-10 mt-20 md:mt-28">
+        <div className="max-w-[760px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#1a1a1a]/15 mx-auto mb-6" />
+          <p className="font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 font-light">
+            Looking for something else?{" "}
+            {otherPortes.map((k, i) => (
+              <span key={k}>
+                <Link
+                  href={PORTES[k].href}
+                  className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] underline underline-offset-4 decoration-[#1a1a1a]/20 hover:decoration-[#1a1a1a]/60 transition-colors"
+                >
+                  {PORTES[k].label}
+                </Link>
+                {i === 0 && <span className="mx-2 text-[#1a1a1a]/30">&middot;</span>}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
     </section>

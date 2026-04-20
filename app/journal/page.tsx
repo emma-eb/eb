@@ -274,7 +274,7 @@ export default function Journal() {
               <span className="eb-cta-arrow">&rarr;</span>
             </a>
             <a
-              href="/contact"
+              href="/contact?type=stay"
               className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center"
             >
               Request an introduction

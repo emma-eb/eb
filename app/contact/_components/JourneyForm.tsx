@@ -163,6 +163,7 @@ export default function JourneyForm() {
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
+      currentType="journey"
     >
       <Section num="01" title="Who is traveling.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
