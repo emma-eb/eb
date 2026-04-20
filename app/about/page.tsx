@@ -204,7 +204,7 @@ export default function About() {
           <div ref={numbersRef} className="mt-24 md:mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
             {stats.map((s, i) => (
               <div key={s.label} className="reveal text-center" data-delay={i * 100}>
-                <p className="font-body text-[36px] md:text-[48px] font-medium text-[#2e5a88] leading-none">
+                <p className="font-body text-[44px] md:text-[60px] font-light text-[#2e5a88] leading-[0.9]">
                   <CounterNumber target={s.n} suffix={s.suffix} trigger={numbersVisible} />
                 </p>
                 <p className="font-body text-[12px] md:text-[13px] text-[#1a1a1a]/55 font-light mt-2 leading-[1.4]">{s.label}</p>
