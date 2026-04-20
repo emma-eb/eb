@@ -40,7 +40,7 @@ export default function FormOnePage({
   return (
     <section className="bg-[#fcf7f1] min-h-[calc(100dvh-80px)] pb-24 md:pb-32">
       {/* Header */}
-      <div className="px-5 md:px-10 pt-10 md:pt-16">
+      <div className="px-5 md:px-10 pt-28 md:pt-24">
         <div className="max-w-[760px] mx-auto">
           <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
             {typeLabel}
