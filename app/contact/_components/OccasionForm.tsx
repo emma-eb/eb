@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
-import { Field, TextInput, TextArea, PillChoice, Counter, Checkbox } from "./fields";
-import { occasionTypes, occasionBudgets, howHeard, styles } from "../_data/options";
+import { Field, TextInput, TextArea, PillChoice, Counter, Checkbox, Select } from "./fields";
+import { occasionTypes, occasionBudgets, howHeard, styles, countries } from "../_data/options";
 
 interface Data {
   name: string;
@@ -154,7 +154,7 @@ export default function OccasionForm() {
             <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
           </Field>
           <Field label="Country of residence">
-            <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
+            <Select value={data.country} onChange={(v) => update("country", v)} options={countries} placeholder="Select country" />
           </Field>
         </div>
       </Section>
@@ -191,7 +191,7 @@ export default function OccasionForm() {
         <Field label="In a few sentences" required hint={`The occasion, the feel, anything that matters. (min ${VISION_MIN} characters)`}>
           <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} minLength={VISION_MIN} />
         </Field>
-        <Field label="Budget band" required hint="Total for the occasion. Indicative \u2014 helps us propose the right scale.">
+        <Field label="Budget band" required hint="Total for the occasion. An indicative range helps us propose the right scale.">
           <PillChoice options={occasionBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
         </Field>
         <Field label="How did you find us">

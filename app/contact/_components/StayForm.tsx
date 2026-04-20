@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
-import { Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox, DateRange } from "./fields";
+import { Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox, DateRange, Select } from "./fields";
 import {
   villaBudgets,
   mustHaves as mustHavesData,
   howHeard,
   stayInterest,
   flexibilityOptions,
+  countries,
 } from "../_data/options";
 
 interface Data {
@@ -175,7 +176,7 @@ export default function StayForm() {
             <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
           </Field>
           <Field label="Country of residence">
-            <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
+            <Select value={data.country} onChange={(v) => update("country", v)} options={countries} placeholder="Select country" />
           </Field>
         </div>
       </Section>
@@ -223,7 +224,7 @@ export default function StayForm() {
           <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="What you're looking for, who's coming, what would make it right..." rows={7} minLength={VISION_MIN} />
         </Field>
         {showVillaBudget && (
-          <Field label="Villa budget per night" required hint="Indicative. Villas start at \u20AC1,500 per night.">
+          <Field label="Villa budget per night" required hint="Indicative. Villas start at €1,500 per night.">
             <PillChoice options={villaBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
           </Field>
         )}
