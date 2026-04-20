@@ -76,8 +76,8 @@ export default function ParosAntiparosPage() {
 
   const onRequestItems = [
     'Private chef',
-    'Bespoke experiences',
-    'Personal shopping and spa',
+    'Signature experiences',
+    'Wellness and in-villa treatments',
   ];
 
   return (
