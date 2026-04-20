@@ -70,9 +70,8 @@ export default function ParosAntiparosPage() {
     'Six nights in a hand-selected villa',
     'Private airport and port transfers',
     'Daily concierge by the eb. studio',
-    'Yacht for the day (Antiparos + Despotiko)',
+    'Private boat for the day (Antiparos + Despotiko)',
     'Access to our Athenian network of tables',
-    '24/7 on-the-ground support',
   ];
 
   const onRequestItems = [
