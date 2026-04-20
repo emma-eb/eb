@@ -9,6 +9,7 @@ interface FormOnePageProps {
   intro: string;
   onSubmit: () => void;
   canSubmit: boolean;
+  missing?: string[];
   isSubmitting?: boolean;
   children: ReactNode;
 }
@@ -19,6 +20,7 @@ export default function FormOnePage({
   intro,
   onSubmit,
   canSubmit,
+  missing = [],
   isSubmitting,
   children,
 }: FormOnePageProps) {
@@ -64,7 +66,12 @@ export default function FormOnePage({
             {isSubmitting ? "Sending..." : "Share your vision"}
             {!isSubmitting && <span>&rarr;</span>}
           </button>
-          {!canSubmit && (
+          {!canSubmit && missing.length > 0 && (
+            <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/55 italic font-light leading-[1.6]">
+              Still needed to send: {missing.join(", ")}.
+            </p>
+          )}
+          {!canSubmit && missing.length === 0 && (
             <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 italic font-light">
               Fill the required fields to send.
             </p>

@@ -85,15 +85,16 @@ export default function JourneyForm() {
 
   const update = <K extends keyof Data>(k: K, v: Data[K]) => setData((d) => ({ ...d, [k]: v }));
 
-  const canSubmit =
-    !!data.name.trim() &&
-    /\S+@\S+\.\S+/.test(data.email) &&
-    !!data.startDate &&
-    !!data.endDate &&
-    (isScratch ? !!data.length && !!data.accommodation : true) &&
-    data.vision.trim().length >= VISION_MIN &&
-    !!data.budget &&
-    data.consent;
+  const missing: string[] = [];
+  if (!data.name.trim()) missing.push("your name");
+  if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
+  if (!data.startDate || !data.endDate) missing.push("travel dates");
+  if (isScratch && !data.length) missing.push("length");
+  if (isScratch && !data.accommodation) missing.push("accommodation style");
+  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
+  if (!data.budget) missing.push("a budget band");
+  if (!data.consent) missing.push("consent");
+  const canSubmit = missing.length === 0;
 
   const buildSummary = () => {
     const lines = [
@@ -160,6 +161,7 @@ export default function JourneyForm() {
       intro={isScratch ? "Tell us who you are, when you travel, and what matters. We shape the rest." : "The journey is set. A few notes to make it yours."}
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
+      missing={missing}
     >
       <Section num="01" title="Who is traveling.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

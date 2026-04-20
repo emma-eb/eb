@@ -73,14 +73,15 @@ export default function OccasionForm() {
 
   const update = <K extends keyof Data>(k: K, v: Data[K]) => setData((d) => ({ ...d, [k]: v }));
 
-  const canSubmit =
-    !!data.name.trim() &&
-    /\S+@\S+\.\S+/.test(data.email) &&
-    !!data.occasion &&
-    !!data.date &&
-    data.vision.trim().length >= VISION_MIN &&
-    !!data.budget &&
-    data.consent;
+  const missing: string[] = [];
+  if (!data.name.trim()) missing.push("your name");
+  if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
+  if (!data.occasion) missing.push("the occasion type");
+  if (!data.date) missing.push("a date");
+  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
+  if (!data.budget) missing.push("a budget band");
+  if (!data.consent) missing.push("consent");
+  const canSubmit = missing.length === 0;
 
   const buildSummary = () => {
     const occasion = data.occasion === "Other" && data.otherOccasion ? data.otherOccasion : data.occasion;
@@ -137,6 +138,7 @@ export default function OccasionForm() {
       intro="Weddings, proposals, honeymoons, celebrations. Tell us what the moment is, and we design the rest."
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
+      missing={missing}
     >
       <Section num="01" title="Who is celebrating.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

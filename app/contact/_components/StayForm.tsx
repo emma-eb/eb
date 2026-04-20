@@ -88,15 +88,15 @@ export default function StayForm() {
   const showVillaBudget = data.interest === "Villa" || data.interest === "Both";
   const showYachtNote = data.interest === "Yacht" || data.interest === "Both";
 
-  const canSubmit =
-    !!data.name.trim() &&
-    /\S+@\S+\.\S+/.test(data.email) &&
-    !!data.interest &&
-    !!data.startDate &&
-    !!data.endDate &&
-    data.vision.trim().length >= VISION_MIN &&
-    (showVillaBudget ? !!data.budget : true) &&
-    data.consent;
+  const missing: string[] = [];
+  if (!data.name.trim()) missing.push("your name");
+  if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
+  if (!data.interest) missing.push("villa or yacht");
+  if (!data.startDate || !data.endDate) missing.push("travel dates");
+  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
+  if (showVillaBudget && !data.budget) missing.push("a villa budget");
+  if (!data.consent) missing.push("consent");
+  const canSubmit = missing.length === 0;
 
   const buildSummary = () => {
     const lines = [
@@ -159,6 +159,7 @@ export default function StayForm() {
       intro="Villas we know in person, one yacht chartered quietly through eb. Tell us the feel, we propose the right address."
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
+      missing={missing}
     >
       <Section num="01" title="Who is staying.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
