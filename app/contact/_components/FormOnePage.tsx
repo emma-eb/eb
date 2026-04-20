@@ -52,7 +52,7 @@ export default function FormOnePage({
               }
             }}
             aria-label="Back to previous page"
-            className="group inline-flex items-center gap-2 font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors mb-8 md:mb-10"
+            className="group inline-flex items-center gap-2 font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors mb-6 md:mb-10 min-h-[44px] md:min-h-0 -ml-1 px-1"
           >
             <span className="text-[15px] leading-none inline-block transition-transform duration-300 ease-out group-hover:-translate-x-1">&larr;</span>
             Back
@@ -103,13 +103,13 @@ export default function FormOnePage({
       <div className="px-5 md:px-10 mt-20 md:mt-28">
         <div className="max-w-[760px] mx-auto text-center">
           <div className="w-8 h-px bg-[#1a1a1a]/15 mx-auto mb-6" />
-          <p className="font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 font-light">
+          <p className="font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 font-light leading-[2]">
             Looking for something else?{" "}
             {otherPortes.map((k, i) => (
               <span key={k}>
                 <Link
                   href={PORTES[k].href}
-                  className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] underline underline-offset-4 decoration-[#1a1a1a]/20 hover:decoration-[#1a1a1a]/60 transition-colors"
+                  className="inline-block py-2 text-[#1a1a1a]/70 hover:text-[#1a1a1a] underline underline-offset-4 decoration-[#1a1a1a]/20 hover:decoration-[#1a1a1a]/60 transition-colors"
                 >
                   {PORTES[k].label}
                 </Link>

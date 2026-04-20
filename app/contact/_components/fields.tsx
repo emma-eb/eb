@@ -101,7 +101,7 @@ export function PillChoice({ options, value, onChange, name }: PillChoiceProps) 
             onChange={() => onChange(opt)}
             className="peer sr-only"
           />
-          <span className="inline-block font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-2.5 md:px-3.5 md:py-2 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white transition-colors">
+          <span className="inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-3 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white transition-colors">
             {opt}
           </span>
         </label>
@@ -133,7 +133,7 @@ export function PillMulti({ options, values, onChange }: PillMultiProps) {
             key={opt}
             type="button"
             onClick={() => toggle(opt)}
-            className={`inline-block font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-2.5 md:px-3.5 md:py-2 border transition-colors ${
+            className={`inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-3 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border transition-colors ${
               selected
                 ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
                 : "border-[#e8e4de] text-[#666] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
@@ -263,7 +263,7 @@ export function Counter({ value, onChange, min = 0, max = 50 }: CounterProps) {
       <button
         type="button"
         onClick={() => onChange(Math.max(min, value - 1))}
-        className="w-10 h-10 border border-[#e8e4de] text-[#1a1a1a] hover:border-[#1a1a1a] transition-colors font-body text-lg"
+        className="w-11 h-11 md:w-10 md:h-10 border border-[#e8e4de] text-[#1a1a1a] hover:border-[#1a1a1a] transition-colors font-body text-lg disabled:opacity-40 disabled:cursor-not-allowed"
         aria-label="Decrease"
         disabled={value <= min}
       >
@@ -275,7 +275,7 @@ export function Counter({ value, onChange, min = 0, max = 50 }: CounterProps) {
       <button
         type="button"
         onClick={() => onChange(Math.min(max, value + 1))}
-        className="w-10 h-10 border border-[#e8e4de] text-[#1a1a1a] hover:border-[#1a1a1a] transition-colors font-body text-lg"
+        className="w-11 h-11 md:w-10 md:h-10 border border-[#e8e4de] text-[#1a1a1a] hover:border-[#1a1a1a] transition-colors font-body text-lg disabled:opacity-40 disabled:cursor-not-allowed"
         aria-label="Increase"
         disabled={value >= max}
       >

@@ -28,7 +28,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
             <button
               type="button"
               onClick={() => setShowSummary((v) => !v)}
-              className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
+              className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors min-h-[44px] px-2"
             >
               {showSummary ? "Hide my brief" : "View my brief"}
               <span className={`inline-block transition-transform duration-300 ease-out ${showSummary ? "rotate-180" : ""}`}>
@@ -48,7 +48,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
         <div className="mt-12 md:mt-16">
           <Link
             href="/"
-            className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors"
+            className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
             <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-x-1">&larr;</span>
             Back to the studio

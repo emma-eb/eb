@@ -48,7 +48,7 @@ export default function IntentCards() {
               <Link
                 key={p.id}
                 href={p.href}
-                className="group relative block aspect-[3/4] overflow-hidden eb-image-vignette"
+                className="group relative block aspect-[4/5] md:aspect-[3/4] overflow-hidden eb-image-vignette"
               >
                 <img
                   src={p.img}
