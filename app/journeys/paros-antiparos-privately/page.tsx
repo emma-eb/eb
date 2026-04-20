@@ -71,7 +71,7 @@ export default function ParosAntiparosPage() {
     'Private airport and port transfers',
     'Daily concierge by the eb. studio',
     'Private boat for the day (Antiparos + Despotiko)',
-    'Access to our Athenian network of tables',
+    'Access to our private network of tables',
   ];
 
   const onRequestItems = [
