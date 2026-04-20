@@ -19,13 +19,13 @@ export default function AstypaleaPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. Athens, quietly.', body: 'Private transfer from the airport to a small hotel with the Acropolis from the rooftop. A late dinner at a place that does not take walk-ins.' },
-    { day: '02', title: 'The city, before the flight.', body: 'A morning at a private collection that opens for ten people at a time. A slow lunch, a pause at the hotel, then the midday flight east, forty minutes over the Aegean.' },
-    { day: '03', title: 'Astypalea. The first sunset.', body: 'The plane lands at the western tip of the island. A driver takes you to Chora, the white village that climbs to the Venetian castle. You arrive in time for the kind of slow afternoon Astypalea was made for. Sunset from the rooftop.' },
-    { day: '04', title: 'By private boat, the islets.', body: 'A private boat for the day. The captain takes you east, to the small islets the locals visit on weekends. Anchor at Koutsomitis, where the beach is sand on both sides. Lunch on the water. A stop at the cave of Negrou on the way back.' },
-    { day: '05', title: 'The back of the island.', body: 'A private electric vehicle and driver for the day. The small monasteries, the quiet roads, the single taverna at the back of the island that serves lunch when you ask the morning before. The afternoon ends back at a quiet bay no road reaches.' },
-    { day: '06', title: 'A day for yourselves.', body: 'Nothing scheduled. A swim, a book, a walk up to the castle. Lunch wherever the morning takes you.' },
-    { day: '07', title: 'The farewell dinner.', body: 'Dinner on the rooftop facing the castle, at the table the family who runs the place keeps for our clients. Slow-cooked goat, the local cheese, a wine no one outside the island knows. The lights of Chora come on below, one by one.' },
+    { day: '01', title: 'Arrival. Athens, quietly.', body: 'Private transfer from the airport to a boutique hotel with the Acropolis from the rooftop. A late dinner at a place that does not take walk-ins.' },
+    { day: '02', title: 'The city, privately.', body: 'A morning at a private collection that opens for ten people at a time. A slow lunch in Thissio, afternoon at the hotel, a rooftop cocktail as the Parthenon lights come on.' },
+    { day: '03', title: 'Athens, the other side.', body: 'Markets in Monastiraki in the morning, a long lunch in Psyrri where the city keeps its pulse. Afternoon at a museum the guides do not make. Dinner on the Athens Riviera.' },
+    { day: '04', title: 'Flight east. The first sunset.', body: 'Late morning flight to Astypalea, forty minutes over the Aegean. The plane lands at the western tip of the island. A driver takes you to Chora, the white village that climbs to the Venetian castle. Sunset from the rooftop.' },
+    { day: '05', title: 'By private boat, the islets.', body: 'A private boat for the day. The captain takes you east, to the small islets the locals visit on weekends. Anchor at Koutsomitis, where the beach is sand on both sides. Lunch on the water. A stop at the cave of Negrou on the way back.' },
+    { day: '06', title: 'The back of the island.', body: 'A private electric vehicle and driver for the day. The small monasteries, the quiet roads, the single taverna at the back of the island that serves lunch when you ask the morning before. The afternoon ends back at a quiet bay no road reaches.' },
+    { day: '07', title: 'The farewell dinner.', body: 'A slow day at the hotel, a swim, a walk up to the castle. Dinner on the rooftop facing the castle, at the table the family who runs the place keeps for our clients. Slow-cooked goat, the local cheese, a wine no one outside the island knows.' },
     { day: '08', title: 'The slow return.', body: 'A morning flight back to Athens, before the heat. Assisted transit onward.' },
   ];
 
@@ -150,7 +150,7 @@ export default function AstypaleaPage() {
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
           <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">A hotel<br />in the white village.</h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel in Chora, under the Venetian castle. Small, quiet, with the kind of rooftop the island is worth waking up to. Exact property confirmed on request.</p>
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel in Chora, under the Venetian castle. Small, quiet, with the kind of rooftop the island is worth waking up to.</p>
         </div>
       </section>
 
