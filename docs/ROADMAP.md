@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-19 (Contact/Inquire refonte complete : 3 portes B2C + 4 flows multi-step + filtrage budget strategique, CTAs toutes pages recables, image compression mobile, For Brands V2 polished)
+**Derniere mise a jour :** 2026-04-20 (Contact V3 one-page sectionne — plus de multi-step, budget tiers simplifies post-benchmark Scott Dunn/Black Tomato, page 100% B2C — sortie B2B deplacee uniquement sur /influencer-production. Hotfix fiche Athens Slowly : photo rooftop Parthenon Unsplash supprimee cote source, fallback local /acropole_01.jpg — photo dediee a fournir.)
 
 ---
 
@@ -95,34 +95,19 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [ ] Integration CMS : toutes les pages editables sans code
 
 ### Sprint 3 — Pages Secondaires & Formulaires (2 semaines)
-- [x] **Page Contact/Inquire refonte complete** (avril 19, 2026) :
-  - Landing `/contact` : hero editorial (paros_03.jpg, houses + waves) + 3 portes B2C (Journey / Occasion / Stay) grandes cartes image + sortie B2B discrete ligne underline
-  - 4 flows separes : 
-    - `?type=journey` (variant scratch par defaut, variant fiche via `?journey=slug`)
-    - `?type=stay` (Villa / Yacht / Both, villa pre-remplie via `?villa=slug`)
-    - `?type=occasion` (Wedding en priorite, + 9 autres types)
-    - `/for-brands/brief` (B2B separe, existait deja)
-  - Multi-step 3 etapes (WHO / WHAT / VISION) pour chaque flow avec :
-    - Progress dots discrets + label "Step X of 3"
-    - Back button (top + bottom)
-    - Auto-save localStorage (si client quitte entre steps, retrouve ses reponses)
-    - Vision free text min 60 chars (filtre naturel)
-    - Budget tiers strategiques :
-      - **Journey per person** : 5-8K / 8-15K / 15-30K / 30-50K / 50K+ / Confidential
-      - **Villa per night** : 1.5-3K / 3-5K / 5-10K / 10K+ / Discuss privately
-      - **Yacht et Occasion** : free text ("on request" culture)
-    - Consent RGPD obligatoire
-    - Submit genere summary DMC-ready + ouvre mailto prerempli vers hello@emmabonnefous.com
-    - Confirmation editorial "Your brief is with Emma" + "Every inquiry is read, personally"
-    - Submit button unifie : "Share your vision"
-  - CTAs toutes pages recables :
-    - Home CTA final → `/contact` (generique)
-    - Experiences cards + CTA → `/contact?type=occasion`
-    - Collection private circle, yacht, final → `/contact?type=stay` (avec variants)
-    - Journeys listing CTA → `/contact?type=journey` (scratch)
-    - 9 fiches journey → `/contact?type=journey&journey={slug}`
-    - DiscoveryFlow fallback → `/contact?type=journey`
-    - Antiparos introduction → `/contact?type=stay&ref=antiparos-introduction`
+- [x] **Page Contact/Inquire V3 refonte complete** (avril 19-20, 2026) :
+  - Landing `/contact` : hero editorial (paros_03.jpg) + 3 portes B2C (Journey / Occasion / Stay). **Page 100% B2C** — la sortie B2B retiree le 20/04, `/for-brands/brief` reste accessible uniquement depuis `/influencer-production`.
+  - **Architecture one-page sectionnee** (plus de multi-step avec progress dots — juge trop SaaS apres benchmark Aman/Rosewood/Belmond/Black Tomato/Scott Dunn/Jacada). Wrapper `FormOnePage` + subcomponents `Section` numerotees 01/02/03.
+  - 3 flows B2C : `?type=journey` (variant scratch ou fiche via `&journey=slug`), `?type=stay` (Villa / Yacht, villa pre-remplie via `&villa=slug`), `?type=occasion` (Wedding en priorite + 9 autres types).
+  - **Budget tiers simplifies** (post-benchmark 20/04, pattern 3-4 tranches + "Not sure — let's discuss" unifie) :
+    - **Journey per person** : €2-5K / 5-10K / Over €10K / Not sure
+    - **Villa per night** : €1-3K / 3-7K / Over €7K / Not sure
+    - **Occasion total** : Under €15K / €15-50K / €50-200K / Over €200K / Not sure
+    - **Yacht** : pas de champ budget, remplace par bloc "quoted individually, share dates/party"
+  - **Champs & micro-interactions** : date picker natif (DateRange Journey/Stay, single Occasion), Flexibility en PillChoice, Vision free text min 60 chars (filtre naturel), confirmation summary masquee derriere toggle "View my brief", plus de "within 48 hours" (remplace par "shortly").
+  - Auto-save localStorage par flow, consent RGPD obligatoire, submit unifie "Share your vision" genere summary DMC-ready + mailto via `<a>` programmatique (workaround window.open bloque browsers).
+  - `catalogue.ts` obsolete cote mood grid, supprime.
+  - CTAs toutes pages recables : Home → `/contact`, Experiences → `?type=occasion`, Collection → `?type=stay`, Journeys listing → `?type=journey`, 9 fiches journey → `?type=journey&journey={slug}`, B2B → `/for-brands/brief`.
 - [ ] Pages Privacy Policy + Terms — **DONE** (avril 2026). Privacy RGPD 12 sections (CNIL, art.6, droits utilisateur), Terms 9 sections (SIRET + adresse Paris). Mention legale globale ajoutee en bas des 14 pages ("eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.")
 - [ ] Connexion formulaires submit → email notifications Resend/Formspree (mailto en place actuellement)
 

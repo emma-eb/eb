@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 1.0
+**Version :** 1.1
 **Date :** 2026-04-20
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refondue V3 (one-page sectionne, plus de multi-step, budget tiers strategiques par type). For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables vers les bons flows via query params (`?type=journey|stay|occasion` + slug eventuel).
+**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refondue V3 (one-page sectionne, plus de multi-step, budget tiers strategiques par type). For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables vers les bons flows via query params (`?type=journey|stay|occasion` + slug eventuel). Fiche Athens Slowly : photo "A hotel with the Parthenon from the roof" cassee (Unsplash supprime) remplacee par `/acropole_01.jpg` local le 20/04 — photo dediee a fournir pour eviter duplicate avec le hero.
 
 ---
 
