@@ -303,7 +303,7 @@ export default function CollectionPage() {
             </p>
             <a
               href="/contact?type=stay&villa=bestia-yacht"
-              className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
+              className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px] py-3 relative z-[2]"
               data-delay="300"
             >
               Inquire about the yacht <span className="eb-cta-arrow">&rarr;</span>
@@ -343,7 +343,7 @@ export default function CollectionPage() {
           </p>
           <a
             href="/contact?type=stay"
-            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+            className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white min-h-[44px] py-3 relative z-[2]"
             data-delay="220"
           >
             Start the conversation <span className="eb-cta-arrow">&rarr;</span>
