@@ -60,6 +60,54 @@ export default function BrandBriefPage() {
     "border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-sm text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors w-full";
   const labelClass = "font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#888]";
 
+  if (submitted) {
+    return (
+      <main className="flex flex-col min-h-screen bg-white">
+        <Nav activePage="/influencer-production" />
+
+        <section className="bg-[#fcf7f1] min-h-[calc(100dvh-80px)] flex items-center justify-center px-6 py-20 md:py-28">
+          <div className="max-w-[620px] mx-auto text-center">
+            <div className="w-10 h-[2px] bg-[#2e5a88] mx-auto mb-8" />
+            <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-5">
+              Received with thanks
+            </p>
+            <h1 className="font-body text-[28px] md:text-[42px] text-[#2e5a88] leading-[1.1] font-normal mb-8">
+              Thank you.
+            </h1>
+            <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light max-w-[480px] mx-auto">
+              Your brief is with the production team. We will be in touch shortly.
+            </p>
+            <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/60 mt-10 italic font-light">
+              &mdash; eb.
+            </p>
+            <div className="mt-12 md:mt-16">
+              <a
+                href="/influencer-production"
+                className="group inline-flex items-center gap-2 font-body text-[11px] md:text-[12px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/30 pb-1 hover:border-[#2e5a88] transition-colors"
+              >
+                <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-x-1">&larr;</span>
+                Back to For Brands
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16 mt-auto">
+          <NewsletterBanner />
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="border-t border-white/30" />
+          </div>
+          <div className="max-w-6xl mx-auto flex flex-col items-center gap-4 mt-8">
+            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
+            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
+              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
+            </p>
+          </div>
+        </footer>
+      </main>
+    );
+  }
+
   return (
     <main className="flex flex-col min-h-screen bg-white">
       <Nav activePage="/influencer-production" />
@@ -124,18 +172,7 @@ export default function BrandBriefPage() {
               setSubmitted(true);
             }}
           >
-            {submitted ? (
-              <div className="reveal bg-[#fcf7f1] border border-[#e8e4de] p-8 md:p-10">
-                <p className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] mb-4">Received</p>
-                <h3 className="font-body text-[#2e5a88] text-[26px] md:text-[34px] leading-[1.1] font-normal mb-4">
-                  Thank you.
-                </h3>
-                <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.7] font-light">
-                  Your brief is with the production team. We will be in touch shortly.
-                </p>
-              </div>
-            ) : (
-              <>
+            <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Brand / Agency</label>
@@ -214,8 +251,7 @@ export default function BrandBriefPage() {
                 <p className="font-body text-[11px] text-[#1a1a1a]/40 leading-[1.6] font-light mt-2">
                   By sending this brief you agree to be contacted by the eb. team. Details shared here remain private and are never passed to third parties.
                 </p>
-              </>
-            )}
+            </>
           </form>
         </div>
       </section>
