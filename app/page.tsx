@@ -317,7 +317,7 @@ export default function Home() {
             A candlelit evening against the most iconic skyline in Europe.
           </p>
           <a
-            href="/experiences"
+            href="/contact?type=occasion&ref=private-dining-acropolis"
             className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="400"
           >
@@ -361,7 +361,7 @@ export default function Home() {
             Handpicked properties across the Greek islands and coastline.
           </p>
           <a
-            href="/collection"
+            href="/contact?type=stay&ref=home-featured-collection"
             className="reveal eb-cta-link font-body text-xs tracking-[0.2em] uppercase text-white"
             data-delay="300"
           >
