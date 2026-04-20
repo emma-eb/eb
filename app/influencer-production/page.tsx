@@ -139,7 +139,7 @@ export default function InfluencerProduction() {
           ].map(({ title, body, details, img, alt }, i) => (
             <div
               key={title}
-              className="reveal group relative min-h-[70vh] md:min-h-[80vh] overflow-hidden eb-image-vignette"
+              className="reveal group relative min-h-[55vh] md:min-h-[80vh] overflow-hidden eb-image-vignette"
               data-delay={i * 100}
             >
               <img
