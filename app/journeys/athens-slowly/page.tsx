@@ -155,15 +155,15 @@ export default function AthensSlowlyPage() {
           <div className="text-center mb-12 md:mb-16 eb-fade-up">
             <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div>
           </div>
-          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
+          <div className="relative h-[100dvh] min-h-[600px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
             <Image src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1600&q=80" alt="Monastiraki Athens with Acropolis in the distance" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="absolute top-5 left-5 md:top-8 md:left-8 z-[3]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+            <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]">
               <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Old City</span>
             </div>
-            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
-              <h3 className="font-anton font-normal uppercase text-[26px] md:text-[40px] leading-[1] mb-3">Five days. One city. No rush.</h3>
-              <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">The Acropolis before it opens. The tables the Athenians keep for themselves.</p>
+            <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
+              <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4">Five days. One city. No rush.</h3>
+              <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light">The Acropolis before it opens. The tables the Athenians keep for themselves.</p>
             </div>
           </div>
         </div>
