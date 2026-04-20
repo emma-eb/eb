@@ -28,14 +28,21 @@ export default function FormOnePage({
       {/* Header */}
       <div className="px-5 md:px-10 pt-10 md:pt-16">
         <div className="max-w-[760px] mx-auto">
-          <a
-            href="/contact"
-            aria-label="Back to contact landing"
+          <button
+            type="button"
+            onClick={() => {
+              if (window.history.length > 1) {
+                window.history.back();
+              } else {
+                window.location.href = "/contact";
+              }
+            }}
+            aria-label="Back to previous page"
             className="group inline-flex items-center gap-2 font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors mb-8 md:mb-10"
           >
             <span className="text-[15px] leading-none inline-block transition-transform duration-300 ease-out group-hover:-translate-x-1">&larr;</span>
             Back
-          </a>
+          </button>
           <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
             {typeLabel}
           </p>
