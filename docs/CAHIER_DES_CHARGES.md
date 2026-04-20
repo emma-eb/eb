@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 1.1
-**Date :** 2026-04-20
+**Version :** 1.2
+**Date :** 2026-04-20 (soir)
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refondue V3 (one-page sectionne, plus de multi-step, budget tiers strategiques par type). For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables vers les bons flows via query params (`?type=journey|stay|occasion` + slug eventuel). Fiche Athens Slowly : photo "A hotel with the Parthenon from the roof" cassee (Unsplash supprime) remplacee par `/acropole_01.jpg` local le 20/04 — photo dediee a fournir pour eviter duplicate avec le hero.
+**Statut :** Phase 1 Sprint 3 — Contact V3 one-page sectionne livre, For Brands V2 polished, Contact 100% B2C (sortie B2B deplacee sur /influencer-production uniquement). Audit complet mobile + DA + CTAs + routes realise soir du 20/04. Scope recadre : 7 itineraires uniquement (PAS de 35+ fiches villas/experiences), PAS de case studies. Voir section 20 pour le polish du soir.
 
 ---
 
@@ -449,3 +449,73 @@ app/contact/
     └── options.ts                 (tranches budgets, howHeard, occasionTypes avec Wedding en premier, etc.)
 ```
 
+---
+
+## 20. Polish complet du 20/04/2026 (soir) — audit + fixes
+
+Passe complete cross-site avant la session photos du 21/04.
+
+### 20.1 Fixes critiques (fonctionnels)
+- **Photos cassees** : `/astypalea..jpg` (typo double point) corrige dans `/journal`, URL `/raphael-lopes...(1).jpg` encodee en %20, photo rooftop Parthenon (Unsplash supprime) remplacee par `/roof top athens.jpg` (asset local depose par Emma).
+- **CTA casse** : `collection/page.tsx` pointait vers `?villa=bestia-yacht` (villa inexistante) → corrige en `?type=stay&stay=yacht`.
+- **CTA manquant** : `about/page.tsx` CTA final → `/contact` generique → force sur `/contact?type=journey`.
+
+### 20.2 Refonte mobile bloc "Highlights" (7 fiches journey)
+Probleme signale par Emma : le bloc image sous section Highlights ("The Villa", "The Timing", "The Island") s'affichait en **petite carte peu valorisante sur mobile**.
+
+Nouveau rendu applique aux 7 fiches (Astypalea, Mykonos, Athens, Honeymoon, Family, Paros, Week by Sea) :
+- **Mobile** : plein ecran `h-[100dvh] min-h-[600px]` + full-bleed (marges negatives pour casser le padding parent)
+- **Desktop** : conservation de l'aspect 21/9 editorial avec `md:max-w-[1200px]`
+- **Gradient plus doux** : `from-black/85 via-black/35 to-black/10` (au lieu de `to-transparent`) pour lisibilite texte sur toute la hauteur
+- **Pill tag** repositionnee `top-24` mobile (sous le nav sticky) / `top-8` desktop
+- **Titre** : 36px mobile (au lieu de 26px) pour impact
+- **Body** : 15px + leading 1.55 (au lieu de 13px/1.5)
+
+### 20.3 Restructuration section "Glimpses" (7 fiches)
+Probleme : la legende "Glimpses. Exact properties confirmed on request." etait POSITIONNEE SOUS la grille. Illogique : le titre doit presenter les photos, pas l'inverse.
+
+Nouveau rendu :
+- Legende supprimee de partout.
+- Titre pose AU-DESSUS de la grille, contextualise par destination :
+  - Astypalea : "Astypalea at a glimpse"
+  - Mykonos : "Mykonos at a glimpse"
+  - Athens : "Athens at a glimpse"
+  - Honeymoon : "Milos + Folegandros at a glimpse"
+  - Family : "Porto Heli at a glimpse"
+  - Paros : "Paros + Antiparos at a glimpse"
+  - Week by Sea : "The Cyclades at a glimpse"
+- Style : `text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light` (coherent avec "Highlights", "Day by Day", "The Route").
+
+### 20.4 Fix cadrage mobile (7 fiches journey)
+Probleme : photos paysage dans cadrages mobile portrait coupaient le sujet (chateau, ville, etc.).
+
+Fix applique sur **Hero + Highlights image** des 7 fiches :
+- Mobile : `object-[center_30%]` (Hero) / `object-[center_35%]` (Highlights) — tire le cadrage vers le haut pour garder le sujet visible
+- Desktop : `md:object-center` (inchange)
+- `sizes="100vw"` ajoute (evite warnings Next.js + ameliore chargement)
+
+### 20.5 Mobile polish additionnel
+- **Day-by-day grids** : `pl-[100px] md:pl-[140px]` → `pl-0 md:pl-[140px]` sur les 6 fiches journey (Mykonos, Honeymoon, Family, Week by Sea, Athens, Paros) + reduction gap/padding mobile sur Astypalea
+- **H1 hero** : ajout de breakpoint `sm:` sur About / Journal / Experiences / Collection (evite text geant sur iPhone SE)
+- **Heroes** : `min-h-[600px]` garanti sur toutes les sections en `vh` pour eviter contenu ecrase sous la nav iOS
+
+### 20.6 Copy changes (Mykonos)
+- **Hero kicker** : "In June. In September. Never in August." → "Where the nights run long and the days know better."
+  - Raison : assumer Mykonos jet-set (mai-sept = saison pleine), pas fuir la foule. Le journey donne les cles pour bien vivre l'energie.
+- **Highlights h3** : "Five nights, when it breathes." → "Five nights, at full voltage."
+- **Highlights p** : "The island without the crowds. Delos at dawn. Nights in Chora." → "Beach clubs. Long tables. Dinners that turn into long nights."
+  - Raison : assume beach clubs / party / fun (tempéré : "long nights" pas "mornings").
+
+### 20.7 Mots autorises (clarification)
+- **"bespoke"** : AUTORISE. Avait ete pris par erreur comme interdit — Emma a corrige le 20/04 soir. Le mot est legitime sur le site.
+- **"curated"** : AUTORISE (deja clarifie 20/04 matin).
+- Liste des mots interdits maintenue : hidden gems, bucket list, unforgettable, tailor-made, world-class, seamless, elevated, passionate, end-to-end.
+
+### 20.8 Limitation technique identifiee
+L'agent Claude Code ne peut pas valider de nouvelles URLs Unsplash (WebFetch renvoie 403 cote CDN Unsplash qui bloque les bots). Cela n'affecte PAS l'affichage cote visiteur — seulement la capacite d'agent a verifier/trouver de nouvelles photos. Les photos nouvelles doivent etre soit :
+- Deposees localement dans `/public/` par Emma (workflow utilise le 20/04 pour Athens rooftop, Scorpios, Astypalea 05/06)
+- URLs Unsplash fournies directement par Emma (copier-coller depuis son browser)
+
+---
+
+*Fin du polish 20/04 soir. Prochaine session : 21/04 — Emma fournit les photos Unsplash restantes + test mobile sur son iPhone.*

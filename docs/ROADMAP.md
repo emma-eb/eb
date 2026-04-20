@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-20 (Contact V3 one-page sectionne — plus de multi-step, budget tiers simplifies post-benchmark Scott Dunn/Black Tomato, page 100% B2C — sortie B2B deplacee uniquement sur /influencer-production. Hotfix fiche Athens Slowly : photo rooftop Parthenon Unsplash supprimee cote source, fallback local /acropole_01.jpg — photo dediee a fournir.)
+**Derniere mise a jour :** 2026-04-20 (soir) — Passe polish complete site : refonte mobile bloc Highlights des 7 fiches (full-page + full-bleed + gradient plus profond), restructuration Glimpses (titre "X at a glimpse" au-dessus), cadrage mobile corrige (object-position tire vers le haut), Mykonos copy retravaillee (positionnement jet-set assume), photos locales deposees (roof top athens, scorpio, astypalea_05/06), scope recadre 7 itineraires uniquement, mots "curated" et "bespoke" confirmes AUTORISES.
 
 ---
 
@@ -89,6 +89,9 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] **Copy polish** : "Every journey starts from scratch" → "Every journey is shaped for one", yacht "timed by" → "chartered quietly through eb.", "She moves" retire, "Work with eb." → "Begin with eb.", "Every detail, handled quietly" → "Every detail, already thought of" + subtitle rephrase, "95 countries" text-balance
 - [x] **Mobile menu (Nav)** : ajout "For brands & agencies" en footer du menu burger (Option A discrete)
 - [x] **Back arrows** : teste et retire (Emma n'aime pas, Nav sticky suffit)
+- [x] **Polish complet 20/04 soir** : refonte mobile bloc Highlights 7 fiches (full-page dvh + full-bleed + gradient from-black/85 via-black/35), restructuration Glimpses (titre "X at a glimpse" remplace legende bas de grille), fix cadrage mobile (object-[center_30%] hero / center_35% Highlights + md:object-center desktop), fix photos cassees (/astypalea..jpg, URL encoded raphael-lopes), CTAs corriges (collection villa=bestia-yacht → stay=yacht, about → ?type=journey), day-by-day pl-0 md:pl-[140px] sur 6 fiches, H1 sm: step sur About/Journal/Experiences/Collection
+- [x] **Mykonos copy retravaillee** : hero "Where the nights run long and the days know better." / Highlights "Five nights, at full voltage. Beach clubs. Long tables. Dinners that turn into long nights." — positionnement jet-set assume (tempere "long nights" pas "mornings")
+- [x] **Photos locales deposees par Emma** : /roof top athens.jpg, /scorpio.jpg, /astypalea_06.JPG, /atypalea_05.jpg (faute de frappe : manque un 's', a renommer un jour)
 - [ ] Scope recadre 20/04 : **PAS de fiches detail villas/experiences** (le catalogue.ts reste contenu interne, pas de pages publiques detail) — 7 itineraires journey suffisent
 - [ ] Replication template Paros v12 **uniquement sur la fiche Sailing / Yacht** (Astypalea, Mykonos, Honeymoon laissees en l'etat)
 - [ ] Integration CMS : toutes les pages editables sans code
