@@ -142,7 +142,8 @@ export default function JourneyForm() {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
     try {
-      const subject = encodeURIComponent(`New Journey inquiry \u2014 ${data.name}`);
+      const journeyContext = isScratch ? "from scratch" : journeySlug;
+      const subject = encodeURIComponent(`New Journey inquiry (${journeyContext}) \u2014 ${data.name}`);
       const body = encodeURIComponent(summary);
       const link = document.createElement("a");
       link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;

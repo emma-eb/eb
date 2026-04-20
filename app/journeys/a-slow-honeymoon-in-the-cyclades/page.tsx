@@ -36,7 +36,7 @@ export default function SlowHoneymoonPage() {
 
   const includedItems = [
     'Ten nights across two hand-selected villas',
-    'All private transfers (air, road, sea)',
+    'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for the day (on each island)',
     'Access to our private network of tables',

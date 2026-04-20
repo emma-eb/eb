@@ -32,7 +32,7 @@ export default function AstypaleaPage() {
   const includedItems = [
     'Three nights in a hand-selected boutique hotel in Athens',
     'Four nights in a hand-selected hotel in Chora, Astypalea',
-    'All private transfers (air and road)',
+    'Private ground and port transfers',
     'Daily concierge by the eb. studio',
     'Private boat for the day (islets and caves)',
     'Access to our private network of tables',
@@ -157,9 +157,9 @@ export default function AstypaleaPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_01.jpg" alt="Astypalea from above" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_02.jpg" alt="Astypalea Chora" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Astypalea quiet bay" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/despina-galani-i0c-tOtR0Ks-unsplash.jpg" alt="A quiet Aegean cove" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/despina-galani-qGtpTQrN7VU-unsplash.jpg" alt="A sailboat at anchor, Aegean" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact properties confirmed on request.</p>
         </div>

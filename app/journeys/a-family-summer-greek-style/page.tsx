@@ -34,7 +34,7 @@ export default function FamilySummerPage() {
 
   const includedItems = [
     'Ten nights in a hand-selected villa',
-    'All private transfers (air and road)',
+    'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for two days (day trips)',
     'Access to our private network of tables',
