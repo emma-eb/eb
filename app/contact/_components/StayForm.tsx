@@ -157,7 +157,7 @@ export default function StayForm() {
     <FormOnePage
       typeLabel={`Villa or Yacht${villaSlug ? ` \u00b7 ${villaSlug}` : ""}`}
       title="A place to land."
-      intro="Villas we know in person, one yacht chartered quietly through eb. Tell us the feel, we propose the right address."
+      intro="Villas we know in person. Yacht on request. Tell us the feel, we propose the right address."
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
@@ -224,7 +224,7 @@ export default function StayForm() {
           <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="What you're looking for, who's coming, what would make it right..." rows={7} minLength={VISION_MIN} />
         </Field>
         {showVillaBudget && (
-          <Field label="Villa budget per night" required hint="Indicative. Villas start at €1,500 per night.">
+          <Field label="Villa budget per night" required hint="Indicative. Villas start at €1,000 per night.">
             <PillChoice options={villaBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
           </Field>
         )}

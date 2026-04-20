@@ -339,7 +339,7 @@ export default function CollectionPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Villas that never appear online. A yacht chartered quietly through eb.
+            Villas that never appear online. Yacht on request.
           </p>
           <a
             href="/contact?type=stay"
