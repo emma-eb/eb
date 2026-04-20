@@ -115,7 +115,7 @@ export default function MykonosTimedRightPage() {
           </h1>
 
           <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">
-            Before the crowds. Or after them.
+            Where the nights run long and the days know better.
           </p>
         </div>
 
