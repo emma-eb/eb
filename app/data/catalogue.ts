@@ -119,7 +119,7 @@ export const catalogue: CatalogueItem[] = [
     duration: "4 hours",
     /* Sarakiniko roches blanches + eau turquoise vue haute */
     image: "https://images.unsplash.com/photo-1630276731484-2ede4b9f283c?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
   {
@@ -146,7 +146,7 @@ export const catalogue: CatalogueItem[] = [
     description: "The only SP110 available for charter worldwide.",
     /* Port bateaux peche — ambiance maritime */
     image: "https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Request availability", href: "/contact" },
+    cta: { label: "Request availability", href: "/contact?type=stay" },
     tags: ["yacht"],
   },
 
@@ -234,7 +234,7 @@ export const catalogue: CatalogueItem[] = [
     description: "In the footsteps of Zeus, with trained dogs and a local hunter.",
     /* Taverna grecque turquoise tonneau chaises — ambiance locale */
     image: "https://images.unsplash.com/photo-1602008394120-5cc61b4f6ada?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
   {
@@ -274,7 +274,7 @@ export const catalogue: CatalogueItem[] = [
     description: "The central market at dawn. Street food the Athenians actually eat.",
     /* Ruelle neoclassique drapeau grec Plaka — Athenes authentique */
     image: "https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
 
@@ -316,7 +316,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Rooftop cocktails with Acropolis views, then Psyrri until 4am.",
     /* Monastiraki Athenes vue aerienne — ville animee Acropole fond */
     image: "https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
 
@@ -388,7 +388,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Sea caves, wild beaches, lunch on a rock that only kayakers reach.",
     /* Eau turquoise aerien nageurs rochers — aventure aquatique */
     image: "https://images.unsplash.com/premium_photo-1685539973730-28a4fc68ef06?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
   {
@@ -400,7 +400,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Volcanic reefs, WWII wrecks, visibility that goes on forever.",
     /* Navagio Zakynthos aerien eau cristalline */
     image: "https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
 
@@ -428,7 +428,7 @@ export const catalogue: CatalogueItem[] = [
     description: "We\u2019ve retraced a grandfather\u2019s WWII footsteps with a university historian.",
     /* Theatre Herode Atticus Athenes — heritage antique */
     image: "https://images.unsplash.com/photo-1635672097594-a0cbb7aa3a9e?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["custom"],
   },
   {
@@ -486,7 +486,7 @@ export const catalogue: CatalogueItem[] = [
     duration: "3 days",
     /* Femme piscine cocktail luxe — wellness premium */
     image: "https://images.unsplash.com/photo-1620674972346-1648f7388d46?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Inquire", href: "/contact" },
+    cta: { label: "Inquire", href: "/contact?type=occasion" },
     tags: ["experience"],
   },
 
@@ -500,7 +500,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Strategy sessions in converted neoclassicals. Team dinners on rooftops.",
     /* Athenes Lycabette vue ville — perspective urbaine */
     image: "https://images.unsplash.com/photo-1590068560361-87d6b26e4017?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Plan your event", href: "/contact" },
+    cta: { label: "Plan your event", href: "/contact?type=occasion" },
     tags: ["event", "corporate"],
   },
   {
@@ -512,7 +512,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Caldera ceremony, reception in a candlelit vineyard.",
     /* Santorini domes bleus iconiques — LE mariage de reve */
     image: "https://images.unsplash.com/photo-1678266561093-324802646fb2?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Plan your event", href: "/contact" },
+    cta: { label: "Plan your event", href: "/contact?type=occasion" },
     tags: ["event", "wedding"],
   },
   {
@@ -524,7 +524,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Venetian fortresses, olive groves, a feast under the Cretan sky.",
     /* Santorini caldera barque coucher soleil — romantique */
     image: "https://images.unsplash.com/photo-1638990404606-946c53e4899e?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Plan your event", href: "/contact" },
+    cta: { label: "Plan your event", href: "/contact?type=occasion" },
     tags: ["event", "wedding"],
   },
   {
@@ -536,7 +536,7 @@ export const catalogue: CatalogueItem[] = [
     description: "A birthday at a beachfront villa. DJ, private chef, sunrise swim.",
     /* Santorini Fira soir terrasses illuminees — fete */
     image: "https://images.unsplash.com/premium_photo-1697729900945-598459160f7b?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Plan your event", href: "/contact" },
+    cta: { label: "Plan your event", href: "/contact?type=occasion" },
     tags: ["event", "celebration"],
   },
   {
@@ -548,7 +548,7 @@ export const catalogue: CatalogueItem[] = [
     description: "Wine tasting, boat day, dinner on the harbor. Festive but not frantic.",
     /* Terrasse Santorini table vue caldera — elegance decontractee */
     image: "https://images.unsplash.com/photo-1612713162479-10014668964d?auto=format&fit=crop&w=900&q=80",
-    cta: { label: "Plan your event", href: "/contact" },
+    cta: { label: "Plan your event", href: "/contact?type=occasion" },
     tags: ["event", "bachelorette"],
   },
 ];

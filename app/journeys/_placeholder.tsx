@@ -44,7 +44,7 @@ export default function JourneyPlaceholder({ title, subtitle, image, pillTag = "
             Full itinerary available on request.
           </p>
           <a
-            href="/contact"
+            href="/contact?type=journey"
             className="inline-block font-body text-white text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1.5 border-b border-white hover:opacity-80 transition-opacity door-cta"
           >
             Inquire about this journey &rarr;
