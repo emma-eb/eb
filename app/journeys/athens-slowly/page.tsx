@@ -205,11 +205,11 @@ export default function AthensSlowlyPage() {
 
       {/* WHERE YOU STAY */}
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/acropole_01.jpg" alt="Parthenon at golden hour, Athens" fill className="object-cover" />
+        <Image src="/roof%20top%20athens.jpg" alt="Rooftop hotel terrace with Parthenon view, Athens" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">A hotel with<br />the Parthenon<br />from the roof.</h2>
+          <h2 className="font-anton font-normal uppercase text-[32px] sm:text-[36px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">A hotel with<br />the Parthenon<br />from the roof.</h2>
           <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel in the old city. Discreet, unmarked, with a roof that puts you level with the Acropolis at sunset.</p>
         </div>
       </section>
