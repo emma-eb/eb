@@ -117,9 +117,9 @@ Grille filtree par mood + type de contenu. Resultats personnalises "pour vous".
 | **Terms** | `/terms` | **DONE** | 9 sections. SIRET + adresse Paris, sans telephone / domiciliation privee / regime fiscal. Lien Privacy. |
 | **Privacy Policy** | `/privacy-policy` | **DONE** | 12 sections RGPD conformes : data controller, collection, purposes, legal basis art.6, partenaires, transferts intra-UE, retention, droits utilisateur, cookies, CNIL complaints. |
 
-### Pages a creer
-- Pages detail experiences/villas (catalogue complet ~35 items)
-- Pages detail journeys manquantes apres validation template Paros (template DA v12 a repliquer)
+### Pages a creer (scope recadre 20/04/2026)
+- **Fiche Sailing / Yacht** : appliquer template Paros v12 DA luxury (seule fiche journey restante a upgrader)
+- **PAS de fiches detail villas/experiences** : decision Emma 20/04 — le catalogue.ts reste contenu interne, la page Collection + page Experiences (hero + 4 featured) suffisent. Les 35+ items ne generent pas de pages publiques.
 
 ---
 

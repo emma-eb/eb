@@ -32,7 +32,7 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] Creer la fiche yacht BESTIA -> San Lorenzo SP110, 33m, 4 cabins, 8 guests, crew 5
 - [x] Definir les 8 moods du discovery flow -> a reviser (Emma a flag copy et nombre : source catalogue.ts obsolete)
 - [x] Creer le catalogue de ~35 experiences/journeys -> catalogue.ts (source unique de verite)
-- [ ] Preparer 2-3 cas clients (sans noms si confidentialite necessaire)
+- [~] Cas clients : **ecartes du scope Phase 1** (decision Emma 20/04)
 
 ### Technique
 - [ ] Choisir et configurer le CMS (Sanity.io recommande)
@@ -89,9 +89,8 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] **Copy polish** : "Every journey starts from scratch" → "Every journey is shaped for one", yacht "timed by" → "chartered quietly through eb.", "She moves" retire, "Work with eb." → "Begin with eb.", "Every detail, handled quietly" → "Every detail, already thought of" + subtitle rephrase, "95 countries" text-balance
 - [x] **Mobile menu (Nav)** : ajout "For brands & agencies" en footer du menu burger (Option A discrete)
 - [x] **Back arrows** : teste et retire (Emma n'aime pas, Nav sticky suffit)
-- [ ] Pages detail experiences/villas (catalogue complet ~35 items)
-- [ ] Replication template Paros v12 sur les 4 fiches journey restantes (Astypalea, Mykonos, Honeymoon, Yacht) une fois template valide
-- [ ] Fiches detail experiences (35+ a creer)
+- [ ] Scope recadre 20/04 : **PAS de fiches detail villas/experiences** (le catalogue.ts reste contenu interne, pas de pages publiques detail) — 7 itineraires journey suffisent
+- [ ] Replication template Paros v12 **uniquement sur la fiche Sailing / Yacht** (Astypalea, Mykonos, Honeymoon laissees en l'etat)
 - [ ] Integration CMS : toutes les pages editables sans code
 
 ### Sprint 3 — Pages Secondaires & Formulaires (2 semaines)
