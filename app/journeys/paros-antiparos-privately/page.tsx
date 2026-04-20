@@ -75,12 +75,10 @@ export default function ParosAntiparosPage() {
     '24/7 on-the-ground support',
   ];
 
-  const notIncludedItems = [
-    'International flights',
-    'Private chef (on request)',
-    'Bespoke experiences (on request)',
+  const onRequestItems = [
+    'Private chef',
+    'Bespoke experiences',
     'Personal shopping and spa',
-    'Travel insurance',
   ];
 
   return (
@@ -106,40 +104,25 @@ export default function ParosAntiparosPage() {
       <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
         <Image
           src="/images/journeys/paros-hero.jpg"
-          alt="Paros + Antiparos"
+          alt="Paros south coast at golden hour, Aegean bay"
           fill
           priority
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
-        <div className="absolute bottom-12 md:bottom-16 left-6 md:left-12 right-6 md:right-12 text-white">
-          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-5 eb-fade-up">
+        <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">
             Private Journey &middot; 04
           </div>
 
-          <h1 className="font-anton font-normal uppercase text-[44px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-5 max-w-[88%] md:max-w-[75%] eb-fade-up eb-delay-100">
-            Paros + Antiparos,<br />Privately.
+          <h1 className="font-anton font-normal uppercase text-[40px] sm:text-[52px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
+            Paros + Antiparos,<br className="hidden sm:block" /> Privately.
           </h1>
 
-          <p className="text-[14px] md:text-[15px] opacity-90 max-w-[480px] leading-[1.5] mb-5 font-light eb-fade-up eb-delay-200">
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light italic eb-fade-up eb-delay-200">
             Held by the quiet. Found by no one.
           </p>
-
-          <div className="flex gap-1.5 mb-5 eb-fade-up eb-delay-300">
-            {['Slow', 'Chic', 'Discovery'].map((mood) => (
-              <span
-                key={mood}
-                className="bg-white/12 border border-white/30 rounded-full px-3 py-1 text-[9px] md:text-[10px] tracking-[0.2em] uppercase font-light"
-              >
-                {mood}
-              </span>
-            ))}
-          </div>
-
-          <div className="text-[11px] opacity-65 mt-3 font-light eb-fade-up eb-delay-400">
-            Curated firsthand by the eb. studio, Athens. Best in June and September, when the island breathes.
-          </div>
         </div>
 
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron">
@@ -166,12 +149,27 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
+      {/* ============ ZONE 2B — INSIDER (signature) ============ */}
+      <section className="eb-bg-beige-gradient py-20 md:py-28 px-6 md:px-12 eb-fade-up">
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 mb-8 font-light">
+            The Studio
+          </div>
+          <p className="font-body text-[16px] md:text-[19px] text-[#1a1a1a]/75 font-light leading-[1.75] text-left md:text-center">
+            We know Paros by heart, season after season. The villa we place you in stays on a list we don&apos;t publish, the taverna in Lefkes opens for us on a whisper. What we don&apos;t share with groups, we share with yours.
+          </p>
+          <p className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 font-light mt-10 tracking-[0.2em] uppercase">
+            eb. studio &middot; Athens
+          </p>
+        </div>
+      </section>
+
       {/* ============ ZONE 3 — AT A GLANCE (Move 1) ============ */}
-      <section className="eb-bg-beige-gradient py-12 md:py-14 px-6 md:px-12 eb-fade-up">
+      <section className="bg-white py-12 md:py-14 px-6 md:px-12 eb-fade-up">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-10">
             {[
-              { label: 'Duration', value: '7 nights' },
+              { label: 'Duration', value: '6 nights', sub: '7 days' },
               { label: 'Destination', value: 'Paros + Antiparos' },
               { label: 'Season', value: 'May to October' },
               { label: 'Best for', value: 'Couples, Friends, Families' },
@@ -220,6 +218,7 @@ export default function ParosAntiparosPage() {
                   <div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" />
                   <div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
                   <div className="text-[12px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
+                  <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by yacht</div>
                 </div>
 
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10">
@@ -244,6 +243,7 @@ export default function ParosAntiparosPage() {
                 <div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" />
                 <div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
                 <div className="text-[11px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by yacht</div>
               </div>
 
               <div className="w-px h-8 bg-[#2e5a88]/30" />
@@ -330,6 +330,16 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
+      {/* ============ BREATHER 1 — poetic statement ============ */}
+      <section className="bg-white py-16 md:py-20 px-8 eb-fade-up">
+        <div className="max-w-[600px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-8" />
+          <p className="font-body text-[19px] md:text-[24px] text-[#1a1a1a]/55 italic font-light leading-[1.45] tracking-[-0.005em]">
+            Some islands you visit. Paros, you settle into.
+          </p>
+        </div>
+      </section>
+
       {/* ============ ZONE 6 — DAY BY DAY (Moves 1 + 3) ============ */}
       <section className="eb-bg-beige-gradient py-20 md:py-28">
         <div className="max-w-[900px] mx-auto px-6 md:px-12">
@@ -388,6 +398,15 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
+      {/* ============ BREATHER 2 — transition to villa ============ */}
+      <section className="eb-bg-beige-gradient py-14 md:py-16 px-8 eb-fade-up">
+        <div className="max-w-[620px] mx-auto text-center">
+          <p className="font-body text-[17px] md:text-[22px] text-[#1a1a1a]/55 italic font-light leading-[1.5] tracking-[-0.005em]">
+            The villa is the hinge. Everything else unfolds from there.
+          </p>
+        </div>
+      </section>
+
       {/* ============ ZONE 7 — WHERE YOU STAY (moved AFTER Day by Day, Moves 4 + 7) ============ */}
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
@@ -405,8 +424,43 @@ export default function ParosAntiparosPage() {
           <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">
             A villa on the<br />south coast.
           </h2>
-          <p className="eb-dropcap-light text-[14px] md:text-[16px] leading-[1.75] opacity-90 font-light">
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">
             Hand-selected by the eb. studio. Private pool, direct beach access, six bedrooms. Known to our clients only. The villa shown may vary by availability and party size.
+          </p>
+        </div>
+      </section>
+
+      {/* ============ ZONE 7B — VILLA GLIMPSES (Move 5 gallery) ============ */}
+      <section className="bg-white py-10 md:py-14 eb-fade-up">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-3 gap-2 md:gap-3">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+              <Image
+                src="/paros_02.jpg"
+                alt="Villa pool edge at midday, Paros south coast"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+              <Image
+                src="/134_terrace_privatebeach.jpg"
+                alt="Terrace above the private beach, early evening"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+              <Image
+                src="/paros_03.jpg"
+                alt="Interior light and textures, Paros villa"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">
+            Glimpses. Exact residence confirmed on request.
           </p>
         </div>
       </section>
@@ -437,24 +491,42 @@ export default function ParosAntiparosPage() {
               </div>
 
               <div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 font-light mb-6">
-                  Not Included
+                <div className="text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/50 font-light mb-6">
+                  On Request
                 </div>
                 <ul className="space-y-4">
-                  {notIncludedItems.map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-[13px] md:text-[14px] text-[#1a1a1a]/45 font-light leading-[1.6]">
-                      <span className="inline-block w-[5px] h-[5px] bg-black/20 mt-[8px] shrink-0" />
+                  {onRequestItems.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-[13px] md:text-[14px] text-[#1a1a1a]/60 font-light leading-[1.6]">
+                      <span className="inline-block w-[5px] h-[5px] border border-[#1a1a1a]/25 mt-[8px] shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
+                <p className="mt-8 text-[12px] md:text-[13px] text-[#1a1a1a]/45 italic font-light leading-[1.6]">
+                  Flights and travel insurance arranged separately.
+                </p>
               </div>
             </div>
 
             <div className="text-center mt-12 text-[11px] text-[#1a1a1a]/40 font-light">
-              All pricing in EUR. Based on double occupancy. Flights and insurance not included.
+              All pricing in EUR. Based on double occupancy.
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ============ ZONE 8B — CLIENT QUOTE ============ */}
+      <section className="bg-white py-20 md:py-28 px-8 eb-fade-up">
+        <div className="max-w-[720px] mx-auto text-center">
+          <div className="text-[#2e5a88]/25 font-anton leading-[0.5] mb-4 select-none text-[72px] md:text-[96px]">
+            &ldquo;
+          </div>
+          <p className="font-body text-[21px] md:text-[28px] text-[#1a1a1a]/75 italic font-light leading-[1.45] mb-10 tracking-[-0.005em]">
+            Six nights. Three of them unplanned. The best three of the week.
+          </p>
+          <p className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/50 tracking-[0.25em] uppercase font-light">
+            R.F. &middot; Paros, summer 2025
+          </p>
         </div>
       </section>
 
@@ -484,7 +556,7 @@ export default function ParosAntiparosPage() {
                 href="/contact?type=journey&journey=paros-antiparos-privately"
                 className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
               >
-                Inquire &rarr;
+                Start the conversation &rarr;
               </Link>
             </div>
           </div>
