@@ -163,7 +163,7 @@ export default function CollectionPage() {
             {villas.map((villa, i) => (
               <a
                 key={villa.slug}
-                href={`/contact?villa=${villa.slug}`}
+                href={`/contact?type=stay&villa=${villa.slug}`}
                 className={`reveal group block relative overflow-hidden ${
                   i === 4 ? "md:col-span-2 aspect-[3/2] md:aspect-[5/2]" : "aspect-[3/2]"
                 }`}
