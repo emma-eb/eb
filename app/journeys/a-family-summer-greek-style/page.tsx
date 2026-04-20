@@ -147,7 +147,7 @@ export default function FamilySummerPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/familly%20journey.jpg" alt="Family villa on the Peloponnese coast" fill className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1620674972346-1648f7388d46?auto=format&fit=crop&w=1920&q=80" alt="Private villa pool and terrace, Peloponnese coast" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -159,9 +159,9 @@ export default function FamilySummerPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/familly%20journey.jpg" alt="Family villa Porto Heli" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/images/journeys/family-card.jpg" alt="Villa pool and terrace" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/134_terrace_privatebeach.jpg" alt="Private beach terrace" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=900&q=80" alt="A quiet cove with boats, Peloponnese" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1602008394120-5cc61b4f6ada?auto=format&fit=crop&w=900&q=80" alt="A Greek taverna, lunch under the vines" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1688765866663-0fd353e7d5df?auto=format&fit=crop&w=900&q=80" alt="Peloponnese coast at golden hour" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact residence confirmed on request.</p>
         </div>
@@ -183,6 +183,22 @@ export default function FamilySummerPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* MID CTA — shape this journey */}
+      <section className="bg-white py-14 md:py-16 px-8 eb-fade-up">
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
+          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
+            Want this journey, shaped around you?
+          </p>
+          <Link
+            href="/contact?type=journey&journey=a-family-summer-greek-style"
+            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
+          >
+            Start the conversation <span>&rarr;</span>
+          </Link>
         </div>
       </section>
 

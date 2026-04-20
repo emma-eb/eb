@@ -184,6 +184,22 @@ export default function AstypaleaPage() {
         </div>
       </section>
 
+      {/* MID CTA — shape this journey */}
+      <section className="bg-white py-14 md:py-16 px-8 eb-fade-up">
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
+          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
+            Want this journey, shaped around you?
+          </p>
+          <Link
+            href="/contact?type=journey&journey=astypalea-before-everyone-else"
+            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
+          >
+            Start the conversation <span>&rarr;</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-10"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">You might also like</div></div>

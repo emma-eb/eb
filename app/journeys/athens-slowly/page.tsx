@@ -156,7 +156,7 @@ export default function AthensSlowlyPage() {
             <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div>
           </div>
           <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
-            <Image src="/acropole_01.jpg" alt="Parthenon at golden hour, Athens Acropolis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <Image src="https://images.unsplash.com/photo-1630933868840-1e9299a5b8dd?auto=format&fit=crop&w=1600&q=80" alt="Monastiraki Athens with Acropolis in the distance" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             <div className="absolute top-5 left-5 md:top-8 md:left-8 z-[3]">
               <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Old City</span>
@@ -219,13 +219,13 @@ export default function AthensSlowlyPage() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
-              <Image src="/detail%20archi%20greece.jpg" alt="Athens neoclassical detail" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1574708006526-c61cf5fe25b1?auto=format&fit=crop&w=900&q=80" alt="Athens Riviera, white architecture by the sea" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
-              <Image src="/detail%20archi%20greece_02.jpg" alt="Athens architecture detail" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=900&q=80" alt="Plaka alley with Greek flag, Athens" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
-              <Image src="/acropole_01.jpg" alt="Parthenon Athens Acropolis" fill className="object-cover" />
+              <Image src="/detail%20archi%20greece_02.jpg" alt="Neoclassical detail, Athens old city" fill className="object-cover" />
             </div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact hotel confirmed on request.</p>
@@ -265,6 +265,22 @@ export default function AthensSlowlyPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* MID CTA — shape this journey */}
+      <section className="bg-white py-14 md:py-16 px-8 eb-fade-up">
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
+          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
+            Want this journey, shaped around you?
+          </p>
+          <Link
+            href="/contact?type=journey&journey=athens-slowly"
+            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
+          >
+            Start the conversation <span>&rarr;</span>
+          </Link>
         </div>
       </section>
 

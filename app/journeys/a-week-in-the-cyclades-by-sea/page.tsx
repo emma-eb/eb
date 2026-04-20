@@ -147,9 +147,9 @@ export default function WeekBySeaPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/yatch_page%20collection_2.png" alt="Yacht deck, Cyclades" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/alex-azabache-j97YqU81FSw-unsplash%20(1).jpg" alt="Yacht sailing the Aegean" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/alexandra-kirr-pV7Cyd4bxkY-unsplash.jpg" alt="Yacht at anchor in a Cycladic bay" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=900&q=80" alt="A small Cycladic fishing port, at anchor" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1719917457945-5d23b86ab532?auto=format&fit=crop&w=900&q=80" alt="A chapel at the end of a stone path, Aegean" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80" alt="Aerial view of turquoise water and boats, Greek coast" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact vessel confirmed on request.</p>
         </div>
@@ -171,6 +171,22 @@ export default function WeekBySeaPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* MID CTA — shape this journey */}
+      <section className="bg-white py-14 md:py-16 px-8 eb-fade-up">
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
+          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
+            Want this journey, shaped around you?
+          </p>
+          <Link
+            href="/contact?type=journey&journey=a-week-in-the-cyclades-by-sea"
+            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
+          >
+            Start the conversation <span>&rarr;</span>
+          </Link>
         </div>
       </section>
 
