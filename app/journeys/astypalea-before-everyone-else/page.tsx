@@ -157,8 +157,8 @@ export default function AstypaleaPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="A quiet Aegean cove with turquoise water" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=900&q=80" alt="Fishing boats in a small Aegean port" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_06.JPG" alt="Astypalea coast, quiet cove" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/atypalea_05.jpg" alt="Astypalea beach" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact properties confirmed on request.</p>
