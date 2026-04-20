@@ -56,7 +56,7 @@ export default function InfluencerProduction() {
             Greece.<br />Produced.
           </h1>
           <p className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body mx-auto" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            Production in Greece for luxury brands, fashion houses, and influencer campaigns. From the brief to the final frame.
+            Production in Greece for luxury brands, fashion houses, film shoots, and influencer campaigns. From the brief to the final frame.
           </p>
         </div>
         <button
@@ -109,7 +109,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a]">
         <div className="text-center pt-14 md:pt-20 pb-8 md:pb-12 px-6">
-          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/65">
             What we produce
           </p>
         </div>
@@ -185,7 +185,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a] py-14 md:py-20 px-5 md:px-10">
         <div className="text-center mb-10 md:mb-14">
-          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/65">
             Production formats
           </p>
         </div>
@@ -252,7 +252,7 @@ export default function InfluencerProduction() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="bg-[#1a1a1a] pt-14 md:pt-20 pb-16 md:pb-24">
         <div className="text-center px-6 mb-10 md:mb-14">
-          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/40">
+          <p className="reveal font-body text-[10px] md:text-[11px] font-light tracking-[0.3em] uppercase text-white/65">
             What we bring to every production
           </p>
         </div>
@@ -265,8 +265,8 @@ export default function InfluencerProduction() {
             { label: "Villas", img: "/134_terrace_privatebeach.jpg", alt: "Villa terrace, private beach" },
             { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
             { label: "Styling", img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80", alt: "Wardrobe and styling" },
-            { label: "Photography", img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=900&q=80", alt: "Photo production setup" },
-            { label: "Post", img: "/astypalea_02.jpg", alt: "Astypalea Chora aerial, editorial" },
+            { label: "Photography", img: "/florian-wehde-OJScR4tDRyc-unsplash.jpg", alt: "Editorial shoot setting, Oia Santorini" },
+            { label: "Aerial", img: "/astypalea_02.jpg", alt: "Astypalea Chora aerial, drone production" },
           ].map(({ label, img, alt }, i) => (
             <div
               key={label}
