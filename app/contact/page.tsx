@@ -36,7 +36,7 @@ function ContactRouter() {
             Tell us<br />what you<br />dream of.
           </h1>
           <p className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            A few questions, a few minutes. Every inquiry is read, personally.
+            A few questions, a few minutes. We take it from there.
           </p>
         </div>
       </section>

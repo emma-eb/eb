@@ -17,7 +17,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
           Your brief is with Emma.
         </h1>
         <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 leading-[1.7] font-light max-w-[480px] mx-auto">
-          You will hear back from us shortly. Every inquiry is read, personally.
+          You will hear back from us shortly.
         </p>
         <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/60 mt-10 italic font-light">
           &mdash; eb.
