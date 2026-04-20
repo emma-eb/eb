@@ -103,7 +103,7 @@ export default function CollectionPage() {
             Collection
           </span>
           <h1
-            className="reveal font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             data-delay="100"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
@@ -302,7 +302,7 @@ export default function CollectionPage() {
               From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
-              href="/contact?type=stay&villa=bestia-yacht"
+              href="/contact?type=stay&stay=yacht"
               className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px] py-3 relative z-[2]"
               data-delay="300"
             >

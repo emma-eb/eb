@@ -132,7 +132,7 @@ export default function Experiences() {
             Experiences
           </span>
           <h1
-            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Moments you can&apos;t book online.

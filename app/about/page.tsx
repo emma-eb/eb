@@ -120,7 +120,7 @@ export default function About() {
             About
           </span>
           <h1
-            className="font-heading text-[44px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             From Paris,<br className="md:hidden" /> for Greece.
@@ -329,7 +329,7 @@ export default function About() {
             Whether it{'\u2019'}s a first trip or a tenth, we start from you.
           </p>
           <a
-            href="/contact"
+            href="/contact?type=journey"
             className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
             data-delay="220"
           >

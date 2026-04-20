@@ -305,7 +305,7 @@ export default function ParosAntiparosPage() {
                       isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pb-8 md:pb-10 pl-[100px] md:pl-[140px] pr-4">
+                    <div className="pb-8 md:pb-10 pl-0 md:pl-[140px] pr-2 md:pr-4">
                       <p className="text-[14px] md:text-[15px] leading-[1.8] text-[#1a1a1a]/65 font-light max-w-[640px]">
                         {day.body}
                       </p>

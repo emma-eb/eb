@@ -66,7 +66,7 @@ export default function Journal() {
             Journal
           </span>
           <h1
-            className="font-heading text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="font-heading text-[42px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
             Greece, closely.
@@ -180,7 +180,7 @@ export default function Journal() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-6">
             {/* Art 4 — Astypalea */}
             <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="150">
-              <img src="/astypalea..jpg" alt="Astypalea windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="/astypalea.jpg" alt="Astypalea windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Destination</span>
@@ -192,7 +192,7 @@ export default function Journal() {
 
             {/* Art 5 — Hotel Openings 2026 */}
             <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="200">
-              <img src="/raphael-lopes-zqGvYYqDvs4-unsplash (1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="/raphael-lopes-zqGvYYqDvs4-unsplash%20(1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Hospitality Pipeline</span>
