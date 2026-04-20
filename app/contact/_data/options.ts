@@ -1,9 +1,8 @@
 export const villaBudgets = [
-  "\u20AC1,000 to 2,000 / night",
-  "\u20AC2,000 to 4,000 / night",
-  "\u20AC4,000 to 8,000 / night",
-  "\u20AC8,000 to 15,000 / night",
-  "\u20AC15,000+ / night",
+  "\u20AC1,000 to 2,500 / night",
+  "\u20AC2,500 to 5,000 / night",
+  "\u20AC5,000 to 10,000 / night",
+  "\u20AC10,000+ / night",
   "Discuss privately",
 ];
 

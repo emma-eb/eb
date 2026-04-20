@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ReactNode } from "react";
 
 interface FormOnePageProps {
@@ -29,14 +28,14 @@ export default function FormOnePage({
       {/* Header */}
       <div className="px-5 md:px-10 pt-10 md:pt-16">
         <div className="max-w-[760px] mx-auto">
-          <Link
+          <a
             href="/contact"
             aria-label="Back to contact landing"
             className="group inline-flex items-center gap-2 font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors mb-8 md:mb-10"
           >
             <span className="text-[15px] leading-none inline-block transition-transform duration-300 ease-out group-hover:-translate-x-1">&larr;</span>
             Back
-          </Link>
+          </a>
           <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
             {typeLabel}
           </p>
