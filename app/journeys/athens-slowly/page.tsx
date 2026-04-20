@@ -219,13 +219,13 @@ export default function AthensSlowlyPage() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
-              <Image src="https://images.unsplash.com/photo-1574708006526-c61cf5fe25b1?auto=format&fit=crop&w=900&q=80" alt="Athens Riviera, white architecture by the sea" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1590068560361-87d6b26e4017?auto=format&fit=crop&w=900&q=80" alt="Athens seen from Lycabettus Hill" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=900&q=80" alt="Plaka alley with Greek flag, Athens" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
-              <Image src="/detail%20archi%20greece_02.jpg" alt="Neoclassical detail, Athens old city" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1635672097594-a0cbb7aa3a9e?auto=format&fit=crop&w=900&q=80" alt="Odeon of Herodes Atticus, Athens" fill className="object-cover" />
             </div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact hotel confirmed on request.</p>
@@ -273,13 +273,13 @@ export default function AthensSlowlyPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=athens-slowly"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>

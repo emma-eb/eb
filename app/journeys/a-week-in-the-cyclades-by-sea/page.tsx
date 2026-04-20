@@ -135,7 +135,7 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch_page%20collection_2.png" alt="Private yacht deck at sea" fill className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=1600&q=80" alt="A yacht at anchor in turquoise Aegean water" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -149,7 +149,7 @@ export default function WeekBySeaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=900&q=80" alt="A small Cycladic fishing port, at anchor" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1719917457945-5d23b86ab532?auto=format&fit=crop&w=900&q=80" alt="A chapel at the end of a stone path, Aegean" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=900&q=80" alt="Aerial view of turquoise water and boats, Greek coast" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1688765866663-0fd353e7d5df?auto=format&fit=crop&w=900&q=80" alt="A Cycladic coast seen from the sea at golden hour" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact vessel confirmed on request.</p>
         </div>
@@ -179,13 +179,13 @@ export default function WeekBySeaPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=a-week-in-the-cyclades-by-sea"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>

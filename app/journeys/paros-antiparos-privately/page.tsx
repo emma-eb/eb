@@ -355,8 +355,8 @@ export default function ParosAntiparosPage() {
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="/134_terrace_privatebeach.jpg"
-                alt="Terrace above the private beach, early evening"
+                src="https://images.unsplash.com/photo-1630276731484-2ede4b9f283c?auto=format&fit=crop&w=900&q=80"
+                alt="A turquoise Aegean cove seen from above"
                 fill
                 className="object-cover"
               />
@@ -428,13 +428,13 @@ export default function ParosAntiparosPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=paros-antiparos-privately"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>

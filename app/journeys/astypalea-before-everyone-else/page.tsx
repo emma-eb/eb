@@ -157,8 +157,8 @@ export default function AstypaleaPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/despina-galani-i0c-tOtR0Ks-unsplash.jpg" alt="A quiet Aegean cove" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/despina-galani-qGtpTQrN7VU-unsplash.jpg" alt="A sailboat at anchor, Aegean" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="A quiet Aegean cove with turquoise water" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=900&q=80" alt="Fishing boats in a small Aegean port" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact properties confirmed on request.</p>
@@ -189,13 +189,13 @@ export default function AstypaleaPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=astypalea-before-everyone-else"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>

@@ -228,8 +228,8 @@ export default function MykonosTimedRightPage() {
 
           <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
             <Image
-              src="https://images.unsplash.com/photo-1602175200025-62a10834a37c?auto=format&fit=crop&w=1600&q=80"
-              alt="Mykonos windmills at sunset"
+              src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=1600&q=80"
+              alt="A Mykonos hotel terrace with a sea view"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -340,8 +340,8 @@ export default function MykonosTimedRightPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=900&q=80"
-                alt="Mykonos villa and sea, quiet bay"
+                src="https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80"
+                alt="A Mykonos alley with a table and sea view"
                 fill
                 className="object-cover"
               />
@@ -356,8 +356,8 @@ export default function MykonosTimedRightPage() {
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="/images/journeys/mykonos-card.jpg"
-                alt="Mykonos coastline from above"
+                src="https://images.unsplash.com/photo-1620674972346-1648f7388d46?auto=format&fit=crop&w=900&q=80"
+                alt="A Mykonos beach club, pool with a sea view"
                 fill
                 className="object-cover"
               />
@@ -420,13 +420,13 @@ export default function MykonosTimedRightPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=mykonos-timed-right"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>

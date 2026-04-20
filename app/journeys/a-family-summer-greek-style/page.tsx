@@ -20,7 +20,7 @@ export default function FamilySummerPage() {
 
   const days = [
     { day: '01', title: 'Arrival. Settling in.', body: 'Private transfers from the airport to Porto Heli, two and a half hours south by car. Arrival at the villa, welcome lunch on the terrace, an afternoon at the pool.' },
-    { day: '02', title: 'The private beach.', body: 'A slow morning at the villa. Lunch at a taverna the families return to every year. Afternoon on the private beach with kayaks, paddleboards, and a nanny on call.' },
+    { day: '02', title: 'The secluded cove.', body: 'A slow morning at the villa. Lunch at a taverna the families return to every year. Afternoon on the secluded cove with kayaks, paddleboards, and a nanny on call.' },
     { day: '03', title: 'By private boat, the day out.', body: 'A full day on the water. Hydra at lunchtime, swim stops in protected bays, ice cream on the way back. Kids love it, grandparents never notice it is long.' },
     { day: '04', title: 'A day at the villa.', body: 'Breakfast late. A private chef for dinner. Games on the lawn, a movie under the stars.' },
     { day: '05', title: 'Spetses, at your pace.', body: 'Short private boat transfer to Spetses, the island without cars. Horse-drawn carriage tour, lunch by the water, boutiques for those who want them.' },
@@ -94,14 +94,14 @@ export default function FamilySummerPage() {
               <div className="flex items-start justify-between relative">
                 <div className="absolute top-[14px] left-[7%] right-[7%] h-px bg-[#2e5a88]/30" />
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div></div>
-                <div className="flex flex-col items-center text-center w-[40%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Porto Heli</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">10 nights &middot; Villa with private beach</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Spetses + Hydra by private boat</div></div>
+                <div className="flex flex-col items-center text-center w-[40%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Porto Heli</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">10 nights &middot; Villa with secluded cove</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Spetses + Hydra by private boat</div></div>
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
               </div>
             </div>
             <div className="md:hidden flex flex-col items-center space-y-8">
               <div className="flex flex-col items-center text-center"><div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div></div>
               <div className="w-px h-8 bg-[#2e5a88]/30" />
-              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Porto Heli</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">10 nights &middot; Villa with private beach</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Spetses + Hydra by private boat</div></div>
+              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Porto Heli</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">10 nights &middot; Villa with secluded cove</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Spetses + Hydra by private boat</div></div>
               <div className="w-px h-8 bg-[#2e5a88]/30" />
               <div className="flex flex-col items-center text-center"><div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
             </div>
@@ -113,12 +113,12 @@ export default function FamilySummerPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
           <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
-            <Image src="/images/journeys/family-card.jpg" alt="Family villa with pool and sea view, Porto Heli" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <Image src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=1600&q=80" alt="A luxurious Mediterranean villa with infinity pool and sea view" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             <div className="absolute top-5 left-5 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Villa</span></div>
             <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
               <h3 className="font-anton font-normal uppercase text-[26px] md:text-[40px] leading-[1] mb-3">Ten nights, one home.</h3>
-              <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">Three generations. A pool. A private beach. Nothing to negotiate.</p>
+              <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">Three generations. A pool. A secluded cove. Nothing to negotiate.</p>
             </div>
           </div>
         </div>
@@ -152,16 +152,16 @@ export default function FamilySummerPage() {
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
           <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">Big enough<br />for everyone.</h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected villa with a private beach, a pool, space for grandparents and teenagers to keep different hours. The right residence matched to your party, confirmed once we know who is traveling.</p>
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected villa with a secluded cove, a pool, space for grandparents and teenagers to keep different hours. The right residence matched to your party, confirmed once we know who is traveling.</p>
         </div>
       </section>
 
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=900&q=80" alt="A quiet cove with boats, Peloponnese" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Colored houses by the Aegean water" fill className="object-cover" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1602008394120-5cc61b4f6ada?auto=format&fit=crop&w=900&q=80" alt="A Greek taverna, lunch under the vines" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1688765866663-0fd353e7d5df?auto=format&fit=crop&w=900&q=80" alt="Peloponnese coast at golden hour" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1663756383115-568e1b0c087d?auto=format&fit=crop&w=900&q=80" alt="A Cycladic village at sunset, warm colors" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact residence confirmed on request.</p>
         </div>
@@ -191,13 +191,13 @@ export default function FamilySummerPage() {
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
-            Want this journey, shaped around you?
+            Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=a-family-summer-greek-style"
             className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
           >
-            Start the conversation <span>&rarr;</span>
+            Inquire <span>&rarr;</span>
           </Link>
         </div>
       </section>
