@@ -336,7 +336,7 @@ export default function ParosAntiparosPage() {
             Your south coast.
           </h2>
           <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">
-            A hand-selected villa on the water. Private pool, direct beach access, six bedrooms. Known to our clients only. The exact residence is confirmed once we know who is traveling.
+            A hand-selected villa on the water. Private pool, direct beach access. The right residence matched to your party, confirmed once we know who is traveling.
           </p>
         </div>
       </section>
