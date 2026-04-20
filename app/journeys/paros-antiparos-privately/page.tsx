@@ -452,7 +452,7 @@ export default function ParosAntiparosPage() {
                 href: '/journeys/a-family-summer-greek-style',
                 img: '/images/journeys/family-card.jpg',
                 category: 'Family \u00b7 Multi-gen',
-                title: 'A Family Summer',
+                title: 'A Family Summer, Greek-Style',
                 meta: '10 nights \u00b7 Porto Heli',
               },
             ].map((card, i) => (
