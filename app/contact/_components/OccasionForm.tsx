@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import FormShell from "./FormShell";
+import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
 import { Field, TextInput, TextArea, PillChoice, Counter, Checkbox } from "./fields";
-import { occasionTypes, howHeard, styles } from "../_data/options";
+import { occasionTypes, occasionBudgets, howHeard, styles } from "../_data/options";
 
 interface Data {
   name: string;
@@ -54,7 +54,6 @@ const STORAGE_KEY = "eb-contact-occasion";
 const VISION_MIN = 60;
 
 export default function OccasionForm() {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [data, setData] = useState<Data>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
@@ -74,11 +73,14 @@ export default function OccasionForm() {
 
   const update = <K extends keyof Data>(k: K, v: Data[K]) => setData((d) => ({ ...d, [k]: v }));
 
-  const canStep1 = !!data.name.trim() && /\S+@\S+\.\S+/.test(data.email);
-  const canStep2 = !!data.occasion && !!data.date.trim();
-  const canStep3 = data.vision.trim().length >= VISION_MIN && !!data.budget.trim() && data.consent;
-
-  const canProceed = step === 1 ? canStep1 : step === 2 ? canStep2 : canStep3;
+  const canSubmit =
+    !!data.name.trim() &&
+    /\S+@\S+\.\S+/.test(data.email) &&
+    !!data.occasion &&
+    !!data.date &&
+    data.vision.trim().length >= VISION_MIN &&
+    !!data.budget &&
+    data.consent;
 
   const buildSummary = () => {
     const occasion = data.occasion === "Other" && data.otherOccasion ? data.otherOccasion : data.occasion;
@@ -98,7 +100,7 @@ export default function OccasionForm() {
       `Guests: ${data.guests}`,
       `Location preference: ${data.location || "(not specified)"}`,
       `Style: ${data.style || "(not specified)"}`,
-      `Indicative budget: ${data.budget}`,
+      `Budget: ${data.budget}`,
       "",
       "VISION",
       data.vision,
@@ -129,80 +131,76 @@ export default function OccasionForm() {
   }
 
   return (
-    <FormShell
+    <FormOnePage
       typeLabel="Occasion"
-      step={step}
-      stepKicker={step === 1 ? "Step 1" : step === 2 ? "Step 2" : "Step 3"}
-      stepTitle={step === 1 ? "Who is celebrating." : step === 2 ? "The moment." : "Your vision."}
-      onBack={step > 1 ? () => setStep((s) => Math.max(1, (s - 1)) as 1 | 2 | 3) : undefined}
-      onNext={step < 3 ? () => setStep((s) => Math.min(3, (s + 1)) as 1 | 2 | 3) : undefined}
+      title="A moment, marked."
+      intro="Weddings, proposals, honeymoons, celebrations. Tell us what the moment is, and we design the rest."
       onSubmit={handleSubmit}
-      canProceed={canProceed}
+      canSubmit={canSubmit}
     >
-      {step === 1 && (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Field label="Full name" required>
-              <TextInput value={data.name} onChange={(v) => update("name", v)} placeholder="Your name" autoComplete="name" />
-            </Field>
-            <Field label="Email" required>
-              <TextInput value={data.email} onChange={(v) => update("email", v)} placeholder="you@domain.com" type="email" autoComplete="email" />
-            </Field>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Field label="Phone" hint="Helpful for quick follow-up">
-              <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
-            </Field>
-            <Field label="Country of residence">
-              <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
-            </Field>
-          </div>
-        </>
-      )}
+      <Section num="01" title="Who is celebrating.">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Field label="Full name" required>
+            <TextInput value={data.name} onChange={(v) => update("name", v)} placeholder="Your name" autoComplete="name" />
+          </Field>
+          <Field label="Email" required>
+            <TextInput value={data.email} onChange={(v) => update("email", v)} placeholder="you@domain.com" type="email" autoComplete="email" />
+          </Field>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Field label="Phone" hint="Helpful for quick follow-up">
+            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
+          </Field>
+          <Field label="Country of residence">
+            <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
+          </Field>
+        </div>
+      </Section>
 
-      {step === 2 && (
-        <>
-          <Field label="Type of occasion" required>
-            <PillChoice options={occasionTypes} value={data.occasion} onChange={(v) => update("occasion", v)} name="occasion" />
+      <Section num="02" title="The moment.">
+        <Field label="Type of occasion" required>
+          <PillChoice options={occasionTypes} value={data.occasion} onChange={(v) => update("occasion", v)} name="occasion" />
+        </Field>
+        {data.occasion === "Other" && (
+          <Field label="Tell us more">
+            <TextInput value={data.otherOccasion} onChange={(v) => update("otherOccasion", v)} placeholder="The nature of the moment" />
           </Field>
-          {data.occasion === "Other" && (
-            <Field label="Tell us more">
-              <TextInput value={data.otherOccasion} onChange={(v) => update("otherOccasion", v)} placeholder="The nature of the moment" />
-            </Field>
-          )}
-          <Field label="Date" required hint="Exact date or a window.">
-            <TextInput value={data.date} onChange={(v) => update("date", v)} placeholder="e.g. 18 August 2026, or late August" />
-          </Field>
-          <Field label="Number of guests">
-            <Counter value={data.guests} onChange={(v) => update("guests", v)} min={1} max={200} />
-          </Field>
-          <Field label="Location preference">
-            <PillChoice options={locations} value={data.location} onChange={(v) => update("location", v)} name="location" />
-          </Field>
-          <Field label="Style">
-            <PillChoice options={styles} value={data.style} onChange={(v) => update("style", v)} name="style" />
-          </Field>
-        </>
-      )}
+        )}
+        <Field label="Date" required hint="Use the notes below if the date is still flexible.">
+          <input
+            type="date"
+            value={data.date}
+            onChange={(e) => update("date", e.target.value)}
+            className="w-full border-b border-[#e8e4de] bg-transparent py-3 font-body text-[15px] text-[#1a1a1a] focus:outline-none focus:border-[#1a1a1a] transition-colors"
+          />
+        </Field>
+        <Field label="Number of guests">
+          <Counter value={data.guests} onChange={(v) => update("guests", v)} min={1} max={200} />
+        </Field>
+        <Field label="Location preference">
+          <PillChoice options={locations} value={data.location} onChange={(v) => update("location", v)} name="location" />
+        </Field>
+        <Field label="Style">
+          <PillChoice options={styles} value={data.style} onChange={(v) => update("style", v)} name="style" />
+        </Field>
+      </Section>
 
-      {step === 3 && (
-        <>
-          <Field label="Your vision" required hint={`The occasion, the feel, anything that matters. (min ${VISION_MIN} characters)`}>
-            <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} minLength={VISION_MIN} />
-          </Field>
-          <Field label="Indicative budget" required hint="Approximate total for the occasion (EUR). On request tier welcome.">
-            <TextInput value={data.budget} onChange={(v) => update("budget", v)} placeholder="e.g. \u20AC15,000 or discuss privately" />
-          </Field>
-          <Field label="How did you find us">
-            <PillChoice options={howHeard} value={data.howHeard} onChange={(v) => update("howHeard", v)} name="howHeard" />
-          </Field>
-          <div className="pt-2">
-            <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
-              I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
-            </Checkbox>
-          </div>
-        </>
-      )}
-    </FormShell>
+      <Section num="03" title="Your vision.">
+        <Field label="In a few sentences" required hint={`The occasion, the feel, anything that matters. (min ${VISION_MIN} characters)`}>
+          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} minLength={VISION_MIN} />
+        </Field>
+        <Field label="Budget band" required hint="Total for the occasion. Indicative \u2014 helps us propose the right scale.">
+          <PillChoice options={occasionBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
+        </Field>
+        <Field label="How did you find us">
+          <PillChoice options={howHeard} value={data.howHeard} onChange={(v) => update("howHeard", v)} name="howHeard" />
+        </Field>
+        <div className="pt-2">
+          <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
+            I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
+          </Checkbox>
+        </div>
+      </Section>
+    </FormOnePage>
   );
 }

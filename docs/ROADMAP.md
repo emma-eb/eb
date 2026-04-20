@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-19 (CTAs harmonises toutes pages, Terms + Privacy RGPD livrees, Paros v12 DA push luxury, mobile fixes journeys)
+**Derniere mise a jour :** 2026-04-19 (Contact/Inquire refonte complete : 3 portes B2C + 4 flows multi-step + filtrage budget strategique, CTAs toutes pages recables, image compression mobile, For Brands V2 polished)
 
 ---
 
@@ -30,7 +30,7 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] Ecrire les textes de toutes les pages du site -> copywriting v1 en place
 - [x] Creer les fiches des 9 villas -> 9 villas Summer 2026 (5 publiques + 4 off-market) dans catalogue.ts
 - [x] Creer la fiche yacht BESTIA -> San Lorenzo SP110, 33m, 4 cabins, 8 guests, crew 5
-- [x] Definir les 8 moods du discovery flow -> Odyssey & Salt, Stone & Silence, Vine & Table, Pulse & Gold, Soft Pulse, Wild & Free, Culture & Heritage, Wellness & Slow
+- [x] Definir les 8 moods du discovery flow -> a reviser (Emma a flag copy et nombre : source catalogue.ts obsolete)
 - [x] Creer le catalogue de ~35 experiences/journeys -> catalogue.ts (source unique de verite)
 - [ ] Preparer 2-3 cas clients (sans noms si confidentialite necessaire)
 
@@ -49,7 +49,7 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] 3 featured sections plein cadre (Journey, Experience, Collection) avec pill tags
 - [x] 2 citations de respiration + bandeau chiffres
 - [x] Bloc "Greece Only. Always." (statement de marque)
-- [x] CTA final "Ready to begin?" avec lien underline
+- [x] CTA final harmonise (pill The Studio + "Greece begins with a conversation") — photo MILOS_01 (portrait Emma retire)
 - [x] Footer 3 colonnes (logo/copyright/email, legal/social, nav)
 - [x] Navigation sticky avec 3 etats (transparent, noir/blur, beige/blur)
 - [x] Audit et optimisation mobile complete (iPhone 15 Pro)
@@ -74,29 +74,57 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] Homepage complete -> 13 blocs valides, mobile-first, deploye
 
 ### Sprint 2 — Pages Principales (4 semaines)
-- [x] Page Experiences : refonte complete (4 hero experiences + concierge 2x2 immersif + mobile audit)
+- [x] Page Experiences : refonte complete (4 hero experiences + concierge 2x2 immersif + mobile audit + CTA route vers /contact?type=occasion)
 - [x] Page About : rebuild complet (hero split + story + counter numbers + Why Greece + collabs + CTA)
-- [x] Page Journal : rebuild complet (featured + 7 articles grille asymetrique magazine + The Height)
-- [x] Page For Brands : rebuild complet (hero centre + services + formats + competences + CTA)
-- [x] Page Private Journeys : refonte complete (hero + 2 featured + 6 secondaires + CTA)
-- [x] Page Collection : refonte complete v3 (8 blocs, villas overlay, Silent Coast pleine largeur, citation respiration, yacht plein ecran, off-market editorial, acquisition texte centre, photos locales, metadata SEO)
+- [x] Page Journal : rebuild complet (featured + 7 articles grille asymetrique magazine + The Height + hero photo panos-katsigiannis + CTA alexandra-kirr)
+- [x] Page For Brands : refonte V2 luxury B2B (hero + Why Greece + 3 What We Produce cards + pull quote "The set is already built" + 3 thumbnails Production Formats + 8 tile mosaic What We Bring + Case Studies retire + CTA /for-brands/brief)
+- [x] Page Private Journeys : refonte complete (hero + 2 featured + 6 secondaires + CTA "Every journey is shaped for one")
+- [x] Page Collection : refonte complete v3 (8 blocs, villas overlay, Silent Coast pleine largeur, citation respiration, yacht plein ecran, off-market editorial, acquisition texte centre, photos locales, metadata SEO, yacht copy "chartered quietly through eb.")
 - [x] Heroes harmonises sur Experiences + Collection + Journal (structure identique)
 - [x] 9 pages detail journeys creees : Astypalea, Mykonos Timed Right, Athens Slowly, A Slow Honeymoon in the Cyclades, A Family Summer Greek-Style, A Week in the Cyclades by Sea, Paros + Antiparos Privately, Athens Beyond the Acropolis, Odyssey Greece, Sailing the Small Cyclades
-- [x] **Paros v12 DA push luxury** : 7 moves DA (gradient beige + texture papier, typo 4:1, numerotation papier peint, drop caps, cadre magazine, details, vignettage) + reorganisation sections + images Highlights corrigees (fini cruise ships, yacht + Lefkes Unsplash)
+- [x] **Paros v12 DA push luxury** : 7 moves DA (gradient beige + texture papier, typo 4:1, numerotation papier peint, drop caps, cadre magazine, details, vignettage) + reorganisation sections + images Highlights corrigees
 - [x] **Mobile polish `/journeys`** : break titre Astypalea après virgule, metadonnees whitespace-nowrap, fade-up animations iOS (translate3d + backface-visibility), quote "Designed on the ground" break after period
-- [x] **Harmonisation des CTA finaux** toutes pages : fond image sombre unifie, structure pill/titre/description/CTA identique (Home, About, Experiences, Collection, Journeys)
+- [x] **Harmonisation des CTA finaux** toutes pages : fond image sombre unifie, structure pill/titre/description/CTA identique (Home, About, Experiences, Collection, Journeys, For Brands)
+- [x] **Image compression mobile** (avril 19) : tous les JPEGs > 3MB recompresses en 2400px max / qualite 85% via sips. 30+ fichiers. Chargement mobile divise par 3-5.
+- [x] **Copy polish** : "Every journey starts from scratch" → "Every journey is shaped for one", yacht "timed by" → "chartered quietly through eb.", "She moves" retire, "Work with eb." → "Begin with eb.", "Every detail, handled quietly" → "Every detail, already thought of" + subtitle rephrase, "95 countries" text-balance
+- [x] **Mobile menu (Nav)** : ajout "For brands & agencies" en footer du menu burger (Option A discrete)
+- [x] **Back arrows** : teste et retire (Emma n'aime pas, Nav sticky suffit)
 - [ ] Pages detail experiences/villas (catalogue complet ~35 items)
 - [ ] Replication template Paros v12 sur les 4 fiches journey restantes (Astypalea, Mykonos, Honeymoon, Yacht) une fois template valide
-- [ ] Remplacer les 2 photos Unsplash TODO sur les CTA Home et About par des photos finales
+- [ ] Fiches detail experiences (35+ a creer)
 - [ ] Integration CMS : toutes les pages editables sans code
 
 ### Sprint 3 — Pages Secondaires & Formulaires (2 semaines)
-- [ ] Page About : refonte avec nouveau design
-- [ ] Page Journal : refonte avec nouveau design
-- [ ] Page Influencer/Brands : refonte avec nouveau design
-- [ ] Page Contact : affiner les 4 formulaires
-- [x] Pages Privacy Policy + Terms — **DONE** (avril 2026). Privacy RGPD 12 sections (CNIL, art.6, droits utilisateur), Terms 9 sections (SIRET + adresse Paris). Mention legale globale ajoutee en bas des 14 pages ("eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.")
-- [ ] Connexion formulaires -> email notifications
+- [x] **Page Contact/Inquire refonte complete** (avril 19, 2026) :
+  - Landing `/contact` : hero editorial (paros_03.jpg, houses + waves) + 3 portes B2C (Journey / Occasion / Stay) grandes cartes image + sortie B2B discrete ligne underline
+  - 4 flows separes : 
+    - `?type=journey` (variant scratch par defaut, variant fiche via `?journey=slug`)
+    - `?type=stay` (Villa / Yacht / Both, villa pre-remplie via `?villa=slug`)
+    - `?type=occasion` (Wedding en priorite, + 9 autres types)
+    - `/for-brands/brief` (B2B separe, existait deja)
+  - Multi-step 3 etapes (WHO / WHAT / VISION) pour chaque flow avec :
+    - Progress dots discrets + label "Step X of 3"
+    - Back button (top + bottom)
+    - Auto-save localStorage (si client quitte entre steps, retrouve ses reponses)
+    - Vision free text min 60 chars (filtre naturel)
+    - Budget tiers strategiques :
+      - **Journey per person** : 5-8K / 8-15K / 15-30K / 30-50K / 50K+ / Confidential
+      - **Villa per night** : 1.5-3K / 3-5K / 5-10K / 10K+ / Discuss privately
+      - **Yacht et Occasion** : free text ("on request" culture)
+    - Consent RGPD obligatoire
+    - Submit genere summary DMC-ready + ouvre mailto prerempli vers hello@emmabonnefous.com
+    - Confirmation editorial "Your brief is with Emma" + "Every inquiry is read, personally"
+    - Submit button unifie : "Share your vision"
+  - CTAs toutes pages recables :
+    - Home CTA final → `/contact` (generique)
+    - Experiences cards + CTA → `/contact?type=occasion`
+    - Collection private circle, yacht, final → `/contact?type=stay` (avec variants)
+    - Journeys listing CTA → `/contact?type=journey` (scratch)
+    - 9 fiches journey → `/contact?type=journey&journey={slug}`
+    - DiscoveryFlow fallback → `/contact?type=journey`
+    - Antiparos introduction → `/contact?type=stay&ref=antiparos-introduction`
+- [ ] Pages Privacy Policy + Terms — **DONE** (avril 2026). Privacy RGPD 12 sections (CNIL, art.6, droits utilisateur), Terms 9 sections (SIRET + adresse Paris). Mention legale globale ajoutee en bas des 14 pages ("eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.")
+- [ ] Connexion formulaires submit → email notifications Resend/Formspree (mailto en place actuellement)
 
 ### Sprint 4 — Finition & Lancement (2 semaines)
 - [ ] Optimisation SEO (balises, vitesse, sitemap)

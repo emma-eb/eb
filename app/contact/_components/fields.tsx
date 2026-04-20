@@ -189,6 +189,37 @@ export function MoodGrid({ moods, values, onChange }: MoodGridProps) {
   );
 }
 
+interface DateRangeProps {
+  start: string;
+  end: string;
+  onChange: (start: string, end: string) => void;
+}
+
+export function DateRange({ start, end, onChange }: DateRangeProps) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div className="flex flex-col gap-1.5">
+        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">From</span>
+        <input
+          type="date"
+          value={start}
+          onChange={(e) => onChange(e.target.value, end)}
+          className={inputClass}
+        />
+      </div>
+      <div className="flex flex-col gap-1.5">
+        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">To</span>
+        <input
+          type="date"
+          value={end}
+          onChange={(e) => onChange(start, e.target.value)}
+          className={inputClass}
+        />
+      </div>
+    </div>
+  );
+}
+
 interface CounterProps {
   value: number;
   onChange: (v: number) => void;

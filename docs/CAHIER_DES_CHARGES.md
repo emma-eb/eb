@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 0.8
+**Version :** 0.9
 **Date :** 2026-04-19
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 0 terminee — toutes pages principales livrees, CTAs harmonises, pages legales (Terms + Privacy RGPD) publiees, Paros DA push luxury livre
+**Statut :** Phase 1 Sprint 3 en cours — page Contact/Inquire refaite avec 3 portes B2C + 4 flows multi-step + budget filtering strategique. For Brands V2 polished. Image compression mobile appliquee (30+ fichiers). Tous CTAs cross-site recables.
 
 ---
 
@@ -110,7 +110,8 @@ Grille filtree par mood + type de contenu. Resultats personnalises "pour vous".
 | Journal | `/journal` | **DONE** | Hero + Featured + 7 articles grille magazine + The Height + CTA. Mention footer legale ajoutee. |
 | For Brands | `/influencer-production` | **DONE** | Hero centre + Why Greece + 3 services + 3 formats + What we bring + CTA |
 | Collection | `/collection` | **DONE** | 8 blocs + CTA harmonise (pill Private Stays + description ajoutee). Yacht anonymise. |
-| Contact | `/contact` | OK | 4 formulaires specialises (page formulaire, pas de CTA final a harmoniser) |
+| Contact / Inquire | `/contact` | **DONE v2** (19/04) | Landing 3 portes B2C + sortie B2B discrete + 4 flows multi-step (Journey scratch/fiche, Stay, Occasion, Brand via /for-brands/brief) — voir section 19 |
+| For Brands Brief | `/for-brands/brief` | **DONE** | Formulaire B2B dedie (brand/agency). Separe du /contact B2C. Typography harmonisee bleu #2e5a88. |
 | Private Journeys | `/journeys` | **DONE** | Hero + 2 featured + 6 secondaires + CTA. Fix mobile (titre Astypalea break après virgule, metadonnees whitespace-nowrap, animations translate3d iOS, quote "Designed on the ground" break). Photo CTA dediee `/CTA FINAL PRIVATE JOURNEY.jpg` |
 | Journey detail pages | `/journeys/[slug]` | **DONE** (9 pages) | Astypalea, Mykonos, Athens Slowly, Slow Honeymoon, Family Summer, Week by Sea, **Paros + Antiparos (v12 DA luxury push : 7 moves DA + reorganisation + images Highlights corrigees)**, Athens Beyond, Odyssey Greece, Sailing Small Cyclades |
 | **Terms** | `/terms` | **DONE** | 9 sections. SIRET + adresse Paris, sans telephone / domiciliation privee / regime fiscal. Lien Privacy. |

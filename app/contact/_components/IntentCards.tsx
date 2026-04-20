@@ -4,8 +4,8 @@ const portes = [
   {
     id: "journey",
     overline: "Private Journey",
-    title: "Design a journey.",
-    desc: "A multi-day route, shaped around who you are.",
+    title: "A journey.",
+    desc: "Designed from scratch, or built on one of ours.",
     href: "/contact?type=journey",
     img: "/paros_01.jpg",
     alt: "Paros coast, Greek islands",
@@ -13,8 +13,8 @@ const portes = [
   {
     id: "occasion",
     overline: "Occasion",
-    title: "Mark a moment.",
-    desc: "A proposal, a honeymoon, a milestone. Designed quietly.",
+    title: "A moment.",
+    desc: "Wedding, proposal, anniversary, honeymoon. Marked quietly.",
     href: "/contact?type=occasion",
     img: "/yatch_page collection_2.png",
     alt: "Couple on yacht bow, Aegean coast",
@@ -22,8 +22,8 @@ const portes = [
   {
     id: "stay",
     overline: "Villa or Yacht",
-    title: "A place to land.",
-    desc: "Villas that rarely appear online. A yacht chartered quietly through eb.",
+    title: "A place.",
+    desc: "Villas rarely online, one yacht chartered quietly through eb.",
     href: "/contact?type=stay",
     img: "/mykonos_maison.jpg",
     alt: "Private villa, Mykonos",

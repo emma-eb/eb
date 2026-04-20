@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import FormShell from "./FormShell";
+import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
-import { Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox } from "./fields";
+import { Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox, DateRange } from "./fields";
 import {
   villaBudgets,
   mustHaves as mustHavesData,
   howHeard,
   stayInterest,
+  flexibilityOptions,
 } from "../_data/options";
 
 interface Data {
@@ -19,7 +20,8 @@ interface Data {
   country: string;
   interest: string;
   villa: string;
-  dates: string;
+  startDate: string;
+  endDate: string;
   flexibility: string;
   adults: number;
   kids: number;
@@ -28,7 +30,6 @@ interface Data {
   services: string[];
   vision: string;
   budget: string;
-  yachtBudget: string;
   howHeard: string;
   consent: boolean;
 }
@@ -40,7 +41,8 @@ const EMPTY: Data = {
   country: "",
   interest: "",
   villa: "",
-  dates: "",
+  startDate: "",
+  endDate: "",
   flexibility: "",
   adults: 2,
   kids: 0,
@@ -49,7 +51,6 @@ const EMPTY: Data = {
   services: [],
   vision: "",
   budget: "",
-  yachtBudget: "",
   howHeard: "",
   consent: false,
 };
@@ -60,8 +61,11 @@ const VISION_MIN = 60;
 export default function StayForm() {
   const searchParams = useSearchParams();
   const villaSlug = searchParams.get("villa");
-  const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [data, setData] = useState<Data>(() => ({ ...EMPTY, villa: villaSlug || "", interest: villaSlug ? "Villa" : "" }));
+  const [data, setData] = useState<Data>(() => ({
+    ...EMPTY,
+    villa: villaSlug || "",
+    interest: villaSlug ? "Villa" : "",
+  }));
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
 
@@ -80,19 +84,23 @@ export default function StayForm() {
 
   const update = <K extends keyof Data>(k: K, v: Data[K]) => setData((d) => ({ ...d, [k]: v }));
 
-  const canStep1 = !!data.name.trim() && /\S+@\S+\.\S+/.test(data.email);
-  const canStep2 = !!data.interest && !!data.dates.trim();
-  const showVillaBudget = data.interest === "Villa";
-  const canStep3 =
-    data.vision.trim().length >= VISION_MIN &&
-    (showVillaBudget ? !!data.budget : !!data.yachtBudget.trim()) &&
-    data.consent;
+  const isYacht = data.interest === "Yacht";
+  const showVillaBudget = data.interest === "Villa" || data.interest === "Both";
+  const showYachtNote = data.interest === "Yacht" || data.interest === "Both";
 
-  const canProceed = step === 1 ? canStep1 : step === 2 ? canStep2 : canStep3;
+  const canSubmit =
+    !!data.name.trim() &&
+    /\S+@\S+\.\S+/.test(data.email) &&
+    !!data.interest &&
+    !!data.startDate &&
+    !!data.endDate &&
+    data.vision.trim().length >= VISION_MIN &&
+    (showVillaBudget ? !!data.budget : true) &&
+    data.consent;
 
   const buildSummary = () => {
     const lines = [
-      `INQUIRY TYPE: Stay (${data.interest})${villaSlug ? ` — ${villaSlug}` : ""}`,
+      `INQUIRY TYPE: Stay (${data.interest})${villaSlug ? ` \u2014 ${villaSlug}` : ""}`,
       `RECEIVED: ${new Date().toISOString()}`,
       "",
       "CLIENT",
@@ -106,14 +114,13 @@ export default function StayForm() {
     ];
     if (data.villa) lines.push(`Villa of interest: ${data.villa}`);
     lines.push(
-      `Dates: ${data.dates}${data.flexibility ? ` (flex: ${data.flexibility})` : ""}`,
+      `Dates: ${data.startDate} to ${data.endDate}${data.flexibility ? ` (flex: ${data.flexibility})` : ""}`,
       `Party: ${data.adults} adults, ${data.kids} kids${data.kids > 0 && data.kidsAges ? ` (ages: ${data.kidsAges})` : ""}`,
     );
-    if (data.interest !== "Yacht") {
-      lines.push(`Bedrooms min: ${data.bedrooms}`);
-    }
+    if (!isYacht) lines.push(`Bedrooms min: ${data.bedrooms}`);
     lines.push(`Services must-have: ${data.services.join(", ") || "(none flagged)"}`);
-    lines.push(`Budget: ${showVillaBudget ? data.budget : data.yachtBudget}`);
+    if (showVillaBudget) lines.push(`Villa budget per night: ${data.budget}`);
+    if (showYachtNote) lines.push(`Yacht: on request (quoted individually)`);
     lines.push(
       "",
       "VISION",
@@ -146,101 +153,98 @@ export default function StayForm() {
   }
 
   return (
-    <FormShell
+    <FormOnePage
       typeLabel={`Villa or Yacht${villaSlug ? ` \u00b7 ${villaSlug}` : ""}`}
-      step={step}
-      stepKicker={step === 1 ? "Step 1" : step === 2 ? "Step 2" : "Step 3"}
-      stepTitle={step === 1 ? "Who is staying." : step === 2 ? "The stay." : "Your vision."}
-      onBack={step > 1 ? () => setStep((s) => Math.max(1, (s - 1)) as 1 | 2 | 3) : undefined}
-      onNext={step < 3 ? () => setStep((s) => Math.min(3, (s + 1)) as 1 | 2 | 3) : undefined}
+      title="A place to land."
+      intro="Villas we know in person, one yacht chartered quietly through eb. Tell us the feel, we propose the right address."
       onSubmit={handleSubmit}
-      canProceed={canProceed}
+      canSubmit={canSubmit}
     >
-      {step === 1 && (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Field label="Full name" required>
-              <TextInput value={data.name} onChange={(v) => update("name", v)} placeholder="Your name" autoComplete="name" />
-            </Field>
-            <Field label="Email" required>
-              <TextInput value={data.email} onChange={(v) => update("email", v)} placeholder="you@domain.com" type="email" autoComplete="email" />
-            </Field>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Field label="Phone" hint="Helpful for quick follow-up">
-              <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
-            </Field>
-            <Field label="Country of residence">
-              <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
-            </Field>
-          </div>
-        </>
-      )}
+      <Section num="01" title="Who is staying.">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Field label="Full name" required>
+            <TextInput value={data.name} onChange={(v) => update("name", v)} placeholder="Your name" autoComplete="name" />
+          </Field>
+          <Field label="Email" required>
+            <TextInput value={data.email} onChange={(v) => update("email", v)} placeholder="you@domain.com" type="email" autoComplete="email" />
+          </Field>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Field label="Phone" hint="Helpful for quick follow-up">
+            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
+          </Field>
+          <Field label="Country of residence">
+            <TextInput value={data.country} onChange={(v) => update("country", v)} placeholder="France, USA, India..." autoComplete="country-name" />
+          </Field>
+        </div>
+      </Section>
 
-      {step === 2 && (
-        <>
-          <Field label="What are you looking for" required>
-            <PillChoice options={stayInterest} value={data.interest} onChange={(v) => update("interest", v)} name="interest" />
+      <Section num="02" title="The stay.">
+        <Field label="What are you looking for" required>
+          <PillChoice options={stayInterest} value={data.interest} onChange={(v) => update("interest", v)} name="interest" />
+        </Field>
+        {villaSlug && (
+          <Field label="Villa of interest" hint="Locked from your selection. Leave blank if you changed your mind.">
+            <TextInput value={data.villa} onChange={(v) => update("villa", v)} placeholder="Villa slug" />
           </Field>
-          {villaSlug && (
-            <Field label="Villa of interest" hint="Locked from your selection. Leave blank if you changed your mind.">
-              <TextInput value={data.villa} onChange={(v) => update("villa", v)} placeholder="Villa slug" />
-            </Field>
-          )}
-          <Field label="Travel dates" required hint="Exact dates or a window. Flexible is welcome.">
-            <TextInput value={data.dates} onChange={(v) => update("dates", v)} placeholder="e.g. 12 to 22 July 2026" />
+        )}
+        <Field label="Travel dates" required>
+          <DateRange start={data.startDate} end={data.endDate} onChange={(s, e) => { update("startDate", s); update("endDate", e); }} />
+        </Field>
+        <Field label="Flexibility">
+          <PillChoice options={flexibilityOptions} value={data.flexibility} onChange={(v) => update("flexibility", v)} name="flexibility" />
+        </Field>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Field label="Adults">
+            <Counter value={data.adults} onChange={(v) => update("adults", v)} min={1} max={30} />
           </Field>
-          <Field label="Flexibility on dates">
-            <TextInput value={data.flexibility} onChange={(v) => update("flexibility", v)} placeholder="None, 1 week either side..." />
+          <Field label="Kids">
+            <Counter value={data.kids} onChange={(v) => update("kids", v)} min={0} max={15} />
           </Field>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Field label="Adults">
-              <Counter value={data.adults} onChange={(v) => update("adults", v)} min={1} max={30} />
-            </Field>
-            <Field label="Kids">
-              <Counter value={data.kids} onChange={(v) => update("kids", v)} min={0} max={15} />
-            </Field>
-          </div>
-          {data.kids > 0 && (
-            <Field label="Kids' ages">
-              <TextInput value={data.kidsAges} onChange={(v) => update("kidsAges", v)} placeholder="e.g. 4, 7, 11" />
-            </Field>
-          )}
-          {data.interest !== "Yacht" && (
-            <Field label="Bedrooms (minimum)">
-              <Counter value={data.bedrooms} onChange={(v) => update("bedrooms", v)} min={1} max={15} />
-            </Field>
-          )}
-          <Field label="Services must-have" hint="Tick what matters. Optional.">
-            <PillMulti options={mustHavesData} values={data.services} onChange={(v) => update("services", v)} />
+        </div>
+        {data.kids > 0 && (
+          <Field label="Kids' ages">
+            <TextInput value={data.kidsAges} onChange={(v) => update("kidsAges", v)} placeholder="e.g. 4, 7, 11" />
           </Field>
-        </>
-      )}
+        )}
+        {!isYacht && (
+          <Field label="Bedrooms (minimum)">
+            <Counter value={data.bedrooms} onChange={(v) => update("bedrooms", v)} min={1} max={15} />
+          </Field>
+        )}
+        <Field label="Services must-have" hint="Optional. Tick what matters.">
+          <PillMulti options={mustHavesData} values={data.services} onChange={(v) => update("services", v)} />
+        </Field>
+      </Section>
 
-      {step === 3 && (
-        <>
-          <Field label="Your vision" required hint={`In a few sentences, tell us the feel of the stay. (min ${VISION_MIN} characters)`}>
-            <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The occasion, the atmosphere, what matters to you..." rows={7} minLength={VISION_MIN} />
+      <Section num="03" title="Your vision.">
+        <Field label="In a few sentences" required hint={`The occasion, the atmosphere, what matters. (min ${VISION_MIN} characters)`}>
+          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="What you're looking for, who's coming, what would make it right..." rows={7} minLength={VISION_MIN} />
+        </Field>
+        {showVillaBudget && (
+          <Field label="Villa budget per night" required hint="Indicative. Villas start at \u20AC1,500 per night.">
+            <PillChoice options={villaBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
           </Field>
-          {showVillaBudget ? (
-            <Field label="Budget per night" required hint="Indicative. Villas start at \u20AC1,500 per night.">
-              <PillChoice options={villaBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
-            </Field>
-          ) : (
-            <Field label="Indicative budget" required hint="Total for the stay (EUR). Yacht charters on request.">
-              <TextInput value={data.yachtBudget} onChange={(v) => update("yachtBudget", v)} placeholder="e.g. \u20AC40,000" />
-            </Field>
-          )}
-          <Field label="How did you find us">
-            <PillChoice options={howHeard} value={data.howHeard} onChange={(v) => update("howHeard", v)} name="howHeard" />
-          </Field>
-          <div className="pt-2">
-            <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
-              I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
-            </Checkbox>
+        )}
+        {showYachtNote && (
+          <div className="bg-white border border-[#e8e4de] p-5 md:p-6">
+            <p className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/40 mb-2">
+              Yacht
+            </p>
+            <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.7] font-light">
+              Yacht charters are quoted individually. Share your party and dates, we come back with a proposal.
+            </p>
           </div>
-        </>
-      )}
-    </FormShell>
+        )}
+        <Field label="How did you find us">
+          <PillChoice options={howHeard} value={data.howHeard} onChange={(v) => update("howHeard", v)} name="howHeard" />
+        </Field>
+        <div className="pt-2">
+          <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
+            I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
+          </Checkbox>
+        </div>
+      </Section>
+    </FormOnePage>
   );
 }

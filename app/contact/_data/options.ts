@@ -15,6 +15,22 @@ export const journeyBudgets = [
   "Confidential / discuss privately",
 ];
 
+export const yachtBudgets = [
+  "\u20AC15,000 to 25,000 per week",
+  "\u20AC25,000 to 50,000 per week",
+  "\u20AC50,000 to 100,000 per week",
+  "\u20AC100,000+ per week",
+  "Confidential / discuss privately",
+];
+
+export const flexibilityOptions = [
+  "None",
+  "A few days",
+  "One week either side",
+  "Fully flexible",
+  "Not sure yet",
+];
+
 import { moods as canonicalMoods } from "../../data/catalogue";
 
 export const moods = canonicalMoods.map((m) => ({
