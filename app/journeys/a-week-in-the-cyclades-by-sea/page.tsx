@@ -52,7 +52,7 @@ export default function WeekBySeaPage() {
       </div>
 
       <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
-        <Image src="/alex-azabache-j97YqU81FSw-unsplash%20(1).jpg" alt="Yacht sailing the Aegean, Cyclades" fill priority className="object-cover" />
+        <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=85" alt="A private yacht sailing into a Cycladic sunset" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 07</div>

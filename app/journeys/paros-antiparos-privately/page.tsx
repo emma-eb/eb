@@ -355,8 +355,8 @@ export default function ParosAntiparosPage() {
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="https://images.unsplash.com/photo-1630276731484-2ede4b9f283c?auto=format&fit=crop&w=900&q=80"
-                alt="A turquoise Aegean cove seen from above"
+                src="https://images.unsplash.com/photo-1509360667180-04103d4fbf5e?auto=format&fit=crop&w=900&q=80"
+                alt="A white house above the beach, Paros coast"
                 fill
                 className="object-cover"
               />
