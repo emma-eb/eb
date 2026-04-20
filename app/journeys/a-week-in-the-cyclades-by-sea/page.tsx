@@ -147,9 +147,9 @@ export default function WeekBySeaPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1695759546517-1321abd02b25?auto=format&fit=crop&w=900&q=80" alt="A small Cycladic fishing port, at anchor" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1719917457945-5d23b86ab532?auto=format&fit=crop&w=900&q=80" alt="A chapel at the end of a stone path, Aegean" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1688765866663-0fd353e7d5df?auto=format&fit=crop&w=900&q=80" alt="A Cycladic coast seen from the sea at golden hour" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/premium_photo-1685539973730-28a4fc68ef06?auto=format&fit=crop&w=900&q=80" alt="Swimmers in turquoise Cycladic water, aerial" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1667114448126-cb9cc48a8eb8?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko rock detail, Milos" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1693133144613-146eee2307dd?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko white rocks and turquoise sea, Milos" fill className="object-cover" /></div>
           </div>
           <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact vessel confirmed on request.</p>
         </div>
