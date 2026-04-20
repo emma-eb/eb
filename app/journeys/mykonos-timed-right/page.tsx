@@ -246,7 +246,7 @@ export default function MykonosTimedRightPage() {
                 Five nights, at full voltage.
               </h3>
               <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light">
-                Beach clubs. Long tables. Dinners that turn into mornings.
+                Beach clubs. Long tables. Dinners that turn into long nights.
               </p>
             </div>
           </div>
