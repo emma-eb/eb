@@ -1,425 +1,232 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import Nav from "../../components/Nav";
-import NewsletterBanner from "../../components/NewsletterBanner";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import Nav from '../../components/Nav';
+import NewsletterBanner from '../../components/NewsletterBanner';
 
-const chapters = [
-  {
-    num: "01",
-    tag: "ATHENS, AS A WAY IN",
-    image: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1400&q=85",
-    body: "Three nights in Athens before the island, in a small hotel with the Acropolis from the rooftop. The eb. studio designs the city around what you actually want, no group tours, no ticketed lines. A late dinner at a place that does not take walk-ins. A morning at a private collection that opens for ten people at a time. Then a midday flight east, forty minutes over the Aegean, and the second half of the week begins.",
-    left: true,
-  },
-  {
-    num: "02",
-    tag: "ARRIVAL ON ASTYPALEA",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=85",
-    body: "The plane lands at the western tip of the island. A driver takes you to your hotel in Chora, the white village that climbs to the Venetian castle on the highest point of the island. You arrive in time for the kind of slow afternoon Astypalea was made for. Walk up to the castle. Watch the sun set over the harbour from the rooftop of the only bar that opens for it. The week begins from there.",
-    left: false,
-  },
-  {
-    num: "03",
-    tag: "A DAY BY BOAT",
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=85",
-    body: "A private boat for the day, just for you. The captain takes you east, to the small islets the locals visit on weekends and the rest of Greece does not know exist. Anchor at Koutsomitis, where the beach is sand on both sides of the boat. Lunch on the water. A stop at the cave of Negrou on the way back, swimming in light that comes from below. Return to Chora before sunset.",
-    left: true,
-  },
-  {
-    num: "04",
-    tag: "THE INSIDE OF THE ISLAND",
-    image: "https://images.unsplash.com/photo-1518558997970-ba7e3ad1b13b?auto=format&fit=crop&w=1400&q=85",
-    body: "The eb. studio arranges a private electric vehicle and driver for the day, the same fleet the island has rolled out as part of its smart-island programme with Volkswagen. The driver knows where the small monasteries are, where the goats outnumber the people, and where the single taverna at the back of the island serves lunch when you ask the morning before. The afternoon ends back at a quiet bay no road reaches.",
-    left: false,
-  },
-  {
-    num: "05",
-    tag: "THE LAST EVENING",
-    image: "https://images.unsplash.com/photo-1565588514814-6a9e7bcd7657?auto=format&fit=crop&w=1400&q=85",
-    body: "The last night, dinner is on the rooftop facing the castle, at the table the family who runs the place keeps for the eb. studio\u2019s clients. Slow-cooked goat, the local cheese, a wine no one outside the island knows. Below, the lights of Chora come on, one by one. You leave the next morning, before the heat. Most clients are already planning when to come back.",
-    left: true,
-  },
-];
-
-const included = [
-  "Three nights in a hand-selected boutique hotel in Athens, with Acropolis views",
-  "Four nights in a hand-selected boutique hotel in Chora, Astypalea",
-  "Private chauffeured transfers in Athens, return airport",
-  "One-way flight Athens to Astypalea (return scheduled)",
-  "Private chauffeured transfers on Astypalea, including arrival and departure",
-  "Private electric vehicle and driver for one full inland day",
-  "Private boat charter for one full day, lunch on board",
-  "Hand-selected restaurant and taverna reservations on both legs",
-  "One private dinner on the rooftop facing the castle, the last evening",
-  "24/7 reachable concierge throughout the journey",
-  "A pre-trip briefing call with the eb. studio to shape the week around you",
-];
-
-export default function AstypaleaJourney() {
-  const journeyRef = useRef<HTMLElement>(null);
+export default function AstypaleaPage() {
+  const [openDay, setOpenDay] = useState<number | null>(null);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    const observer = new IntersectionObserver(
+      (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('eb-visible'); }); },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
-
-    return () => revealObs.disconnect();
+    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
+
+  const days = [
+    { day: '01', title: 'Arrival. Athens, quietly.', body: 'Private transfer from the airport to a small hotel with the Acropolis from the rooftop. A late dinner at a place that does not take walk-ins.' },
+    { day: '02', title: 'The city, before the flight.', body: 'A morning at a private collection that opens for ten people at a time. A slow lunch, a pause at the hotel, then the midday flight east, forty minutes over the Aegean.' },
+    { day: '03', title: 'Astypalea. The first sunset.', body: 'The plane lands at the western tip of the island. A driver takes you to Chora, the white village that climbs to the Venetian castle. You arrive in time for the kind of slow afternoon Astypalea was made for. Sunset from the rooftop.' },
+    { day: '04', title: 'By private boat, the islets.', body: 'A private boat for the day. The captain takes you east, to the small islets the locals visit on weekends. Anchor at Koutsomitis, where the beach is sand on both sides. Lunch on the water. A stop at the cave of Negrou on the way back.' },
+    { day: '05', title: 'The back of the island.', body: 'A private electric vehicle and driver for the day. The small monasteries, the quiet roads, the single taverna at the back of the island that serves lunch when you ask the morning before. The afternoon ends back at a quiet bay no road reaches.' },
+    { day: '06', title: 'A day for yourselves.', body: 'Nothing scheduled. A swim, a book, a walk up to the castle. Lunch wherever the morning takes you.' },
+    { day: '07', title: 'The farewell dinner.', body: 'Dinner on the rooftop facing the castle, at the table the family who runs the place keeps for our clients. Slow-cooked goat, the local cheese, a wine no one outside the island knows. The lights of Chora come on below, one by one.' },
+    { day: '08', title: 'The slow return.', body: 'A morning flight back to Athens, before the heat. Assisted transit onward.' },
+  ];
+
+  const includedItems = [
+    'Three nights in a hand-selected boutique hotel in Athens',
+    'Four nights in a hand-selected hotel in Chora, Astypalea',
+    'All private transfers (air and road)',
+    'Daily concierge by the eb. studio',
+    'Private boat for the day (islets and caves)',
+    'Access to our private network of tables',
+  ];
+
+  const onRequestItems = ['Private chef', 'Signature experiences', 'Wellness and in-room treatments'];
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
       <Nav activePage="/journeys" />
 
-      {/* ═══════════════════════════════════════════
-          BLOC 1 — HERO 100dvh
-      ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
-        <img
-          src="/astypalea.jpg"
-          alt="Astypalea, the Greek island before everyone else"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
+      <div className="absolute top-[88px] md:top-[96px] left-6 md:left-12 z-40">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-white/75 font-light">
+          <Link href="/journeys" className="hover:text-white transition-colors flex items-center gap-1"><span className="text-[12px] leading-none">&larr;</span><span>Private Journeys</span></Link>
+          <span className="opacity-40">/</span>
+          <span className="opacity-70">Astypalea, Before Everyone Else</span>
+        </nav>
+      </div>
 
-        <div className="absolute inset-0 flex items-end">
-          <div className="p-8 md:p-16 max-w-[720px]">
-            <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium font-body mb-4">
-              Private Journey &middot; 01
-            </span>
-            <p
-              className="font-body text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/70 mb-4"
-              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
-            </p>
-            <h1
-              className="font-heading text-white uppercase leading-[0.95] mb-5 tracking-wide"
-              style={{
-                fontSize: "clamp(48px, 7vw, 110px)",
-                letterSpacing: "-0.01em",
-                textShadow: "0 1px 3px rgba(0,0,0,0.3)",
-              }}
-            >
-              Astypalea, Before<br />Everyone Else.
-            </h1>
-            <p
-              className="max-w-[550px] text-white/85 text-[15px] md:text-[16px] leading-[1.6] font-light font-body mb-5"
-              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              Athens, then the Greek island the Guardian named the world{'\u2019'}s #1 destination of 2026. While there{'\u2019'}s still no one there.
-            </p>
-            <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white/90 text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-              Featured #1 by The Guardian, 2026
-            </span>
-          </div>
+      <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
+        <Image src="/astypalea.jpg" alt="Astypalea Chora and the Venetian castle at sunset" fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
+        <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 01</div>
+          <h1 className="font-anton font-normal uppercase text-[40px] sm:text-[52px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
+            Astypalea,<br className="hidden sm:block" /> Before Everyone Else.
+          </h1>
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">The Cycladic island travel writers are quietly putting at the top of their lists.</p>
         </div>
-
-        <button
-          type="button"
-          onClick={() => journeyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
-          aria-label="Scroll to journey"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
-        >
-          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </button>
+        <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60"><path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          BLOC 2 — INTRODUCTION
-      ═══════════════════════════════════════════ */}
-      <section ref={journeyRef} id="the-journey" className="bg-white py-24 md:py-32 px-6 md:px-12 scroll-mt-20">
-        <div className="max-w-[900px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-6">
-            The Journey
-          </p>
-          <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-16" data-delay="80" />
-
-          <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05]"
-            data-delay="120"
-            style={{
-              fontSize: "clamp(36px, 5vw, 80px)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Three nights in Athens.
-            <br />
-            <span className="text-[#2e5a88]/45">Four on an island most travellers cannot place on a map.</span>
-          </h2>
-
-          <p className="reveal font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[700px] mx-auto mt-12" data-delay="200">
-            Astypalea sits at the eastern edge of the Cyclades, far enough from the standard ferry routes that it has stayed quiet through twenty years of Greek tourism. In 2026, the Guardian named it the world{'\u2019'}s most desirable destination. The eb. studio has been designing weeks here for clients who already knew. This is the journey for those who want to arrive before the rest.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 3 — KEY FACTS
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 px-6">
+      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 eb-fade-up border-t border-[#2e5a88]/10">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
-              The Facts
-            </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 divide-x-0 md:divide-x md:divide-black/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
-              { label: "Duration", value: "From 7 nights" },
-              { label: "Route", value: "Athens \u2192 Astypalea" },
-              { label: "Season", value: "May to September" },
-              { label: "Tailored for", value: "Couples" },
-            ].map((f, i) => (
-              <div key={f.label} className="reveal text-center px-4" data-delay={i * 80}>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-[#1a1a1a]/45 font-medium mb-4">
-                  {f.label}
-                </p>
-                <p
-                  className="font-heading text-[#2e5a88] leading-tight"
-                  style={{ fontSize: "clamp(18px, 2vw, 28px)", letterSpacing: "-0.01em" }}
-                >
-                  {f.value}
-                </p>
+              { label: 'Duration', value: '7 nights', sub: '8 days' },
+              { label: 'Destination', value: 'Athens + Astypalea' },
+              { label: 'Season', value: 'June to September' },
+              { label: 'Best for', value: 'Couples, Slow travelers' },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col">
+                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">{item.label}</div>
+                <div className="text-[14px] md:text-[17px] text-[#2e5a88] font-light leading-[1.25]">{item.value}</div>
+                {item.sub && <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1">{item.sub}</div>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          BLOC 4 — THE ROUTE (5 chapitres)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32 px-6 md:px-12 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-20">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
-              The Route
-            </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
+      <section className="px-6 md:px-12 py-14 md:py-20 bg-white eb-fade-up">
+        <div className="max-w-[1000px] mx-auto">
+          <div className="text-center mb-10 md:mb-14"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Route</div></div>
+          <div className="relative">
+            <div className="hidden md:block">
+              <div className="flex items-start justify-between relative">
+                <div className="absolute top-[14px] left-[7%] right-[7%] h-px bg-[#2e5a88]/30" />
+                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Athens</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">3 nights &middot; Boutique hotel</div></div>
+                <div className="flex flex-col items-center text-center w-[40%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Astypalea</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">4 nights &middot; Hotel in Chora</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Islets by private boat</div></div>
+                <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
+              </div>
+            </div>
+            <div className="md:hidden flex flex-col items-center space-y-8">
+              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Athens</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">3 nights</div></div>
+              <div className="w-px h-8 bg-[#2e5a88]/30" />
+              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Astypalea</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">4 nights &middot; Chora</div><div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Islets by private boat</div></div>
+              <div className="w-px h-8 bg-[#2e5a88]/30" />
+              <div className="flex flex-col items-center text-center"><div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="space-y-24 md:space-y-32">
-            {chapters.map((c) => (
-              <div key={c.num} className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-                {/* Numero watermark */}
-                <span
-                  className="hidden md:block absolute top-0 font-heading text-[#2e5a88]/[0.08] pointer-events-none select-none"
-                  style={{
-                    fontSize: "clamp(120px, 15vw, 200px)",
-                    lineHeight: 0.8,
-                    [c.left ? "right" : "left"]: "0",
-                  }}
-                >
-                  {c.num}
-                </span>
+      <section className="bg-white py-14 md:py-20">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
+          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
+            <Image src="/astypalea_01.jpg" alt="Astypalea butterfly-shaped island seen from above, Aegean" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute top-5 left-5 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Island</span></div>
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
+              <h3 className="font-anton font-normal uppercase text-[26px] md:text-[40px] leading-[1] mb-3">Four nights on the island.</h3>
+              <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">A hotel in Chora, the Venetian castle above, islets no one else reaches.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                {/* Photo */}
-                <div className={`reveal relative ${c.left ? "md:order-1 md:-ml-[5%]" : "md:order-2 md:-mr-[5%]"}`}>
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img
-                      src={c.image}
-                      alt={c.tag}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+      <section className="eb-bg-beige-gradient py-20 md:py-28">
+        <div className="max-w-[900px] mx-auto px-6 md:px-12">
+          <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Day by Day</div></div>
+          <div className="border-t border-black/10">
+            {days.map((day, i) => {
+              const isOpen = openDay === i;
+              return (
+                <div key={i} className="border-b border-black/10">
+                  <button onClick={() => setOpenDay(isOpen ? null : i)} className="w-full flex items-center justify-between py-8 md:py-10 text-left group transition-colors hover:bg-black/[0.02]" aria-expanded={isOpen}>
+                    <div className="flex items-baseline gap-6 md:gap-10 flex-1 min-w-0 relative"><div className="eb-day-number shrink-0 w-[80px] md:w-[110px]">{day.day}</div><div className="text-[17px] md:text-[22px] text-[#2e5a88] font-light leading-tight">{day.title}</div></div>
+                    <div className="shrink-0 ml-4"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={`text-[#2e5a88] transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}><path d="M7 1V13M1 7H13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" /></svg></div>
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-500 ease-out ${isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="pb-8 md:pb-10 pl-[100px] md:pl-[140px] pr-4"><p className="text-[14px] md:text-[15px] leading-[1.8] text-[#1a1a1a]/65 font-light max-w-[640px]">{day.body}</p></div>
                   </div>
                 </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-                {/* Text */}
-                <div className={`reveal relative z-10 ${c.left ? "md:order-2 md:pl-6" : "md:order-1 md:pr-6"}`} data-delay="100">
-                  <h3
-                    className="font-heading text-[#2e5a88] uppercase leading-[1] tracking-wide mb-6"
-                    style={{ fontSize: "clamp(28px, 3vw, 44px)", letterSpacing: "-0.01em" }}
-                  >
-                    {c.tag}
-                  </h3>
-                  <p className="font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light max-w-[540px]">
-                    {c.body}
-                  </p>
-                </div>
+      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
+        <Image src="/astypalea_02.jpg" alt="Astypalea white village and castle" fill className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
+          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">A hotel<br />in the white village.</h2>
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel in Chora, under the Venetian castle. Small, quiet, with the kind of rooftop the island is worth waking up to. Exact property confirmed on request.</p>
+        </div>
+      </section>
+
+      <section className="bg-white py-10 md:py-14 eb-fade-up">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_01.jpg" alt="Astypalea from above" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_02.jpg" alt="Astypalea Chora" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="/astypalea_03.jpg" alt="Astypalea quiet bay" fill className="object-cover" /></div>
+          </div>
+          <p className="text-center mt-6 md:mt-8 text-[10px] md:text-[11px] text-[#1a1a1a]/40 font-light tracking-[0.15em] uppercase">Glimpses. Exact properties confirmed on request.</p>
+        </div>
+      </section>
+
+      <section className="eb-inner-frame eb-fade-up">
+        <div className="eb-inner-content">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-center mb-12 md:mb-16"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">What&apos;s Included</div></div>
+            <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-20">
+              <div>
+                <div className="text-[11px] tracking-[0.3em] uppercase text-[#2e5a88] font-medium mb-6">Included</div>
+                <ul className="space-y-4">{includedItems.map((item, i) => (<li key={i} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65]"><span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" /><span>{item}</span></li>))}</ul>
               </div>
+              <div>
+                <div className="text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/50 font-light mb-6">On Request</div>
+                <ul className="space-y-4">{onRequestItems.map((item, i) => (<li key={i} className="flex items-start gap-4 text-[13px] md:text-[14px] text-[#1a1a1a]/60 font-light leading-[1.6]"><span className="inline-block w-[5px] h-[5px] border border-[#1a1a1a]/25 mt-[8px] shrink-0" /><span>{item}</span></li>))}</ul>
+                <p className="mt-8 text-[12px] md:text-[13px] text-[#1a1a1a]/45 italic font-light leading-[1.6]">Flights and travel insurance arranged separately.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-10"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">You might also like</div></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros' },
+              { href: '/journeys/athens-slowly', img: '/acropole_01.jpg', category: 'Cultural \u00b7 Slow', title: 'Athens, Slowly', meta: '5 nights \u00b7 Athens' },
+              { href: '/journeys/a-week-in-the-cyclades-by-sea', img: '/yatch_page%20collection_2.png', category: 'By Sea \u00b7 Private Yacht', title: 'A Week in the Cyclades, by Sea', meta: '7 nights \u00b7 Cyclades' },
+            ].map((card, i) => (
+              <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
+                <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-5 left-5 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[9px] tracking-[0.2em] uppercase text-white font-light">{card.category}</span></div>
+                <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2 z-[3]"><h3 className="font-anton font-normal uppercase text-[28px] md:text-[32px] leading-[0.95] mb-2">{card.title}</h3><div className="text-[11px] opacity-85 tracking-[0.1em] font-light">{card.meta}</div></div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          BLOC 5 — CITATION
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
-        <div className="max-w-[800px] mx-auto text-center">
-          <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.1]"
-            style={{
-              fontSize: "clamp(28px, 4vw, 52px)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Some islands you visit.
-            <br />
-            <span className="text-[#2e5a88]/45">This one, you have to choose.</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 6 — WHAT'S INCLUDED
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-24 md:py-32 px-6 md:px-12">
-        <div className="max-w-[800px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
-              What{'\u2019'}s Included
-            </p>
-            <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto" data-delay="80" />
+      <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
+        <Image src="/hero-bateau.jpg" alt="Ready when you are" fill className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
+        <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
+          <div className="text-center max-w-[640px] eb-fade-in">
+            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">Yours to shape</div>
+            <h2 className="font-anton font-normal uppercase text-[44px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
+            <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">Tell us when, with whom, and how you want to feel. We shape the rest.</p>
+            <div className="flex justify-center"><Link href="/contact?type=journey&journey=astypalea-before-everyone-else" className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl">Start the conversation &rarr;</Link></div>
           </div>
-
-          <ul className="space-y-0">
-            {included.map((item, i) => (
-              <li
-                key={i}
-                className="reveal font-body text-[#1a1a1a]/70 text-[15px] leading-loose py-3 border-b border-black/[0.06] pl-2"
-                data-delay={Math.min(i * 40, 200)}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <p className="reveal font-body italic text-[#1a1a1a]/45 text-[13px] text-center mt-12" data-delay="200">
-            Each journey is shaped around you. The above is a starting point, not a script.
-          </p>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          BLOC 7 — A NOTE FROM eb.
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-24 md:py-32 px-6">
-        <div className="max-w-[700px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-4">
-            A Note
-          </p>
-          <div className="reveal w-12 h-px bg-[#2e5a88] mx-auto mb-12" data-delay="80" />
-
-          <p className="reveal font-body text-[#1a1a1a]/65 text-[15px] md:text-[16px] leading-relaxed font-light" data-delay="120">
-            The eb. studio has been to Astypalea more than once. The first visits were research, looking for what had been written, the smart island, the electric vehicles, the Guardian list. What stayed with us was none of that. It was the quiet. The way the same family runs the rooftop bar where you watch the castle, and the boat that takes you to islands without names. That kind of intimacy doesn{'\u2019'}t scale. Which is exactly why we want a small number of clients to experience it now, before it changes.
-          </p>
-          <p className="reveal font-body italic text-[#2e5a88] text-[14px] mt-8" data-delay="180">
-            eb. Athens.
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 8 — CTA FINAL compact
-      ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-24 px-6">
-        <div className="max-w-[600px] mx-auto text-center">
-          <p className="reveal font-body text-[11px] uppercase tracking-[0.2em] text-[#1a1a1a]/55 font-medium mb-6">
-            Inquire
-          </p>
-          <h2
-            className="reveal font-heading text-[#2e5a88] leading-[1.05] mb-6"
-            data-delay="80"
-            style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Designed around you.
-          </h2>
-          <p className="reveal font-body text-[15px] md:text-[16px] text-[#1a1a1a]/65 font-light leading-relaxed mb-8 max-w-[500px] mx-auto" data-delay="150">
-            Tell us when, with whom, and how you want to feel. We{'\u2019'}ll shape the rest.
-          </p>
-          <a
-            href="/contact?type=journey&journey=astypalea-before-everyone-else"
-            className="reveal inline-block font-body text-[#2e5a88] text-[12px] md:text-[13px] uppercase tracking-[0.15em] font-medium pb-1 border-b border-[#2e5a88] hover:opacity-70 transition-opacity door-cta"
-            data-delay="220"
-          >
-            Start the conversation &rarr;
-          </a>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          FOOTER
-      ═══════════════════════════════════════════ */}
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="border-t border-white/30" />
-        </div>
+        <div className="max-w-6xl mx-auto px-6"><div className="border-t border-white/30" /></div>
         <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row md:justify-between md:items-start gap-10 md:gap-8 mt-8">
-          <div className="flex flex-col items-center md:items-start gap-4 order-1">
-            <a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a>
-            <p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">
-              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
-            </p>
-            <a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">
-              hello@emmabonnefous.com
-            </a>
-          </div>
-          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
-            <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
-            <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
-            <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
-            <a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a>
-          </div>
-          <div className="flex flex-col items-center gap-4 order-3 md:order-2">
-            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider">
-              <a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a>
-              <span className="py-2">&middot;</span>
-              <a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a>
-            </div>
-            <div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
-              <span className="py-2">&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
-            </div>
-          </div>
-          <div className="flex md:hidden flex-col items-center gap-3 order-4">
-            <a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">
-              hello@emmabonnefous.com
-            </a>
-            <div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider">
-              <a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a>
-              <span className="py-2">&middot;</span>
-              <a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a>
-            </div>
-            <p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">
-              &copy; 2026 Emma Bonnefous &middot; Athens, Greece
-            </p>
-          </div>
+          <div className="flex flex-col items-center md:items-start gap-4 order-1"><a href="/"><img src="/logo-beige.svg" alt="eb." className="h-7 w-auto opacity-80" /></a><p className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider text-left">&copy; 2026 Emma Bonnefous &middot; Athens, Greece</p><a href="mailto:hello@emmabonnefous.com" className="hidden md:block font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors">hello@emmabonnefous.com</a></div>
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3"><a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a><a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a><a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a><a href="/contact" className="hover:text-[#fcf7f1] transition-colors py-2">Contact</a></div>
+          <div className="flex flex-col items-center gap-4 order-3 md:order-2"><div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/60 tracking-wider"><a href="https://www.instagram.com/emma_bonnefous_/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">Instagram</a><span className="py-2">&middot;</span><a href="https://www.linkedin.com/in/emmabonnefous/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fcf7f1] transition-colors py-2">LinkedIn</a></div><div className="hidden md:flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider"><a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a><span className="py-2">&middot;</span><a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a></div></div>
+          <div className="flex md:hidden flex-col items-center gap-3 order-4"><a href="mailto:hello@emmabonnefous.com" className="font-body text-xs text-[#fcf7f1]/50 tracking-wider hover:text-[#fcf7f1]/80 transition-colors py-2">hello@emmabonnefous.com</a><div className="flex gap-4 font-body text-[11px] text-[#fcf7f1]/40 tracking-wider"><a href="/privacy-policy" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Privacy Policy</a><span className="py-2">&middot;</span><a href="/terms" className="hover:text-[#fcf7f1]/80 transition-colors py-2">Terms</a></div><p className="font-body text-xs text-[#fcf7f1]/50 tracking-wider text-center">&copy; 2026 Emma Bonnefous &middot; Athens, Greece</p></div>
         </div>
-        <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10">
-          <p className="text-[10px] md:text-[11px] text-white/35 font-light leading-[1.5] max-w-[540px] mx-auto md:mx-0 text-center md:text-left">
-            eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-white/10"><p className="text-[10px] md:text-[11px] text-white/35 font-light leading-[1.5] max-w-[540px] mx-auto md:mx-0 text-center md:text-left">eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece.</p></div>
       </footer>
     </main>
   );
