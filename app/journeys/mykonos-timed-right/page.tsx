@@ -228,8 +228,8 @@ export default function MykonosTimedRightPage() {
 
           <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
             <Image
-              src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=1600&q=80"
-              alt="A Mykonos hotel terrace with a sea view"
+              src="https://images.unsplash.com/photo-1606144330720-7ee2cec6c86b?auto=format&fit=crop&w=1600&q=80"
+              alt="Mykonos whitewashed stairs against a clear Aegean sky"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
