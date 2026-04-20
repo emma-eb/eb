@@ -85,7 +85,7 @@ export default function ParosAntiparosPage() {
       <Nav activePage="/journeys" />
 
       {/* ============ ZONE 0 — BREADCRUMB ============ */}
-      <div className="absolute top-[80px] md:top-[90px] left-6 md:left-12 z-40">
+      <div className="absolute top-[88px] md:top-[96px] left-6 md:left-12 z-40">
         <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-white/75 font-light">
           <Link
             href="/journeys"
@@ -145,7 +145,7 @@ export default function ParosAntiparosPage() {
                 <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">
                   {item.label}
                 </div>
-                <div className="text-[15px] md:text-[17px] text-[#2e5a88] font-light leading-[1.2]">
+                <div className="text-[14px] md:text-[17px] text-[#2e5a88] font-light leading-[1.25]">
                   {item.value}
                 </div>
                 {item.sub && (
@@ -344,8 +344,8 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 7B — VILLA GLIMPSES (Move 5 gallery) ============ */}
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
                 src="/Bespokevilla.jpg"
                 alt="Bespoke villa exterior, Paros"
@@ -353,7 +353,7 @@ export default function ParosAntiparosPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
                 src="/134_terrace_privatebeach.jpg"
                 alt="Terrace above the private beach, early evening"
@@ -361,7 +361,7 @@ export default function ParosAntiparosPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
                 src="/paros_03.jpg"
                 alt="Interior light and textures, Paros villa"
