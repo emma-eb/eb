@@ -419,9 +419,6 @@ export default function ParosAntiparosPage() {
               </div>
             </div>
 
-            <div className="text-center mt-12 text-[11px] text-[#1a1a1a]/40 font-light">
-              All pricing in EUR. Based on double occupancy.
-            </div>
           </div>
         </div>
       </section>
