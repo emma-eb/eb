@@ -135,7 +135,7 @@ export default function OccasionForm() {
     <FormOnePage
       typeLabel="Occasion"
       title="A moment, marked."
-      intro="Weddings, proposals, honeymoons, celebrations. Tell us what the moment is, and we design the rest."
+      intro="Weddings, proposals, private experiences, celebrations. Tell us what the moment is, and we design the rest."
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}

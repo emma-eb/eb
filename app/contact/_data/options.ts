@@ -68,6 +68,8 @@ export const occasionTypes = [
   "Anniversary",
   "Birthday",
   "Milestone celebration",
+  "Private experience",
+  "Private dining",
   "Corporate retreat",
   "Family reunion",
   "Press / editorial trip",
