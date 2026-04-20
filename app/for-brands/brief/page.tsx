@@ -57,7 +57,7 @@ export default function BrandBriefPage() {
   }, []);
 
   const inputClass =
-    "border-b border-[#e8e4de] bg-transparent py-3 font-body text-sm text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors w-full";
+    "border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-sm text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors w-full";
   const labelClass = "font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#888]";
 
   return (

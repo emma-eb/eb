@@ -171,7 +171,7 @@ export default function OccasionForm() {
             type="date"
             value={data.date}
             onChange={(e) => update("date", e.target.value)}
-            className="w-full border-b border-[#e8e4de] bg-transparent py-3 font-body text-[15px] text-[#1a1a1a] focus:outline-none focus:border-[#1a1a1a] transition-colors"
+            className="w-full border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-[15px] text-[#1a1a1a] focus:outline-none focus:border-[#1a1a1a] transition-colors"
           />
         </Field>
         <Field label="Number of guests">
