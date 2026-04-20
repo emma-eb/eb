@@ -132,40 +132,8 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
-      {/* ============ ZONE 2 — THE INVITATION (Moves 2 + 4) ============ */}
-      <section className="px-8 md:px-12 py-20 md:py-32 bg-white text-center eb-fade-up">
-        <div className="max-w-[760px] mx-auto">
-          <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 mb-8 font-light">
-            The Invitation
-          </div>
-
-          <h2 className="text-[40px] md:text-[56px] leading-[1.05] text-[#2e5a88] font-light tracking-tight mb-10">
-            The Greek island that works for everyone.
-          </h2>
-
-          <p className="eb-dropcap text-[15px] md:text-[17px] leading-[1.8] text-[#1a1a1a]/70 font-light text-left max-w-[560px] mx-auto">
-            Without ever feeling like everyone. A villa on the south coast, a yacht for a day, and the tables the Athenian set keeps for itself.
-          </p>
-        </div>
-      </section>
-
-      {/* ============ ZONE 2B — INSIDER (signature) ============ */}
-      <section className="eb-bg-beige-gradient py-20 md:py-28 px-6 md:px-12 eb-fade-up">
-        <div className="max-w-[680px] mx-auto text-center">
-          <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 mb-8 font-light">
-            The Studio
-          </div>
-          <p className="font-body text-[16px] md:text-[19px] text-[#1a1a1a]/75 font-light leading-[1.75] text-left md:text-center">
-            We know Paros by heart, season after season. The villa we place you in stays on a list we don&apos;t publish, the taverna in Lefkes opens for us on a whisper. What we don&apos;t share with groups, we share with yours.
-          </p>
-          <p className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 font-light mt-10 tracking-[0.2em] uppercase">
-            eb. studio &middot; Athens
-          </p>
-        </div>
-      </section>
-
-      {/* ============ ZONE 3 — AT A GLANCE (Move 1) ============ */}
-      <section className="bg-white py-12 md:py-14 px-6 md:px-12 eb-fade-up">
+      {/* ============ ZONE 2 — AT A GLANCE (moved directly under hero) ============ */}
+      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 eb-fade-up border-t border-[#2e5a88]/10">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-10">
             {[
@@ -267,33 +235,23 @@ export default function ParosAntiparosPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[900px] mx-auto">
             {[
               {
-                tag: 'The Coast',
+                tag: 'The South Coast',
                 img: '/images/journeys/paros-naoussa.jpg',
                 alt: 'Paros south coast villa and bay',
-                title: 'Seven nights on the south coast.',
+                title: 'Seven nights by the sea.',
                 body: 'Hand-selected villa, quiet bays, evenings in Naoussa.',
                 remote: false,
               },
               {
-                tag: 'The Sea',
-                /* NEVER USE: cruise ships, Caribbean ports, tropical palm trees, or multiple boats in a harbor.
-                   MUST SHOW: single yacht or sailboat in a Greek Aegean cove, turquoise water. */
-                img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1200&q=80',
-                alt: 'Private yacht anchored in Aegean cove, Paros',
-                title: 'A yacht for the day.',
+                tag: 'Across the Channel',
+                img: '/images/journeys/paros-despotiko.jpg',
+                alt: 'Despotiko islet, ancient ruins in the sand, Aegean',
+                title: 'A day on the water.',
                 body: 'Antiparos, Despotiko, ancient ruins in the sand.',
-                remote: true,
-              },
-              {
-                tag: 'The Inland',
-                img: 'https://images.unsplash.com/photo-1603785608033-619663854c25?w=1200&q=80',
-                alt: 'Lefkes marble alley, Paros interior',
-                title: 'Lefkes, untouched.',
-                body: 'Byzantine capital, marble alleys, hidden taverna.',
-                remote: true,
+                remote: false,
               },
             ].map((highlight, i) => (
               <div
@@ -327,16 +285,6 @@ export default function ParosAntiparosPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ============ BREATHER 1 — poetic statement ============ */}
-      <section className="bg-white py-16 md:py-20 px-8 eb-fade-up">
-        <div className="max-w-[600px] mx-auto text-center">
-          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-8" />
-          <p className="font-body text-[19px] md:text-[24px] text-[#1a1a1a]/55 italic font-light leading-[1.45] tracking-[-0.005em]">
-            Some islands you visit. Paros, you settle into.
-          </p>
         </div>
       </section>
 
@@ -398,15 +346,6 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
-      {/* ============ BREATHER 2 — transition to villa ============ */}
-      <section className="eb-bg-beige-gradient py-14 md:py-16 px-8 eb-fade-up">
-        <div className="max-w-[620px] mx-auto text-center">
-          <p className="font-body text-[17px] md:text-[22px] text-[#1a1a1a]/55 italic font-light leading-[1.5] tracking-[-0.005em]">
-            The villa is the hinge. Everything else unfolds from there.
-          </p>
-        </div>
-      </section>
-
       {/* ============ ZONE 7 — WHERE YOU STAY (moved AFTER Day by Day, Moves 4 + 7) ============ */}
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
@@ -422,10 +361,10 @@ export default function ParosAntiparosPage() {
             Where You Stay
           </div>
           <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">
-            A villa on the<br />south coast.
+            Your south coast.
           </h2>
           <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">
-            Hand-selected by the eb. studio. Private pool, direct beach access, six bedrooms. Known to our clients only. The villa shown may vary by availability and party size.
+            A hand-selected villa on the water. Private pool, direct beach access, six bedrooms. Known to our clients only. The exact residence is confirmed once we know who is traveling.
           </p>
         </div>
       </section>
@@ -436,8 +375,8 @@ export default function ParosAntiparosPage() {
           <div className="grid grid-cols-3 gap-2 md:gap-3">
             <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="/paros_02.jpg"
-                alt="Villa pool edge at midday, Paros south coast"
+                src="/Bespokevilla.jpg"
+                alt="Bespoke villa exterior, Paros"
                 fill
                 className="object-cover"
               />
@@ -515,55 +454,7 @@ export default function ParosAntiparosPage() {
         </div>
       </section>
 
-      {/* ============ ZONE 8B — CLIENT QUOTE ============ */}
-      <section className="bg-white py-20 md:py-28 px-8 eb-fade-up">
-        <div className="max-w-[720px] mx-auto text-center">
-          <div className="text-[#2e5a88]/25 font-anton leading-[0.5] mb-4 select-none text-[72px] md:text-[96px]">
-            &ldquo;
-          </div>
-          <p className="font-body text-[21px] md:text-[28px] text-[#1a1a1a]/75 italic font-light leading-[1.45] mb-10 tracking-[-0.005em]">
-            Six nights. Three of them unplanned. The best three of the week.
-          </p>
-          <p className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/50 tracking-[0.25em] uppercase font-light">
-            R.F. &middot; Paros, summer 2025
-          </p>
-        </div>
-      </section>
-
-      {/* ============ ZONE 9 — CTA FINAL (Move 7) ============ */}
-      <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
-        <Image
-          src="/hero-bateau.jpg"
-          alt="Ready when you are"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
-
-        <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
-          <div className="text-center max-w-[640px] eb-fade-in">
-            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">
-              Yours to shape
-            </div>
-            <h2 className="font-anton font-normal uppercase text-[44px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">
-              Ready when<br />you are.
-            </h2>
-            <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">
-              Tell us when, with whom, and how you want to feel. We shape the rest.
-            </p>
-            <div className="flex justify-center">
-              <Link
-                href="/contact?type=journey&journey=paros-antiparos-privately"
-                className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
-              >
-                Start the conversation &rarr;
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ ZONE 10 — CROSS-SELL (Move 7) ============ */}
+      {/* ============ ZONE 9 — CROSS-SELL (reordered: before CTA) ============ */}
       <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-10">
@@ -625,6 +516,39 @@ export default function ParosAntiparosPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ZONE 10 — CTA FINAL (moved to last position) ============ */}
+      <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
+        <Image
+          src="/hero-bateau.jpg"
+          alt="Ready when you are"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
+
+        <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
+          <div className="text-center max-w-[640px] eb-fade-in">
+            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">
+              Yours to shape
+            </div>
+            <h2 className="font-anton font-normal uppercase text-[44px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">
+              Ready when<br />you are.
+            </h2>
+            <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">
+              Tell us when, with whom, and how you want to feel. We shape the rest.
+            </p>
+            <div className="flex justify-center">
+              <Link
+                href="/contact?type=journey&journey=paros-antiparos-privately"
+                className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
+              >
+                Start the conversation &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
