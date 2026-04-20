@@ -41,7 +41,7 @@ export default function ParosAntiparosPage() {
     },
     {
       day: '03',
-      title: 'By yacht to Antiparos and Despotiko.',
+      title: 'By private boat to Antiparos and Despotiko.',
       body: 'Morning departure by private boat. Twenty minutes across the channel to Antiparos. Onward west to Despotiko, the uninhabited islet where ancient ruins sit in the sand. Lunch on board. Swim stops. Return at sunset.',
     },
     {
@@ -57,7 +57,7 @@ export default function ParosAntiparosPage() {
     {
       day: '06',
       title: 'A day for yourselves.',
-      body: 'Nothing scheduled. The pool, the sea, a book. A final afternoon yacht ride on request.',
+      body: 'Nothing scheduled. The pool, the sea, a book. A final afternoon on the water on request.',
     },
     {
       day: '07',
@@ -135,13 +135,12 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 2 — AT A GLANCE (moved directly under hero) ============ */}
       <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 eb-fade-up border-t border-[#2e5a88]/10">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
               { label: 'Duration', value: '6 nights', sub: '7 days' },
               { label: 'Destination', value: 'Paros + Antiparos' },
               { label: 'Season', value: 'May to October' },
               { label: 'Best for', value: 'Couples, Friends, Families' },
-              { label: 'From', value: '\u20AC6,500pp', sub: 'excl. flights' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col">
                 <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">
@@ -186,7 +185,7 @@ export default function ParosAntiparosPage() {
                   <div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" />
                   <div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
                   <div className="text-[12px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
-                  <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by yacht</div>
+                  <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by private boat</div>
                 </div>
 
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10">
@@ -211,7 +210,7 @@ export default function ParosAntiparosPage() {
                 <div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" />
                 <div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Paros</div>
                 <div className="text-[11px] text-[#1a1a1a]/50 font-light">6 nights &middot; Villa on south coast</div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by yacht</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-[#1a1a1a]/35 font-light mt-2 italic">+ Antiparos by private boat</div>
               </div>
 
               <div className="w-px h-8 bg-[#2e5a88]/30" />
@@ -235,55 +234,29 @@ export default function ParosAntiparosPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-[900px] mx-auto">
-            {[
-              {
-                tag: 'The South Coast',
-                img: '/images/journeys/paros-naoussa.jpg',
-                alt: 'Paros south coast villa and bay',
-                title: 'Seven nights by the sea.',
-                body: 'Hand-selected villa, quiet bays, evenings in Naoussa.',
-                remote: false,
-              },
-              {
-                tag: 'Across the Channel',
-                img: '/images/journeys/paros-despotiko.jpg',
-                alt: 'Despotiko islet, ancient ruins in the sand, Aegean',
-                title: 'A day on the water.',
-                body: 'Antiparos, Despotiko, ancient ruins in the sand.',
-                remote: false,
-              },
-            ].map((highlight, i) => (
-              <div
-                key={i}
-                className="relative aspect-[4/5] overflow-hidden group eb-fade-up eb-image-vignette"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <Image
-                  src={highlight.img}
-                  alt={highlight.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized={highlight.remote}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette max-w-[1200px] mx-auto">
+            <Image
+              src="/images/journeys/paros-naoussa.jpg"
+              alt="Paros south coast, quiet bays and fishing port at golden hour"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                <div className="absolute top-5 left-5 z-[3]">
-                  <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">
-                    {highlight.tag}
-                  </span>
-                </div>
+            <div className="absolute top-5 left-5 md:top-8 md:left-8 z-[3]">
+              <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">
+                The South Coast
+              </span>
+            </div>
 
-                <div className="absolute bottom-6 left-6 right-6 text-white z-[3]">
-                  <h3 className="font-anton font-normal uppercase text-[22px] md:text-[26px] leading-[1] mb-2">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-[12px] md:text-[13px] opacity-85 leading-[1.5] font-light">
-                    {highlight.body}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
+              <h3 className="font-anton font-normal uppercase text-[26px] md:text-[40px] leading-[1] mb-3">
+                Seven nights by the sea.
+              </h3>
+              <p className="text-[13px] md:text-[15px] opacity-90 leading-[1.5] font-light">
+                Hand-selected villa, quiet bays, evenings in Naoussa.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -467,7 +440,7 @@ export default function ParosAntiparosPage() {
             {[
               {
                 href: '/journeys/athens-slowly',
-                img: '/images/journeys/athens-card.jpg',
+                img: '/acropole_01.jpg',
                 category: 'Cultural \u00b7 Slow',
                 title: 'Athens, Slowly',
                 meta: '5 nights \u00b7 Athens',
