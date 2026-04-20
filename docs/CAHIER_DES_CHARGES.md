@@ -391,11 +391,11 @@ Harmonie : 3 noms + description action.
 
 ### 19.3 Budget tiers strategiques par type
 
-Les tranches sont differenciees selon le produit, pensees comme un filtre naturel anti-demandes hors-cible :
+Les tranches sont differenciees selon le produit, pensees comme un filtre naturel anti-demandes hors-cible. Simplifiees le 20/04 apres benchmark (Scott Dunn 3 tranches + escape, Black Tomato floor $2K/pp, Essentialist/Jacada cachent). Pattern unifie : 3-4 tranches + "Not sure — let's discuss".
 
-- **Journey** (per person) : €5-8K / 8-15K / 15-30K / 30-50K / 50K+ / Confidential
-- **Villa** (per night) : €1.5-3K / 3-5K / 5-10K / 10K+ / Discuss privately
-- **Occasion** (total) : €3-10K / 10-30K / 30-80K / 80-200K / 200K+ / Confidential
+- **Journey** (per person, 3 tranches + escape style Scott Dunn) : €2-5K / 5-10K / Over €10K / Not sure — let's discuss
+- **Villa** (per night, 3 tranches + escape) : €1-3K / 3-7K / Over €7K / Not sure — let's discuss
+- **Occasion** (total, 4 tranches + escape pour distinguer event/wedding/prestige) : Under €15K / €15-50K / €50-200K / Over €200K / Not sure — let's discuss
 - **Yacht** : **pas de champ budget** — remplace par bloc "Yacht charters are quoted individually, share dates/party, we come back"
 
 ### 19.4 Champs et micro-interactions

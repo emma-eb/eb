@@ -1,18 +1,15 @@
 export const villaBudgets = [
-  "\u20AC1,000 to 2,500 / night",
-  "\u20AC2,500 to 5,000 / night",
-  "\u20AC5,000 to 10,000 / night",
-  "\u20AC10,000+ / night",
-  "Discuss privately",
+  "\u20AC1,000 to 3,000 per night",
+  "\u20AC3,000 to 7,000 per night",
+  "Over \u20AC7,000 per night",
+  "Not sure \u2014 let's discuss",
 ];
 
 export const journeyBudgets = [
-  "\u20AC5,000 to 8,000 per person",
-  "\u20AC8,000 to 15,000 per person",
-  "\u20AC15,000 to 30,000 per person",
-  "\u20AC30,000 to 50,000 per person",
-  "\u20AC50,000+ per person",
-  "Confidential / discuss privately",
+  "\u20AC2,000 to 5,000 per person",
+  "\u20AC5,000 to 10,000 per person",
+  "Over \u20AC10,000 per person",
+  "Not sure \u2014 let's discuss",
 ];
 
 export const yachtBudgets = [
@@ -53,12 +50,11 @@ export const mustHaves = [
 ];
 
 export const occasionBudgets = [
-  "\u20AC3,000 to 10,000",
-  "\u20AC10,000 to 30,000",
-  "\u20AC30,000 to 80,000",
-  "\u20AC80,000 to 200,000",
-  "\u20AC200,000+",
-  "Confidential / discuss privately",
+  "Under \u20AC15,000",
+  "\u20AC15,000 to 50,000",
+  "\u20AC50,000 to 200,000",
+  "Over \u20AC200,000",
+  "Not sure \u2014 let's discuss",
 ];
 
 export const occasionTypes = [
