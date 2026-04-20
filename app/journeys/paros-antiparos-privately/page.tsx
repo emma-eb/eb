@@ -120,8 +120,8 @@ export default function ParosAntiparosPage() {
             Paros + Antiparos,<br className="hidden sm:block" /> Privately.
           </h1>
 
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light italic eb-fade-up eb-delay-200">
-            Held by the quiet. Found by no one.
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">
+            Without ever feeling like everyone.
           </p>
         </div>
 
