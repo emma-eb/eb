@@ -326,7 +326,7 @@ export default function ParosAntiparosPage() {
           src="/images/journeys/paros-villa.jpg"
           alt="Your villa on the south coast"
           fill
-          className="object-cover"
+          className="object-cover eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
@@ -355,7 +355,7 @@ export default function ParosAntiparosPage() {
                 src="/Bespokevilla.jpg"
                 alt="Bespoke villa exterior, Paros"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
@@ -363,7 +363,7 @@ export default function ParosAntiparosPage() {
                 src="https://images.unsplash.com/photo-1509360667180-04103d4fbf5e?auto=format&fit=crop&w=900&q=80"
                 alt="A white house above the beach, Paros coast"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
@@ -371,7 +371,7 @@ export default function ParosAntiparosPage() {
                 src="/paros_03.jpg"
                 alt="Interior light and textures, Paros villa"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
           </div>
@@ -513,7 +513,7 @@ export default function ParosAntiparosPage() {
           src="/hero-bateau.jpg"
           alt="Ready when you are"
           fill
-          className="object-cover"
+          className="object-cover eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
 

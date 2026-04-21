@@ -319,7 +319,7 @@ export default function MykonosTimedRightPage() {
           src="/mykonos villa.jpg"
           alt="A Mykonos villa above the water"
           fill
-          className="object-cover"
+          className="object-cover eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
@@ -348,7 +348,7 @@ export default function MykonosTimedRightPage() {
                 src="https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80"
                 alt="A Mykonos alley with a table and sea view"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
@@ -356,7 +356,7 @@ export default function MykonosTimedRightPage() {
                 src="/mykonos_maison.jpg"
                 alt="Mykonos house exterior, traditional Cycladic architecture"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
@@ -364,7 +364,7 @@ export default function MykonosTimedRightPage() {
                 src="https://images.unsplash.com/photo-1620674972346-1648f7388d46?auto=format&fit=crop&w=900&q=80"
                 alt="A Mykonos beach club, pool with a sea view"
                 fill
-                className="object-cover"
+                className="object-cover eb-image-settle"
               />
             </div>
           </div>
@@ -505,7 +505,7 @@ export default function MykonosTimedRightPage() {
           src="/hero-bateau.jpg"
           alt="Ready when you are"
           fill
-          className="object-cover"
+          className="object-cover eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
 

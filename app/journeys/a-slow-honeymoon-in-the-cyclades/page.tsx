@@ -160,7 +160,7 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/MILOS_03.jpg" alt="A Cycladic villa above the sea" fill className="object-cover" />
+        <Image src="/MILOS_03.jpg" alt="A Cycladic villa above the sea" fill className="object-cover eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -175,9 +175,9 @@ export default function SlowHoneymoonPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Milos + Folegandros at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Klima Milos, colored houses by the water" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1601293016735-b0cc5d37f8e5?auto=format&fit=crop&w=900&q=80" alt="Folegandros white village on the cliff" fill className="object-cover" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="Deep blue sea seen from a Cycladic cliff" fill className="object-cover" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Klima Milos, colored houses by the water" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1601293016735-b0cc5d37f8e5?auto=format&fit=crop&w=900&q=80" alt="Folegandros white village on the cliff" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="Deep blue sea seen from a Cycladic cliff" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
-        <Image src="/hero-bateau.jpg" alt="Ready when you are" fill className="object-cover" />
+        <Image src="/hero-bateau.jpg" alt="Ready when you are" fill className="object-cover eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
         <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
           <div className="text-center max-w-[640px] eb-fade-in">
