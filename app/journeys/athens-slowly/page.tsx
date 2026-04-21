@@ -98,7 +98,7 @@ export default function AthensSlowlyPage() {
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">
             Private Journey &middot; 05
           </div>
-          <h1 className="font-anton font-normal uppercase text-[40px] sm:text-[52px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
             Athens,<br className="hidden sm:block" /> Slowly.
           </h1>
           <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">
@@ -180,10 +180,10 @@ export default function AthensSlowlyPage() {
               const isOpen = openDay === i;
               return (
                 <div key={i} className="border-b border-black/10">
-                  <button onClick={() => setOpenDay(isOpen ? null : i)} className="w-full flex items-center justify-between py-8 md:py-10 text-left group transition-colors hover:bg-black/[0.02]" aria-expanded={isOpen}>
-                    <div className="flex items-baseline gap-6 md:gap-10 flex-1 min-w-0 relative">
-                      <div className="eb-day-number shrink-0 w-[80px] md:w-[110px]">{day.day}</div>
-                      <div className="text-[17px] md:text-[22px] text-[#2e5a88] font-light leading-tight">{day.title}</div>
+                  <button onClick={() => setOpenDay(isOpen ? null : i)} className="w-full flex items-center justify-between py-7 md:py-10 text-left group transition-colors hover:bg-black/[0.02]" aria-expanded={isOpen}>
+                    <div className="flex items-baseline gap-4 md:gap-10 flex-1 min-w-0 relative">
+                      <div className="eb-day-number shrink-0 w-[60px] md:w-[110px]">{day.day}</div>
+                      <div className="text-[15px] md:text-[22px] text-[#2e5a88] font-light leading-tight min-w-0">{day.title}</div>
                     </div>
                     <div className="shrink-0 ml-4">
                       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={`text-[#2e5a88] transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>
@@ -191,7 +191,7 @@ export default function AthensSlowlyPage() {
                       </svg>
                     </div>
                   </button>
-                  <div className={`overflow-hidden transition-all duration-500 ease-out ${isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className={`overflow-hidden transition-all duration-500 ease-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="pb-8 md:pb-10 pl-0 md:pl-[140px] pr-2 md:pr-4">
                       <p className="text-[14px] md:text-[15px] leading-[1.75] text-[#1a1a1a]/65 font-light max-w-[640px]">{day.body}</p>
                     </div>
@@ -321,7 +321,7 @@ export default function AthensSlowlyPage() {
         <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
           <div className="text-center max-w-[640px] eb-fade-in">
             <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">Yours to shape</div>
-            <h2 className="font-anton font-normal uppercase text-[44px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
+            <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
             <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">Tell us when, with whom, and how you want to feel. We shape the rest.</p>
             <div className="flex justify-center">
               <Link href="/contact?type=journey&journey=athens-slowly" className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl">Start the conversation &rarr;</Link>
