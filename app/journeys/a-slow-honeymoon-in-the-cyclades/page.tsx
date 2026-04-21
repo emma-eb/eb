@@ -26,8 +26,8 @@ export default function SlowHoneymoonPage() {
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
     { day: '04', title: 'Plaka and the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the villa.' },
     { day: '05', title: 'A day to yourselves.', body: 'Kept open, on purpose. The pool, a book, a slow lunch, a walk at sunset. Dinner by the water on request.' },
-    { day: '06', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at the second villa, dinner in Chora at a table the islanders keep for each other.' },
-    { day: '07', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at the villa.' },
+    { day: '06', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
+    { day: '07', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at your stay.' },
     { day: '08', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, return slowly.' },
     { day: '09', title: 'A quiet day.', body: 'Slow morning. A siesta by the sea. A farewell dinner in the old village, under the vines.' },
     { day: '10', title: 'Last morning on the island.', body: 'A final swim, a slow breakfast, packing at your own pace. Transfer to the ferry or private boat back to the mainland.' },
@@ -35,14 +35,14 @@ export default function SlowHoneymoonPage() {
   ];
 
   const includedItems = [
-    'Ten nights across two hand-selected villas',
+    'Ten nights across two hand-selected stays (villa on Milos, cliff stay on Folegandros)',
     'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for the day (on each island)',
     'Access to our private network of tables',
   ];
 
-  const onRequestItems = ['Private chef', 'Signature experiences', 'Wellness and in-villa treatments'];
+  const onRequestItems = ['Private chef', 'Signature experiences', 'Wellness and in-room treatments'];
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
@@ -164,8 +164,8 @@ export default function SlowHoneymoonPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">Two villas,<br />one journey.</h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A private villa above the sea on Milos. A second above the cliff on Folegandros. Both hand-selected, both matched to your party, confirmed once we know who is traveling.</p>
+          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">One villa,<br />one cliff retreat.</h2>
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A private villa above the sea on Milos. A hand-selected stay on the cliffs of Folegandros. Both matched to your party, confirmed once we know who is traveling.</p>
         </div>
       </section>
 
@@ -175,9 +175,9 @@ export default function SlowHoneymoonPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Milos + Folegandros at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Klima Milos, colored houses by the water" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1601293016735-b0cc5d37f8e5?auto=format&fit=crop&w=900&q=80" alt="Folegandros white village on the cliff" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1700866125903-4188de1cd7e3?auto=format&fit=crop&w=900&q=80" alt="Deep blue sea seen from a Cycladic cliff" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_01.jpg" alt="Folegandros village cafe under the bougainvillea" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
