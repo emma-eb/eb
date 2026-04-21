@@ -518,4 +518,100 @@ L'agent Claude Code ne peut pas valider de nouvelles URLs Unsplash (WebFetch ren
 
 ---
 
-*Fin du polish 20/04 soir. Prochaine session : 21/04 — Emma fournit les photos Unsplash restantes + test mobile sur son iPhone.*
+## 21. Session 21/04/2026 — photos + mobile final + copy Mykonos/Honeymoon/Family
+
+### 21.1 Photos locales deposees par Emma et postees
+Emma a depose 20+ photos dans `/public/` ce matin. Integration reussie :
+
+- **Family Summer** (Porto Heli + Saronic) :
+  - Hero : `/familly journey.jpg` (silhouette mere + enfants au sunset — emotion pure family summer)
+  - Highlights "Ten nights, one home." : `/villa famill_01.png` (piscine villa + sunset collines)
+  - Where You Stay "One house, every generation." : `/damien-schneider-GvOcpTNAHFo-unsplash.jpg` (villa whitewashed arches + piscine reflet)
+  - Glimpses "The islands at a glimpse" (3 Hydra) : `/hydra_02.jpg` (port) + `/hydra_01.jpg` (cote) + `/hydra_03.jpg` (village)
+
+- **Honeymoon** (Milos + Folegandros) :
+  - Hero : `/MILOS_01.jpg` (inchange)
+  - Highlights : `/MILOS_02.jpg` (Milos cove)
+  - Where You Stay : `/MILOS_03.jpg`
+  - Glimpses (3 photos) : `/kimolos.jpg` (gauche) + `/Screenshot 2026-03-09 at 13.42.27.png` (couple trinquant golden hour) + `/folegandros_02.jpg` (caldera sunset)
+
+- **Week by Sea** (Cyclades yacht) :
+  - Hero : `/yatch_page collection.jpg` (pont luxe "grosse photo yacht")
+  - Highlights "Waking up somewhere new" : `/hero-bateau.jpg` (photo hero homepage reutilisee)
+  - Where You Stay "On board" : Unsplash yacht at anchor (inchange)
+  - Glimpses "The Cyclades at a glimpse" : `/vue aerienne bateau.jpg` + `/MILOS_02.jpg` + `/folegandros_02.jpg`
+  - CTA final : swap `/hero-bateau.jpg` → `/yatch page.jpg` (evite duplicate intra-page)
+
+- **Athens Slowly** :
+  - Where You Stay "A hotel with the Parthenon from the roof" : `/roof top athens.jpg`
+
+- **Astypalea** :
+  - Glimpses : `/astypalea_06.JPG` + `/atypalea_05.jpg` (faute typo) + `/astypalea_03.jpg`
+
+- **Mykonos** :
+  - Highlights "Five nights, at full voltage" : `/scorpio.jpg`
+
+- **Paros** :
+  - Glimpses : `/antiparos.jpg` + `/paros_04.jpg` + `/paros_03.jpg`
+
+### 21.2 Corrections de contenu (cohesion + honnetete)
+
+- **Mykonos copy assumee jet-set** (positionnement May-September = saison pleine, on assume) :
+  - Hero kicker : "In June. In September. Never in August." → "Where the nights run long and the days know better."
+  - Highlights h3 : "Five nights, when it breathes." → "Five nights, at full voltage."
+  - Highlights body : "The island without the crowds. Delos at dawn. Nights in Chora." → "Beach clubs. Long tables. Dinners that turn into long nights."
+  - Day by Day (Mykonos) : reecrit pour refleter beach club / restaurants / vibing (sans nommer) + Day 04 "Private boat, the full day."
+
+- **Honeymoon** : toutes mentions "villa" → "boutique hotel" pour Folegandros ET Milos (decision Emma 21/04) :
+  - Route + Day 01/02/04 + Included + Where You Stay h2 "One above the sea. One above the cliff." + body
+  - Day 06/07 : "second villa" → "your hand-selected stay above Chora"
+
+- **Family** :
+  - Day 09 : "Everyone starts packing in their own time." → "A long evening on the terrace." (on ne pack pas 3 jours avant depart)
+  - Day 10 : "Time to say goodbye to the place before the transfer north." → "A quiet last day at the villa, time to savour the place." (transfer est Day 11)
+  - Day 01 : "two and a half hours south by car" → "southwest" (Porto Heli est SW d'Athens, pas pur S)
+  - Included : "Private boat for two days" → "Private boat for three days (Hydra, Spetses, a final cove)"
+  - Season : "June to September" → "April to October" (coherent avec listing)
+  - Destination : "Porto Heli" → "Porto Heli + Saronic"
+  - Where You Stay h2 : "Big enough for everyone." → "One house, every generation."
+
+- **Athens** :
+  - Numerotation "Private Journey · 03" → "· 05" (swap avec Honeymoon qui etait 05 → devient 03), aligne sur ordre du listing `/journeys`
+  - Season : "April to June, September to November" → "Year-round"
+  - Terms : "bespoke" RESTE (autorise, pas interdit)
+  - On Request : "Private chef and dining at home" → "Private dining at exclusive addresses" (pas de chef at home en boutique hotel)
+
+- **"Nothing scheduled."** → "Kept open, on purpose." sur Paros Day 06, Honeymoon Day 05, Family Day 06 (assume le choix comme intentionnel, pas un vide par defaut)
+
+- **Glimpses** : legende "Glimpses. Exact properties confirmed on request." supprimee, titre "X at a glimpse" au-dessus de la grille (7 fiches)
+
+- **CTA "Inquire" about villa=bestia-yacht** (Collection) → `?type=stay&stay=yacht` (villa slug n'existait pas)
+- **CTA About** : `/contact` generique → `/contact?type=journey`
+
+### 21.3 Animations image + texte (toutes fiches journey)
+
+- **Nouveau CSS `.eb-image-settle`** (globals.css) : scale(1.08) → scale(1) sur 1500ms cubic-bezier, declenche par IntersectionObserver (ajoute `.eb-visible` au viewport entry).
+- **Classe appliquee sur 56 images** des 7 fiches : Hero, Highlights, Where You Stay, Glimpses (3), CTA final, "You might also like" cards.
+- **Hover zoom subtil** via `@media (hover: hover) { .group:hover .eb-image-settle.eb-visible { transform: scale(1.035); } }` — desactive sur mobile/tactile.
+- **`eb-fade-up` / `eb-fade-in`** : textes apparaissent en cascade avec `eb-delay-100/200/300` sur les heroes.
+
+### 21.4 Mobile polish pattern canonique (7 fiches journey alignees)
+
+Pattern valide sur Astypalea (feedback Emma) et replique sur les 6 autres fiches :
+
+- **Hero h1** : `text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92]` + break naturel (`<br />` sans `hidden sm:block`) + hero p `text-balance`
+- **Hero image** : `object-[center_30%] md:object-center` (ancre vers le haut mobile pour eviter de couper les sujets)
+- **Metadata bar** : `flex flex-col min-w-0` + `text-[13px] md:text-[17px] leading-[1.3]` + `whitespace-nowrap` sur labels et subs
+- **Day by day** : button `py-7 md:py-10` + `gap-4 md:gap-10`, day-number `w-[60px] md:w-[110px]`, title `text-[15px] md:text-[22px] min-w-0`, body container `pb-8 md:pb-10 pl-0 md:pl-[140px] pr-2 md:pr-4`, body text `leading-[1.75]`, collapse `max-h-[500px]` (evite overflow sur fiches Family/Honeymoon 11 jours)
+- **Highlights bloc** : mobile plein ecran `h-[100dvh] min-h-[600px]` + full-bleed `-mx-6 md:mx-auto`, desktop `md:aspect-[21/9] md:max-w-[1200px]`, pill tag `top-24 mobile / top-8 desktop`, h3 `text-[36px] md:text-[40px]`, body `text-[15px] leading-[1.55]`, gradient `from-black/85 via-black/35 to-black/10`
+- **Where You Stay** : h2 `text-[32px] md:text-[56px] leading-[1] md:leading-[0.98]`, body `text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75]`
+- **Glimpses** : titre "X at a glimpse" AU-DESSUS de la grille (`text-[10px] md:text-[11px] tracking-[0.35em]`), grid `grid-cols-1 sm:grid-cols-3 gap-3`, images en `aspect-[4/3] sm:aspect-[3/4]` + container `group` (hover zoom subtil)
+- **CTA final** : h2 `text-[38px] md:text-[64px]` (reduit de 44px mobile pour eviter text geant iPhone SE)
+
+### 21.5 Limite Unsplash (persistante)
+
+WebFetch retourne toujours 403 sur images.unsplash.com cote agent. Workflow actuel : Emma depose les photos localement dans `/public/`. Les photos fonctionnent parfaitement cote visiteur, seulement l'agent ne peut pas valider de nouvelles URLs CDN Unsplash.
+
+---
+
+*Fin de session 21/04. Les 7 fiches journey sont validees sur desktop + mobile. Phase suivante : CMS Sanity + Resend + Stripe + domain switch.*

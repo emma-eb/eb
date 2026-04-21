@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-20 (soir) — Passe polish complete site : refonte mobile bloc Highlights des 7 fiches (full-page + full-bleed + gradient plus profond), restructuration Glimpses (titre "X at a glimpse" au-dessus), cadrage mobile corrige (object-position tire vers le haut), Mykonos copy retravaillee (positionnement jet-set assume), photos locales deposees (roof top athens, scorpio, astypalea_05/06), scope recadre 7 itineraires uniquement, mots "curated" et "bespoke" confirmes AUTORISES.
+**Derniere mise a jour :** 2026-04-21 — Session photos + mobile final des 7 fiches. 20+ photos locales deposees par Emma et integrees (Family villa/pool/Hydra, Honeymoon kimolos/folegandros/couple, Week by Sea yacht/bateau, Mykonos scorpio, Athens rooftop, Astypalea 05/06, Paros antiparos/paros_04). Copy Mykonos assume jet-set (beach clubs, long nights). Honeymoon : toutes mentions "villa" → "boutique hotel" (Milos ET Folegandros). Nouveau CSS `.eb-image-settle` (zoom 1.08→1 en 1.5s) applique sur 56 images des 7 fiches. Hover zoom subtil 3.5% via `.group:hover` (desktop uniquement). Pattern mobile Astypalea-validé repliqué sur les 6 autres fiches (hero h1 38px, metadata nowrap, day-by-day reserrée, Highlights full-page mobile, CTA final 38px). Scope Phase 1 = 7 itineraires uniquement (confirme).
 
 ---
 
@@ -92,6 +92,19 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [x] **Polish complet 20/04 soir** : refonte mobile bloc Highlights 7 fiches (full-page dvh + full-bleed + gradient from-black/85 via-black/35), restructuration Glimpses (titre "X at a glimpse" remplace legende bas de grille), fix cadrage mobile (object-[center_30%] hero / center_35% Highlights + md:object-center desktop), fix photos cassees (/astypalea..jpg, URL encoded raphael-lopes), CTAs corriges (collection villa=bestia-yacht → stay=yacht, about → ?type=journey), day-by-day pl-0 md:pl-[140px] sur 6 fiches, H1 sm: step sur About/Journal/Experiences/Collection
 - [x] **Mykonos copy retravaillee** : hero "Where the nights run long and the days know better." / Highlights "Five nights, at full voltage. Beach clubs. Long tables. Dinners that turn into long nights." — positionnement jet-set assume (tempere "long nights" pas "mornings")
 - [x] **Photos locales deposees par Emma** : /roof top athens.jpg, /scorpio.jpg, /astypalea_06.JPG, /atypalea_05.jpg (faute de frappe : manque un 's', a renommer un jour)
+- [x] **Session 21/04 — photos + mobile final 7 fiches** :
+  - 20+ photos locales deposees : villa famill_01, hydra_01/02/03, folegandros_01/02, kimolos, yatch page, dean-bennett, damien-schneider, yuliia-sereda pool, jacob-cartwright, gary-parfoot, isaw-company, polina-kuzovkova, laura-adai, antiparos, paros_04, kayak, paddle, Screenshot couple trinquant
+  - **Animations** : nouveau `.eb-image-settle` (scale 1.08→1 sur 1500ms) applique sur 56 images des 7 fiches via IntersectionObserver ; hover zoom subtil 3.5% via `@media (hover: hover)` desactive sur tactile
+  - **Honeymoon** : tous wordings "villa" → "boutique hotel" (Milos + Folegandros) — Route, Day 01/02/04, Included, Where You Stay h2 "One above the sea. One above the cliff." + body + image alt
+  - **Family** : Day 09 "packing" retire, Day 10 transfer retire (coherence dates), Included boat "two days" → "three days", Season "June-Sept" → "April-October" (aligne listing), Destination "Porto Heli" → "Porto Heli + Saronic", Where You Stay h2 "One house, every generation.", Highlights photo villa+pool sunset, Glimpses 3 photos Hydra
+  - **Athens** : Private Journey 03 → 05 (swap avec Honeymoon pour aligner ordre listing), Season year-round, "chef at home" → "dining at exclusive addresses" (coherent boutique hotel)
+  - **Mykonos** : Day by Day reecrit (beach clubs, long tables, dinners that turn into long nights), Day 04 "Private boat, the full day.", image Highlights /scorpio.jpg
+  - **Week by Sea** : Hero "grosse photo yacht" /yatch_page collection.jpg, Highlights /hero-bateau.jpg (photo homepage), CTA final swap /yatch page.jpg, Glimpses vue aerienne + Milos + Folegandros
+  - **Paros** : Glimpses antiparos + paros_04 + paros_03
+  - **Honeymoon** : Glimpses kimolos + couple trinquant + folegandros_02
+  - **Pattern mobile Astypalea repliqué sur 6 fiches** : hero h1 `text-[38px] leading-[0.95] sm:leading-[0.92]`, metadata `min-w-0 whitespace-nowrap text-[13px]`, day-by-day `py-7 gap-4 w-[60px] text-[15px] min-w-0 max-h-[500px] leading-[1.75]`, Where You Stay h2 `text-[32px]`, CTA final h2 `text-[38px]`
+  - **Nothing scheduled** → "Kept open, on purpose." (Paros, Honeymoon, Family)
+  - Glimpses : titre "X at a glimpse" au-dessus de la grille (7 fiches), legende bas supprimee
 - [ ] Scope recadre 20/04 : **PAS de fiches detail villas/experiences** (le catalogue.ts reste contenu interne, pas de pages publiques detail) — 7 itineraires journey suffisent
 - [ ] Replication template Paros v12 **uniquement sur la fiche Sailing / Yacht** (Astypalea, Mykonos, Honeymoon laissees en l'etat)
 - [ ] Integration CMS : toutes les pages editables sans code
@@ -158,7 +171,7 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [ ] Tests complets (fonctionnels, securite, performance)
 - [ ] Deploiement progressif (beta fermee - production)
 
----
+
 
 ## Phase 3 — Portail Partenaires B2B (Inde)
 **Periode estimee :** Avril - Juillet 2027
