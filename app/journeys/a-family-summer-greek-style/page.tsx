@@ -72,7 +72,7 @@ export default function FamilySummerPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
               { label: 'Duration', value: '10 nights', sub: '11 days' },
-              { label: 'Destination', value: 'Porto Heli' },
+              { label: 'Destination', value: 'Porto Heli + Saronic' },
               { label: 'Season', value: 'April to October' },
               { label: 'Best for', value: 'Families, Multi-gen' },
             ].map((item, i) => (
