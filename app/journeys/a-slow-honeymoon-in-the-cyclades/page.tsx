@@ -173,7 +173,7 @@ export default function SlowHoneymoonPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/yatch_page%20collection_2.png" alt="A couple on a private yacht, Aegean coast" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/milos%20cave.jpg" alt="Sea cave on Milos, Aegean blue" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
