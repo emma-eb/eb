@@ -36,7 +36,7 @@ export default function FamilySummerPage() {
     'Ten nights in a hand-selected villa',
     'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
-    'Private boat for two days (day trips)',
+    'Private boat for three days (Hydra, Spetses, a final cove)',
     'Access to our private network of tables',
   ];
 
@@ -162,9 +162,9 @@ export default function FamilySummerPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Porto Heli at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1691699881810-c56961e4942c?auto=format&fit=crop&w=900&q=80" alt="Colored houses by the Aegean water" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_02.jpg" alt="Hydra port, sailing in" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1602008394120-5cc61b4f6ada?auto=format&fit=crop&w=900&q=80" alt="A Greek taverna, lunch under the vines" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1663756383115-568e1b0c087d?auto=format&fit=crop&w=900&q=80" alt="A Cycladic village at sunset, warm colors" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_03.jpg" alt="Hydra village and rooftops, Saronic Gulf" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
