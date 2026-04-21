@@ -135,7 +135,7 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="https://images.unsplash.com/photo-1629286521433-dfa4637fbe9a?auto=format&fit=crop&w=1600&q=80" alt="A yacht at anchor in turquoise Aegean water" fill className="object-cover eb-image-settle" />
+        <Image src="/yatch%20on%20board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-[center_50%] md:object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
