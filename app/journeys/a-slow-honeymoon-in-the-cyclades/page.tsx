@@ -21,10 +21,10 @@ export default function SlowHoneymoonPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Private transfer from your Athens hotel to the airport. Flight to Milos, then a private drive to a villa above the sea. Welcome dinner on the terrace.' },
-    { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the villa. Afternoon at the pool.' },
+    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Private transfer from your Athens hotel to the airport. Flight to Milos, then a private drive to a boutique hotel above the sea. Welcome dinner on the terrace.' },
+    { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the hotel. Afternoon at the pool.' },
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
-    { day: '04', title: 'Plaka and the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the villa.' },
+    { day: '04', title: 'Plaka and the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
     { day: '05', title: 'A day to yourselves.', body: 'Kept open, on purpose. The pool, a book, a slow lunch, a walk at sunset. Dinner by the water on request.' },
     { day: '06', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
     { day: '07', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at your stay.' },
@@ -35,7 +35,7 @@ export default function SlowHoneymoonPage() {
   ];
 
   const includedItems = [
-    'Ten nights across two hand-selected stays (villa on Milos, cliff stay on Folegandros)',
+    'Ten nights across two hand-selected boutique hotels (above the sea on Milos, above the cliff on Folegandros)',
     'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for the day (on each island)',
@@ -101,8 +101,8 @@ export default function SlowHoneymoonPage() {
               <div className="flex items-start justify-between relative">
                 <div className="absolute top-[14px] left-[7%] right-[7%] h-px bg-[#2e5a88]/30" />
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div></div>
-                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Villa above the sea</div></div>
-                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Villa above the cliff</div></div>
+                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Boutique hotel above the sea</div></div>
+                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Boutique hotel above the cliff</div></div>
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
               </div>
             </div>
@@ -160,12 +160,12 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/MILOS_03.jpg" alt="A Cycladic villa above the sea" fill className="object-cover eb-image-settle" />
+        <Image src="/MILOS_03.jpg" alt="A Cycladic boutique hotel above the sea" fill className="object-cover eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">One villa,<br />one cliff retreat.</h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A private villa above the sea on Milos. A hand-selected stay on the cliffs of Folegandros. Both matched to your party, confirmed once we know who is traveling.</p>
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">One above the sea.<br />One above the cliff.</h2>
+          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel above the sea on Milos. Another on the cliffs of Folegandros. Both matched to your party, confirmed once we know who is traveling.</p>
         </div>
       </section>
 
