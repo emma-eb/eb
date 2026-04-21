@@ -57,7 +57,7 @@ export default function ParosAntiparosPage() {
     {
       day: '06',
       title: 'A day for yourselves.',
-      body: 'Nothing scheduled. The pool, the sea, a book. A final afternoon on the water on request.',
+      body: 'Kept open, on purpose. The pool, the sea, a book. A final afternoon on the water on request.',
     },
     {
       day: '07',

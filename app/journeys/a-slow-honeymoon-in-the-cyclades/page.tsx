@@ -25,7 +25,7 @@ export default function SlowHoneymoonPage() {
     { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the villa. Afternoon at the pool.' },
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
     { day: '04', title: 'Plaka and the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the villa.' },
-    { day: '05', title: 'A day to yourselves.', body: 'Nothing scheduled. The pool, a book, a slow lunch, a walk at sunset. Dinner by the water on request.' },
+    { day: '05', title: 'A day to yourselves.', body: 'Kept open, on purpose. The pool, a book, a slow lunch, a walk at sunset. Dinner by the water on request.' },
     { day: '06', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at the second villa, dinner in Chora at a table the islanders keep for each other.' },
     { day: '07', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at the villa.' },
     { day: '08', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, return slowly.' },

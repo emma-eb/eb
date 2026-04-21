@@ -24,7 +24,7 @@ export default function FamilySummerPage() {
     { day: '03', title: 'By private boat, the day out.', body: 'A full day on the water. Hydra at lunchtime, swim stops in protected bays, ice cream on the way back. Kids love it, grandparents never notice it is long.' },
     { day: '04', title: 'A day at the villa.', body: 'Breakfast late. A private chef for dinner. Games on the lawn, a movie under the stars.' },
     { day: '05', title: 'Spetses, at your pace.', body: 'Short private boat transfer to Spetses, the island without cars. Horse-drawn carriage tour, lunch by the water, boutiques for those who want them.' },
-    { day: '06', title: 'Another quiet day.', body: 'No schedule. The pool. A swim before lunch. A siesta for the grandparents, beach for the kids, tennis for the teenagers.' },
+    { day: '06', title: 'Another quiet day.', body: 'Kept open, on purpose. The pool. A swim before lunch. A siesta for the grandparents, beach for the kids, tennis for the teenagers.' },
     { day: '07', title: 'Ancient Epidaurus.', body: 'A morning drive to the ancient theatre of Epidaurus, one of the most intact in the world. Picnic on the grounds, afternoon at a local winery that welcomes us.' },
     { day: '08', title: 'The last sea day.', body: 'Private boat again, smaller this time, to a cove no ferry reaches. Swimming, lunch on board, slow return. Last sunset on the terrace.' },
     { day: '09', title: 'At home.', body: 'The villa, the pool, a quiet dinner. A final chef on request. Everyone starts packing in their own time.' },
