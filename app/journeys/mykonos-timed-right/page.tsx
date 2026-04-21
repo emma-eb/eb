@@ -327,7 +327,7 @@ export default function MykonosTimedRightPage() {
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">
             Where You Stay
           </div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">
             A house above<br />the water.
           </h2>
           <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">
