@@ -21,18 +21,18 @@ export default function SlowHoneymoonPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Private transfer from your Athens hotel to the airport. Flight to Milos, then a private drive to a boutique hotel above the sea. Welcome dinner on the terrace.' },
+    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Assisted transit to Milos, then a private drive to a boutique hotel above the sea. Welcome dinner on the terrace.' },
     { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the hotel. Afternoon at the pool.' },
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
     { day: '04', title: 'Plaka, the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
     { day: '05', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
-    { day: '06', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at your stay.' },
+    { day: '06', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. A slow climb to the church at the cliff edge at the right hour. Afternoon at your stay.' },
     { day: '07', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, a farewell dinner in the old village under the vines.' },
     { day: '08', title: 'The slow return.', body: 'A final morning on the island. Transfer to the ferry or private boat back to the mainland. Assisted transit onward to Athens.' },
   ];
 
   const includedItems = [
-    'Seven nights across two hand-selected boutique hotels (above the sea on Milos, above the cliff on Folegandros)',
+    'Seven nights across two hand-selected boutique hotels',
     'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for the day (on each island)',
@@ -157,12 +157,12 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/folegandros.jpg" alt="Folegandros Chora perched above the cliff" fill sizes="100vw" className="object-cover object-[center_55%] md:object-center eb-image-settle" />
+        <Image src="/folagandros%20vue.jpg" alt="Folegandros windmills and sea view" fill sizes="100vw" className="object-cover object-[center_50%] md:object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
           <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">One above the sea.<br />One above the cliff.</h2>
-          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel above the sea on Milos. Another on the cliffs of Folegandros. Both matched to your party, confirmed once we know who is traveling.</p>
+          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel above the sea on Milos. Another on the cliffs of Folegandros. Both chosen quietly, confirmed once we know your dates.</p>
         </div>
       </section>
 
@@ -173,7 +173,7 @@ export default function SlowHoneymoonPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Screenshot%202026-03-09%20at%2013.42.27.png" alt="A couple toasting at golden hour by the pool" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20couple.jpg" alt="A couple on the white rocks of Milos, facing the Aegean" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
