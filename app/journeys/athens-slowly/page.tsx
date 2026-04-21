@@ -70,7 +70,7 @@ export default function AthensSlowlyPage() {
   ];
 
   const onRequestItems = [
-    'Private chef and dining at home',
+    'Private dining at exclusive addresses',
     'Signature experiences',
     'Private art and gallery tours',
   ];
