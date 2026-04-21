@@ -151,7 +151,7 @@ export default function WeekBySeaPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos.jpg" alt="Amorgos windmills above the cliff" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos%202.jpg" alt="Amorgos cliff and sea" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
