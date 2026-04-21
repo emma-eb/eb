@@ -350,7 +350,7 @@ export default function ParosAntiparosPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Paros + Antiparos at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="/antiparos.jpg"
                 alt="Antiparos, quiet coast across the channel"
@@ -358,7 +358,7 @@ export default function ParosAntiparosPage() {
                 className="object-cover eb-image-settle"
               />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="/paros_04.jpg"
                 alt="Paros coast and sea at golden hour"
@@ -366,7 +366,7 @@ export default function ParosAntiparosPage() {
                 className="object-cover eb-image-settle"
               />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="/paros_03.jpg"
                 alt="Interior light and textures, Paros villa"

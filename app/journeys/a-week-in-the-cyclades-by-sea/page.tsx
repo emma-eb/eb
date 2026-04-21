@@ -150,9 +150,9 @@ export default function WeekBySeaPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Cyclades at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/premium_photo-1685539973730-28a4fc68ef06?auto=format&fit=crop&w=900&q=80" alt="Swimmers in turquoise Cycladic water, aerial" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1667114448126-cb9cc48a8eb8?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko rock detail, Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette"><Image src="https://images.unsplash.com/photo-1693133144613-146eee2307dd?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko white rocks and turquoise sea, Milos" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/premium_photo-1685539973730-28a4fc68ef06?auto=format&fit=crop&w=900&q=80" alt="Swimmers in turquoise Cycladic water, aerial" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1667114448126-cb9cc48a8eb8?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko rock detail, Milos" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="https://images.unsplash.com/photo-1693133144613-146eee2307dd?auto=format&fit=crop&w=900&q=80" alt="Sarakiniko white rocks and turquoise sea, Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>

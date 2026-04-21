@@ -343,7 +343,7 @@ export default function MykonosTimedRightPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Mykonos at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="https://images.unsplash.com/photo-1653470348722-158d4b0c33ac?auto=format&fit=crop&w=900&q=80"
                 alt="A Mykonos alley with a table and sea view"
@@ -351,7 +351,7 @@ export default function MykonosTimedRightPage() {
                 className="object-cover eb-image-settle"
               />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="/mykonos_maison.jpg"
                 alt="Mykonos house exterior, traditional Cycladic architecture"
@@ -359,7 +359,7 @@ export default function MykonosTimedRightPage() {
                 className="object-cover eb-image-settle"
               />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
                 src="https://images.unsplash.com/photo-1620674972346-1648f7388d46?auto=format&fit=crop&w=900&q=80"
                 alt="A Mykonos beach club, pool with a sea view"
