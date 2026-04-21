@@ -24,18 +24,15 @@ export default function SlowHoneymoonPage() {
     { day: '01', title: 'Arrival. The first night on Milos.', body: 'Private transfer from your Athens hotel to the airport. Flight to Milos, then a private drive to a boutique hotel above the sea. Welcome dinner on the terrace.' },
     { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the hotel. Afternoon at the pool.' },
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
-    { day: '04', title: 'Plaka and the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
-    { day: '05', title: 'A day to yourselves.', body: 'Kept open, on purpose. The pool, a book, a slow lunch, a walk at sunset. Dinner by the water on request.' },
-    { day: '06', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
-    { day: '07', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at your stay.' },
-    { day: '08', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, return slowly.' },
-    { day: '09', title: 'A quiet day.', body: 'Slow morning. A siesta by the sea. A farewell dinner in the old village, under the vines.' },
-    { day: '10', title: 'Last morning on the island.', body: 'A final swim, a slow breakfast, packing at your own pace. Transfer to the ferry or private boat back to the mainland.' },
-    { day: '11', title: 'The slow return.', body: 'Assisted transit back to Athens, then your flight home. Arranged as quietly as everything before it.' },
+    { day: '04', title: 'Plaka, the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
+    { day: '05', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
+    { day: '06', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. Private access to the church at the cliff edge at the right hour. Afternoon at your stay.' },
+    { day: '07', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, a farewell dinner in the old village under the vines.' },
+    { day: '08', title: 'The slow return.', body: 'A final morning on the island. Transfer to the ferry or private boat back to the mainland. Assisted transit onward to Athens.' },
   ];
 
   const includedItems = [
-    'Ten nights across two hand-selected boutique hotels (above the sea on Milos, above the cliff on Folegandros)',
+    'Seven nights across two hand-selected boutique hotels (above the sea on Milos, above the cliff on Folegandros)',
     'All ground and port transfers (road and sea)',
     'Daily concierge by the eb. studio',
     'Private boat for the day (on each island)',
@@ -67,7 +64,7 @@ export default function SlowHoneymoonPage() {
           <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
             A Slow Honeymoon,<br className="hidden sm:block" /> in the Cyclades.
           </h1>
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">Two islands. Ten days. Everything arranged, nothing rushed.</p>
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">Two islands. Seven nights. Everything arranged, nothing rushed.</p>
         </div>
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60"><path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -78,7 +75,7 @@ export default function SlowHoneymoonPage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
-              { label: 'Duration', value: '10 nights', sub: '11 days' },
+              { label: 'Duration', value: '7 nights', sub: '8 days' },
               { label: 'Destination', value: 'Milos + Folegandros' },
               { label: 'Season', value: 'June to September' },
               { label: 'Best for', value: 'Couples' },
@@ -101,17 +98,17 @@ export default function SlowHoneymoonPage() {
               <div className="flex items-start justify-between relative">
                 <div className="absolute top-[14px] left-[7%] right-[7%] h-px bg-[#2e5a88]/30" />
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div></div>
-                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Boutique hotel above the sea</div></div>
-                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">5 nights &middot; Boutique hotel above the cliff</div></div>
+                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">4 nights &middot; Boutique hotel above the sea</div></div>
+                <div className="flex flex-col items-center text-center w-[26%] relative z-10"><div className="w-5 h-5 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-6" /><div className="text-[15px] md:text-[17px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[12px] text-[#1a1a1a]/50 font-light">3 nights &middot; Boutique hotel above the cliff</div></div>
                 <div className="flex flex-col items-center text-center w-[14%] relative z-10"><div className="w-3.5 h-3.5 rounded-full bg-[#2e5a88] mb-6" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
               </div>
             </div>
             <div className="md:hidden flex flex-col items-center space-y-8">
               <div className="flex flex-col items-center text-center"><div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Arrival</div></div>
               <div className="w-px h-8 bg-[#2e5a88]/30" />
-              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">5 nights</div></div>
+              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Milos</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">4 nights</div></div>
               <div className="w-px h-8 bg-[#2e5a88]/30" />
-              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">5 nights</div></div>
+              <div className="flex flex-col items-center text-center"><div className="w-4 h-4 rounded-full bg-[#2e5a88] border-4 border-white shadow-md mb-3" /><div className="text-[15px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-2">Folegandros</div><div className="text-[11px] text-[#1a1a1a]/50 font-light">3 nights</div></div>
               <div className="w-px h-8 bg-[#2e5a88]/30" />
               <div className="flex flex-col items-center text-center"><div className="w-3 h-3 rounded-full bg-[#2e5a88] mb-3" /><div className="text-[11px] tracking-[0.25em] uppercase text-[#2e5a88] font-light mb-1">Athens</div><div className="text-[10px] text-[#1a1a1a]/50 font-light">Departure</div></div>
             </div>
@@ -127,7 +124,7 @@ export default function SlowHoneymoonPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">Two Islands</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
-              <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4">Ten days, two homes.</h3>
+              <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4">Seven nights, two islands.</h3>
               <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light">Milos for the coves. Folegandros for the silence.</p>
             </div>
           </div>
@@ -160,7 +157,7 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill sizes="100vw" className="object-cover object-[center_45%] md:object-center eb-image-settle" />
+        <Image src="/folegandros.jpg" alt="Folegandros Chora perched above the cliff" fill sizes="100vw" className="object-cover object-[center_55%] md:object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -177,7 +174,7 @@ export default function SlowHoneymoonPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Screenshot%202026-03-09%20at%2013.42.27.png" alt="A couple toasting at golden hour by the pool" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_01.jpg" alt="Folegandros village cafe under the bougainvillea" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>

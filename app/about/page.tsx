@@ -329,7 +329,7 @@ export default function About() {
             Whether it{'\u2019'}s a first trip or a tenth, we start from you.
           </p>
           <a
-            href="/contact?type=journey"
+            href="/contact"
             className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
             data-delay="220"
           >

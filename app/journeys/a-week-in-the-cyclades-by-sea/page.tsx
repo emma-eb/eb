@@ -198,7 +198,7 @@ export default function WeekBySeaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
               { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros' },
-              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.jpg', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '10 nights \u00b7 Milos + Folegandros' },
+              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.jpg', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '7 nights \u00b7 Milos + Folegandros' },
               { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
