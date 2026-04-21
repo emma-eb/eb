@@ -160,7 +160,7 @@ export default function SlowHoneymoonPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/MILOS_03.jpg" alt="A Cycladic boutique hotel above the sea" fill className="object-cover eb-image-settle" />
+        <Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill sizes="100vw" className="object-cover object-[center_45%] md:object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -177,7 +177,7 @@ export default function SlowHoneymoonPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Screenshot%202026-03-09%20at%2013.42.27.png" alt="A couple toasting at golden hour by the pool" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_01.jpg" alt="Folegandros village cafe under the bougainvillea" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
