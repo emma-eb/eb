@@ -113,7 +113,7 @@ export default function FamilySummerPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
           <div className="relative h-[100dvh] min-h-[600px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
-            <Image src="/kayak.jpg" alt="Kayaking on the bay, seen through linen curtains" fill sizes="100vw" className="object-cover object-[center_65%] md:object-[center_65%] eb-image-settle transition-transform duration-700 group-hover:scale-105" />
+            <Image src="/kayak.jpg" alt="Kayaking on the bay, seen through linen curtains" fill sizes="100vw" className="object-cover object-[center_85%] md:object-[center_80%] eb-image-settle transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Villa</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
@@ -159,7 +159,7 @@ export default function FamilySummerPage() {
       <section className="bg-white py-10 md:py-14 eb-fade-up">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-10">
-            <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Porto Heli at a glimpse</div>
+            <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The islands at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_02.jpg" alt="Hydra port, sailing in" fill className="object-cover eb-image-settle" /></div>
