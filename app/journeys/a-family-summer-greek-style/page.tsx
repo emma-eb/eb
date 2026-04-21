@@ -19,7 +19,7 @@ export default function FamilySummerPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. Settling in.', body: 'Private transfers from the airport to Porto Heli, two and a half hours south by car. Arrival at the villa, welcome lunch on the terrace, an afternoon at the pool.' },
+    { day: '01', title: 'Arrival. Settling in.', body: 'Private transfers from the airport to Porto Heli, two and a half hours southwest by car. Arrival at the villa, welcome lunch on the terrace, an afternoon at the pool.' },
     { day: '02', title: 'The secluded cove.', body: 'A slow morning at the villa. Lunch at a taverna the families return to every year. Afternoon on the secluded cove with kayaks, paddleboards, and a nanny on call.' },
     { day: '03', title: 'By private boat, the day out.', body: 'A full day on the water. Hydra at lunchtime, swim stops in protected bays, ice cream on the way back. Kids love it, grandparents never notice it is long.' },
     { day: '04', title: 'A day at the villa.', body: 'Breakfast late. A private chef for dinner. Games on the lawn, a movie under the stars.' },
