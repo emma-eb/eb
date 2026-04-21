@@ -352,16 +352,16 @@ export default function ParosAntiparosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="/Bespokevilla.jpg"
-                alt="Bespoke villa exterior, Paros"
+                src="/antiparos.jpg"
+                alt="Antiparos, quiet coast across the channel"
                 fill
                 className="object-cover eb-image-settle"
               />
             </div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette">
               <Image
-                src="https://images.unsplash.com/photo-1509360667180-04103d4fbf5e?auto=format&fit=crop&w=900&q=80"
-                alt="A white house above the beach, Paros coast"
+                src="/paros_04.jpg"
+                alt="Paros coast and sea at golden hour"
                 fill
                 className="object-cover eb-image-settle"
               />
