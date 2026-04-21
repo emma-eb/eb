@@ -73,10 +73,10 @@ export default function WeekBySeaPage() {
               { label: 'Season', value: 'June to September' },
               { label: 'Best for', value: 'Couples, Small groups' },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">{item.label}</div>
-                <div className="text-[14px] md:text-[17px] text-[#2e5a88] font-light leading-[1.25]">{item.value}</div>
-                {item.sub && <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1">{item.sub}</div>}
+              <div key={i} className="flex flex-col min-w-0">
+                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2 whitespace-nowrap">{item.label}</div>
+                <div className="text-[13px] md:text-[17px] text-[#2e5a88] font-light leading-[1.3]">{item.value}</div>
+                {item.sub && <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1 whitespace-nowrap">{item.sub}</div>}
               </div>
             ))}
           </div>
@@ -139,8 +139,8 @@ export default function WeekBySeaPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">On board.</h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected yacht, crewed, with a chef on board. The right vessel matched to your party, confirmed once we know who is sailing.</p>
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">On board.</h2>
+          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected yacht, crewed, with a chef on board. The right vessel matched to your party, confirmed once we know who is sailing.</p>
         </div>
       </section>
 
@@ -177,7 +177,7 @@ export default function WeekBySeaPage() {
       </section>
 
       {/* MID CTA — shape this journey */}
-      <section className="bg-white py-14 md:py-16 px-8 eb-fade-up">
+      <section className="bg-white py-14 md:py-16 px-6 md:px-8 eb-fade-up">
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
@@ -215,7 +215,7 @@ export default function WeekBySeaPage() {
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
         <Image src="/yatch%20page.jpg" alt="Ready when you are" fill className="object-cover eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
-        <div className="relative z-[3] h-full flex items-center justify-center px-8 md:px-10">
+        <div className="relative z-[3] h-full flex items-center justify-center px-6 md:px-10">
           <div className="text-center max-w-[640px] eb-fade-in">
             <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">Yours to shape</div>
             <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
