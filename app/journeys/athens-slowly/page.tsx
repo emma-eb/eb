@@ -96,7 +96,7 @@ export default function AthensSlowlyPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">
-            Private Journey &middot; 03
+            Private Journey &middot; 05
           </div>
           <h1 className="font-anton font-normal uppercase text-[40px] sm:text-[52px] md:text-[68px] leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
             Athens,<br className="hidden sm:block" /> Slowly.
