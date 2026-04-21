@@ -28,7 +28,7 @@ export default function FamilySummerPage() {
     { day: '07', title: 'Ancient Epidaurus.', body: 'A morning drive to the ancient theatre of Epidaurus, one of the most intact in the world. Picnic on the grounds, afternoon at a local winery that welcomes us.' },
     { day: '08', title: 'The last sea day.', body: 'Private boat again, smaller this time, to a cove no ferry reaches. Swimming, lunch on board, slow return. Last sunset on the terrace.' },
     { day: '09', title: 'At home.', body: 'The villa, the pool, a quiet dinner. A final chef on request. A long evening on the terrace.' },
-    { day: '10', title: 'One more morning.', body: 'A last swim, a slow breakfast. Time to say goodbye to the place before the transfer north.' },
+    { day: '10', title: 'One more morning.', body: 'A last swim, a slow breakfast. A quiet last day at the villa, time to savour the place.' },
     { day: '11', title: 'The slow return.', body: 'Private transfer back to Athens. Assisted transit. Flights home.' },
   ];
 
