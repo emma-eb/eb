@@ -162,8 +162,8 @@ export default function FamilySummerPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Porto Heli at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kayak.jpg" alt="Kayaking from the secluded cove" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_02.jpg" alt="Hydra port, sailing in" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_01.jpg" alt="Hydra coast and pines, Saronic Gulf" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/hydra_03.jpg" alt="Hydra village and rooftops at golden hour" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
