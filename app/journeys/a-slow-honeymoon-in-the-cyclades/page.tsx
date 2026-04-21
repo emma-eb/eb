@@ -176,7 +176,7 @@ export default function SlowHoneymoonPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_01.jpg" alt="Folegandros village cafe under the bougainvillea" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Screenshot%202026-03-09%20at%2013.42.27.png" alt="A couple toasting at golden hour by the pool" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
