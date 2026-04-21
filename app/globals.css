@@ -289,6 +289,30 @@ h1, h2 {
 .eb-delay-400 { transition-delay: 400ms; }
 .eb-delay-500 { transition-delay: 500ms; }
 
+/* ============ Image settle — zoom out doux au viewport entry ============ */
+.eb-image-settle {
+  transform: scale(1.06) translate3d(0, 0, 0);
+  transition: transform 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.eb-image-settle.eb-visible {
+  transform: scale(1.0) translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eb-image-settle {
+    transform: none !important;
+    transition: none !important;
+  }
+  .eb-fade-up,
+  .eb-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* ============ DA LUXURY — Beige gradient + paper texture ============ */
 .eb-bg-beige-gradient {
   background: linear-gradient(180deg, #fcf7f1 0%, #f5efe5 100%);

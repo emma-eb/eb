@@ -21,7 +21,7 @@ export default function ParosAntiparosPage() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => {
+    document.querySelectorAll('.eb-fade-up, .eb-fade-in, .eb-image-settle').forEach((el) => {
       observer.observe(el);
     });
 
@@ -107,7 +107,7 @@ export default function ParosAntiparosPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%] md:object-center"
+          className="object-cover object-[center_30%] md:object-center eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
@@ -240,7 +240,7 @@ export default function ParosAntiparosPage() {
               alt="Paros south coast, quiet bays and fishing port at golden hour"
               fill
               sizes="100vw"
-              className="object-cover object-[center_35%] md:object-center transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-[center_35%] md:object-center eb-image-settle transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 

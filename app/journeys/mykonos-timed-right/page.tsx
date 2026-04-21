@@ -21,7 +21,7 @@ export default function MykonosTimedRightPage() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => {
+    document.querySelectorAll('.eb-fade-up, .eb-fade-in, .eb-image-settle').forEach((el) => {
       observer.observe(el);
     });
 
@@ -31,33 +31,33 @@ export default function MykonosTimedRightPage() {
   const days = [
     {
       day: '01',
-      title: 'Arrival. Little Venice at sunset.',
-      body: 'Private transfer from your Athens hotel to the airport. 35-minute flight to Mykonos. Check-in at the house, a slow evening in Little Venice, and dinner at a table we know by name.',
+      title: 'Arrival. Little Venice at dusk.',
+      body: 'Private transfer from Athens to the airport, 35-minute flight to Mykonos. Check-in at the house, a first drink overlooking Little Venice, dinner at a table reserved in your name.',
     },
     {
       day: '02',
-      title: 'Quiet coves, the west side.',
-      body: 'Morning at the house, then a private drive to the coves on the west side where the Athenians go before the crowds. Late lunch at a beach club you will not find on a map.',
+      title: 'The beach club, the right one.',
+      body: 'Slow morning at the house. Midday at the beach club we keep for our clients, sun beds at the right spot, lunch that turns into afternoon. Music, sea, the island at its best. Evening back on the terrace, dinner on request.',
     },
     {
       day: '03',
-      title: 'Ano Mera and the interior.',
-      body: 'Inland morning to Ano Mera, the old heart of Mykonos. Monastery of Panagia Tourliani, a slow lunch in a village taverna, and an afternoon at the pool.',
+      title: 'Ano Mera, then the sea.',
+      body: 'A morning drive inland to Ano Mera, the old heart of the island. Monastery, a long lunch in a village taverna. Afternoon back to the coast, swim at a quieter beach, sunset cocktails facing the water.',
     },
     {
       day: '04',
-      title: 'Delos, at opening hour.',
-      body: 'Private boat to Delos at first light, before the day boats. The entire archaeological site to yourselves for the first hour with a private guide. Back to Mykonos for lunch on board.',
+      title: 'Delos at dawn, Chora at night.',
+      body: 'Private boat to Delos at first light, before the day boats. The archaeological site to yourselves for the first hour with a private guide. Back on board for lunch. Afternoon at the house. Evening in Chora, dinner at an address the islanders keep for themselves, drinks after.',
     },
     {
       day: '05',
-      title: 'Chora, at your pace.',
-      body: 'Morning at the house. Afternoon in Chora at its best, when the alleys empty. Shopping at the addresses we share privately. Farewell dinner overlooking the water.',
+      title: 'The island, at full voltage.',
+      body: 'Morning at leisure. Lunch at the beach club where the music plays until sunset. Shopping at the boutiques we share privately. Farewell dinner at the restaurant we reserve for our best nights, then the island if you want it.',
     },
     {
       day: '06',
       title: 'The slow return.',
-      body: 'Late morning departure. Private transfer to the airport. Assisted transit back to Athens.',
+      body: 'Late morning departure. Private transfer to the airport. Assisted transit onward.',
     },
   ];
 
@@ -102,7 +102,7 @@ export default function MykonosTimedRightPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%] md:object-center"
+          className="object-cover object-[center_30%] md:object-center eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
@@ -233,7 +233,7 @@ export default function MykonosTimedRightPage() {
               alt="Scorpios Mykonos at sunset"
               fill
               sizes="100vw"
-              className="object-cover object-[center_35%] md:object-center transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-[center_35%] md:object-center eb-image-settle transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 

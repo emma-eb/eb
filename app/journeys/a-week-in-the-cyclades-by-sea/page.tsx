@@ -14,7 +14,7 @@ export default function WeekBySeaPage() {
       (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('eb-visible'); }); },
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.eb-fade-up, .eb-fade-in, .eb-image-settle').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -52,7 +52,7 @@ export default function WeekBySeaPage() {
       </div>
 
       <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
-        <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=85" alt="A private yacht sailing into a Cycladic sunset" fill priority sizes="100vw" className="object-cover object-[center_30%] md:object-center" />
+        <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=85" alt="A private yacht sailing into a Cycladic sunset" fill priority sizes="100vw" className="object-cover object-[center_30%] md:object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 07</div>
@@ -101,7 +101,7 @@ export default function WeekBySeaPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
           <div className="relative h-[100dvh] min-h-[600px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
-            <Image src="/yatch_page%20collection.jpg" alt="On board the yacht, Cyclades" fill sizes="100vw" className="object-cover object-[center_35%] md:object-center transition-transform duration-700 group-hover:scale-105" />
+            <Image src="/yatch_page%20collection.jpg" alt="On board the yacht, Cyclades" fill sizes="100vw" className="object-cover object-[center_35%] md:object-center eb-image-settle transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Sea</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
