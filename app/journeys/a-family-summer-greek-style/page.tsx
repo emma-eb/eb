@@ -217,7 +217,7 @@ export default function FamilySummerPage() {
                 <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute top-5 left-5 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[9px] tracking-[0.2em] uppercase text-white font-light">{card.category}</span></div>
-                <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2 z-[3]"><h3 className="font-anton font-normal uppercase text-[28px] md:text-[32px] leading-[0.95] mb-2">{card.title}</h3><div className="text-[11px] opacity-85 tracking-[0.1em] font-light">{card.meta}</div></div>
+                <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2 z-[3]"><h3 className="font-anton font-normal uppercase text-[22px] md:text-[28px] leading-[1.05] mb-2">{card.title}</h3><div className="text-[11px] opacity-85 tracking-[0.1em] font-light">{card.meta}</div></div>
               </Link>
             ))}
           </div>

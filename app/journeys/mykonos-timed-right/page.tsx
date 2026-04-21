@@ -112,7 +112,7 @@ export default function MykonosTimedRightPage() {
           </div>
 
           <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
-            Mykonos,<br className="hidden sm:block" /> Timed Right.
+            Mykonos,<br /> Timed Right.
           </h1>
 
           <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">
@@ -486,7 +486,7 @@ export default function MykonosTimedRightPage() {
                 </div>
 
                 <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2 z-[3]">
-                  <h3 className="font-anton font-normal uppercase text-[28px] md:text-[32px] leading-[0.95] mb-2">
+                  <h3 className="font-anton font-normal uppercase text-[22px] md:text-[28px] leading-[1.05] mb-2">
                     {card.title}
                   </h3>
                   <div className="text-[11px] opacity-85 tracking-[0.1em] font-light">

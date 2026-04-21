@@ -62,7 +62,7 @@ export default function SlowHoneymoonPage() {
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 03</div>
           <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
-            A Slow Honeymoon,<br className="hidden sm:block" /> in the Cyclades.
+            A Slow Honeymoon,<br /> in the Cyclades.
           </h1>
           <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">Two islands. Seven nights. Everything arranged, nothing rushed.</p>
         </div>
@@ -80,10 +80,10 @@ export default function SlowHoneymoonPage() {
               { label: 'Season', value: 'June to September' },
               { label: 'Best for', value: 'Couples' },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">{item.label}</div>
-                <div className="text-[14px] md:text-[17px] text-[#2e5a88] font-light leading-[1.25]">{item.value}</div>
-                {item.sub && <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1">{item.sub}</div>}
+              <div key={i} className="flex flex-col min-w-0">
+                <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2 whitespace-nowrap">{item.label}</div>
+                <div className="text-[13px] md:text-[17px] text-[#2e5a88] font-light leading-[1.3]">{item.value}</div>
+                {item.sub && <div className="text-[10px] text-[#1a1a1a]/35 font-light mt-1 whitespace-nowrap">{item.sub}</div>}
               </div>
             ))}
           </div>
@@ -232,7 +232,7 @@ export default function SlowHoneymoonPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute top-5 left-5 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[9px] tracking-[0.2em] uppercase text-white font-light">{card.category}</span></div>
                 <div className="absolute bottom-6 left-6 right-6 text-white transition-transform duration-500 group-hover:-translate-y-2 z-[3]">
-                  <h3 className="font-anton font-normal uppercase text-[28px] md:text-[32px] leading-[0.95] mb-2">{card.title}</h3>
+                  <h3 className="font-anton font-normal uppercase text-[22px] md:text-[28px] leading-[1.05] mb-2">{card.title}</h3>
                   <div className="text-[11px] opacity-85 tracking-[0.1em] font-light">{card.meta}</div>
                 </div>
               </Link>
