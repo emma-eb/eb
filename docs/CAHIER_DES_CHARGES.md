@@ -529,18 +529,19 @@ Emma a depose 20+ photos dans `/public/` ce matin. Integration reussie :
   - Where You Stay "One house, every generation." : `/damien-schneider-GvOcpTNAHFo-unsplash.jpg` (villa whitewashed arches + piscine reflet)
   - Glimpses "The islands at a glimpse" (3 Hydra) : `/hydra_02.jpg` (port) + `/hydra_01.jpg` (cote) + `/hydra_03.jpg` (village)
 
-- **Honeymoon** (Milos + Folegandros) :
-  - Hero : `/MILOS_01.jpg` (inchange)
-  - Highlights : `/MILOS_02.jpg` (Milos cove)
-  - Where You Stay : `/MILOS_03.jpg`
-  - Glimpses (3 photos) : `/kimolos.jpg` (gauche) + `/Screenshot 2026-03-09 at 13.42.27.png` (couple trinquant golden hour) + `/folegandros_02.jpg` (caldera sunset)
+- **Honeymoon** (Milos + Folegandros) — **ETAT FINAL 21/04 soir** :
+  - Hero : `/MILOS_01.jpg`
+  - Highlights "Seven nights, two islands." : `/rocher milos_03.jpg` (Sarakiniko roches + baigneurs)
+  - Where You Stay "Two islands, two hotels." : `/milos sunset.jpg` (cote Milos pink sunset)
+  - Glimpses "Milos + Folegandros at a glimpse" : `/kimolos.jpg` (gauche) + `/milos cave.jpg` (milieu) + `/Milos maison.jpg` (Firopotamos, droite)
 
-- **Week by Sea** (Cyclades yacht) :
+- **Week by Sea** (Cyclades yacht) — **ETAT FINAL 21/04 soir** :
   - Hero : `/yatch_page collection.jpg` (pont luxe "grosse photo yacht")
-  - Highlights "Waking up somewhere new" : `/hero-bateau.jpg` (photo hero homepage reutilisee)
-  - Where You Stay "On board" : Unsplash yacht at anchor (inchange)
-  - Glimpses "The Cyclades at a glimpse" : `/vue aerienne bateau.jpg` + `/MILOS_02.jpg` + `/folegandros_02.jpg`
-  - CTA final : swap `/hero-bateau.jpg` → `/yatch page.jpg` (evite duplicate intra-page)
+  - Highlights "Waking up somewhere new, every morning." : `/reveil yatch.jpg` (reveil matin sur le yacht)
+  - Where You Stay "On board." : `/yatch on board.jpg`
+  - Glimpses "The Cyclades at a glimpse" (3 iles du journey) : `/kythnos.jpg` (Day 02) + `/amorgos 2.jpg` (Day 05) + `/koufoussina.jpg` (Day 07)
+  - CTA final : `/yatch page.jpg` (yacht aerial anchor)
+  - Related card : `/hero-bateau.jpg` sur Honeymoon swap → `/dean-bennett-7RCjjvfIQ1k-unsplash.jpg` (evite duplicate inter-pages)
 
 - **Athens Slowly** :
   - Where You Stay "A hotel with the Parthenon from the roof" : `/roof top athens.jpg`
@@ -562,9 +563,18 @@ Emma a depose 20+ photos dans `/public/` ce matin. Integration reussie :
   - Highlights body : "The island without the crowds. Delos at dawn. Nights in Chora." → "Beach clubs. Long tables. Dinners that turn into long nights."
   - Day by Day (Mykonos) : reecrit pour refleter beach club / restaurants / vibing (sans nommer) + Day 04 "Private boat, the full day."
 
-- **Honeymoon** : toutes mentions "villa" → "boutique hotel" pour Folegandros ET Milos (decision Emma 21/04) :
-  - Route + Day 01/02/04 + Included + Where You Stay h2 "One above the sea. One above the cliff." + body
-  - Day 06/07 : "second villa" → "your hand-selected stay above Chora"
+- **Honeymoon** — **REFONTE COMPLETE 21/04 soir** :
+  - **Duree reduite de 10 a 7 nuits** (4 Milos + 3 Folegandros) apres benchmark concurrence (Jacada/Scott Dunn/Black Tomato = 7-10 nights). Day by Day raccourci de 11 a 8 jours.
+  - Toutes mentions "villa" → "boutique hotel" (Milos ET Folegandros). Route + Day by Day + Included + Where You Stay + alt + meta listing.
+  - Toutes mentions "above the sea" / "above the cliff" / "(above the sea on Milos, above the cliff on Folegandros)" **supprimees** (on ne promet pas d'emplacement qu'on n'est pas sur de trouver). Route simplifiee : "Boutique hotel" (sans suffixe). Where You Stay h2 : "Two islands, two hotels."
+  - **Day by Day reecrit ton lune de miel** (intime + sensoriel + temps suspendu) : "just the two of you", "only yours", "no footprints but yours", "the light is lunar", "the silence Folegandros is famous for", final Day 08 "Assisted transit back to Athens, and the rest begins."
+  - Day 01 : "Flight to Milos" → "Assisted transit to Milos" (eb. ne gere pas les vols).
+  - Day 06 : "Private access to the church" → "A slow climb to the church" (pas de faux private access).
+  - Body Where You Stay : "Both matched to your party" → "Both chosen quietly, confirmed once we know your dates." (pas "party" pour couple).
+  - Hero kicker : "Two islands. Ten days." → "Two islands. Seven nights. Everything arranged, nothing rushed."
+  - Highlights h3 : "Ten days, two homes." → "Seven nights, two islands."
+  - Included : "Seven nights across two hand-selected boutique hotels" (sans precision d'emplacement).
+  - Related cards meta sur Family/Week by Sea : "10 nights · Milos + Folegandros" → "7 nights · Milos + Folegandros"
 
 - **Family** :
   - Day 09 : "Everyone starts packing in their own time." → "A long evening on the terrace." (on ne pack pas 3 jours avant depart)
@@ -606,7 +616,23 @@ Pattern valide sur Astypalea (feedback Emma) et replique sur les 6 autres fiches
 - **Highlights bloc** : mobile plein ecran `h-[100dvh] min-h-[600px]` + full-bleed `-mx-6 md:mx-auto`, desktop `md:aspect-[21/9] md:max-w-[1200px]`, pill tag `top-24 mobile / top-8 desktop`, h3 `text-[36px] md:text-[40px]`, body `text-[15px] leading-[1.55]`, gradient `from-black/85 via-black/35 to-black/10`
 - **Where You Stay** : h2 `text-[32px] md:text-[56px] leading-[1] md:leading-[0.98]`, body `text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75]`
 - **Glimpses** : titre "X at a glimpse" AU-DESSUS de la grille (`text-[10px] md:text-[11px] tracking-[0.35em]`), grid `grid-cols-1 sm:grid-cols-3 gap-3`, images en `aspect-[4/3] sm:aspect-[3/4]` + container `group` (hover zoom subtil)
-- **CTA final** : h2 `text-[38px] md:text-[64px]` (reduit de 44px mobile pour eviter text geant iPhone SE)
+- **CTA final** : h2 `text-[38px] md:text-[64px]` (reduit de 44px mobile pour eviter text geant iPhone SE), inner container `px-6 md:px-10`
+- **Mid CTA "Ready to shape this one?"** : `px-6 md:px-8`
+- **Related cards h3 "You might also like"** : `text-[22px] md:text-[28px] leading-[1.05]` (evite coupure de titres longs comme "A Week in the Cyclades, by Sea")
+
+### 21.5 Corrections additionnelles cross-site
+
+- **About CTA** : `/contact` simple (renvoie aux 3 portes B2C, pas `?type=journey`)
+- **Collection CTA yacht** : `?villa=bestia-yacht` → `?type=stay&stay=yacht` (villa slug n'existait pas)
+- **Numerotation fiches** : Athens "Private Journey · 03" → "· 05", Honeymoon "· 05" → "· 03" — aligne sur ordre du listing `/journeys`
+- **"bespoke" et "curated"** : AUTORISES (mots luxe legitimes). Liste des interdits maintenue : hidden gems, bucket list, unforgettable, tailor-made, world-class, seamless, elevated, passionate, end-to-end.
+- **"Nothing scheduled."** → "Kept open, on purpose." (Paros Day 06, Honeymoon Day 05 avant duree reduite, Family Day 06) — assume le choix comme design, pas vide par defaut
+- **Glimpses legende** : "Glimpses. Exact X confirmed on request." supprimee, titre "X at a glimpse" au-dessus de la grille (7 fiches)
+- **Journal** : typo `/astypalea..jpg` corrigee, URL `raphael-lopes...(1).jpg` encodee en %20
+- **Terms** : SIRET + Paris, pas de telephone/domiciliation privee/regime fiscal
+- **Footer legal** : "eb. is a travel design studio. All journeys are operated by our licensed DMC partners in Greece." sur 14 pages
+
+### 21.6 Limite Unsplash (persistante)
 
 ### 21.5 Limite Unsplash (persistante)
 
@@ -614,4 +640,15 @@ WebFetch retourne toujours 403 sur images.unsplash.com cote agent. Workflow actu
 
 ---
 
-*Fin de session 21/04. Les 7 fiches journey sont validees sur desktop + mobile. Phase suivante : CMS Sanity + Resend + Stripe + domain switch.*
+*Fin de session 21/04 soir. Les 7 fiches journey sont VALIDEES par Emma sur desktop + mobile :*
+*- Astypalea "Before Everyone Else" (01, 7 nuits)*
+*- Mykonos "Timed Right" (02, 5 nuits, copy jet-set)*
+*- Honeymoon "A Slow Honeymoon in the Cyclades" (03, 7 nuits, ton lune de miel)*
+*- Paros + Antiparos "Privately" (04, 6 nuits, v12 DA)*
+*- Athens "Slowly" (05, 5 nuits, year-round)*
+*- Family "A Family Summer, Greek-Style" (06, 10 nuits, multi-gen Porto Heli + Saronic)*
+*- Week by Sea "A Week in the Cyclades, by Sea" (07, 7 nuits yacht)*
+
+*Emma : "EXCELLENTE PAGE YATCH !!! BRAVOOO" + "le site est super, bravo et merci beaucoup!"*
+
+*Phase suivante (technique, 1-2 semaines dev) : CMS Sanity + Resend (remplace mailto `/contact`) + Stripe test (paywall $100 + deposit $500) + PDF auto Private Route + SEO (metadonnees, sitemap) + Google Analytics 4 + bascule domaine emmabonnefous.com sur Vercel + tests cross-device.*

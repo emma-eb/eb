@@ -1,5 +1,5 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-21 — Session photos + mobile final des 7 fiches. 20+ photos locales deposees par Emma et integrees (Family villa/pool/Hydra, Honeymoon kimolos/folegandros/couple, Week by Sea yacht/bateau, Mykonos scorpio, Athens rooftop, Astypalea 05/06, Paros antiparos/paros_04). Copy Mykonos assume jet-set (beach clubs, long nights). Honeymoon : toutes mentions "villa" → "boutique hotel" (Milos ET Folegandros). Nouveau CSS `.eb-image-settle` (zoom 1.08→1 en 1.5s) applique sur 56 images des 7 fiches. Hover zoom subtil 3.5% via `.group:hover` (desktop uniquement). Pattern mobile Astypalea-validé repliqué sur les 6 autres fiches (hero h1 38px, metadata nowrap, day-by-day reserrée, Highlights full-page mobile, CTA final 38px). Scope Phase 1 = 7 itineraires uniquement (confirme).
+**Derniere mise a jour :** 2026-04-21 (soir) — **Les 7 fiches journey sont VALIDEES par Emma** sur desktop + mobile. Session photos + mobile final : 30+ photos locales deposees et integrees. Honeymoon refondu (10 → 7 nuits apres benchmark concurrence, 4 Milos + 3 Folegandros), Day by Day reecrit ton lune de miel, villa → boutique hotel partout, "above the sea/cliff" retire (on ne promet pas l'emplacement). Week by Sea : nouvelles photos yacht (yatch_page collection, reveil yatch, yatch on board), Glimpses aligne sur 3 iles du journey (Kythnos/Amorgos 2/Koufonisia). Mykonos copy jet-set. Animations settle (1.5s) + fade-up + hover 3.5% sur 56+ visuels. Pattern mobile canonique replique sur 7 fiches (hero 38px + break naturel, metadata nowrap min-w-0, day-by-day compact, Highlights full-page, related cards h3 22px, CTA final 38px, paddings px-6 alignes). Limite technique : Unsplash bloque l'agent (403), Emma depose les photos localement.
 
 ---
 
@@ -101,12 +101,24 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
   - **Mykonos** : Day by Day reecrit (beach clubs, long tables, dinners that turn into long nights), Day 04 "Private boat, the full day.", image Highlights /scorpio.jpg
   - **Week by Sea** : Hero "grosse photo yacht" /yatch_page collection.jpg, Highlights /hero-bateau.jpg (photo homepage), CTA final swap /yatch page.jpg, Glimpses vue aerienne + Milos + Folegandros
   - **Paros** : Glimpses antiparos + paros_04 + paros_03
-  - **Honeymoon** : Glimpses kimolos + couple trinquant + folegandros_02
-  - **Pattern mobile Astypalea repliqué sur 6 fiches** : hero h1 `text-[38px] leading-[0.95] sm:leading-[0.92]`, metadata `min-w-0 whitespace-nowrap text-[13px]`, day-by-day `py-7 gap-4 w-[60px] text-[15px] min-w-0 max-h-[500px] leading-[1.75]`, Where You Stay h2 `text-[32px]`, CTA final h2 `text-[38px]`
-  - **Nothing scheduled** → "Kept open, on purpose." (Paros, Honeymoon, Family)
+  - **Honeymoon** : Glimpses finaux = kimolos + milos cave + Milos maison (Firopotamos)
+  - **Pattern mobile Astypalea repliqué sur 6 fiches** : hero h1 `text-[38px] leading-[0.95] sm:leading-[0.92]`, metadata `min-w-0 whitespace-nowrap text-[13px]`, day-by-day `py-7 gap-4 w-[60px] text-[15px] min-w-0 max-h-[500px] leading-[1.75]`, Where You Stay h2 `text-[32px]`, CTA final h2 `text-[38px]`, paddings px-6 alignes
+  - **Nothing scheduled** → "Kept open, on purpose." (Paros, Family — Honeymoon retire avec reduction duree)
   - Glimpses : titre "X at a glimpse" au-dessus de la grille (7 fiches), legende bas supprimee
-- [ ] Scope recadre 20/04 : **PAS de fiches detail villas/experiences** (le catalogue.ts reste contenu interne, pas de pages publiques detail) — 7 itineraires journey suffisent
-- [ ] Replication template Paros v12 **uniquement sur la fiche Sailing / Yacht** (Astypalea, Mykonos, Honeymoon laissees en l'etat)
+- [x] **Session 21/04 soir — refonte Honeymoon + finalisation Yacht + validation 7 fiches** :
+  - **Honeymoon reduit 10 → 7 nuits** (4 Milos + 3 Folegandros) apres benchmark concurrence Jacada/Scott Dunn/Black Tomato (7-10 nights standard). Day by Day raccourci de 11 a 8 jours, Duration/Route/Included/related cards mis a jour.
+  - **Honeymoon : toutes mentions "villa" → "boutique hotel"** (Milos + Folegandros). Route simplifiee (pas de suffixe "above the sea/cliff"). Where You Stay h2 "Two islands, two hotels." Body "A hand-selected boutique hotel on Milos. Another on Folegandros. Both chosen quietly, confirmed once we know your dates."
+  - **Day by Day Honeymoon reecrit ton lune de miel** : "just the two of you", "only yours", "no footprints but yours", "the light is lunar", "the silence Folegandros is famous for", Day 08 final "the rest begins." Day 01 Flight → Assisted transit. Day 06 Private access → slow climb.
+  - **Photos Honeymoon finales** : hero MILOS_01, Highlights rocher milos_03 (Sarakiniko), Where You Stay milos sunset (cote pink), Glimpses kimolos + milos cave + Milos maison
+  - **Week by Sea validee** ("EXCELLENTE PAGE YATCH !!! BRAVOOO") : hero /yatch_page collection, Highlights /reveil yatch (remplace hero-bateau), Where You Stay /yatch on board, Glimpses 3 iles du journey = Kythnos + Amorgos 2 + Koufonisia, CTA final /yatch page
+  - **Related cards h3** : `text-[28px] md:text-[32px]` → `text-[22px] md:text-[28px] leading-[1.05]` (evite coupure titre long "A Week in the Cyclades, by Sea")
+  - **Hero h1 break** : `<br className="hidden sm:block" />` → `<br />` sur les 5 fiches restantes (break visible mobile, plus de titre tronque)
+  - **Mobile paddings finaux** : Mid CTA `px-6 md:px-8`, CTA final inner `px-6 md:px-10` (coherent px-6 mobile partout)
+  - **About CTA** : `/contact?type=journey` → `/contact` (renvoie aux 3 portes B2C)
+  - **Photos locales ajoutees ce soir** : folagandros vue, milos couple, milos cave, milos sunset, Milos maison, Milos couple, rocher milos, rocher milos_03, kythnos, amorgos, amorgos 2, koufoussina, yatch page, yatch on board, reveil yatch, villa famill_01, damien-schneider, yuliia-sereda-xlsqncXqeUw, jacob-cartwright, dean-bennett + autres (30+ au total)
+- [x] **Les 7 fiches journey sont VALIDEES par Emma** (Astypalea, Mykonos, Honeymoon, Paros, Athens, Family, Week by Sea) sur desktop + mobile. Numerotation alignee : 01 Astypalea / 02 Mykonos / 03 Honeymoon / 04 Paros / 05 Athens / 06 Family / 07 Week by Sea.
+- [ ] Scope recadre 20/04 : **PAS de fiches detail villas/experiences** (le catalogue.ts reste contenu interne, pas de pages publiques detail) — 7 itineraires journey suffisent ✓
+- [~] Replication template Paros v12 **uniquement sur la fiche Sailing / Yacht** — Yacht (Week by Sea) validee par Emma avec la DA actuelle, pas besoin de replication v12.
 - [ ] Integration CMS : toutes les pages editables sans code
 
 ### Sprint 3 — Pages Secondaires & Formulaires (2 semaines)
