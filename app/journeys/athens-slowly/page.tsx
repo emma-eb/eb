@@ -119,7 +119,7 @@ export default function AthensSlowlyPage() {
             {[
               { label: 'Duration', value: '5 nights', sub: '6 days' },
               { label: 'Destination', value: 'Athens' },
-              { label: 'Season', value: 'April to June, September to November' },
+              { label: 'Season', value: 'Year-round' },
               { label: 'Best for', value: 'Couples, Cultural travelers' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col">
