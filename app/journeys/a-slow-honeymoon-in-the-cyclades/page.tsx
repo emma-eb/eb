@@ -173,7 +173,7 @@ export default function SlowHoneymoonPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/milos%20cave.jpg" alt="Sea cave on Milos, Aegean blue" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/yatch_page%20collection_2.png" alt="A couple on a private yacht, Aegean coast" fill className="object-cover eb-image-settle" /></div>
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
@@ -224,7 +224,7 @@ export default function SlowHoneymoonPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
               { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros' },
-              { href: '/journeys/a-week-in-the-cyclades-by-sea', img: '/yatch_page%20collection_2.png', category: 'By Sea \u00b7 Private Yacht', title: 'A Week in the Cyclades, by Sea', meta: '7 nights \u00b7 Cyclades' },
+              { href: '/journeys/a-week-in-the-cyclades-by-sea', img: '/dean-bennett-7RCjjvfIQ1k-unsplash.jpg', category: 'By Sea \u00b7 Private Yacht', title: 'A Week in the Cyclades, by Sea', meta: '7 nights \u00b7 Cyclades' },
               { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
