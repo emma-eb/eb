@@ -46,8 +46,8 @@ export default function MykonosTimedRightPage() {
     },
     {
       day: '04',
-      title: 'Delos at dawn, Chora at night.',
-      body: 'Private boat to Delos at first light, before the day boats. The archaeological site to yourselves for the first hour with a private guide. Back on board for lunch. Afternoon at the house. Evening in Chora, dinner at an address the islanders keep for themselves, drinks after.',
+      title: 'Private boat, the full day.',
+      body: 'Out before first light on a private boat to Delos, the archaeological site to yourselves for the first hour with a private guide. Back on board for breakfast. A long morning sail along the coast, swim stops in bays only reachable by sea, lunch on the water. Return at golden hour. Evening in Chora, dinner at an address the islanders keep for themselves.',
     },
     {
       day: '05',
