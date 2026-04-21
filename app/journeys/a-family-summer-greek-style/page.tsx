@@ -151,7 +151,7 @@ export default function FamilySummerPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">Big enough<br />for everyone.</h2>
+          <h2 className="font-anton font-normal uppercase text-[36px] md:text-[56px] leading-[0.98] tracking-[0.02em] mb-6">One house,<br />every generation.</h2>
           <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">A hand-selected villa with a secluded cove, a pool, space for grandparents and teenagers to keep different hours. The right residence matched to your party, confirmed once we know who is traveling.</p>
         </div>
       </section>
