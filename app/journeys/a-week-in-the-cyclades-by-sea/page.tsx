@@ -151,8 +151,8 @@ export default function WeekBySeaPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/vue%20aerienne%20bateau.jpg" alt="Aerial view of yachts anchored in a turquoise Aegean bay" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/isaw-company-B9WaDWxlSbM-unsplash.jpg" alt="Caldera view with a yacht below" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/polina-kuzovkova-fGSXS0P2Piw-unsplash.jpg" alt="White Cycladic passage opening onto a bay of boats" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/MILOS_02.jpg" alt="Milos turquoise cove and white rocks" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
