@@ -21,14 +21,14 @@ export default function SlowHoneymoonPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Assisted transit to Milos, then a private drive to a hand-selected boutique hotel. Welcome dinner on the terrace.' },
-    { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the hotel. Afternoon at the pool.' },
-    { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
-    { day: '04', title: 'Plaka, the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
-    { day: '05', title: 'Crossing to Folegandros.', body: 'Morning ferry or private boat transfer to Folegandros. Arrival at your hand-selected stay above Chora, dinner in the village at a table the islanders keep for each other.' },
-    { day: '06', title: 'Chora, the cliff village.', body: 'Morning walk through the Chora, white as paper, perched above the Aegean. A slow climb to the church at the cliff edge at the right hour. Afternoon at your stay.' },
-    { day: '07', title: 'The empty coves.', body: 'A small private boat along the unmarked coast. Coves only reachable by sea. Lunch on board, swim, a farewell dinner in the old village under the vines.' },
-    { day: '08', title: 'The slow return.', body: 'A final morning on the island. Transfer to the ferry or private boat back to the mainland. Assisted transit onward to Athens.' },
+    { day: '01', title: 'Arrival. The first night, just the two of you.', body: 'Assisted transit to Milos. A private driver meets you, brings you to the quiet hotel we are keeping for your week. Welcome dinner on the terrace, the sea already in front of you.' },
+    { day: '02', title: 'Sarakiniko, before the world wakes.', body: 'An early morning on the white volcanic coast, just the two of you. The light is lunar, the water is cold, no one else is there. Breakfast back at the hotel. An afternoon by the pool, a book, a long nap.' },
+    { day: '03', title: 'A day on the water, only yours.', body: 'Private boat for the day. Kleftiko and its painted caves, Polyaigos where only one or two boats anchor. Lunch on board, a swim whenever you feel like it, return as the sun softens.' },
+    { day: '04', title: 'Plaka, slowly.', body: 'A slow morning through the white alleys of Plaka, the old village on the hilltop. Lunch stretches at a taverna with a long view over the sea. Evening at the hotel, no rush, no plan.' },
+    { day: '05', title: 'Crossing to Folegandros.', body: 'Ferry or private boat in the morning. You arrive somewhere quieter, stranger, whiter. Dinner in Chora at a table kept for you, a bottle of something local, the village at its evening pace.' },
+    { day: '06', title: 'Chora, the cliff village.', body: 'A morning through the whitest Chora in the Cyclades, perched above the Aegean. A slow climb to the church at the edge of the cliff at the right hour. Afternoon at your stay, the silence Folegandros is famous for.' },
+    { day: '07', title: 'Empty coves. Your own coast.', body: 'A small private boat along the unmarked shore. Coves reachable only by sea, no footprints but yours. Lunch on board. A farewell dinner in the old village, under the vines, warm air, candles.' },
+    { day: '08', title: 'The slow return.', body: 'A final morning. A last swim. Transfer to the port or the ferry. Assisted transit back to Athens, and the rest begins.' },
   ];
 
   const includedItems = [
