@@ -73,7 +73,7 @@ export default function FamilySummerPage() {
             {[
               { label: 'Duration', value: '10 nights', sub: '11 days' },
               { label: 'Destination', value: 'Porto Heli' },
-              { label: 'Season', value: 'June to September' },
+              { label: 'Season', value: 'April to October' },
               { label: 'Best for', value: 'Families, Multi-gen' },
             ].map((item, i) => (
               <div key={i} className="flex flex-col">
