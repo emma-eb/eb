@@ -21,7 +21,7 @@ export default function SlowHoneymoonPage() {
   }, []);
 
   const days = [
-    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Assisted transit to Milos, then a private drive to a boutique hotel above the sea. Welcome dinner on the terrace.' },
+    { day: '01', title: 'Arrival. The first night on Milos.', body: 'Assisted transit to Milos, then a private drive to a hand-selected boutique hotel. Welcome dinner on the terrace.' },
     { day: '02', title: 'Sarakiniko, at dawn.', body: 'A private early morning at Sarakiniko, the white volcanic coast, before the day boats arrive. Breakfast back at the hotel. Afternoon at the pool.' },
     { day: '03', title: 'By private boat around Milos.', body: 'A full day on the water. Kleftiko, Polyaigos, the painted coves. Lunch on board, swim stops, return at golden hour.' },
     { day: '04', title: 'Plaka, the old quarter.', body: 'Slow morning in Plaka, the old hilltop village. A long lunch at a taverna with a sea view. Evening at the hotel.' },
@@ -161,8 +161,8 @@ export default function SlowHoneymoonPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">One above the sea.<br />One above the cliff.</h2>
-          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel above the sea on Milos. Another on the cliffs of Folegandros. Both chosen quietly, confirmed once we know your dates.</p>
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">Two islands,<br />two hotels.</h2>
+          <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel on Milos. Another on Folegandros. Both chosen quietly, confirmed once we know your dates.</p>
         </div>
       </section>
 
