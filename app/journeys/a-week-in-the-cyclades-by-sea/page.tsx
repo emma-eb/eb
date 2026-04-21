@@ -150,9 +150,9 @@ export default function WeekBySeaPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Cyclades at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/vue%20aerienne%20bateau.jpg" alt="Aerial view of yachts anchored in a turquoise Aegean bay" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/MILOS_02.jpg" alt="Milos turquoise cove and white rocks" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/folegandros_02.jpg" alt="Folegandros cliff and sea at sunset" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos.jpg" alt="Amorgos windmills above the cliff" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
