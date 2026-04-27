@@ -105,7 +105,7 @@ export default function Home() {
             style={{ objectPosition: "72% 65%" }}
           />
         </div>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 px-8 -mt-16 md:mt-0">
           <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.85] text-white uppercase">
@@ -189,7 +189,7 @@ export default function Home() {
               subtitle: "Villas, yacht, private properties",
               href: "/collection",
               cta: "View the collection",
-              image: "https://images.unsplash.com/photo-1678266587841-ca65ff1b5b1d?auto=format&fit=crop&w=900&q=80",
+              image: "/villas/you-and-me/gallery-03.jpg",
               desktopDelay: 300,
             },
           ].map((door) => (
@@ -342,8 +342,8 @@ export default function Home() {
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/134_terrace_privatebeach.jpg"
-            alt="Private villa terrace with sea view, Greece"
+            src="/villas/you-and-me/cover.jpg"
+            alt="Villa You & Me, private estate above the Aegean"
             className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
@@ -395,7 +395,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/35" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
@@ -420,7 +420,7 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-[3] min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-8 md:px-16 py-20">
           <div className="text-center max-w-[640px]">

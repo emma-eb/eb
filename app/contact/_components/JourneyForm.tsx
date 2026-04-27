@@ -5,9 +5,11 @@ import { useSearchParams } from "next/navigation";
 import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
 import { Field, TextInput, TextArea, PillChoice, PillMulti, Counter, Checkbox, DateRange, Select } from "./fields";
+import Link from "next/link";
 import {
   journeyBudgets,
-  mustHaves as mustHavesData,
+  journeyMustHaves,
+  journeyTitles,
   accommodationStyles,
   paces,
   lengths,
@@ -61,12 +63,13 @@ const EMPTY: Data = {
 };
 
 const STORAGE_KEY = "eb-contact-journey";
-const VISION_MIN = 60;
+const VISION_MIN = 100;
 
 export default function JourneyForm() {
   const searchParams = useSearchParams();
   const journeySlug = searchParams.get("journey");
   const isScratch = !journeySlug;
+  const journeyTitle = journeySlug ? journeyTitles[journeySlug] : undefined;
   const [data, setData] = useState<Data>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
@@ -99,7 +102,7 @@ export default function JourneyForm() {
 
   const buildSummary = () => {
     const lines = [
-      `INQUIRY TYPE: Private Journey${isScratch ? " \u2014 From scratch" : ` \u2014 ${journeySlug}`}`,
+      `INQUIRY TYPE: Private Journey${isScratch ? " - From scratch" : ` - ${journeyTitle ?? journeySlug}`}`,
       `RECEIVED: ${new Date().toISOString()}`,
       "",
       "CLIENT",
@@ -142,8 +145,8 @@ export default function JourneyForm() {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
     try {
-      const journeyContext = isScratch ? "from scratch" : journeySlug;
-      const subject = encodeURIComponent(`New Journey inquiry (${journeyContext}) \u2014 ${data.name}`);
+      const journeyContext = isScratch ? "from scratch" : (journeyTitle ?? journeySlug);
+      const subject = encodeURIComponent(`New Journey inquiry (${journeyContext}) - ${data.name}`);
       const body = encodeURIComponent(summary);
       const link = document.createElement("a");
       link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
@@ -158,7 +161,7 @@ export default function JourneyForm() {
 
   return (
     <FormOnePage
-      typeLabel={isScratch ? "Private Journey \u00b7 From scratch" : `Private Journey \u00b7 ${journeySlug}`}
+      typeLabel={isScratch ? "Private Journey \u00b7 From scratch" : `Private Journey \u00b7 ${journeyTitle ?? journeySlug}`}
       title={isScratch ? "A journey, shaped for you." : "Personalise this journey."}
       intro={isScratch ? "Tell us who you are, when you travel, and what matters. We shape the rest." : "The journey is set. A few notes to make it yours."}
       onSubmit={handleSubmit}
@@ -177,7 +180,7 @@ export default function JourneyForm() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Phone" hint="Helpful for quick follow-up">
-            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
+            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="Your phone number" type="tel" autoComplete="tel" />
           </Field>
           <Field label="Country of residence">
             <Select value={data.country} onChange={(v) => update("country", v)} options={countries} placeholder="Select country" />
@@ -186,6 +189,18 @@ export default function JourneyForm() {
       </Section>
 
       <Section num="02" title="The journey.">
+        {journeyTitle && (
+          <Field label="Journey of interest">
+            <div className="bg-white border border-[#e8e4de] px-4 py-3 md:px-5 md:py-4">
+              <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/80">
+                {journeyTitle}
+              </p>
+              <p className="mt-1.5 font-body text-[12px] md:text-[13px] text-[#1a1a1a]/55 leading-[1.5] font-light">
+                The published route is the starting point. Use the personalisation field below to adjust extensions, substitutions, or specific wishes.
+              </p>
+            </div>
+          </Field>
+        )}
         <Field label="Travel dates" required>
           <DateRange start={data.startDate} end={data.endDate} onChange={(s, e) => { update("startDate", s); update("endDate", e); }} />
         </Field>
@@ -219,7 +234,7 @@ export default function JourneyForm() {
           </>
         )}
         <Field label="Must-haves" hint="Optional. Tick what matters.">
-          <PillMulti options={mustHavesData} values={data.mustHaves} onChange={(v) => update("mustHaves", v)} />
+          <PillMulti options={journeyMustHaves} values={data.mustHaves} onChange={(v) => update("mustHaves", v)} />
         </Field>
         {!isScratch && (
           <Field label="Personalization requests" hint="Anything you want to adjust from the published route.">
@@ -240,7 +255,11 @@ export default function JourneyForm() {
         </Field>
         <div className="pt-2">
           <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
-            I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
+            I agree to be contacted by the eb. team about this inquiry. My details are governed by our{" "}
+            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-[#2e5a88] transition-colors">
+              privacy policy
+            </Link>
+            .
           </Checkbox>
         </div>
       </Section>

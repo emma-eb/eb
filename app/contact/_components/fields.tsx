@@ -101,7 +101,7 @@ export function PillChoice({ options, value, onChange, name }: PillChoiceProps) 
             onChange={() => onChange(opt)}
             className="peer sr-only"
           />
-          <span className="inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-3 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white transition-colors">
+          <span className="inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-3 py-2.5 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white transition-colors">
             {opt}
           </span>
         </label>
@@ -133,7 +133,7 @@ export function PillMulti({ options, values, onChange }: PillMultiProps) {
             key={opt}
             type="button"
             onClick={() => toggle(opt)}
-            className={`inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-4 py-3 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border transition-colors ${
+            className={`inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-3 py-2.5 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border transition-colors ${
               selected
                 ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
                 : "border-[#e8e4de] text-[#666] hover:border-[#1a1a1a] hover:text-[#1a1a1a]"
@@ -226,7 +226,7 @@ interface DateRangeProps {
 
 export function DateRange({ start, end, onChange }: DateRangeProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="flex flex-col gap-1.5">
         <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">From</span>
         <input

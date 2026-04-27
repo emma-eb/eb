@@ -20,6 +20,7 @@ interface FormOnePageProps {
   missing?: string[];
   isSubmitting?: boolean;
   currentType: PorteType;
+  submitLabel?: string;
   children: ReactNode;
 }
 
@@ -32,6 +33,7 @@ export default function FormOnePage({
   missing = [],
   isSubmitting,
   currentType,
+  submitLabel = "Send my enquiry",
   children,
 }: FormOnePageProps) {
   const otherPortes = (Object.keys(PORTES) as PorteType[]).filter(
@@ -68,7 +70,7 @@ export default function FormOnePage({
             disabled={!canSubmit || isSubmitting}
             className="w-full md:w-auto inline-flex items-center justify-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-8 md:px-10 py-4 md:py-5 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
           >
-            {isSubmitting ? "Sending..." : "Share your vision"}
+            {isSubmitting ? "Sending..." : submitLabel}
             {!isSubmitting && <span>&rarr;</span>}
           </button>
           {!canSubmit && missing.length > 0 && (

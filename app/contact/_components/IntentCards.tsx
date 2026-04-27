@@ -6,6 +6,7 @@ const portes = [
     overline: "Private Journey",
     title: "A journey.",
     desc: "Designed from scratch, or built on one of ours.",
+    priceRange: "Journeys from €2,000 / person",
     href: "/contact?type=journey",
     img: "/paros_01.jpg",
     alt: "Paros coast, Greek islands",
@@ -15,6 +16,7 @@ const portes = [
     overline: "Occasion",
     title: "A moment.",
     desc: "Wedding, proposal, anniversary, honeymoon. Marked quietly.",
+    priceRange: "Occasions from €2,000",
     href: "/contact?type=occasion",
     img: "/yatch_page collection_2.png",
     alt: "Couple on yacht bow, Aegean coast",
@@ -24,6 +26,7 @@ const portes = [
     overline: "Villa or Yacht",
     title: "A place.",
     desc: "Villas rarely online. Yacht on request.",
+    priceRange: "Villas from €1,000 / night",
     href: "/contact?type=stay",
     img: "/mykonos_maison.jpg",
     alt: "Private villa, Mykonos",
@@ -67,13 +70,31 @@ export default function IntentCards() {
                   <p className="font-body text-[13px] md:text-[14px] text-white/85 leading-[1.6] font-light max-w-[280px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                     {p.desc}
                   </p>
+                  {"priceRange" in p && p.priceRange && (
+                    <p className="font-body text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-white/60 font-light mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                      {p.priceRange}
+                    </p>
+                  )}
                   <span className="inline-flex items-center gap-2 mt-4 font-body text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-white font-medium">
-                    Begin
+                    Start the conversation
                     <span className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">&rarr;</span>
                   </span>
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Direct email fallback — for repeat clients or referrals */}
+          <div className="mt-12 md:mt-16 text-center">
+            <p className="font-body text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-[#1a1a1a]/40 font-light">
+              or send an email
+            </p>
+            <a
+              href="mailto:hello@emmabonnefous.com"
+              className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/65 hover:text-[#2e5a88] underline underline-offset-2 transition-colors mt-2 inline-block py-1"
+            >
+              hello@emmabonnefous.com
+            </a>
           </div>
         </div>
       </section>

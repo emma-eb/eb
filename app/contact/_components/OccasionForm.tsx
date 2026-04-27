@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
 import { Field, TextInput, TextArea, PillChoice, Counter, Checkbox, Select } from "./fields";
-import { occasionTypes, occasionBudgets, howHeard, styles, countries } from "../_data/options";
+import { occasionTypes, howHeard, styles, countries } from "../_data/options";
 
 interface Data {
   name: string;
@@ -51,7 +52,7 @@ const locations = [
 ];
 
 const STORAGE_KEY = "eb-contact-occasion";
-const VISION_MIN = 60;
+const VISION_MIN = 100;
 
 export default function OccasionForm() {
   const [data, setData] = useState<Data>(EMPTY);
@@ -79,7 +80,7 @@ export default function OccasionForm() {
   if (!data.occasion) missing.push("the occasion type");
   if (!data.date) missing.push("a date");
   if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
-  if (!data.budget) missing.push("a budget band");
+  if (!data.budget.trim()) missing.push("an indicative budget");
   if (!data.consent) missing.push("consent");
   const canSubmit = missing.length === 0;
 
@@ -118,7 +119,7 @@ export default function OccasionForm() {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
     try {
-      const subject = encodeURIComponent(`New Occasion inquiry \u2014 ${data.name}`);
+      const subject = encodeURIComponent(`New Occasion inquiry - ${data.name}`);
       const body = encodeURIComponent(summary);
       const link = document.createElement("a");
       link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
@@ -152,7 +153,7 @@ export default function OccasionForm() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Phone" hint="Helpful for quick follow-up">
-            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
+            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="Your phone number" type="tel" autoComplete="tel" />
           </Field>
           <Field label="Country of residence">
             <Select value={data.country} onChange={(v) => update("country", v)} options={countries} placeholder="Select country" />
@@ -178,7 +179,7 @@ export default function OccasionForm() {
           />
         </Field>
         <Field label="Number of guests">
-          <Counter value={data.guests} onChange={(v) => update("guests", v)} min={1} max={200} />
+          <Counter value={data.guests} onChange={(v) => update("guests", v)} min={1} max={9999} />
         </Field>
         <Field label="Location preference">
           <PillChoice options={locations} value={data.location} onChange={(v) => update("location", v)} name="location" />
@@ -192,15 +193,19 @@ export default function OccasionForm() {
         <Field label="In a few sentences" required hint={`The occasion, the feel, anything that matters. (min ${VISION_MIN} characters)`}>
           <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} minLength={VISION_MIN} />
         </Field>
-        <Field label="Budget band" required hint="Total for the occasion. An indicative range helps us propose the right scale.">
-          <PillChoice options={occasionBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
+        <Field label="Indicative budget" required hint="Total for the occasion. Write a figure or a range, in euros — it helps us propose the right scale.">
+          <TextInput value={data.budget} onChange={(v) => update("budget", v)} placeholder="e.g. €5,000 / from €15,000 / €50,000+" />
         </Field>
         <Field label="How did you find us">
           <PillChoice options={howHeard} value={data.howHeard} onChange={(v) => update("howHeard", v)} name="howHeard" />
         </Field>
         <div className="pt-2">
           <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
-            I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
+            I agree to be contacted by the eb. team about this inquiry. My details are governed by our{" "}
+            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-[#2e5a88] transition-colors">
+              privacy policy
+            </Link>
+            .
           </Checkbox>
         </div>
       </Section>

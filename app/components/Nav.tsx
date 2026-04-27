@@ -46,9 +46,26 @@ export default function Nav({ activePage }: NavProps) {
     window.addEventListener("scroll", check, { passive: true });
     check(); // état initial
 
+    // Force-reveal global : sur restauration bfcache (back/forward), s'assurer que
+    // tous les elements .reveal et .eb-image-settle sont visibles (les animations
+    // d'apparition peuvent ne pas se rejouer correctement depuis le cache)
+    const forceReveal = () => {
+      document.querySelectorAll(".reveal").forEach((el) => {
+        el.classList.add("visible", "done");
+      });
+      document.querySelectorAll(".eb-image-settle, .eb-fade-up, .eb-fade-in").forEach((el) => {
+        el.classList.add("eb-visible");
+      });
+    };
+    const onPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) forceReveal();
+    };
+    window.addEventListener("pageshow", onPageShow);
+
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", check);
+      window.removeEventListener("pageshow", onPageShow);
     };
   }, [check]);
 
@@ -102,12 +119,14 @@ export default function Nav({ activePage }: NavProps) {
           Inquire
         </a>
 
-        <div className="flex md:hidden items-center gap-4 relative z-50">
+        <div className="flex md:hidden items-center gap-3 relative z-50">
           <a
             href="/contact"
             className={`text-[10px] tracking-[0.2em] uppercase border px-3 py-2.5 transition-colors duration-300 ${
-              dark ? "border-[#fcf7f1] text-[#fcf7f1]" : "border-[#2e5a88] text-[#2e5a88]"
-            }`}
+              dark
+                ? "border-[#fcf7f1] text-[#fcf7f1] bg-black/30"
+                : "border-[#2e5a88] text-[#2e5a88] bg-white/50"
+            } backdrop-blur-sm`}
           >
             Inquire
           </a>

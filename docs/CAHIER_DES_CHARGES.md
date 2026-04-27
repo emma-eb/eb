@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 1.2
-**Date :** 2026-04-20 (soir)
+**Version :** 1.4
+**Date :** 2026-04-27
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 1 Sprint 3 — Contact V3 one-page sectionne livre, For Brands V2 polished, Contact 100% B2C (sortie B2B deplacee sur /influencer-production uniquement). Audit complet mobile + DA + CTAs + routes realise soir du 20/04. Scope recadre : 7 itineraires uniquement (PAS de 35+ fiches villas/experiences), PAS de case studies. Voir section 20 pour le polish du soir.
+**Statut :** Phase 1 Sprint 3 — **Collection v5 + 5 fiches villa publiques** (You & Me + Celestia + Esmeralda + Tourlos Breeze + Santorini Estate, section 23). **Contact V4** avec preselect villa ET preselect yacht (section 23.5). Yacht banner refondu sur /collection. Hero overlays alleges sitewide. IntentCards price ranges. CSS reveal fallback. Memoires d'edition consolidees (island name, villa floor, mobile-first, must-show signature features). 7 fiches journey + For Brands V2 toujours en place. Adjacent villa cross-link reserve a You & Me ↔ Celestia (seules villas physiquement adjacentes).
 
 ---
 
@@ -652,3 +652,385 @@ WebFetch retourne toujours 403 sur images.unsplash.com cote agent. Workflow actu
 *Emma : "EXCELLENTE PAGE YATCH !!! BRAVOOO" + "le site est super, bravo et merci beaucoup!"*
 
 *Phase suivante (technique, 1-2 semaines dev) : CMS Sanity + Resend (remplace mailto `/contact`) + Stripe test (paywall $100 + deposit $500) + PDF auto Private Route + SEO (metadonnees, sitemap) + Google Analytics 4 + bascule domaine emmabonnefous.com sur Vercel + tests cross-device.*
+
+---
+
+## 22. Session 24/04/2026 — Collection v4 + fiches villa dediees (You & Me + Celestia)
+
+### 22.1 Scope recadre (decision Emma 24/04)
+Les 2 villas reelles (**Villa You & Me** et **Villa Celestia**) ont desormais **leur fiche publique dediee** sur `/collection/[slug]`. Cela modifie le scope du 20/04 qui disait "PAS de fiches detail villas" — exception validee pour ces 2 villas uniquement. Les 3 autres villas du grid Collection (Aegean Residence, Aegean Essence, Seafront Sanctuary) restent des **cards placeholder** envoyant directement vers `/contact?type=stay&villa={slug}`.
+
+### 22.2 Page Collection mise a jour
+- **Hero** : nouvelle image `/villas/celestia/gallery-01.jpg`
+- **Manifesto** : statement editorial centre + ligne graphique bleu marine + texte declaratif ("A private collection. The rest is a conversation.")
+- **Grille 5 villas** :
+  - **Villa You & Me** (full-width banner) — specs `900 m² · Up to 20 Guests · Seafront` — lien `/collection/you-and-me`
+  - **Villa Celestia** (full-width banner) — specs `950 m² · Up to 18 Guests · Seafront` — lien `/collection/celestia`
+  - **Aegean Residence** (Porto Heli), **Aegean Essence** (Crete), **Seafront Sanctuary** (Porto Heli) — cards standard, lien `/contact?type=stay&villa={slug}` (placeholder, pas de fiche dediee)
+- **Bandeau By Introduction** : image `/photo bandeau_page Collection.jpg` + "Private residences. By introduction."
+- **Bloc yacht** : inchange (33m Italian yacht, CTA `?type=stay&stay=yacht`)
+- **CTA final** : "A stay begins with a conversation." + "Start the conversation →"
+- **Fix** : retire du duplicate "seafront" sur la description de la card You & Me (card text "A private estate above the Aegean.", specs "Seafront")
+
+### 22.3 Fiche villa — template `/collection/[slug]/page.tsx`
+Template unique qui lit `villaDetails[slug]` depuis `app/data/villa-details.ts`. 2 villas actives : you-and-me + celestia.
+
+**Ordre des sections (scroll flow) :**
+
+| # | Section | Contenu |
+|---|---|---|
+| 1 | Hero | image full dvh (min-h-600px) + pill "The Collection" + H1 name (Anton) + location + **CTA "Enquire about this villa →"** + key-facts strip bas (4 cells : Size · Bedrooms · Bathrooms · Guests, **PAS de prix**) |
+| 2 | Intro | **Tagline editorial H2 bleu** (22-32px) + pill small-caps `introLabel` (ex: "A Seafront Estate") + trait bleu + body prose centre max-640 |
+| 3 | Gallery | grid 2-col mobile / 3-col desktop, `eb-image-settle` + hover zoom 3.5%, lightbox au click |
+| 4 | The Villa | architecture prose V1 (pill + trait + body centre) |
+| 5 | The Estate | amenities en 2 colonnes centrees comme bloc : **Indoors** (premier) / **Outdoors** (second), items text-left align |
+| 6 | The Location | prose V1 |
+| 7 | On Request | pill "On Request" + liste services dot-separated (sobre, single row prose) |
+| 8 | Price + Availability | "From €X / night" (15-17px normal) + italic "Stays from 3 to 5 nights. Dates and rates confirmed at inquiry." |
+| 9 | CTA Final | image bg + H2 "Stay here?" (Anton, 38-64px) + villa.card.tagline + "Start the conversation →" (lien `/contact?type=stay&villa={slug}`, **plus de mailto**) |
+| 10 | Adjacent villa | cross-sell **sous le CTA** (sortie douce "if not this, then next door") |
+| 11 | Back to the Collection | lien discret ← (**remplace NextChapter silos**) |
+| 12 | Footer | standard |
+
+**Sections retirees vs versions anterieures :**
+- Seasonal Windows (retire 24/04, info non essentielle, sera donnee a l'inquiry)
+- Sticky CTA bouton bleu fixed (teste + retire, "tres moche e-commerce")
+- Concierge 2-col grid (tente + revert sur dot-separated V1 sobre)
+- NextChapter silos generiques (retire, remplace par "Back to the Collection")
+
+### 22.4 VillaDetail data model (app/data/villa-details.ts)
+
+```ts
+interface VillaDetail {
+  slug, name, location, region
+  card: { tagline, specs, priceFrom, combinableWith }
+  introLabel?: string  // custom pill label (ex: "A Seafront Estate")
+  tagline?: string     // editorial H2 blue (ex: "Ten rooms above the open Aegean.")
+  intro, theHouse, theLocation (prose)
+  keyFacts: { size?, bedrooms?, bathrooms?, guests, minStay, priceFrom }
+  amenities?: { outdoor[], residence[] }
+  adjacent: { slug, name, line }
+  seasons[] (data present mais section retiree du template)
+  services[]
+  cover, gallery[]
+  mailtoSubject (legacy, plus utilise depuis migration /contact)
+}
+```
+
+### 22.5 Villa You & Me — donnees finales validees
+
+- **Location** : Aleomandra, Mykonos
+- **Key facts** : 900 m² / 10 bedrooms / 10 en-suite bathrooms / Up to 20 guests / From €6,500 / night / min stay 3 nights (5 in peak)
+- **introLabel** : "A Seafront Estate"
+- **tagline** : "Ten rooms above the open Aegean."
+- **Intro prose** : "A 900 m² residence on the western coast of Mykonos, facing the open Aegean. Two levels, two independent wings. Ten bedrooms, twin infinity pools blending into the horizon. Designed for extended families and private gatherings." (retire "newly built" le 24/04 apres correction Emma : **c'est Celestia qui est neuve, pas You & Me**)
+- **theHouse** : "Natural materials, earthy tones, architecture in harmony with the landscape. Each wing runs independently, its own kitchen, its own living area. Two jacuzzis, an open-air fireplace for the evenings, a private gym. Ten en-suite bedrooms, nothing in excess."
+- **theLocation** : "Villa You & Me sits on Mykonos's quieter western coast, where the Aegean opens out and sunset is a daily fixture. Minutes by car from Chora, the harbour, and the tables worth the drive. Close to everything. Not of it."
+- **Amenities** :
+  - Indoors : 10 en-suite bedrooms / 2 independent living wings / 2 fully equipped kitchens / Private gym (deplace depuis Outdoors le 24/04) / Daily housekeeping / AC / Wi-Fi smart TV Sonos / Laundry, safes, welcome refreshments
+  - Outdoors : 2 infinity pools / 2 jacuzzis / Open-air fireplace / BBQ area / Expansive sea-view terraces
+- **Gallery** : 15 photos (cover.jpg duplicate de gallery-03.jpg note, gallery-02 "porte" retire, gallery-16 cuisine ajoutee ; dossier source `/public/VILLA IMAGES/VILLA01_YOU & ME/` contient 89 photos dont 72 non utilisees pour futures additions)
+
+### 22.6 Villa Celestia — donnees 24/04 (base PDF descriptif officiel)
+
+- **Location** : Mykonos (PDF mentionne "prime location on Mykonos, 200m from Glyfadi Beach" — **a clarifier avec Emma** si Aleomandra ou Glyfadi, et si le concept "adjacent/combinable with You & Me" tient)
+- **Key facts** : 950 m² / 9 bedrooms (6 first level + 3 masters upper) / 9 en-suite bathrooms / Up to 18 guests / From €7,300 / night
+- **introLabel** : "A Seafront Residence"
+- **tagline** : "Stone, light, and the open sea."
+- **card.tagline** : "A brand-new stone villa, 200m from the sea."
+- **card.specs** : "950 m² · Up to 18 Guests · Seafront"
+- **Intro prose** : "A brand-new 950 m² stone villa on Mykonos, 200 metres from Glyfadi Beach. Built to bioclimatic principles. Nine en-suite bedrooms across two levels, twin infinity pools, a home cinema, an indoor gym. Designed around the light and seamless indoor-outdoor living."
+- **theHouse** : "Natural stone, modern luxury, bioclimatic design. Two indoor lounges, four outdoor. A fully equipped kitchen, a home cinema, an indoor gym. Twin infinity pools across two levels, two outdoor jacuzzis. A fire pit for evening gatherings. Nine en-suite bedrooms, six on the first level, three masters above."
+- **theLocation** : "A prime corner of Mykonos, 200 metres from Glyfadi Beach. Removed from the island's busier edges, yet minutes from the sea. Quiet, exclusive, and never crowded."
+- **Amenities** :
+  - Indoors : 9 en-suite bedrooms / 2 indoor + 4 outdoor lounges / fully equipped kitchen / Home cinema / Indoor gym / Sonos / Daily housekeeping / AC / Wi-Fi cable & smart TV / Laundry welcome refreshments
+  - Outdoors : 2 infinity pools across two levels / 2 outdoor jacuzzis / Outdoor fire pit / BBQ facilities / Multiple lounge & sunbathing areas / Expansive sea-view terraces
+- **Gallery** : 12 photos (photos existantes, non mise a jour avec le dossier source `/public/VILLA IMAGES/VILLA02_VILLA CELESTIA/` — 33 photos source dispo pour future integration)
+- **Services** : heritage (Private chef / Private transfers / Yacht charter / Reservations / Event production) — PDF precise "Private chef, catering, and concierge services available upon request"
+
+### 22.7 Wording decisions 24/04 (apres nombreuses iterations)
+
+- **Section architecture** : **"The Villa"** (etait "The House")
+- **Section amenities** : **"The Estate"**
+- **Colonnes amenities** : **Indoors** / **Outdoors** (symetriques, etait "The Residence" / "Outdoor & Wellness" — asymetrique)
+- **Ordre colonnes** : Indoors EN PREMIER (la villa est le produit principal), Outdoors en second
+- **Section services** : **"On Request"** (etait "Services on Request" — plus court, plus luxe)
+- **Section location** : **"The Location"**
+- **Section adjacent** : **"Adjacent villa"** — deplace **SOUS le CTA final** (cross-sell sortie, pas avant l'action principale)
+- **CTA Hero** : "Enquire about this villa →" (coherent avec le vocabulaire inquiry)
+- **CTA Final H2** : "Stay here?" (etait "A stay begins with a conversation." — 2 x "conversation" redondant ; "Ready to begin?" juge trop abstrait par Emma pour louer une maison a Mykonos)
+- **CTA Final button** : "Start the conversation →" (inchange, pattern brand)
+- **Availability note** : "Stays from 3 to 5 nights. Dates and rates confirmed at inquiry." (etait "Minimum stay 3–5 nights. Availability shifts by the week. Exact dates and rates confirmed at inquiry." — simplification apres feedback Emma "les footballers ne comprendront pas 3-5")
+
+**Testees + retirees (preference Emma V1 classic) :**
+- Storytelling labels (Facing west, By design, Everything in place, Above the open sea, On request, Through the year, Next door) → revert au pattern classic
+
+### 22.8 Strategie prix (psychologie 24/04)
+
+Prix **retire du hero** et place **juste avant le CTA final** (decision post-debat strategique Emma + Claude le 24/04).
+
+**Rationale** : pattern luxe classique "dream first, price last". Benchmark Aman / Le Collectionist / Belmond cachent tous le prix du hero. Au moment ou le prix apparait (apres gallery, architecture, location), le visiteur a deja tombe amoureux de la villa → le prix devient confirmation, pas filtre.
+
+**Render :** `From €6,500 / night` (15-17px normal) + italic grise `Stays from 3 to 5 nights. Dates and rates confirmed at inquiry.`
+
+Fonctionne pour les 3 personas cibles :
+- UHNW : zero impact (ils checkent pas le prix)
+- HNW : transparence rassurante (pas de surprise)
+- Footballeur / high earner : badge de fierte (voir le prix excite plutot qu'autre chose)
+
+### 22.9 Cascade CTAs (3 niveaux sur la fiche)
+
+1. **CTA Hero** : "Enquire about this villa →" — immediat visible, conversion possible en 5s
+2. **CTA Mid page** : aucun (volontaire, pas de sales pushy, le contenu fait le travail)
+3. **CTA Final bas** : H2 "Stay here?" + tagline + "Start the conversation →" pointe vers `/contact?type=stay&villa={slug}` (form StayForm avec villa pre-remplie via query param, coherent Contact V3)
+
+**Retire** : sticky CTA bouton bleu bottom-right (teste + retire car "moche style e-commerce")
+
+### 22.10 Mobile polish + animations canoniques (pattern fiches journey)
+
+- **2e IntersectionObserver** ajoute : observe `.eb-image-settle` / `.eb-fade-up` / `.eb-fade-in`, ajoute `.eb-visible` au viewport entry
+- **`eb-image-settle`** sur : hero cover, 15 images gallery, CTA final cover → scale 1.08 → 1 sur 1500ms cubic-bezier
+- **`eb-image-vignette`** sur CTA final (ombre interne 4 cotes)
+- **Hover zoom** 3.5% sur gallery via `@media (hover: hover)` (desactive tactile)
+- **Hero image** : `object-[center_30%] md:object-center` (evite couper sujet mobile portrait)
+- **Hero h1** : `text-[38px] sm:text-[52px] md:text-[88px] leading-[0.95] sm:leading-[0.92] text-balance`
+- **Hero location** : `whitespace-nowrap`
+- **Hero** : `min-h-[600px]` garanti (evite ecrasement sous nav iOS)
+- **Key facts strip** : padding compact mobile `px-5 py-4` → `px-6 py-6` desktop
+- **Intro tagline** : `text-[22px] md:text-[32px] text-balance` (evite overflow iPhone SE)
+- **CTA final image** : `object-[center_35%] md:object-center`
+- **CTA final h2** : `text-[38px] md:text-[64px]` + `object-[center_35%]`
+- **Paddings** : alignes sur pattern fiche journey (`px-6 md:px-8` mid, `px-6 md:px-10` CTA)
+
+### 22.11 Points de vigilance (a clarifier / completer)
+
+- **Location Celestia** : PDF dit "200m de Glyfadi Beach" (nord de Mykonos), donnees actuelles disaient "Aleomandra" (SW de Mykonos). Le concept "combinable with You & Me / 38 guests si ouvert ensemble" presuppose adjacence physique. **A confirmer par Emma** si (a) les 2 villas sont bien adjacentes et l'une des locations est fausse, ou (b) elles ne sont PAS adjacentes et il faut retirer la cross-sell "Adjacent villa"
+- **Photos Celestia** : 12 photos actuelles dans `/public/villas/celestia/` (alt text genre, pas valides visuellement). Dossier source `/public/VILLA IMAGES/VILLA02_VILLA CELESTIA/` contient 33 photos — migration pas encore faite.
+- **Photos You & Me — pieces manquantes** : salon interieur (ask Emma prio 1), BBQ area, fireplace close-up, dining room interior. Dossier source contient 72 photos non utilisees, recherche continue.
+- **m² des 3 villas placeholders** : Aegean Residence / Aegean Essence / Seafront Sanctuary affichent toujours "X Bed · X Guests · Seafront" — manquent les m² pour aligner avec le pattern "m² · Guests · Seafront" des 2 villas reelles.
+- **Celestia card.tagline** : "A brand-new stone villa, 200m from the sea." (a valider par Emma, pas teste encore)
+
+---
+
+*Fin de section 24/04/2026. Villa You & Me et Villa Celestia ont leur fiche dediee avec donnees reelles du PDF descriptif, DA luxe alignee sur le brand eb., mobile polish complet + animations. 3 points de vigilance listes section 22.11 pour la prochaine session.*
+
+---
+
+## 23. Session 27/04/2026 — Collection v5 + Contact V4 + sitewide polish
+
+### 23.1 +3 fiches villa publiques (Esmeralda, Tourlos Breeze, Santorini Estate)
+
+3 nouvelles fiches creees sur `/collection/[slug]` en utilisant le template existant. Contenu **strictement synthetise depuis les PDFs descriptifs Emma** (regle no-impro confirmee). Photos copiees depuis `/public/VILLA IMAGES/MYKONOS/VILLA0X_*` ou `/public/VILLA IMAGES/SANTORIN/SANTORINI ESTATE/`.
+
+**Villa Esmeralda — Mykonos** (10 bed / 20 guests / 600 m² / From €4,515)
+- `card.specs` : "600 m² · 10 Bed · Up to 20 Guests · Beachfront"
+- `introLabel` : "A Beachfront Estate"
+- `tagline` : "A minute from the sand. Delos in the distance."
+- Architecture : 3 etages, main house + lower wing avec entree separee, 2 piscines, 2 cuisines, marble bathrooms, fireplace, BBQ, top-floor jacuzzis privatifs
+- `theLocation` : beachfront secluded bay, Ornos + Agios Ioannis a proximite, 15 min Mykonos Town
+- Gallery 14 photos (selection finale Emma 27/04 : 8.8 first / 8.5-2 second / 198.5 / 186.5 / 121.7 / 121.5 / 121.4 / 62.8 / 62.3 / 21.8-1 / 20.2 / 3.4-1 / 3.1-1 / 2.5-2)
+- Cover : `1.4.jpg` (golden sunset infinity pool, 1620×1080 — limite source HD)
+
+**Villa Tourlos Breeze — Tourlos, Mykonos** (8 bed / 16 guests / 840 m² / From €5,015)
+- `card.specs` : "840 m² · 8 Bed · Up to 16 Guests · Sea View"
+- `introLabel` : "A Hillside Villa"
+- `tagline` : "Tourlos, the harbour, the Cyclades unfolding from the terrace."
+- Architecture : 4 niveaux descendant la colline, 8e bedroom isolee au niveau de l'eau avec lounge circulaire + outdoor fireplace, indoor gym, kitchen avec skylight sculptural
+- `theLocation` : Tourlos west Mykonos, vues sur harbour + chora + Delos/Rhenia/Tinos/Syros/Paros
+- Gallery 15 photos : pink sunset pool, exterieur twilight, terrasse+chora, infinity pool day, sunset over chora, fire pit night with town lights, outdoor kitchen+pool twilight, sunken outdoor lounge cinema TV, master bedroom, **gym (28.png)**, bedroom grey accent, **lit pool/bar at night (11.8.jpg)**, earth-toned bathroom, aerial, **stone-cave dining niche (11.6.jpg)**
+- **Cruise-ship line strippee** du `intro` : la phrase "ideally for unbeatable views of the cruise ships navigating their way" du PDF original a ete reformulee pour omettre cette mention (regle no-cruise-ships).
+- **Photos 29.jpg + 45.1-1.jpg + 2401.jpg exclues** car bateaux de croisiere visibles dans la baie.
+- `keyFacts.bathrooms` : "8 en-suite" (inference luxe, PDF implique mais ne le dit pas explicitement — a confirmer par Emma)
+
+**Santorini Estate — Messaria, Santorini** (5 suites / 10 guests / Two acres / From €7,615)
+- `card.specs` : "5 Suites · Up to 10 Guests · Caldera View"
+- `introLabel` : "A Caldera Estate"
+- `tagline` : "A thousand feet above the caldera, the volcano at the horizon."
+- Architecture : 1,000-foot cliff au-dessus du caldera, 2 acres, 5 suites independantes, interiors par **Paola Navone** avec **Rubelli of Venice** + **Stella of Italy**, walls with local Santorini stone, floating fireplaces, heated plunge pools per suite, outdoor whirlpools, radiant heated floors
+- `theLocation` : Messaria edge of caldera, volcano Nea Kameni en face, sunset views sans crowd
+- Gallery 15 photos dont **outdoor cinema + firepit (21.jpg, remplace marble hammam au tour 27/04)**, **jacuzzi at sunset (9.jpg, remplace bathroom decoratif)**, infinity pool + caldera, breakfast pergola, candlelit dinner sunset, white Cycladic suite, outdoor lounge volcanic stone, sculptural lattice screen, wine cellar, twin oval mirrors washroom
+- `keyFacts.size` : "Two acres" (PDF n'a pas de m² du bati, seul 2-acre estate disponible)
+- Pas de photo exterieure de la maison disponible dans le dossier source (confirme par Emma)
+- **"Private event space"** non utilise dans la copie : aligne sur "Private candlelight dinners arranged across the estate" du PDF officiel
+- Operating period : April 1 – November 30 (inclus dans `seasons` "Open Season")
+- Resident host + executive chef + spa avec hammam + wine cellar + outdoor kitchen avec wood-fire pizza oven + chapelle privee + outdoor cinema
+
+### 23.2 Adjacent villa restriction (You & Me ↔ Celestia uniquement)
+
+**Decision Emma 27/04** : la cross-sell "Adjacent villa" en bas de fiche n'a de sens **que** pour les villas physiquement voisines. Concretement :
+- You & Me ↔ Celestia (Aleomandra, Mykonos, voisines reelles avec combinabilite 38 guests) : **garde** la cross-sell
+- Esmeralda, Tourlos Breeze, Santorini Estate : **adjacent retire** dans la data
+
+**Type model** : `VillaDetail.adjacent?` rendu optionnel. Le rendu dans `[slug]/page.tsx` est conditionnel : `{villa.adjacent && (...)}`. Pas d'erreur si undefined.
+
+### 23.3 Celestia gallery refonte 27/04
+
+Gallery refondue pour matcher la regle "must show signature features" :
+- **gallery-08** : `36.jpg` (stone entryway banana trees) → `4.jpg` (**indoor gym** — cible footballers)
+- **gallery-11** : `11.jpg` (stone bathroom open shower) → `3.jpg` (aerial twin pools illuminated at dusk)
+- **gallery-13/14/15** ajoutees au tour precedent : pergola sun loungers, twin pools day, wine cellar
+- Badge `New for 2026` ajoute hero (pill bleu brand) + card collection list (top-left)
+
+### 23.4 Yacht banner /collection — refonte complete
+
+**Probleme** : ancienne image `/yatch_page collection.jpg` ressemblait a une terrasse de resort Maldives (deck en bois + cushions au-dessus de l'eau). Aucun yacht visible.
+
+**Fix** :
+- Image swap → `/yatch on board.jpg` (editorial : personne en blanc sur le gangway, coque visible droite, mer ouverte gauche). Vertical 3:4 mais object-cover + `object-[center_30%]` preserve le sujet.
+- Bloc deplace **AU-DESSUS** du bloc Private Introduction (Emma : "ça arrive trop bas, on perd le yacht").
+- Phrase fausse "The only one of her kind available for charter in Greece" supprimee.
+- CTA "Inquire about the yacht" pointe vers `/contact?type=stay&stay=yacht` (nouveau handling, voir 23.5.B).
+
+Nouveau ordre des blocs sur `/collection` :
+1. Hero
+2. Manifesto
+3. Grille des 8 villas (5 reelles + 3 placeholders)
+4. Citation "The right house changes the week."
+5. **Yacht (deplace ici)**
+6. **Private Circle / By Introduction (deplace apres yacht)**
+7. CTA final + price floor "Villas from €1,000 / night"
+
+### 23.5 Contact V4 — preselect villa + preselect yacht
+
+**A. Villa preselect** (`?type=stay&villa={slug}`) — etait deja en place mais clean-up de la session :
+- `typeLabel` : "Enquiry · {villa.name}" (etait "Villa or Yacht · {slug}" — slug brut visible)
+- `title` H1 : "About this villa." (etait "A place to land.")
+- `intro` : "Tell us your dates and your party. We come back with availability and the next steps."
+- Section 02 "What are you looking for" Villa/Yacht/Both **cachee** (pre-determinee)
+- Encart "Villa of interest" locked : nom de la villa + bouton "Change" (etait TextInput editable affichant le slug — UX laide)
+- Question budget Villa **cachee**, encart price affiche : "{villa.priceFrom}. Final dates and rates confirmed at inquiry."
+- Section 02 "Bedrooms (minimum)" **cachee** (nb chambres connu)
+- Section 03 titre : "Anything else." (etait "Your vision.")
+- Vision text **optionnelle** (pas de minimum 60 chars), label "Tell us anything we should know"
+- Submit : **"Send my enquiry"** (etait "Share your vision" — vire wedding-planner cliche)
+
+**B. Yacht preselect** (`?type=stay&stay=yacht`) — NOUVEAU 27/04 :
+- `typeLabel` : "Enquiry · Private Yacht Charter" (etait "Villa or Yacht" — confus apres clic yacht)
+- `title` H1 : "Charter the yacht."
+- `intro` : "Tell us your dates and your party. We come back with a route and a quote, tailored to the week."
+- `data.interest` auto-set a "Yacht" via `searchParams.get("stay") === "yacht"`
+- Section 02 "What are you looking for" Villa/Yacht/Both **cachee**
+- Encart "Charter" affiche : "Private Yacht Charter / 33m Italian yacht, four cabins, eight guests, crew of five. Athens-based. Quoted individually."
+- Section 03 yacht note **cachee** (deja dit en haut, evite redondance)
+- Submit : **"Send my enquiry"**
+
+**C. Generic** (no preselect) :
+- Submit : **"Start the conversation"** (etait "Share your vision" depuis le 27/04, applique partout sauf preselect)
+- `villaBudgets` + `journeyBudgets` : em dash retire ("Not sure — let's discuss" → "Not sure, let's discuss")
+
+### 23.6 IntentCards price ranges (3 portes B2C qualifiees)
+
+`/contact` (no preselect) affiche 3 cards "Three ways in" : Journey / Occasion / Stay. Chaque card recoit maintenant un `priceRange` discret en uppercase tracke, sous la description :
+- **A journey** : Journeys from €2,000 / person (matche villaBudgets tier 1)
+- **A moment (Occasion)** : Occasions from €15,000 (matche occasionBudgets tier 2 conservatif)
+- **A place (Stay)** : Villas from €1,000 / night (floor PORTFOLIO, **pas** €6,500 qui est le prix specifique de You & Me — voir memoire `feedback_villa_pricing_floor.md`)
+
+Le visiteur se qualifie avant de cliquer. Type `priceRange?: string` ajoute dans le tableau `portes` interne. Render conditionnel via `{"priceRange" in p && p.priceRange && (...)}`.
+
+### 23.7 Hero overlays sitewide alleges
+
+Audit complet des `bg-black/X` overlays sur images de fond. Reductions appliquees :
+
+| Page | Section | Avant | Apres |
+|---|---|---|---|
+| Home | Hero | /40 | /25 |
+| Home | CTA bandeau | /50 | /35 |
+| Home | CTA final | /40 | /30 |
+| Collection | Hero | /40 | /25 |
+| Collection | "By Introduction" | /55 | /40 |
+| Collection | CTA final | /40 | /30 |
+| Villa fiche | Hero | /40 | /25 |
+| Villa fiche | CTA final | /55 | /40 |
+| Journal | Hero | /40 | /25 |
+| Journal | CTA bandeau | /45 | /35 |
+| Journal | CTA final | /40 | /30 |
+| Influencer | Hero | /40 | /25 |
+| Influencer | Mid + CTA | /40 | /30 |
+| About | Hero | /45 | /25 |
+| Experiences | Hero | /40 | /25 |
+
+**Logique** : heros = /25 (laisser respirer), CTA bandeaus avec textes longs = /35-40, CTA finals courts = /30. Texte blanc reste lisible grace au text-shadow existant. Special case `/contact` hero : top du gradient renforce 10%→40% noir pour que la nav blanche soit lisible avant scroll.
+
+### 23.8 CSS reveal fallback (fix "trous" sur la page)
+
+Probleme : sur connexion lente ou HMR, l'IntersectionObserver JS qui ajoute `.visible` aux elements `.reveal` peut ne pas se declencher → elements restent `opacity: 0` → trous visibles.
+
+Fix dans `globals.css` :
+```css
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  animation: reveal-fallback 0.7s ease-out 2s forwards;
+}
+.reveal.visible { animation: none; }
+@keyframes reveal-fallback {
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+```
+
+Apres 2 secondes, si `.visible` n'a pas ete ajoute par le JS, l'animation CSS prend le relais. Plus de trous possibles meme si l'observer foire.
+
+### 23.9 Mobile polish — fixes specifiques 27/04
+
+- **Hero villa fiche** : `whitespace-nowrap` sur location pill remplace par `text-balance` (evite overflow sur petits ecrans avec longues locations type "Aleomandra, Mykonos")
+- **Key facts strip** : `gap-y-4` → `gap-y-5` (respiration mobile)
+- **Amenities** Indoors/Outdoors : `gap-10` → `gap-8` mobile (densite plus equilibree)
+- **PillChoice + PillMulti** form contact : padding `px-4 py-3` → `px-3 py-2.5` mobile (moins crame, garde min-h-44px tap target)
+- **DateRange** : `gap-4 mobile` → `gap-6` (lisibilite stack vertical)
+- **Encart yacht preselect** : padding adapte mobile/desktop, span → p pour stack proprement
+- **Counter +/-** boutons : reste w-11 h-11 (44px) sur mobile = respect Apple HIG / Material guidelines (audit a refuse l'idee de reduire a 40px)
+
+### 23.10 Anchor `/collection#homes` (back link UX)
+
+Ajout `id="homes"` + `scroll-mt-20` sur la grille des villas dans `/collection`. Le lien "Back to the Collection" en bas des fiches villa pointe maintenant vers `/collection#homes` (etait `/collection` qui ramenait au hero). Le visiteur atterrit sur la grille immediate apres click.
+
+### 23.11 Type model evolutions
+
+`app/data/villa-details.ts` :
+```ts
+interface VillaDetail {
+  // ...
+  card: {
+    tagline: string;
+    specs: string;
+    priceFrom: string;
+    combinableWith?: string;  // optionnel (etait required) — only for sister villas
+  };
+  badge?: string;            // NEW — pill bleu hero ("New for 2026")
+  // ...
+  adjacent?: { ... };         // optionnel (etait required)
+}
+```
+
+`app/collection/page.tsx` (grid) :
+```ts
+type VillaCard = {
+  // ...
+  badge?: string;             // NEW — affichage top-left de la card
+  combinableWith?: string;
+};
+```
+
+5 villas registrees dans `villaDetails` map : `"you-and-me"`, `"celestia"`, `"esmeralda"`, `"tourlos-breeze"`, `"santorini-estate"`.
+
+### 23.12 Memoires d'edition saved (regles permanentes)
+
+Saved dans `~/.claude/projects/-Users-EmmaBonnefous-travel-app/memory/` :
+- `feedback_island_name_sells.md` : toujours citer le nom de l'ile (Mykonos, Paros, Santorini) dans tagline / intro / theLocation / hero / CTA. Jamais "the island" seul. Quote Emma : "le nom de l'ile fait vendre. les clients payent le nom de l'ile au final."
+- `feedback_villa_pricing_floor.md` : floor portfolio = €1,000 / night. €6,500 = prix specifique You & Me. Ne pas confondre.
+- `feedback_mobile_first_check.md` : verifier explicitement le rendu mobile sur **chaque** modification UI/copy. Ne pas se limiter au desktop.
+- `feedback_villa_must_show_features.md` : sur fiche villa, montrer en photo les amenities premium (gym pour footballers, kitchen, hot tub, hammam, chapel, cinema, etc.). Pas plus de 2 photos chambre. Cuisine interieure obligatoire si dispo.
+
+### 23.13 Points de vigilance (clarifications attendues)
+
+Suite a la session 27/04, points en attente :
+- **Esmeralda alt texts** : 9 photos selectionnees par Emma sans description visuelle de ma part (62.8, 62.3, 121.4, 21.8-1, 20.2, 8.5-2, 3.4-1, 198.5 partiel, 8.8). Alt texts genriques "best-effort" — a peaufiner si Emma souhaite SEO precis.
+- **Tourlos Breeze bathrooms** : "8 en-suite" est une inference luxe (PDF dit "spacious bathroom" sans confirmer en-suite generalise). A confirmer Emma.
+- **Cover photos resolutions** : Esmeralda (1.4.jpg) + Tourlos Breeze (2-1.jpg) sont a 1620×1080 (HD seulement, pas 4k). Sur retina mobile + grand ecran le hero peut paraitre soft. Demander aux proprietaires des versions haute res si dispo.
+- **Photos pieces manquantes** : kitchen interieure (Esmeralda non documente), exterior shot Santorini Estate (confirme absent par Emma), gym Esmeralda (non mentionne dans le PDF — pas de gym pour cette villa).
+- **Adjacent You & Me ↔ Celestia** : a confirmer concretement si les 2 villas sont voisines (PDF Celestia dit "200m Glyfadi Beach", PDF You & Me dit "Aleomandra"). Si non adjacentes, retirer la cross-sell.
+
+---
+
+*Fin de section 27/04/2026. Total 5 fiches villa publiques operationnelles, Contact V4 avec 2 preselect modes (villa + yacht), Collection v5 avec yacht banner refait + 3 nouveaux blocs villa, sitewide overlay alleges, IntentCards price-qualified, 4 nouvelles memoires d'edition saved. Prochaine session : peaufiner les alt texts Esmeralda + clarifier les 4 points de vigilance + ajouter d'autres villas si dispo.*

@@ -25,7 +25,7 @@ export default function InfluencerProduction() {
       },
       { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom < 0) { el.classList.add("visible", "done"); } else { revealObs.observe(el); } });
 
     return () => revealObs.disconnect();
   }, []);
@@ -46,7 +46,7 @@ export default function InfluencerProduction() {
           alt="Dinner by the sea, sunset, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-8">
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
@@ -86,7 +86,7 @@ export default function InfluencerProduction() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 p-6 md:p-12 max-w-2xl">
           <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white">
@@ -300,7 +300,7 @@ export default function InfluencerProduction() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-[3] text-center px-6 max-w-[640px]">
           <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
             For Brands &amp; Agencies

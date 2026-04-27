@@ -9,46 +9,105 @@ import NextChapter from "../components/NextChapter";
    VILLA DATA — 5 public residences
    ═══════════════════════════════════════════════════════ */
 
-const villas = [
+type VillaCard = {
+  slug: string;
+  image: string;
+  location: string;
+  name: string;
+  description: string;
+  specs: string;
+  priceFrom?: string;
+  combinableWith?: string;
+  badge?: string;
+  href: string;
+  ctaLabel: string;
+};
+
+const villas: VillaCard[] = [
   {
-    slug: "aegean-residence",
-    image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-    location: "Porto Heli",
-    name: "Aegean Residence",
-    description: "Seven suites above the bay. A tennis court under the pines.",
-    specs: "7 Bed \u00b7 14 Guests \u00b7 Seafront",
+    slug: "you-and-me",
+    image: "/villas/you-and-me/cover.jpg",
+    location: "Aleomandra, Mykonos",
+    name: "Villa You & Me",
+    description: "A private estate above the Aegean.",
+    specs: "900 m\u00b2 \u00b7 Up to 20 Guests \u00b7 Seafront",
+    combinableWith: "Combinable with Villa Celestia",
+    href: "/collection/you-and-me",
+    ctaLabel: "View residence",
   },
   {
-    slug: "aegean-essence",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80",
-    location: "Agios Nikolaos, Crete",
-    name: "Aegean Essence",
-    description: "A minimal coastal home, the sea fifty metres from the door.",
-    specs: "6 Bed \u00b7 11 Guests \u00b7 Seafront",
+    slug: "celestia",
+    image: "/villas/celestia/cover.jpg",
+    location: "Aleomandra, Mykonos",
+    name: "Villa Celestia",
+    description: "Contemporary architecture meeting the open sea.",
+    specs: "950 m\u00b2 \u00b7 Up to 18 Guests \u00b7 Seafront",
+    combinableWith: "Combinable with Villa You & Me",
+    badge: "New for 2026",
+    href: "/collection/celestia",
+    ctaLabel: "View residence",
   },
   {
-    slug: "seafront-sanctuary",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-    location: "Porto Heli",
-    name: "Seafront Sanctuary",
-    description: "Three levels of stone opening onto a quiet Mediterranean bay.",
-    specs: "7 Bed \u00b7 14 Guests \u00b7 Seafront",
+    slug: "esmeralda",
+    image: "/villas/esmeralda/cover.jpg",
+    location: "Mykonos",
+    name: "Villa Esmeralda",
+    description: "A beachfront estate, a minute from the sand.",
+    specs: "600 m\u00b2 \u00b7 10 Bed \u00b7 Up to 20 Guests \u00b7 Beachfront",
+    href: "/collection/esmeralda",
+    ctaLabel: "View residence",
   },
   {
-    slug: "edge-of-sea",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=80",
-    location: "Agios Nikolaos, Crete",
-    name: "Edge of Sea",
-    description: "A private peninsula, its own pier, the Mirabello on every side.",
-    specs: "6 Bed \u00b7 12 Guests \u00b7 Seafront",
+    slug: "tourlos-breeze",
+    image: "/villas/tourlos-breeze/cover.jpg",
+    location: "Tourlos, Mykonos",
+    name: "Villa Tourlos Breeze",
+    description: "Eight bedrooms above the harbour, the Cyclades at your feet.",
+    specs: "840 m\u00b2 \u00b7 8 Bed \u00b7 Up to 16 Guests \u00b7 Sea View",
+    href: "/collection/tourlos-breeze",
+    ctaLabel: "View residence",
+  },
+  {
+    slug: "santorini-estate",
+    image: "/villas/santorini-estate/cover.jpg",
+    location: "Messaria, Santorini",
+    name: "Santorini Estate",
+    description: "Two acres on the caldera. Five suites, a spa, a chapel.",
+    specs: "5 Suites \u00b7 Up to 10 Guests \u00b7 Caldera View",
+    href: "/collection/santorini-estate",
+    ctaLabel: "View residence",
   },
   {
     slug: "silent-coast",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80",
-    location: "Porto Heli, Ververonda",
+    image: "/villas/silent-coast/cover.jpg",
+    location: "Porto Heli, Peloponnese",
     name: "Silent Coast",
-    description: "A master suite with a terrace. A sea that goes quiet by ten.",
-    specs: "6 Bed \u00b7 12 Guests \u00b7 Sea View",
+    description: "Stone, olive trees, and a private beach on the Argolic Gulf.",
+    specs: "6 Bed \u00b7 6 Bath \u00b7 Up to 12 Guests \u00b7 Beachfront",
+    href: "/collection/silent-coast",
+    ctaLabel: "View residence",
+  },
+  {
+    slug: "aegean-residence",
+    image: "/villas/aegean-residence/cover.jpg",
+    location: "Porto Heli, Peloponnese",
+    name: "Aegean Residence",
+    description: "An 8,000 m² estate, three private coves below.",
+    specs: "7 Bed \u00b7 7 Bath \u00b7 Up to 14 Guests \u00b7 Seafront",
+    href: "/collection/aegean-residence",
+    ctaLabel: "View residence",
+  },
+  {
+    slug: "anavissos-lux",
+    image: "/villas/anavissos-lux/cover.jpg",
+    location: "Anavyssos, Athens Riviera",
+    name: "Anavissos Lux",
+    description: "Five pools, a wellness wing, twenty metres from the sand.",
+    specs: "700 m\u00b2 \u00b7 6 Bed \u00b7 Up to 12 Guests \u00b7 Sea View",
+    priceFrom: "Price on request",
+    badge: "Off Market",
+    href: "/collection/anavissos-lux",
+    ctaLabel: "View residence",
   },
 ];
 
@@ -77,7 +136,16 @@ export default function CollectionPage() {
       },
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => {
+      // Si l'element est deja scrollped past au mount (ex: arrivee via #homes),
+      // le marquer visible immediatement plutot que de l'observer (sinon "trou")
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        el.classList.add("visible", "done");
+      } else {
+        revealObs.observe(el);
+      }
+    });
 
     return () => revealObs.disconnect();
   }, []);
@@ -91,19 +159,19 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1920&q=80"
-          alt="Luxury villa infinity pool overlooking the Aegean"
+          src="/villas/celestia/gallery-01.jpg"
+          alt="Private residence above Mykonos at dusk"
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/25 pointer-events-none" />
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
           <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Collection
           </span>
           <h1
-            className="reveal font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[36px] sm:text-[52px] md:text-[88px] leading-[1.05] sm:leading-[0.95] text-white uppercase text-balance px-2"
             data-delay="100"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
@@ -114,7 +182,7 @@ export default function CollectionPage() {
             data-delay="200"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Villas that rarely appear online. One yacht, based in Athens.
+            Villas that rarely appear online. Yachts across the Greek coast.
           </p>
         </div>
 
@@ -122,9 +190,10 @@ export default function CollectionPage() {
           type="button"
           onClick={() => exploreRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 animate-bounce transition-opacity cursor-pointer"
+          className="absolute left-1/2 -translate-x-1/2 z-20 opacity-60 hover:opacity-100 active:opacity-100 animate-bounce transition-opacity cursor-pointer p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
+          style={{ bottom: "max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem))" }}
         >
-          <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-6 h-6 text-white pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </button>
@@ -157,15 +226,15 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3 — THE HOMES (grille unique, 5 villas)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6">
+      <section id="homes" className="bg-[#fcf7f1] px-6 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6 scroll-mt-20">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-x-8 md:gap-y-10">
             {villas.map((villa, i) => (
               <a
                 key={villa.slug}
-                href={`/contact?type=stay&villa=${villa.slug}`}
+                href={villa.href}
                 className={`reveal group block relative overflow-hidden ${
-                  i === 4 ? "md:col-span-2 aspect-[3/2] md:aspect-[5/2]" : "aspect-[3/2]"
+                  i < 2 ? "md:col-span-2 aspect-[4/5] md:aspect-[5/2]" : "aspect-[3/4] md:aspect-[3/2]"
                 }`}
                 data-delay={String((i % 2) * 100)}
               >
@@ -175,7 +244,12 @@ export default function CollectionPage() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-40% to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 via-30% to-transparent" />
+                {villa.badge && (
+                  <span className="absolute top-4 left-4 md:top-5 md:left-5 inline-block px-3 py-1.5 bg-[#2e5a88] rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-medium font-body">
+                    {villa.badge}
+                  </span>
+                )}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
                   <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium font-body">
                     {villa.location}
@@ -193,11 +267,21 @@ export default function CollectionPage() {
                   <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
                     {villa.description}
                   </p>
-                  <p className="mt-3 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/60 font-medium font-body">
+                  <p className="mt-3 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.12em] text-white/60 font-medium font-body">
                     {villa.specs}
                   </p>
+                  {villa.priceFrom && (
+                    <p className="mt-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/55 font-light font-body">
+                      {villa.priceFrom}
+                    </p>
+                  )}
+                  {villa.combinableWith && (
+                    <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.02em] text-white/55 italic font-light font-body">
+                      {villa.combinableWith}
+                    </p>
+                  )}
                   <span className="eb-cta-link mt-4 text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white w-fit font-body">
-                    Request details <span className="eb-cta-arrow">&rarr;</span>
+                    {villa.ctaLabel} <span className="eb-cta-arrow">&rarr;</span>
                   </span>
                 </div>
               </a>
@@ -211,67 +295,18 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] px-6 py-10 md:py-20">
         <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-[#1a1a1a]/50 font-light font-body">
-          The right house changes the week.
+          The right address changes the week.
         </p>
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 4 — THE PRIVATE CIRCLE
+          BLOC 4 — THE YACHT (plein écran image + overlay)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative min-h-[55vh] md:min-h-[65vh] flex items-center">
+      <section data-nav-dark className="relative min-h-[70vh] md:min-h-[90vh] flex items-end">
         <img
-          src="/photo%20bandeau_page%20Collection.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-black/55" />
-
-        <div className="relative z-10 w-full px-6 md:px-12 py-16 md:py-20">
-          <div className="max-w-[600px] mx-auto text-center">
-            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
-              By Introduction Only
-            </span>
-            <h2
-              className="reveal mt-8 font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase"
-              data-delay="100"
-              style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              Private residences. By introduction.
-            </h2>
-            <p
-              className="reveal mt-6 text-white/85 text-[15px] md:text-[16px] leading-[1.7] font-light font-body"
-              data-delay="150"
-              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
-            >
-              Some of our most private residences never appear online. We share them after a first conversation, one address at a time.
-            </p>
-            <p
-              className="reveal mt-6 text-[12px] uppercase tracking-[0.2em] text-white/50 font-light font-body"
-              data-delay="200"
-            >
-              Athens Riviera &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Porto Heli &nbsp;&middot;&nbsp; The Ionian
-            </p>
-            <a
-              href="/contact?type=stay&ref=private-circle"
-              className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
-              data-delay="250"
-            >
-              Request introduction <span className="eb-cta-arrow">&rarr;</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 5 — THE YACHT (plein écran image + overlay)
-      ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative min-h-[85vh] md:min-h-[90vh] flex items-end">
-        <img
-          src="/yatch_page collection.jpg"
-          alt="Private yacht charter in Greek waters"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/yatch%20on%20board.jpg"
+          alt="Private yacht charter, gangway over open Aegean waters"
+          className="absolute inset-0 w-full h-full object-cover object-center md:object-[center_30%]"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -293,7 +328,7 @@ export default function CollectionPage() {
               data-delay="150"
               style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
-              A 33-metre Italian yacht, fresh from 2024 delivery, based in Athens. Four cabins, eight guests, a crew of five. The only one of her kind available for charter in Greece.
+              BESTIA. The only Sanlorenzo SP110 in charter, worldwide. 33 metres, fresh from 2024, Athens-based. Four cabins, eight guests, a crew of five.
             </p>
             <p className="reveal mt-6 text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-white/55 font-medium font-body" data-delay="200">
               33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5 &middot; Athens Based
@@ -302,11 +337,60 @@ export default function CollectionPage() {
               From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
-              href="/contact?type=stay&stay=yacht"
+              href="/collection/bestia"
               className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px] py-3 relative z-[2]"
               data-delay="300"
             >
-              Inquire about the yacht <span className="eb-cta-arrow">&rarr;</span>
+              View the yacht <span className="eb-cta-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 5 — THE PRIVATE CIRCLE
+      ═══════════════════════════════════════════ */}
+      <section data-nav-dark className="relative min-h-[55vh] md:min-h-[65vh] flex items-center">
+        <img
+          src="/photo%20bandeau_page%20Collection.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 w-full px-6 md:px-12 py-16 md:py-20">
+          <div className="max-w-[600px] mx-auto text-center">
+            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
+              By Introduction Only
+            </span>
+            <h2
+              className="reveal mt-8 font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase"
+              data-delay="100"
+              style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              Private residences.<br />By introduction.
+            </h2>
+            <p
+              className="reveal mt-6 text-white/85 text-[15px] md:text-[16px] leading-[1.7] font-light font-body"
+              data-delay="150"
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            >
+              Some of our most private residences never appear online. We share them after a first conversation, one address at a time.
+            </p>
+            <p
+              className="reveal mt-6 text-[12px] uppercase tracking-[0.2em] text-white/50 font-light font-body"
+              data-delay="200"
+            >
+              Athens Riviera &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Porto Heli &nbsp;&middot;&nbsp; The Dodecanese &nbsp;&middot;&nbsp; The Ionian
+            </p>
+            <a
+              href="/contact?type=stay"
+              className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
+              data-delay="250"
+            >
+              Request introduction <span className="eb-cta-arrow">&rarr;</span>
             </a>
           </div>
         </div>
@@ -322,7 +406,7 @@ export default function CollectionPage() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-[3] text-center px-8 max-w-[640px]">
           <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
             Private Stays

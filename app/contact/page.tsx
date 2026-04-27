@@ -27,7 +27,7 @@ function ContactRouter() {
           className="absolute inset-0 w-full h-full object-cover object-[center_55%]"
           fetchPriority="high"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.1) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.4) 100%)" }} />
         <div className="relative z-10 p-6 md:p-16 max-w-3xl">
           <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             Begin a conversation
@@ -67,7 +67,7 @@ export default function ContactPage() {
       },
       { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom < 0) { el.classList.add("visible", "done"); } else { revealObs.observe(el); } });
     return () => revealObs.disconnect();
   }, []);
 

@@ -146,13 +146,21 @@ h1, h2 {
   will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  animation: reveal-fallback 0.7s ease-out 600ms forwards;
 }
 .reveal.visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  animation: none;
 }
 .reveal.visible.done {
   will-change: auto;
+}
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* ═══════════════════════════════════════════

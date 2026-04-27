@@ -161,7 +161,7 @@ export default function SlowHoneymoonPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
-          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">Two islands,<br />two hotels.</h2>
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">One on Milos.<br />One on Folegandros.</h2>
           <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected boutique hotel on Milos. Another on Folegandros. Both chosen quietly, confirmed once we know your dates.</p>
         </div>
       </section>

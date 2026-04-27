@@ -239,7 +239,7 @@ export default function JourneysPage() {
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom < 0) { el.classList.add("visible", "done"); } else { revealObs.observe(el); } });
 
     return () => revealObs.disconnect();
   }, []);
@@ -356,7 +356,7 @@ export default function JourneysPage() {
             A handful of residences on the island where the eb. studio spends its summers, and the Athenian families have returned to for generations. Reachable by helicopter from Athens. By introduction, only.
           </p>
           <a
-            href="/contact?type=stay&ref=antiparos-introduction"
+            href="/contact?type=stay"
             className="reveal eb-cta-link mt-8 font-body text-white text-[11px] md:text-[12px] uppercase tracking-[0.15em] font-medium"
             data-delay="260"
           >

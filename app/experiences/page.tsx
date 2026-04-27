@@ -94,7 +94,7 @@ export default function Experiences() {
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
-    revealEls.forEach((el) => revealObs.observe(el));
+    revealEls.forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom < 0) { el.classList.add("visible", "done"); } else { revealObs.observe(el); } });
 
     const settleEls = document.querySelectorAll<HTMLElement>(".img-settle");
     const settleObs = new IntersectionObserver(
@@ -126,7 +126,7 @@ export default function Experiences() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <span className="mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Experiences

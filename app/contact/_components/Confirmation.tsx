@@ -19,7 +19,7 @@ export default function Confirmation({ summary }: { summary?: string }) {
           You will hear back from us shortly.
         </p>
         <p className="font-body text-[13px] md:text-[14px] text-[#1a1a1a]/60 mt-10 italic font-light">
-          &mdash; eb.
+          eb.
         </p>
 
         {summary && (

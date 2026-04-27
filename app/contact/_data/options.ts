@@ -2,14 +2,14 @@ export const villaBudgets = [
   "\u20AC1,000 to 3,000 per night",
   "\u20AC3,000 to 7,000 per night",
   "Over \u20AC7,000 per night",
-  "Not sure \u2014 let's discuss",
+  "Not sure, let's discuss",
 ];
 
 export const journeyBudgets = [
   "\u20AC2,000 to 5,000 per person",
   "\u20AC5,000 to 10,000 per person",
   "Over \u20AC10,000 per person",
-  "Not sure \u2014 let's discuss",
+  "Not sure, let's discuss",
 ];
 
 export const yachtBudgets = [
@@ -46,15 +46,34 @@ export const mustHaves = [
   "Pre-stocked pantry",
   "Daily housekeeping",
   "Boat charter",
-  "Helicopter transfers",
 ];
+
+export const journeyMustHaves = [
+  "Private chef",
+  "Driver / transfers",
+  "Kids & childcare",
+  "Security",
+  "Accessibility",
+  "Wellness / yoga",
+  "Boat charter",
+];
+
+export const journeyTitles: Record<string, string> = {
+  "astypalea-before-everyone-else": "Astypalea, Before Everyone Else",
+  "mykonos-timed-right": "Mykonos, Timed Right",
+  "a-slow-honeymoon-in-the-cyclades": "A Honeymoon in the Cyclades",
+  "paros-antiparos-privately": "Paros + Antiparos, Privately",
+  "athens-slowly": "Athens, Slowly",
+  "a-family-summer-greek-style": "A Family Summer, Greek-Style",
+  "a-week-in-the-cyclades-by-sea": "A Week in the Cyclades, By Sea",
+};
 
 export const occasionBudgets = [
   "Under \u20AC15,000",
   "\u20AC15,000 to 50,000",
   "\u20AC50,000 to 200,000",
   "Over \u20AC200,000",
-  "Not sure \u2014 let's discuss",
+  "Not sure, let's discuss",
 ];
 
 export const occasionTypes = [

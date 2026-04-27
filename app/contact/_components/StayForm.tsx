@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import FormOnePage, { Section } from "./FormOnePage";
 import Confirmation from "./Confirmation";
@@ -13,6 +14,7 @@ import {
   flexibilityOptions,
   countries,
 } from "../_data/options";
+import { villaDetails } from "../../data/villa-details";
 
 interface Data {
   name: string;
@@ -57,15 +59,17 @@ const EMPTY: Data = {
 };
 
 const STORAGE_KEY = "eb-contact-stay";
-const VISION_MIN = 60;
+const VISION_MIN = 100;
 
 export default function StayForm() {
   const searchParams = useSearchParams();
   const villaSlug = searchParams.get("villa");
+  const stayPreset = searchParams.get("stay");
+  const isYachtPreselected = stayPreset === "yacht" && !villaSlug;
   const [data, setData] = useState<Data>(() => ({
     ...EMPTY,
     villa: villaSlug || "",
-    interest: villaSlug ? "Villa" : "",
+    interest: villaSlug ? "Villa" : isYachtPreselected ? "Yacht" : "",
   }));
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
@@ -73,9 +77,18 @@ export default function StayForm() {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) setData((d) => ({ ...d, ...JSON.parse(saved) }));
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setData((d) => ({
+          ...d,
+          ...parsed,
+          // URL params always win over saved state
+          ...(villaSlug ? { villa: villaSlug, interest: "Villa" } : {}),
+          ...(isYachtPreselected ? { villa: "", interest: "Yacht", services: [] } : {}),
+        }));
+      }
     } catch {}
-  }, []);
+  }, [villaSlug, isYachtPreselected]);
 
   useEffect(() => {
     try {
@@ -86,22 +99,23 @@ export default function StayForm() {
   const update = <K extends keyof Data>(k: K, v: Data[K]) => setData((d) => ({ ...d, [k]: v }));
 
   const isYacht = data.interest === "Yacht";
-  const showVillaBudget = data.interest === "Villa" || data.interest === "Both";
+  const preselectedVilla = villaSlug ? villaDetails[villaSlug] : null;
+  const showVillaBudget = (data.interest === "Villa" || data.interest === "Both") && !preselectedVilla;
   const showYachtNote = data.interest === "Yacht" || data.interest === "Both";
 
   const missing: string[] = [];
   if (!data.name.trim()) missing.push("your name");
   if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
   if (!data.interest) missing.push("villa or yacht");
-  if (!data.startDate || !data.endDate) missing.push("travel dates");
-  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
+  if (!data.startDate || !data.endDate) missing.push(isYacht ? "charter dates" : "travel dates");
+  if (!preselectedVilla && data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
   if (showVillaBudget && !data.budget) missing.push("a villa budget");
   if (!data.consent) missing.push("consent");
   const canSubmit = missing.length === 0;
 
   const buildSummary = () => {
     const lines = [
-      `INQUIRY TYPE: Stay (${data.interest})${villaSlug ? ` \u2014 ${villaSlug}` : ""}`,
+      `INQUIRY TYPE: ${isYacht ? "Charter" : "Stay"} (${data.interest})${villaSlug ? ` - ${villaSlug}` : ""}`,
       `RECEIVED: ${new Date().toISOString()}`,
       "",
       "CLIENT",
@@ -110,16 +124,16 @@ export default function StayForm() {
       `Phone: ${data.phone || "(not provided)"}`,
       `Country of residence: ${data.country || "(not provided)"}`,
       "",
-      "STAY",
+      isYacht ? "CHARTER" : "STAY",
       `Interest: ${data.interest}`,
     ];
     if (data.villa) lines.push(`Villa of interest: ${data.villa}`);
     lines.push(
       `Dates: ${data.startDate} to ${data.endDate}${data.flexibility ? ` (flex: ${data.flexibility})` : ""}`,
-      `Party: ${data.adults} adults, ${data.kids} kids${data.kids > 0 && data.kidsAges ? ` (ages: ${data.kidsAges})` : ""}`,
+      `Party: ${data.adults} ${isYacht ? "guests" : "adults"}, ${data.kids} ${isYacht ? "children" : "kids"}${data.kids > 0 && data.kidsAges ? ` (ages: ${data.kidsAges})` : ""}`,
     );
     if (!isYacht) lines.push(`Bedrooms min: ${data.bedrooms}`);
-    lines.push(`Services must-have: ${data.services.join(", ") || "(none flagged)"}`);
+    if (!isYacht) lines.push(`Services must-have: ${data.services.join(", ") || "(none flagged)"}`);
     if (showVillaBudget) lines.push(`Villa budget per night: ${data.budget}`);
     if (showYachtNote) lines.push(`Yacht: on request (quoted individually)`);
     lines.push(
@@ -140,7 +154,7 @@ export default function StayForm() {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
     try {
-      const subject = encodeURIComponent(`New Stay inquiry \u2014 ${data.name}`);
+      const subject = encodeURIComponent(`New ${isYacht ? "Charter" : "Stay"} inquiry - ${data.name}`);
       const body = encodeURIComponent(summary);
       const link = document.createElement("a");
       link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
@@ -155,15 +169,34 @@ export default function StayForm() {
 
   return (
     <FormOnePage
-      typeLabel={`Villa or Yacht${villaSlug ? ` \u00b7 ${villaSlug}` : ""}`}
-      title="A place to land."
-      intro="Villas we know in person. Yacht on request. Tell us the feel, we propose the right address."
+      typeLabel={
+        preselectedVilla
+          ? `Enquiry \u00b7 ${preselectedVilla.name}`
+          : isYachtPreselected
+            ? "Charter Enquiry \u00b7 BESTIA"
+            : "Villa or Yacht"
+      }
+      title={
+        preselectedVilla
+          ? "About this villa."
+          : isYachtPreselected
+            ? "A week aboard BESTIA."
+            : "A place to land."
+      }
+      intro={
+        preselectedVilla
+          ? "Tell us your dates and your party. We come back with availability and the next steps."
+          : isYachtPreselected
+            ? "Tell us your dates, your guests, and what the week should feel like. We come back with a proposed itinerary and a tailored quote."
+            : "Villas we know in person. Yacht on request. Tell us how you want to live the week, we propose the right address."
+      }
+      submitLabel={preselectedVilla || isYachtPreselected ? "Send my enquiry" : "Start the conversation"}
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
       currentType="stay"
     >
-      <Section num="01" title="Who is staying.">
+      <Section num="01" title={isYacht ? "The principal guest." : "Who is staying."}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Full name" required>
             <TextInput value={data.name} onChange={(v) => update("name", v)} placeholder="Your name" autoComplete="name" />
@@ -174,7 +207,7 @@ export default function StayForm() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Field label="Phone" hint="Helpful for quick follow-up">
-            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="+33 6 12 34 56 78" type="tel" autoComplete="tel" />
+            <TextInput value={data.phone} onChange={(v) => update("phone", v)} placeholder="Your phone number" type="tel" autoComplete="tel" />
           </Field>
           <Field label="Country of residence">
             <Select value={data.country} onChange={(v) => update("country", v)} options={countries} placeholder="Select country" />
@@ -182,54 +215,113 @@ export default function StayForm() {
         </div>
       </Section>
 
-      <Section num="02" title="The stay.">
-        <Field label="What are you looking for" required>
-          <PillChoice options={stayInterest} value={data.interest} onChange={(v) => update("interest", v)} name="interest" />
-        </Field>
-        {villaSlug && (
-          <Field label="Villa of interest" hint="Locked from your selection. Leave blank if you changed your mind.">
-            <TextInput value={data.villa} onChange={(v) => update("villa", v)} placeholder="Villa slug" />
+      <Section num="02" title={isYacht ? "The charter." : "The stay."}>
+        {!preselectedVilla && !isYachtPreselected && (
+          <Field label="What are you looking for" required>
+            <PillChoice options={stayInterest} value={data.interest} onChange={(v) => update("interest", v)} name="interest" />
           </Field>
         )}
-        <Field label="Travel dates" required>
+        {isYachtPreselected && (
+          <Field label="Charter">
+            <div className="bg-white border border-[#e8e4de] px-4 py-3 md:px-5 md:py-4">
+              <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/80">
+                BESTIA · Sanlorenzo SP110
+              </p>
+              <p className="mt-1.5 font-body text-[12px] md:text-[13px] text-[#1a1a1a]/55 leading-[1.5] font-light">
+                The only SP110 in charter, worldwide. 33 metres, four cabins, eight guests, crew of five. Athens-based, quoted individually.
+              </p>
+            </div>
+          </Field>
+        )}
+        {preselectedVilla && (
+          <Field label="Villa of interest">
+            <div className="flex items-center justify-between gap-4 bg-white border border-[#e8e4de] px-4 py-3">
+              <span className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/80">
+                {preselectedVilla.name}
+              </span>
+              <button
+                type="button"
+                onClick={() => update("villa", "")}
+                className="font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 hover:text-[#2e5a88] transition-colors"
+              >
+                Change
+              </button>
+            </div>
+          </Field>
+        )}
+        <Field label={isYacht ? "Charter dates" : "Travel dates"} required>
           <DateRange start={data.startDate} end={data.endDate} onChange={(s, e) => { update("startDate", s); update("endDate", e); }} />
         </Field>
         <Field label="Flexibility">
           <PillChoice options={flexibilityOptions} value={data.flexibility} onChange={(v) => update("flexibility", v)} name="flexibility" />
         </Field>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Field label="Adults">
-            <Counter value={data.adults} onChange={(v) => update("adults", v)} min={1} max={30} />
+          <Field label={isYacht ? "Guests" : "Adults"}>
+            <Counter value={data.adults} onChange={(v) => update("adults", v)} min={1} max={isYacht ? 8 : 30} />
           </Field>
-          <Field label="Kids">
-            <Counter value={data.kids} onChange={(v) => update("kids", v)} min={0} max={15} />
+          <Field label="Children">
+            <Counter value={data.kids} onChange={(v) => update("kids", v)} min={0} max={isYacht ? 8 : 15} />
           </Field>
         </div>
         {data.kids > 0 && (
-          <Field label="Kids' ages">
+          <Field label="Children's ages">
             <TextInput value={data.kidsAges} onChange={(v) => update("kidsAges", v)} placeholder="e.g. 4, 7, 11" />
           </Field>
         )}
-        {!isYacht && (
+        {!isYacht && !preselectedVilla && (
           <Field label="Bedrooms (minimum)">
             <Counter value={data.bedrooms} onChange={(v) => update("bedrooms", v)} min={1} max={15} />
           </Field>
         )}
-        <Field label="Services must-have" hint="Optional. Tick what matters.">
-          <PillMulti options={mustHavesData} values={data.services} onChange={(v) => update("services", v)} />
-        </Field>
+        {!isYacht && (
+          <Field label="Services must-have" hint="Optional. Tick what matters.">
+            <PillMulti options={mustHavesData} values={data.services} onChange={(v) => update("services", v)} />
+          </Field>
+        )}
       </Section>
 
-      <Section num="03" title="Your vision.">
-        <Field label="In a few sentences" required hint={`The occasion, the atmosphere, what matters. (min ${VISION_MIN} characters)`}>
-          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="What you're looking for, who's coming, what would make it right..." rows={7} minLength={VISION_MIN} />
+      <Section num="03" title={preselectedVilla ? "Anything else." : isYacht ? "The week, in your words." : "Your vision."}>
+        <Field
+          label={preselectedVilla ? "Tell us anything we should know" : isYacht ? "Tell us about the week" : "In a few sentences"}
+          required={!preselectedVilla}
+          hint={
+            preselectedVilla
+              ? "Optional. The occasion, who's coming, anything that helps us prepare."
+              : isYacht
+                ? `The occasion, the atmosphere, the people aboard. What the week should feel like. (min ${VISION_MIN} characters)`
+                : `The occasion, the atmosphere, what matters. (min ${VISION_MIN} characters)`
+          }
+        >
+          <TextArea
+            value={data.vision}
+            onChange={(v) => update("vision", v)}
+            placeholder={
+              preselectedVilla
+                ? "Add any details about your party or what would make this stay right..."
+                : isYacht
+                  ? "Who's coming, the occasion, the atmosphere on board, dietary preferences, water-toy requests, anything that shapes the week..."
+                  : "What you're looking for, who's coming, what would make it right..."
+            }
+            rows={7}
+            minLength={preselectedVilla ? 0 : VISION_MIN}
+          />
         </Field>
         {showVillaBudget && (
           <Field label="Villa budget per night" required hint="Indicative. Villas start at €1,000 per night.">
             <PillChoice options={villaBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
           </Field>
         )}
-        {showYachtNote && (
+        {preselectedVilla && (
+          <div className="bg-white border border-[#e8e4de] p-5 md:p-6">
+            <p className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/40 mb-2">
+              {preselectedVilla.name}
+            </p>
+            <p className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/70 leading-[1.7] font-light">
+              {preselectedVilla.keyFacts.priceFrom}. Final dates and rates confirmed at inquiry.
+            </p>
+          </div>
+        )}
+        {showYachtNote && !isYachtPreselected && (
           <div className="bg-white border border-[#e8e4de] p-5 md:p-6">
             <p className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#1a1a1a]/40 mb-2">
               Yacht
@@ -244,7 +336,11 @@ export default function StayForm() {
         </Field>
         <div className="pt-2">
           <Checkbox checked={data.consent} onChange={(v) => update("consent", v)}>
-            I agree to be contacted by the eb. team about this inquiry. My details remain private and are never shared with third parties without my consent.
+            I agree to be contacted by the eb. team about this inquiry. My details are governed by our{" "}
+            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-[#2e5a88] transition-colors">
+              privacy policy
+            </Link>
+            .
           </Checkbox>
         </div>
       </Section>
