@@ -9,11 +9,93 @@ Format base sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 ## [Non publie] — A venir
 
 ### En cours
-- Pages detail experiences/villas (catalogue complet ~35 items)
+- Pages detail experiences (catalogue complet ~35 items)
 - Integration Stripe pour paywall $100 "eb. Private Route" + deposit $500
 - Generation PDF automatique "eb. Private Route"
 - Integration CMS Sanity
-- Pages Privacy Policy + Terms
+- Audit complet des autres pages (homepage, /about, /experiences, /journal) avant launch US
+- Lightbox plein ecran sur galleries villa (composant cree dans /components/Lightbox.tsx mais non connecte)
+- WHITE SERENITY (3e villa Porto Heli) — en attente photos d'Emma
+
+---
+
+## [0.8.0] — 2026-04-27
+
+### Ajoute
+- **3 nouvelles fiches villa** :
+  - `/collection/silent-coast` (Porto Heli, 6 ch, 12 guests, From €2,600/nuit, 15 photos)
+  - `/collection/aegean-residence` (Porto Heli, 7 ch, 14 guests, From €3,500/nuit, 14 photos, refonte complete de l'ancienne carte)
+  - `/collection/anavissos-lux` (Athens Riviera, 6 ch, 12 guests, Price on request, 8 photos, badge "Off Market")
+- **Photo galleries optimisees** : ANAVISSOS hero swappee pour la photo des 5 piscines en landscape (rotation 90 d'un original portrait)
+- **Email fallback** sous les 3 IntentCards de /contact (`hello@emmabonnefous.com` discret pour clients recurrents/referrals)
+- **Visual journey card** dans JourneyForm quand un journey est pre-selectionne via `?journey=<slug>` (pattern aligne sur StayForm)
+- **Lien Privacy Policy** dans le consent checkbox des 3 forms (/contact)
+- **Composant `Lightbox`** dans `/components/Lightbox.tsx` — pas encore connecte aux galleries (planifie pour prochaine session)
+
+### Modifie
+- **Audit /contact + CTAs complet pre-launch US** :
+  - Mapping de 60+ CTAs vers /contact dans tout le site
+  - Suppression du parametre orphelin `?ref=` (jamais lu par les forms : private-circle, antiparos-introduction)
+  - Suppression du copy-paste error `?ref=antiparos-introduction` sur le bloc Patmos de /journeys
+  - Suppression de "Helicopter transfers" du `mustHaves` array (contradisait la regle "no air transfers")
+  - Suppression complete du composant `FormShell.tsx` (code mort)
+- **StayForm yacht** : services list nettoyee (chef, captain, etc. sont INCLUDED, pas "on request"), label de section "Onboard" pour yacht / "Services" pour villas (au lieu du faux "On Request" pour tout le monde)
+- **OccasionForm** : budget passe de PillChoice (tiers) a TextInput libre — required pour tous les types d'occasion (avant : seulement Wedding), guests counter sans cap (avant max 200)
+- **JourneyForm** : `journeyMustHaves` separe (pas de pantry/housekeeping qui n'ont pas de sens en multi-stop), titre journey humain au lieu du slug brut, vision min 60 -> 100 chars
+- **Tous les forms** : phone placeholder neutre ("Your phone number" au lieu de "+33 6 12 34 56 78"), em dashes -> hyphens dans subjects mailto et summaries
+- **CTA labels alignes** : "Start the conversation" partout sur les CTAs d'entree (avant : "Begin"), "Send my enquiry" sur les submits finaux
+- **IntentCards** : "Occasions from €15,000" -> "Occasions from €2,000" (Emma : trop cher pour proposal/honeymoon)
+- **Confirmation screen** : suppression de l'em dash dans la signature `eb.`
+- **BESTIA fiche** : prix masque partout ("Price on request" en small italic en bas de fiche), section bas auto-elegante quand priceFrom matches /on request/i
+- **ANAVISSOS** : "shared on introduction" retire de l'intro (formulation lourde), badge `By Introduction Only` -> `Off Market`, CTA "Request introduction" -> "View residence", baseline simplifiee
+- **Santorini Estate** : "Two acres" -> "8,000 m² estate" (qualifier "estate" indispensable pour ne pas confondre avec surface batie)
+- **Silent Coast** : repetitions "Three levels arranged around" supprimees entre intro et theHouse, intro/theHouse/theLocation se completent au lieu de se dupliquer
+
+### Mobile
+- **Hero arrow `/collection`** : tap target 44x44px + safe-area-inset-bottom (evite l'overlap avec la toolbar iOS)
+- **Hero h1 fiches villa** : taille mobile 34px (au lieu de 38px), text-balance, padding lateral
+- **Hero h1 /collection** : text-balance + size step + padding lateral
+- **Hero image fiches** : `object-center` sur mobile (avant `object-[center_30%]` qui cropait mal en portrait)
+- **/collection bloc yacht** : hauteur reduite a 70vh sur mobile (avant 85vh, trop tall)
+- **KeyFacts grid fiches** : gap-y-3 + padding compact sur mobile
+- **HeroFact values** : `leading-tight`, `break-words`, taille 12px mobile (evite overflow sur prix longs)
+- **Cards /collection** : aspect-[4/5] mobile pour les 2 premieres cards (au lieu de 3/2 trop courte) -> resout l'overlap badge "New for 2026" sur Celestia
+- **Cards /collection** : specs en text-9px sur mobile (avant : debordement sur 360px)
+- **Specs Aegean Residence** : ligne raccourcie "An 8,000 m² estate, three private coves below." (47 chars, tient sur 1 ligne) au lieu de l'ancienne 67 chars qui wrappait
+- **StayForm** : bug localStorage corrige (URL params yacht/villa prennent priorite sur les drafts sauves) — avant, naviguer entre /yacht et /villa pouvait mixer les contextes
+
+### Performance
+- **Compression photos** : 73 MB villas + 4 MB yacht + 166 MB autres -> 49 MB + 4 MB + 75 MB (gain 44%, soit 115 MB economises)
+  - Methode : `sips -Z 1920 -s formatOptions 82` (resize max 1920px width + JPEG quality 82)
+  - ANAVISSOS particulierement impacte : 24 MB -> 6 MB (originaux drone 4K)
+  - AEGEAN re-compresse a quality 70 sur les > 600KB
+- **next.config.ts** : `allowedDevOrigins` non ajoute (push direct vers GitHub + Vercel preferred au lieu de tester sur LAN)
+
+### Bugs corriges
+- **Aegean Residence** card : photo card maintenant `/villas/aegean-residence/cover.jpg` (avant : Unsplash generique)
+- **Aegean Residence** photo doublon "37" dans l'ordre Emma : suppression du slot 11 (etait L1877037, doublon avec L1876937)
+- **Aegean Residence** slot 6 swap : dining (file 83) au lieu de cuisine (file 74), kitchen deplacee en slot 13
+- **Silent Coast** photo 7 swap : file 723 (infinity pool golden hour) au lieu de file 235 (path to beach)
+- **Hero "Athens, Greece" sur BESTIA** : contraste renforce (ombre stronger + opacity 100% + size 13/15px) — etait illisible sur la cover sea/yacht tres claire
+- **Repetition Rubelli/Stella** dans Santorini Estate `theHouse` retiree (deja dans l'intro juste au-dessus + cliche "splashed with the colors of the sea")
+- **Quote breath** /collection : "The right house" -> "The right address" (aligne avec le hero "Your address in Greece" + UHNW vocabulary)
+
+### Workflow / Tooling
+- **`push-to-github.js`** : commit message accepte maintenant en argument CLI (`node push-to-github.js "fix mobile nav"`), fallback sur "Deploy eb. website update" si absent
+- **`push-to-github.js`** : dossier `VILLA IMAGES` ajoute a IGNORE (staging local, pas de raison d'etre push)
+- **Backup photos** : copie dans `/tmp/villa-photos-backup/` avant compression (volatile au reboot Mac)
+
+### Memoire
+- Nouvelle entree memoire : `feedback_commit_messages.md` (toujours passer un message descriptif au push script)
+
+### Decisions / Non-action
+- **WHITE SERENITY** : NON ajoute pour l'instant (Emma n'a pas les photos)
+- **AEGEAN ESSENCE** : carte supprimee de /collection (orphan, pointait vers `/contact?type=stay&villa=aegean-essence` sans fiche detail)
+- **SEAFRONT SANCTUARY** : carte supprimee de /collection (idem, orphan)
+- **Silent Coast m²** : laisse vide en attendant info proprietaire (le PDF source ne le donne pas)
+- **UK vs US spelling** : conserve UK ("Personalise", "metres") — positionnement europeen luxe
+- **Prix sur cards Silent Coast / Aegean** : retires (alignement template autres villas, prix uniquement en fin de fiche detail)
+- **Anavissos detail page** : reste accessible via URL (pas masquee), juste signal "Off Market" sur la card
 
 ---
 
