@@ -242,10 +242,17 @@ h1, h2 {
 ═══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
-    opacity: 1;
+    /* Fade-only reveal even with reduced motion (opacity != motion per a11y guidelines).
+       Keep animation fallback so content always appears even if JS observer fails. */
+    opacity: 0;
     transform: none;
-    transition: none;
+    transition: opacity 0.5s ease-out;
     will-change: auto;
+    animation: reveal-fallback 0.5s ease-out 400ms forwards;
+  }
+  .reveal.visible {
+    opacity: 1;
+    animation: none;
   }
   .featured-img {
     transform: none;

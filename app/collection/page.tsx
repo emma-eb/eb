@@ -117,9 +117,6 @@ export default function CollectionPage() {
   const exploreRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {
@@ -244,14 +241,14 @@ export default function CollectionPage() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 via-30% to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 via-40% to-transparent" />
                 {villa.badge && (
-                  <span className="absolute top-4 left-4 md:top-5 md:left-5 inline-block px-3 py-1.5 bg-[#2e5a88] rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-medium font-body">
+                  <span className="absolute top-4 left-4 md:top-5 md:left-5 inline-block px-3 py-1.5 bg-[#2e5a88] rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-medium font-body" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}>
                     {villa.badge}
                   </span>
                 )}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium font-body">
+                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white font-medium font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)" }}>
                     {villa.location}
                   </p>
                   <h3
@@ -259,24 +256,24 @@ export default function CollectionPage() {
                     style={{
                       fontSize: "clamp(26px, 2.8vw, 40px)",
                       letterSpacing: "-0.01em",
-                      textShadow: "0 1px 3px rgba(0,0,0,0.4)",
+                      textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 0 14px rgba(0,0,0,0.4)",
                     }}
                   >
                     {villa.name}
                   </h3>
-                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white/85 font-light max-w-[400px] font-body">
+                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white font-light max-w-[400px] font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                     {villa.description}
                   </p>
-                  <p className="mt-3 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.12em] text-white/60 font-medium font-body">
+                  <p className="mt-3 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.12em] text-white/85 font-medium font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                     {villa.specs}
                   </p>
                   {villa.priceFrom && (
-                    <p className="mt-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/55 font-light font-body">
+                    <p className="mt-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/80 font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                       {villa.priceFrom}
                     </p>
                   )}
                   {villa.combinableWith && (
-                    <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.02em] text-white/55 italic font-light font-body">
+                    <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.02em] text-white/75 italic font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                       {villa.combinableWith}
                     </p>
                   )}
@@ -294,7 +291,7 @@ export default function CollectionPage() {
           BLOC 3.5 — CITATION DE RESPIRATION
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] px-6 py-10 md:py-20">
-        <p className="reveal max-w-[600px] mx-auto text-center text-[18px] md:text-[22px] leading-[1.5] text-[#1a1a1a]/50 font-light font-body">
+        <p className="reveal max-w-[520px] mx-auto text-center text-[14px] md:text-[16px] leading-[1.6] tracking-wide text-[#1a1a1a]/45 font-light italic font-body">
           The right address changes the week.
         </p>
       </section>

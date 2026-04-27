@@ -19,9 +19,6 @@ export default function VillaDetailPage({
 
   /* Reveal + image-settle + fade-up animations — aligned with journey fiches */
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {
@@ -134,11 +131,11 @@ export default function VillaDetailPage({
       {/* ═══════════════════════════════════════════
           HERO — with key facts on the image
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden">
+      <section data-nav-dark className={`relative h-[100dvh] min-h-[600px] w-full overflow-hidden ${isYacht ? "bg-[#1a1a1a]" : ""}`}>
         <img
           src={villa.cover}
           alt={villa.name}
-          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-center"
+          className={`eb-image-settle absolute inset-0 w-full h-full object-center ${isYacht ? "object-contain md:object-cover" : "object-cover"}`}
           sizes="100vw"
           fetchPriority="high"
         />
@@ -179,7 +176,7 @@ export default function VillaDetailPage({
 
         {/* Key facts strip — bottom of hero */}
         <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-white/15 bg-black/25 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)]">
-          <div className={`max-w-[1200px] mx-auto grid grid-cols-2 ${isYacht ? "md:grid-cols-5" : "md:grid-cols-4"} gap-y-3 md:gap-y-5 px-4 md:px-6 py-3 md:py-6`}>
+          <div className={`max-w-[1200px] mx-auto grid grid-cols-2 ${isYacht ? "md:grid-cols-5 [&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:col-span-1" : "md:grid-cols-4"} gap-y-3 md:gap-y-5 px-4 md:px-6 py-3 md:py-6`}>
             {isYacht ? (
               <>
                 {villa.keyFacts.length && <HeroFact label="Length" value={villa.keyFacts.length} />}
@@ -257,7 +254,7 @@ export default function VillaDetailPage({
           <p className="reveal text-center font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium mb-10">
             Gallery
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 [&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:col-span-1">
             {villa.gallery.map((img, i) => (
               <button
                 key={img.src}
@@ -378,11 +375,11 @@ export default function VillaDetailPage({
           <p className={
             /on request/i.test(villa.keyFacts.priceFrom)
               ? "font-body text-[13px] md:text-[14px] text-[#1a1a1a]/55 italic font-light tracking-wide"
-              : "font-body text-[15px] md:text-[17px] text-[#1a1a1a]/75 font-normal"
+              : "font-body text-[13px] md:text-[15px] text-[#1a1a1a]/55 font-light tracking-[0.05em]"
           }>
             {villa.keyFacts.priceFrom}
           </p>
-          <p className="mt-2 md:mt-3 text-[11px] md:text-[12px] leading-[1.6] text-[#1a1a1a]/45 italic font-light font-body">
+          <p className="mt-2 md:mt-3 text-[11px] md:text-[12px] leading-[1.6] text-[#1a1a1a]/40 italic font-light font-body">
             {labels.availabilityNote}
           </p>
         </div>
