@@ -376,12 +376,6 @@ export default function CollectionPage() {
             >
               Some of our most private residences never appear online. We share them after a first conversation, one address at a time.
             </p>
-            <p
-              className="reveal mt-6 text-[12px] uppercase tracking-[0.2em] text-white/50 font-light font-body"
-              data-delay="200"
-            >
-              Athens Riviera &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Porto Heli &nbsp;&middot;&nbsp; The Dodecanese &nbsp;&middot;&nbsp; The Ionian
-            </p>
             <a
               href="/contact?type=stay"
               className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
