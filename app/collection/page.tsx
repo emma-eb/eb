@@ -314,7 +314,7 @@ export default function CollectionPage() {
               Private Yacht Charter
             </span>
             <h2
-              className="reveal font-heading text-white text-[36px] md:text-[72px] leading-[0.95] uppercase max-w-[700px]"
+              className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase max-w-[700px]"
               data-delay="100"
               style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
@@ -403,7 +403,7 @@ export default function CollectionPage() {
             Private Stays
           </div>
           <h2
-            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            className="reveal font-anton font-normal uppercase text-white text-[32px] md:text-[56px] leading-tight mb-6"
             data-delay="80"
             style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
