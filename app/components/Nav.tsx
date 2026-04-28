@@ -110,25 +110,22 @@ export default function Nav({ activePage }: NavProps) {
 
         <a
           href="/contact"
-          className={`hidden md:inline-block text-xs tracking-[0.2em] uppercase border px-5 py-2.5 transition-colors duration-300 ${
-            dark
-              ? "border-[#fcf7f1] text-[#fcf7f1] hover:bg-[#fcf7f1] hover:text-[#1a1a1a]"
-              : "border-[#2e5a88] text-[#2e5a88] hover:bg-[#2e5a88] hover:text-white"
+          className={`eb-cta-link hidden md:inline-flex text-xs tracking-[0.2em] uppercase font-medium ${
+            dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"
           }`}
         >
-          Inquire
+          Inquire <span className="eb-cta-arrow">&rarr;</span>
         </a>
 
         <div className="flex md:hidden items-center gap-3 relative z-50">
           <a
             href="/contact"
-            className={`text-[10px] tracking-[0.2em] uppercase border px-3 py-2.5 transition-colors duration-300 ${
-              dark
-                ? "border-[#fcf7f1] text-[#fcf7f1] bg-black/30"
-                : "border-[#2e5a88] text-[#2e5a88] bg-white/50"
-            } backdrop-blur-sm`}
+            className={`eb-cta-link text-[11px] tracking-[0.2em] uppercase font-medium ${
+              dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"
+            }`}
+            style={dark ? { textShadow: "0 1px 3px rgba(0,0,0,0.5)" } : undefined}
           >
-            Inquire
+            Inquire <span className="eb-cta-arrow">&rarr;</span>
           </a>
           <button
             onClick={() => setOpen(!open)}
