@@ -406,8 +406,6 @@ export default function CollectionPage() {
             </a>
           </div>
           <div className="grid grid-cols-2 md:flex md:flex-wrap gap-x-6 gap-y-2 font-body text-xs tracking-[0.15em] uppercase text-[#fcf7f1]/80 text-center md:text-right md:justify-end order-2 md:order-3">
-            <a href="/journeys" className="hover:text-[#fcf7f1] transition-colors py-2">Journeys</a>
-            <a href="/experiences" className="hover:text-[#fcf7f1] transition-colors py-2">Experiences</a>
             <a href="/influencer-production" className="hover:text-[#fcf7f1] transition-colors py-2">For Brands</a>
             <a href="/journal" className="hover:text-[#fcf7f1] transition-colors py-2">Journal</a>
             <a href="/about" className="hover:text-[#fcf7f1] transition-colors py-2">About</a>
