@@ -168,7 +168,7 @@ export default function VillaDetailPage({
             href={inquireHref}
             className="reveal eb-cta-link mt-8 md:mt-10 font-body text-[12px] md:text-[14px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3 pointer-events-auto"
             data-delay="280"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.5)" }}
           >
             {labels.heroCta} <span className="eb-cta-arrow">&rarr;</span>
           </a>
@@ -415,7 +415,7 @@ export default function VillaDetailPage({
             {labels.ctaFinalH2}
           </h2>
           <p
-            className="reveal font-body text-white text-[15px] md:text-[16px] font-light leading-[1.6] max-w-[420px] mx-auto mb-8 md:mb-10"
+            className="reveal font-body text-white text-[15px] md:text-[16px] font-light leading-[1.6] max-w-[340px] md:max-w-[420px] mx-auto mb-8 md:mb-10 text-balance"
             data-delay="120"
             style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >
