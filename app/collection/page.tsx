@@ -414,21 +414,21 @@ export default function CollectionPage() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-[3] text-center px-8 max-w-[640px]">
           <h2
             className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase mb-6"
             data-delay="80"
-            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}
           >
             A stay begins with a conversation.
           </h2>
           <p
-            className="reveal font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            className="reveal font-body text-white text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
             data-delay="150"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >
-            Tell us what you have in mind, we take it from there.
+            Tell us what you have in mind.
           </p>
           <a
             href="/contact?type=stay"
