@@ -185,7 +185,7 @@ export default function CollectionPage() {
             Not a portfolio. A private network. We know the owners, the coastlines, the houses that deliver and the ones that photograph better than they live. When you reach out, we already know which one is yours.
           </p>
           <p className="reveal mt-8 text-[14px] md:text-[15px] leading-[1.7] text-[#1a1a1a]/55 font-light font-body" data-delay="200">
-            Tell us how you want to live for the week. We know where that is.
+            Tell us how you want to live for the week.<br />We know where that is.
           </p>
         </div>
       </section>

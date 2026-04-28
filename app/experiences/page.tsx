@@ -148,21 +148,21 @@ export default function Experiences() {
               loading="lazy"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
 
-          <div className="relative z-10 p-6 md:p-12 max-w-lg">
+          <div className="relative z-10 px-6 pb-8 pt-6 md:p-12 w-full max-w-[92%] sm:max-w-lg">
             <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
               {exp.pill}
             </span>
-            <h2 className="reveal font-heading text-[32px] md:text-[56px] text-white leading-[0.9] uppercase whitespace-pre-line mb-4" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }} data-delay="100">
+            <h2 className="reveal font-heading text-[28px] sm:text-[36px] md:text-[56px] text-white leading-[0.95] uppercase whitespace-pre-line mb-3 md:mb-4" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }} data-delay="100">
               {exp.title}
             </h2>
-            <p className="reveal font-body text-[14px] md:text-[16px] text-white font-light leading-[1.7] max-w-lg mt-4" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }} data-delay="200">
+            <p className="reveal font-body text-[13px] md:text-[16px] text-white/95 font-light leading-[1.6] md:leading-[1.7] mt-3 md:mt-4" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }} data-delay="200">
               {exp.desc}
             </p>
             <a
               href="/contact?type=occasion"
-              className="reveal eb-cta-link mt-6 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
+              className="reveal eb-cta-link mt-5 md:mt-6 min-h-[44px] font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white"
               data-delay="300"
             >
               {exp.cta}

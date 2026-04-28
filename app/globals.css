@@ -169,6 +169,14 @@ h1, h2 {
   }
 }
 
+/* Remove the persistent blue focus ring left after the user navigates back
+   from a card link. Keep visible focus indication for keyboard navigation. */
+a:focus { outline: none; }
+a:focus-visible {
+  outline: 2px solid rgba(46, 90, 136, 0.55);
+  outline-offset: 2px;
+}
+
 /* ═══════════════════════════════════════════
    PARALLAX IMAGE
 ═══════════════════════════════════════════ */
@@ -396,15 +404,16 @@ h1, h2 {
   position: absolute;
   bottom: -4px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 1px;
   background-color: currentColor;
-  transition: width 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.5;
+  transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .eb-cta-link:hover::after,
 .group:hover .eb-cta-link::after {
-  width: 100%;
+  opacity: 1;
 }
 
 .eb-cta-arrow {
