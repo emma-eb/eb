@@ -157,6 +157,16 @@ h1, h2 {
   opacity: 1;
 }
 
+/* IMPORTANT: override Tailwind .overflow-hidden with overflow:clip.
+   .overflow-hidden makes the element a scroll container, which makes
+   `animation-timeline: view()` measure descendants relative to that
+   container instead of the viewport — freezing scroll-linked animations
+   on elements positioned absolutely inside (e.g. hero overlays).
+   `overflow: clip` clips identically without creating a scroll container. */
+.overflow-hidden {
+  overflow: clip;
+}
+
 @supports (animation-timeline: view()) {
   :where(h1, h2, h3, h4, h5, h6, p, blockquote,
          .reveal, .featured-img, .img-settle) {
