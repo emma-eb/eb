@@ -10,11 +10,23 @@ export default function WeekBySeaPage() {
   const [openDay, setOpenDay] = useState<number | null>(null);
 
   useEffect(() => {
+    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
     const observer = new IntersectionObserver(
-      (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('eb-visible'); }); },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          const delay = parseInt(el.dataset.delay || '0', 10);
+          setTimeout(() => {
+            el.classList.add('visible');
+            setTimeout(() => el.classList.add('done'), 800);
+          }, delay);
+          observer.unobserve(el);
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     );
-    document.querySelectorAll('.eb-fade-up, .eb-fade-in, .eb-image-settle').forEach((el) => observer.observe(el));
+    revealEls.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -52,19 +64,19 @@ export default function WeekBySeaPage() {
       </div>
 
       <section data-nav-dark className="relative w-full h-[75vh] md:h-screen md:min-h-[600px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch_page%20collection.jpg" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-center md:object-[center_60%] eb-image-settle" />
+        <Image src="/yatch_page%20collection.jpg" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-center md:object-[center_60%] reveal" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
-          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 07</div>
-          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] eb-fade-up eb-delay-100">
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 reveal">Private Journey &middot; 07</div>
+          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal eb-delay-100">
             A Week in the Cyclades,<br /> by Sea.
           </h1>
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light eb-fade-up eb-delay-200">One yacht. Seven mornings. The Aegean to yourselves.</p>
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal eb-delay-200">One yacht. Seven mornings. The Aegean to yourselves.</p>
         </div>
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60"><path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
       </section>
 
-      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 eb-fade-up border-t border-[#2e5a88]/10">
+      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 reveal border-t border-[#2e5a88]/10">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
@@ -83,7 +95,7 @@ export default function WeekBySeaPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-12 py-14 md:py-20 bg-white eb-fade-up">
+      <section className="px-6 md:px-12 py-14 md:py-20 bg-white reveal">
         <div className="max-w-[1000px] mx-auto">
           <div className="text-center mb-10 md:mb-14"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Route</div></div>
           <div className="flex flex-col items-center">
@@ -99,9 +111,9 @@ export default function WeekBySeaPage() {
 
       <section className="bg-white py-14 md:py-20">
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-          <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
-          <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
-            <Image src="/reveil%20yatch.jpg" alt="Waking up on a private yacht, Aegean morning" fill sizes="100vw" className="object-cover object-center eb-image-settle transition-transform duration-700 group-hover:scale-105" />
+          <div className="text-center mb-12 md:mb-16 reveal"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
+          <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group reveal eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
+            <Image src="/reveil%20yatch.jpg" alt="Waking up on a private yacht, Aegean morning" fill sizes="100vw" className="object-cover object-center reveal transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Sea</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
@@ -114,7 +126,7 @@ export default function WeekBySeaPage() {
 
       <section className="eb-bg-beige-gradient py-20 md:py-28">
         <div className="max-w-[900px] mx-auto px-6 md:px-12">
-          <div className="text-center mb-12 md:mb-16 eb-fade-up"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Day by Day</div></div>
+          <div className="text-center mb-12 md:mb-16 reveal"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Day by Day</div></div>
           <div className="border-t border-black/10">
             {days.map((day, i) => {
               const isOpen = openDay === i;
@@ -135,29 +147,29 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch%20on%20board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-center eb-image-settle" />
+        <Image src="/yatch%20on%20board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-center reveal" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
+        <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white reveal z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
           <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">On board.</h2>
           <p className="text-[14px] md:text-[17px] leading-[1.7] md:leading-[1.75] opacity-90 font-light">A hand-selected yacht, crewed, with a chef on board. The right vessel matched to your party, confirmed once we know who is sailing.</p>
         </div>
       </section>
 
-      <section className="bg-white py-10 md:py-14 eb-fade-up">
+      <section className="bg-white py-10 md:py-14 reveal">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
           <div className="text-center mb-8 md:mb-10">
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Cyclades at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos%202.jpg" alt="Amorgos cliff and sea" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover reveal" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos%202.jpg" alt="Amorgos cliff and sea" fill className="object-cover reveal" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover reveal" /></div>
           </div>
         </div>
       </section>
 
-      <section className="eb-inner-frame eb-fade-up">
+      <section className="eb-inner-frame reveal">
         <div className="eb-inner-content">
           <div className="max-w-[1100px] mx-auto">
             <div className="text-center mb-12 md:mb-16"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">What&apos;s Included</div></div>
@@ -177,7 +189,7 @@ export default function WeekBySeaPage() {
       </section>
 
       {/* MID CTA — shape this journey */}
-      <section className="bg-white py-14 md:py-16 px-6 md:px-8 eb-fade-up">
+      <section className="bg-white py-14 md:py-16 px-6 md:px-8 reveal">
         <div className="max-w-[680px] mx-auto text-center">
           <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
@@ -192,7 +204,7 @@ export default function WeekBySeaPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 py-14 md:py-20 bg-white eb-fade-up">
+      <section className="px-6 md:px-10 py-14 md:py-20 bg-white reveal">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-10"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">You might also like</div></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
@@ -213,10 +225,10 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch%20page.jpg" alt="Ready when you are" fill className="object-cover eb-image-settle" />
+        <Image src="/yatch%20page.jpg" alt="Ready when you are" fill className="object-cover reveal" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
         <div className="relative z-[3] h-full flex items-center justify-center px-6 md:px-10">
-          <div className="text-center max-w-[640px] eb-fade-in">
+          <div className="text-center max-w-[640px] reveal">
             <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">Yours to shape</div>
             <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
             <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">Tell us when, with whom, and how you want to feel. We shape the rest.</p>
