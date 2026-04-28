@@ -311,13 +311,13 @@ export default function About() {
             ].map((t, i) => (
               <div
                 key={t.name}
-                className="reveal flex flex-col"
+                className="reveal flex flex-col h-full"
                 data-delay={String(i * 80)}
               >
-                <p className="font-body text-[15px] md:text-[16px] leading-[1.7] text-[#1a1a1a]/80 font-light mb-5">
+                <p className="font-body text-[15px] md:text-[16px] leading-[1.7] text-[#1a1a1a]/80 font-light mb-5 flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="border-t border-[#1a1a1a]/10 pt-4">
+                <div className="border-t border-[#1a1a1a]/10 pt-4 mt-auto">
                   <p className="font-body text-[13px] md:text-[14px] text-[#2e5a88] font-medium">
                     {t.name}
                   </p>
