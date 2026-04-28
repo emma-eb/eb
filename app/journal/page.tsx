@@ -23,7 +23,7 @@ export default function Journal() {
           className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/55" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <span className="reveal mb-6 inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body">
             Journal
@@ -38,7 +38,7 @@ export default function Journal() {
           <p
             className="reveal mt-6 max-w-[580px] text-white text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
             data-delay="160"
-            style={{ textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.5)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}
           >
             News, openings, and the conversations shaping how the world sees Greece right now.
           </p>
