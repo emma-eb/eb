@@ -2,33 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Nav from '../../components/Nav';
 import NewsletterBanner from '../../components/NewsletterBanner';
 
 export default function ParosAntiparosPage() {
   const [openDay, setOpenDay] = useState<number | null>(null);
-
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const delay = parseInt(el.dataset.delay || '0', 10);
-          setTimeout(() => {
-            el.classList.add('visible');
-            setTimeout(() => el.classList.add('done'), 800);
-          }, delay);
-          observer.unobserve(el);
-        });
-      },
-      { threshold: 0.5, rootMargin: '0px 0px -30% 0px' }
-    );
-    revealEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
 
   const days = [
     {
