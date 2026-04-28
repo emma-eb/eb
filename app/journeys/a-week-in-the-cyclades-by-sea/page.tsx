@@ -52,7 +52,7 @@ export default function WeekBySeaPage() {
       </div>
 
       <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch_page%20collection.jpg" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-[center_50%] md:object-[center_60%] eb-image-settle" />
+        <Image src="/yatch_page%20collection.jpg" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-center md:object-[center_60%] eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 eb-fade-up">Private Journey &middot; 07</div>
@@ -135,7 +135,7 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/yatch%20on%20board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-[center_50%] md:object-center eb-image-settle" />
+        <Image src="/yatch%20on%20board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-center eb-image-settle" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white eb-fade-up z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>

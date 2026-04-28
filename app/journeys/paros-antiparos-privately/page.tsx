@@ -107,7 +107,7 @@ export default function ParosAntiparosPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%] md:object-center eb-image-settle"
+          className="object-cover object-center eb-image-settle"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
 
@@ -240,7 +240,7 @@ export default function ParosAntiparosPage() {
               alt="Paros south coast, quiet bays and fishing port at golden hour"
               fill
               sizes="100vw"
-              className="object-cover object-[center_35%] md:object-center eb-image-settle transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center eb-image-settle transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 
