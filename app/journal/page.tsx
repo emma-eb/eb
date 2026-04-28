@@ -242,22 +242,19 @@ export default function Journal() {
         <div className="relative z-10 p-6 md:p-12 max-w-2xl">
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
-              Real Estate
-            </span>
-            <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white" data-delay="50">
-              Attica &middot; Greece
+              Real Estate &middot; Attica
             </span>
           </div>
-          <h2 className="reveal font-heading text-[32px] md:text-[48px] text-white leading-[1.05] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[28px] md:text-[48px] text-white leading-[1.05] uppercase mb-2" data-delay="100" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             The Height.
           </h2>
-          <p className="reveal font-body text-[18px] md:text-[20px] text-white font-normal mt-2" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-            A new landmark near Athens
+          <p className="reveal font-body text-[15px] md:text-[20px] text-white font-light md:font-normal mt-2" data-delay="150" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            A new landmark near Athens.
           </p>
-          <p className="reveal font-body text-[14px] md:text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal hidden md:block font-body text-[14px] md:text-[16px] text-white/80 font-light leading-[1.7] max-w-lg mt-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             An extraordinary residential project on the Attic coast, designed by one of Europe&apos;s most celebrated architects. For clients exploring investment or primary residences in Greece.
           </p>
-          <p className="reveal font-body text-[14px] text-white/60 font-light mt-4" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal hidden md:block font-body text-[14px] text-white/60 font-light mt-4" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
             eb. works with a select number of clients as a trusted introduction to this project.
           </p>
           <div className="reveal flex flex-col md:flex-row gap-4 md:gap-8 mt-6" data-delay="300">
