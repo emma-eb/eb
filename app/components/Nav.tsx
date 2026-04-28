@@ -58,8 +58,22 @@ export default function Nav({ activePage }: NavProps) {
       });
     };
 
-    // Site-wide failsafe : after 1.8s, any .reveal still hidden gets visible
-    // (covers iOS Safari edge cases where IntersectionObserver doesn't fire reliably)
+    // Site-wide failsafe : trigger anything in viewport within 200ms (immediate),
+    // and force-reveal everything still hidden after 1s (iOS Safari edge cases).
+    const triggerInViewport = window.setTimeout(() => {
+      const vh = window.innerHeight;
+      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) {
+          const d = parseInt(el.dataset.delay || "0", 10);
+          window.setTimeout(() => el.classList.add("visible"), d);
+        }
+      });
+      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) el.classList.add("eb-visible");
+      });
+    }, 200);
     const failsafe = window.setTimeout(() => {
       document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
         el.classList.add("visible");
@@ -67,13 +81,14 @@ export default function Nav({ activePage }: NavProps) {
       document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
         el.classList.add("eb-visible");
       });
-    }, 1800);
+    }, 1000);
     const onPageShow = (e: PageTransitionEvent) => {
       if (e.persisted) forceReveal();
     };
     window.addEventListener("pageshow", onPageShow);
 
     return () => {
+      clearTimeout(triggerInViewport);
       clearTimeout(failsafe);
       observer.disconnect();
       window.removeEventListener("scroll", check);

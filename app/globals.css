@@ -137,61 +137,49 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════
-   SCROLL REVEAL
+   EB ANIMATION SYSTEM — UNIFIED
+   All elements (text + images) fade-in + slight upward.
+   Triggers (kept for backward compat): .visible, .eb-visible, .settled
 ═══════════════════════════════════════════ */
-.reveal {
+.reveal,
+.featured-img,
+.img-settle {
   opacity: 0;
-  transform: translate3d(0, 40px, 0);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  animation: reveal-fallback 0.9s cubic-bezier(0.22, 1, 0.36, 1) 600ms forwards;
+  /* Fallback if the IntersectionObserver never fires */
+  animation: eb-reveal-fallback 0.9s cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards;
 }
-.reveal.visible {
+.reveal.visible,
+.featured-img.visible,
+.img-settle.settled {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   animation: none;
 }
-.reveal.visible.done {
+.reveal.visible.done,
+.featured-img.visible.done,
+.img-settle.settled.done {
   will-change: auto;
 }
-@keyframes reveal-fallback {
+@keyframes eb-reveal-fallback {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
-/* ═══════════════════════════════════════════
-   FEATURED IMAGE SETTLE
-═══════════════════════════════════════════ */
-.featured-img {
-  transform: scale(1.05);
-  transition: transform 1.2s ease-out;
-  will-change: transform;
-}
-.featured-img.visible {
-  transform: scale(1.0);
-}
-.featured-img.visible.done {
-  will-change: auto;
-}
-
-/* Experience image settle (JS adds .settled) */
-.img-settle {
-  transform: scale(1.04);
-  transition: transform 1.2s ease-out;
-  will-change: transform;
-}
-.img-settle.settled {
-  transform: scale(1.0) !important;
-}
-
 @media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .featured-img,
   .img-settle {
-    transform: none !important;
-    transition: none;
+    transform: none;
+    transition: opacity 0.5s ease-out;
+    animation: none;
     will-change: auto;
   }
 }
@@ -256,27 +244,25 @@ h1, h2 {
   }
 }
 
-/* ============ EB Animations ============ */
+/* ============ EB Animations — aligned on the unified system above ============ */
 
-.eb-fade-up {
+.eb-fade-up,
+.eb-fade-in,
+.eb-image-settle {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
-              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+  animation: eb-reveal-fallback 0.9s cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards;
 }
 
-.eb-fade-up.eb-visible {
+.eb-fade-up.eb-visible,
+.eb-fade-in.eb-visible,
+.eb-image-settle.eb-visible {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.eb-fade-in {
-  opacity: 0;
-  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.eb-fade-in.eb-visible {
-  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  animation: none;
 }
 
 .eb-delay-100 { transition-delay: 100ms; }
@@ -285,17 +271,7 @@ h1, h2 {
 .eb-delay-400 { transition-delay: 400ms; }
 .eb-delay-500 { transition-delay: 500ms; }
 
-/* ============ Image settle — zoom out doux au viewport entry ============ */
-.eb-image-settle {
-  transform: scale(1.08);
-  transition: transform 1500ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-}
-.eb-image-settle.eb-visible {
-  transform: scale(1);
-}
-
-/* Hover zoom subtil sur les Glimpses/Highlights (parent .group) */
+/* Hover zoom subtil sur les Glimpses/Highlights (parent .group) — kept */
 @media (hover: hover) {
   .group:hover > .eb-image-settle.eb-visible,
   .group:hover .eb-image-settle.eb-visible {
@@ -305,24 +281,19 @@ h1, h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .eb-image-settle {
-    /* Subtle scale even with reduced motion */
-    transform: scale(1.04);
-    transition: transform 1s ease-out;
-  }
-  .eb-image-settle.eb-visible {
-    transform: scale(1);
-  }
   .eb-fade-up,
-  .eb-fade-in {
-    /* Fade-only (no transform) per a11y guideline: opacity != motion */
-    opacity: 0;
+  .eb-fade-in,
+  .eb-image-settle {
     transform: none;
     transition: opacity 0.5s ease-out;
+    animation: none;
+    will-change: auto;
   }
   .eb-fade-up.eb-visible,
-  .eb-fade-in.eb-visible {
+  .eb-fade-in.eb-visible,
+  .eb-image-settle.eb-visible {
     opacity: 1;
+    transform: none;
   }
 }
 
