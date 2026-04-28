@@ -83,19 +83,19 @@ export default function InfluencerProduction() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
         <div className="relative z-10 p-6 md:p-12 max-w-2xl">
           <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white">
             Why Greece
           </span>
-          <h2 className="reveal font-heading text-[44px] md:text-[72px] text-white leading-[0.95] uppercase mt-6" data-delay="120" style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-[36px] md:text-[72px] text-white leading-[0.95] uppercase mt-6" data-delay="120" style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
             Greece as a set.
           </h2>
-          <p className="reveal font-body text-[15px] md:text-[17px] text-white/85 leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-[15px] md:text-[17px] text-white leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             300 days of sun. Architecture that photographs in any direction. Water you can swim in through October. And the kind of access no stock library can replicate: private villas, archaeological sites, fishing villages that haven&apos;t changed in decades.
           </p>
-          <p className="reveal mt-8 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body" data-delay="240" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal mt-8 max-w-[580px] text-white text-[16px] md:text-[17px] leading-[1.6] font-light font-body" data-delay="240" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             Greece has the locations. We have the network.
           </p>
         </div>
