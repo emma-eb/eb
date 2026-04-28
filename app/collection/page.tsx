@@ -254,11 +254,12 @@ export default function CollectionPage() {
             {villas.map((villa, i) => (
               <a
                 key={villa.slug}
+                id={`villa-${villa.slug}`}
                 href={villa.href}
-                className={`reveal group block relative overflow-hidden ${
+                className={`reveal group block relative overflow-hidden eb-card-hover scroll-mt-24 ${
                   i < 2 ? "md:col-span-2 aspect-[4/5] md:aspect-[5/2]" : "aspect-[3/4] md:aspect-[3/2]"
                 }`}
-                data-delay={String((i % 2) * 100)}
+                data-delay={String((i % 2) * 120)}
               >
                 <img
                   src={villa.image}
