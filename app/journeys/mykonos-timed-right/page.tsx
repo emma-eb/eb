@@ -523,9 +523,9 @@ export default function MykonosTimedRightPage() {
             <div className="flex justify-center">
               <Link
                 href="/contact?type=journey&journey=mykonos-timed-right"
-                className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl"
+                className="eb-cta-link font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3"
               >
-                Start the conversation &rarr;
+                Start the conversation <span className="eb-cta-arrow">&rarr;</span>
               </Link>
             </div>
           </div>

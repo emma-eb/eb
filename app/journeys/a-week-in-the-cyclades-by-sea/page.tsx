@@ -220,7 +220,7 @@ export default function WeekBySeaPage() {
             <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">Yours to shape</div>
             <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">Ready when<br />you are.</h2>
             <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">Tell us when, with whom, and how you want to feel. We shape the rest.</p>
-            <div className="flex justify-center"><Link href="/contact?type=journey&journey=a-week-in-the-cyclades-by-sea" className="bg-white text-[#2e5a88] px-8 py-3.5 rounded-full text-[10px] font-medium tracking-[0.25em] uppercase transition-all hover:scale-[1.03] hover:shadow-xl">Start the conversation &rarr;</Link></div>
+            <div className="flex justify-center"><Link href="/contact?type=journey&journey=a-week-in-the-cyclades-by-sea" className="eb-cta-link font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3">Start the conversation <span className="eb-cta-arrow">&rarr;</span></Link></div>
           </div>
         </div>
       </section>

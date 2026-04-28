@@ -201,16 +201,16 @@ export default function Home() {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-50% to-black/15" />
 
               <div className="reveal absolute bottom-0 left-0 right-0 p-8 md:p-10" data-delay={door.desktopDelay}>
-                <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight uppercase">
+                <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight uppercase" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
                   {door.title}
                 </h2>
-                <p className="font-body text-sm text-white/60 mt-2 leading-relaxed">
+                <p className="font-body text-sm text-white mt-2 leading-relaxed" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                   {door.subtitle}
                 </p>
-                <div className="eb-cta-link mt-5 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white/70 group-hover:text-white transition-colors duration-300 py-3 md:py-0">
+                <div className="eb-cta-link mt-5 font-body text-xs md:text-[10px] tracking-[0.2em] uppercase text-white group-hover:text-white transition-colors duration-300 py-3 md:py-0" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                   {door.cta}
                   <span className="eb-cta-arrow">&rarr;</span>
                 </div>
