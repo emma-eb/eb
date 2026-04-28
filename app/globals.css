@@ -161,9 +161,28 @@ h1, h2 {
     animation-range: entry 15% cover 35%;
     will-change: opacity, transform;
   }
+  /* Above-the-fold elements get .visible at page load (via RevealOnLoad).
+     Override the scroll-linked timeline with a one-shot time-based animation. */
+  .reveal.visible,
+  .featured-img.visible,
+  .img-settle.settled {
+    animation: eb-reveal-load 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-timeline: auto;
+  }
 }
 
 @keyframes eb-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes eb-reveal-load {
   from {
     opacity: 0;
     transform: translate3d(0, 24px, 0);
