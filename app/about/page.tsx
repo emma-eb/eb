@@ -120,14 +120,16 @@ export default function About() {
             About
           </span>
           <h1
-            className="font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
-            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="reveal font-heading text-[40px] sm:text-[52px] md:text-[88px] leading-[0.95] text-white uppercase"
+            data-delay="80"
+            style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}
           >
             From Paris,<br className="md:hidden" /> for Greece.
           </h1>
           <p
-            className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="reveal mt-6 max-w-[580px] text-white text-[16px] md:text-[17px] leading-[1.6] font-light font-body"
+            data-delay="160"
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >
             Emma Bonnefous, founder of eb. Athens.
           </p>

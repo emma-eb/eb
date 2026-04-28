@@ -423,7 +423,7 @@ export default function Home() {
               Greece begins with a conversation.
             </h2>
             <p className="reveal font-body text-white text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" data-delay="100" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
-              Tell us what you dream of. We shape the rest.
+              Tell us what you dream of.<br />We shape the rest.
             </p>
             <a
               href="/contact"
