@@ -244,7 +244,7 @@ export default function VillaDetailPage({
           AMENITIES — 2 columns centered as block, text left-aligned within
       ═══════════════════════════════════════════ */}
       {villa.amenities && (
-        <section className="eb-inner-frame bg-[#fcf7f1]">
+        <section className="eb-inner-frame">
           <div className="eb-inner-content">
             <div className="max-w-[960px] mx-auto">
               <p className="reveal text-center font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium">
@@ -288,7 +288,7 @@ export default function VillaDetailPage({
       {/* ═══════════════════════════════════════════
           LOCATION — V1 pattern (pill + trait + centered body)
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 pb-16 md:pb-20">
+      <section className="bg-[#fcf7f1] px-6 pt-12 md:pt-16 pb-16 md:pb-20">
         <div className="max-w-[640px] mx-auto text-center">
           <p className="reveal font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium">
             {labels.location}
