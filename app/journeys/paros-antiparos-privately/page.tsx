@@ -24,7 +24,7 @@ export default function ParosAntiparosPage() {
           observer.unobserve(el);
         });
       },
-      { threshold: 0.3, rootMargin: '0px 0px -15% 0px' }
+      { threshold: 0.5, rootMargin: '0px 0px -30% 0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
