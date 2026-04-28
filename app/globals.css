@@ -137,125 +137,35 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════
-   EB ANIMATION SYSTEM — GLOBAL SCROLL-LINKED
-   Auto-applies fade-up + slight upward to every text element of the site
-   (h1, h2, h3, h4, h5, h6, p, blockquote) plus the .reveal/.featured-img/
-   .img-settle helper classes for badges, images, and special cases.
-
-   Modern browsers (Safari 17.4+, Chrome 115+) get scroll-linked animation
-   via animation-timeline: view(). Older browsers get elements shown at
-   full opacity (graceful fallback, no animation).
-
-   Above-the-fold elements at page load get the .visible class injected by
-   <RevealOnLoad/> in app/components — this swaps the scroll-linked timeline
-   for a one-shot time-based animation so the hero animates on load too.
+   EB ANIMATION SYSTEM — JS-DRIVEN FADE-UP + STAGGER
+   All animatable elements start hidden (opacity:0, translateY 40px).
+   The <Reveal> client component (app/components/Reveal.tsx) observes
+   them with IntersectionObserver and adds `.visible` / `.settled` as
+   they enter the viewport, with auto-stagger by sibling index inside
+   the same parent block — so titles + paragraphs slide up line by line.
 ═══════════════════════════════════════════ */
-
-/* Fallback for browsers without animation-timeline support: hide elements
-   initially and use a JS IntersectionObserver (see RevealFallback component)
-   to add `.visible` / `.settled` as elements enter the viewport. */
-@supports not (animation-timeline: view()) {
-  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
-         .reveal, .featured-img, .img-settle) {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-  :where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
-  .reveal.visible,
-  .featured-img.visible,
-  .img-settle.settled {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+:where(h1, h2, h3, h4, h5, h6, p, blockquote,
+       .reveal, .featured-img, .img-settle) {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
-
-/* Modern browsers: visible by default until scroll-driven animation kicks in */
-@supports (animation-timeline: view()) {
-  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
-         .reveal, .featured-img, .img-settle) {
-    opacity: 1;
-  }
-}
-
-/* IMPORTANT: override Tailwind .overflow-hidden with overflow:clip.
-   .overflow-hidden makes the element a scroll container, which makes
-   `animation-timeline: view()` measure descendants relative to that
-   container instead of the viewport — freezing scroll-linked animations
-   on elements positioned absolutely inside (e.g. hero overlays).
-   `overflow: clip` clips identically without creating a scroll container. */
-.overflow-hidden {
-  overflow: clip;
-}
-
-@supports (animation-timeline: view()) {
-  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
-         .reveal, .featured-img, .img-settle) {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-    animation: eb-reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-    will-change: opacity, transform;
-  }
-
-  /* Hero (first section of each page) auto-plays a smooth time-based
-     animation on page load. Below-the-fold sections keep the scroll-linked
-     timeline above. No JS needed. */
-  main > section:first-of-type :where(h1, h2, h3, h4, h5, h6, p, blockquote,
-                                       .reveal, .featured-img, .img-settle) {
-    animation: eb-reveal-load 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-timeline: auto;
-  }
-
-  /* Stagger inside the hero via data-delay attribute */
-  main > section:first-of-type [data-delay="50"]  { animation-delay: 50ms; }
-  main > section:first-of-type [data-delay="80"]  { animation-delay: 80ms; }
-  main > section:first-of-type [data-delay="100"] { animation-delay: 100ms; }
-  main > section:first-of-type [data-delay="120"] { animation-delay: 120ms; }
-  main > section:first-of-type [data-delay="150"] { animation-delay: 150ms; }
-  main > section:first-of-type [data-delay="160"] { animation-delay: 160ms; }
-  main > section:first-of-type [data-delay="180"] { animation-delay: 180ms; }
-  main > section:first-of-type [data-delay="200"] { animation-delay: 200ms; }
-  main > section:first-of-type [data-delay="220"] { animation-delay: 220ms; }
-  main > section:first-of-type [data-delay="250"] { animation-delay: 250ms; }
-  main > section:first-of-type [data-delay="280"] { animation-delay: 280ms; }
-  main > section:first-of-type [data-delay="300"] { animation-delay: 300ms; }
-}
-
-@keyframes eb-reveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes eb-reveal-load {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+:where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
+.reveal.visible,
+.featured-img.visible,
+.img-settle.settled {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  @supports (animation-timeline: view()) {
-    :where(h1, h2, h3, h4, h5, h6, p, blockquote,
-           .reveal, .featured-img, .img-settle) {
-      animation: none;
-      opacity: 1;
-      transform: none;
-      will-change: auto;
-    }
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+         .reveal, .featured-img, .img-settle) {
+    transform: none;
+    transition: opacity 0.5s ease-out;
+    will-change: auto;
   }
 }
 

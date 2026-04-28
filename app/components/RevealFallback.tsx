@@ -5,16 +5,18 @@ import { usePathname } from 'next/navigation';
 
 const SELECTOR =
   'h1, h2, h3, h4, h5, h6, p, blockquote, .reveal, .featured-img, .img-settle';
+const TEXT_TAGS = /^(H1|H2|H3|H4|H5|H6|P|BLOCKQUOTE)$/;
 
 /**
- * IntersectionObserver fallback for browsers that do NOT support
- * `animation-timeline: view()` (e.g. iOS Safari < 17.4).
+ * Site-wide reveal: as elements enter the viewport, fade them up with a
+ * line-by-line stagger inside their containing block.
  *
- * Modern browsers run the scroll-linked CSS animation defined in globals.css.
- * Older browsers fall back to this observer, which adds `.visible` (or
- * `.settled` for `.img-settle`) as elements enter the viewport — triggering
- * the transition-based fade-up defined inside the `@supports not (...)` CSS
- * block.
+ * - If `data-delay="N"` is set on the element, that exact ms delay is used.
+ * - Otherwise the delay is computed from the element's index among its
+ *   text-element siblings inside the same parent (idx * 100ms).
+ *
+ * The visual is driven by the `.visible` / `.settled` CSS rules in
+ * globals.css; this component is the only thing that adds those classes.
  *
  * Re-runs on client-side navigation so newly-mounted page elements get
  * observed too.
@@ -24,15 +26,42 @@ export default function RevealFallback() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (CSS.supports?.('animation-timeline: view()')) return;
+
+    function getDelay(el: HTMLElement): number {
+      // Explicit data-delay wins
+      const explicit = el.dataset.delay;
+      if (explicit) {
+        const n = parseInt(explicit, 10);
+        if (!Number.isNaN(n)) return n;
+      }
+      // Otherwise stagger by sibling index within the same parent block
+      const parent = el.parentElement;
+      if (!parent) return 0;
+      let idx = 0;
+      for (const sib of Array.from(parent.children)) {
+        if (sib === el) break;
+        if (sib instanceof HTMLElement) {
+          if (TEXT_TAGS.test(sib.tagName) || sib.classList.contains('reveal')) {
+            idx++;
+          }
+        }
+      }
+      // Cap to keep the stagger from snowballing on long lists
+      return Math.min(idx, 6) * 100;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const el = entry.target as HTMLElement;
-          if (el.classList.contains('visible') || el.classList.contains('settled')) return;
-          const delay = parseInt(el.dataset.delay || '0', 10);
+          if (
+            el.classList.contains('visible') ||
+            el.classList.contains('settled')
+          ) {
+            return;
+          }
+          const delay = getDelay(el);
           window.setTimeout(() => {
             const cls = el.classList.contains('img-settle') ? 'settled' : 'visible';
             el.classList.add(cls);
@@ -40,11 +69,18 @@ export default function RevealFallback() {
           observer.unobserve(el);
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
     );
 
     requestAnimationFrame(() => {
       document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        // Already past the viewport above (e.g. user landed mid-page) → reveal immediately
+        if (rect.bottom < 0) {
+          const cls = el.classList.contains('img-settle') ? 'settled' : 'visible';
+          el.classList.add(cls);
+          return;
+        }
         observer.observe(el);
       });
     });
