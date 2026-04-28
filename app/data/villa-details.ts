@@ -546,7 +546,7 @@ const santoriniEstate: VillaDetail = {
     { src: "/villas/santorini-estate/gallery-12.jpg", alt: "Outdoor cinema and firepit at sunset, the Aegean beyond" },
     { src: "/villas/santorini-estate/gallery-13.jpg", alt: "Private wine cellar with tasting bench" },
     { src: "/villas/santorini-estate/gallery-14.jpg", alt: "Aerial of the estate above the caldera, the volcano and the open Aegean beyond" },
-    { src: "/villas/santorini-estate/gallery-15.jpg", alt: "Bathroom in patterned black and white, oval mirror and dappled tiles" },
+    { src: "/villas/santorini-estate/gallery-14.jpg", alt: "Aerial of the estate above the caldera, the volcano and the open Aegean beyond" },
   ],
 
   mailtoSubject: "Inquiry: Santorini Estate",
