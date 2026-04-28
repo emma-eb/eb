@@ -169,6 +169,18 @@ h1, h2 {
   }
 }
 
+/* Opt-out for sections where animations would feel too slow / distracting
+   (e.g. journal article grid). Add `eb-no-reveal` to the parent — every
+   text descendant + any .reveal/.featured-img/.img-settle inside skips the
+   fade-up and shows immediately. */
+.eb-no-reveal,
+.eb-no-reveal :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+                     .reveal, .featured-img, .img-settle) {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* Remove the persistent blue focus ring left after the user navigates back
    from a card link. Keep visible focus indication for keyboard navigation,
    but remove it on .eb-card-hover (image cards) where it looked ugly on

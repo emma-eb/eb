@@ -99,7 +99,7 @@ export default function Journal() {
       {/* ═══════════════════════════════════════════
           BLOC 3 — GRILLE 7 ARTICLES (fond noir, asymétrique)
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className="bg-[#1a1a1a] py-8 md:py-12 px-3 md:px-6">
+      <section data-nav-dark className="eb-no-reveal bg-[#1a1a1a] py-8 md:py-12 px-3 md:px-6">
         <div className="max-w-6xl mx-auto">
 
           {/* LIGNE 1 : 1 featured (2/3) + 2 petits (1/3 empiles) */}
