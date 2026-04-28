@@ -269,6 +269,47 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
+          BLOC 3.5 — WHAT THEY SAY (testimonials)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-16 md:py-24 px-6 md:px-16">
+        <div className="max-w-[1100px] mx-auto">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
+            What they say
+          </p>
+          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-12 mx-auto" data-delay="100" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {[
+              { quote: "Working with Emma is the perfect balance of professionalism and great energy.", name: "Andrea Bailarin", title: "Client Director, Soy Olivia", city: "Madrid" },
+              { quote: "She always managed her role with great calm and competence, listening to needs.", name: "Serafino Ruperto", title: "Consulting agency", city: "Milan" },
+              { quote: "Working with Emma has always been a pleasure as she was dedicated and organized.", name: "Capucine Ricci", title: "Former PR Director, Interparfums", city: "Paris" },
+              { quote: "Emma has this gift to create while giving a clear picture of what should happen.", name: "Benjamin Dondina", title: "PR Director, VELUX", city: "Paris" },
+              { quote: "Emma succeeded in creating the ideal blend of learning, relaxation, and exploration.", name: "Catherine Léonard", title: "International PR", city: "Brussels" },
+              { quote: "It was always a joy to witness her professionalism and dedication to results.", name: "Sarah Hamon", title: "CEO, S2H agency", city: "Miami" },
+            ].map((t, i) => (
+              <div
+                key={t.name}
+                className="reveal flex flex-col"
+                data-delay={String(i * 80)}
+              >
+                <p className="font-body text-[15px] md:text-[16px] leading-[1.7] text-[#1a1a1a]/80 font-light mb-5">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="border-t border-[#1a1a1a]/10 pt-4">
+                  <p className="font-body text-[13px] md:text-[14px] text-[#2e5a88] font-medium">
+                    {t.name}
+                  </p>
+                  <p className="font-body text-[12px] md:text-[13px] text-[#1a1a1a]/50 font-light mt-1">
+                    {t.title} &middot; {t.city}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           BLOC 4 — SELECTED COLLABORATIONS (liste centree)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-10 md:py-12 px-6 md:px-16">
