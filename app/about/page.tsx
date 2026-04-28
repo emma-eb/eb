@@ -238,7 +238,7 @@ export default function About() {
             Belief
           </span>
           <h2
-            className="reveal font-heading text-[36px] md:text-[72px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[32px] md:text-[56px] leading-[0.95] text-white uppercase"
             data-delay="80"
             style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
           >
@@ -358,7 +358,7 @@ export default function About() {
             Begin with eb.
           </div>
           <h2
-            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase mb-6"
             data-delay="80"
             style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >

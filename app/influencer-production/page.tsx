@@ -89,7 +89,7 @@ export default function InfluencerProduction() {
           <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white">
             Why Greece
           </span>
-          <h2 className="reveal font-heading text-[36px] md:text-[72px] text-white leading-[0.95] uppercase mt-6" data-delay="120" style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
+          <h2 className="reveal font-heading text-[32px] md:text-[56px] text-white leading-[0.95] uppercase mt-6" data-delay="120" style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
             Greece as a set.
           </h2>
           <p className="reveal font-body text-[15px] md:text-[17px] text-white leading-[1.7] mt-6" data-delay="160" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>

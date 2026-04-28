@@ -264,14 +264,14 @@ export default function Journal() {
               href="https://theheight.estate/el/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center door-cta"
+              className="eb-cta-link font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3"
             >
               View project
               <span className="eb-cta-arrow">&rarr;</span>
             </a>
             <a
               href="/contact?type=stay"
-              className="inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.15em] uppercase text-white border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 min-h-[44px] items-center"
+              className="eb-cta-link font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3"
             >
               Request an introduction
               <span className="eb-cta-arrow">&rarr;</span>

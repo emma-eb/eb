@@ -192,7 +192,7 @@ const celestia: VillaDetail = {
   badge: "New for 2026",
   tagline: "Stone, light, and the open sea.",
   intro:
-    "A brand-new 950 m² stone villa on Mykonos, 200 metres from Glyfadi Beach. Built to bioclimatic principles. Nine en-suite bedrooms across two levels, twin infinity pools, a home cinema, an indoor gym. Designed around the light and seamless indoor-outdoor living.",
+    "A brand-new 950 m² stone villa on Mykonos, 200 metres from Glyfadi Beach. Built to bioclimatic principles. Nine en-suite bedrooms across two levels, twin infinity pools, a home cinema, an indoor gym. Designed around the light, with indoor and outdoor living that flow as one.",
 
   theHouse:
     "Natural stone, modern luxury, bioclimatic design. Two indoor lounges, four outdoor. A fully equipped kitchen, a home cinema, an indoor gym. Twin infinity pools across two levels, two outdoor jacuzzis. A fire pit for evening gatherings. Nine en-suite bedrooms, six on the first level, three masters above.",
