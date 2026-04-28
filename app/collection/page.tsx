@@ -395,7 +395,7 @@ export default function CollectionPage() {
             </p>
             <a
               href="/contact?type=stay"
-              className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px]"
+              className="reveal eb-cta-link mt-10 text-[13px] md:text-[14px] uppercase tracking-[0.2em] text-white font-body min-h-[44px] py-3"
               data-delay="250"
             >
               Request introduction <span className="eb-cta-arrow">&rarr;</span>

@@ -668,6 +668,7 @@ const silentCoast: VillaDetail = {
     "Two minutes from Porto Heli town, kilometres from anywhere busy. Sailing waters that have drawn the same families to the Argolic Gulf for generations. Spetses, Hydra, the islands of the Saronic, all within a short tender ride.",
 
   keyFacts: {
+    size: "440 m²",
     bedrooms: "6",
     bathrooms: "6",
     guests: "Up to 12",
