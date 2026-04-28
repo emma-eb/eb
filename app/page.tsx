@@ -26,9 +26,6 @@ export default function Home() {
 
   /* ─── Scroll reveal + featured image settle ─── */
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal, .featured-img");
     const observer = new IntersectionObserver(
       (entries) => {

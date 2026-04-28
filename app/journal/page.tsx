@@ -9,9 +9,6 @@ export default function Journal() {
   const exploreRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {

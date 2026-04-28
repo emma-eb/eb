@@ -6,9 +6,6 @@ import NewsletterBanner from "../components/NewsletterBanner";
 
 export default function InfluencerProduction() {
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {
