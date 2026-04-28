@@ -196,29 +196,32 @@ export default function Experiences() {
       {/* ═══════════════════════════════════════════
           CONCIERGE — 2x2 immersive grid
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <section className="bg-[#fcf7f1] px-4 md:px-8 pb-4 md:pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-[1400px] mx-auto">
           {concierge.map((c) => (
-            <div key={c.tag} className="reveal relative aspect-video md:aspect-square overflow-hidden group">
+            <div key={c.tag} className="reveal relative aspect-[4/5] md:aspect-square overflow-hidden group">
               <img
                 src={c.photo}
                 alt={c.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.1) 100%)" }} />
 
-              <div className="absolute bottom-0 left-0 p-5 md:p-8 z-10">
-                <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-10">
+                <span className="inline-block px-3 py-1 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
                   {c.tag}
                 </span>
                 <h3
-                  className="font-heading text-white uppercase leading-[1] tracking-wide mt-3"
-                  style={{ fontSize: "clamp(22px, 2.4vw, 32px)", letterSpacing: "-0.01em", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}
+                  className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-3 md:mt-4"
+                  style={{ fontSize: "clamp(20px, 2.4vw, 30px)", letterSpacing: "-0.01em", textShadow: "0 2px 6px rgba(0,0,0,0.6)" }}
                 >
                   {c.title}
                 </h3>
-                <p className="font-body text-[13px] text-white font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
+                <p
+                  className="font-body text-[12px] md:text-[13px] leading-[1.55] text-white/90 font-light mt-2 md:mt-3 max-w-[28ch]"
+                  style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}
+                >
                   {c.desc}
                 </p>
               </div>
