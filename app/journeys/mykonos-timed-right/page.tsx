@@ -102,8 +102,8 @@ export default function MykonosTimedRightPage() {
           </p>
         </div>
 
-        <button type="button" onClick={(e) => (e.currentTarget.closest("section")?.nextElementSibling as HTMLElement)?.scrollIntoView({ behavior: "smooth", block: "start" })} aria-label="Scroll down" className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60">
+        <button type="button" onClick={(e) => (e.currentTarget.closest("section")?.nextElementSibling as HTMLElement)?.scrollIntoView({ behavior: "smooth", block: "start" })} aria-label="Scroll down" className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30  cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60 eb-scroll-chevron">
             <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>

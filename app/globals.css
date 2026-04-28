@@ -170,11 +170,17 @@ h1, h2 {
 }
 
 /* Remove the persistent blue focus ring left after the user navigates back
-   from a card link. Keep visible focus indication for keyboard navigation. */
+   from a card link. Keep visible focus indication for keyboard navigation,
+   but remove it on .eb-card-hover (image cards) where it looked ugly on
+   iOS Safari after a back navigation. */
 a:focus { outline: none; }
 a:focus-visible {
   outline: 2px solid rgba(46, 90, 136, 0.55);
   outline-offset: 2px;
+}
+a.eb-card-hover:focus,
+a.eb-card-hover:focus-visible {
+  outline: none;
 }
 
 /* ═══════════════════════════════════════════
