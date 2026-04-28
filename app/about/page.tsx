@@ -269,7 +269,29 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          BLOC 3.5 — WHAT THEY SAY (testimonials)
+          BLOC 4 — SELECTED COLLABORATIONS (liste centree)
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#fcf7f1] py-10 md:py-12 px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
+            Selected Collaborations
+          </p>
+          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
+
+          <div className="reveal text-center" data-delay="200">
+            {collabsData.map((c) => (
+              <p key={c.house} className="font-body text-[14px] md:text-[15px] leading-[2.2]">
+                <span className="font-medium text-[#2e5a88]">{c.house}</span>
+                <span className="text-[#1a1a1a]/30"> &middot; </span>
+                <span className="font-light text-[#1a1a1a]/40">{c.venue}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BLOC 4.5 — WHAT THEY SAY (testimonials)
       ═══════════════════════════════════════════ */}
       <section className="bg-[#fcf7f1] py-16 md:py-24 px-6 md:px-16">
         <div className="max-w-[1100px] mx-auto">
@@ -304,28 +326,6 @@ export default function About() {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          BLOC 4 — SELECTED COLLABORATIONS (liste centree)
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] py-10 md:py-12 px-6 md:px-16">
-        <div className="max-w-4xl mx-auto">
-          <p className="reveal font-body text-[11px] font-medium tracking-[0.2em] uppercase text-[#1a1a1a]/40 text-center mb-4">
-            Selected Collaborations
-          </p>
-          <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-
-          <div className="reveal text-center" data-delay="200">
-            {collabsData.map((c) => (
-              <p key={c.house} className="font-body text-[14px] md:text-[15px] leading-[2.2]">
-                <span className="font-medium text-[#2e5a88]">{c.house}</span>
-                <span className="text-[#1a1a1a]/30"> &middot; </span>
-                <span className="font-light text-[#1a1a1a]/40">{c.venue}</span>
-              </p>
             ))}
           </div>
         </div>
