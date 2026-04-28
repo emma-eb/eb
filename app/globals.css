@@ -137,23 +137,29 @@ h1, h2 {
 }
 
 /* ═══════════════════════════════════════════
-   EB ANIMATION SYSTEM — SCROLL-LINKED
-   Animation tied to element position in viewport via animation-timeline: view().
-   Modern browsers (Safari 17.4+, Chrome 115+) get the scroll-linked fade-up.
-   Older browsers get the element shown at full opacity (graceful fallback).
+   EB ANIMATION SYSTEM — GLOBAL SCROLL-LINKED
+   Auto-applies fade-up + slight upward to every text element of the site
+   (h1, h2, h3, h4, h5, h6, p, blockquote) plus the .reveal/.featured-img/
+   .img-settle helper classes for badges, images, and special cases.
+
+   Modern browsers (Safari 17.4+, Chrome 115+) get scroll-linked animation
+   via animation-timeline: view(). Older browsers get elements shown at
+   full opacity (graceful fallback, no animation).
+
+   Above-the-fold elements at page load get the .visible class injected by
+   <RevealOnLoad/> in app/components — this swaps the scroll-linked timeline
+   for a one-shot time-based animation so the hero animates on load too.
 ═══════════════════════════════════════════ */
 
 /* Fallback for browsers without scroll-timeline support: element visible by default */
-.reveal,
-.featured-img,
-.img-settle {
+:where(h1, h2, h3, h4, h5, h6, p, blockquote,
+       .reveal, .featured-img, .img-settle) {
   opacity: 1;
 }
 
 @supports (animation-timeline: view()) {
-  .reveal,
-  .featured-img,
-  .img-settle {
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+         .reveal, .featured-img, .img-settle) {
     opacity: 0;
     transform: translate3d(0, 24px, 0);
     animation: eb-reveal linear both;
@@ -161,8 +167,10 @@ h1, h2 {
     animation-range: entry 15% cover 35%;
     will-change: opacity, transform;
   }
+
   /* Above-the-fold elements get .visible at page load (via RevealOnLoad).
      Override the scroll-linked timeline with a one-shot time-based animation. */
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
   .reveal.visible,
   .featured-img.visible,
   .img-settle.settled {
@@ -195,9 +203,8 @@ h1, h2 {
 
 @media (prefers-reduced-motion: reduce) {
   @supports (animation-timeline: view()) {
-    .reveal,
-    .featured-img,
-    .img-settle {
+    :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+           .reveal, .featured-img, .img-settle) {
       animation: none;
       opacity: 1;
       transform: none;
