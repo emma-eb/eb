@@ -144,7 +144,32 @@ export default function CollectionPage() {
       }
     });
 
-    return () => revealObs.disconnect();
+    // Observer separe pour les images "settle" (zoom subtil a l'apparition)
+    const settleEls = document.querySelectorAll<HTMLElement>(".eb-image-settle");
+    const settleObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            (e.target as HTMLElement).classList.add("eb-visible");
+            settleObs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    settleEls.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        el.classList.add("eb-visible");
+      } else {
+        settleObs.observe(el);
+      }
+    });
+
+    return () => {
+      revealObs.disconnect();
+      settleObs.disconnect();
+    };
   }, []);
 
   return (
@@ -239,45 +264,39 @@ export default function CollectionPage() {
                   src={villa.image}
                   alt={villa.name}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="eb-image-settle absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 via-40% to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-45% to-black/10" />
                 {villa.badge && (
                   <span className="absolute top-4 left-4 md:top-5 md:left-5 inline-block px-3 py-1.5 bg-[#2e5a88] rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-medium font-body" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}>
                     {villa.badge}
                   </span>
                 )}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white font-medium font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)" }}>
+                <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-8 text-center md:text-left items-center md:items-start">
+                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.15em] text-white font-medium font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)" }}>
                     {villa.location}
                   </p>
                   <h3
-                    className="mt-2 font-heading text-white uppercase leading-[1] tracking-wide"
+                    className="mt-2 font-heading text-white uppercase leading-[0.95] tracking-wide text-[24px] sm:text-[28px] md:text-[36px] lg:text-[40px]"
                     style={{
-                      fontSize: "clamp(26px, 2.8vw, 40px)",
                       letterSpacing: "-0.01em",
                       textShadow: "0 2px 6px rgba(0,0,0,0.8), 0 0 14px rgba(0,0,0,0.4)",
                     }}
                   >
                     {villa.name}
                   </h3>
-                  <p className="mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white font-light max-w-[400px] font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
+                  <p className="hidden md:block mt-2 text-[13px] md:text-[14px] leading-[1.5] text-white font-light max-w-[400px] font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                     {villa.description}
                   </p>
-                  <p className="mt-3 text-[9px] md:text-[11px] uppercase tracking-[0.1em] md:tracking-[0.12em] text-white/85 font-medium font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+                  <p className="mt-3 md:mt-3 text-[9px] md:text-[11px] uppercase tracking-[0.12em] md:tracking-[0.12em] text-white/90 font-medium font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                     {villa.specs}
                   </p>
-                  {villa.priceFrom && (
-                    <p className="mt-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-white/80 font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
-                      {villa.priceFrom}
-                    </p>
-                  )}
                   {villa.combinableWith && (
-                    <p className="mt-1.5 text-[10px] md:text-[11px] tracking-[0.02em] text-white/75 italic font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+                    <p className="hidden md:block mt-1.5 text-[10px] md:text-[11px] tracking-[0.02em] text-white/75 italic font-light font-body" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
                       {villa.combinableWith}
                     </p>
                   )}
-                  <span className="eb-cta-link mt-4 text-[11px] md:text-[12px] uppercase tracking-[0.1em] font-medium text-white w-fit font-body">
+                  <span className="eb-cta-link mt-4 text-[11px] md:text-[12px] uppercase tracking-[0.15em] md:tracking-[0.1em] font-medium text-white font-body">
                     {villa.ctaLabel} <span className="eb-cta-arrow">&rarr;</span>
                   </span>
                 </div>
@@ -321,16 +340,16 @@ export default function CollectionPage() {
               The Cyclades, at 35 knots.
             </h2>
             <p
-              className="reveal mt-6 text-white/85 text-[15px] md:text-[17px] leading-[1.65] font-light max-w-[520px] font-body"
+              className="reveal hidden md:block mt-6 text-white/85 text-[15px] md:text-[17px] leading-[1.65] font-light max-w-[520px] font-body"
               data-delay="150"
               style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
               BESTIA. The only Sanlorenzo SP110 in charter, worldwide. 33 metres, fresh from 2024, Athens-based. Four cabins, eight guests, a crew of five.
             </p>
-            <p className="reveal mt-6 text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-white/55 font-medium font-body" data-delay="200">
-              33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5 &middot; Athens Based
+            <p className="reveal mt-4 md:mt-6 text-[10px] md:text-[12px] uppercase tracking-[0.15em] md:tracking-[0.12em] text-white/70 font-medium font-body" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
+              33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5
             </p>
-            <p className="reveal mt-4 text-[14px] text-white/50 italic font-light font-body" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            <p className="reveal hidden md:block mt-4 text-[14px] text-white/50 italic font-light font-body" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
               From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
