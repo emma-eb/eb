@@ -307,22 +307,28 @@ export default function VillaDetailPage({
 
             <div className="reveal mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 border-y border-[#1a1a1a]/10 py-10 md:py-14 max-w-[720px] mx-auto" data-delay="120">
               <div>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium">
+                <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
                   {labels.indoors}
                 </p>
-                <ul className="mt-6 space-y-3 text-[14px] md:text-[15px] text-[#1a1a1a]/70 font-light font-body">
+                <ul className="space-y-4">
                   {villa.amenities.residence.map((a) => (
-                    <li key={a}>{a}</li>
+                    <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
+                      <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
+                      <span>{a}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="font-body text-[10px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium">
+                <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
                   {labels.outdoors}
                 </p>
-                <ul className="mt-6 space-y-3 text-[14px] md:text-[15px] text-[#1a1a1a]/70 font-light font-body">
+                <ul className="space-y-4">
                   {villa.amenities.outdoor.map((a) => (
-                    <li key={a}>{a}</li>
+                    <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
+                      <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
+                      <span>{a}</span>
+                    </li>
                   ))}
                 </ul>
               </div>

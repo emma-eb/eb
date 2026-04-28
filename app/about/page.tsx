@@ -240,28 +240,28 @@ export default function About() {
           <h2
             className="reveal font-heading text-[36px] md:text-[72px] leading-[0.95] text-white uppercase"
             data-delay="80"
-            style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ letterSpacing: "-0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
           >
             Why Greece.
           </h2>
           <p
-            className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] mt-6"
+            className="reveal font-body text-[14px] md:text-[17px] text-white font-light leading-[1.7] mt-6"
             data-delay="150"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}
           >
             Greece is not a backdrop. It is a geography of extreme contrasts, a tradition of hospitality that predates most nations, and a network of people who don{'\u2019'}t put what they offer online.
           </p>
           <p
-            className="reveal font-body text-[15px] md:text-[17px] text-white/85 font-light leading-[1.7] mt-5"
+            className="reveal hidden md:block font-body text-[15px] md:text-[17px] text-white font-light leading-[1.7] mt-5"
             data-delay="220"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.6)" }}
           >
             A private visit before the crowds arrive. A dinner where the chef closes for your table only. A villa that never appears online. None of this is bookable. It takes the right network, and knowing exactly who to call.
           </p>
           <p
-            className="reveal font-body text-[18px] md:text-[22px] text-white font-medium leading-[1.4] mt-8"
+            className="reveal font-body text-[16px] md:text-[22px] text-white font-medium leading-[1.4] mt-6 md:mt-8"
             data-delay="300"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >
             That is what eb. provides.
           </p>

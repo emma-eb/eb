@@ -290,15 +290,12 @@ export default function Journal() {
           className="absolute inset-0 w-full h-full object-cover object-[70%_35%]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-[3] text-center px-8 max-w-[640px]">
-          <div className="reveal inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
-            The Journal
-          </div>
           <h2
-            className="reveal font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6"
+            className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase mb-6"
             data-delay="80"
-            style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}
           >
             Stay close to Greece.
           </h2>
