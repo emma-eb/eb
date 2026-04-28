@@ -68,7 +68,7 @@ export default function DiscoveryFlow({ initialMood }: DiscoveryFlowProps) {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
             <div className="absolute inset-0 bg-[#2e5a88]/0 group-hover:bg-[#2e5a88]/10 transition-colors duration-500" />
 
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-left">
@@ -108,7 +108,7 @@ export default function DiscoveryFlow({ initialMood }: DiscoveryFlowProps) {
           alt={currentMoodData?.name}
           className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         {/* Back button */}
         <button

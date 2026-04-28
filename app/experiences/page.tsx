@@ -148,7 +148,7 @@ export default function Experiences() {
               loading="lazy"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 via-50% to-black/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
           <div className="relative z-10 p-6 md:p-12 max-w-lg">
             <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">

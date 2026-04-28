@@ -99,7 +99,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
         }`}
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent pointer-events-none" />
 
       <div className="absolute inset-0 flex items-end">
         <div className="px-6 pb-10 pt-8 md:p-16 max-w-2xl">
@@ -177,7 +177,7 @@ function SecondaryCard({ j }: { j: Journey }) {
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         style={j.slug === "a-week-in-the-cyclades-by-sea" ? { objectPosition: "center 70%" } : undefined}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-40% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
         <p className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium font-body">
           {j.overline}

@@ -178,7 +178,7 @@ export default function Home() {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-50% to-black/15" />
+              <div className="door-overlay absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
               <div className="reveal absolute bottom-0 left-0 right-0 p-8 md:p-10" data-delay={door.desktopDelay}>
                 <h2 className="font-heading text-4xl md:text-3xl lg:text-4xl text-white leading-tight uppercase" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
@@ -228,7 +228,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-45% to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
@@ -275,7 +275,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-45% to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
@@ -322,7 +322,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-45% to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">

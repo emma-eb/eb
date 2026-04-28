@@ -61,7 +61,7 @@ export default function InfluencerProduction() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
 
         <div className="relative z-10 p-6 md:p-12 max-w-2xl">
           <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-medium text-white">
@@ -123,7 +123,7 @@ export default function InfluencerProduction() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-50% to-black/25" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-[3]">
                 <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
                   {title}
@@ -202,7 +202,7 @@ export default function InfluencerProduction() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <span className="absolute top-3 right-4 md:top-4 md:right-5 font-anton text-white/25 text-[72px] md:text-[110px] leading-none select-none pointer-events-none" style={{ letterSpacing: "-0.02em" }}>
                 {num}
               </span>
@@ -254,7 +254,7 @@ export default function InfluencerProduction() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                 <span className="font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-white font-medium" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
                   {label}

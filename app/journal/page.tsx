@@ -107,7 +107,7 @@ export default function Journal() {
             {/* Art 1 — Emily in Paris (FEATURED) */}
             <a href="https://variety.com/2026/tv/global/emily-in-paris-season-6-shoot-greece-monaco-1236713273/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] md:col-span-2 md:row-span-2 md:aspect-auto overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="0">
               <img src="/emily-paris.jpg" alt="Greek terrace, blue shutters, bougainvillea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 md:top-4 md:left-4 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Culture</span>
               <div className="absolute bottom-0 left-0 p-4 md:p-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -119,7 +119,7 @@ export default function Journal() {
             {/* Art 2 — Tourism Revenue (PETIT) */}
             <a href="https://greekcitytimes.com/2026/03/26/tourism-revenue-jumps-58-4-in-january-reaches-e473-3-million/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="50">
               <img src="/tourism-revenue.jpg" alt="Girl photographing the Parthenon" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -131,7 +131,7 @@ export default function Journal() {
             {/* Art 3 — Greece #1 Expats (PETIT) */}
             <a href="https://www.newsweek.com/greece-worlds-top-retirement-destination-how-americans-can-move-there-11124134" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="100">
               <img src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=800&q=80" alt="Greece sunset village" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -146,7 +146,7 @@ export default function Journal() {
             {/* Art 4 — Astypalea */}
             <a href="https://greekreporter.com/2026/03/30/greece-astypalaia-world-destination-guardian/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="150">
               <img src="/astypalea.jpg" alt="Astypalea windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Destination</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -158,7 +158,7 @@ export default function Journal() {
             {/* Art 5 — Hotel Openings 2026 */}
             <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="200">
               <img src="/raphael-lopes-zqGvYYqDvs4-unsplash%20(1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Hospitality Pipeline</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -170,7 +170,7 @@ export default function Journal() {
             {/* Art 6 — Real Estate UHNW */}
             <a href="https://greekcitytimes.com/2026/04/14/greece-a-safe-haven-for-luxury-real-estate-investment/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="250">
               <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Luxury villa modern architecture" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Capital &amp; Lifestyle</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
@@ -182,7 +182,7 @@ export default function Journal() {
             {/* Art 7 — Gulf shift */}
             <a href="https://greekcitytimes.com/2026/03/11/gulf-tourism-slump-redirects-travelers-greece/" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="300">
               <img src="/gulf-shift.jpg" alt="Aerial view boats turquoise water Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
