@@ -117,34 +117,39 @@ export default function CollectionPage() {
   const exploreRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const triggerReveal = (el: HTMLElement) => {
+      const d = parseInt(el.dataset.delay || "0", 10);
+      setTimeout(() => {
+        el.classList.add("visible");
+        setTimeout(() => el.classList.add("done"), 800);
+      }, d);
+    };
+
     const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
     const revealObs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
+          triggerReveal(e.target as HTMLElement);
+          revealObs.unobserve(e.target);
         });
       },
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach((el) => {
-      // Si l'element est deja scrollped past au mount (ex: arrivee via #homes),
-      // le marquer visible immediatement plutot que de l'observer (sinon "trou")
       const rect = el.getBoundingClientRect();
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
       if (rect.bottom < 0) {
         el.classList.add("visible", "done");
+      } else if (inViewport) {
+        // Above-the-fold elements: trigger immediately (with their data-delay)
+        triggerReveal(el);
       } else {
         revealObs.observe(el);
       }
     });
 
-    // Observer separe pour les images "settle" (zoom subtil a l'apparition)
+    // Observer pour images settle
     const settleEls = document.querySelectorAll<HTMLElement>(".eb-image-settle");
     const settleObs = new IntersectionObserver(
       (entries) => {
@@ -159,14 +164,26 @@ export default function CollectionPage() {
     );
     settleEls.forEach((el) => {
       const rect = el.getBoundingClientRect();
-      if (rect.bottom < 0) {
+      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+      if (rect.bottom < 0 || inViewport) {
         el.classList.add("eb-visible");
       } else {
         settleObs.observe(el);
       }
     });
 
+    // Failsafe: after 1.5s, force-reveal anything still hidden (covers iOS Safari edge cases)
+    const failsafe = setTimeout(() => {
+      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
+        el.classList.add("visible");
+      });
+      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
+        el.classList.add("eb-visible");
+      });
+    }, 1500);
+
     return () => {
+      clearTimeout(failsafe);
       revealObs.disconnect();
       settleObs.disconnect();
     };

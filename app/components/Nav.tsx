@@ -57,12 +57,24 @@ export default function Nav({ activePage }: NavProps) {
         el.classList.add("eb-visible");
       });
     };
+
+    // Site-wide failsafe : after 1.8s, any .reveal still hidden gets visible
+    // (covers iOS Safari edge cases where IntersectionObserver doesn't fire reliably)
+    const failsafe = window.setTimeout(() => {
+      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
+        el.classList.add("visible");
+      });
+      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
+        el.classList.add("eb-visible");
+      });
+    }, 1800);
     const onPageShow = (e: PageTransitionEvent) => {
       if (e.persisted) forceReveal();
     };
     window.addEventListener("pageshow", onPageShow);
 
     return () => {
+      clearTimeout(failsafe);
       observer.disconnect();
       window.removeEventListener("scroll", check);
       window.removeEventListener("pageshow", onPageShow);
