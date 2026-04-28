@@ -172,9 +172,9 @@ export default function SlowHoneymoonPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Milos + Folegandros at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/milos%20cave.jpg" alt="Sea cave on Milos, Aegean blue" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kimolos.jpg" alt="Kimolos village alley, near Milos" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/milos%20cave.jpg" alt="Sea cave on Milos, Aegean blue" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/Milos%20maison.jpg" alt="Firopotamos, painted fishermen houses on Milos" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>

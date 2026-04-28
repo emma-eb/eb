@@ -221,13 +221,13 @@ export default function AthensSlowlyPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Athens at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image src="https://images.unsplash.com/photo-1590068560361-87d6b26e4017?auto=format&fit=crop&w=900&q=80" alt="Athens seen from Lycabettus Hill" fill className="object-cover eb-image-settle" />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image src="https://images.unsplash.com/photo-1602769247692-126fdf1f1da6?auto=format&fit=crop&w=900&q=80" alt="Plaka alley with Greek flag, Athens" fill className="object-cover eb-image-settle" />
             </div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image src="https://images.unsplash.com/photo-1635672097594-a0cbb7aa3a9e?auto=format&fit=crop&w=900&q=80" alt="Odeon of Herodes Atticus, Athens" fill className="object-cover eb-image-settle" />
             </div>
           </div>

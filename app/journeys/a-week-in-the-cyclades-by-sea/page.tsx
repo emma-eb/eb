@@ -150,9 +150,9 @@ export default function WeekBySeaPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Cyclades at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos%202.jpg" alt="Amorgos cliff and sea" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos%202.jpg" alt="Amorgos cliff and sea" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>

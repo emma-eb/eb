@@ -160,9 +160,9 @@ export default function AstypaleaPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Astypalea at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/astypalea_06.JPG" alt="Astypalea coast, quiet cove" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/atypalea_05.jpg" alt="Astypalea beach" fill className="object-cover eb-image-settle" /></div>
-            <div className="relative aspect-[4/3] sm:aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/astypalea_06.JPG" alt="Astypalea coast, quiet cove" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/atypalea_05.jpg" alt="Astypalea beach" fill className="object-cover eb-image-settle" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/astypalea_03.jpg" alt="Street in Astypalea Chora" fill className="object-cover eb-image-settle" /></div>
           </div>
         </div>
       </section>
