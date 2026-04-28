@@ -325,37 +325,34 @@ export default function CollectionPage() {
           className="absolute inset-0 w-full h-full object-cover object-center md:object-[center_30%]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 via-50% to-transparent" />
 
-        <div className="relative z-10 w-full px-6 md:px-12 pb-16 md:pb-20 pt-20">
+        <div className="relative z-10 w-full px-6 md:px-12 pb-12 md:pb-20 pt-20">
           <div className="max-w-[1400px] mx-auto">
-            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body mb-6">
+            <span className="reveal inline-block px-3 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full text-white text-[10px] uppercase tracking-[0.15em] font-medium font-body mb-5 md:mb-6">
               Private Yacht Charter
             </span>
             <h2
               className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase max-w-[700px]"
               data-delay="100"
-              style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+              style={{ letterSpacing: "-0.01em", textShadow: "0 2px 6px rgba(0,0,0,0.6)" }}
             >
               The Cyclades, at 35 knots.
             </h2>
             <p
               className="reveal hidden md:block mt-6 text-white/85 text-[15px] md:text-[17px] leading-[1.65] font-light max-w-[520px] font-body"
               data-delay="150"
-              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}
             >
               BESTIA. The only Sanlorenzo SP110 in charter, worldwide. 33 metres, fresh from 2024, Athens-based. Four cabins, eight guests, a crew of five.
             </p>
-            <p className="reveal mt-4 md:mt-6 text-[10px] md:text-[12px] uppercase tracking-[0.15em] md:tracking-[0.12em] text-white/70 font-medium font-body" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
+            <p className="reveal mt-4 md:mt-6 text-[10px] md:text-[12px] uppercase tracking-[0.15em] md:tracking-[0.12em] text-white/80 font-medium font-body" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
               33m &middot; 4 Cabins &middot; 8 Guests &middot; Crew of 5
-            </p>
-            <p className="reveal hidden md:block mt-4 text-[14px] text-white/50 italic font-light font-body" data-delay="250" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-              From Athens through the Cyclades, or wherever the week takes you.
             </p>
             <a
               href="/collection/bestia"
-              className="reveal eb-cta-link mt-8 text-[13px] uppercase tracking-[0.12em] font-medium text-white font-body min-h-[44px] py-3 relative z-[2]"
-              data-delay="300"
+              className="reveal eb-cta-link mt-6 md:mt-8 text-[12px] md:text-[13px] uppercase tracking-[0.15em] md:tracking-[0.12em] font-medium text-white font-body min-h-[44px] py-3 relative z-[2]"
+              data-delay="250"
             >
               View the yacht <span className="eb-cta-arrow">&rarr;</span>
             </a>

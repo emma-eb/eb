@@ -169,7 +169,7 @@ const youAndMe: VillaDetail = {
     { src: "/villas/you-and-me/gallery-13.jpg", alt: "Plunge pool set in stone, Aegean opening beyond the terrace" },
     { src: "/villas/you-and-me/gallery-14.jpg", alt: "En-suite bedroom with sea view and stone-wall bathroom" },
     { src: "/villas/you-and-me/gallery-15.jpg", alt: "Bedroom opening onto a private patio carved into the rock" },
-    { src: "/villas/you-and-me/gallery-16.jpg", alt: "The kitchen, marble island and leather bar stools" },
+    { src: "/villas/you-and-me/gallery-04.jpg", alt: "Villa facade opening onto the pool and the Aegean" },
   ],
 
   mailtoSubject: "Inquiry: Villa You & Me",
@@ -268,7 +268,7 @@ const celestia: VillaDetail = {
     { src: "/villas/celestia/gallery-12.jpg", alt: "Evening lounge, warm tones by the stone wall" },
     { src: "/villas/celestia/gallery-13.jpg", alt: "Sun loungers under bamboo pergola, infinity pool and Mykonos bay beyond" },
     { src: "/villas/celestia/gallery-14.jpg", alt: "Twin pools with sun loungers and central sunken lounge" },
-    { src: "/villas/celestia/gallery-15.jpg", alt: "Private wine cellar in stone and dark wood" },
+    { src: "/villas/celestia/gallery-14.jpg", alt: "Twin pools with sun loungers and central sunken lounge" },
   ],
 
   mailtoSubject: "Inquiry: Villa Celestia",

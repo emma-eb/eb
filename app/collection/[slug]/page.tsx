@@ -305,7 +305,7 @@ export default function VillaDetailPage({
             </p>
             <div className="reveal mt-4 mx-auto w-10 h-[2px] bg-[#2e5a88]" data-delay="50" />
 
-            <div className="reveal mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 border-y border-[#1a1a1a]/10 py-10 md:py-14 max-w-[720px] mx-auto" data-delay="120">
+            <div className="reveal mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 border-y border-[#1a1a1a]/10 py-10 md:py-14 max-w-[720px] mx-auto text-center" data-delay="120">
               <div>
                 <p className="font-body text-[10px] uppercase tracking-[0.2em] text-[#2e5a88] font-medium">
                   {labels.indoors}
