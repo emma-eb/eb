@@ -441,7 +441,7 @@ export default function CollectionPage() {
             A stay begins with a conversation.
           </h2>
           <p
-            className="reveal font-body text-white text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            className="reveal font-body text-white text-[15px] md:text-[16px] font-light leading-[1.7] max-w-[480px] mx-auto mb-10"
             data-delay="150"
             style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >

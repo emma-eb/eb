@@ -131,11 +131,11 @@ export default function VillaDetailPage({
       {/* ═══════════════════════════════════════════
           HERO — with key facts on the image
       ═══════════════════════════════════════════ */}
-      <section data-nav-dark className={`relative h-[100dvh] min-h-[600px] w-full overflow-hidden ${isYacht ? "bg-[#1a1a1a]" : ""}`}>
+      <section data-nav-dark className="relative h-[100dvh] min-h-[600px] w-full overflow-hidden">
         <img
           src={villa.cover}
           alt={villa.name}
-          className={`eb-image-settle absolute inset-0 w-full h-full object-center ${isYacht ? "object-contain md:object-cover" : "object-cover"}`}
+          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-center"
           sizes="100vw"
           fetchPriority="high"
         />
@@ -396,13 +396,13 @@ export default function VillaDetailPage({
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
-        className={`relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette ${isYacht ? "bg-[#1a1a1a]" : ""}`}
+        className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette"
       >
         <img
           src={villa.cover}
           alt=""
           aria-hidden="true"
-          className={`eb-image-settle absolute inset-0 w-full h-full ${isYacht ? "object-contain md:object-cover" : "object-cover"} object-center md:object-[center_35%]`}
+          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-center md:object-[center_35%]"
           sizes="100vw"
           loading="lazy"
         />
