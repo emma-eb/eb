@@ -105,10 +105,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 px-8 -mt-16 md:mt-0">
-          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.85] text-white uppercase">
+          <h1 className="reveal font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.85] text-white uppercase">
             Greece,<br />privately.
           </h1>
-          <div className="mt-10">
+          <div className="reveal mt-10" data-delay="200">
             <button
               onClick={scrollToDoors}
               className="font-body text-xs tracking-[0.25em] uppercase border border-white/30 text-white/80 px-8 py-3.5 hover:bg-white hover:text-[#1a1a1a] hover:border-white transition-all duration-300 cursor-pointer"

@@ -391,7 +391,7 @@ export default function CollectionPage() {
               data-delay="150"
               style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
             >
-              Some of our most private residences never appear online. We share them after a first conversation, one address at a time.
+              Our most private residences never appear online.
             </p>
             <a
               href="/contact?type=stay"
