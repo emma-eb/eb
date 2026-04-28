@@ -241,35 +241,12 @@ h1, h2 {
    PREFERS REDUCED MOTION — disable all
 ═══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    /* Fade-only reveal even with reduced motion (opacity != motion per a11y guidelines).
-       Keep animation fallback so content always appears even if JS observer fails. */
-    opacity: 0;
-    transform: none;
-    transition: opacity 0.5s ease-out;
-    will-change: auto;
-    animation: reveal-fallback 0.5s ease-out 400ms forwards;
-  }
-  .reveal.visible {
-    opacity: 1;
-    animation: none;
-  }
-  .featured-img {
-    /* Subtle scale settle even with reduced motion (slower, gentler) */
-    transform: scale(1.03);
-    transition: transform 0.8s ease-out;
-    will-change: auto;
-  }
-  .featured-img.visible {
-    transform: scale(1.0);
-  }
+  /* Brand intentionally keeps subtle reveal/settle animations always —
+     they are short, single-pass, no flashing, and considered acceptable per a11y. */
   .parallax-wrap img {
     height: 100%;
     min-height: 100%;
     will-change: auto;
-  }
-  .door-cta {
-    animation: none !important;
   }
   .marquee-track {
     animation: none !important;
