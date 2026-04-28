@@ -151,10 +151,33 @@ h1, h2 {
    for a one-shot time-based animation so the hero animates on load too.
 ═══════════════════════════════════════════ */
 
-/* Fallback for browsers without scroll-timeline support: element visible by default */
-:where(h1, h2, h3, h4, h5, h6, p, blockquote,
-       .reveal, .featured-img, .img-settle) {
-  opacity: 1;
+/* Fallback for browsers without animation-timeline support: hide elements
+   initially and use a JS IntersectionObserver (see RevealFallback component)
+   to add `.visible` / `.settled` as elements enter the viewport. */
+@supports not (animation-timeline: view()) {
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+         .reveal, .featured-img, .img-settle) {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
+  .reveal.visible,
+  .featured-img.visible,
+  .img-settle.settled {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Modern browsers: visible by default until scroll-driven animation kicks in */
+@supports (animation-timeline: view()) {
+  :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+         .reveal, .featured-img, .img-settle) {
+    opacity: 1;
+  }
 }
 
 /* IMPORTANT: override Tailwind .overflow-hidden with overflow:clip.
@@ -171,7 +194,7 @@ h1, h2 {
   :where(h1, h2, h3, h4, h5, h6, p, blockquote,
          .reveal, .featured-img, .img-settle) {
     opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 40px, 0);
     animation: eb-reveal linear both;
     animation-timeline: view();
     animation-range: entry 0% cover 50%;
@@ -205,7 +228,7 @@ h1, h2 {
 @keyframes eb-reveal {
   from {
     opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 40px, 0);
   }
   to {
     opacity: 1;
@@ -216,7 +239,7 @@ h1, h2 {
 @keyframes eb-reveal-load {
   from {
     opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 40px, 0);
   }
   to {
     opacity: 1;
@@ -260,13 +283,32 @@ h1, h2 {
     opacity: 1;
   }
   .door-card .featured-img {
-    transition: transform 0.6s ease-out;
+    transition: transform 0.6s ease-out, filter 0.6s ease-out;
   }
   .door-card:hover .featured-img {
-    transform: scale(1.03);
+    transform: scale(1.04);
+    filter: brightness(1.05);
   }
   .door-card:hover .door-cta {
     animation: cta-pulse-x-hover 1.2s ease-in-out infinite;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   GLOBAL IMAGE HOVER — subtle zoom + brightness boost
+   Applies to any image inside a `.group` (Tailwind grouping pattern used
+   sitewide on cards: villa cards, journey cards, journal cards, glimpse
+   tiles, cross-sell tiles, etc.). The image "wakes up" when its parent
+   card is hovered.
+═══════════════════════════════════════════ */
+@media (hover: hover) {
+  .group img {
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.05);
   }
 }
 
