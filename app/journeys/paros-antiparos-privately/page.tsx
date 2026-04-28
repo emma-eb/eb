@@ -439,21 +439,21 @@ export default function ParosAntiparosPage() {
                 img: '/acropole_01.jpg',
                 category: 'Cultural \u00b7 Slow',
                 title: 'Athens, Slowly',
-                meta: '5 nights \u00b7 Athens',
+                meta: '5 nights \u00b7 Athens \u00b7 Year\u2013round',
               },
               {
                 href: '/journeys/mykonos-timed-right',
                 img: '/images/journeys/mykonos-card.jpg',
                 category: 'Festive \u00b7 Social',
                 title: 'Mykonos, Timed Right',
-                meta: '5 nights \u00b7 Mykonos',
+                meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September',
               },
               {
                 href: '/journeys/a-family-summer-greek-style',
                 img: '/images/journeys/family-card.jpg',
                 category: 'Family \u00b7 Multi-gen',
                 title: 'A Family Summer, Greek-Style',
-                meta: '10 nights \u00b7 Porto Heli',
+                meta: '10 nights \u00b7 Porto Heli \u00b7 April\u2013October',
               },
             ].map((card, i) => (
               <Link

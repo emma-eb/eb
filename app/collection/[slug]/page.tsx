@@ -244,39 +244,41 @@ export default function VillaDetailPage({
           AMENITIES — 2 columns centered as block, text left-aligned within
       ═══════════════════════════════════════════ */}
       {villa.amenities && (
-        <section className="bg-[#fcf7f1] px-6 pb-16 md:pb-20">
-          <div className="max-w-[960px] mx-auto">
-            <p className="reveal text-center font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium">
-              {labels.amenities}
-            </p>
-            <div className="reveal mt-4 mx-auto w-10 h-[2px] bg-[#2e5a88]" data-delay="50" />
+        <section className="eb-inner-frame bg-[#fcf7f1]">
+          <div className="eb-inner-content">
+            <div className="max-w-[960px] mx-auto">
+              <p className="reveal text-center font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 font-medium">
+                {labels.amenities}
+              </p>
+              <div className="reveal mt-4 mx-auto w-10 h-[2px] bg-[#2e5a88]" data-delay="50" />
 
-            <div className="reveal mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 border-y border-[#1a1a1a]/10 py-10 md:py-14 max-w-[720px] mx-auto" data-delay="120">
-              <div>
-                <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
-                  {labels.indoors}
-                </p>
-                <ul className="space-y-4">
-                  {villa.amenities.residence.map((a) => (
-                    <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
-                      <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
-                      <span>{a}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
-                  {labels.outdoors}
-                </p>
-                <ul className="space-y-4">
-                  {villa.amenities.outdoor.map((a) => (
-                    <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
-                      <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
-                      <span>{a}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="reveal mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 max-w-[720px] mx-auto" data-delay="120">
+                <div>
+                  <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
+                    {labels.indoors}
+                  </p>
+                  <ul className="space-y-4">
+                    {villa.amenities.residence.map((a) => (
+                      <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
+                        <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
+                        <span>{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-body text-[11px] uppercase tracking-[0.3em] text-[#2e5a88] font-medium mb-6">
+                    {labels.outdoors}
+                  </p>
+                  <ul className="space-y-4">
+                    {villa.amenities.outdoor.map((a) => (
+                      <li key={a} className="flex items-start gap-4 text-[14px] md:text-[15px] text-[#1a1a1a]/75 font-light leading-[1.65] font-body">
+                        <span className="inline-block w-[6px] h-[6px] bg-[#2e5a88] mt-[9px] shrink-0" />
+                        <span>{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

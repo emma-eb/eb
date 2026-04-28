@@ -276,9 +276,9 @@ export default function AthensSlowlyPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
-              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros' },
-              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos' },
-              { href: '/journeys/a-family-summer-greek-style', img: '/images/journeys/family-card.jpg', category: 'Family \u00b7 Multi-gen', title: 'A Family Summer, Greek-Style', meta: '10 nights \u00b7 Porto Heli' },
+              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October' },
+              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September' },
+              { href: '/journeys/a-family-summer-greek-style', img: '/images/journeys/family-card.jpg', category: 'Family \u00b7 Multi-gen', title: 'A Family Summer, Greek-Style', meta: '10 nights \u00b7 Porto Heli \u00b7 April\u2013October' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
                 <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

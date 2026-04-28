@@ -190,9 +190,9 @@ export default function WeekBySeaPage() {
           <div className="text-center mb-10"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">You might also like</div></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
-              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros' },
-              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.jpg', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '7 nights \u00b7 Milos + Folegandros' },
-              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos' },
+              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October' },
+              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.jpg', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '7 nights \u00b7 Milos + Folegandros \u00b7 May\u2013September' },
+              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
                 <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

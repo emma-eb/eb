@@ -431,21 +431,21 @@ export default function MykonosTimedRightPage() {
                 img: '/images/journeys/paros-hero.jpg',
                 category: 'Slow \u00b7 Discovery',
                 title: 'Paros + Antiparos, Privately',
-                meta: '6 nights \u00b7 Paros',
+                meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October',
               },
               {
                 href: '/journeys/athens-slowly',
                 img: '/acropole_01.jpg',
                 category: 'Cultural \u00b7 Slow',
                 title: 'Athens, Slowly',
-                meta: '5 nights \u00b7 Athens',
+                meta: '5 nights \u00b7 Athens \u00b7 Year\u2013round',
               },
               {
                 href: '/journeys/a-week-in-the-cyclades-by-sea',
                 img: '/yatch_page collection_2.png',
                 category: 'By Sea \u00b7 Private Yacht',
                 title: 'A Week in the Cyclades, by Sea',
-                meta: '7 nights \u00b7 Cyclades',
+                meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September',
               },
             ].map((card, i) => (
               <Link
