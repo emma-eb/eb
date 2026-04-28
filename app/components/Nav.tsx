@@ -34,7 +34,7 @@ export default function Nav({ activePage }: NavProps) {
   }, [open]);
 
   useEffect(() => {
-    // IntersectionObserver sur toutes les sections pour déclencher le check
+    // IntersectionObserver sur toutes les sections pour déclencher le check (dark/light nav)
     const allSections = document.querySelectorAll("section, footer");
     const observer = new IntersectionObserver(check, {
       threshold: 0,
@@ -42,57 +42,12 @@ export default function Nav({ activePage }: NavProps) {
     });
     allSections.forEach((s) => observer.observe(s));
 
-    // Scroll en parallèle pour la fluidité
     window.addEventListener("scroll", check, { passive: true });
-    check(); // état initial
-
-    // Force-reveal global : sur restauration bfcache (back/forward), s'assurer que
-    // tous les elements .reveal et .eb-image-settle sont visibles (les animations
-    // d'apparition peuvent ne pas se rejouer correctement depuis le cache)
-    const forceReveal = () => {
-      document.querySelectorAll(".reveal").forEach((el) => {
-        el.classList.add("visible", "done");
-      });
-      document.querySelectorAll(".eb-image-settle, .eb-fade-up, .eb-fade-in").forEach((el) => {
-        el.classList.add("eb-visible");
-      });
-    };
-
-    // Site-wide failsafe : trigger anything in viewport within 200ms (immediate),
-    // and force-reveal everything still hidden after 1s (iOS Safari edge cases).
-    const triggerInViewport = window.setTimeout(() => {
-      const vh = window.innerHeight;
-      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.top < vh && r.bottom > 0) {
-          const d = parseInt(el.dataset.delay || "0", 10);
-          window.setTimeout(() => el.classList.add("visible"), d);
-        }
-      });
-      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.top < vh && r.bottom > 0) el.classList.add("eb-visible");
-      });
-    }, 200);
-    const failsafe = window.setTimeout(() => {
-      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
-        el.classList.add("visible");
-      });
-      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
-        el.classList.add("eb-visible");
-      });
-    }, 1000);
-    const onPageShow = (e: PageTransitionEvent) => {
-      if (e.persisted) forceReveal();
-    };
-    window.addEventListener("pageshow", onPageShow);
+    check();
 
     return () => {
-      clearTimeout(triggerInViewport);
-      clearTimeout(failsafe);
       observer.disconnect();
       window.removeEventListener("scroll", check);
-      window.removeEventListener("pageshow", onPageShow);
     };
   }, [check]);
 

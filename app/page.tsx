@@ -23,29 +23,6 @@ export default function Home() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  /* ─── Scroll reveal + featured image settle ─── */
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal, .featured-img");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const delay = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, delay);
-          observer.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
-    );
-    revealEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   /* ─── Parallax on image blocs ─── */
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

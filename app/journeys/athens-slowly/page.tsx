@@ -2,33 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from "react";
 import Nav from '../../components/Nav';
 import NewsletterBanner from '../../components/NewsletterBanner';
 
 export default function AthensSlowlyPage() {
   const [openDay, setOpenDay] = useState<number | null>(null);
 
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const delay = parseInt(el.dataset.delay || '0', 10);
-          setTimeout(() => {
-            el.classList.add('visible');
-            setTimeout(() => el.classList.add('done'), 800);
-          }, delay);
-          observer.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
-    );
-    revealEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
 
   const days = [
     {
@@ -100,10 +80,10 @@ export default function AthensSlowlyPage() {
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 reveal">
             Private Journey &middot; 05
           </div>
-          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal" data-delay="100">
             Athens,<br /> Slowly.
           </h1>
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal eb-delay-200">
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal" data-delay="200">
             The city the Athenians actually live in.
           </p>
         </div>

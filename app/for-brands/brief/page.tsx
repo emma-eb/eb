@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Nav from "../../components/Nav";
 import NewsletterBanner from "../../components/NewsletterBanner";
 
@@ -32,29 +32,6 @@ const budgetBands = [
 export default function BrandBriefPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
-    );
-    revealEls.forEach((el) => revealObs.observe(el));
-    return () => revealObs.disconnect();
-  }, []);
 
   const inputClass =
     "border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-sm text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors w-full";

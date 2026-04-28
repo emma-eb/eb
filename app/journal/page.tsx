@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
@@ -8,40 +8,6 @@ import NextChapter from "../components/NextChapter";
 export default function Journal() {
   const exploreRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
-    );
-    revealEls.forEach((el) => { const r = el.getBoundingClientRect(); if (r.bottom < 0) { el.classList.add("visible", "done"); } else { revealObs.observe(el); } });
-
-    const settleEls = document.querySelectorAll<HTMLElement>(".img-settle");
-    const settleObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          (e.target as HTMLElement).classList.add("settled");
-          settleObs.unobserve(e.target);
-        });
-      },
-      { threshold: 0.1 }
-    );
-    settleEls.forEach((el) => settleObs.observe(el));
-
-    return () => { revealObs.disconnect(); settleObs.disconnect(); };
-  }, []);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">

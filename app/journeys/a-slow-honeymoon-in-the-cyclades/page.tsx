@@ -2,33 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from "react";
 import Nav from '../../components/Nav';
 import NewsletterBanner from '../../components/NewsletterBanner';
 
 export default function SlowHoneymoonPage() {
   const [openDay, setOpenDay] = useState<number | null>(null);
 
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>('.reveal');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const delay = parseInt(el.dataset.delay || '0', 10);
-          setTimeout(() => {
-            el.classList.add('visible');
-            setTimeout(() => el.classList.add('done'), 800);
-          }, delay);
-          observer.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
-    );
-    revealEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
 
   const days = [
     { day: '01', title: 'Arrival. The first night, just the two of you.', body: 'Assisted transit to Milos. A private driver meets you, brings you to the quiet hotel we are keeping for your week. Welcome dinner on the terrace, the sea already in front of you.' },
@@ -71,10 +51,10 @@ export default function SlowHoneymoonPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 reveal">Private Journey &middot; 03</div>
-          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal" data-delay="100">
             A Slow Honeymoon,<br /> in the Cyclades.
           </h1>
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal eb-delay-200">Two islands. Seven nights. Everything arranged, nothing rushed.</p>
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal" data-delay="200">Two islands. Seven nights. Everything arranged, nothing rushed.</p>
         </div>
         <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60"><path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Nav from "../components/Nav";
 import NewsletterBanner from "../components/NewsletterBanner";
 import NextChapter from "../components/NextChapter";
@@ -116,78 +116,6 @@ const villas: VillaCard[] = [
 export default function CollectionPage() {
   const exploreRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const triggerReveal = (el: HTMLElement) => {
-      const d = parseInt(el.dataset.delay || "0", 10);
-      setTimeout(() => {
-        el.classList.add("visible");
-        setTimeout(() => el.classList.add("done"), 800);
-      }, d);
-    };
-
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          triggerReveal(e.target as HTMLElement);
-          revealObs.unobserve(e.target);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
-      if (rect.bottom < 0) {
-        el.classList.add("visible", "done");
-      } else if (inViewport) {
-        // Above-the-fold elements: trigger immediately (with their data-delay)
-        triggerReveal(el);
-      } else {
-        revealObs.observe(el);
-      }
-    });
-
-    // Observer pour images settle
-    const settleEls = document.querySelectorAll<HTMLElement>(".eb-image-settle");
-    const settleObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).classList.add("eb-visible");
-            settleObs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-    settleEls.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
-      if (rect.bottom < 0 || inViewport) {
-        el.classList.add("eb-visible");
-      } else {
-        settleObs.observe(el);
-      }
-    });
-
-    // Failsafe: after 1.5s, force-reveal anything still hidden (covers iOS Safari edge cases)
-    const failsafe = setTimeout(() => {
-      document.querySelectorAll<HTMLElement>(".reveal:not(.visible)").forEach((el) => {
-        el.classList.add("visible");
-      });
-      document.querySelectorAll<HTMLElement>(".eb-image-settle:not(.eb-visible)").forEach((el) => {
-        el.classList.add("eb-visible");
-      });
-    }, 1500);
-
-    return () => {
-      clearTimeout(failsafe);
-      revealObs.disconnect();
-      settleObs.disconnect();
-    };
-  }, []);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
@@ -282,7 +210,7 @@ export default function CollectionPage() {
                   src={villa.image}
                   alt={villa.name}
                   loading="lazy"
-                  className="eb-image-settle absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="reveal absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-45% to-black/10" />
                 {villa.badge && (

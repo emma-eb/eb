@@ -16,60 +16,6 @@ export default function VillaDetailPage({
   if (!villa) notFound();
 
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
-
-  /* Reveal + image-settle + fade-up animations — aligned with journey fiches */
-  useEffect(() => {
-    const revealEls = document.querySelectorAll<HTMLElement>(".reveal");
-    const revealObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          const d = parseInt(el.dataset.delay || "0", 10);
-          setTimeout(() => {
-            el.classList.add("visible");
-            setTimeout(() => el.classList.add("done"), 800);
-          }, d);
-          revealObs.unobserve(el);
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.bottom < 0) {
-        el.classList.add("visible", "done");
-      } else {
-        revealObs.observe(el);
-      }
-    });
-
-    const settleEls = document.querySelectorAll<HTMLElement>(".eb-image-settle, .eb-fade-up, .eb-fade-in");
-    const settleObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          e.target.classList.add("eb-visible");
-          settleObs.unobserve(e.target);
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
-    );
-    settleEls.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.bottom < 0) {
-        el.classList.add("eb-visible");
-      } else {
-        settleObs.observe(el);
-      }
-    });
-
-    return () => {
-      revealObs.disconnect();
-      settleObs.disconnect();
-    };
-  }, []);
-
   /* Lightbox keyboard + body scroll lock */
   const closeLightbox = useCallback(() => setLightboxIdx(null), []);
   const prevLightbox = useCallback(
@@ -135,7 +81,7 @@ export default function VillaDetailPage({
         <img
           src={villa.cover}
           alt={villa.name}
-          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-center"
+          className="reveal absolute inset-0 w-full h-full object-cover object-center"
           sizes="100vw"
           fetchPriority="high"
         />
@@ -268,7 +214,7 @@ export default function VillaDetailPage({
                   alt={img.alt}
                   loading="lazy"
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="eb-image-settle absolute inset-0 w-full h-full object-cover"
+                  className="reveal absolute inset-0 w-full h-full object-cover"
                 />
               </button>
             ))}
@@ -402,7 +348,7 @@ export default function VillaDetailPage({
           src={villa.cover}
           alt=""
           aria-hidden="true"
-          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-center md:object-[center_35%]"
+          className="reveal absolute inset-0 w-full h-full object-cover object-center md:object-[center_35%]"
           sizes="100vw"
           loading="lazy"
         />
