@@ -115,7 +115,7 @@ export default function Nav({ activePage }: NavProps) {
               dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"
             }`}
           >
-            Inquire <span className="eb-cta-arrow">&rarr;</span>
+            Inquire
           </a>
         </div>
 
@@ -127,7 +127,7 @@ export default function Nav({ activePage }: NavProps) {
             }`}
             style={dark ? { textShadow: "0 1px 3px rgba(0,0,0,0.5)" } : undefined}
           >
-            Inquire <span className="eb-cta-arrow">&rarr;</span>
+            Inquire
           </a>
           <button
             onClick={() => setOpen(!open)}
