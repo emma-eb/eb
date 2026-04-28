@@ -43,16 +43,16 @@ export default function InfluencerProduction() {
           alt="Dinner by the sea, sunset, Greece"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-black/55" />
 
         <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-8">
-          <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
+          <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-6">
             For Brands &amp; Agencies
           </span>
-          <h1 className="font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white mb-6 uppercase" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h1 className="reveal font-heading text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-white mb-6 uppercase" data-delay="80" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
             Greece.<br />Produced.
           </h1>
-          <p className="mt-6 max-w-[580px] text-white/85 text-[16px] md:text-[17px] leading-[1.6] font-light font-body mx-auto" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal mt-6 max-w-[580px] text-white text-[16px] md:text-[17px] leading-[1.6] font-light font-body mx-auto" data-delay="160" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             Production in Greece for luxury brands, fashion houses, film shoots, and influencer campaigns. From the brief to the final frame.
           </p>
         </div>
@@ -145,18 +145,18 @@ export default function InfluencerProduction() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-50% to-black/25" />
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-[3]">
-                <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
                   {title}
                 </h3>
-                <p className="text-[13px] md:text-[14px] text-white/80 font-light leading-[1.6] mb-5 max-w-[340px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="text-[13px] md:text-[14px] text-white font-light leading-[1.6] mb-5 max-w-[340px]" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                   {body}
                 </p>
                 <ul className="flex flex-col gap-1.5">
                   {details.map((d) => (
-                    <li key={d} className="text-[12px] md:text-[13px] text-white/70 font-light leading-[1.5] flex gap-2">
-                      <span className="text-white/45 shrink-0">&middot;</span>
+                    <li key={d} className="text-[12px] md:text-[13px] text-white/90 font-light leading-[1.5] flex gap-2" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+                      <span className="text-white/70 shrink-0">&middot;</span>
                       {d}
                     </li>
                   ))}

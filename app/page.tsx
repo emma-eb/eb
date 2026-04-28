@@ -251,7 +251,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-50% to-black/15" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
@@ -260,10 +260,10 @@ export default function Home() {
           <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             Astypalea,<br />before everyone else.
           </h2>
-          <p className="reveal font-body text-xs tracking-wider uppercase text-white/40 mb-4" data-delay="200">
+          <p className="reveal font-body text-xs tracking-wider uppercase text-white/85 mb-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
             7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
           </p>
-          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="300">
+          <p className="reveal font-body text-sm text-white leading-relaxed max-w-md mb-8" data-delay="300" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists. Before everyone else catches on.
           </p>
           <a
@@ -298,7 +298,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-50% to-black/15" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-4">
@@ -307,10 +307,10 @@ export default function Home() {
           <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             Private Dinner<br />Facing the Acropolis
           </h2>
-          <p className="reveal font-body text-xs tracking-wider uppercase text-white/40 mb-4" data-delay="200">
+          <p className="reveal font-body text-xs tracking-wider uppercase text-white/85 mb-4" data-delay="200" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.5)" }}>
             Athens
           </p>
-          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="300">
+          <p className="reveal font-body text-sm text-white leading-relaxed max-w-md mb-8" data-delay="300" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             A candlelit evening against the most iconic skyline in Europe.
           </p>
           <a
@@ -345,7 +345,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-50% to-black/15" />
 
         <div className="relative z-10 p-8 md:p-16 max-w-2xl">
           <span className="reveal inline-block px-4 py-1.5 bg-white/15 backdrop-blur-[4px] rounded-full font-body text-[11px] font-medium tracking-[0.15em] uppercase text-white mb-5">
@@ -354,7 +354,7 @@ export default function Home() {
           <h2 className="reveal font-heading text-4xl md:text-6xl text-white leading-[0.9] mb-4 uppercase" data-delay="100">
             Private Villas<br />&amp; Yacht
           </h2>
-          <p className="reveal font-body text-sm text-white/60 leading-relaxed max-w-md mb-8" data-delay="200">
+          <p className="reveal font-body text-sm text-white leading-relaxed max-w-md mb-8" data-delay="200" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             Handpicked properties across the Greek islands and coastline.
           </p>
           <a
@@ -395,14 +395,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/35" />
 
         <div className="relative z-10 text-center px-8 max-w-3xl">
-          <h2 className="font-heading text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] text-white mb-4 uppercase">
+          <h2 className="reveal font-heading text-[32px] md:text-[56px] leading-[0.95] text-white mb-6 uppercase" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
             Greece only.<br />Always.
           </h2>
-          <p className="font-body text-xs tracking-[0.25em] uppercase text-white/40 mb-10">
-            One country. One obsession.
-          </p>
-          <p className="font-body text-[13px] md:text-base text-white/60 leading-[1.9] font-light max-w-xl mx-auto">
-            A skipper who knows where to anchor when the wind picks up. A villa that never appears online. A table that takes one phone call, to the right person. One country, one network, built over years.
+          <p className="reveal font-body text-[14px] md:text-[16px] text-white/85 leading-[1.7] font-light max-w-[520px] mx-auto" data-delay="100" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
+            One country, one network, built over years.
           </p>
         </div>
       </section>
@@ -419,20 +416,19 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/30" />
 
+        <div className="absolute inset-0 bg-black/55 z-[2]" />
         <div className="relative z-[3] min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-8 md:px-16 py-20">
           <div className="text-center max-w-[640px]">
-            <div className="inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
-              The Studio
-            </div>
-            <h2 className="font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            <h2 className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
               Greece begins with a conversation.
             </h2>
-            <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10 md:mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+            <p className="reveal font-body text-white text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" data-delay="100" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
               Tell us what you dream of. We shape the rest.
             </p>
             <a
               href="/contact"
-              className="eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+              className="reveal eb-cta-link font-body text-sm tracking-[0.2em] uppercase text-white"
+              data-delay="200"
             >
               Start the conversation
               <span className="eb-cta-arrow">&rarr;</span>
