@@ -72,8 +72,11 @@ export default function RevealFallback() {
       { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
     );
 
-    requestAnimationFrame(() => {
+    const observeAll = () => {
       document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
+        if (el.dataset.revealObserved === '1') return;
+        if (el.classList.contains('visible') || el.classList.contains('settled')) return;
+        el.dataset.revealObserved = '1';
         const rect = el.getBoundingClientRect();
         // Already past the viewport above (e.g. user landed mid-page) → reveal immediately
         if (rect.bottom < 0) {
@@ -83,9 +86,20 @@ export default function RevealFallback() {
         }
         observer.observe(el);
       });
-    });
+    };
 
-    return () => observer.disconnect();
+    // Run on next frame for normal renders
+    const raf = requestAnimationFrame(observeAll);
+    // Re-scan after a beat for client-navigated pages where children mount slightly after
+    const t1 = window.setTimeout(observeAll, 200);
+    const t2 = window.setTimeout(observeAll, 800);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      observer.disconnect();
+    };
   }, [pathname]);
 
   return null;

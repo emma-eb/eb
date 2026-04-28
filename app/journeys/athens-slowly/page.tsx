@@ -87,11 +87,11 @@ export default function AthensSlowlyPage() {
             The city the Athenians actually live in.
           </p>
         </div>
-        <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron">
+        <button type="button" onClick={(e) => (e.currentTarget.closest("section")?.nextElementSibling as HTMLElement)?.scrollIntoView({ behavior: "smooth", block: "start" })} aria-label="Scroll down" className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-30 eb-scroll-chevron cursor-pointer p-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white/60">
             <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </div>
+        </button>
       </section>
 
       {/* AT A GLANCE */}

@@ -243,7 +243,7 @@ export default function JourneysPage() {
             Private Journeys
           </span>
           <h1
-            className="reveal font-heading text-[48px] sm:text-[56px] md:text-[88px] leading-[0.95] text-white uppercase"
+            className="reveal font-heading text-[40px] sm:text-[56px] md:text-[88px] leading-[0.95] text-white uppercase text-balance"
             data-delay="100"
             style={{ letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
