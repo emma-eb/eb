@@ -89,7 +89,7 @@ function FeaturedBlock({ j }: { j: Journey }) {
     <a
       href={`/journeys/${j.slug}`}
       data-nav-dark
-      className="group relative block min-h-[90vh] md:min-h-0 md:h-[85vh] w-full overflow-hidden"
+      className="group relative block min-h-[90vh] md:min-h-0 md:h-[85vh] w-full overflow-hidden eb-card-hover"
     >
       <img
         src={j.image}
@@ -168,7 +168,7 @@ function SecondaryCard({ j }: { j: Journey }) {
   return (
     <a
       href={`/journeys/${j.slug}`}
-      className="reveal group block relative overflow-hidden h-[70vh] min-h-[500px] md:h-auto md:min-h-0 md:aspect-[3/2]"
+      className="reveal group block relative overflow-hidden h-[70vh] min-h-[500px] md:h-auto md:min-h-0 md:aspect-[3/2] eb-card-hover"
     >
       <img
         src={j.image}
