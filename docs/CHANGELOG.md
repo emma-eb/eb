@@ -9,13 +9,63 @@ Format base sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 ## [Non publie] — A venir
 
 ### En cours
-- Pages detail experiences (catalogue complet ~35 items)
-- Integration Stripe pour paywall $100 "eb. Private Route" + deposit $500
-- Generation PDF automatique "eb. Private Route"
-- Integration CMS Sanity
 - Audit complet des autres pages (homepage, /about, /experiences, /journal) avant launch US
-- Lightbox plein ecran sur galleries villa (composant cree dans /components/Lightbox.tsx mais non connecte)
-- WHITE SERENITY (3e villa Porto Heli) — en attente photos d'Emma
+- Silent Coast m² (en attente info proprietaire)
+
+### Droppes (out of scope, decision Emma 28/04/2026)
+- Stripe paywall $100 + deposit $500
+- Generation PDF auto Private Route
+- Sanity CMS
+- Lightbox plein ecran sur galleries villa
+- WHITE SERENITY 3e villa Porto Heli
+- Pages detail experiences (35+ items)
+
+---
+
+## [0.9.0] — 2026-04-28
+
+### Refondu (gros chantier UX/animations sitewide)
+- **Systeme d'animation completement reecrit** : remplace 6 classes CSS + 18 IntersectionObservers eparpilles par un seul composant `<RevealFallback />` (app/components) monte dans le layout, qui observe tous les `h1-h6, p, blockquote, .reveal, .featured-img, .img-settle` et ajoute `.visible`/`.settled` quand ils entrent dans le viewport. Auto-stagger ligne par ligne (delay calcule selon l'index parmi les freres dans le meme parent block) — chaque ligne d'un bloc apparait apres la precedente.
+- **Translation passee de 24px a 40px** (slide-up plus visible).
+- **Filet de securite 2s** dans le Reveal observer : si l'observer rate un element, force-reveal automatique a 2s pour eviter les textes invisibles (cas des pages a hydratation tardive).
+- **Re-scan a 200ms et 800ms** apres mount/navigation pour attraper les enfants montes apres le useEffect (client-side nav Next.js App Router).
+- **Threshold abaisse a 0** + rootMargin a 0 pour que des 1px de visibilite, l'animation se declenche (evite les cas ou un h3 dans un parent `.reveal` reste a opacity:0 parce que son parent n'a pas eu le temps).
+- **Tentative scroll-linked CSS abandonnee** : `animation-timeline: view()` testee mais incompatible avec `overflow: hidden` sur les parents (le parent devient scroll container, animation gelee). Decision : revenir a IntersectionObserver pour fiabilite multi-navigateur et controle du stagger.
+
+### Ajoute
+- **Composant `RevealFallback.tsx`** dans `/app/components` : observer JS sitewide, monte dans `app/layout.tsx`, gere le fade-up + stagger + safety net.
+- **Hover global sur images** : zoom 1.04 + filter brightness 1.05, transition 700ms cubic-bezier — applique a toute image inside `.group` (Tailwind grouping pattern utilise sur cards villa, journey, journal, glimpses, cross-sell).
+- **CTAs soulignes en permanence** : trait fin sous chaque `.eb-cta-link` (avant : trait apparaissait au hover). Opacity 0.5 par defaut, 1 au hover.
+- **Classe utilitaire `.eb-no-reveal`** : opt-out des animations sur les sections ou ca semblerait trop lent (applique sur la grille des 7 articles `/journal`).
+- **Lien "Back to Private Journeys"** en bas des 7 fiches journey detail (avant le footer) — coherence avec "Back to the Collection" sur les fiches villa.
+- **Cadre beige `eb-inner-frame`** sur la section Indoor/Outdoor des fiches villa (`/collection/[slug]`) — meme pattern que "Included / On Request" sur les fiches journey, donne de la profondeur au lieu d'etre flat.
+- **Cross-sell journey enrichi** : meta des cards "You might also like" sur les 7 fiches journey detail incluent maintenant la saison (`5 nights · Mykonos · May–September` au lieu de `5 nights · Mykonos`).
+- **Meta H1 `/journeys` avec text-balance** + reduit a 40px mobile (etait 48 — "Designed firsthand." debordait sur 3 lignes au lieu de 2).
+
+### Modifie (light gradients sitewide)
+- **44 gradients photo standardises** vers `from-black/55 via-black/15 to-transparent` (etait `from-black/85` a `from-black/95` selon les sections — trop sombre, photos paraissaient ombrees). 15 fichiers touches : home, about, journal, journeys, collection, experiences, contact, influencer-production. Heroes intacts (gradient deja leger).
+- **`/journal` hero gradient** : reduit `from-black/40 via-black/55 to-black/65` -> `from-black/30 via-black/40 to-black/55` (etait trop sombre pour la photo qui n'a pas besoin de tant de contraste).
+- **`/influencer-production` Brand Trips / Content cards** : gradient au contraire RENFORCE (`from-black/85 via-black/45 to-black/15` au lieu de `from-black/55`) — texte qui flotte sur photo claire necessitait plus de contraste.
+- **Cards Experiences mobile** (`/experiences`) : padding repense (`px-6 pb-8`), titre h2 reduit `28px sm:36px md:56px` (etait `32px md:56px` direct), description 13px mobile (etait 14), `max-w-[92%]` mobile pour utiliser tout l'espace.
+- **`/journal` typographie cards** : badges + dates `8/9px` -> `10/11px`, h3 small cards `clamp(15-20px)` -> `clamp(17-24px)`, h3 featured `clamp(18-28px)` -> `clamp(20-32px)`. Lisibilite mobile.
+- **Compteur 4 chiffres `/about`** : `useEffect` restaure (avait ete supprime par le menage des observers). Animation count-up declenche quand le bloc entre dans le viewport.
+
+### Bugs corriges
+- **Cadre bleu de focus persistant** sur les cards villa apres back navigation (iOS Safari) : `:focus-visible` desactive specifiquement sur `a.eb-card-hover` (gardes accessibilite clavier sur les autres liens).
+- **Fleches chevron des heros des 7 fiches journey** : etaient des `<div>` decoratifs non cliquables → maintenant des `<button>` avec onClick scrollIntoView vers la section suivante. L'animation `eb-scroll-chevron` (bouncing) deplacee du bouton vers le SVG enfant pour que le bouton reste statique (tap plus fiable iOS).
+- **Animation gelee sur elements inside `overflow: hidden`** : `animation-timeline: view()` etait incompatible avec parents en `overflow: hidden` (devenaient scroll containers). Resolu en revenant a IntersectionObserver classique. Override CSS `.overflow-hidden { overflow: clip }` retire (plus necessaire).
+- **Titres h3 `/journal` invisibles** : threshold 0.15 trop strict, certains h3 dans cards `<a>` avec leur propre `.reveal` restaient bloques opacity:0 (multiplication des opacities parent-enfant). Resolu par threshold:0.
+
+### Nettoyage code mort
+- **18 fichiers nettoyes** : suppression de tous les `IntersectionObserver` JS redondants dans les pages individuelles (~150 lignes de code mort). Tous les `.reveal` triggers passent maintenant par le composant `<RevealFallback />` du layout.
+- **Imports `useEffect` retires** des pages qui n'en ont plus besoin.
+- **`Nav.tsx` failsafe parasite supprime** : ajoutait `.visible` a tous les `.reveal` sitewide apres 1s, ce qui interferait avec le scroll-linked.
+- **CSS classes obsoletes retirees** : `.eb-fade-up`, `.eb-fade-in`, `.eb-image-settle`, `.eb-delay-100` -> `.eb-delay-500`. Tous les usages JSX ont ete migres vers `.reveal` + `data-delay` au prealable.
+- **`<RevealOnLoad />` supprime** (composant intermediaire abandonne au profit de RevealFallback).
+- **Hover scale ancien sur `.eb-image-settle.eb-visible` retire** (Tailwind `group-hover:scale-*` gere deja).
+
+### Decisions / Drop d'Emma le 28/04
+- **Stripe paywall + PDF generation + Sanity CMS + Lightbox connect + WHITE SERENITY** : tous droppes. Out of scope Phase 1.
 
 ---
 

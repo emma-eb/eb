@@ -1,8 +1,8 @@
 # Cahier des Charges — eb. Platform
-**Version :** 1.4
-**Date :** 2026-04-27
+**Version :** 1.5
+**Date :** 2026-04-28
 **Auteure :** Emma Bonnefous
-**Statut :** Phase 1 Sprint 3 — **Collection v5 + 5 fiches villa publiques** (You & Me + Celestia + Esmeralda + Tourlos Breeze + Santorini Estate, section 23). **Contact V4** avec preselect villa ET preselect yacht (section 23.5). Yacht banner refondu sur /collection. Hero overlays alleges sitewide. IntentCards price ranges. CSS reveal fallback. Memoires d'edition consolidees (island name, villa floor, mobile-first, must-show signature features). 7 fiches journey + For Brands V2 toujours en place. Adjacent villa cross-link reserve a You & Me ↔ Celestia (seules villas physiquement adjacentes).
+**Statut :** Phase 1 Sprint 4 — **SITE VALIDE DESKTOP + MOBILE par Emma le 28/04/2026** apres refonte UX/animations sitewide. Systeme d'animation reecrit (RevealFallback observer + auto-stagger ligne par ligne + safety net 2s, slide-up 40px), hover global sur images cards (zoom 1.04 + brightness 1.05), CTAs soulignes en permanence, 44 gradients photo standardises (`from-black/55 via-black/15 to-transparent`), cadre beige `eb-inner-frame` sur Indoor/Outdoor villa, `Back to Private Journeys` symetrique du `Back to the Collection`, cross-sell journey enrichi avec saison, fleches chevron des 7 fiches journey rendues cliquables. Compteur `/about` restaure. **18 fichiers nettoyes** (~150 lignes IntersectionObservers per-page supprimes + classes `eb-fade-up/in`, `eb-image-settle`, `eb-delay-*` retirees + Nav failsafe + RevealOnLoad). **Phase 2 droppe** (Stripe paywall, PDF generation, Sanity CMS, Lightbox connect, WHITE SERENITY) — out of scope. Reste avant launch : forms backend (Resend), analytics (GA4/Plausible), domaine emmabonnefous.com, Lighthouse audit.
 
 ---
 

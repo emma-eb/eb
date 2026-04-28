@@ -1,5 +1,26 @@
 # Roadmap — eb. Platform
-**Derniere mise a jour :** 2026-04-27 (session 2) — **Collection v6 : +3 nouvelles fiches villa (Silent Coast, Aegean Residence refonte, Anavissos Lux off-market)**, **audit /contact + CTAs complet pre-launch US** (corrections : ?ref= orphelin, helicopter transfers, FormShell mort, em dashes mailto, 4 BLOQUANTS fixes), **OccasionForm budget free text required pour tous**, **JourneyForm visual card + journeyMustHaves**, **lien Privacy Policy dans 3 forms**, **email fallback hello@emmabonnefous.com sous IntentCards**, **mobile fixes** (hero arrow tap target + safe-area, hero h1 text-balance + sizes, KeyFacts grid gaps, cards aspect-[4/5] mobile pour Celestia badge), **photos compressees -33% villas + -66% root** (sips quality 82, max 1920w), **push GitHub** via push-to-github.js (avec commit message CLI arg). Total : 8 fiches villa publiques (You & Me, Celestia, Esmeralda, Tourlos Breeze, Santorini Estate, **Silent Coast**, **Aegean Residence**, **Anavissos Lux**) + BESTIA yacht. WHITE SERENITY non ajoutee (photos manquantes). AEGEAN ESSENCE + SEAFRONT SANCTUARY supprimees (orphans).
+**Derniere mise a jour :** 2026-04-28 — **Session 28/04 : refonte complete UX/animations + nettoyage code mort + drop Phase 2**.
+
+**Session 28/04/2026 (synthese) :**
+- **Animation system reecrit de zero** : remplace 6 classes CSS + 18 IntersectionObservers eparpilles par un seul composant `<RevealFallback />` dans le layout. Auto-stagger ligne par ligne, threshold:0 + safety net 2s. Slide-up 40px (etait 24px). Tentative scroll-linked CSS abandonnee (incompatible avec `overflow: hidden` parents).
+- **Hover global sur images des cards** : zoom 1.04 + brightness 1.05, transition 700ms.
+- **CTAs soulignes en permanence** (avant : trait au hover seulement). Opacity 0.5 -> 1 au hover.
+- **44 gradients sitewide allegements** vers standard `from-black/55 via-black/15 to-transparent`. Heroes intacts. Brand/Content cards `/influencer-production` au contraire renforcees pour lisibilite sur photo claire.
+- **Cadre beige `eb-inner-frame`** ajoute sur Indoor/Outdoor villas (meme pattern que Included/On Request fiches journey).
+- **Cross-sell journey enrichi** : meta cards "You might also like" incluent maintenant la saison.
+- **Lien "Back to Private Journeys"** ajoute sur les 7 fiches journey detail (coherence avec "Back to the Collection" sur fiches villa).
+- **Fleches chevron des heros 7 fiches journey** : rendues cliquables (etaient `<div>` morts), animation deplacee du bouton vers le SVG enfant pour fiabilite tap iOS.
+- **Compteur 4 chiffres `/about`** : useEffect restaure (avait ete supprime dans le menage).
+- **`/journal` typographie cards** : badges/dates 8/9px -> 10/11px, h3 small clamp(15-20) -> clamp(17-24), h3 featured clamp(18-28) -> clamp(20-32). Lisibilite mobile.
+- **Cadre bleu de focus persistant** sur cards villa (iOS Safari) : `:focus-visible` desactive sur `a.eb-card-hover`.
+- **Class utilitaire `.eb-no-reveal`** : opt-out animations sur une section (applique grille `/journal` car Emma trouvait l'anim trop lente sur petits cards).
+- **18 fichiers nettoyes** : tous les IntersectionObserver per-page supprimes (~150 lignes). Classes obsoletes retirees : `.eb-fade-up`, `.eb-fade-in`, `.eb-image-settle`, `.eb-delay-*`, `<RevealOnLoad />`. Nav.tsx failsafe parasite supprime.
+- **Site VALIDE par Emma** sur desktop ET mobile.
+- **Phase 2 droppes** par Emma le 28/04 : Stripe paywall, PDF generation, Sanity CMS, Lightbox connect, WHITE SERENITY 3e villa.
+
+---
+
+**Session 27/04 :** — **Collection v6 : +3 nouvelles fiches villa (Silent Coast, Aegean Residence refonte, Anavissos Lux off-market)**, **audit /contact + CTAs complet pre-launch US** (corrections : ?ref= orphelin, helicopter transfers, FormShell mort, em dashes mailto, 4 BLOQUANTS fixes), **OccasionForm budget free text required pour tous**, **JourneyForm visual card + journeyMustHaves**, **lien Privacy Policy dans 3 forms**, **email fallback hello@emmabonnefous.com sous IntentCards**, **mobile fixes** (hero arrow tap target + safe-area, hero h1 text-balance + sizes, KeyFacts grid gaps, cards aspect-[4/5] mobile pour Celestia badge), **photos compressees -33% villas + -66% root** (sips quality 82, max 1920w), **push GitHub** via push-to-github.js (avec commit message CLI arg). Total : 8 fiches villa publiques (You & Me, Celestia, Esmeralda, Tourlos Breeze, Santorini Estate, **Silent Coast**, **Aegean Residence**, **Anavissos Lux**) + BESTIA yacht. WHITE SERENITY non ajoutee (photos manquantes). AEGEAN ESSENCE + SEAFRONT SANCTUARY supprimees (orphans).
 
 **Session 27/04 (suite) :** rework 3 villas + audit contact + mobile + perf.
 - **+3 fiches villa** : Silent Coast (Porto Heli, 6 ch, 12 guests, From €2,600/nuit, 15 photos), Aegean Residence (Porto Heli, 7 ch, 14 guests, From €3,500/nuit, refonte complete), Anavissos Lux (Athens Riviera, 6 ch, 12 guests, Price on request, 8 photos, badge "Off Market", hero photo 5 piscines rotated landscape).
@@ -190,18 +211,25 @@ Fondations   Site Web     App MVP      B2B Portal   Premium
 - [ ] Connexion formulaires submit → email notifications Resend/Formspree (mailto en place actuellement)
 
 ### Sprint 4 — Finition & Lancement (2 semaines)
+- [x] **Site valide desktop + mobile par Emma le 28/04/2026** apres refonte UX/animations completes
 - [ ] Optimisation SEO (balises, vitesse, sitemap)
 - [ ] Tests cross-device (iPhone, Android, desktop, tablette)
-- [ ] Configuration Google Analytics 4
-- [ ] Integration Stripe (mode test) pour paywall $100 + deposit $500
-- [ ] Generation PDF "eb. Private Route" automatique
+- [ ] Configuration Google Analytics 4 / Plausible
+- [ ] Connexion formulaires submit → email notifications (Resend/Formspree, etat actuel : mailto)
 - [ ] Mise en production sur emmabonnefous.com
 
 ### Criteres de succes Phase 1
 - Site live et accessible sur le domaine final
 - Score Lighthouse >= 90 (performance, SEO, accessibilite)
-- Emma peut modifier les textes et photos depuis le CMS sans aide technique
 - Premier formulaire de demande recu dans les 30 jours post-lancement
+
+### DROPPES (decision Emma 28/04/2026, out of scope Phase 1)
+- ~~Integration Stripe paywall $100 + deposit $500~~
+- ~~Generation PDF "eb. Private Route" automatique~~
+- ~~CMS Sanity (toutes les pages editables sans code)~~
+- ~~Lightbox plein ecran sur galleries villa~~ (composant `/components/Lightbox.tsx` existe mais ne sera pas branche)
+- ~~WHITE SERENITY 3e villa Porto Heli~~ (photos Emma jamais arrivees)
+- ~~Pages detail experiences (catalogue 35+ items)~~ (decision deja actee 20/04, confirmee)
 
 ---
 
