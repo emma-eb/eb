@@ -165,7 +165,10 @@ export default function Experiences() {
             01 &middot; Signature Experiences
           </p>
           <div className="reveal w-10 h-[2px] bg-[#2e5a88] mt-4 mb-8 mx-auto" data-delay="100" />
-          <p className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal" data-delay="200">
+          <h2 className="reveal font-body text-[22px] md:text-[30px] text-[#2e5a88] leading-[1.35] font-normal" data-delay="200">
+            The moments worth remembering.
+          </h2>
+          <p className="reveal mt-8 text-[15px] md:text-[16px] leading-[1.8] text-[#1a1a1a]/65 font-light font-body" data-delay="300">
             A private dinner where the chef knows your name before you arrive. A proposal where every detail has been rehearsed except the answer.
           </p>
         </div>
