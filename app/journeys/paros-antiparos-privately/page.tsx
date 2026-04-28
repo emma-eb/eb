@@ -118,11 +118,11 @@ export default function ParosAntiparosPage() {
             Private Journey &middot; 04
           </div>
 
-          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal eb-delay-100">
+          <h1 className="font-anton font-normal uppercase text-[38px] sm:text-[52px] md:text-[68px] leading-[0.95] sm:leading-[0.92] tracking-[0.02em] mb-6 max-w-[92%] md:max-w-[75%] reveal" data-delay="100">
             Paros + Antiparos,<br /> Privately.
           </h1>
 
-          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal eb-delay-200">
+          <p className="text-[14px] md:text-[16px] opacity-90 max-w-[480px] leading-[1.55] font-light reveal" data-delay="200">
             Without ever feeling like everyone.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 2 — AT A GLANCE (moved directly under hero) ============ */}
-      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 reveal border-t border-[#2e5a88]/10">
+      <section className="eb-bg-beige-gradient py-10 md:py-12 px-6 md:px-12 border-t border-[#2e5a88]/10">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {[
@@ -144,7 +144,7 @@ export default function ParosAntiparosPage() {
               { label: 'Season', value: 'May to October' },
               { label: 'Best for', value: 'Couples, Friends, Families' },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col min-w-0">
+              <div key={i} className="flex flex-col min-w-0 reveal" data-delay={i * 80}>
                 <div className="text-[9px] tracking-[0.3em] uppercase text-[#1a1a1a]/35 font-light mb-2">
                   {item.label}
                 </div>
@@ -163,15 +163,15 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 4 — THE ROUTE (simplified) ============ */}
-      <section className="px-6 md:px-12 py-14 md:py-20 bg-white reveal">
+      <section className="px-6 md:px-12 py-14 md:py-20 bg-white">
         <div className="max-w-[1000px] mx-auto">
-          <div className="text-center mb-10 md:mb-14">
+          <div className="text-center mb-10 md:mb-14 reveal">
             <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               The Route
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative reveal" data-delay="100">
             {/* Desktop : horizontal */}
             <div className="hidden md:block">
               <div className="flex items-start justify-between relative">
@@ -236,7 +236,7 @@ export default function ParosAntiparosPage() {
             </div>
           </div>
 
-          <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group reveal eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
+          <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
             <Image
               src="/images/journeys/paros-naoussa.jpg"
               alt="Paros south coast, quiet bays and fishing port at golden hour"
@@ -247,16 +247,16 @@ export default function ParosAntiparosPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]">
-              <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">
+              <span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light reveal">
                 The South Coast
               </span>
             </div>
 
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
-              <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4">
+              <h3 className="font-anton font-normal uppercase text-[36px] md:text-[40px] leading-[1] mb-4 reveal" data-delay="100">
                 Six nights by the sea.
               </h3>
-              <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light">
+              <p className="text-[15px] md:text-[15px] opacity-90 leading-[1.55] font-light reveal" data-delay="200">
                 Hand-selected villa, quiet bays, evenings in Naoussa.
               </p>
             </div>
@@ -277,7 +277,7 @@ export default function ParosAntiparosPage() {
             {days.map((day, i) => {
               const isOpen = openDay === i;
               return (
-                <div key={i} className="border-b border-black/10">
+                <div key={i} className="border-b border-black/10 reveal" data-delay={i * 50}>
                   <button
                     onClick={() => setOpenDay(isOpen ? null : i)}
                     className="w-full flex items-center justify-between py-7 md:py-10 text-left group transition-colors hover:bg-black/[0.02]"
@@ -332,48 +332,48 @@ export default function ParosAntiparosPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-        <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white reveal z-[3]">
-          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">
+        <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white z-[3]">
+          <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 reveal">
             Where You Stay
           </div>
-          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6">
+          <h2 className="font-anton font-normal uppercase text-[32px] md:text-[56px] leading-[1] md:leading-[0.98] tracking-[0.02em] mb-6 reveal" data-delay="100">
             Your south coast.
           </h2>
-          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light">
+          <p className="text-[15px] md:text-[17px] leading-[1.75] opacity-90 font-light reveal" data-delay="200">
             A hand-selected villa on the water. Private pool, direct beach access. The right residence matched to your party, confirmed once we know who is traveling.
           </p>
         </div>
       </section>
 
       {/* ============ ZONE 7B — VILLA GLIMPSES (Move 5 gallery) ============ */}
-      <section className="bg-white py-12 md:py-16 reveal">
+      <section className="bg-white py-12 md:py-16">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-          <div className="text-center mb-8 md:mb-10">
+          <div className="text-center mb-8 md:mb-10 reveal">
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Paros + Antiparos at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="100">
               <Image
                 src="/antiparos.jpg"
                 alt="Antiparos, quiet coast across the channel"
                 fill
-                className="object-cover reveal"
+                className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="180">
               <Image
                 src="/paros_04.jpg"
                 alt="Paros coast and sea at golden hour"
                 fill
-                className="object-cover reveal"
+                className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="260">
               <Image
                 src="/paros_03.jpg"
                 alt="Interior light and textures, Paros villa"
                 fill
-                className="object-cover reveal"
+                className="object-cover"
               />
             </div>
           </div>
@@ -381,17 +381,17 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 8 — WHAT'S INCLUDED (Moves 1 + 5) ============ */}
-      <section className="eb-inner-frame reveal">
+      <section className="eb-inner-frame">
         <div className="eb-inner-content">
           <div className="max-w-[1100px] mx-auto">
-            <div className="text-center mb-12 md:mb-16">
+            <div className="text-center mb-12 md:mb-16 reveal">
               <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
                 What&apos;s Included
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-10 md:gap-20">
-              <div>
+              <div className="reveal" data-delay="100">
                 <div className="text-[11px] tracking-[0.3em] uppercase text-[#2e5a88] font-medium mb-6">
                   Included
                 </div>
@@ -405,7 +405,7 @@ export default function ParosAntiparosPage() {
                 </ul>
               </div>
 
-              <div>
+              <div className="reveal" data-delay="200">
                 <div className="text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/50 font-light mb-6">
                   On Request
                 </div>
@@ -428,15 +428,16 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* MID CTA — shape this journey */}
-      <section className="bg-white py-14 md:py-16 px-6 md:px-8 reveal">
+      <section className="bg-white py-14 md:py-16 px-6 md:px-8">
         <div className="max-w-[680px] mx-auto text-center">
-          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6" />
-          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6]">
+          <div className="w-8 h-px bg-[#2e5a88]/30 mx-auto mb-6 reveal" />
+          <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/65 font-light mb-6 leading-[1.6] reveal" data-delay="100">
             Ready to shape this one?
           </p>
           <Link
             href="/contact?type=journey&journey=paros-antiparos-privately"
-            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px]"
+            className="inline-flex items-center gap-2 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-[#2e5a88] border-b border-[#2e5a88]/40 pb-1 hover:border-[#2e5a88] transition-colors min-h-[44px] reveal"
+            data-delay="200"
           >
             Inquire <span>&rarr;</span>
           </Link>
@@ -444,9 +445,9 @@ export default function ParosAntiparosPage() {
       </section>
 
       {/* ============ ZONE 9 — CROSS-SELL (reordered: before CTA) ============ */}
-      <section className="px-6 md:px-10 py-14 md:py-20 bg-white reveal">
+      <section className="px-6 md:px-10 py-14 md:py-20 bg-white">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 reveal">
             <div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">
               You might also like
             </div>
@@ -479,7 +480,8 @@ export default function ParosAntiparosPage() {
               <Link
                 key={i}
                 href={card.href}
-                className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette"
+                className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette reveal"
+                data-delay={100 + i * 80}
               >
                 <Image
                   src={card.img}
@@ -520,17 +522,17 @@ export default function ParosAntiparosPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
 
         <div className="relative z-[3] h-full flex items-center justify-center px-6 md:px-10">
-          <div className="text-center max-w-[640px] reveal">
-            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5">
+          <div className="text-center max-w-[640px]">
+            <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase text-white font-light inline-block mb-5 reveal">
               Yours to shape
             </div>
-            <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5">
+            <h2 className="font-anton font-normal uppercase text-[38px] md:text-[64px] leading-[0.95] tracking-[0.02em] text-white mb-5 reveal" data-delay="100">
               Ready when<br />you are.
             </h2>
-            <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light">
+            <p className="text-[14px] md:text-[15px] text-white/85 max-w-[440px] mx-auto mb-8 leading-[1.6] font-light reveal" data-delay="200">
               Tell us when, with whom, and how you want to feel. We shape the rest.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center reveal" data-delay="300">
               <Link
                 href="/contact?type=journey&journey=paros-antiparos-privately"
                 className="eb-cta-link font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white min-h-[44px] py-3"
