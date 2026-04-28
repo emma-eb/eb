@@ -243,7 +243,7 @@ export default function Experiences() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 [@media(hover:hover)]:group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 100%)" }} />
 
               <div className="absolute bottom-0 left-0 p-5 md:p-8 z-10">
                 <span className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] font-medium tracking-[0.15em] uppercase text-white">
@@ -251,11 +251,11 @@ export default function Experiences() {
                 </span>
                 <h3
                   className="font-heading text-white uppercase leading-[1] tracking-wide mt-3"
-                  style={{ fontSize: "clamp(22px, 2.4vw, 32px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+                  style={{ fontSize: "clamp(22px, 2.4vw, 32px)", letterSpacing: "-0.01em", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}
                 >
                   {c.title}
                 </h3>
-                <p className="font-body text-[13px] text-white/75 font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+                <p className="font-body text-[13px] text-white font-light mt-2 max-w-xs" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
                   {c.desc}
                 </p>
               </div>
@@ -285,15 +285,12 @@ export default function Experiences() {
             loading="lazy"
           />
         </div>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-[3] text-center px-8 max-w-[640px]">
-          <div className="inline-block bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 text-[10px] tracking-[0.35em] uppercase text-white font-light mb-6">
-            One Call
-          </div>
-          <h2 className="font-anton font-normal uppercase text-white text-[36px] md:text-[56px] leading-tight mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <h2 className="reveal font-heading text-white text-[32px] md:text-[56px] leading-[0.95] uppercase mb-6" style={{ letterSpacing: "0.02em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}>
             Every detail, already thought of.
           </h2>
-          <p className="font-body text-white/80 text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
+          <p className="reveal font-body text-white text-base md:text-lg font-light leading-relaxed max-w-[480px] mx-auto mb-10" data-delay="100" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
             Tell us the occasion. The rest is shaped around it.
           </p>
           <a
