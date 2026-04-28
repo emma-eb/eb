@@ -109,10 +109,10 @@ export default function Journal() {
               <img src="/emily-paris.jpg" alt="Greek terrace, blue shutters, bougainvillea" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 md:top-4 md:left-4 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Culture</span>
+              <span className="absolute top-3 left-3 md:top-4 md:left-4 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">Culture</span>
               <div className="absolute bottom-0 left-0 p-4 md:p-6" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Variety &middot; April 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 max-w-lg line-clamp-3" style={{ fontSize: "clamp(18px, 2vw, 28px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Emily in Paris heads to Greece for Season 6</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Variety &middot; April 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 max-w-lg line-clamp-3" style={{ fontSize: "clamp(20px, 2.2vw, 32px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Emily in Paris heads to Greece for Season 6</h3>
               </div>
             </a>
 
@@ -121,10 +121,10 @@ export default function Journal() {
               <img src="/tourism-revenue.jpg" alt="Girl photographing the Parthenon" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; March 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Tourism revenue jumps 58.4% to &euro;473M</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; March 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Tourism revenue jumps 58.4% to &euro;473M</h3>
               </div>
             </a>
 
@@ -133,10 +133,10 @@ export default function Journal() {
               <img src="https://images.unsplash.com/photo-1692445772695-5a5b88ecb786?auto=format&fit=crop&w=800&q=80" alt="Greece sunset village" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-4" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Newsweek &middot; 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Greece named world&apos;s #1 retirement destination</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Newsweek &middot; 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.15] tracking-[0.02em] mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Greece named world&apos;s #1 retirement destination</h3>
               </div>
             </a>
           </div>
@@ -148,10 +148,10 @@ export default function Journal() {
               <img src="/astypalea.jpg" alt="Astypalea windmills" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Destination</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">Destination</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">The Guardian &middot; 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Astypalea crowned world&apos;s top destination</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">The Guardian &middot; 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Astypalea crowned world&apos;s top destination</h3>
               </div>
             </a>
 
@@ -160,10 +160,10 @@ export default function Journal() {
               <img src="/raphael-lopes-zqGvYYqDvs4-unsplash%20(1).jpg" alt="Luxury hotel Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Hospitality Pipeline</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">Hospitality Pipeline</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Tornos News &middot; 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>The high-profile hotel openings expected in 2026</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Tornos News &middot; 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>The high-profile hotel openings expected in 2026</h3>
               </div>
             </a>
 
@@ -172,10 +172,10 @@ export default function Journal() {
               <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Luxury villa modern architecture" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">Capital &amp; Lifestyle</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">Capital &amp; Lifestyle</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; April 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Greece becomes a safe haven for luxury real estate</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; April 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Greece becomes a safe haven for luxury real estate</h3>
               </div>
             </a>
 
@@ -184,10 +184,10 @@ export default function Journal() {
               <img src="/gulf-shift.jpg" alt="Aerial view boats turquoise water Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[8px] md:text-[9px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
+              <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">In the press</span>
               <div className="absolute bottom-0 left-0 p-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>
-                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[8px] md:text-[9px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; March 2026</p>
-                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(15px, 1.4vw, 20px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Tourists reroute to Greece as Gulf slumps</h3>
+                <p className="inline-block px-2 py-0.5 bg-black/30 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] rounded-full font-body text-[10px] md:text-[11px] tracking-[0.1em] uppercase text-white/90">Greek City Times &middot; March 2026</p>
+                <h3 className="font-heading text-white uppercase leading-[1.05] tracking-wide mt-2 line-clamp-3" style={{ fontSize: "clamp(17px, 1.6vw, 24px)", letterSpacing: "-0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}>Tourists reroute to Greece as Gulf slumps</h3>
               </div>
             </a>
           </div>
