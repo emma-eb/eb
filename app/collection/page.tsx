@@ -310,8 +310,8 @@ export default function CollectionPage() {
       {/* ═══════════════════════════════════════════
           BLOC 3.5 — CITATION DE RESPIRATION
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#fcf7f1] px-6 py-10 md:py-20">
-        <p className="reveal max-w-[520px] mx-auto text-center text-[14px] md:text-[16px] leading-[1.6] tracking-wide text-[#1a1a1a]/45 font-light italic font-body">
+      <section className="bg-[#fcf7f1] flex items-center justify-center h-[15vh] md:h-[28vh] px-8">
+        <p className="reveal font-body text-[17px] md:text-[22px] font-light text-[#1a1a1a]/40 text-center max-w-2xl leading-relaxed">
           The right address changes the week.
         </p>
       </section>
