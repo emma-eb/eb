@@ -123,17 +123,17 @@ export default function InfluencerProduction() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15" />
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-[3]">
-                <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 2px 6px rgba(0,0,0,0.7)" }}>
+                <h3 className="font-anton font-normal uppercase text-white text-[28px] md:text-[36px] leading-tight mb-4" style={{ letterSpacing: "0.02em", textShadow: "0 2px 6px rgba(0,0,0,0.8)" }}>
                   {title}
                 </h3>
-                <p className="text-[13px] md:text-[14px] text-white font-light leading-[1.6] mb-5 max-w-[340px]" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
+                <p className="text-[13px] md:text-[14px] text-white font-light leading-[1.6] mb-5 max-w-[340px]" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
                   {body}
                 </p>
                 <ul className="flex flex-col gap-1.5">
                   {details.map((d) => (
-                    <li key={d} className="text-[12px] md:text-[13px] text-white/90 font-light leading-[1.5] flex gap-2" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+                    <li key={d} className="text-[12px] md:text-[13px] text-white/95 font-light leading-[1.5] flex gap-2" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}>
                       <span className="text-white/70 shrink-0">&middot;</span>
                       {d}
                     </li>

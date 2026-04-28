@@ -94,10 +94,30 @@ export default function RevealFallback() {
     const t1 = window.setTimeout(observeAll, 200);
     const t2 = window.setTimeout(observeAll, 800);
 
+    // Safety net: 2s after mount, force-reveal anything still hidden
+    // that is at or above the bottom of viewport. Prevents stuck-invisible
+    // text if the observer ever misses an element.
+    const safetyNet = window.setTimeout(() => {
+      document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
+        if (
+          el.classList.contains('visible') ||
+          el.classList.contains('settled')
+        ) {
+          return;
+        }
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          const cls = el.classList.contains('img-settle') ? 'settled' : 'visible';
+          el.classList.add(cls);
+        }
+      });
+    }, 2000);
+
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
+      window.clearTimeout(safetyNet);
       observer.disconnect();
     };
   }, [pathname]);

@@ -49,6 +49,20 @@ export default function About() {
   const storyRef = useRef<HTMLElement>(null);
   const [numbersVisible, setNumbersVisible] = useState(false);
 
+  useEffect(() => {
+    if (!numbersRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNumbersVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    obs.observe(numbersRef.current);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <main className="flex flex-col min-h-screen bg-white">
