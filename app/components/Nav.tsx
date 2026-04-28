@@ -108,14 +108,16 @@ export default function Nav({ activePage }: NavProps) {
           ))}
         </div>
 
-        <a
-          href="/contact"
-          className={`eb-cta-link hidden md:inline-flex text-xs tracking-[0.2em] uppercase font-medium ${
-            dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"
-          }`}
-        >
-          Inquire <span className="eb-cta-arrow">&rarr;</span>
-        </a>
+        <div className="hidden md:block">
+          <a
+            href="/contact"
+            className={`eb-cta-link text-xs tracking-[0.2em] uppercase font-medium ${
+              dark ? "text-[#fcf7f1]" : "text-[#2e5a88]"
+            }`}
+          >
+            Inquire <span className="eb-cta-arrow">&rarr;</span>
+          </a>
+        </div>
 
         <div className="flex md:hidden items-center gap-3 relative z-50">
           <a
