@@ -22,6 +22,22 @@ Format base sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 
 ---
 
+## [0.9.1] — 2026-04-28 (fin de session)
+
+### Bugs corriges (post v0.9.0, fin de session)
+- **Bloc vide enorme en haut des forms `/contact?type=...`** : `RevealFallback` ne re-observait pas les nouveaux elements quand l'URL passait de `/contact` a `/contact?type=journey` (search params changent mais pathname stable). Resolu en faisant dependre le useEffect de l'URL complete (path + search params) + ajout d'un MutationObserver qui observe automatiquement tout nouveau noeud DOM (Suspense reveal, conditional render). Verifie sur 7 scenarios de forms : contact landing, journey scratch, journey preselect, stay villa default, stay villa preselect, stay yacht, occasion. Tous H1/typeLabel/intro visibles, aucune erreur console.
+- **Underline `.eb-cta-link` debordait toute la largeur du container** quand le CTA etait dans un parent `flex flex-col` (cas : "View residence" en bas des cards villa sur `/collection`). Resolu par `width: fit-content` sur `.eb-cta-link`. Premiere tentative avec `align-self: flex-start` cassait les CTAs centres (hero fiche villa "Enquire about this villa"), retiree.
+- **Footer `/collection` et `/collection/[slug]`** avait des liens `Journeys` et `Experiences` que les autres footers (Home, About, Journal, etc.) n'ont pas. Harmonise sur `For Brands / Journal / About / Contact`.
+- **Padding header forms trop genereux** (`pt-28 md:pt-24`) : reduit a `pt-20` partout. Plus de bloc vide cream au-dessus du titre.
+- **Suspense boundary** ajoute autour de `<RevealFallback />` dans le layout (necessaire avec `useSearchParams()` pour que le build statique de `/_not-found` passe).
+
+### Sauvegarde memoire (Claude)
+- Nouvelle entree : `feedback_animation_system_canonical.md` — architecture du Reveal observer, pieges (overflow:hidden + view(), opacity multiplication parent-enfant), how to apply pour les futures sections.
+- Nouvelle entree : `feedback_visual_standards.md` — standards visuels post 28/04 (gradient `from-black/55`, hover image scale 1.04 + brightness 1.05, CTAs soulignes permanents, eb-inner-frame, eb-no-reveal, slide 40px).
+- Mise a jour : `project_scope_phase1.md` — section "DROPPES par Emma le 28/04" (Stripe, PDF, Sanity, Lightbox, WHITE SERENITY).
+
+---
+
 ## [0.9.0] — 2026-04-28
 
 ### Refondu (gros chantier UX/animations sitewide)

@@ -1,7 +1,17 @@
 # Roadmap — eb. Platform
 **Derniere mise a jour :** 2026-04-28 — **Session 28/04 : refonte complete UX/animations + nettoyage code mort + drop Phase 2**.
 
-**Session 28/04/2026 (synthese) :**
+**Session 28/04/2026 — fin de session (synthese complete) :**
+
+**Fixes finaux (post-validation Emma) :**
+- **Bloc vide enorme sur forms `/contact?type=X`** : RevealFallback ne re-observait pas les elements quand seuls les search params changeaient. Resolu (urlKey + MutationObserver). Forms valides sur 7 scenarios.
+- **Underline CTA debordait** sur cards villa `/collection` ("View residence"). Resolu par `width: fit-content` sur `.eb-cta-link`.
+- **Underline CTA cassait centrage** sur hero fiches villa apres premier fix. `align-self: flex-start` retire, alignement parent (`items-center`) restaure.
+- **Footers `/collection` et `/collection/[slug]`** : liens `Journeys` + `Experiences` retires pour harmonisation avec autres footers (For Brands / Journal / About / Contact).
+- **Padding header forms** reduit (`pt-28` -> `pt-20`).
+- **Suspense boundary** ajoute autour de `<RevealFallback />` dans le layout (build statique).
+
+
 - **Animation system reecrit de zero** : remplace 6 classes CSS + 18 IntersectionObservers eparpilles par un seul composant `<RevealFallback />` dans le layout. Auto-stagger ligne par ligne, threshold:0 + safety net 2s. Slide-up 40px (etait 24px). Tentative scroll-linked CSS abandonnee (incompatible avec `overflow: hidden` parents).
 - **Hover global sur images des cards** : zoom 1.04 + brightness 1.05, transition 700ms.
 - **CTAs soulignes en permanence** (avant : trait au hover seulement). Opacity 0.5 -> 1 au hover.
