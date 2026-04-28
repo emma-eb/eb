@@ -95,7 +95,7 @@ export default function MykonosTimedRightPage() {
       </div>
 
       {/* ============ ZONE 1 — HERO ============ */}
-      <section data-nav-dark className="relative w-full h-screen min-h-[600px] overflow-hidden eb-image-vignette">
+      <section data-nav-dark className="relative w-full h-[75vh] md:h-screen md:min-h-[600px] overflow-hidden eb-image-vignette">
         <Image
           src="/mykonos_01.jpg"
           alt="Mykonos Chora at dusk, Little Venice"
@@ -227,7 +227,7 @@ export default function MykonosTimedRightPage() {
             </div>
           </div>
 
-          <div className="relative h-[100dvh] min-h-[600px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] md:mx-auto -mx-6 md:mx-auto">
+          <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-fade-up eb-image-vignette md:max-w-[1200px] md:mx-auto -mx-6 md:mx-auto">
             <Image
               src="/scorpio.jpg"
               alt="Scorpios Mykonos at sunset"
@@ -314,7 +314,7 @@ export default function MykonosTimedRightPage() {
       </section>
 
       {/* ============ ZONE 6 — WHERE YOU STAY ============ */}
-      <section data-nav-dark className="relative w-full h-[80vh] min-h-[500px] overflow-hidden eb-image-vignette">
+      <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
           src="/mykonos villa.jpg"
           alt="A Mykonos villa above the water"

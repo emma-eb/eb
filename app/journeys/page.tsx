@@ -353,7 +353,7 @@ export default function JourneysPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            A handful of residences the Athenian families have returned to for generations. Reachable by helicopter from Athens. By introduction, only.
+            A handful of residences the Athenian families have returned to for generations. Reachable by helicopter from Athens.
           </p>
           <a
             href="/contact?type=stay"
