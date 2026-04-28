@@ -22,7 +22,7 @@ const featured: Journey[] = [
     number: "01",
     overline: "Featured Journey \u00b7 01",
     title: "Astypalea, Before\nEveryone Else.",
-    description: "Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists. Before everyone else catches on.",
+    description: "Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists.",
     meta: "7 Nights \u00b7 Athens + Astypalea \u00b7 May\u2013September",
   },
   {

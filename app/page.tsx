@@ -264,7 +264,7 @@ export default function Home() {
             7 Nights &middot; Athens + Astypalea &middot; May&ndash;September
           </p>
           <p className="reveal font-body text-sm text-white leading-relaxed max-w-md mb-8" data-delay="300" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>
-            Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists. Before everyone else catches on.
+            Athens, then the Cycladic island that travel writers are quietly putting at the top of their 2026 lists.
           </p>
           <a
             href="/journeys"
