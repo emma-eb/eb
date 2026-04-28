@@ -168,15 +168,28 @@ h1, h2 {
     will-change: opacity, transform;
   }
 
-  /* Above-the-fold elements get .visible at page load (via RevealOnLoad).
-     Override the scroll-linked timeline with a slower, smoother one-shot. */
-  :where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
-  .reveal.visible,
-  .featured-img.visible,
-  .img-settle.settled {
+  /* Hero (first section of each page) auto-plays a smooth time-based
+     animation on page load. Below-the-fold sections keep the scroll-linked
+     timeline above. No JS needed. */
+  main > section:first-of-type :where(h1, h2, h3, h4, h5, h6, p, blockquote,
+                                       .reveal, .featured-img, .img-settle) {
     animation: eb-reveal-load 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-timeline: auto;
   }
+
+  /* Stagger inside the hero via data-delay attribute */
+  main > section:first-of-type [data-delay="50"]  { animation-delay: 50ms; }
+  main > section:first-of-type [data-delay="80"]  { animation-delay: 80ms; }
+  main > section:first-of-type [data-delay="100"] { animation-delay: 100ms; }
+  main > section:first-of-type [data-delay="120"] { animation-delay: 120ms; }
+  main > section:first-of-type [data-delay="150"] { animation-delay: 150ms; }
+  main > section:first-of-type [data-delay="160"] { animation-delay: 160ms; }
+  main > section:first-of-type [data-delay="180"] { animation-delay: 180ms; }
+  main > section:first-of-type [data-delay="200"] { animation-delay: 200ms; }
+  main > section:first-of-type [data-delay="220"] { animation-delay: 220ms; }
+  main > section:first-of-type [data-delay="250"] { animation-delay: 250ms; }
+  main > section:first-of-type [data-delay="280"] { animation-delay: 280ms; }
+  main > section:first-of-type [data-delay="300"] { animation-delay: 300ms; }
 }
 
 @keyframes eb-reveal {
