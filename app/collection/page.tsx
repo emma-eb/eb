@@ -430,7 +430,7 @@ export default function CollectionPage() {
             data-delay="150"
             style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
           >
-            Villas that never appear online. Yacht on request.
+            Looking for a residence, or simply want to discuss? Tell us what you have in mind, we take it from there.
           </p>
           <a
             href="/contact?type=stay"

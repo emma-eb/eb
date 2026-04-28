@@ -157,7 +157,7 @@ const youAndMe: VillaDetail = {
   gallery: [
     { src: "/villas/you-and-me/gallery-01.jpg", alt: "Villa You & Me seen from above, estate and twin pools" },
     { src: "/villas/you-and-me/gallery-03.jpg", alt: "The residence and long infinity pool from the terrace" },
-    { src: "/villas/you-and-me/gallery-04.jpg", alt: "Villa facade opening onto the pool and the Aegean" },
+    { src: "/villas/you-and-me/gallery-16.jpg", alt: "The kitchen, marble island and leather bar stools" },
     { src: "/villas/you-and-me/gallery-05.jpg", alt: "Aerial view of twin pools and central sunken lounge with fire pit" },
     { src: "/villas/you-and-me/gallery-06.jpg", alt: "Stone guest pavilion beside the pool" },
     { src: "/villas/you-and-me/gallery-07.jpg", alt: "Outdoor pergola dining under bamboo, sea view lounges" },
@@ -267,7 +267,7 @@ const celestia: VillaDetail = {
     { src: "/villas/celestia/gallery-11.jpg", alt: "Aerial of Villa Celestia at dusk, twin pools illuminated across the levels" },
     { src: "/villas/celestia/gallery-12.jpg", alt: "Evening lounge, warm tones by the stone wall" },
     { src: "/villas/celestia/gallery-13.jpg", alt: "Sun loungers under bamboo pergola, infinity pool and Mykonos bay beyond" },
-    { src: "/villas/celestia/gallery-14.jpg", alt: "Twin pools with sun loungers and central sunken lounge" },
+    { src: "/villas/celestia/gallery-15.jpg", alt: "Private wine cellar in stone and dark wood" },
     { src: "/villas/celestia/gallery-14.jpg", alt: "Twin pools with sun loungers and central sunken lounge" },
   ],
 
@@ -545,7 +545,7 @@ const santoriniEstate: VillaDetail = {
     { src: "/villas/santorini-estate/gallery-11.jpg", alt: "Daybed and infinity pool at golden hour" },
     { src: "/villas/santorini-estate/gallery-12.jpg", alt: "Outdoor cinema and firepit at sunset, the Aegean beyond" },
     { src: "/villas/santorini-estate/gallery-13.jpg", alt: "Private wine cellar with tasting bench" },
-    { src: "/villas/santorini-estate/gallery-14.jpg", alt: "Aerial of the estate above the caldera, the volcano and the open Aegean beyond" },
+    { src: "/villas/santorini-estate/gallery-15.jpg", alt: "Bathroom in patterned black and white, oval mirror and dappled tiles" },
     { src: "/villas/santorini-estate/gallery-14.jpg", alt: "Aerial of the estate above the caldera, the volcano and the open Aegean beyond" },
   ],
 
@@ -624,7 +624,7 @@ const bestia: VillaDetail = {
 
   cover: "/yacht/cover.jpg",
   gallery: [
-    { src: "/yacht/gallery-01.jpg", alt: "BESTIA exterior, profile from the water" },
+    { src: "/yacht/gallery-15.jpg", alt: "Onboard interior detail" },
     { src: "/yacht/gallery-02.jpg", alt: "BESTIA cruising the Mediterranean coastline" },
     { src: "/yacht/gallery-03.jpg", alt: "Aft deck lounge with sofas, the open sea behind" },
     { src: "/yacht/gallery-04.jpg", alt: "BESTIA exterior detail" },
@@ -638,7 +638,7 @@ const bestia: VillaDetail = {
     { src: "/yacht/gallery-12.jpg", alt: "Guest cabin with direct sea access" },
     { src: "/yacht/gallery-13.jpg", alt: "Bathroom detail in natural stone and metal" },
     { src: "/yacht/gallery-14.jpg", alt: "Second salon, designed for privacy" },
-    { src: "/yacht/gallery-15.jpg", alt: "Onboard interior detail" },
+    { src: "/yacht/gallery-01.jpg", alt: "BESTIA exterior, profile from the water" },
   ],
 
   mailtoSubject: "Inquiry: BESTIA Yacht Charter",
@@ -726,8 +726,8 @@ const silentCoast: VillaDetail = {
     { src: "/villas/silent-coast/gallery-11.jpg", alt: "Lower-level living and dining, rattan chairs and woven pendants" },
     { src: "/villas/silent-coast/gallery-12.jpg", alt: "Lower-level lounge with corner sofa and woven poufs" },
     { src: "/villas/silent-coast/gallery-13.jpg", alt: "Outdoor jacuzzi on the master terrace, panoramic view of the bay" },
-    { src: "/villas/silent-coast/gallery-14.png", alt: "Pool reflecting the stone pavilion at dusk" },
     { src: "/villas/silent-coast/gallery-15.jpg", alt: "Terrace lounge looking out to the bay, the Peloponnese hills beyond" },
+    { src: "/villas/silent-coast/gallery-14.jpg", alt: "Pool reflecting the stone pavilion at dusk" },
   ],
 
   mailtoSubject: "Inquiry: Silent Coast",
@@ -816,7 +816,6 @@ const aegeanResidence: VillaDetail = {
     { src: "/villas/aegean-residence/gallery-10.jpg", alt: "Open kitchen and dining area, sea view through the doors" },
     { src: "/villas/aegean-residence/gallery-11.jpg", alt: "En-suite bedroom with sea view and private terrace" },
     { src: "/villas/aegean-residence/gallery-12.jpg", alt: "Lower-level family living room with sectional sofa" },
-    { src: "/villas/aegean-residence/gallery-13.jpg", alt: "All-white kitchen with central island and sea-facing window" },
     { src: "/villas/aegean-residence/gallery-14.jpg", alt: "Bathroom in stone and marble with walk-in shower" },
   ],
 

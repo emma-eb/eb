@@ -390,13 +390,13 @@ export default function VillaDetailPage({
       ═══════════════════════════════════════════ */}
       <section
         data-nav-dark
-        className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette"
+        className={`relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette ${isYacht ? "bg-[#1a1a1a]" : ""}`}
       >
         <img
           src={villa.cover}
           alt=""
           aria-hidden="true"
-          className="eb-image-settle absolute inset-0 w-full h-full object-cover object-[center_35%] md:object-center"
+          className={`eb-image-settle absolute inset-0 w-full h-full ${isYacht ? "object-contain md:object-cover" : "object-cover"} object-center md:object-[center_35%]`}
           sizes="100vw"
           loading="lazy"
         />
@@ -457,7 +457,7 @@ export default function VillaDetailPage({
       <section className="bg-[#fcf7f1] px-6 py-12 md:py-16 border-t border-[#1a1a1a]/08">
         <div className="max-w-[720px] mx-auto text-center">
           <a
-            href="/collection#homes"
+            href={`/collection#villa-${villa.slug}`}
             className="eb-cta-link font-body text-[12px] md:text-[13px] uppercase tracking-[0.12em] font-medium text-[#2e5a88]"
           >
             <span className="eb-cta-arrow rotate-180 inline-block mr-1">&rarr;</span> Back to the Collection

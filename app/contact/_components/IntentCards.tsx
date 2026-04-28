@@ -67,11 +67,6 @@ export default function IntentCards() {
                   <p className="font-body text-[13px] md:text-[14px] text-white/85 leading-[1.6] font-light max-w-[280px]" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
                     {p.desc}
                   </p>
-                  {"priceRange" in p && p.priceRange && (
-                    <p className="font-body text-[11px] md:text-[12px] uppercase tracking-[0.12em] text-white/60 font-light mt-3" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}>
-                      {p.priceRange}
-                    </p>
-                  )}
                   <span className="inline-flex items-center gap-2 mt-4 font-body text-[11px] md:text-[12px] tracking-[0.15em] uppercase text-white font-medium">
                     Start the conversation
                     <span className="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1.5">&rarr;</span>
