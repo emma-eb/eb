@@ -151,26 +151,17 @@ h1, h2 {
   will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /* Fallback if the IntersectionObserver never fires */
-  animation: eb-reveal-fallback 0.9s cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards;
 }
 .reveal.visible,
 .featured-img.visible,
 .img-settle.settled {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  animation: none;
 }
 .reveal.visible.done,
 .featured-img.visible.done,
 .img-settle.settled.done {
   will-change: auto;
-}
-@keyframes eb-reveal-fallback {
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -254,7 +245,6 @@ h1, h2 {
   transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
-  animation: eb-reveal-fallback 0.9s cubic-bezier(0.22, 1, 0.36, 1) 800ms forwards;
 }
 
 .eb-fade-up.eb-visible,
@@ -262,7 +252,6 @@ h1, h2 {
 .eb-image-settle.eb-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  animation: none;
 }
 
 .eb-delay-100 { transition-delay: 100ms; }
