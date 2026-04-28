@@ -273,7 +273,7 @@ export default function CollectionPage() {
                     {villa.badge}
                   </span>
                 )}
-                <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-8 text-center md:text-left items-center md:items-start">
+                <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-8">
                   <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.15em] text-white font-medium font-body" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)" }}>
                     {villa.location}
                   </p>
