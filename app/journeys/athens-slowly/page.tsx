@@ -313,6 +313,19 @@ export default function AthensSlowlyPage() {
       </section>
 
       {/* FOOTER */}
+      {/* ============ BACK TO JOURNEYS ============ */}
+      <section className="bg-[#fcf7f1] px-6 py-12 md:py-16 border-t border-[#1a1a1a]/08">
+        <div className="max-w-[720px] mx-auto text-center">
+          <Link
+            href="/journeys"
+            className="eb-cta-link font-body text-[12px] md:text-[13px] uppercase tracking-[0.12em] font-medium text-[#2e5a88]"
+          >
+            <span className="eb-cta-arrow rotate-180 inline-block mr-1">&rarr;</span> Back to Private Journeys
+          </Link>
+        </div>
+      </section>
+
+
       <footer data-nav-dark className="bg-[#1a1a1a] py-12 px-8 md:px-16">
         <NewsletterBanner />
         <div className="max-w-6xl mx-auto px-6"><div className="border-t border-white/30" /></div>
