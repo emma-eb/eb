@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const SELECTOR =
   'h1, h2, h3, h4, h5, h6, p, blockquote, .reveal, .featured-img, .img-settle';
@@ -23,6 +23,10 @@ const TEXT_TAGS = /^(H1|H2|H3|H4|H5|H6|P|BLOCKQUOTE)$/;
  */
 export default function RevealFallback() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  // Re-run on full URL change (search params included) — covers /contact?type=journey
+  // navigations that don't change the pathname but mount entirely new form components.
+  const urlKey = `${pathname}?${searchParams?.toString() ?? ''}`;
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -113,14 +117,28 @@ export default function RevealFallback() {
       });
     }, 2000);
 
+    // MutationObserver: any element added to DOM later (Suspense reveal,
+    // conditional render, etc.) gets observed automatically.
+    const mutObs = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        for (const node of m.addedNodes) {
+          if (!(node instanceof HTMLElement)) continue;
+          if (node.matches?.(SELECTOR)) observer.observe(node);
+          node.querySelectorAll?.(SELECTOR).forEach((el) => observer.observe(el as HTMLElement));
+        }
+      }
+    });
+    mutObs.observe(document.body, { childList: true, subtree: true });
+
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
       window.clearTimeout(safetyNet);
+      mutObs.disconnect();
       observer.disconnect();
     };
-  }, [pathname]);
+  }, [urlKey]);
 
   return null;
 }

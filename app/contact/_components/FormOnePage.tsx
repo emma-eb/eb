@@ -42,12 +42,12 @@ export default function FormOnePage({
   return (
     <section className="bg-[#fcf7f1] min-h-[calc(100dvh-80px)] pb-24 md:pb-32">
       {/* Header */}
-      <div className="px-5 md:px-10 pt-28 md:pt-24">
+      <div className="px-5 md:px-10 pt-20 md:pt-20">
         <div className="max-w-[760px] mx-auto">
-          <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-4">
+          <p className="font-body text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-[#1a1a1a]/40 mb-3">
             {typeLabel}
           </p>
-          <h1 className="font-body text-[32px] md:text-[52px] text-[#2e5a88] leading-[1.05] font-normal mb-6">
+          <h1 className="font-body text-[32px] md:text-[52px] text-[#2e5a88] leading-[1.05] font-normal mb-5">
             {title}
           </h1>
           <p className="font-body text-[15px] md:text-[17px] text-[#1a1a1a]/70 leading-[1.7] font-light max-w-[560px]">
@@ -57,7 +57,7 @@ export default function FormOnePage({
       </div>
 
       {/* Sections */}
-      <div className="px-5 md:px-10 mt-14 md:mt-20">
+      <div className="px-5 md:px-10 mt-10 md:mt-14">
         <div className="max-w-[760px] mx-auto flex flex-col">{children}</div>
       </div>
 

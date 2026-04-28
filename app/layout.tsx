@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import RevealFallback from "./components/RevealFallback";
@@ -28,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
-        <RevealFallback />
+        <Suspense fallback={null}>
+          <RevealFallback />
+        </Suspense>
         {children}
       </body>
     </html>
