@@ -212,7 +212,7 @@ export default function CollectionPage() {
                   loading="lazy"
                   className="reveal absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-45% to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 via-45% to-transparent" />
                 {villa.badge && (
                   <span className="absolute top-4 left-4 md:top-5 md:left-5 inline-block px-3 py-1.5 bg-[#2e5a88] rounded-full text-white text-[10px] uppercase tracking-[0.2em] font-medium font-body" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}>
                     {villa.badge}
