@@ -255,9 +255,13 @@ h1, h2 {
     animation: none;
   }
   .featured-img {
-    transform: none;
-    transition: none;
+    /* Subtle scale settle even with reduced motion (slower, gentler) */
+    transform: scale(1.03);
+    transition: transform 0.8s ease-out;
     will-change: auto;
+  }
+  .featured-img.visible {
+    transform: scale(1.0);
   }
   .parallax-wrap img {
     height: 100%;
@@ -325,14 +329,23 @@ h1, h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .eb-image-settle {
-    transform: none !important;
-    transition: none !important;
+    /* Subtle scale even with reduced motion */
+    transform: scale(1.04);
+    transition: transform 1s ease-out;
+  }
+  .eb-image-settle.eb-visible {
+    transform: scale(1);
   }
   .eb-fade-up,
   .eb-fade-in {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+    /* Fade-only (no transform) per a11y guideline: opacity != motion */
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.5s ease-out;
+  }
+  .eb-fade-up.eb-visible,
+  .eb-fade-in.eb-visible {
+    opacity: 1;
   }
 }
 
