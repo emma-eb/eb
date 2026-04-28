@@ -406,18 +406,18 @@ export default function VillaDetailPage({
           sizes="100vw"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-[3] text-center px-6 md:px-10 max-w-[640px]">
           <h2
-            className="reveal font-heading font-normal uppercase text-white text-[38px] md:text-[64px] leading-[0.95] mb-6"
-            style={{ letterSpacing: "0.01em", textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            className="reveal font-heading font-normal uppercase text-white text-[32px] md:text-[64px] leading-[0.95] mb-5 md:mb-6"
+            style={{ letterSpacing: "0.01em", textShadow: "0 2px 8px rgba(0,0,0,0.7), 0 0 16px rgba(0,0,0,0.4)" }}
           >
             {labels.ctaFinalH2}
           </h2>
           <p
-            className="reveal font-body text-white/80 text-[14px] md:text-[16px] font-light leading-relaxed max-w-[480px] mx-auto mb-10"
+            className="reveal font-body text-white text-[15px] md:text-[16px] font-light leading-[1.6] max-w-[420px] mx-auto mb-8 md:mb-10"
             data-delay="120"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3)" }}
+            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
           >
             {villa.card.tagline}
           </p>
