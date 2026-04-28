@@ -21,6 +21,12 @@ export default function RevealOnLoad() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Only fire the one-shot animation when the user is actually at the top.
+    // Browsers (Safari especially) restore the previous scroll position on
+    // reload — without this guard, every element in the restored viewport
+    // gets `.visible` and skips its scroll-linked animation.
+    if (window.scrollY > 50) return;
+
     requestAnimationFrame(() => {
       document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
         if (el.classList.contains('visible')) return;

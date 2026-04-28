@@ -164,17 +164,17 @@ h1, h2 {
     transform: translate3d(0, 24px, 0);
     animation: eb-reveal linear both;
     animation-timeline: view();
-    animation-range: entry 15% cover 35%;
+    animation-range: entry 0% cover 50%;
     will-change: opacity, transform;
   }
 
   /* Above-the-fold elements get .visible at page load (via RevealOnLoad).
-     Override the scroll-linked timeline with a one-shot time-based animation. */
+     Override the scroll-linked timeline with a slower, smoother one-shot. */
   :where(h1, h2, h3, h4, h5, h6, p, blockquote).visible,
   .reveal.visible,
   .featured-img.visible,
   .img-settle.settled {
-    animation: eb-reveal-load 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: eb-reveal-load 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-timeline: auto;
   }
 }
