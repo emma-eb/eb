@@ -13,10 +13,12 @@ export const metadata: Metadata = {
     description,
     url: "/for-brands/brief",
     type: "website",
+    images: ["https://images.unsplash.com/photo-1476011840234-433843d703fe?auto=format&fit=crop&w=1920&q=80"],
   },
   twitter: {
     title,
     description,
+    images: ["https://images.unsplash.com/photo-1476011840234-433843d703fe?auto=format&fit=crop&w=1920&q=80"],
   },
   robots: {
     index: false,

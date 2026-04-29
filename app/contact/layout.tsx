@@ -13,10 +13,12 @@ export const metadata: Metadata = {
     description,
     url: "/contact",
     type: "website",
+    images: ["/mykonos_01.jpg"],
   },
   twitter: {
     title,
     description,
+    images: ["/mykonos_01.jpg"],
   },
 };
 

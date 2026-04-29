@@ -16,10 +16,12 @@ export const metadata: Metadata = {
     description,
     url: "/journeys",
     type: "website",
+    images: ["/detail-archi-greece-02.jpg"],
   },
   twitter: {
     title,
     description,
+    images: ["/detail-archi-greece-02.jpg"],
   },
 };
 

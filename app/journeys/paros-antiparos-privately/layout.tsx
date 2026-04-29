@@ -17,10 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
+    images: ["/images/journeys/paros-hero.jpg"],
   },
   twitter: {
     title,
     description,
+    images: ["/images/journeys/paros-hero.jpg"],
   },
 };
 

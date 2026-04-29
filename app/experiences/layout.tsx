@@ -13,10 +13,12 @@ export const metadata: Metadata = {
     description,
     url: "/experiences",
     type: "website",
+    images: ["https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80"],
   },
   twitter: {
     title,
     description,
+    images: ["https://images.unsplash.com/photo-1523568129082-a8d6c095638e?auto=format&fit=crop&w=1920&q=80"],
   },
 };
 

@@ -13,10 +13,12 @@ export const metadata: Metadata = {
     description,
     url: "/journal",
     type: "website",
+    images: ["/panos-katsigiannis-Ll4s8gKQ1xQ-unsplash.jpg"],
   },
   twitter: {
     title,
     description,
+    images: ["/panos-katsigiannis-Ll4s8gKQ1xQ-unsplash.jpg"],
   },
 };
 
