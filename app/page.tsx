@@ -365,7 +365,7 @@ export default function Home() {
       <section data-nav-dark className="relative py-32 md:py-44 flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1618500031461-a5fc01e96763?auto=format&fit=crop&w=1920&q=80"
-          alt="Greece"
+          alt="Aegean coastline at golden hour"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />

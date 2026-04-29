@@ -442,7 +442,7 @@ export default function MykonosTimedRightPage() {
               },
               {
                 href: '/journeys/a-week-in-the-cyclades-by-sea',
-                img: '/yatch_page collection_2.png',
+                img: '/yatch_page collection_2.jpg',
                 category: 'By Sea \u00b7 Private Yacht',
                 title: 'A Week in the Cyclades, by Sea',
                 meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September',

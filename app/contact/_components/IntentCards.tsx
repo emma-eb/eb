@@ -16,7 +16,7 @@ const portes = [
     title: "A moment.",
     desc: "Wedding, proposal, anniversary, honeymoon. Marked quietly.",
     href: "/contact?type=occasion",
-    img: "/yatch_page collection_2.png",
+    img: "/yatch_page collection_2.jpg",
     alt: "Couple on yacht bow, Aegean coast",
   },
   {

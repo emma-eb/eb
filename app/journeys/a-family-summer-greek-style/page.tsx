@@ -106,7 +106,7 @@ export default function FamilySummerPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 reveal"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
           <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group reveal eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
-            <Image src="/villa%20famill_01.png" alt="Villa pool at sunset, the Peloponnese" fill sizes="100vw" className="object-cover object-center reveal transition-transform duration-700 group-hover:scale-105" />
+            <Image src="/villa%20famill_01.jpg" alt="Villa pool at sunset, the Peloponnese" fill sizes="100vw" className="object-cover object-center reveal transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Villa</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
