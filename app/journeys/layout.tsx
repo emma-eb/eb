@@ -5,7 +5,10 @@ const description =
   "Seven multi-day private journeys across Athens, the Cyclades, and the Greek islands. Each itinerary designed by the eb. studio, none repeated.";
 
 export const metadata: Metadata = {
-  title,
+  title: {
+    default: title,
+    template: "%s | eb. Private Greece",
+  },
   description,
   alternates: { canonical: "/journeys" },
   openGraph: {

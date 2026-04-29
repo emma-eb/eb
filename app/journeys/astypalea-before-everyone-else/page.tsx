@@ -202,7 +202,7 @@ export default function AstypaleaPage() {
             {[
               { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October' },
               { href: '/journeys/athens-slowly', img: '/acropole_01.jpg', category: 'Cultural \u00b7 Slow', title: 'Athens, Slowly', meta: '5 nights \u00b7 Athens \u00b7 Year\u2013round' },
-              { href: '/journeys/a-week-in-the-cyclades-by-sea', img: '/yatch_page%20collection_2.png', category: 'By Sea \u00b7 Private Yacht', title: 'A Week in the Cyclades, by Sea', meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September' },
+              { href: '/journeys/a-week-in-the-cyclades-by-sea', img: '/yacht-page-collection-2.jpg', category: 'By Sea \u00b7 Private Yacht', title: 'A Week in the Cyclades, by Sea', meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
                 <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
