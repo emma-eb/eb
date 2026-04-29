@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import RevealFallback from "./components/RevealFallback";
+import JsonLd from "./components/JsonLd";
+import { siteOrganizationSchema, websiteSchema } from "./lib/schema";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -80,6 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
+        <JsonLd data={[siteOrganizationSchema(), websiteSchema()]} />
         <Suspense fallback={null}>
           <RevealFallback />
         </Suspense>
