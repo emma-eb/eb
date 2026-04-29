@@ -73,6 +73,8 @@ export default function StayForm() {
   }));
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -147,20 +149,32 @@ export default function StayForm() {
     return lines.join("\n");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (submitting) return;
+    setSubmitError(null);
+    setSubmitting(true);
     const summary = buildSummary();
-    setSubmittedSummary(summary);
     try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {}
-    try {
-      const subject = encodeURIComponent(`New ${isYacht ? "Charter" : "Stay"} inquiry - ${data.name}`);
-      const body = encodeURIComponent(summary);
-      const link = document.createElement("a");
-      link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
-      link.click();
-    } catch {}
-    setSubmitted(true);
+      const res = await fetch("/api/contact-stay", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) {
+        setSubmitError("We could not send your enquiry. Please try again or email hello@emmabonnefous.com.");
+        return;
+      }
+      setSubmittedSummary(summary);
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch {}
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -194,7 +208,9 @@ export default function StayForm() {
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
+      isSubmitting={submitting}
       currentType="stay"
+      submitError={submitError}
     >
       <Section num="01" title={isYacht ? "The principal guest." : "Who is staying."}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

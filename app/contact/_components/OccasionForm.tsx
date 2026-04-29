@@ -58,6 +58,8 @@ export default function OccasionForm() {
   const [data, setData] = useState<Data>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
   const [submittedSummary, setSubmittedSummary] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -112,20 +114,32 @@ export default function OccasionForm() {
     ].join("\n");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (submitting) return;
+    setSubmitError(null);
+    setSubmitting(true);
     const summary = buildSummary();
-    setSubmittedSummary(summary);
     try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {}
-    try {
-      const subject = encodeURIComponent(`New Occasion inquiry - ${data.name}`);
-      const body = encodeURIComponent(summary);
-      const link = document.createElement("a");
-      link.href = `mailto:hello@emmabonnefous.com?subject=${subject}&body=${body}`;
-      link.click();
-    } catch {}
-    setSubmitted(true);
+      const res = await fetch("/api/contact-occasion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) {
+        setSubmitError("We could not send your enquiry. Please try again or email hello@emmabonnefous.com.");
+        return;
+      }
+      setSubmittedSummary(summary);
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch {}
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -140,7 +154,9 @@ export default function OccasionForm() {
       onSubmit={handleSubmit}
       canSubmit={canSubmit}
       missing={missing}
+      isSubmitting={submitting}
       currentType="occasion"
+      submitError={submitError}
     >
       <Section num="01" title="Who is celebrating.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

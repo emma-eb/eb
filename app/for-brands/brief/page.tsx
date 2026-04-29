@@ -31,7 +31,44 @@ const budgetBands = [
 
 export default function BrandBriefPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
+  const handleBrandSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitError(null);
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      company: String(fd.get("company") || ""),
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      role: String(fd.get("role") || ""),
+      projectType: String(fd.get("projectType") || ""),
+      dates: String(fd.get("dates") || ""),
+      teamSize: String(fd.get("teamSize") || ""),
+      budget: String(fd.get("budget") || ""),
+      brief: String(fd.get("brief") || ""),
+    };
+    try {
+      const res = await fetch("/api/brand-brief", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) {
+        setSubmitError("We could not send your brief. Please try again or email brands@emmabonnefous.com.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   const inputClass =
     "border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-sm text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors w-full";
@@ -144,31 +181,28 @@ export default function BrandBriefPage() {
           {/* RIGHT — form */}
           <form
             className="flex flex-col gap-8"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSubmitted(true);
-            }}
+            onSubmit={handleBrandSubmit}
           >
             <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Brand / Agency</label>
-                    <input type="text" required className={inputClass} placeholder="Company name" />
+                    <input name="company" type="text" required className={inputClass} placeholder="Company name" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Contact person</label>
-                    <input type="text" required className={inputClass} placeholder="Full name" />
+                    <input name="name" type="text" required className={inputClass} placeholder="Full name" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Email</label>
-                    <input type="email" required className={inputClass} placeholder="name@brand.com" />
+                    <input name="email" type="email" required className={inputClass} placeholder="name@brand.com" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Role</label>
-                    <input type="text" className={inputClass} placeholder="Producer, PR, Marketing..." />
+                    <input name="role" type="text" className={inputClass} placeholder="Producer, PR, Marketing..." />
                   </div>
                 </div>
 
@@ -177,7 +211,7 @@ export default function BrandBriefPage() {
                   <div className="flex flex-wrap gap-2">
                     {projectTypes.map((t) => (
                       <label key={t} className="inline-flex items-center gap-2 cursor-pointer group">
-                        <input type="radio" name="project" value={t} className="peer sr-only" />
+                        <input type="radio" name="projectType" value={t} className="peer sr-only" />
                         <span className="font-body text-[12px] tracking-[0.1em] uppercase px-3.5 py-2 border border-[#e8e4de] text-[#888] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] transition-colors">
                           {t}
                         </span>
@@ -189,11 +223,11 @@ export default function BrandBriefPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Shoot dates</label>
-                    <input type="text" className={inputClass} placeholder="Month / window / exact dates" />
+                    <input name="dates" type="text" className={inputClass} placeholder="Month / window / exact dates" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className={labelClass}>Team size</label>
-                    <select className={inputClass + " appearance-none"}>
+                    <select name="teamSize" className={inputClass + " appearance-none"}>
                       <option value="">Select</option>
                       {teamSizes.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
@@ -202,7 +236,7 @@ export default function BrandBriefPage() {
 
                 <div className="flex flex-col gap-2">
                   <label className={labelClass}>Budget range</label>
-                  <select className={inputClass + " appearance-none"}>
+                  <select name="budget" className={inputClass + " appearance-none"}>
                     <option value="">Select</option>
                     {budgetBands.map((b) => <option key={b} value={b}>{b}</option>)}
                   </select>
@@ -211,6 +245,7 @@ export default function BrandBriefPage() {
                 <div className="flex flex-col gap-2">
                   <label className={labelClass}>Brief</label>
                   <textarea
+                    name="brief"
                     required
                     rows={6}
                     className={inputClass + " resize-none"}
@@ -220,11 +255,17 @@ export default function BrandBriefPage() {
 
                 <button
                   type="submit"
-                  className="self-start mt-2 inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-8 py-4 hover:bg-[#2e5a88] transition-colors duration-300"
+                  disabled={submitting}
+                  className="self-start mt-2 inline-flex items-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-8 py-4 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
                 >
-                  Send brief
-                  <span>&rarr;</span>
+                  {submitting ? "Sending..." : "Send brief"}
+                  {!submitting && <span>&rarr;</span>}
                 </button>
+                {submitError && (
+                  <p className="font-body text-[12px] md:text-[13px] text-[#a04040] leading-[1.6]">
+                    {submitError}
+                  </p>
+                )}
                 <p className="font-body text-[11px] text-[#1a1a1a]/40 leading-[1.6] font-light mt-2">
                   By sending this brief you agree to be contacted by the eb. team. Details shared here remain private and are never passed to third parties.
                 </p>

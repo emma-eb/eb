@@ -19,6 +19,7 @@ interface FormOnePageProps {
   canSubmit: boolean;
   missing?: string[];
   isSubmitting?: boolean;
+  submitError?: string | null;
   currentType: PorteType;
   submitLabel?: string;
   children: ReactNode;
@@ -32,6 +33,7 @@ export default function FormOnePage({
   canSubmit,
   missing = [],
   isSubmitting,
+  submitError,
   currentType,
   submitLabel = "Send my enquiry",
   children,
@@ -81,6 +83,11 @@ export default function FormOnePage({
           {!canSubmit && missing.length === 0 && (
             <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 italic font-light">
               Fill the required fields to send.
+            </p>
+          )}
+          {submitError && (
+            <p className="mt-4 font-body text-[12px] md:text-[13px] text-[#a04040] leading-[1.6]">
+              {submitError}
             </p>
           )}
         </div>
