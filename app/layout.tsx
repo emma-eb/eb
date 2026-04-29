@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
@@ -15,10 +15,61 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://emmabonnefous.com";
+const SITE_NAME = "eb. Private Greece";
+const DEFAULT_TITLE = "eb. | Private Greece";
+const DEFAULT_DESCRIPTION =
+  "Private travel curation across Greece. Villas, experiences, and journeys designed by eb. for discerning travellers.";
+
 export const metadata: Metadata = {
-  title: "eb. | Private Greece",
-  description: "Private travel curation across Greece. Villas, experiences, and journeys designed by eb.",
-  keywords: ["luxury concierge Greece", "private villa Greece", "Greece private travel"],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: "%s | eb. Private Greece",
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "Emma Bonnefous" }],
+  creator: "Emma Bonnefous",
+  publisher: "eb. Private Greece",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#fcf7f1",
 };
 
 export default function RootLayout({
