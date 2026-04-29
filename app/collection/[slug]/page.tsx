@@ -67,7 +67,7 @@ export default function VillaDetailPage({
     ctaFinalLabel: isYacht ? `Charter ${villa.name}` : `Enquire about ${villa.name}`,
     availabilityNote: isYacht
       ? "Charters typically booked for 7 days minimum. APA and VAT not included, paid separately."
-      : "Minimum stay between 3 and 5 nights, depending on the dates. Rates confirmed at inquiry.",
+      : "Stays from 3 to 5 nights. Dates and rates confirmed at inquiry.",
   };
 
   return (
