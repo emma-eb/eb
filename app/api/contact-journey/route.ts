@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, EMAIL_FROM, EMAIL_TO_GENERAL, renderHtml, renderText } from "../../lib/email";
+import { resend, EMAIL_FROM, EMAIL_TO_GENERAL, renderHtml, renderText, safeSendConfirmation } from "../../lib/email";
 
 export const runtime = "nodejs";
 
@@ -65,6 +65,19 @@ export async function POST(req: Request) {
       console.error("[contact-journey] Resend error:", error);
       return NextResponse.json({ ok: false, error: "Send failed" }, { status: 502 });
     }
+
+    const firstName = name.split(" ")[0] || "you";
+    await safeSendConfirmation({
+      to: email,
+      subject: "Your journey enquiry, received",
+      preheader: "We have your enquiry. We come back within 48 hours.",
+      greeting: `${firstName}, your enquiry is with us.`,
+      paragraphs: [
+        "We received the details of your private journey. The studio is reading them now.",
+        "Within forty-eight hours we come back with a first read, a few clarifying questions, and the next step. Always by email, always on your time.",
+        "Until then, nothing else is needed.",
+      ],
+    });
 
     return NextResponse.json({ ok: true });
   } catch (e) {

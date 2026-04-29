@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, EMAIL_FROM, EMAIL_TO_GENERAL, renderHtml, renderText } from "../../lib/email";
+import { resend, EMAIL_FROM, EMAIL_TO_GENERAL, renderHtml, renderText, safeSendConfirmation } from "../../lib/email";
 
 export const runtime = "nodejs";
 
@@ -31,6 +31,17 @@ export async function POST(req: Request) {
       console.error("[newsletter] Resend error:", error);
       return NextResponse.json({ ok: false, error: "Send failed" }, { status: 502 });
     }
+
+    await safeSendConfirmation({
+      to: email,
+      subject: "Welcome — a letter from Greece is on its way",
+      preheader: "We received your email. The first letter is on its way.",
+      greeting: "Thank you for subscribing.",
+      paragraphs: [
+        "We received your email. The next letter from Greece will land in your inbox at the start of the season.",
+        "Until then, a quiet promise: only what we would write to a friend. No noise, no oversharing, no schedule we cannot keep.",
+      ],
+    });
 
     return NextResponse.json({ ok: true });
   } catch (e) {

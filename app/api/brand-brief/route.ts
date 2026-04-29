@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, EMAIL_FROM, EMAIL_TO_BRANDS, renderHtml, renderText } from "../../lib/email";
+import { resend, EMAIL_FROM, EMAIL_TO_BRANDS, renderHtml, renderText, safeSendConfirmation } from "../../lib/email";
 
 export const runtime = "nodejs";
 
@@ -48,6 +48,21 @@ export async function POST(req: Request) {
       console.error("[brand-brief] Resend error:", error);
       return NextResponse.json({ ok: false, error: "Send failed" }, { status: 502 });
     }
+
+    const firstName = name.split(" ")[0] || "you";
+    await safeSendConfirmation({
+      to: email,
+      subject: "Your brief, received",
+      preheader: "We have your brief. The production team will follow up shortly.",
+      greeting: `${firstName}, your brief is with us.`,
+      paragraphs: [
+        company
+          ? `We received the brief for ${company}. The production team is reviewing it now.`
+          : "We received your brief. The production team is reviewing it now.",
+        "We will be in touch shortly with a first read, a suggested route, and indicative production scope. All exchanges remain confidential.",
+        "Until then, nothing else is needed.",
+      ],
+    });
 
     return NextResponse.json({ ok: true });
   } catch (e) {

@@ -85,3 +85,75 @@ export function renderText({ title, fields }: { title: string; fields: FieldRow[
     })];
   return lines.join("\n");
 }
+
+export function renderConfirmationHtml({
+  preheader,
+  greeting,
+  paragraphs,
+  signOff = "Emma",
+}: {
+  preheader: string;
+  greeting: string;
+  paragraphs: string[];
+  signOff?: string;
+}) {
+  const body = paragraphs
+    .map(
+      (p) =>
+        `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:#1a1a1a;">${escape(p)}</p>`
+    )
+    .join("");
+
+  return `<!doctype html>
+<html><head><meta charset="utf-8"><title>${escape(greeting)}</title></head>
+<body style="margin:0;padding:32px 16px;background:#fcf7f1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#1a1a1a;">
+  <span style="display:none;visibility:hidden;opacity:0;color:transparent;height:0;width:0;overflow:hidden;">${escape(preheader)}</span>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#ffffff;border:1px solid #e8e4de;">
+    <tr>
+      <td style="padding:36px 36px 24px;">
+        <p style="margin:0 0 24px;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#2e5a88;font-weight:500;">eb. private greece</p>
+        <p style="margin:0 0 20px;font-size:18px;line-height:1.5;color:#2e5a88;font-weight:400;">${escape(greeting)}</p>
+        ${body}
+        <p style="margin:32px 0 0;font-size:14px;color:#1a1a1a;line-height:1.6;">${escape(signOff)}</p>
+        <p style="margin:4px 0 0;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#1a1a1a99;">eb. founder &middot; Athens</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:20px 36px 28px;border-top:1px solid #e8e4de;text-align:center;">
+        <a href="https://emmabonnefous.com" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#2e5a88;text-decoration:none;">emmabonnefous.com</a>
+      </td>
+    </tr>
+  </table>
+  <p style="margin:24px auto 0;max-width:560px;font-size:11px;color:#1a1a1a66;text-align:center;line-height:1.6;">
+    You received this email because you contacted eb. via emmabonnefous.com.<br>
+    If this was not you, please disregard.
+  </p>
+</body></html>`;
+}
+
+export async function safeSendConfirmation(opts: {
+  to: string;
+  subject: string;
+  preheader: string;
+  greeting: string;
+  paragraphs: string[];
+}) {
+  try {
+    const { error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: [opts.to],
+      replyTo: EMAIL_TO_GENERAL,
+      subject: opts.subject,
+      html: renderConfirmationHtml({
+        preheader: opts.preheader,
+        greeting: opts.greeting,
+        paragraphs: opts.paragraphs,
+      }),
+    });
+    if (error) {
+      console.warn("[confirmation] Resend warning:", error);
+    }
+  } catch (e) {
+    console.warn("[confirmation] Could not send confirmation email:", e);
+  }
+}
