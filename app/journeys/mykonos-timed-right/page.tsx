@@ -298,7 +298,7 @@ export default function MykonosTimedRightPage() {
       {/* ============ ZONE 6 — WHERE YOU STAY ============ */}
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
-          src="/mykonos villa.jpg"
+          src="/mykonos-villa.jpg"
           alt="A Mykonos villa above the water"
           fill
           className="object-cover reveal"
@@ -442,7 +442,7 @@ export default function MykonosTimedRightPage() {
               },
               {
                 href: '/journeys/a-week-in-the-cyclades-by-sea',
-                img: '/yatch_page collection_2.jpg',
+                img: '/yacht-page-collection-2.jpg',
                 category: 'By Sea \u00b7 Private Yacht',
                 title: 'A Week in the Cyclades, by Sea',
                 meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September',

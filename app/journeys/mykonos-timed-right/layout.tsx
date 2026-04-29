@@ -32,7 +32,7 @@ export default function MykonosJourneyLayout({ children }: { children: React.Rea
     nights: 5,
     season: "May to September",
     islands: ["Mykonos"],
-    image: "/mykonos villa.jpg",
+    image: "/mykonos-villa.jpg",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

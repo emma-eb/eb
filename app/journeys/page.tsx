@@ -27,7 +27,7 @@ const featured: Journey[] = [
   },
   {
     slug: "mykonos-timed-right",
-    image: "/mykonos%20villa.jpg",
+    image: "/mykonos-villa.jpg",
     number: "02",
     overline: "Featured Journey \u00b7 02",
     title: "Mykonos,\nTimed Right.",
@@ -66,7 +66,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-family-summer-greek-style",
-    image: "/familly%20journey.jpg",
+    image: "/family-journey.jpg",
     number: "06",
     overline: "Private Journey \u00b7 06",
     title: "A Family Summer,\nGreek-Style.",
@@ -229,7 +229,7 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="/detail%20archi%20greece_02.jpg"
+          src="/detail-archi-greece-02.jpg"
           alt="Private journeys across Greece, by eb."
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
@@ -346,7 +346,7 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden eb-image-vignette">
         <img
-          src="/CTA%20FINAL%20PRIVATE%20JOURNEY.jpg"
+          src="/cta-final-private-journey.jpg"
           alt="A private Greek island at dusk"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

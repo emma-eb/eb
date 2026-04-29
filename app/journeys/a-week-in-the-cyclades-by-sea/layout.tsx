@@ -32,7 +32,7 @@ export default function CycladesBySeaJourneyLayout({ children }: { children: Rea
     nights: 7,
     season: "May to September",
     islands: ["Athens", "Cyclades"],
-    image: "/yatch_page collection.jpg",
+    image: "/yacht-page-collection.jpg",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

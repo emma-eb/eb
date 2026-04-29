@@ -310,7 +310,7 @@ export default function About() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         <img
-          src="/Portrait%20Emma_2.jpg"
+          src="/portrait-emma-2.jpg"
           alt="Emma Bonnefous portrait"
           className="absolute inset-0 w-full h-full object-cover object-[center_65%] md:object-[center_55%]"
           loading="lazy"

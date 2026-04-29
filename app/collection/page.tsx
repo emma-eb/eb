@@ -266,7 +266,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative min-h-[70vh] md:min-h-[90vh] flex items-end">
         <img
-          src="/yatch%20on%20board.jpg"
+          src="/yacht-on-board.jpg"
           alt="Private yacht charter, gangway over open Aegean waters"
           className="absolute inset-0 w-full h-full object-cover object-center md:object-[center_30%]"
           loading="lazy"
@@ -311,7 +311,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative min-h-[55vh] md:min-h-[65vh] flex items-center">
         <img
-          src="/photo%20bandeau_page%20Collection.jpg"
+          src="/photo-bandeau-page-collection.jpg"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"

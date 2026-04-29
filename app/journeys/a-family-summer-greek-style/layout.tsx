@@ -32,7 +32,7 @@ export default function FamilyJourneyLayout({ children }: { children: React.Reac
     nights: 10,
     season: "April to October",
     islands: ["Porto Heli", "Hydra", "Spetses", "Poros"],
-    image: "/familly journey.jpg",
+    image: "/family-journey.jpg",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

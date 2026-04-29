@@ -157,7 +157,7 @@ export default function Journal() {
 
             {/* Art 5 — Hotel Openings 2026 */}
             <a href="https://tornosnews.gr/en/businesses/hotels/55111-the-high-profile-hotel-openings-expected-in-2026.html" target="_blank" rel="noopener noreferrer" className="reveal relative block aspect-[4/3] overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform duration-300" data-delay="200">
-              <img src="/raphael-lopes-zqGvYYqDvs4-unsplash%20(1).jpg" alt="Boutique hotel suite with sea view, Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <img src="/raphael-lopes-zqGvYYqDvs4-unsplash.jpg" alt="Boutique hotel suite with sea view, Greece" className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               <span className="absolute top-3 left-3 inline-block px-2.5 py-1 bg-black/40 backdrop-blur-md [-webkit-backdrop-filter:blur(8px)] rounded-full font-body text-[10px] md:text-[11px] font-medium tracking-[0.15em] uppercase text-white/90">Hospitality Pipeline</span>

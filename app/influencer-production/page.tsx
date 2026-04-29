@@ -101,7 +101,7 @@ export default function InfluencerProduction() {
               title: "Fam Trips",
               body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece.",
               details: ["Route design", "Hosted experiences", "Press & media support"],
-              img: "/vue aerienne bateau.jpg",
+              img: "/vue-aerienne-bateau.jpg",
               alt: "Aerial view, turquoise cove and boats, Greece",
             },
             {

@@ -187,7 +187,7 @@ export default function AthensSlowlyPage() {
 
       {/* WHERE YOU STAY */}
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/roof%20top%20athens.jpg" alt="Rooftop hotel terrace with Parthenon view, Athens" fill className="object-cover reveal" />
+        <Image src="/rooftop-athens.jpg" alt="Rooftop hotel terrace with Parthenon view, Athens" fill className="object-cover reveal" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white reveal z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
