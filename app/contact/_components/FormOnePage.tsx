@@ -58,40 +58,47 @@ export default function FormOnePage({
         </div>
       </div>
 
-      {/* Sections */}
-      <div className="px-5 md:px-10 mt-10 md:mt-14">
-        <div className="max-w-[760px] mx-auto flex flex-col">{children}</div>
-      </div>
-
-      {/* Submit */}
-      <div className="px-5 md:px-10 mt-16 md:mt-20">
-        <div className="max-w-[760px] mx-auto">
-          <button
-            type="button"
-            onClick={onSubmit}
-            disabled={!canSubmit || isSubmitting}
-            className="w-full md:w-auto inline-flex items-center justify-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-8 md:px-10 py-4 md:py-5 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
-          >
-            {isSubmitting ? "Sending..." : submitLabel}
-            {!isSubmitting && <span>&rarr;</span>}
-          </button>
-          {!canSubmit && missing.length > 0 && (
-            <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/55 italic font-light leading-[1.6]">
-              Still needed to send: {missing.join(", ")}.
-            </p>
-          )}
-          {!canSubmit && missing.length === 0 && (
-            <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 italic font-light">
-              Fill the required fields to send.
-            </p>
-          )}
-          {submitError && (
-            <p className="mt-4 font-body text-[12px] md:text-[13px] text-[#a04040] leading-[1.6]">
-              {submitError}
-            </p>
-          )}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (canSubmit && !isSubmitting) onSubmit();
+        }}
+        noValidate
+      >
+        {/* Sections */}
+        <div className="px-5 md:px-10 mt-10 md:mt-14">
+          <div className="max-w-[760px] mx-auto flex flex-col">{children}</div>
         </div>
-      </div>
+
+        {/* Submit */}
+        <div className="px-5 md:px-10 mt-16 md:mt-20">
+          <div className="max-w-[760px] mx-auto">
+            <button
+              type="submit"
+              disabled={!canSubmit || isSubmitting}
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 font-body text-[12px] md:text-[13px] tracking-[0.2em] uppercase text-white bg-[#1a1a1a] px-8 md:px-10 py-4 md:py-5 hover:bg-[#2e5a88] transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[#1a1a1a]"
+            >
+              {isSubmitting ? "Sending..." : submitLabel}
+              {!isSubmitting && <span>&rarr;</span>}
+            </button>
+            {!canSubmit && missing.length > 0 && (
+              <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/55 italic font-light leading-[1.6]">
+                Still needed to send: {missing.join(", ")}.
+              </p>
+            )}
+            {!canSubmit && missing.length === 0 && (
+              <p className="mt-4 font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 italic font-light">
+                Fill the required fields to send.
+              </p>
+            )}
+            {submitError && (
+              <p className="mt-4 font-body text-[12px] md:text-[13px] text-[#a04040] leading-[1.6]">
+                {submitError}
+              </p>
+            )}
+          </div>
+        </div>
+      </form>
 
       {/* Switch porte — discreet */}
       <div className="px-5 md:px-10 mt-20 md:mt-28">
