@@ -52,7 +52,6 @@ const locations = [
 ];
 
 const STORAGE_KEY = "eb-contact-occasion";
-const VISION_MIN = 100;
 
 export default function OccasionForm() {
   const [data, setData] = useState<Data>(EMPTY);
@@ -81,7 +80,6 @@ export default function OccasionForm() {
   if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
   if (!data.occasion) missing.push("the occasion type");
   if (!data.date) missing.push("a date");
-  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
   if (!data.budget.trim()) missing.push("an indicative budget");
   if (!data.consent) missing.push("consent");
   const canSubmit = missing.length === 0;
@@ -206,8 +204,8 @@ export default function OccasionForm() {
       </Section>
 
       <Section num="03" title="Your vision.">
-        <Field label="In a few sentences" required hint={`The occasion, the feel, anything that matters. (min ${VISION_MIN} characters)`}>
-          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} minLength={VISION_MIN} />
+        <Field label="In a few sentences" hint="Optional. The occasion, the feel, anything that matters, helps us prepare.">
+          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The feel of the moment, who it is for, what it should leave behind..." rows={7} />
         </Field>
         <Field label="Indicative budget" required hint="Total for the occasion. Write a figure or a range, in euros — it helps us propose the right scale.">
           <TextInput value={data.budget} onChange={(v) => update("budget", v)} placeholder="e.g. €5,000 / from €15,000 / €50,000+" />

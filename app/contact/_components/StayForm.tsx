@@ -59,7 +59,6 @@ const EMPTY: Data = {
 };
 
 const STORAGE_KEY = "eb-contact-stay";
-const VISION_MIN = 100;
 
 export default function StayForm() {
   const searchParams = useSearchParams();
@@ -110,7 +109,6 @@ export default function StayForm() {
   if (!/\S+@\S+\.\S+/.test(data.email)) missing.push("a valid email");
   if (!data.interest) missing.push("villa or yacht");
   if (!data.startDate || !data.endDate) missing.push(isYacht ? "charter dates" : "travel dates");
-  if (!preselectedVilla && data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
   if (showVillaBudget && !data.budget) missing.push("a villa budget");
   if (!data.consent) missing.push("consent");
   const canSubmit = missing.length === 0;
@@ -299,13 +297,12 @@ export default function StayForm() {
       <Section num="03" title={preselectedVilla ? "Anything else." : isYacht ? "The week, in your words." : "Your vision."}>
         <Field
           label={preselectedVilla ? "Tell us anything we should know" : isYacht ? "Tell us about the week" : "In a few sentences"}
-          required={!preselectedVilla}
           hint={
             preselectedVilla
               ? "Optional. The occasion, who's coming, anything that helps us prepare."
               : isYacht
-                ? `The occasion, the atmosphere, the people aboard. What the week should feel like. (min ${VISION_MIN} characters)`
-                : `The occasion, the atmosphere, what matters. (min ${VISION_MIN} characters)`
+                ? "Optional. The occasion, the atmosphere, the people aboard, dietary preferences, water-toy requests."
+                : "Optional. The occasion, the atmosphere, what matters, anything that helps us prepare."
           }
         >
           <TextArea
@@ -319,7 +316,6 @@ export default function StayForm() {
                   : "What you're looking for, who's coming, what would make it right..."
             }
             rows={7}
-            minLength={preselectedVilla ? 0 : VISION_MIN}
           />
         </Field>
         {showVillaBudget && (

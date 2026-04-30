@@ -63,7 +63,6 @@ const EMPTY: Data = {
 };
 
 const STORAGE_KEY = "eb-contact-journey";
-const VISION_MIN = 100;
 
 export default function JourneyForm() {
   const searchParams = useSearchParams();
@@ -97,7 +96,6 @@ export default function JourneyForm() {
   if (!data.startDate || !data.endDate) missing.push("travel dates");
   if (isScratch && !data.length) missing.push("length");
   if (isScratch && !data.accommodation) missing.push("accommodation style");
-  if (data.vision.trim().length < VISION_MIN) missing.push(`your vision (min ${VISION_MIN} characters)`);
   if (!data.budget) missing.push("a budget band");
   if (!data.consent) missing.push("consent");
   const canSubmit = missing.length === 0;
@@ -263,8 +261,8 @@ export default function JourneyForm() {
       </Section>
 
       <Section num="03" title="Your vision.">
-        <Field label="In a few sentences" required hint={`Who is this journey for, what matters, what you dream of. (min ${VISION_MIN} characters)`}>
-          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The occasion, the feel, anything we should know..." rows={7} minLength={VISION_MIN} />
+        <Field label="In a few sentences" hint="Who is this journey for, what matters, what you dream of. Optional, helps us prepare.">
+          <TextArea value={data.vision} onChange={(v) => update("vision", v)} placeholder="The occasion, the feel, anything we should know..." rows={7} />
         </Field>
         <Field label="Budget per person" required hint="For the full journey, per traveller. An indicative range helps us propose the right scale.">
           <PillChoice options={journeyBudgets} value={data.budget} onChange={(v) => update("budget", v)} name="budget" />
