@@ -249,17 +249,10 @@ export default function StayForm() {
         )}
         {preselectedVilla && (
           <Field label="Villa of interest">
-            <div className="flex items-center justify-between gap-4 bg-white border border-[#e8e4de] px-4 py-3">
+            <div className="bg-white border border-[#e8e4de] px-4 py-3">
               <span className="font-body text-[14px] md:text-[15px] text-[#1a1a1a]/80">
                 {preselectedVilla.name}
               </span>
-              <button
-                type="button"
-                onClick={() => update("villa", "")}
-                className="font-body text-[11px] uppercase tracking-[0.15em] text-[#1a1a1a]/45 hover:text-[#2e5a88] transition-colors"
-              >
-                Change
-              </button>
             </div>
           </Field>
         )}
