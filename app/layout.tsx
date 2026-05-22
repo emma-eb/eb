@@ -43,7 +43,8 @@ export const metadata: Metadata = {
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
-    locale: "en_US",
+    locale: "en_GB",
+    alternateLocale: ["fr_FR", "en_US"],
   },
   twitter: {
     card: "summary_large_image",

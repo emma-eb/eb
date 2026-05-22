@@ -1,11 +1,23 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, createContext, useContext, useId } from "react";
 
 const labelClass =
   "font-body text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#888]";
 const inputClass =
   "w-full border-b border-[#e8e4de] bg-transparent py-3 font-body text-[16px] md:text-[15px] text-[#1a1a1a] placeholder:text-[#ccc] focus:outline-none focus:border-[#1a1a1a] transition-colors";
+
+interface FieldContextValue {
+  inputId: string;
+  hintId: string | undefined;
+  required: boolean;
+}
+
+const FieldContext = createContext<FieldContextValue | null>(null);
+
+function useFieldA11y() {
+  return useContext(FieldContext);
+}
 
 interface FieldProps {
   label: string;
@@ -15,19 +27,23 @@ interface FieldProps {
 }
 
 export function Field({ label, required, hint, children }: FieldProps) {
+  const inputId = useId();
+  const hintId = hint ? `${inputId}-hint` : undefined;
   return (
-    <div className="flex flex-col gap-2.5">
-      <label className={labelClass}>
-        {label}
-        {required && <span className="text-[#2e5a88] ml-1">*</span>}
-      </label>
-      {children}
-      {hint && (
-        <p className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 leading-[1.5] font-light">
-          {hint}
-        </p>
-      )}
-    </div>
+    <FieldContext.Provider value={{ inputId, hintId, required: !!required }}>
+      <div className="flex flex-col gap-2.5">
+        <label htmlFor={inputId} className={labelClass}>
+          {label}
+          {required && <span className="text-[#2e5a88] ml-1" aria-hidden="true">*</span>}
+        </label>
+        {children}
+        {hint && (
+          <p id={hintId} className="font-body text-[11px] md:text-[12px] text-[#1a1a1a]/45 leading-[1.5] font-light">
+            {hint}
+          </p>
+        )}
+      </div>
+    </FieldContext.Provider>
   );
 }
 
@@ -41,8 +57,12 @@ interface TextInputProps {
 }
 
 export function TextInput({ value, onChange, placeholder, type = "text", autoComplete }: TextInputProps) {
+  const ctx = useFieldA11y();
   return (
     <input
+      id={ctx?.inputId}
+      aria-describedby={ctx?.hintId}
+      aria-required={ctx?.required || undefined}
       type={type}
       value={value}
       onChange={(e) => onChange(e.target.value)}
@@ -62,10 +82,16 @@ interface TextAreaProps {
 }
 
 export function TextArea({ value, onChange, placeholder, rows = 5, minLength }: TextAreaProps) {
+  const ctx = useFieldA11y();
   const count = value.length;
+  const counterId = ctx ? `${ctx.inputId}-counter` : undefined;
+  const describedBy = [ctx?.hintId, minLength ? counterId : undefined].filter(Boolean).join(" ") || undefined;
   return (
     <div className="flex flex-col gap-1.5">
       <textarea
+        id={ctx?.inputId}
+        aria-describedby={describedBy}
+        aria-required={ctx?.required || undefined}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
@@ -73,7 +99,7 @@ export function TextArea({ value, onChange, placeholder, rows = 5, minLength }: 
         className={`${inputClass} resize-none border border-[#e8e4de] p-4 leading-[1.6] focus:border-[#1a1a1a]`}
       />
       {minLength && (
-        <p className={`font-body text-[10px] md:text-[11px] ${count >= minLength ? "text-[#2e5a88]/70" : "text-[#1a1a1a]/35"} font-light text-right`}>
+        <p id={counterId} aria-live="polite" className={`font-body text-[10px] md:text-[11px] ${count >= minLength ? "text-[#2e5a88]/70" : "text-[#1a1a1a]/35"} font-light text-right`}>
           {count < minLength ? `${minLength - count} characters to go` : "Thank you."}
         </p>
       )}
@@ -90,7 +116,7 @@ interface PillChoiceProps {
 
 export function PillChoice({ options, value, onChange, name }: PillChoiceProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2" role="radiogroup">
       {options.map((opt) => (
         <label key={opt} className="cursor-pointer group">
           <input
@@ -101,7 +127,7 @@ export function PillChoice({ options, value, onChange, name }: PillChoiceProps) 
             onChange={() => onChange(opt)}
             className="peer sr-only"
           />
-          <span className="inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-3 py-2.5 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white transition-colors">
+          <span className="inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-3 py-2.5 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border border-[#e8e4de] text-[#666] peer-checked:bg-[#1a1a1a] peer-checked:text-white peer-checked:border-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#1a1a1a] peer-checked:group-hover:bg-[#1a1a1a] peer-checked:group-hover:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-[#1a1a1a] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#fcf7f1] transition-colors">
             {opt}
           </span>
         </label>
@@ -132,6 +158,7 @@ export function PillMulti({ options, values, onChange }: PillMultiProps) {
           <button
             key={opt}
             type="button"
+            aria-pressed={selected}
             onClick={() => toggle(opt)}
             className={`inline-flex items-center font-body text-[11px] md:text-[12px] tracking-[0.1em] uppercase px-3 py-2.5 md:px-3.5 md:py-2 min-h-[44px] md:min-h-0 border transition-colors ${
               selected
@@ -169,6 +196,7 @@ export function MoodGrid({ moods, values, onChange }: MoodGridProps) {
           <button
             key={m.id}
             type="button"
+            aria-pressed={selected}
             onClick={() => toggle(m.id)}
             className={`text-left p-3 md:p-4 border transition-colors ${
               selected
@@ -197,8 +225,12 @@ interface SelectProps {
 }
 
 export function Select({ value, onChange, options, placeholder = "Select" }: SelectProps) {
+  const ctx = useFieldA11y();
   return (
     <select
+      id={ctx?.inputId}
+      aria-describedby={ctx?.hintId}
+      aria-required={ctx?.required || undefined}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       className={`${inputClass} appearance-none bg-[right_0_center] pr-6`}
@@ -225,11 +257,14 @@ interface DateRangeProps {
 }
 
 export function DateRange({ start, end, onChange }: DateRangeProps) {
+  const startId = useId();
+  const endId = useId();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="flex flex-col gap-1.5">
-        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">From</span>
+        <label htmlFor={startId} className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">From</label>
         <input
+          id={startId}
           type="date"
           value={start}
           onChange={(e) => onChange(e.target.value, end)}
@@ -237,8 +272,9 @@ export function DateRange({ start, end, onChange }: DateRangeProps) {
         />
       </div>
       <div className="flex flex-col gap-1.5">
-        <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">To</span>
+        <label htmlFor={endId} className="font-body text-[10px] tracking-[0.2em] uppercase text-[#aaa]">To</label>
         <input
+          id={endId}
           type="date"
           value={end}
           onChange={(e) => onChange(start, e.target.value)}
@@ -258,6 +294,7 @@ interface CounterProps {
 }
 
 export function Counter({ value, onChange, min = 0, max = 50 }: CounterProps) {
+  const ctx = useFieldA11y();
   return (
     <div className="flex items-center gap-4">
       <button
@@ -269,7 +306,12 @@ export function Counter({ value, onChange, min = 0, max = 50 }: CounterProps) {
       >
         &minus;
       </button>
-      <span className="font-body text-[20px] md:text-[22px] text-[#1a1a1a] font-light min-w-[32px] text-center tabular-nums">
+      <span
+        id={ctx?.inputId}
+        aria-live="polite"
+        aria-describedby={ctx?.hintId}
+        className="font-body text-[20px] md:text-[22px] text-[#1a1a1a] font-light min-w-[32px] text-center tabular-nums"
+      >
         {value}
       </span>
       <button
@@ -300,9 +342,9 @@ export function Checkbox({ checked, onChange, children }: CheckboxProps) {
         onChange={(e) => onChange(e.target.checked)}
         className="peer sr-only"
       />
-      <span className="mt-0.5 w-4 h-4 border border-[#ccc] bg-white peer-checked:bg-[#1a1a1a] peer-checked:border-[#1a1a1a] flex items-center justify-center transition-colors flex-shrink-0">
+      <span className="mt-0.5 w-4 h-4 border border-[#ccc] bg-white peer-checked:bg-[#1a1a1a] peer-checked:border-[#1a1a1a] flex items-center justify-center transition-colors flex-shrink-0 peer-focus-visible:ring-2 peer-focus-visible:ring-[#1a1a1a] peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-[#fcf7f1]">
         {checked && (
-          <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none">
+          <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path d="M2.5 6.5 L4.5 8.5 L9.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         )}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface NavProps {
   activePage?: string;
@@ -16,10 +16,15 @@ const links = [
 
 const NAV_H = 80; // hauteur de la zone nav en px
 
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export default function Nav({ activePage }: NavProps) {
   const [open, setOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const lastFocusRef = useRef<HTMLElement | null>(null);
 
   const check = useCallback(() => {
     if (open) return;
@@ -50,6 +55,53 @@ export default function Nav({ activePage }: NavProps) {
       window.removeEventListener("scroll", check);
     };
   }, [check]);
+
+  useEffect(() => {
+    if (!open) {
+      document.body.style.overflow = "";
+      if (lastFocusRef.current) {
+        lastFocusRef.current.focus();
+        lastFocusRef.current = null;
+      }
+      return;
+    }
+
+    lastFocusRef.current = (document.activeElement as HTMLElement) ?? null;
+    document.body.style.overflow = "hidden";
+
+    const overlay = overlayRef.current;
+    const focusables = overlay?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+    focusables?.[0]?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab" || !overlay) return;
+      const items = overlay.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+      if (items.length === 0) return;
+      const first = items[0]!;
+      const last = items[items.length - 1]!;
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey) {
+        if (active === first || !overlay.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   const dark = open || isDark;
 
@@ -114,7 +166,9 @@ export default function Nav({ activePage }: NavProps) {
           <button
             onClick={() => setOpen(!open)}
             className="flex flex-col justify-center gap-[5px] w-11 h-11 items-center"
-            aria-label={open ? "Close" : "Menu"}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             <span className={`block h-px w-6 transition-all duration-300 origin-center ${open ? "bg-[#fcf7f1] rotate-45 translate-y-[6px]" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
             <span className={`block h-px w-6 transition-all duration-300 ${open ? "opacity-0" : dark ? "bg-[#fcf7f1]" : "bg-[#2e5a88]"}`} />
@@ -125,6 +179,13 @@ export default function Nav({ activePage }: NavProps) {
 
       {/* Mobile overlay */}
       <div
+        ref={overlayRef}
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Main menu"
+        aria-hidden={!open}
+        inert={!open}
         className={`fixed inset-0 z-40 bg-[#1a1a1a] flex flex-col justify-between px-8 py-24 transition-opacity duration-500 md:hidden ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}

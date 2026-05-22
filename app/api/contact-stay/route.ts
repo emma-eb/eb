@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import { resend, EMAIL_FROM, EMAIL_TO_GENERAL, renderHtml, renderText, safeSendConfirmation } from "../../lib/email";
+import { rateLimit, rateLimitResponse } from "../../lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+  const rl = rateLimit(req, { key: "contact-stay", windowMs: 60_000, max: 3 });
+  if (!rl.ok) return rateLimitResponse(rl);
+
   try {
     const data = await req.json().catch(() => null);
     if (!data || typeof data !== "object") {
