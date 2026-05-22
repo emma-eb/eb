@@ -14,13 +14,13 @@ export const metadata: Metadata = {
       "A private collection of residences and one yacht across Greece. Porto Heli, Crete, Mykonos, Athens Riviera, the Ionian.",
     url: "/collection",
     type: "website",
-    images: ["/villas/celestia/gallery-01.jpg"],
+    images: ["/villas/celestia/gallery-01.webp"],
   },
   twitter: {
     title: "Villa Collection",
     description:
       "A private collection of residences and one yacht across Greece. Porto Heli, Crete, Mykonos, Athens Riviera, the Ionian.",
-    images: ["/villas/celestia/gallery-01.jpg"],
+    images: ["/villas/celestia/gallery-01.webp"],
   },
 };
 

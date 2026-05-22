@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/MILOS_01.jpg"],
+    images: ["/MILOS_01.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/MILOS_01.jpg"],
+    images: ["/MILOS_01.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function HoneymoonJourneyLayout({ children }: { children: React.R
     nights: 7,
     season: "May to September",
     islands: ["Milos", "Folegandros"],
-    image: "/MILOS_01.jpg",
+    image: "/MILOS_01.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

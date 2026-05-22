@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/images/journeys/paros-hero.jpg"],
+    images: ["/images/journeys/paros-hero.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/images/journeys/paros-hero.jpg"],
+    images: ["/images/journeys/paros-hero.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function ParosAntiparosLayout({ children }: { children: React.Rea
     nights: 7,
     season: "May to October",
     islands: ["Paros", "Antiparos"],
-    image: "/paros_01.jpg",
+    image: "/paros_01.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

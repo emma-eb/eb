@@ -22,7 +22,7 @@ function ContactRouter() {
       {/* HERO */}
       <section data-nav-dark className="relative h-[70vh] md:h-[80vh] flex items-end overflow-hidden">
         <img
-          src="/mykonos_01.jpg"
+          src="/mykonos_01.webp"
           alt="Little Venice taverna tables at golden hour, Mykonos"
           className="absolute inset-0 w-full h-full object-cover object-[center_55%]"
           fetchPriority="high"

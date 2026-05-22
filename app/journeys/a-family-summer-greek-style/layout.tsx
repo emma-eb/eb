@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/family-journey.jpg"],
+    images: ["/family-journey.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/family-journey.jpg"],
+    images: ["/family-journey.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function FamilyJourneyLayout({ children }: { children: React.Reac
     nights: 10,
     season: "April to October",
     islands: ["Porto Heli", "Hydra", "Spetses", "Poros"],
-    image: "/family-journey.jpg",
+    image: "/family-journey.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

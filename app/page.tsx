@@ -73,7 +73,7 @@ export default function Home() {
       >
         <div className="absolute inset-0">
           <img
-            src="/hero-bateau.jpg"
+            src="/hero-bateau.webp"
             alt="Aegean Sea, Greece"
             className="w-full h-full object-cover"
             style={{ objectPosition: "72% 65%" }}
@@ -163,7 +163,7 @@ export default function Home() {
               subtitle: "Villas, yacht, private properties",
               href: "/collection",
               cta: "View the collection",
-              image: "/villas/you-and-me/gallery-03.jpg",
+              image: "/villas/you-and-me/gallery-03.webp",
               desktopDelay: 300,
             },
           ].map((door) => (
@@ -222,7 +222,7 @@ export default function Home() {
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/astypalea.jpg"
+            src="/astypalea.webp"
             alt="Astypalea, before everyone else"
             className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
@@ -316,7 +316,7 @@ export default function Home() {
       <section data-nav-dark className="relative h-[80vh] md:h-[85vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/villas/you-and-me/cover.jpg"
+            src="/villas/you-and-me/cover.webp"
             alt="Villa You & Me, private estate above the Aegean"
             className="featured-img absolute inset-0 w-full h-full object-cover"
             loading="lazy"
@@ -386,7 +386,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden eb-image-vignette">
         <img
-          src="/MILOS_01.jpg"
+          src="/MILOS_01.webp"
           alt="Sarakiniko white rocks at dusk, Milos"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

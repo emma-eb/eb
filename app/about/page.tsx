@@ -126,7 +126,7 @@ export default function About() {
             <div className="reveal md:col-span-5 md:row-span-2">
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="/Emma_About_1.jpg"
+                  src="/Emma_About_1.webp"
                   alt="Emma Bonnefous, founder of eb."
                   className="img-settle w-full h-full object-cover"
                   loading="lazy"
@@ -158,7 +158,7 @@ export default function About() {
             <div className="reveal md:col-span-4 md:col-start-3 mt-8 md:mt-16" data-delay="150">
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="/Emma_About_2.jpg"
+                  src="/Emma_About_2.webp"
                   alt="Emma Bonnefous on her Athens terrace"
                   className="img-settle w-full h-full object-cover"
                   loading="lazy"
@@ -310,7 +310,7 @@ export default function About() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden eb-image-vignette">
         <img
-          src="/portrait-emma-2.jpg"
+          src="/portrait-emma-2.webp"
           alt="Emma Bonnefous portrait"
           className="absolute inset-0 w-full h-full object-cover object-[center_65%] md:object-[center_55%]"
           loading="lazy"

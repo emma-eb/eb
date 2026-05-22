@@ -18,7 +18,7 @@ interface Journey {
 const featured: Journey[] = [
   {
     slug: "astypalea-before-everyone-else",
-    image: "/astypalea_01.jpg",
+    image: "/astypalea_01.webp",
     number: "01",
     overline: "Featured Journey \u00b7 01",
     title: "Astypalea, Before\nEveryone Else.",
@@ -27,7 +27,7 @@ const featured: Journey[] = [
   },
   {
     slug: "mykonos-timed-right",
-    image: "/mykonos-villa.jpg",
+    image: "/mykonos-villa.webp",
     number: "02",
     overline: "Featured Journey \u00b7 02",
     title: "Mykonos,\nTimed Right.",
@@ -39,7 +39,7 @@ const featured: Journey[] = [
 const secondary: Journey[] = [
   {
     slug: "a-slow-honeymoon-in-the-cyclades",
-    image: "/MILOS_03.jpg",
+    image: "/MILOS_03.webp",
     number: "03",
     overline: "Private Journey \u00b7 03",
     title: "A Honeymoon\nin the Cyclades.",
@@ -48,7 +48,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "paros-antiparos-privately",
-    image: "/paros_01.jpg",
+    image: "/paros_01.webp",
     number: "04",
     overline: "Private Journey \u00b7 04",
     title: "Paros + Antiparos,\nPrivately.",
@@ -57,7 +57,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "athens-slowly",
-    image: "/tourism-revenue.jpg",
+    image: "/tourism-revenue.webp",
     number: "05",
     overline: "Private Journey \u00b7 05",
     title: "Athens, Slowly.",
@@ -66,7 +66,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-family-summer-greek-style",
-    image: "/family-journey.jpg",
+    image: "/family-journey.webp",
     number: "06",
     overline: "Private Journey \u00b7 06",
     title: "A Family Summer,\nGreek-Style.",
@@ -75,7 +75,7 @@ const secondary: Journey[] = [
   },
   {
     slug: "a-week-in-the-cyclades-by-sea",
-    image: "/hero-bateau.jpg",
+    image: "/hero-bateau.webp",
     number: "07",
     overline: "Private Journey \u00b7 07",
     title: "A Week in the\nCyclades, By Sea.",
@@ -229,7 +229,7 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="/detail-archi-greece-02.jpg"
+          src="/detail-archi-greece-02.webp"
           alt="Private journeys across Greece, by eb."
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
@@ -346,7 +346,7 @@ export default function JourneysPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-[80vh] min-h-[560px] overflow-hidden eb-image-vignette">
         <img
-          src="/cta-final-private-journey.jpg"
+          src="/cta-final-private-journey.webp"
           alt="A private Greek island at dusk"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

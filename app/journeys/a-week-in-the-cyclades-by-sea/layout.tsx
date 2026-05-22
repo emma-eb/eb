@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/yacht-page-collection.jpg"],
+    images: ["/yacht-page-collection.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/yacht-page-collection.jpg"],
+    images: ["/yacht-page-collection.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function CycladesBySeaJourneyLayout({ children }: { children: Rea
     nights: 7,
     season: "May to September",
     islands: ["Athens", "Cyclades"],
-    image: "/yacht-page-collection.jpg",
+    image: "/yacht-page-collection.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

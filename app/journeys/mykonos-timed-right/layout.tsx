@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/mykonos_01.jpg"],
+    images: ["/mykonos_01.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/mykonos_01.jpg"],
+    images: ["/mykonos_01.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function MykonosJourneyLayout({ children }: { children: React.Rea
     nights: 5,
     season: "May to September",
     islands: ["Mykonos"],
-    image: "/mykonos-villa.jpg",
+    image: "/mykonos-villa.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

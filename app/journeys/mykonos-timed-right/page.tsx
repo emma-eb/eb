@@ -79,7 +79,7 @@ export default function MykonosTimedRightPage() {
       {/* ============ ZONE 1 — HERO ============ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-screen md:min-h-[600px] overflow-hidden eb-image-vignette">
         <Image
-          src="/mykonos_01.jpg"
+          src="/mykonos_01.webp"
           alt="Mykonos Chora at dusk, Little Venice"
           fill
           priority
@@ -211,7 +211,7 @@ export default function MykonosTimedRightPage() {
 
           <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group reveal eb-image-vignette md:max-w-[1200px] md:mx-auto -mx-6 md:mx-auto">
             <Image
-              src="/scorpio.jpg"
+              src="/scorpio.webp"
               alt="Scorpios Mykonos at sunset"
               fill
               sizes="100vw"
@@ -298,7 +298,7 @@ export default function MykonosTimedRightPage() {
       {/* ============ ZONE 6 — WHERE YOU STAY ============ */}
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
-          src="/mykonos-villa.jpg"
+          src="/mykonos-villa.webp"
           alt="A Mykonos villa above the water"
           fill
           className="object-cover reveal"
@@ -335,7 +335,7 @@ export default function MykonosTimedRightPage() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group">
               <Image
-                src="/mykonos_maison.jpg"
+                src="/mykonos_maison.webp"
                 alt="Mykonos house exterior, traditional Cycladic architecture"
                 fill
                 className="object-cover reveal"
@@ -428,21 +428,21 @@ export default function MykonosTimedRightPage() {
             {[
               {
                 href: '/journeys/paros-antiparos-privately',
-                img: '/images/journeys/paros-hero.jpg',
+                img: '/images/journeys/paros-hero.webp',
                 category: 'Slow \u00b7 Discovery',
                 title: 'Paros + Antiparos, Privately',
                 meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October',
               },
               {
                 href: '/journeys/athens-slowly',
-                img: '/acropole_01.jpg',
+                img: '/acropole_01.webp',
                 category: 'Cultural \u00b7 Slow',
                 title: 'Athens, Slowly',
                 meta: '5 nights \u00b7 Athens \u00b7 Year\u2013round',
               },
               {
                 href: '/journeys/a-week-in-the-cyclades-by-sea',
-                img: '/yacht-page-collection-2.jpg',
+                img: '/yacht-page-collection-2.webp',
                 category: 'By Sea \u00b7 Private Yacht',
                 title: 'A Week in the Cyclades, by Sea',
                 meta: '7 nights \u00b7 Cyclades by yacht \u00b7 May\u2013September',
@@ -484,7 +484,7 @@ export default function MykonosTimedRightPage() {
       {/* ============ ZONE 9 — CTA FINAL ============ */}
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
         <Image
-          src="/hero-bateau.jpg"
+          src="/hero-bateau.webp"
           alt="Ready when you are"
           fill
           className="object-cover reveal"

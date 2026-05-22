@@ -7,7 +7,7 @@ const portes = [
     title: "A journey.",
     desc: "Designed from scratch, or built on one of ours.",
     href: "/contact?type=journey",
-    img: "/paros_01.jpg",
+    img: "/paros_01.webp",
     alt: "Paros coast, Greek islands",
   },
   {
@@ -16,7 +16,7 @@ const portes = [
     title: "A moment.",
     desc: "Wedding, proposal, anniversary, honeymoon. Marked quietly.",
     href: "/contact?type=occasion",
-    img: "/yacht-page-collection-2.jpg",
+    img: "/yacht-page-collection-2.webp",
     alt: "Couple on yacht bow, Aegean coast",
   },
   {
@@ -25,7 +25,7 @@ const portes = [
     title: "A place.",
     desc: "Villas rarely online. Yacht on request.",
     href: "/contact?type=stay",
-    img: "/mykonos_maison.jpg",
+    img: "/mykonos_maison.webp",
     alt: "Private villa, Mykonos",
   },
 ];

@@ -83,7 +83,7 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 1 — HERO IMMERSIF (Move 7) ============ */}
       <section data-nav-dark className="relative w-full h-[75vh] md:h-screen md:min-h-[600px] overflow-hidden eb-image-vignette">
         <Image
-          src="/images/journeys/paros-hero.jpg"
+          src="/images/journeys/paros-hero.webp"
           alt="Paros south coast at golden hour, Aegean bay"
           fill
           priority
@@ -217,7 +217,7 @@ export default function ParosAntiparosPage() {
 
           <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
             <Image
-              src="/images/journeys/paros-naoussa.jpg"
+              src="/images/journeys/paros-naoussa.webp"
               alt="Paros south coast, quiet bays and fishing port at golden hour"
               fill
               sizes="100vw"
@@ -304,7 +304,7 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 7 — WHERE YOU STAY (moved AFTER Day by Day, Moves 4 + 7) ============ */}
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
         <Image
-          src="/images/journeys/paros-villa.jpg"
+          src="/images/journeys/paros-villa.webp"
           alt="Your villa on the south coast"
           fill
           className="object-cover reveal"
@@ -333,7 +333,7 @@ export default function ParosAntiparosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
             <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="100">
               <Image
-                src="/antiparos.jpg"
+                src="/antiparos.webp"
                 alt="Antiparos, quiet coast across the channel"
                 fill
                 className="object-cover"
@@ -341,7 +341,7 @@ export default function ParosAntiparosPage() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="180">
               <Image
-                src="/paros_04.jpg"
+                src="/paros_04.webp"
                 alt="Paros coast and sea at golden hour"
                 fill
                 className="object-cover"
@@ -349,7 +349,7 @@ export default function ParosAntiparosPage() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group reveal" data-delay="260">
               <Image
-                src="/paros_03.jpg"
+                src="/paros_03.webp"
                 alt="Interior light and textures, Paros villa"
                 fill
                 className="object-cover"
@@ -436,21 +436,21 @@ export default function ParosAntiparosPage() {
             {[
               {
                 href: '/journeys/athens-slowly',
-                img: '/acropole_01.jpg',
+                img: '/acropole_01.webp',
                 category: 'Cultural \u00b7 Slow',
                 title: 'Athens, Slowly',
                 meta: '5 nights \u00b7 Athens \u00b7 Year\u2013round',
               },
               {
                 href: '/journeys/mykonos-timed-right',
-                img: '/images/journeys/mykonos-card.jpg',
+                img: '/images/journeys/mykonos-card.webp',
                 category: 'Festive \u00b7 Social',
                 title: 'Mykonos, Timed Right',
                 meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September',
               },
               {
                 href: '/journeys/a-family-summer-greek-style',
-                img: '/images/journeys/family-card.jpg',
+                img: '/images/journeys/family-card.webp',
                 category: 'Family \u00b7 Multi-gen',
                 title: 'A Family Summer, Greek-Style',
                 meta: '10 nights \u00b7 Porto Heli \u00b7 April\u2013October',
@@ -493,7 +493,7 @@ export default function ParosAntiparosPage() {
       {/* ============ ZONE 10 — CTA FINAL (moved to last position) ============ */}
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
         <Image
-          src="/hero-bateau.jpg"
+          src="/hero-bateau.webp"
           alt="Ready when you are"
           fill
           className="object-cover reveal"

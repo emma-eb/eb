@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/astypalea.jpg"],
+    images: ["/astypalea.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/astypalea.jpg"],
+    images: ["/astypalea.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function AstypaleaJourneyLayout({ children }: { children: React.R
     nights: 7,
     season: "May to September",
     islands: ["Athens", "Astypalea"],
-    image: "/astypalea.jpg",
+    image: "/astypalea.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },

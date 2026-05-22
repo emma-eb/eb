@@ -44,7 +44,7 @@ export default function WeekBySeaPage() {
       </div>
 
       <section data-nav-dark className="relative w-full h-[75vh] md:h-screen md:min-h-[600px] overflow-hidden eb-image-vignette">
-        <Image src="/yacht-page-collection.jpg" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-center md:object-[center_60%] reveal" />
+        <Image src="/yacht-page-collection.webp" alt="On board a private yacht in the Cyclades" fill priority sizes="100vw" className="object-cover object-center md:object-[center_60%] reveal" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/65" />
         <div className="absolute bottom-14 md:bottom-20 left-6 md:left-12 right-6 md:right-12 text-white">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6 reveal">Private Journey &middot; 07</div>
@@ -94,7 +94,7 @@ export default function WeekBySeaPage() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 md:mb-16 reveal"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">Highlights</div></div>
           <div className="relative h-[60vh] min-h-[400px] md:h-auto md:min-h-0 md:aspect-[21/9] overflow-hidden group reveal eb-image-vignette md:max-w-[1200px] -mx-6 md:mx-auto">
-            <Image src="/reveil-yacht.jpg" alt="Waking up on a private yacht, Aegean morning" fill sizes="100vw" className="object-cover object-center reveal transition-transform duration-700 group-hover:scale-105" />
+            <Image src="/reveil-yacht.webp" alt="Waking up on a private yacht, Aegean morning" fill sizes="100vw" className="object-cover object-center reveal transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
             <div className="absolute top-24 left-6 md:top-8 md:left-8 z-[3]"><span className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] tracking-[0.2em] uppercase text-white font-light">The Sea</span></div>
             <div className="absolute bottom-16 left-6 right-6 md:bottom-10 md:left-10 md:right-10 text-white z-[3] max-w-[600px]">
@@ -128,7 +128,7 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[55vh] min-h-[400px] md:h-[80vh] md:min-h-[500px] overflow-hidden eb-image-vignette">
-        <Image src="/yacht-on-board.jpg" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-center reveal" />
+        <Image src="/yacht-on-board.webp" alt="On board the private yacht" fill sizes="100vw" className="object-cover object-center reveal" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
         <div className="absolute bottom-12 md:bottom-20 left-6 md:left-16 right-6 md:right-16 max-w-[620px] text-white reveal z-[3]">
           <div className="bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-light inline-block mb-6">Where You Stay</div>
@@ -143,9 +143,9 @@ export default function WeekBySeaPage() {
             <div className="text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">The Cyclades at a glimpse</div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-3">
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.jpg" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover reveal" /></div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos-2.jpg" alt="Amorgos cliff and sea" fill className="object-cover reveal" /></div>
-            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.jpg" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover reveal" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/kythnos.webp" alt="Kythnos, twin bays with sand spit and boats" fill className="object-cover reveal" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/amorgos-2.webp" alt="Amorgos cliff and sea" fill className="object-cover reveal" /></div>
+            <div className="relative aspect-[3/4] overflow-hidden eb-image-vignette group"><Image src="/koufoussina.webp" alt="Koufonisia turquoise cove with a private yacht" fill className="object-cover reveal" /></div>
           </div>
         </div>
       </section>
@@ -190,9 +190,9 @@ export default function WeekBySeaPage() {
           <div className="text-center mb-10"><div className="text-[10px] tracking-[0.35em] uppercase text-[#1a1a1a]/40 font-light">You might also like</div></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
-              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.jpg', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October' },
-              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.jpg', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '7 nights \u00b7 Milos + Folegandros \u00b7 May\u2013September' },
-              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.jpg', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September' },
+              { href: '/journeys/paros-antiparos-privately', img: '/images/journeys/paros-hero.webp', category: 'Slow \u00b7 Discovery', title: 'Paros + Antiparos, Privately', meta: '6 nights \u00b7 Paros + Antiparos \u00b7 May\u2013October' },
+              { href: '/journeys/a-slow-honeymoon-in-the-cyclades', img: '/MILOS_01.webp', category: 'Honeymoon \u00b7 Slow', title: 'A Slow Honeymoon, in the Cyclades', meta: '7 nights \u00b7 Milos + Folegandros \u00b7 May\u2013September' },
+              { href: '/journeys/mykonos-timed-right', img: '/images/journeys/mykonos-card.webp', category: 'Festive \u00b7 Social', title: 'Mykonos, Timed Right', meta: '5 nights \u00b7 Mykonos \u00b7 May\u2013September' },
             ].map((card, i) => (
               <Link key={i} href={card.href} className="relative aspect-[3/4] overflow-hidden cursor-pointer group block eb-image-vignette">
                 <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -206,7 +206,7 @@ export default function WeekBySeaPage() {
       </section>
 
       <section data-nav-dark className="relative w-full h-[70vh] min-h-[480px] overflow-hidden eb-image-vignette">
-        <Image src="/yacht-page.jpg" alt="Ready when you are" fill className="object-cover reveal" />
+        <Image src="/yacht-page.webp" alt="Ready when you are" fill className="object-cover reveal" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
         <div className="relative z-[3] h-full flex items-center justify-center px-6 md:px-10">
           <div className="text-center max-w-[640px] reveal">

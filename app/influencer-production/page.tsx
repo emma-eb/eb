@@ -55,7 +55,7 @@ export default function InfluencerProduction() {
       <section id="explore" data-nav-dark className="relative min-h-[60vh] md:min-h-[75vh] flex items-end overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/MILOS_02.jpg"
+            src="/MILOS_02.webp"
             alt="Milos, Sarakiniko, white rocks and turquoise sea"
             className="img-settle w-full h-full object-cover object-[center_60%]"
             loading="lazy"
@@ -94,21 +94,21 @@ export default function InfluencerProduction() {
               title: "Brand Trips",
               body: "Multi-day trips for press, influencers, and brand ambassadors. Every detail handled on the ground, so your team focuses on content.",
               details: ["Full logistics & concierge", "Villa & hotel sourcing", "Private dining & experiences"],
-              img: "/julian-Z8T3xS4_vT0-unsplash.jpg",
+              img: "/julian-Z8T3xS4_vT0-unsplash.webp",
               alt: "Mykonos windmills above the whitewashed town",
             },
             {
               title: "Fam Trips",
               body: "Familiarization trips for travel agents, journalists, and agency partners. Designed to showcase your positioning in Greece.",
               details: ["Route design", "Hosted experiences", "Press & media support"],
-              img: "/vue-aerienne-bateau.jpg",
+              img: "/vue-aerienne-bateau.webp",
               alt: "Aerial view, turquoise cove and boats, Greece",
             },
             {
               title: "Content Creation",
               body: "Photo and video production across Greece. Scouting, permits, crew, styling. Built around your brief, delivered to spec.",
               details: ["Location scouting & permits", "Photographer & videographer", "Stylist & art direction"],
-              img: "/laura-adai-RHG2wFlRxdw-unsplash.jpg",
+              img: "/laura-adai-RHG2wFlRxdw-unsplash.webp",
               alt: "Whitewashed Cycladic hamlet above rocky coast",
             },
           ].map(({ title, body, details, img, alt }, i) => (
@@ -171,7 +171,7 @@ export default function InfluencerProduction() {
               name: "Short",
               duration: "3 days",
               desc: "Athens and one island. Fast turnaround, tight brief. Built for social content or a single campaign moment.",
-              img: "/angelina-and-antonis-s0HBi_tVs6s-unsplash.jpg",
+              img: "/angelina-and-antonis-s0HBi_tVs6s-unsplash.webp",
               alt: "Editorial moment, bougainvillea terrace, Aegean",
             },
             {
@@ -179,7 +179,7 @@ export default function InfluencerProduction() {
               name: "Extended",
               duration: "4 to 5 days",
               desc: "Athens and two islands. Room for storytelling across multiple environments and visual directions.",
-              img: "/ben-koorengevel-G0G0qkE-r24-unsplash.jpg",
+              img: "/ben-koorengevel-G0G0qkE-r24-unsplash.webp",
               alt: "Yacht from above, open Aegean sea",
             },
             {
@@ -187,7 +187,7 @@ export default function InfluencerProduction() {
               name: "Bespoke",
               duration: "From 6 days",
               desc: "Fully custom. Your brief, your talent, your season. No template.",
-              img: "/Bespokevilla.jpg",
+              img: "/Bespokevilla.webp",
               alt: "Private villa, pool and olive grove",
             },
           ].map(({ num, name, duration, desc, img, alt }, i) => (
@@ -235,13 +235,13 @@ export default function InfluencerProduction() {
           {[
             /* TODO: Emma validate 8 photos below — mosaic press-kit feel */
             { label: "Scouting", img: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=900&q=80", alt: "Aerial Greek coast scouting" },
-            { label: "Permits", img: "/acropole_01.jpg", alt: "Parthenon columns, Acropolis, Athens" },
-            { label: "Transfers", img: "/helicptere.jpg", alt: "Private helicopter transfer" },
-            { label: "Villas", img: "/134_terrace_privatebeach.jpg", alt: "Villa terrace, private beach" },
+            { label: "Permits", img: "/acropole_01.webp", alt: "Parthenon columns, Acropolis, Athens" },
+            { label: "Transfers", img: "/helicptere.webp", alt: "Private helicopter transfer" },
+            { label: "Villas", img: "/134_terrace_privatebeach.webp", alt: "Villa terrace, private beach" },
             { label: "Talent", img: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80", alt: "Editorial talent shoot" },
             { label: "Styling", img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=900&q=80", alt: "Wardrobe and styling" },
-            { label: "Photography", img: "/florian-wehde-OJScR4tDRyc-unsplash.jpg", alt: "Editorial shoot setting, Oia Santorini" },
-            { label: "Aerial", img: "/astypalea_02.jpg", alt: "Astypalea Chora aerial, drone production" },
+            { label: "Photography", img: "/florian-wehde-OJScR4tDRyc-unsplash.webp", alt: "Editorial shoot setting, Oia Santorini" },
+            { label: "Aerial", img: "/astypalea_02.webp", alt: "Astypalea Chora aerial, drone production" },
           ].map(({ label, img, alt }, i) => (
             <div
               key={label}

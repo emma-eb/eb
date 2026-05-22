@@ -26,7 +26,7 @@ type VillaCard = {
 const villas: VillaCard[] = [
   {
     slug: "you-and-me",
-    image: "/villas/you-and-me/cover.jpg",
+    image: "/villas/you-and-me/cover.webp",
     location: "Aleomandra, Mykonos",
     name: "Villa You & Me",
     description: "A private estate above the Aegean.",
@@ -37,7 +37,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "celestia",
-    image: "/villas/celestia/cover.jpg",
+    image: "/villas/celestia/cover.webp",
     location: "Aleomandra, Mykonos",
     name: "Villa Celestia",
     description: "Contemporary architecture meeting the open sea.",
@@ -49,7 +49,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "esmeralda",
-    image: "/villas/esmeralda/cover.jpg",
+    image: "/villas/esmeralda/cover.webp",
     location: "Mykonos",
     name: "Villa Esmeralda",
     description: "A beachfront estate, a minute from the sand.",
@@ -59,7 +59,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "tourlos-breeze",
-    image: "/villas/tourlos-breeze/cover.jpg",
+    image: "/villas/tourlos-breeze/cover.webp",
     location: "Tourlos, Mykonos",
     name: "Villa Tourlos Breeze",
     description: "Eight bedrooms above the harbour, the Cyclades at your feet.",
@@ -69,7 +69,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "santorini-estate",
-    image: "/villas/santorini-estate/cover.jpg",
+    image: "/villas/santorini-estate/cover.webp",
     location: "Messaria, Santorini",
     name: "Santorini Estate",
     description: "Two acres on the caldera. Five suites, a spa, a chapel.",
@@ -79,7 +79,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "silent-coast",
-    image: "/villas/silent-coast/cover.jpg",
+    image: "/villas/silent-coast/cover.webp",
     location: "Porto Heli, Peloponnese",
     name: "Silent Coast",
     description: "Stone, olive trees, and a private beach on the Argolic Gulf.",
@@ -89,7 +89,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "aegean-residence",
-    image: "/villas/aegean-residence/cover.jpg",
+    image: "/villas/aegean-residence/cover.webp",
     location: "Porto Heli, Peloponnese",
     name: "Aegean Residence",
     description: "An 8,000 m² estate, three private coves below.",
@@ -99,7 +99,7 @@ const villas: VillaCard[] = [
   },
   {
     slug: "anavissos-lux",
-    image: "/villas/anavissos-lux/cover.jpg",
+    image: "/villas/anavissos-lux/cover.webp",
     location: "Anavyssos, Athens Riviera",
     name: "Anavissos Lux",
     description: "Five pools, a wellness wing, twenty metres from the sand.",
@@ -126,7 +126,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative h-[100dvh] w-full overflow-hidden">
         <img
-          src="/villas/celestia/gallery-01.jpg"
+          src="/villas/celestia/gallery-01.webp"
           alt="Private residence above Mykonos at dusk"
           className="absolute inset-0 w-full h-full object-cover object-center"
           fetchPriority="high"
@@ -266,7 +266,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative min-h-[70vh] md:min-h-[90vh] flex items-end">
         <img
-          src="/yacht-on-board.jpg"
+          src="/yacht-on-board.webp"
           alt="Private yacht charter, gangway over open Aegean waters"
           className="absolute inset-0 w-full h-full object-cover object-center md:object-[center_30%]"
           loading="lazy"
@@ -311,7 +311,7 @@ export default function CollectionPage() {
       ═══════════════════════════════════════════ */}
       <section data-nav-dark className="relative min-h-[55vh] md:min-h-[65vh] flex items-center">
         <img
-          src="/photo-bandeau-page-collection.jpg"
+          src="/photo-bandeau-page-collection.webp"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"

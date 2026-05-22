@@ -11,7 +11,7 @@ const experiences = [
     title: "Private Dinner\nFacing the Acropolis",
     desc: "A table set for your evening only. The kitchens that don\u2019t take reservations online, the terraces that close for one party. Michelin-starred rooftop or private penthouse, the format is yours.",
     cta: "Reserve your evening",
-    photo: "/private-dinner-acropolis.jpg",
+    photo: "/private-dinner-acropolis.webp",
     pos: "center center",
   },
   {
@@ -19,7 +19,7 @@ const experiences = [
     title: "Wedding Proposal\nin Greece",
     desc: "A clifftop terrace at golden hour. A private beach at the end of an unmarked road. We find the place, arrange every detail, and disappear. You just ask the question.",
     cta: "Plan the moment",
-    photo: "/good-days-digital-5dusgr_R35E-unsplash.jpg",
+    photo: "/good-days-digital-5dusgr_R35E-unsplash.webp",
     pos: "center 80%",
   },
   {
@@ -27,7 +27,7 @@ const experiences = [
     title: "Boutique\nWedding",
     desc: "For couples who want fewer guests and more meaning. A villa on a quiet island, a chapel by the sea with only the people who matter. We handle everything on the ground. Nothing is repeated.",
     cta: "Start planning",
-    photo: "/boutique-wedding-greece.jpg",
+    photo: "/boutique-wedding-greece.webp",
     pos: "center 75%",
   },
   {

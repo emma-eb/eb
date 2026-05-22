@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     description,
     url,
     type: "article",
-    images: ["/acropole_01.jpg"],
+    images: ["/acropole_01.webp"],
   },
   twitter: {
     title,
     description,
-    images: ["/acropole_01.jpg"],
+    images: ["/acropole_01.webp"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function AthensJourneyLayout({ children }: { children: React.Reac
     nights: 5,
     season: "Year-round",
     islands: ["Athens"],
-    image: "/acropole_01.jpg",
+    image: "/acropole_01.webp",
   });
   const breadcrumb = breadcrumbListSchema([
     { name: "Home", url: "/" },
