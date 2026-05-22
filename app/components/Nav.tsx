@@ -190,16 +190,16 @@ export default function Nav({ activePage }: NavProps) {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col gap-1">
+        <nav className="flex flex-col gap-5">
           {links.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`font-heading text-5xl text-[#fcf7f1] leading-snug transition-all duration-300 hover:text-[#fcf7f1]/60 ${
-                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              className={`font-body text-[26px] font-light text-[#fcf7f1] leading-none tracking-[-0.01em] transition-all duration-300 hover:text-[#fcf7f1]/55 ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: open ? `${80 + i * 70}ms` : "0ms" }}
+              style={{ transitionDelay: open ? `${80 + i * 60}ms` : "0ms" }}
             >
               {l.label}
             </a>
@@ -207,12 +207,13 @@ export default function Nav({ activePage }: NavProps) {
           <a
             href="/contact"
             onClick={() => setOpen(false)}
-            className={`font-heading text-5xl text-[#fcf7f1] leading-snug mt-4 transition-all duration-300 hover:text-[#fcf7f1]/60 ${
-              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            className={`font-body text-[11px] tracking-[0.3em] uppercase text-[#fcf7f1]/85 mt-8 pt-6 border-t border-[#fcf7f1]/15 inline-flex items-center gap-2 self-start transition-all duration-300 hover:text-[#fcf7f1] ${
+              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
-            style={{ transitionDelay: open ? `${80 + links.length * 70}ms` : "0ms" }}
+            style={{ transitionDelay: open ? `${80 + links.length * 60}ms` : "0ms" }}
           >
             Inquire
+            <span aria-hidden="true">&rarr;</span>
           </a>
         </nav>
         <div
