@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Anton, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import RevealFallback from "./components/RevealFallback";
 import JsonLd from "./components/JsonLd";
@@ -88,6 +89,7 @@ export default function RootLayout({
           <RevealFallback />
         </Suspense>
         {children}
+        <Analytics />
       </body>
     </html>
   );
